@@ -1,7 +1,7 @@
 [
   {
-    "name": "学习进度仪表盘",
-    "prompt": "请为一个 BASIS G10 学生生成学习进度仪表盘。使用 A2UI 协议输出：一个大标题 (Text h2)，然后一行 (Row) 包含三个卡片 (Card)，分别展示数学 85 分、科学 72 分、人文 91 分。每个卡片包含科目名称 (Text h4) 和分数 (Text body)。",
+    "name": "数学选择题",
+    "prompt": "请为 BASIS G8 学生生成一道关于二次函数的选择题。使用 A2UI 协议输出一个 Card 组件，包含题目文本 (Text)、四个选项 (MultipleChoice)、和一个提交按钮 (Button)。",
     "status": "pass",
     "checks": {
       "jsonl_parse": true,
@@ -11,23 +11,76 @@
       "expected_types": true,
       "processor_root_ok": true
     },
-    "elapsed": 12.9,
-    "tokens": 5855,
+    "elapsed": 11.9,
+    "tokens": 5626,
     "validation": {
       "valid": true,
       "errors": [],
       "stats": {
-        "total_lines": 6,
-        "parsed": 6,
+        "total_lines": 4,
+        "parsed": 4,
+        "surfaces": [
+          "quadratic-quiz-1"
+        ],
+        "component_types": [
+          "Button",
+          "MultipleChoice",
+          "Card",
+          "Text"
+        ],
+        "components": 6
+      }
+    },
+    "processor": {
+      "surfaceCount": 1,
+      "surfaces": [
+        {
+          "id": "quadratic-quiz-1",
+          "rootComponentId": "card-1",
+          "rootExists": true,
+          "componentCount": 6,
+          "componentIds": [
+            "card-1",
+            "q-title",
+            "q-text",
+            "q-options",
+            "q-submit-text",
+            "q-submit"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "学习进度仪表盘",
+    "prompt": "请为一个 BASIS G10 学生生成学习进度仪表盘。使用 A2UI 协议输出：一个大标题 (Text h2)，然后一行 (Row) 包含三个卡片 (Card)，分别展示数学 85 分、科学 72 分、人文 91 分。每个卡片包含科目名称 (Text h4) 和分数 (Text body)。",
+    "status": "partial",
+    "checks": {
+      "jsonl_parse": true,
+      "has_begin_rendering": true,
+      "has_surface_update": true,
+      "min_components": false,
+      "expected_types": true,
+      "processor_root_ok": false
+    },
+    "elapsed": 11.9,
+    "tokens": 5843,
+    "validation": {
+      "valid": false,
+      "errors": [
+        "Object 2: Unparseable JSON at line 2",
+        "Object 3: Unparseable JSON at line 3"
+      ],
+      "stats": {
+        "total_lines": 4,
+        "parsed": 2,
         "surfaces": [
           "dashboard-1"
         ],
         "component_types": [
-          "Row",
-          "Card",
           "Text"
         ],
-        "components": 11
+        "components": 6
       }
     },
     "processor": {
@@ -35,21 +88,123 @@
       "surfaces": [
         {
           "id": "dashboard-1",
-          "rootComponentId": "title",
-          "rootExists": true,
-          "componentCount": 11,
+          "rootComponentId": "title-row",
+          "rootExists": false,
+          "componentCount": 6,
           "componentIds": [
-            "title",
-            "row",
-            "card-math",
-            "math-label",
+            "math-title",
             "math-score",
-            "card-science",
-            "science-label",
+            "science-title",
             "science-score",
-            "card-humanities",
-            "humanities-label",
+            "humanities-title",
             "humanities-score"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "学习清单",
+    "prompt": "请为一个 AP Chemistry 学生生成今天的学习清单。使用 A2UI 协议输出一个 Card 组件，包含标题 (Text h3)、分隔线 (Divider)、四个待办复选框 (CheckBox)，内容分别是：复习笔记、做练习题、看视频、写 Lab Report。使用 dataModelUpdate 设置前两项为已完成 (true)。",
+    "status": "pass",
+    "checks": {
+      "jsonl_parse": true,
+      "has_begin_rendering": true,
+      "has_surface_update": true,
+      "min_components": true,
+      "expected_types": true,
+      "processor_root_ok": true
+    },
+    "elapsed": 10.2,
+    "tokens": 5562,
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "stats": {
+        "total_lines": 4,
+        "parsed": 4,
+        "surfaces": [
+          "ap-chem-today"
+        ],
+        "component_types": [
+          "CheckBox",
+          "Card",
+          "Divider",
+          "Text"
+        ],
+        "components": 7
+      }
+    },
+    "processor": {
+      "surfaceCount": 1,
+      "surfaces": [
+        {
+          "id": "ap-chem-today",
+          "rootComponentId": "card-1",
+          "rootExists": true,
+          "componentCount": 7,
+          "componentIds": [
+            "card-1",
+            "title",
+            "divider",
+            "cb1",
+            "cb2",
+            "cb3",
+            "cb4"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "课程选择卡片",
+    "prompt": "请使用 A2UI 协议生成一个 AP 选课建议卡片。用 Column 布局，包含：标题 'AP Course Selection' (Text h2)，说明文本 (Text body)，一个多选题 (MultipleChoice, maxAllowedSelections=3) 包含选项: AP Calculus BC, AP Chemistry, AP Physics 1, AP English Language, AP World History，以及一个 'Get Recommendation' 按钮 (Button)。",
+    "status": "pass",
+    "checks": {
+      "jsonl_parse": true,
+      "has_begin_rendering": true,
+      "has_surface_update": true,
+      "min_components": true,
+      "expected_types": true,
+      "processor_root_ok": true
+    },
+    "elapsed": 10.8,
+    "tokens": 5592,
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "stats": {
+        "total_lines": 5,
+        "parsed": 5,
+        "surfaces": [
+          "ap-selection-1"
+        ],
+        "component_types": [
+          "MultipleChoice",
+          "Button",
+          "Card",
+          "Column",
+          "Text"
+        ],
+        "components": 7
+      }
+    },
+    "processor": {
+      "surfaceCount": 1,
+      "surfaces": [
+        {
+          "id": "ap-selection-1",
+          "rootComponentId": "card-1",
+          "rootExists": true,
+          "componentCount": 7,
+          "componentIds": [
+            "card-1",
+            "col-1",
+            "title-1",
+            "desc-1",
+            "mc-1",
+            "btn-text-1",
+            "btn-1"
           ]
         }
       ]

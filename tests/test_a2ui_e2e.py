@@ -107,10 +107,17 @@ def _try_parse_with_trailing_trim(line: str):
 
 def _try_bracket_repair(text: str):
     """Try to repair a JSON string by closing unclosed braces/brackets.
-    Returns parsed dict on success, None on failure."""
+    Returns parsed dict on success, None on failure.
+
+    Two strategies:
+    1. Append missing closers at end (LLM truncated output)
+    2. Insert missing '}' at error position (LLM miscounted mid-object)
+    """
     text = text.strip()
     if not text or text[0] != "{":
         return None
+
+    # Strategy 1: append closers at end
     brace_depth = 0
     bracket_depth = 0
     in_str = False
@@ -135,14 +142,74 @@ def _try_bracket_repair(text: str):
             bracket_depth += 1
         elif ch == "]":
             bracket_depth -= 1
-    if brace_depth <= 0 and bracket_depth <= 0:
-        return None  # Not a bracket issue
-    suffix = "]" * max(0, bracket_depth) + "}" * max(0, brace_depth)
-    if suffix:
+    if brace_depth > 0 or bracket_depth > 0:
+        suffix = "]" * max(0, bracket_depth) + "}" * max(0, brace_depth)
+        if suffix:
+            try:
+                return json.loads(text + suffix)
+            except json.JSONDecodeError:
+                pass
+
+    # Strategy 2: insert missing '}' at error position
+    # LLM often miscounts closing braces mid-object, e.g. }}} instead of }}}}
+    # When parser expects a property name but finds '{', a '}' is missing before the ','
+    candidate = text
+    for _ in range(3):  # up to 3 insertion attempts
         try:
-            return json.loads(text + suffix)
+            return json.loads(candidate)
+        except json.JSONDecodeError as e:
+            pos = e.pos or 0
+            if pos <= 0:
+                break
+            msg = str(e)
+            if "Expecting property name" in msg:
+                # Scan back from error pos to find the comma, insert '}' before it
+                i = pos - 1
+                while i >= 0 and candidate[i] in " \t":
+                    i -= 1
+                if i >= 0 and candidate[i] == ",":
+                    candidate = candidate[:i] + "}" + candidate[i:]
+                else:
+                    candidate = candidate[:pos] + "}" + candidate[pos:]
+            elif "Expecting ',' or '}'" in msg:
+                candidate = candidate[:pos] + "}" + candidate[pos:]
+            else:
+                break
+    # Final attempt: append closers to the patched candidate
+    try:
+        return json.loads(candidate)
+    except json.JSONDecodeError:
+        pass
+    brace_depth = 0
+    bracket_depth = 0
+    in_str = False
+    esc = False
+    for ch in candidate:
+        if esc:
+            esc = False
+            continue
+        if ch == "\\":
+            esc = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if ch == "{":
+            brace_depth += 1
+        elif ch == "}":
+            brace_depth -= 1
+        elif ch == "[":
+            bracket_depth += 1
+        elif ch == "]":
+            bracket_depth -= 1
+    if brace_depth > 0 or bracket_depth > 0:
+        suffix = "]" * max(0, bracket_depth) + "}" * max(0, brace_depth)
+        try:
+            return json.loads(candidate + suffix)
         except json.JSONDecodeError:
-            return None
+            pass
     return None
 
 
