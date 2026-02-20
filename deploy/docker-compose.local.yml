@@ -1,0 +1,212 @@
+# ==============================================================================
+# BASIS Expert Council — 本地 Docker 全栈编排
+# ==============================================================================
+#
+# Usage:
+#   docker compose -f deploy/docker-compose.local.yml up -d --build
+#
+# 访问:
+#   LangGraph API:    http://localhost:5095
+#   Business API:     http://localhost:5096
+#   Frontend:         http://localhost:8015
+#   PostgreSQL:       localhost:5436
+#   Redis:            localhost:6395
+#
+# ==============================================================================
+
+name: basis-local
+
+services:
+  # ============================================================================
+  # PostgreSQL — LangGraph Checkpoint + 业务数据
+  # ============================================================================
+  basis-postgres:
+    image: postgres:16-alpine
+    container_name: basis-postgres
+    restart: unless-stopped
+    ports:
+      - "5436:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=langgraph
+    volumes:
+      - basis-postgres-data:/var/lib/postgresql/data
+      - ../deploy/init.sql:/docker-entrypoint-initdb.d/20-business.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d langgraph"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - basis-network
+
+  # ============================================================================
+  # Redis — Streaming / Pub-Sub
+  # ============================================================================
+  basis-redis:
+    image: redis:7-alpine
+    container_name: basis-redis
+    restart: unless-stopped
+    ports:
+      - "6395:6395"
+    volumes:
+      - basis-redis-data:/data
+    command: redis-server --port 6395 --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "-p", "6395", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - basis-network
+
+  # ============================================================================
+  # LangGraph Agent — 官方镜像 (langgraph up 模式)
+  # ============================================================================
+  basis-agent:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: basis-agent
+    restart: unless-stopped
+    ports:
+      - "5095:5095"
+    depends_on:
+      basis-postgres:
+        condition: service_healthy
+      basis-redis:
+        condition: service_healthy
+    environment:
+      # ---- Server ----
+      - PORT=5095
+
+      # ---- Graph 配置 ----
+      - 'LANGSERVE_GRAPHS={"basis-expert": "/app/graph.py:agent"}'
+
+      # ---- LangGraph License ----
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY:-}
+
+      # ---- LangSmith Tracing ----
+      - LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2:-false}
+      - LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT:-basis-expert-local}
+
+      # ---- Database (本地 PostgreSQL) ----
+      - DATABASE_URI=postgresql://postgres:postgres@basis-postgres:5432/langgraph?sslmode=disable
+      - REDIS_URI=redis://basis-redis:6395
+
+      # ---- 首次自动建表 ----
+      - RUN_MIGRATIONS=true
+
+      # ---- LLM 配置 ----
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+
+      # ---- BASIS 模型配置 ----
+      - BASIS_LEAD_MODEL=${BASIS_LEAD_MODEL:-openai:z-ai/glm-5}
+      - BASIS_SUBAGENT_MODEL=${BASIS_SUBAGENT_MODEL:-openai:minimax/minimax-m2.5}
+
+      # ---- 功能开关 ----
+      - AGENT_RECURSION_LIMIT=${AGENT_RECURSION_LIMIT:-200}
+      - LANGGRAPH_DEFAULT_RECURSION_LIMIT=${LANGGRAPH_DEFAULT_RECURSION_LIMIT:-200}
+      - LANGGRAPH_SKIP_BLOCKING_CHECK=${LANGGRAPH_SKIP_BLOCKING_CHECK:-true}
+
+      # ---- 禁用代理 ----
+      - NO_PROXY=localhost,127.0.0.1,basis-postgres,basis-redis
+      - HTTP_PROXY=
+      - HTTPS_PROXY=
+
+    volumes:
+      - ../.env:/app/.env:ro
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5095/ok"]
+      interval: 30s
+      timeout: 10s
+      start_period: 120s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "3"
+
+    networks:
+      - basis-network
+
+  # ============================================================================
+  # Business API — 认证/用户/配额/定价
+  # ============================================================================
+  basis-api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.api
+    container_name: basis-api
+    restart: unless-stopped
+    ports:
+      - "5096:5096"
+    depends_on:
+      basis-postgres:
+        condition: service_healthy
+    environment:
+      - BASIS_API_PORT=5096
+      - BASIS_DATABASE_URL=postgresql://postgres:postgres@basis-postgres:5432/langgraph?sslmode=disable
+      - BASIS_JWT_SECRET=${BASIS_JWT_SECRET:-basis-local-dev-secret}
+      - WECHAT_APP_ID=${WECHAT_APP_ID:-}
+      - WECHAT_APP_SECRET=${WECHAT_APP_SECRET:-}
+      - SUPABASE_JWT_SECRET=${SUPABASE_JWT_SECRET:-}
+      - LANGGRAPH_URL=http://basis-agent:5095
+      - FRONTEND_URL=http://localhost:8015
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5096/ok"]
+      interval: 15s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+
+    networks:
+      - basis-network
+
+  # ============================================================================
+  # Frontend — Next.js 生产服务
+  # ============================================================================
+  basis-frontend:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.frontend
+    container_name: basis-frontend
+    restart: unless-stopped
+    ports:
+      - "8015:8015"
+    depends_on:
+      basis-agent:
+        condition: service_healthy
+    environment:
+      - PORT=8015
+      - HOSTNAME=0.0.0.0
+
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8015"]
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+
+    networks:
+      - basis-network
+
+# ==============================================================================
+# Volumes
+# ==============================================================================
+volumes:
+  basis-postgres-data:
+  basis-redis-data:
+
+# ==============================================================================
+# Networks
+# ==============================================================================
+networks:
+  basis-network:
+    name: basis-network

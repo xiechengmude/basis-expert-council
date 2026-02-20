@@ -1,0 +1,10 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "basis-expert": "./graph.py:agent"
+  },
+  "auth": {
+    "disable": true
+  },
+  "env": ".env"
+}
