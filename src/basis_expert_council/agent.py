@@ -26,7 +26,14 @@ try:
         try:
             return _orig_compute_defaults(model)
         except AttributeError:
-            return {}
+            return {
+                "trigger": ("tokens", 170000),
+                "keep": ("messages", 6),
+                "truncate_args_settings": {
+                    "trigger": ("messages", 20),
+                    "keep": ("messages", 20),
+                },
+            }
 
     _summ._compute_summarization_defaults = _safe_compute_defaults
     if hasattr(_dgraph, "_compute_summarization_defaults"):
