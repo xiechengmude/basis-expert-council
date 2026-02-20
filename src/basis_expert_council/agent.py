@@ -12,11 +12,21 @@ from deepagents.backends import FilesystemBackend
 from langchain.chat_models import init_chat_model
 
 # ---------------------------------------------------------------------------
-# Monkey-patch: deepagents _compute_summarization_defaults accesses
-# model.profile which newer langchain versions don't have.
-# Patch both the source module AND the importing module (deepagents.graph).
+# Monkey-patch: langchain + deepagents version incompatibility —
+# BaseChatModel.__getattr__ raises AttributeError for .profile, ._llm_type
+# which both deepagents and langchain middleware try to access.
 # ---------------------------------------------------------------------------
+_SUMMARIZATION_DEFAULTS = {
+    "trigger": ("tokens", 170000),
+    "keep": ("messages", 6),
+    "truncate_args_settings": {
+        "trigger": ("messages", 20),
+        "keep": ("messages", 20),
+    },
+}
+
 try:
+    # 1) Patch deepagents _compute_summarization_defaults (accesses model.profile)
     import deepagents.middleware.summarization as _summ
     import deepagents.graph as _dgraph
 
@@ -26,18 +36,30 @@ try:
         try:
             return _orig_compute_defaults(model)
         except AttributeError:
-            return {
-                "trigger": ("tokens", 170000),
-                "keep": ("messages", 6),
-                "truncate_args_settings": {
-                    "trigger": ("messages", 20),
-                    "keep": ("messages", 20),
-                },
-            }
+            return _SUMMARIZATION_DEFAULTS
 
     _summ._compute_summarization_defaults = _safe_compute_defaults
     if hasattr(_dgraph, "_compute_summarization_defaults"):
         _dgraph._compute_summarization_defaults = _safe_compute_defaults
+except Exception:
+    pass
+
+try:
+    # 2) Patch langchain _get_approximate_token_counter (accesses model._llm_type)
+    import langchain.agents.middleware.summarization as _lc_summ
+
+    _orig_get_counter = _lc_summ._get_approximate_token_counter
+
+    def _safe_get_counter(model):
+        try:
+            return _orig_get_counter(model)
+        except AttributeError:
+            # Fallback: approximate token count as len(str) / 4
+            def _approx(messages):
+                return sum(len(str(getattr(m, "content", ""))) // 4 for m in messages)
+            return _approx
+
+    _lc_summ._get_approximate_token_counter = _safe_get_counter
 except Exception:
     pass
 
