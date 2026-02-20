@@ -11,6 +11,25 @@ from deepagents import create_deep_agent
 from deepagents.backends import FilesystemBackend
 from langchain.chat_models import init_chat_model
 
+# ---------------------------------------------------------------------------
+# Monkey-patch: deepagents _compute_summarization_defaults accesses
+# model.profile which newer langchain versions don't have.
+# ---------------------------------------------------------------------------
+try:
+    import deepagents.middleware.summarization as _summ
+
+    _orig_compute_defaults = _summ._compute_summarization_defaults
+
+    def _safe_compute_defaults(model):
+        try:
+            return _orig_compute_defaults(model)
+        except AttributeError:
+            return {}
+
+    _summ._compute_summarization_defaults = _safe_compute_defaults
+except Exception:
+    pass
+
 from .memory_tools import MEMORY_TOOLS
 from .a2ui_tool import a2ui_render
 
