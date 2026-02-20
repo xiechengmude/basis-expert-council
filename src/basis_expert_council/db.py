@@ -114,11 +114,48 @@ CREATE TABLE IF NOT EXISTS biz_users (
     phone           TEXT,
     nickname        TEXT,
     avatar_url      TEXT,
+    role            TEXT NOT NULL DEFAULT 'student',   -- student/parent/teacher
+    email           TEXT,
+    status          TEXT NOT NULL DEFAULT 'active',    -- active/suspended
+    last_login_at   TIMESTAMPTZ,
+    metadata        JSONB DEFAULT '{}',
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS idx_biz_users_supabase ON biz_users(supabase_uid);
 CREATE INDEX IF NOT EXISTS idx_biz_users_wechat ON biz_users(wechat_openid);
+CREATE INDEX IF NOT EXISTS idx_biz_users_role ON biz_users(role);
+CREATE INDEX IF NOT EXISTS idx_biz_users_phone ON biz_users(phone);
+
+-- 学生画像表（role=student 的用户扩展）
+CREATE TABLE IF NOT EXISTS student_profiles (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL UNIQUE REFERENCES biz_users(id) ON DELETE CASCADE,
+    school_name     TEXT,                         -- "BASIS Shenzhen"
+    campus          TEXT,                         -- "蛇口" / "福田"
+    grade           TEXT,                         -- "G9" / "G10"
+    enrollment_year INT,
+    current_gpa     NUMERIC(3,2),                 -- 0.00-4.00
+    ap_courses      JSONB DEFAULT '[]',           -- ["AP Calc BC", "AP Physics C"]
+    weak_subjects   JSONB DEFAULT '[]',           -- ["数学", "物理"]
+    strong_subjects JSONB DEFAULT '[]',           -- ["英语", "历史"]
+    academic_status TEXT DEFAULT 'normal',         -- normal/watch/probation
+    notes           TEXT,
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- 家长-学生绑定关系
+CREATE TABLE IF NOT EXISTS parent_student_links (
+    id              SERIAL PRIMARY KEY,
+    parent_id       INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    student_id      INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    relationship    TEXT NOT NULL DEFAULT 'parent', -- parent/guardian/tutor
+    status          TEXT NOT NULL DEFAULT 'active',
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE(parent_id, student_id)
+);
+CREATE INDEX IF NOT EXISTS idx_psl_parent ON parent_student_links(parent_id);
+CREATE INDEX IF NOT EXISTS idx_psl_student ON parent_student_links(student_id);
 
 -- 订阅表
 CREATE TABLE IF NOT EXISTS subscriptions (
@@ -396,3 +433,121 @@ async def check_quota(user_id: int) -> dict:
         "allowed_agents": limits["allowed_agents"],
         "priority": limits["priority"],
     }
+
+
+# ---------------------------------------------------------------------------
+# 用户角色
+# ---------------------------------------------------------------------------
+
+
+async def update_user_role(user_id: int, role: str) -> dict | None:
+    """设置用户角色（student/parent/teacher）"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "UPDATE biz_users SET role = $1, updated_at = NOW() WHERE id = $2 RETURNING *",
+            role, user_id,
+        )
+        return dict(row) if row else None
+
+
+# ---------------------------------------------------------------------------
+# 学生画像 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def get_student_profile(user_id: int) -> dict | None:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM student_profiles WHERE user_id = $1", user_id,
+        )
+        return dict(row) if row else None
+
+
+async def upsert_student_profile(user_id: int, **fields) -> dict:
+    """创建或更新学生画像"""
+    pool = await get_pool()
+    allowed = {
+        "school_name", "campus", "grade", "enrollment_year",
+        "current_gpa", "ap_courses", "weak_subjects", "strong_subjects",
+        "academic_status", "notes",
+    }
+    data = {k: v for k, v in fields.items() if k in allowed and v is not None}
+
+    async with pool.acquire() as conn:
+        existing = await conn.fetchrow(
+            "SELECT id FROM student_profiles WHERE user_id = $1", user_id,
+        )
+        if existing:
+            if not data:
+                row = await conn.fetchrow(
+                    "SELECT * FROM student_profiles WHERE user_id = $1", user_id,
+                )
+                return dict(row)
+            sets = ", ".join(f"{k} = ${i+2}" for i, k in enumerate(data))
+            vals = [user_id, *data.values()]
+            row = await conn.fetchrow(
+                f"UPDATE student_profiles SET {sets}, updated_at = NOW() WHERE user_id = $1 RETURNING *",
+                *vals,
+            )
+        else:
+            cols = ["user_id"] + list(data.keys())
+            placeholders = ", ".join(f"${i+1}" for i in range(len(cols)))
+            col_str = ", ".join(cols)
+            vals = [user_id, *data.values()]
+            row = await conn.fetchrow(
+                f"INSERT INTO student_profiles ({col_str}) VALUES ({placeholders}) RETURNING *",
+                *vals,
+            )
+        return dict(row)
+
+
+# ---------------------------------------------------------------------------
+# 家长-学生绑定
+# ---------------------------------------------------------------------------
+
+
+async def link_parent_student(parent_id: int, student_id: int, relationship: str = "parent") -> dict:
+    """绑定家长和学生"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO parent_student_links (parent_id, student_id, relationship)
+            VALUES ($1, $2, $3)
+            ON CONFLICT (parent_id, student_id) DO UPDATE SET status = 'active'
+            RETURNING *
+            """,
+            parent_id, student_id, relationship,
+        )
+        return dict(row)
+
+
+async def get_linked_students(parent_id: int) -> list[dict]:
+    """获取家长绑定的所有学生"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            """
+            SELECT u.id, u.nickname, u.phone, u.avatar_url,
+                   sp.grade, sp.school_name, sp.campus, sp.current_gpa, sp.academic_status,
+                   psl.relationship
+            FROM parent_student_links psl
+            JOIN biz_users u ON u.id = psl.student_id
+            LEFT JOIN student_profiles sp ON sp.user_id = psl.student_id
+            WHERE psl.parent_id = $1 AND psl.status = 'active'
+            """,
+            parent_id,
+        )
+        return [dict(r) for r in rows]
+
+
+async def unlink_parent_student(parent_id: int, student_id: int) -> None:
+    """解除家长-学生绑定"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        await conn.execute(
+            "UPDATE parent_student_links SET status = 'revoked' WHERE parent_id = $1 AND student_id = $2",
+            parent_id, student_id,
+        )
