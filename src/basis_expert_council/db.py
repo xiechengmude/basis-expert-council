@@ -3,6 +3,7 @@ BasisPilot (贝领) — 业务数据库层
 PostgreSQL 连接池 + 用户/订阅/用量 CRUD
 """
 
+import json
 import os
 from datetime import date, datetime
 from enum import Enum
@@ -119,9 +120,18 @@ CREATE TABLE IF NOT EXISTS biz_users (
     status          TEXT NOT NULL DEFAULT 'active',    -- active/suspended
     last_login_at   TIMESTAMPTZ,
     metadata        JSONB DEFAULT '{}',
+    kyc_completed   BOOLEAN NOT NULL DEFAULT FALSE,
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+-- 迁移：为已有 biz_users 表添加新列（幂等，放在索引之前）
+ALTER TABLE biz_users ADD COLUMN IF NOT EXISTS role TEXT NOT NULL DEFAULT 'student';
+ALTER TABLE biz_users ADD COLUMN IF NOT EXISTS email TEXT;
+ALTER TABLE biz_users ADD COLUMN IF NOT EXISTS status TEXT NOT NULL DEFAULT 'active';
+ALTER TABLE biz_users ADD COLUMN IF NOT EXISTS last_login_at TIMESTAMPTZ;
+ALTER TABLE biz_users ADD COLUMN IF NOT EXISTS metadata JSONB DEFAULT '{}';
+ALTER TABLE biz_users ADD COLUMN IF NOT EXISTS kyc_completed BOOLEAN NOT NULL DEFAULT FALSE;
+
 CREATE INDEX IF NOT EXISTS idx_biz_users_supabase ON biz_users(supabase_uid);
 CREATE INDEX IF NOT EXISTS idx_biz_users_wechat ON biz_users(wechat_openid);
 CREATE INDEX IF NOT EXISTS idx_biz_users_role ON biz_users(role);
@@ -451,6 +461,17 @@ async def update_user_role(user_id: int, role: str) -> dict | None:
         return dict(row) if row else None
 
 
+async def complete_kyc(user_id: int) -> bool:
+    """标记用户 KYC 已完成"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        result = await conn.execute(
+            "UPDATE biz_users SET kyc_completed = TRUE, updated_at = NOW() WHERE id = $1",
+            user_id,
+        )
+        return result == "UPDATE 1"
+
+
 # ---------------------------------------------------------------------------
 # 学生画像 CRUD
 # ---------------------------------------------------------------------------
@@ -473,7 +494,16 @@ async def upsert_student_profile(user_id: int, **fields) -> dict:
         "current_gpa", "ap_courses", "weak_subjects", "strong_subjects",
         "academic_status", "notes",
     }
-    data = {k: v for k, v in fields.items() if k in allowed and v is not None}
+    jsonb_fields = {"ap_courses", "weak_subjects", "strong_subjects"}
+    data = {}
+    for k, v in fields.items():
+        if k not in allowed or v is None:
+            continue
+        # asyncpg 要求 JSONB 值为 JSON 字符串
+        if k in jsonb_fields and isinstance(v, (list, dict)):
+            data[k] = json.dumps(v, ensure_ascii=False)
+        else:
+            data[k] = v
 
     async with pool.acquire() as conn:
         existing = await conn.fetchrow(
