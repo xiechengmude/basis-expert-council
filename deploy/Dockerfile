@@ -22,7 +22,8 @@ COPY pyproject.toml README.md ./
 # because uv may upgrade langgraph-api from the editable /api to a PyPI version
 # which breaks langgraph-storage-postgres's imports.
 RUN uv pip install --system -e . \
-    && uv pip install --system --no-deps -e /api -e /storage
+    && uv pip install --system --no-deps -e /api -e /storage \
+    && uv pip install --system "protobuf>=6.31.1"
 
 # Copy langgraph.json config
 COPY langgraph.json ./
