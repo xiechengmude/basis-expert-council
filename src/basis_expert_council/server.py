@@ -153,13 +153,29 @@ async def get_me(request: Request):
     quota = await db.check_quota(auth_info["user_id"])
     sub = await db.get_active_subscription(auth_info["user_id"])
 
+    # 构造基础用户信息
+    user_info = {
+        "id": user["id"],
+        "nickname": user.get("nickname") or user.get("phone") or "用户",
+        "avatar_url": user.get("avatar_url"),
+        "phone": user.get("phone"),
+        "role": user.get("role", "student"),
+    }
+
+    # 学生画像
+    profile = None
+    if user.get("role") == "student":
+        profile = await db.get_student_profile(user["id"])
+
+    # 家长绑定的学生列表
+    linked_students = None
+    if user.get("role") == "parent":
+        linked_students = await db.get_linked_students(user["id"])
+
     return {
-        "user": {
-            "id": user["id"],
-            "nickname": user.get("nickname") or user.get("phone") or "用户",
-            "avatar_url": user.get("avatar_url"),
-            "phone": user.get("phone"),
-        },
+        "user": user_info,
+        "student_profile": profile,
+        "linked_students": linked_students,
         "subscription": {
             "plan": sub["plan"] if sub else "free",
             "status": sub["status"] if sub else "active",
@@ -179,6 +195,108 @@ async def get_usage(request: Request):
     usage = await db.get_daily_usage(auth_info["user_id"])
     quota = await db.check_quota(auth_info["user_id"])
     return {"usage": usage, "quota": quota}
+
+
+# ---------------------------------------------------------------------------
+# User role
+# ---------------------------------------------------------------------------
+
+
+@app.put("/api/user/role")
+async def set_role(request: Request):
+    """设置用户角色（student/parent/teacher）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    body = await request.json()
+    role = body.get("role")
+    if role not in ("student", "parent", "teacher"):
+        return JSONResponse(status_code=400, content={"error": "无效角色，可选: student/parent/teacher"})
+
+    user = await db.update_user_role(auth_info["user_id"], role)
+    if not user:
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    return {"role": user["role"]}
+
+
+# ---------------------------------------------------------------------------
+# Student profile
+# ---------------------------------------------------------------------------
+
+
+@app.get("/api/student/profile")
+async def get_student_profile(request: Request):
+    """获取当前学生画像"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    profile = await db.get_student_profile(auth_info["user_id"])
+    return {"profile": profile}
+
+
+@app.put("/api/student/profile")
+async def update_student_profile(request: Request):
+    """创建或更新学生画像"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    body = await request.json()
+    profile = await db.upsert_student_profile(auth_info["user_id"], **body)
+    return {"profile": profile}
+
+
+# ---------------------------------------------------------------------------
+# Parent-student links
+# ---------------------------------------------------------------------------
+
+
+@app.get("/api/parent/students")
+async def get_linked_students(request: Request):
+    """家长查看绑定的学生列表"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    students = await db.get_linked_students(auth_info["user_id"])
+    return {"students": students}
+
+
+@app.post("/api/parent/links")
+async def link_student(request: Request):
+    """家长绑定学生"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    body = await request.json()
+    student_id = body.get("student_id")
+    relationship = body.get("relationship", "parent")
+
+    if not student_id:
+        return JSONResponse(status_code=400, content={"error": "缺少 student_id"})
+
+    # 验证学生存在且角色为 student
+    student = await db.get_user_by_id(student_id)
+    if not student or student.get("role") != "student":
+        return JSONResponse(status_code=404, content={"error": "学生不存在"})
+
+    link = await db.link_parent_student(auth_info["user_id"], student_id, relationship)
+    return {"link": link}
+
+
+@app.delete("/api/parent/links/{student_id}")
+async def unlink_student(student_id: int, request: Request):
+    """家长解绑学生"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    await db.unlink_parent_student(auth_info["user_id"], student_id)
+    return {"success": True}
 
 
 # ---------------------------------------------------------------------------
