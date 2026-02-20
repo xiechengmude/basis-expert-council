@@ -5,7 +5,13 @@
  * - hidden:   完全隐藏，pending 时显示"思考指示器"
  * - friendly: 友好化展示（中文名称 + 执行状态文案）
  * - special:  已有特殊渲染逻辑（a2ui_render / task），不做修改
+ *
+ * 开发者模式：设置 NEXT_PUBLIC_DEV_TOOLS=true 后，所有工具走 special 路径，
+ * 恢复原始展示（tool name + 可折叠参数 + result），方便调试。
  */
+
+const DEV_TOOLS_ENABLED =
+  process.env.NEXT_PUBLIC_DEV_TOOLS === "true";
 
 export type ToolDisplayStrategy = "hidden" | "friendly" | "special";
 
@@ -84,8 +90,12 @@ const DEFAULT_CONFIG: HiddenToolConfig = { strategy: "hidden" };
 
 /**
  * 获取工具的展示配置
+ * 开发者模式下所有工具走 special 路径（原始展示）
  */
 export function getToolDisplayConfig(toolName: string): ToolDisplayConfig {
+  if (DEV_TOOLS_ENABLED) {
+    return { strategy: "special" };
+  }
   return TOOL_DISPLAY_MAP[toolName] ?? DEFAULT_CONFIG;
 }
 
@@ -104,7 +114,11 @@ const SUBAGENT_NAME_MAP: Record<string, string> = {
 
 /**
  * 获取子代理的中文友好名称
+ * 开发者模式下返回原始英文名
  */
 export function getSubAgentDisplayName(agentName: string): string {
+  if (DEV_TOOLS_ENABLED) {
+    return agentName;
+  }
   return SUBAGENT_NAME_MAP[agentName] ?? agentName;
 }
