@@ -22,7 +22,7 @@ services:
   # ============================================================================
   basis-postgres:
     image: postgres:16-alpine
-    container_name: basis-postgres
+    container_name: basisPilot-postgres
     restart: unless-stopped
     ports:
       - "5436:5432"
@@ -46,7 +46,7 @@ services:
   # ============================================================================
   basis-redis:
     image: redis:7-alpine
-    container_name: basis-redis
+    container_name: basisPilot-redis
     restart: unless-stopped
     ports:
       - "6395:6395"
@@ -68,7 +68,7 @@ services:
     build:
       context: ..
       dockerfile: deploy/Dockerfile
-    container_name: basis-agent
+    container_name: basisPilot-agent
     restart: unless-stopped
     ports:
       - "5095:5095"
@@ -159,7 +159,7 @@ services:
     build:
       context: ..
       dockerfile: deploy/Dockerfile.api
-    container_name: basis-api
+    container_name: basisPilot-api
     restart: unless-stopped
     ports:
       - "5096:5096"
@@ -193,7 +193,7 @@ services:
     build:
       context: ..
       dockerfile: deploy/Dockerfile.frontend
-    container_name: basis-frontend
+    container_name: basisPilot-frontend
     restart: unless-stopped
     ports:
       - "8015:8015"
