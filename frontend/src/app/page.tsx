@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, Suspense } from "react";
+import React, { useState, useEffect, useCallback, useRef, Suspense } from "react";
 import { useQueryState } from "nuqs";
 import { getConfig, saveConfig, StandaloneConfig } from "@/lib/config";
 import { ConfigDialog } from "@/app/components/ConfigDialog";
@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Assistant } from "@langchain/langgraph-sdk";
 import Link from "next/link";
 import { ClientProvider, useClient } from "@/providers/ClientProvider";
-import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle } from "lucide-react";
+import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle, ChevronDown } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
 import { useUser } from "@/app/hooks/useUser";
 import { QuotaBanner } from "@/app/components/QuotaBanner";
@@ -105,10 +105,26 @@ function HomePageInner({
     fetchAssistant();
   }, [fetchAssistant]);
 
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const userMenuRef = useRef<HTMLDivElement>(null);
+
   const handleSignOut = useCallback(async () => {
     localStorage.removeItem("basis-token");
     await signOut();
   }, [signOut]);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(e.target as Node)) {
+        setUserMenuOpen(false);
+      }
+    };
+    if (userMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [userMenuOpen]);
 
   return (
     <>
@@ -145,12 +161,6 @@ function HomePageInner({
             <div className="hidden sm:block">
               <QuotaBanner quota={quota} />
             </div>
-            {profile && profile.subscription.plan !== "free" && (
-              <span className="hidden items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs text-amber-700 sm:inline-flex">
-                <Crown size={10} />
-                {planName}
-              </span>
-            )}
             <Button
               variant="outline"
               size="sm"
@@ -171,21 +181,79 @@ function HomePageInner({
               <span className="hidden sm:inline">新对话</span>
             </Button>
             {user && (
-              <>
-                <span className="hidden text-sm text-muted-foreground lg:inline">
-                  {profile?.user.nickname || user.phone || user.email || "用户"}
-                </span>
-                <Link href="/onboarding">
-                  <Button variant="ghost" size="sm">
-                    <UserCircle className="mr-1 h-4 w-4" />
-                    <span className="hidden sm:inline">个人资料</span>
-                  </Button>
-                </Link>
-                <Button variant="ghost" size="sm" onClick={handleSignOut}>
-                  <LogOut className="mr-1 h-4 w-4" />
-                  <span className="hidden sm:inline">退出</span>
-                </Button>
-              </>
+              <div className="relative" ref={userMenuRef}>
+                <button
+                  type="button"
+                  onClick={() => setUserMenuOpen((v) => !v)}
+                  className="flex items-center gap-1.5 rounded-full border border-border px-2 py-1.5 transition-colors hover:bg-accent"
+                >
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-600 text-xs font-semibold text-white">
+                    {(profile?.user.nickname || user.phone || user.email || "U").charAt(0).toUpperCase()}
+                  </div>
+                  <span className="hidden max-w-[100px] truncate text-sm text-foreground sm:inline">
+                    {profile?.user.nickname || user.phone || user.email || "用户"}
+                  </span>
+                  <ChevronDown className={`hidden h-3.5 w-3.5 text-muted-foreground transition-transform sm:block ${userMenuOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {userMenuOpen && (
+                  <div className="absolute right-0 top-full z-50 mt-1.5 w-52 rounded-xl border border-border bg-popover py-1 shadow-lg">
+                    {/* User info header */}
+                    <div className="border-b border-border px-3 py-2.5">
+                      <p className="truncate text-sm font-medium text-foreground">
+                        {profile?.user.nickname || "用户"}
+                      </p>
+                      <p className="truncate text-xs text-muted-foreground">
+                        {user.phone || user.email || ""}
+                      </p>
+                      {profile && profile.subscription.plan !== "free" && (
+                        <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-medium text-amber-700">
+                          <Crown size={10} />
+                          {planName}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Menu items */}
+                    <div className="py-1">
+                      <Link
+                        href="/onboarding"
+                        onClick={() => setUserMenuOpen(false)}
+                        className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-foreground transition-colors hover:bg-accent"
+                      >
+                        <UserCircle className="h-4 w-4 text-muted-foreground" />
+                        个人资料
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setUserMenuOpen(false);
+                          setConfigDialogOpen(true);
+                        }}
+                        className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-foreground transition-colors hover:bg-accent sm:hidden"
+                      >
+                        <Settings className="h-4 w-4 text-muted-foreground" />
+                        连接设置
+                      </button>
+                    </div>
+
+                    {/* Logout */}
+                    <div className="border-t border-border py-1">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setUserMenuOpen(false);
+                          handleSignOut();
+                        }}
+                        className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-red-600 transition-colors hover:bg-red-50"
+                      >
+                        <LogOut className="h-4 w-4" />
+                        退出登录
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
           </div>
         </header>
