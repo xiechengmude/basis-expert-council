@@ -19,6 +19,10 @@ import {
   extractStringFromMessageContent,
 } from "@/app/utils/utils";
 import { cn } from "@/lib/utils";
+import {
+  getToolDisplayConfig,
+  type FriendlyToolConfig,
+} from "@/app/config/toolDisplayConfig";
 
 interface ChatMessageProps {
   message: Message;
@@ -129,7 +133,22 @@ export const ChatMessage = React.memo<ChatMessageProps>(
           )}
           {hasToolCalls && (
             <div className="mt-4 flex w-full flex-col">
+              {/* 思考指示器：当有 pending 的 hidden 工具时显示 */}
+              {toolCalls.some((tc) => {
+                const cfg = getToolDisplayConfig(tc.name);
+                return cfg.strategy === "hidden" && tc.status === "pending";
+              }) && (
+                <div className="flex items-center gap-2 px-2 py-2">
+                  <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-brand-600" />
+                  <span className="text-sm text-muted-foreground">
+                    正在准备专业内容...
+                  </span>
+                </div>
+              )}
               {toolCalls.map((toolCall: ToolCall) => {
+                const displayConfig = getToolDisplayConfig(toolCall.name);
+
+                // special 工具：保留原有逻辑
                 if (toolCall.name === "task") return null;
                 if (toolCall.name === A2UI_TOOL_NAME && toolCall.result) {
                   return (
@@ -140,6 +159,10 @@ export const ChatMessage = React.memo<ChatMessageProps>(
                     />
                   );
                 }
+
+                // hidden 工具：不渲染
+                if (displayConfig.strategy === "hidden") return null;
+
                 const toolCallGenUiComponent = ui?.find(
                   (u) => u.metadata?.tool_call_id === toolCall.id
                 );
@@ -149,6 +172,11 @@ export const ChatMessage = React.memo<ChatMessageProps>(
                   <ToolCallBox
                     key={toolCall.id}
                     toolCall={toolCall}
+                    displayConfig={
+                      displayConfig.strategy === "friendly"
+                        ? (displayConfig as FriendlyToolConfig)
+                        : undefined
+                    }
                     uiComponent={toolCallGenUiComponent}
                     stream={stream}
                     graphId={graphId}
@@ -180,18 +208,16 @@ export const ChatMessage = React.memo<ChatMessageProps>(
                   {isSubAgentExpanded(subAgent.id) && (
                     <div className="w-full max-w-full">
                       <div className="bg-surface border-border-light rounded-md border p-4">
-                        <h4 className="text-primary/70 mb-2 text-xs font-semibold uppercase tracking-wider">
-                          Input
+                        <h4 className="text-primary/70 mb-2 text-xs font-semibold tracking-wider">
+                          任务
                         </h4>
-                        <div className="mb-4">
-                          <MarkdownContent
-                            content={extractSubAgentContent(subAgent.input)}
-                          />
+                        <div className="mb-4 text-sm text-muted-foreground">
+                          {extractSubAgentContent(subAgent.input)}
                         </div>
                         {subAgent.output && (
                           <>
-                            <h4 className="text-primary/70 mb-2 text-xs font-semibold uppercase tracking-wider">
-                              Output
+                            <h4 className="text-primary/70 mb-2 text-xs font-semibold tracking-wider">
+                              结果
                             </h4>
                             <MarkdownContent
                               content={extractSubAgentContent(subAgent.output)}

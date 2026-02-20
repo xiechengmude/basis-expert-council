@@ -15,9 +15,12 @@ import { ToolCall, ActionRequest, ReviewConfig } from "@/app/types/types";
 import { cn } from "@/lib/utils";
 import { LoadExternalComponent } from "@langchain/langgraph-sdk/react-ui";
 import { ToolApprovalInterrupt } from "@/app/components/ToolApprovalInterrupt";
+import type { FriendlyToolConfig } from "@/app/config/toolDisplayConfig";
 
 interface ToolCallBoxProps {
   toolCall: ToolCall;
+  /** 友好展示配置（仅 friendly 工具传入） */
+  displayConfig?: FriendlyToolConfig;
   uiComponent?: any;
   stream?: any;
   graphId?: string;
@@ -30,6 +33,7 @@ interface ToolCallBoxProps {
 export const ToolCallBox = React.memo<ToolCallBoxProps>(
   ({
     toolCall,
+    displayConfig,
     uiComponent,
     stream,
     graphId,
@@ -38,8 +42,11 @@ export const ToolCallBox = React.memo<ToolCallBoxProps>(
     onResume,
     isLoading,
   }) => {
+    const isFriendly = !!displayConfig;
+
+    // friendly 工具默认折叠；GenUI / actionRequest 默认展开
     const [isExpanded, setIsExpanded] = useState(
-      () => !!uiComponent || !!actionRequest
+      () => !isFriendly && (!!uiComponent || !!actionRequest)
     );
     const [expandedArgs, setExpandedArgs] = useState<Record<string, boolean>>(
       {}
@@ -53,6 +60,13 @@ export const ToolCallBox = React.memo<ToolCallBoxProps>(
         status: toolCall.status || "completed",
       };
     }, [toolCall]);
+
+    // 友好展示：使用配置的中文名称和状态文案
+    const displayName = isFriendly
+      ? status === "pending"
+        ? displayConfig.pendingText
+        : displayConfig.label
+      : name;
 
     const statusIcon = useMemo(() => {
       switch (status) {
@@ -122,7 +136,7 @@ export const ToolCallBox = React.memo<ToolCallBoxProps>(
             <div className="flex items-center gap-2">
               {statusIcon}
               <span className="text-[15px] font-medium tracking-[-0.6px] text-foreground">
-                {name}
+                {displayName}
               </span>
             </div>
             {hasContent &&
@@ -162,7 +176,7 @@ export const ToolCallBox = React.memo<ToolCallBoxProps>(
                   isLoading={isLoading}
                 />
               </div>
-            ) : (
+            ) : isFriendly ? null : (
               <>
                 {Object.keys(args).length > 0 && (
                   <div className="mt-4">

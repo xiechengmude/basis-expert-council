@@ -90,16 +90,28 @@
     color: var(--primary);
   }
   .nav-logo {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #0f2b46 0%, #2563eb 100%);
+    border-radius: 11px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-weight: 800;
-    font-size: 0.9em;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+  }
+  .nav-logo svg { width: 22px; height: 22px; }
+  .nav-logo::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 0 11px 0 6px;
   }
   .nav-brand-text { font-weight: 700; font-size: 1.05em; }
   .nav-brand-sub { font-size: 0.7em; color: var(--text-light); font-weight: 500; }
@@ -618,6 +630,57 @@
   .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
   .footer a:hover { color: rgba(255,255,255,0.8); }
 
+  /* ===== Language Switcher ===== */
+  .lang-switcher {
+    position: relative;
+  }
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: white;
+    font-size: 0.82em;
+    font-weight: 500;
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn:hover { border-color: var(--primary-light); color: var(--primary); }
+  .lang-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    padding: 6px;
+    min-width: 150px;
+    display: none;
+    z-index: 1001;
+  }
+  .lang-dropdown.open { display: block; }
+  .lang-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    cursor: pointer;
+    color: var(--text-mid);
+    transition: all 0.15s;
+  }
+  .lang-option:hover { background: #f1f5f9; color: var(--primary); }
+  .lang-option.active { color: var(--primary-light); font-weight: 600; }
+  .lang-option .lang-code { font-size: 0.75em; color: var(--text-light); }
+  @media (max-width: 768px) {
+    .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1001; }
+  }
+
   /* ===== Scrollbar ===== */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
@@ -638,18 +701,31 @@
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#" class="nav-brand">
-      <div class="nav-logo">BP</div>
+      <div class="nav-logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
       <div>
         <div class="nav-brand-text">BasisPilot · 贝领</div>
         <div class="nav-brand-sub">by xDAN AI</div>
       </div>
     </a>
     <div class="nav-links">
-      <a href="#features" class="nav-link">功能</a>
-      <a href="#agents" class="nav-link">专家团队</a>
-      <a href="#pricing" class="nav-link">定价</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-      <a href="#cta" class="nav-cta">免费试用</a>
+      <a href="#features" class="nav-link" data-i18n="nav_features">功能</a>
+      <a href="#agents" class="nav-link" data-i18n="nav_agents">专家团队</a>
+      <a href="#pricing" class="nav-link" data-i18n="nav_pricing">定价</a>
+      <a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a>
+      <a href="#cta" class="nav-cta" data-i18n="nav_cta">免费试用</a>
+      <div class="lang-switcher">
+        <button class="lang-btn" onclick="toggleLangMenu()">🌐 <span id="currentLang">中文</span></button>
+        <div class="lang-dropdown" id="langDropdown">
+          <div class="lang-option active" onclick="setLang('zh-CN')">中文 <span class="lang-code">zh</span></div>
+          <div class="lang-option" onclick="setLang('en')">English <span class="lang-code">en</span></div>
+          <div class="lang-option" onclick="setLang('ja')">日本語 <span class="lang-code">ja</span></div>
+          <div class="lang-option" onclick="setLang('ko')">한국어 <span class="lang-code">ko</span></div>
+          <div class="lang-option" onclick="setLang('es')">Español <span class="lang-code">es</span></div>
+          <div class="lang-option" onclick="setLang('fr')">Français <span class="lang-code">fr</span></div>
+          <div class="lang-option" onclick="setLang('de')">Deutsch <span class="lang-code">de</span></div>
+          <div class="lang-option" onclick="setLang('ru')">Русский <span class="lang-code">ru</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -661,16 +737,16 @@
       <div>
         <div class="hero-badge">
           <span class="dot"></span>
-          xDAN AI · 新旦智能 · Expert Digital Workforce
+          <span data-i18n="hero_badge">不只辅导，是领航 — AI Navigates Every Step</span>
         </div>
-        <h1>Your AI <span class="accent">Co-Pilot</span><br>Through BASIS</h1>
+        <h1 data-i18n-html="hero_title">Your AI <span class="accent">Co-Pilot</span><br>Through BASIS</h1>
         <div class="tagline">BasisPilot · 贝领</div>
-        <p class="hero-desc">
+        <p class="hero-desc" data-i18n="hero_desc">
           BASIS 国际学校专属 AI 教育领航平台。6 位 AI 专家 Agent 协同，覆盖学科辅导、AP 备考、保级方案、升学规划全周期。
         </p>
         <div class="hero-actions">
-          <a href="#cta" class="btn btn-primary">免费学科测评</a>
-          <a href="#features" class="btn btn-ghost">了解更多</a>
+          <a href="#cta" class="btn btn-primary" data-i18n="hero_btn_assess">免费学科测评</a>
+          <a href="#features" class="btn btn-ghost" data-i18n="hero_btn_more">了解更多</a>
         </div>
       </div>
       <div class="hero-card">
@@ -680,8 +756,8 @@
           <div class="hero-card-dot" style="background:#10b981;"></div>
           <span style="margin-left:8px;">BasisPilot Chat</span>
         </div>
-        <div class="chat-msg chat-user">孩子 G9 数学跟不上，Benchmark 才考了 62%，怎么办？</div>
-        <div class="chat-msg chat-ai">
+        <div class="chat-msg chat-user" data-i18n="chat_user">孩子 G9 数学跟不上，Benchmark 才考了 62%，怎么办？</div>
+        <div class="chat-msg chat-ai" data-i18n-html="chat_ai">
           <div class="ai-label">BasisPilot · 贝领</div>
           G9 Benchmark 62% 已经在 <strong>D 区间</strong>，距离 Academic Probation 线很近。BASIS 的 G9 数学是 Pre-Calculus 水平，比普通美校快一年。<br><br>
           我建议分三步紧急干预：<br>
@@ -691,7 +767,7 @@
         </div>
         <div class="chat-msg chat-ai" style="max-width:50%;">
           <div class="typing-indicator"><span></span><span></span><span></span></div>
-          <span style="font-size:0.78em;opacity:0.5;margin-left:8px;">正在委派数学专家...</span>
+          <span style="font-size:0.78em;opacity:0.5;margin-left:8px;" data-i18n="chat_delegating">正在委派数学专家...</span>
         </div>
       </div>
     </div>
@@ -701,29 +777,29 @@
 <!-- ===== PAIN POINTS ===== -->
 <section class="section pain-section" id="pain">
   <div class="container text-center">
-    <div class="section-label">BASIS 学业现状</div>
-    <h2 class="section-title">为什么 BASIS 学生需要 AI 领航员？</h2>
-    <p class="section-desc mx-auto">课程超前 1-2 年 + 全英文授课 + 淘汰机制 = 85% 的家长在"偷偷补课"</p>
+    <div class="section-label" data-i18n="pain_label">BASIS 学业现状</div>
+    <h2 class="section-title" data-i18n="pain_title">为什么 BASIS 学生需要 AI 领航员？</h2>
+    <p class="section-desc mx-auto" data-i18n="pain_desc">课程超前 1-2 年 + 全英文授课 + 淘汰机制 = 85% 的家长在"偷偷补课"</p>
     <div class="pain-grid">
       <div class="pain-card fade-up">
         <div class="pain-number" style="color:var(--danger);">68%</div>
-        <div class="pain-label">首年 GPA 下降</div>
-        <div class="pain-sub">从其他学校转入后的第一年</div>
+        <div class="pain-label" data-i18n="pain_gpa">首年 GPA 下降</div>
+        <div class="pain-sub" data-i18n="pain_gpa_sub">从其他学校转入后的第一年</div>
       </div>
       <div class="pain-card fade-up" style="transition-delay:0.1s;">
         <div class="pain-number" style="color:var(--accent);">85%</div>
-        <div class="pain-label">家长在"偷偷补课"</div>
-        <div class="pain-sub">但 90% 机构只做入学备考</div>
+        <div class="pain-label" data-i18n="pain_tutor">家长在"偷偷补课"</div>
+        <div class="pain-sub" data-i18n="pain_tutor_sub">但 90% 机构只做入学备考</div>
       </div>
       <div class="pain-card fade-up" style="transition-delay:0.2s;">
         <div class="pain-number" style="color:var(--primary-light);">4.2h</div>
-        <div class="pain-label">日均课后学习时间</div>
-        <div class="pain-sub">是 IB 学生的 1.7 倍</div>
+        <div class="pain-label" data-i18n="pain_hours">日均课后学习时间</div>
+        <div class="pain-sub" data-i18n="pain_hours_sub">是 IB 学生的 1.7 倍</div>
       </div>
       <div class="pain-card fade-up" style="transition-delay:0.3s;">
         <div class="pain-number" style="color:var(--primary);">&lt;10%</div>
-        <div class="pain-label">热门校区录取率</div>
-        <div class="pain-sub">裸考上岸率不足 5%</div>
+        <div class="pain-label" data-i18n="pain_admit">热门校区录取率</div>
+        <div class="pain-sub" data-i18n="pain_admit_sub">裸考上岸率不足 5%</div>
       </div>
     </div>
   </div>
@@ -733,46 +809,46 @@
 <section class="section" id="features">
   <div class="container">
     <div class="text-center">
-      <div class="section-label">核心功能</div>
-      <h2 class="section-title">从入学到毕业，全程领航</h2>
-      <p class="section-desc mx-auto">不只是入学备考 — 我们做市面上几乎没人做的 <strong>BASIS 课程同步辅导</strong></p>
+      <div class="section-label" data-i18n="feat_label">核心功能</div>
+      <h2 class="section-title" data-i18n="feat_title">从入学到毕业，全程领航</h2>
+      <p class="section-desc mx-auto" data-i18n-html="feat_desc">不只是入学备考 — 我们做市面上几乎没人做的 <strong>BASIS 课程同步辅导</strong></p>
     </div>
     <div class="feature-grid">
       <div class="feature-card fade-up">
         <div class="feature-icon" style="background:#eff6ff;color:#2563eb;">📚</div>
-        <h3>学科辅导</h3>
-        <p>数学 / 科学 / 人文全科覆盖，对标 BASIS 课程进度，中英双语讲解。从 Pre-Algebra 到 AP Calculus BC。</p>
-        <span class="feature-tag" style="background:#eff6ff;color:#2563eb;">每日同步</span>
+        <h3 data-i18n="feat_tutor_h">学科辅导</h3>
+        <p data-i18n="feat_tutor_p">数学 / 科学 / 人文全科覆盖，对标 BASIS 课程进度，中英双语讲解。从 Pre-Algebra 到 AP Calculus BC。</p>
+        <span class="feature-tag" style="background:#eff6ff;color:#2563eb;" data-i18n="feat_tutor_tag">每日同步</span>
       </div>
       <div class="feature-card fade-up" style="transition-delay:0.1s;">
         <div class="feature-icon" style="background:#fef3c7;color:#d97706;">🎯</div>
-        <h3>AP 备考</h3>
-        <p>38 门 AP 全科策略。FRQ 写作训练、MCQ 解题技巧、考前冲刺计划。目标：5 分。</p>
-        <span class="feature-tag" style="background:#fef3c7;color:#d97706;">38 门 AP</span>
+        <h3 data-i18n="feat_ap_h">AP 备考</h3>
+        <p data-i18n="feat_ap_p">38 门 AP 全科策略。FRQ 写作训练、MCQ 解题技巧、考前冲刺计划。目标：5 分。</p>
+        <span class="feature-tag" style="background:#fef3c7;color:#d97706;" data-i18n="feat_ap_tag">38 门 AP</span>
       </div>
       <div class="feature-card fade-up" style="transition-delay:0.2s;">
         <div class="feature-icon" style="background:#fef2f2;color:#dc2626;">🆘</div>
-        <h3>保级方案</h3>
-        <p>Academic Probation 紧急恢复。GPA 危机评估、逐周恢复计划、学校沟通策略。</p>
-        <span class="feature-tag" style="background:#fef2f2;color:#dc2626;">紧急干预</span>
+        <h3 data-i18n="feat_prob_h">保级方案</h3>
+        <p data-i18n="feat_prob_p">Academic Probation 紧急恢复。GPA 危机评估、逐周恢复计划、学校沟通策略。</p>
+        <span class="feature-tag" style="background:#fef2f2;color:#dc2626;" data-i18n="feat_prob_tag">紧急干预</span>
       </div>
       <div class="feature-card fade-up">
         <div class="feature-icon" style="background:#f0fdf4;color:#16a34a;">📊</div>
-        <h3>成绩诊断</h3>
-        <p>基于 BASIS 评估标准的智能诊断。定位薄弱环节，生成个性化学习计划。</p>
-        <span class="feature-tag" style="background:#f0fdf4;color:#16a34a;">AI 驱动</span>
+        <h3 data-i18n="feat_diag_h">成绩诊断</h3>
+        <p data-i18n="feat_diag_p">基于 BASIS 评估标准的智能诊断。定位薄弱环节，生成个性化学习计划。</p>
+        <span class="feature-tag" style="background:#f0fdf4;color:#16a34a;" data-i18n="feat_diag_tag">AI 驱动</span>
       </div>
       <div class="feature-card fade-up" style="transition-delay:0.1s;">
         <div class="feature-icon" style="background:#faf5ff;color:#7c3aed;">📋</div>
-        <h3>升学规划</h3>
-        <p>AP 选课最优组合、GPA 管理策略、课外活动规划、大学申请时间线。</p>
-        <span class="feature-tag" style="background:#faf5ff;color:#7c3aed;">全周期</span>
+        <h3 data-i18n="feat_plan_h">升学规划</h3>
+        <p data-i18n="feat_plan_p">AP 选课最优组合、GPA 管理策略、课外活动规划、大学申请时间线。</p>
+        <span class="feature-tag" style="background:#faf5ff;color:#7c3aed;" data-i18n="feat_plan_tag">全周期</span>
       </div>
       <div class="feature-card fade-up" style="transition-delay:0.2s;">
         <div class="feature-icon" style="background:#ecfdf5;color:#059669;">🎒</div>
-        <h3>新生衔接</h3>
-        <p>入学前 3 个月准备方案。MAP 测试备考、学术英语强化、BASIS 课堂模拟适应。</p>
-        <span class="feature-tag" style="background:#ecfdf5;color:#059669;">入学必备</span>
+        <h3 data-i18n="feat_onb_h">新生衔接</h3>
+        <p data-i18n="feat_onb_p">入学前 3 个月准备方案。MAP 测试备考、学术英语强化、BASIS 课堂模拟适应。</p>
+        <span class="feature-tag" style="background:#ecfdf5;color:#059669;" data-i18n="feat_onb_tag">入学必备</span>
       </div>
     </div>
   </div>
@@ -782,16 +858,16 @@
 <section class="section agents-section" id="agents">
   <div class="container">
     <div class="text-center">
-      <div class="section-label">AI Expert Team</div>
-      <h2 class="section-title">6 位 AI 专家，协同领航</h2>
-      <p class="section-desc mx-auto">每位专家都是 BASIS 体系的深度垂直模型，不是通用 AI 套壳</p>
+      <div class="section-label" data-i18n="agent_label">AI Expert Team</div>
+      <h2 class="section-title" data-i18n="agent_title">6 位 AI 专家，协同领航</h2>
+      <p class="section-desc mx-auto" data-i18n="agent_desc">每位专家都是 BASIS 体系的深度垂直模型，不是通用 AI 套壳</p>
     </div>
     <div class="agent-grid">
       <div class="agent-card fade-up" style="border-top:4px solid #2563eb;">
         <div class="agent-avatar" style="background:#eff6ff;">🔢</div>
-        <h4>数学专家</h4>
+        <h4 data-i18n="ag_math_h">数学专家</h4>
         <div class="agent-en">Math Expert Agent</div>
-        <p>Pre-Algebra 到 AP Calculus BC / Statistics 全阶段。精通 TI-84 图形计算器教学。</p>
+        <p data-i18n="ag_math_p">Pre-Algebra 到 AP Calculus BC / Statistics 全阶段。精通 TI-84 图形计算器教学。</p>
         <div class="agent-tags">
           <span class="agent-tag">Algebra</span>
           <span class="agent-tag">Calculus</span>
@@ -801,9 +877,9 @@
       </div>
       <div class="agent-card fade-up" style="border-top:4px solid #059669;transition-delay:0.1s;">
         <div class="agent-avatar" style="background:#ecfdf5;">🔬</div>
-        <h4>科学专家</h4>
+        <h4 data-i18n="ag_sci_h">科学专家</h4>
         <div class="agent-en">Science Expert Agent</div>
-        <p>Physics / Chemistry / Biology 三科。Lab Report 写作、实验设计、AP Science 备考。</p>
+        <p data-i18n="ag_sci_p">Physics / Chemistry / Biology 三科。Lab Report 写作、实验设计、AP Science 备考。</p>
         <div class="agent-tags">
           <span class="agent-tag">Physics C</span>
           <span class="agent-tag">Chemistry</span>
@@ -813,9 +889,9 @@
       </div>
       <div class="agent-card fade-up" style="border-top:4px solid #7c3aed;transition-delay:0.2s;">
         <div class="agent-avatar" style="background:#faf5ff;">📝</div>
-        <h4>人文专家</h4>
+        <h4 data-i18n="ag_hum_h">人文专家</h4>
         <div class="agent-en">Humanities Expert Agent</div>
-        <p>ELA / History / Social Studies。Essay 写作、文学分析、DBQ/LEQ 应试技巧。</p>
+        <p data-i18n="ag_hum_p">ELA / History / Social Studies。Essay 写作、文学分析、DBQ/LEQ 应试技巧。</p>
         <div class="agent-tags">
           <span class="agent-tag">Essay Writing</span>
           <span class="agent-tag">AP US History</span>
@@ -824,9 +900,9 @@
       </div>
       <div class="agent-card fade-up" style="border-top:4px solid #d97706;">
         <div class="agent-avatar" style="background:#fef3c7;">📅</div>
-        <h4>课程规划顾问</h4>
+        <h4 data-i18n="ag_cur_h">课程规划顾问</h4>
         <div class="agent-en">Curriculum Advisor Agent</div>
-        <p>AP 选课组合优化、GPA 管理、升学时间线规划、课外活动建议。</p>
+        <p data-i18n="ag_cur_p">AP 选课组合优化、GPA 管理、升学时间线规划、课外活动建议。</p>
         <div class="agent-tags">
           <span class="agent-tag">AP 选课</span>
           <span class="agent-tag">GPA 管理</span>
@@ -835,9 +911,9 @@
       </div>
       <div class="agent-card fade-up" style="border-top:4px solid #dc2626;transition-delay:0.1s;">
         <div class="agent-avatar" style="background:#fef2f2;">🚨</div>
-        <h4>保级顾问</h4>
+        <h4 data-i18n="ag_pro_h">保级顾问</h4>
         <div class="agent-en">Probation Advisor Agent</div>
-        <p>Academic Probation 紧急恢复。GPA 危机评估、逐周恢复计划、学校沟通策略。</p>
+        <p data-i18n="ag_pro_p">Academic Probation 紧急恢复。GPA 危机评估、逐周恢复计划、学校沟通策略。</p>
         <div class="agent-tags">
           <span class="agent-tag">Probation</span>
           <span class="agent-tag">GPA 恢复</span>
@@ -846,9 +922,9 @@
       </div>
       <div class="agent-card fade-up" style="border-top:4px solid #0891b2;transition-delay:0.2s;">
         <div class="agent-avatar" style="background:#ecfeff;">💼</div>
-        <h4>商务顾问</h4>
+        <h4 data-i18n="ag_biz_h">商务顾问</h4>
         <div class="agent-en">Business Advisor Agent</div>
-        <p>市场分析、家长沟通、B 端合作策略。仅对内部运营团队开放。</p>
+        <p data-i18n="ag_biz_p">市场分析、家长沟通、B 端合作策略。仅对内部运营团队开放。</p>
         <div class="agent-tags">
           <span class="agent-tag">市场分析</span>
           <span class="agent-tag">销售转化</span>
@@ -863,29 +939,29 @@
 <section class="section how-section">
   <div class="container">
     <div class="text-center">
-      <div class="section-label">How it works</div>
-      <h2 class="section-title">4 步开始你的 AI 领航</h2>
+      <div class="section-label" data-i18n="how_label">How it works</div>
+      <h2 class="section-title" data-i18n="how_title">4 步开始你的 AI 领航</h2>
     </div>
     <div class="steps">
       <div class="step fade-up">
         <div class="step-num">1</div>
-        <h4>免费测评</h4>
-        <p>5 分钟学科诊断，定位 BASIS 课程中的薄弱环节和当前水平</p>
+        <h4 data-i18n="how_1_h">免费测评</h4>
+        <p data-i18n="how_1_p">5 分钟学科诊断，定位 BASIS 课程中的薄弱环节和当前水平</p>
       </div>
       <div class="step fade-up" style="transition-delay:0.1s;">
         <div class="step-num">2</div>
-        <h4>匹配专家</h4>
-        <p>AI 自动识别你的角色和需求，匹配最适合的专家 Agent</p>
+        <h4 data-i18n="how_2_h">匹配专家</h4>
+        <p data-i18n="how_2_p">AI 自动识别你的角色和需求，匹配最适合的专家 Agent</p>
       </div>
       <div class="step fade-up" style="transition-delay:0.2s;">
         <div class="step-num">3</div>
-        <h4>定制方案</h4>
-        <p>生成个性化学习计划，同步 BASIS 校内课程进度</p>
+        <h4 data-i18n="how_3_h">定制方案</h4>
+        <p data-i18n="how_3_p">生成个性化学习计划，同步 BASIS 校内课程进度</p>
       </div>
       <div class="step fade-up" style="transition-delay:0.3s;">
         <div class="step-num">4</div>
-        <h4>持续领航</h4>
-        <p>每日辅导 + 周报 + 考前冲刺，全程陪跑到升学</p>
+        <h4 data-i18n="how_4_h">持续领航</h4>
+        <p data-i18n="how_4_p">每日辅导 + 周报 + 考前冲刺，全程陪跑到升学</p>
       </div>
     </div>
   </div>
@@ -895,61 +971,61 @@
 <section class="section" id="pricing">
   <div class="container">
     <div class="text-center">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">选择你的领航计划</h2>
-      <p class="section-desc mx-auto">学费 30 万/年的 10-20%，确保这笔教育投资不打水漂</p>
+      <div class="section-label" data-i18n="price_label">Pricing</div>
+      <h2 class="section-title" data-i18n="price_title">选择你的领航计划</h2>
+      <p class="section-desc mx-auto" data-i18n="price_desc">学费 30 万/年的 10-20%，确保这笔教育投资不打水漂</p>
     </div>
     <div class="pricing-grid">
       <div class="price-card fade-up">
-        <div class="price-name">Free 体验版</div>
-        <div class="price-desc">快速了解 BasisPilot 的能力</div>
+        <div class="price-name" data-i18n="price_free_name">Free 体验版</div>
+        <div class="price-desc" data-i18n="price_free_desc">快速了解 BasisPilot 的能力</div>
         <div class="price-amount">
           <span class="currency">&#165;</span>0
           <span class="period">/ 永久</span>
         </div>
         <ul class="price-features">
-          <li>每日 5 次对话</li>
-          <li>基础学科问答</li>
-          <li>BASIS 体系知识库</li>
-          <li class="disabled">专家 Agent 委派</li>
-          <li class="disabled">个性化学习计划</li>
-          <li class="disabled">AP 备考专项</li>
+          <li data-i18n="price_free_f1">每日 5 次对话</li>
+          <li data-i18n="price_free_f2">基础学科问答</li>
+          <li data-i18n="price_free_f3">BASIS 体系知识库</li>
+          <li class="disabled" data-i18n="price_free_f4">专家 Agent 委派</li>
+          <li class="disabled" data-i18n="price_free_f5">个性化学习计划</li>
+          <li class="disabled" data-i18n="price_free_f6">AP 备考专项</li>
         </ul>
-        <a href="#" class="btn-price">免费开始</a>
+        <a href="#" class="btn-price" data-i18n="price_free_btn">免费开始</a>
       </div>
       <div class="price-card featured fade-up" style="transition-delay:0.1s;">
-        <div class="price-name">Premium 领航版</div>
-        <div class="price-desc">适合大多数 BASIS 家庭</div>
+        <div class="price-name" data-i18n="price_prem_name">Premium 领航版</div>
+        <div class="price-desc" data-i18n="price_prem_desc">适合大多数 BASIS 家庭</div>
         <div class="price-amount">
           <span class="currency">&#165;</span>299
           <span class="period">/ 月</span>
         </div>
         <ul class="price-features">
-          <li>无限对话</li>
-          <li>6 位专家 Agent 全部解锁</li>
-          <li>个性化学习计划</li>
-          <li>AP 备考全科覆盖</li>
-          <li>成绩诊断 + 周报</li>
-          <li class="disabled">1v1 保级方案</li>
+          <li data-i18n="price_prem_f1">无限对话</li>
+          <li data-i18n="price_prem_f2">6 位专家 Agent 全部解锁</li>
+          <li data-i18n="price_prem_f3">个性化学习计划</li>
+          <li data-i18n="price_prem_f4">AP 备考全科覆盖</li>
+          <li data-i18n="price_prem_f5">成绩诊断 + 周报</li>
+          <li class="disabled" data-i18n="price_prem_f6">1v1 保级方案</li>
         </ul>
-        <a href="#" class="btn-price featured">立即订阅</a>
+        <a href="#" class="btn-price featured" data-i18n="price_prem_btn">立即订阅</a>
       </div>
       <div class="price-card fade-up" style="transition-delay:0.2s;">
-        <div class="price-name">VIP 全托管</div>
-        <div class="price-desc">Academic Probation 紧急救援</div>
+        <div class="price-name" data-i18n="price_vip_name">VIP 全托管</div>
+        <div class="price-desc" data-i18n="price_vip_desc">Academic Probation 紧急救援</div>
         <div class="price-amount">
           <span class="currency">&#165;</span>999
           <span class="period">/ 月</span>
         </div>
         <ul class="price-features">
-          <li>Premium 全部功能</li>
-          <li>1v1 保级恢复方案</li>
-          <li>逐周 GPA 追踪</li>
-          <li>学校沟通策略指导</li>
-          <li>家长专属顾问通道</li>
-          <li>升学规划全程陪跑</li>
+          <li data-i18n="price_vip_f1">Premium 全部功能</li>
+          <li data-i18n="price_vip_f2">1v1 保级恢复方案</li>
+          <li data-i18n="price_vip_f3">逐周 GPA 追踪</li>
+          <li data-i18n="price_vip_f4">学校沟通策略指导</li>
+          <li data-i18n="price_vip_f5">家长专属顾问通道</li>
+          <li data-i18n="price_vip_f6">升学规划全程陪跑</li>
         </ul>
-        <a href="#" class="btn-price">联系我们</a>
+        <a href="#" class="btn-price" data-i18n="price_vip_btn">联系我们</a>
       </div>
     </div>
   </div>
@@ -959,29 +1035,29 @@
 <section class="section faq-section" id="faq">
   <div class="container">
     <div class="text-center">
-      <div class="section-label">FAQ</div>
-      <h2 class="section-title">常见问题</h2>
+      <div class="section-label" data-i18n="faq_label">FAQ</div>
+      <h2 class="section-title" data-i18n="faq_title">常见问题</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q">BasisPilot 和普通 AI 聊天（ChatGPT 等）有什么区别？</div>
-        <div class="faq-a">BasisPilot 是深度垂直于 BASIS 国际学校体系的专家系统，不是通用 AI。我们内置了 BASIS 完整的课程大纲、评估标准、教学进度、AP 选课策略等专业知识，并配备 6 位专属 AI 专家 Agent。通用 AI 不了解 BASIS 的 Academic Probation 机制、SET 教师制度、课程加速节奏等关键信息。</div>
+        <div class="faq-q" data-i18n="faq_q1">BasisPilot 和普通 AI 聊天（ChatGPT 等）有什么区别？</div>
+        <div class="faq-a" data-i18n="faq_a1">BasisPilot 是深度垂直于 BASIS 国际学校体系的专家系统，不是通用 AI。我们内置了 BASIS 完整的课程大纲、评估标准、教学进度、AP 选课策略等专业知识，并配备 6 位专属 AI 专家 Agent。通用 AI 不了解 BASIS 的 Academic Probation 机制、SET 教师制度、课程加速节奏等关键信息。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">能帮孩子写作业或代写 Essay 吗？</div>
-        <div class="faq-a">不能，也不会。BASIS 有严格的 Academic Integrity 零容忍政策，代写会导致直接 F 和纪律处分。BasisPilot 的定位是"教会你怎么做"，而不是"替你做"。我们会讲解概念、示范方法、提供练习指导，但绝不代劳。</div>
+        <div class="faq-q" data-i18n="faq_q2">能帮孩子写作业或代写 Essay 吗？</div>
+        <div class="faq-a" data-i18n="faq_a2">不能，也不会。BASIS 有严格的 Academic Integrity 零容忍政策，代写会导致直接 F 和纪律处分。BasisPilot 的定位是"教会你怎么做"，而不是"替你做"。我们会讲解概念、示范方法、提供练习指导，但绝不代劳。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">适合哪些年级的学生？</div>
-        <div class="faq-a">G1 到 G12 全学段覆盖。其中 G7-G12 是需求最大的阶段 —— G7 开始全面学科专家制，G9 开始 AP 课程，学业压力急剧增加。低年级（G1-G6）主要用于学术英语强化和衔接准备。</div>
+        <div class="faq-q" data-i18n="faq_q3">适合哪些年级的学生？</div>
+        <div class="faq-a" data-i18n="faq_a3">G1 到 G12 全学段覆盖。其中 G7-G12 是需求最大的阶段 —— G7 开始全面学科专家制，G9 开始 AP 课程，学业压力急剧增加。低年级（G1-G6）主要用于学术英语强化和衔接准备。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">AI 辅导能替代真人老师吗？</div>
-        <div class="faq-a">不能完全替代，但能解决最大痛点 —— 师资稀缺。能用英语教 BASIS 学科内容的合格辅导老师极度稀缺（培养周期 3-5 年），而 BasisPilot 可以 7×24 小时提供专业辅导。建议将 AI 辅导作为日常学习的主力工具，重要节点（如 Probation、升学申请）配合真人顾问。</div>
+        <div class="faq-q" data-i18n="faq_q4">AI 辅导能替代真人老师吗？</div>
+        <div class="faq-a" data-i18n="faq_a4">不能完全替代，但能解决最大痛点 —— 师资稀缺。能用英语教 BASIS 学科内容的合格辅导老师极度稀缺（培养周期 3-5 年），而 BasisPilot 可以 7×24 小时提供专业辅导。建议将 AI 辅导作为日常学习的主力工具，重要节点（如 Probation、升学申请）配合真人顾问。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">支持哪些 BASIS 校区？</div>
-        <div class="faq-a">全国所有 13 个 BASIS 校区，包括深圳（蛇口、福田、光明）、广州、杭州、惠州、南京、成都、武汉。2026 年北京和广州二期开学后同步覆盖。课程体系全国统一，因此 BasisPilot 的辅导内容适用于所有校区。</div>
+        <div class="faq-q" data-i18n="faq_q5">支持哪些 BASIS 校区？</div>
+        <div class="faq-a" data-i18n="faq_a5">全国所有 13 个 BASIS 校区，包括深圳（蛇口、福田、光明）、广州、杭州、惠州、南京、成都、武汉。2026 年北京和广州二期开学后同步覆盖。课程体系全国统一，因此 BasisPilot 的辅导内容适用于所有校区。</div>
       </div>
     </div>
   </div>
@@ -990,11 +1066,11 @@
 <!-- ===== CTA ===== -->
 <section class="cta-section" id="cta">
   <div class="container">
-    <h2>85% 的 BASIS 家长在偷偷补课<br>你的孩子有 AI 领航员了吗？</h2>
-    <p>免费学科测评，5 分钟了解孩子在 BASIS 的真实水平</p>
+    <h2 data-i18n-html="cta_title">85% 的 BASIS 家长在偷偷补课<br>你的孩子有 AI 领航员了吗？</h2>
+    <p data-i18n="cta_desc">免费学科测评，5 分钟了解孩子在 BASIS 的真实水平</p>
     <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-      <a href="#" class="btn btn-primary" style="font-size:1.05em;padding:16px 36px;">免费开始测评</a>
-      <a href="#" class="btn btn-ghost" style="font-size:1.05em;padding:16px 36px;">预约演示</a>
+      <a href="#" class="btn btn-primary" style="font-size:1.05em;padding:16px 36px;" data-i18n="cta_btn_start">免费开始测评</a>
+      <a href="#" class="btn btn-ghost" style="font-size:1.05em;padding:16px 36px;" data-i18n="cta_btn_demo">预约演示</a>
     </div>
   </div>
 </section>

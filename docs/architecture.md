@@ -110,6 +110,63 @@ graph.py:agent
               └─ general-purpose     通用 Agent (DeepAgents 内置)
 ```
 
+### Skills vs SubAgents — 调用机制对比
+
+Skills 和 SubAgents 是 DeepAgents 框架的两种核心能力扩展机制，调用方式完全不同：
+
+| | SkillsMiddleware | SubAgentMiddleware |
+|---|---|---|
+| **本质** | 知识注入（提示词） | 工具注册（tool_call） |
+| **注册方式** | 扫描 `skills/` 目录，将 name + description 注入 system prompt | 初始化时通过 `_build_task_tool()` 创建 `task` 工具 |
+| **触发方式** | 模型看到 prompt 后主动调用 `read_file("skills/.../SKILL.md")` | 模型输出 `task(subagent_type="...", description="...")` |
+| **执行方式** | 读取文本指令后，主 Agent 自己按指令执行 | 启动独立子 Agent graph，有自己的消息历史和工具 |
+| **独立上下文** | 无 — 共享主 Agent 上下文 | 有 — 子 Agent 有独立的对话历史 |
+| **适合场景** | 模板、流程指引、知识参考、格式规范 | 需要独立推理的专业领域任务 |
+
+#### SkillsMiddleware 执行流程
+
+```
+1. before_agent    扫描 skills/ 目录，加载所有 SKILL.md 的 frontmatter
+                   ↓
+2. wrap_model_call 每次调用 LLM 前，往 system prompt 注入技能摘要:
+                   "Available Skills:
+                    - probation-rescue: Academic Probation 保级恢复方案
+                      -> Read /app/skills/probation-rescue/SKILL.md for full instructions
+                    - student-assessment: 学生水平评估
+                      -> Read /app/skills/student-assessment/SKILL.md for full instructions
+                    ..."
+                   ↓
+3. 模型自行决定    看到 prompt 后，如果判断相关，调用 read_file() 读取完整 SKILL.md
+```
+
+#### SubAgentMiddleware 执行流程
+
+```
+1. __init__        _build_task_tool() 创建 task 工具 → self.tools = [task_tool]
+                   ↓
+2. wrap_model_call 往 system prompt 注入子 Agent 列表和使用说明
+                   ↓
+3. 模型调用 task() {"name":"task", "args":{"subagent_type":"probation-advisor", "description":"..."}}
+                   ↓
+4. ToolNode 执行   启动子 Agent graph → 子 Agent 独立运行(有自己的 middleware 栈) → 返回结果
+```
+
+#### 典型协作模式
+
+实际执行中，两者经常配合使用：
+
+```
+用户: "孩子 GPA 1.8 面临 Academic Probation，怎么办？"
+  ↓
+Lead Agent 第 1 步: read_file("/app/skills/probation-rescue/SKILL.md")  ← Skills
+  → 获取危机评估模板、恢复计划框架等知识
+  ↓
+Lead Agent 第 2 步: task(subagent_type="probation-advisor", ...)         ← SubAgent
+  → 分派给保级专家独立分析，生成完整方案
+  ↓
+Lead Agent 第 3 步: 汇总子 Agent 结果，结合 Skill 模板，返回最终回复
+```
+
 ### Skills (11 个)
 
 ```
