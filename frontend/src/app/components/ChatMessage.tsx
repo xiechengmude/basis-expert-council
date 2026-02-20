@@ -22,7 +22,152 @@ import { cn } from "@/lib/utils";
 import {
   getToolDisplayConfig,
   type FriendlyToolConfig,
+  type HiddenToolConfig,
 } from "@/app/config/toolDisplayConfig";
+
+// ---------------------------------------------------------------------------
+// 聚合的 Hidden 工具思考指示器 + 可见工具渲染
+// ---------------------------------------------------------------------------
+
+interface HiddenToolsAndVisibleToolsProps {
+  toolCalls: ToolCall[];
+  ui?: any[];
+  stream?: any;
+  graphId?: string;
+  actionRequestsMap?: Map<string, ActionRequest>;
+  reviewConfigsMap?: Map<string, ReviewConfig>;
+  onResumeInterrupt?: (value: any) => void;
+  onA2UIAction?: (action: UserAction) => void;
+  isLoading?: boolean;
+}
+
+function HiddenToolsAndVisibleTools({
+  toolCalls,
+  ui,
+  stream,
+  graphId,
+  actionRequestsMap,
+  reviewConfigsMap,
+  onResumeInterrupt,
+  onA2UIAction,
+  isLoading,
+}: HiddenToolsAndVisibleToolsProps) {
+  const [thinkingExpanded, setThinkingExpanded] = useState(false);
+
+  // 分离 hidden 工具和可见工具
+  const hiddenTools = useMemo(() => {
+    return toolCalls
+      .map((tc) => ({ tc, cfg: getToolDisplayConfig(tc.name) }))
+      .filter(({ cfg }) => cfg.strategy === "hidden");
+  }, [toolCalls]);
+
+  const hasPending = hiddenTools.some(({ tc }) => tc.status === "pending");
+  const hasHidden = hiddenTools.length > 0;
+
+  // 去重显示标签（同名工具只显示一次）
+  const hiddenLabels = useMemo(() => {
+    const seen = new Set<string>();
+    return hiddenTools
+      .map(({ tc, cfg }) => (cfg as HiddenToolConfig).label ?? tc.name)
+      .filter((label) => {
+        if (seen.has(label)) return false;
+        seen.add(label);
+        return true;
+      });
+  }, [hiddenTools]);
+
+  return (
+    <div className="mt-4 flex w-full flex-col">
+      {/* 聚合思考指示器：持久显示 */}
+      {hasHidden && (
+        <div className="mb-1 overflow-hidden rounded-lg transition-colors duration-200 hover:bg-accent">
+          <button
+            onClick={() => setThinkingExpanded((p) => !p)}
+            className="flex w-full items-center gap-2 px-2 py-2 text-left"
+          >
+            {hasPending ? (
+              <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-brand-600" />
+            ) : (
+              <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
+            )}
+            <span className="text-sm text-muted-foreground">
+              {hasPending ? "正在准备专业内容..." : "已准备专业内容"}
+            </span>
+            <svg
+              className={cn(
+                "ml-auto h-3.5 w-3.5 shrink-0 text-muted-foreground transition-transform duration-200",
+                thinkingExpanded && "rotate-180"
+              )}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {thinkingExpanded && (
+            <div className="flex flex-wrap gap-2 px-3 pb-3">
+              {hiddenLabels.map((label) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+      {/* 可见工具（friendly / special） */}
+      {toolCalls.map((toolCall: ToolCall) => {
+        const displayConfig = getToolDisplayConfig(toolCall.name);
+
+        // special 工具：保留原有逻辑
+        if (toolCall.name === "task") return null;
+        if (toolCall.name === A2UI_TOOL_NAME && toolCall.result) {
+          return (
+            <A2UISurface
+              key={toolCall.id}
+              jsonl={toolCall.result}
+              onAction={onA2UIAction}
+            />
+          );
+        }
+
+        // hidden 工具：已在上方聚合渲染
+        if (displayConfig.strategy === "hidden") return null;
+
+        const toolCallGenUiComponent = ui?.find(
+          (u) => u.metadata?.tool_call_id === toolCall.id
+        );
+        const actionRequest = actionRequestsMap?.get(toolCall.name);
+        const reviewConfig = reviewConfigsMap?.get(toolCall.name);
+        return (
+          <ToolCallBox
+            key={toolCall.id}
+            toolCall={toolCall}
+            displayConfig={
+              displayConfig.strategy === "friendly"
+                ? (displayConfig as FriendlyToolConfig)
+                : undefined
+            }
+            uiComponent={toolCallGenUiComponent}
+            stream={stream}
+            graphId={graphId}
+            actionRequest={actionRequest}
+            reviewConfig={reviewConfig}
+            onResume={onResumeInterrupt}
+            isLoading={isLoading}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 
 interface ChatMessageProps {
   message: Message;
@@ -132,62 +277,17 @@ export const ChatMessage = React.memo<ChatMessageProps>(
             </div>
           )}
           {hasToolCalls && (
-            <div className="mt-4 flex w-full flex-col">
-              {/* 思考指示器：当有 pending 的 hidden 工具时显示 */}
-              {toolCalls.some((tc) => {
-                const cfg = getToolDisplayConfig(tc.name);
-                return cfg.strategy === "hidden" && tc.status === "pending";
-              }) && (
-                <div className="flex items-center gap-2 px-2 py-2">
-                  <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-brand-600" />
-                  <span className="text-sm text-muted-foreground">
-                    正在准备专业内容...
-                  </span>
-                </div>
-              )}
-              {toolCalls.map((toolCall: ToolCall) => {
-                const displayConfig = getToolDisplayConfig(toolCall.name);
-
-                // special 工具：保留原有逻辑
-                if (toolCall.name === "task") return null;
-                if (toolCall.name === A2UI_TOOL_NAME && toolCall.result) {
-                  return (
-                    <A2UISurface
-                      key={toolCall.id}
-                      jsonl={toolCall.result}
-                      onAction={onA2UIAction}
-                    />
-                  );
-                }
-
-                // hidden 工具：不渲染
-                if (displayConfig.strategy === "hidden") return null;
-
-                const toolCallGenUiComponent = ui?.find(
-                  (u) => u.metadata?.tool_call_id === toolCall.id
-                );
-                const actionRequest = actionRequestsMap?.get(toolCall.name);
-                const reviewConfig = reviewConfigsMap?.get(toolCall.name);
-                return (
-                  <ToolCallBox
-                    key={toolCall.id}
-                    toolCall={toolCall}
-                    displayConfig={
-                      displayConfig.strategy === "friendly"
-                        ? (displayConfig as FriendlyToolConfig)
-                        : undefined
-                    }
-                    uiComponent={toolCallGenUiComponent}
-                    stream={stream}
-                    graphId={graphId}
-                    actionRequest={actionRequest}
-                    reviewConfig={reviewConfig}
-                    onResume={onResumeInterrupt}
-                    isLoading={isLoading}
-                  />
-                );
-              })}
-            </div>
+            <HiddenToolsAndVisibleTools
+              toolCalls={toolCalls}
+              ui={ui}
+              stream={stream}
+              graphId={graphId}
+              actionRequestsMap={actionRequestsMap}
+              reviewConfigsMap={reviewConfigsMap}
+              onResumeInterrupt={onResumeInterrupt}
+              onA2UIAction={onA2UIAction}
+              isLoading={isLoading}
+            />
           )}
           {!isUser && subAgents.length > 0 && (
             <div className="flex w-fit max-w-full flex-col gap-4">

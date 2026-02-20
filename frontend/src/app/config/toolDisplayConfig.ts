@@ -29,6 +29,8 @@ export interface FriendlyToolConfig {
 
 export interface HiddenToolConfig {
   strategy: "hidden";
+  /** 友好标签，展开时显示（如"查阅资料"） */
+  label?: string;
 }
 
 export interface SpecialToolConfig {
@@ -49,14 +51,14 @@ const TOOL_DISPLAY_MAP: Record<string, ToolDisplayConfig> = {
   task: { strategy: "special" },
   a2ui_render: { strategy: "special" },
 
-  // --- 框架内部工具（完全隐藏） ---
-  read_file: { strategy: "hidden" },
-  list_files: { strategy: "hidden" },
-  search: { strategy: "hidden" },
-  write_file: { strategy: "hidden" },
-  execute_command: { strategy: "hidden" },
-  file_search: { strategy: "hidden" },
-  code_interpreter: { strategy: "hidden" },
+  // --- 框架内部工具（聚合为思考指示器） ---
+  read_file: { strategy: "hidden", label: "查阅资料" },
+  list_files: { strategy: "hidden", label: "浏览目录" },
+  search: { strategy: "hidden", label: "搜索内容" },
+  write_file: { strategy: "hidden", label: "整理内容" },
+  execute_command: { strategy: "hidden", label: "处理数据" },
+  file_search: { strategy: "hidden", label: "搜索资料" },
+  code_interpreter: { strategy: "hidden", label: "分析计算" },
 
   // --- 记忆工具（友好展示） ---
   remember_fact: {
