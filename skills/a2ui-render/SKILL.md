@@ -1,6 +1,18 @@
+---
+name: a2ui-render
+description: "A2UI 交互组件渲染。当需要展示交互式 UI 组件（选择题、测验卡片、进度仪表盘、学习清单、课程规划表、对比表等）时使用此 skill 生成 A2UI JSONL，并通过 a2ui_render 工具输出。"
+license: MIT
+compatibility: "Deep Agents CLI"
+metadata:
+  author: "basis-expert-council"
+  version: "1.0"
+  category: "ui-rendering"
+allowed-tools: "a2ui_render"
+---
+
 # a2ui-render
 
-When the user's question would benefit from an interactive UI component (quiz, multiple choice, progress dashboard, course planner, comparison table, etc.), use this skill to generate A2UI JSONL.
+When the user's question would benefit from an interactive UI component (quiz, multiple choice, progress dashboard, course planner, comparison table, etc.), use this skill to generate A2UI JSONL and output it via the `a2ui_render` tool.
 
 ## Output Format
 

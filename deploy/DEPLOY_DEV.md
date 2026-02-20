@@ -10,23 +10,23 @@
 ## 服务架构
 
 ```
-┌─────────────────────────────────────────────────┐
-│                  basis-network                   │
-│                                                  │
-│  ┌──────────────┐    ┌──────────────────────┐   │
-│  │ basis-frontend│    │    basis-agent        │   │
-│  │  (Next.js)   │───>│  (langgraph up)       │   │
-│  │  :8015       │    │  :5095                │   │
-│  └──────────────┘    └──────┬───────┬────────┘   │
-│                             │       │            │
-│                    ┌────────┘       └────────┐   │
-│                    │                         │   │
-│              ┌─────┴──────┐          ┌───────┴─┐ │
-│              │basis-postgres│          │basis-redis│
-│              │  (PG 16)    │          │ (Redis 7)│ │
-│              │  :5436      │          │  :6395   │ │
-│              └─────────────┘          └──────────┘ │
-└─────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│                        basis-network                          │
+│                                                               │
+│  ┌──────────────┐  ┌──────────────────┐  ┌──────────────┐   │
+│  │basis-frontend │  │   basis-agent    │  │  basis-api    │   │
+│  │  (Next.js)   │─>│ (langgraph up)   │  │  (FastAPI)    │   │
+│  │  :8015       │  │  :5095           │  │  :5096        │   │
+│  └──────────────┘  └───┬────┬────┬────┘  └──────┬────────┘   │
+│                        │    │    │               │            │
+│              ┌─────────┘    │    └────────┐      │            │
+│              │              │             │      │            │
+│        ┌─────┴──────┐ ┌────┴─────┐ ┌─────┴────┐ │            │
+│        │basis-postgres│ │basis-redis│ │basis-qdrant│<┘           │
+│        │  (PG 16)    │ │ (Redis 7)│ │ (Qdrant) │             │
+│        │  :5436      │ │  :6395   │ │  :6333   │             │
+│        └─────────────┘ └──────────┘ └──────────┘             │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ## 日常代码更新 (最常用)
@@ -101,12 +101,22 @@ curl http://localhost:8015
 
 ### 方式 B: Docker 全栈 (模拟生产环境)
 
+> **重要**: 必须指定 `--env-file .env`，否则 Docker Compose 读不到项目根目录的环境变量
+> （compose 文件在 `deploy/` 子目录，默认 `.env` 查找路径不对），
+> 会导致 `LANGSMITH_API_KEY` 等关键变量为空，Agent 启动失败（License verification failed）。
+
 ```bash
-# 启动全部 4 个容器
-docker compose -f deploy/docker-compose.local.yml up -d --build
+# 启动全部 6 个容器（postgres, redis, qdrant, agent, api, frontend）
+docker compose -f deploy/docker-compose.local.yml --env-file .env up -d --build
 
 # 查看日志
 docker compose -f deploy/docker-compose.local.yml logs -f basis-agent
+
+# 仅重建 Agent
+docker compose -f deploy/docker-compose.local.yml --env-file .env up -d --build basis-agent
+
+# 仅重建 Frontend
+docker compose -f deploy/docker-compose.local.yml --env-file .env up -d --build basis-frontend
 
 # 停止
 docker compose -f deploy/docker-compose.local.yml down
@@ -167,7 +177,19 @@ docker exec basis-postgres psql -U postgres -d langgraph -c "SELECT COUNT(*) FRO
 | `OPENAI_BASE_URL` | LLM API Gateway | `http://150.109.16.195:8600/v1` |
 | `BASIS_LEAD_MODEL` | 主智能体模型 | `openai:z-ai/glm-5` |
 | `BASIS_SUBAGENT_MODEL` | 子智能体默认模型 | `openai:minimax/minimax-m2.5` |
-| `LANGSMITH_API_KEY` | LangSmith API Key (必须) | `lsv2_pt_xxx` |
+| `LANGSMITH_API_KEY` | LangSmith API Key (**必须**，Agent 启动依赖) | `lsv2_pt_xxx` |
 | `LANGCHAIN_TRACING_V2` | 启用追踪 | `true` |
 | `LANGFUSE_SECRET_KEY` | Langfuse Secret | `sk-lf-xxx` |
 | `LANGFUSE_PUBLIC_KEY` | Langfuse Public | `pk-lf-xxx` |
+| `MEM0_LLM_MODEL` | Mem0 记忆提取模型 | `Pro/deepseek-ai/DeepSeek-V3.2` |
+| `MEM0_EMBEDDING_MODEL` | Mem0 向量化模型 | `Qwen/Qwen3-Embedding-4B` |
+| `EMBEDDING_API_KEY` | Embedding API Key（默认同 OPENAI_API_KEY） | `sk-xxx` |
+| `BASIS_JWT_SECRET` | Business API JWT 签名密钥 | `basis-local-dev-secret` |
+
+### 常见问题
+
+| 现象 | 原因 | 解决 |
+|------|------|------|
+| Agent 启动报 `License verification failed` | `LANGSMITH_API_KEY` 为空 | 确认 `.env` 中有该变量，且启动命令加了 `--env-file .env` |
+| Frontend 显示 `unhealthy` 但可访问 | wget healthcheck 偶尔超时 | 正常现象，不影响使用 |
+| Agent 容器反复重启 | 查看 `docker logs basisPilot-agent` | 通常是环境变量缺失或依赖服务未就绪 |

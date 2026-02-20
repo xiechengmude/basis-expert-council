@@ -1,0 +1,27 @@
+[
+  {
+    "name": "数学选择题",
+    "elapsed": 26.9,
+    "total_messages": 6,
+    "a2ui_tool_calls": 1,
+    "a2ui_tool_results": 1,
+    "validation": {
+      "valid": true,
+      "parsed_count": 6,
+      "has_begin_rendering": true,
+      "has_surface_update": true,
+      "component_count": 6,
+      "component_types": [
+        "Button",
+        "Card",
+        "MultipleChoice",
+        "Text"
+      ],
+      "surface_ids": [
+        "quadratic-quiz-1"
+      ],
+      "errors": []
+    },
+    "status": "pass"
+  }
+]

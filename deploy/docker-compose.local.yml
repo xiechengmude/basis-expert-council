@@ -3,7 +3,7 @@
 # ==============================================================================
 #
 # Usage:
-#   docker compose -f deploy/docker-compose.local.yml up -d --build
+#   docker compose -f deploy/docker-compose.local.yml --env-file .env up -d --build
 #
 # 访问:
 #   LangGraph API:    http://localhost:5095
