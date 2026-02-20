@@ -120,7 +120,8 @@ function HomePageInner({
       <div className="flex h-screen flex-col">
         <header className="flex h-16 items-center justify-between border-b border-border px-4 sm:px-6">
           <div className="flex items-center gap-3">
-            <h1 className="text-lg font-semibold sm:text-xl">BASIS 教育专家</h1>
+            <img src="/logo-mark.svg" alt="BasisPilot" className="h-7 w-7" />
+            <h1 className="text-lg font-semibold sm:text-xl">贝领</h1>
             {!sidebar && (
               <Button
                 variant="ghost"
@@ -283,7 +284,8 @@ function HomePageContent() {
         />
         <div className="flex h-screen items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold">BASIS 教育专家</h1>
+            <img src="/logo-mark.svg" alt="BasisPilot" className="mx-auto mb-3 h-10 w-10" />
+            <h1 className="text-2xl font-bold">贝领</h1>
             <p className="mt-2 text-muted-foreground">
               请配置后端连接以开始使用
             </p>
