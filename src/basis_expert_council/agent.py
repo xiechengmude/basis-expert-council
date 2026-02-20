@@ -25,6 +25,7 @@ SCIENCE_MODEL = os.getenv("BASIS_SCIENCE_MODEL", SUBAGENT_MODEL)
 HUMANITIES_MODEL = os.getenv("BASIS_HUMANITIES_MODEL", SUBAGENT_MODEL)
 CURRICULUM_MODEL = os.getenv("BASIS_CURRICULUM_MODEL", SUBAGENT_MODEL)
 BUSINESS_MODEL = os.getenv("BASIS_BUSINESS_MODEL", SUBAGENT_MODEL)
+PROBATION_MODEL = os.getenv("BASIS_PROBATION_MODEL", SUBAGENT_MODEL)
 
 # ---------------------------------------------------------------------------
 # Subagent 定义
@@ -88,6 +89,17 @@ def _load_subagents():
                 encoding="utf-8"
             ),
             "model": BUSINESS_MODEL,
+        },
+        {
+            "name": "probation-advisor",
+            "description": (
+                "Academic Probation 保级专家。处理 GPA 危机评估、学科优先级排序、"
+                "逐周恢复计划、学校沟通策略、Academic Probation 保级方案制定等紧急学术问题。"
+            ),
+            "system_prompt": (PROJECT_ROOT / "agents" / "probation-advisor" / "AGENTS.md").read_text(
+                encoding="utf-8"
+            ),
+            "model": PROBATION_MODEL,
         },
     ]
 

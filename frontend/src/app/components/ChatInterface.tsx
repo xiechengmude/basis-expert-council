@@ -18,6 +18,7 @@ import {
   FileIcon,
 } from "lucide-react";
 import { ChatMessage } from "@/app/components/ChatMessage";
+import { WelcomeScreen } from "./WelcomeScreen";
 import type {
   TodoItem,
   ToolCall,
@@ -255,6 +256,11 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
             <div className="flex items-center justify-center p-8">
               <p className="text-muted-foreground">Loading...</p>
             </div>
+          ) : processedMessages.length === 0 ? (
+            <WelcomeScreen
+              onSendMessage={sendMessage}
+              disabled={submitDisabled}
+            />
           ) : (
             <>
               {processedMessages.map((data, index) => {
