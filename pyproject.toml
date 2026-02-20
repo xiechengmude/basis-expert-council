@@ -1,0 +1,43 @@
+[project]
+name = "basis-expert-council"
+version = "0.1.0"
+description = "贝赛思(BASIS)教育体系专家智囊团 AI Agent — 基于 DeepAgents/LangGraph 架构"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "xDAN-AI" },
+]
+keywords = ["education", "BASIS", "AI", "agent", "LangGraph", "tutoring", "AP"]
+
+dependencies = [
+    "deepagents>=0.1.0",
+    "langchain>=0.3.0",
+    "langchain-anthropic>=0.3.0",
+    "langgraph>=0.4.0",
+    "anthropic>=0.40.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8.0",
+]
+
+[project.scripts]
+basis-expert = "basis_expert_council.agent:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/basis_expert_council"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
