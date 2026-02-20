@@ -10,6 +10,9 @@ import type {
   ActionRequest,
   ReviewConfig,
 } from "@/app/types/types";
+import { A2UI_TOOL_NAME } from "@/app/types/types";
+import { A2UISurface } from "@/app/a2ui";
+import type { UserAction } from "@/app/a2ui";
 import { Message } from "@langchain/langgraph-sdk";
 import {
   extractSubAgentContent,
@@ -26,6 +29,7 @@ interface ChatMessageProps {
   ui?: any[];
   stream?: any;
   onResumeInterrupt?: (value: any) => void;
+  onA2UIAction?: (action: UserAction) => void;
   graphId?: string;
 }
 
@@ -39,6 +43,7 @@ export const ChatMessage = React.memo<ChatMessageProps>(
     ui,
     stream,
     onResumeInterrupt,
+    onA2UIAction,
     graphId,
   }) => {
     const isUser = message.type === "human";
@@ -126,6 +131,15 @@ export const ChatMessage = React.memo<ChatMessageProps>(
             <div className="mt-4 flex w-full flex-col">
               {toolCalls.map((toolCall: ToolCall) => {
                 if (toolCall.name === "task") return null;
+                if (toolCall.name === A2UI_TOOL_NAME && toolCall.result) {
+                  return (
+                    <A2UISurface
+                      key={toolCall.id}
+                      jsonl={toolCall.result}
+                      onAction={onA2UIAction}
+                    />
+                  );
+                }
                 const toolCallGenUiComponent = ui?.find(
                   (u) => u.metadata?.tool_call_id === toolCall.id
                 );

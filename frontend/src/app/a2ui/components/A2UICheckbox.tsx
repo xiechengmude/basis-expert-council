@@ -1,0 +1,46 @@
+"use client";
+
+import React, { useCallback } from "react";
+import type { CheckboxNode } from "../types";
+import { useA2UI } from "../context";
+
+export const A2UICheckbox: React.FC<{ node: CheckboxNode }> = ({ node }) => {
+  const { processor, surfaceId } = useA2UI();
+  const label = processor.resolveStringValue(
+    surfaceId,
+    node.properties.label,
+    node.dataContextPath
+  );
+
+  const valueDef = node.properties.value;
+  let checked = valueDef?.literalBoolean ?? false;
+  if (valueDef?.path) {
+    const resolved = processor.getData(
+      surfaceId,
+      processor.resolvePath(valueDef.path, node.dataContextPath)
+    );
+    if (typeof resolved === "boolean") checked = resolved;
+  }
+
+  const handleChange = useCallback(() => {
+    if (valueDef?.path) {
+      processor.setData(
+        surfaceId,
+        processor.resolvePath(valueDef.path, node.dataContextPath),
+        !checked
+      );
+    }
+  }, [processor, surfaceId, valueDef, node.dataContextPath, checked]);
+
+  return (
+    <label className="flex cursor-pointer items-center gap-2 py-1">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={handleChange}
+        className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+      />
+      <span className="text-sm text-primary">{label}</span>
+    </label>
+  );
+};

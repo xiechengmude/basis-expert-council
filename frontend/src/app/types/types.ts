@@ -55,3 +55,5 @@ export interface ToolApprovalInterruptData {
   action_requests: ActionRequest[];
   review_configs?: ReviewConfig[];
 }
+
+export const A2UI_TOOL_NAME = "a2ui_render";

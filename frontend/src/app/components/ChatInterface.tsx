@@ -25,6 +25,7 @@ import type {
   ActionRequest,
   ReviewConfig,
 } from "@/app/types/types";
+import type { UserAction } from "@/app/a2ui";
 import { Assistant, Message } from "@langchain/langgraph-sdk";
 import { extractStringFromMessageContent } from "@/app/utils/utils";
 import { useChatContext } from "@/providers/ChatProvider";
@@ -84,6 +85,15 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
     stopStream,
     resumeInterrupt,
   } = useChatContext();
+
+  const handleA2UIAction = useCallback(
+    (action: UserAction) => {
+      sendMessage(
+        JSON.stringify({ type: "a2ui_action", ...action })
+      );
+    },
+    [sendMessage]
+  );
 
   const submitDisabled = isLoading || !assistant;
 
@@ -283,6 +293,7 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                     ui={messageUi}
                     stream={stream}
                     onResumeInterrupt={resumeInterrupt}
+                    onA2UIAction={handleA2UIAction}
                     graphId={assistant?.graph_id}
                   />
                 );
