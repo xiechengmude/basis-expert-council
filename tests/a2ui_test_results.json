@@ -11,22 +11,22 @@
       "expected_types": true,
       "processor_root_ok": true
     },
-    "elapsed": 11.9,
-    "tokens": 5626,
+    "elapsed": 48.1,
+    "tokens": 5766,
     "validation": {
       "valid": true,
       "errors": [],
       "stats": {
-        "total_lines": 4,
-        "parsed": 4,
+        "total_lines": 5,
+        "parsed": 5,
         "surfaces": [
           "quadratic-quiz-1"
         ],
         "component_types": [
           "Button",
+          "Text",
           "MultipleChoice",
-          "Card",
-          "Text"
+          "Card"
         ],
         "components": 6
       }
@@ -41,11 +41,11 @@
           "componentCount": 6,
           "componentIds": [
             "card-1",
-            "q-title",
-            "q-text",
-            "q-options",
-            "q-submit-text",
-            "q-submit"
+            "title",
+            "question",
+            "options",
+            "submit-text",
+            "submit-btn"
           ]
         }
       ]
@@ -54,50 +54,54 @@
   {
     "name": "学习进度仪表盘",
     "prompt": "请为一个 BASIS G10 学生生成学习进度仪表盘。使用 A2UI 协议输出：一个大标题 (Text h2)，然后一行 (Row) 包含三个卡片 (Card)，分别展示数学 85 分、科学 72 分、人文 91 分。每个卡片包含科目名称 (Text h4) 和分数 (Text body)。",
-    "status": "partial",
+    "status": "pass",
     "checks": {
       "jsonl_parse": true,
       "has_begin_rendering": true,
       "has_surface_update": true,
-      "min_components": false,
+      "min_components": true,
       "expected_types": true,
-      "processor_root_ok": false
+      "processor_root_ok": true
     },
-    "elapsed": 11.9,
-    "tokens": 5843,
+    "elapsed": 39.0,
+    "tokens": 6190,
     "validation": {
-      "valid": false,
-      "errors": [
-        "Object 2: Unparseable JSON at line 2",
-        "Object 3: Unparseable JSON at line 3"
-      ],
+      "valid": true,
+      "errors": [],
       "stats": {
         "total_lines": 4,
-        "parsed": 2,
+        "parsed": 4,
         "surfaces": [
-          "dashboard-1"
+          "dashboard-g10"
         ],
         "component_types": [
+          "Card",
+          "Row",
           "Text"
         ],
-        "components": 6
+        "components": 11
       }
     },
     "processor": {
       "surfaceCount": 1,
       "surfaces": [
         {
-          "id": "dashboard-1",
-          "rootComponentId": "title-row",
-          "rootExists": false,
-          "componentCount": 6,
+          "id": "dashboard-g10",
+          "rootComponentId": "title",
+          "rootExists": true,
+          "componentCount": 11,
           "componentIds": [
+            "title",
+            "row-1",
+            "card-math",
+            "card-sci",
+            "card-hum",
             "math-title",
             "math-score",
-            "science-title",
-            "science-score",
-            "humanities-title",
-            "humanities-score"
+            "sci-title",
+            "sci-score",
+            "hum-title",
+            "hum-score"
           ]
         }
       ]
@@ -115,8 +119,8 @@
       "expected_types": true,
       "processor_root_ok": true
     },
-    "elapsed": 10.2,
-    "tokens": 5562,
+    "elapsed": 9.2,
+    "tokens": 5735,
     "validation": {
       "valid": true,
       "errors": [],
@@ -124,13 +128,13 @@
         "total_lines": 4,
         "parsed": 4,
         "surfaces": [
-          "ap-chem-today"
+          "ap-chem-study"
         ],
         "component_types": [
           "CheckBox",
-          "Card",
           "Divider",
-          "Text"
+          "Text",
+          "Card"
         ],
         "components": 7
       }
@@ -139,18 +143,18 @@
       "surfaceCount": 1,
       "surfaces": [
         {
-          "id": "ap-chem-today",
+          "id": "ap-chem-study",
           "rootComponentId": "card-1",
           "rootExists": true,
           "componentCount": 7,
           "componentIds": [
             "card-1",
-            "title",
-            "divider",
-            "cb1",
-            "cb2",
-            "cb3",
-            "cb4"
+            "title-1",
+            "divider-1",
+            "cb-1",
+            "cb-2",
+            "cb-3",
+            "cb-4"
           ]
         }
       ]
@@ -168,8 +172,8 @@
       "expected_types": true,
       "processor_root_ok": true
     },
-    "elapsed": 10.8,
-    "tokens": 5592,
+    "elapsed": 18.0,
+    "tokens": 6158,
     "validation": {
       "valid": true,
       "errors": [],
@@ -180,13 +184,12 @@
           "ap-selection-1"
         ],
         "component_types": [
-          "MultipleChoice",
           "Button",
-          "Card",
-          "Column",
-          "Text"
+          "Text",
+          "MultipleChoice",
+          "Card"
         ],
-        "components": 7
+        "components": 6
       }
     },
     "processor": {
@@ -196,15 +199,14 @@
           "id": "ap-selection-1",
           "rootComponentId": "card-1",
           "rootExists": true,
-          "componentCount": 7,
+          "componentCount": 6,
           "componentIds": [
             "card-1",
-            "col-1",
-            "title-1",
-            "desc-1",
-            "mc-1",
-            "btn-text-1",
-            "btn-1"
+            "title",
+            "desc",
+            "mc1",
+            "btn-text",
+            "btn"
           ]
         }
       ]
