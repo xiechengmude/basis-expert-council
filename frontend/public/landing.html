@@ -716,7 +716,8 @@
       <div class="lang-switcher">
         <button class="lang-btn" onclick="toggleLangMenu()">🌐 <span id="currentLang">中文</span></button>
         <div class="lang-dropdown" id="langDropdown">
-          <div class="lang-option active" onclick="setLang('zh-CN')">中文 <span class="lang-code">zh</span></div>
+          <div class="lang-option active" onclick="setLang('zh-CN')">简体中文 <span class="lang-code">zh</span></div>
+          <div class="lang-option" onclick="setLang('zh-TW')">繁體中文 <span class="lang-code">tw</span></div>
           <div class="lang-option" onclick="setLang('en')">English <span class="lang-code">en</span></div>
           <div class="lang-option" onclick="setLang('ja')">日本語 <span class="lang-code">ja</span></div>
           <div class="lang-option" onclick="setLang('ko')">한국어 <span class="lang-code">ko</span></div>
@@ -1092,7 +1093,7 @@
 <script src="landing-i18n.js"></script>
 <script>
 // --- i18n ---
-const LANG_NAMES = {"zh-CN":"中文","en":"English","ja":"日本語","ko":"한국어","es":"Español","fr":"Français","de":"Deutsch","ru":"Русский"};
+const LANG_NAMES = {"zh-CN":"简体中文","zh-TW":"繁體中文","en":"English","ja":"日本語","ko":"한국어","es":"Español","fr":"Français","de":"Deutsch","ru":"Русский"};
 
 function toggleLangMenu() {
   document.getElementById('langDropdown').classList.toggle('open');
