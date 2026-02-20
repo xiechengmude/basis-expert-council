@@ -105,110 +105,120 @@ def _try_parse_with_trailing_trim(line: str):
     return None
 
 
+def _try_bracket_repair(text: str):
+    """Try to repair a JSON string by closing unclosed braces/brackets.
+    Returns parsed dict on success, None on failure."""
+    text = text.strip()
+    if not text or text[0] != "{":
+        return None
+    brace_depth = 0
+    bracket_depth = 0
+    in_str = False
+    esc = False
+    for ch in text:
+        if esc:
+            esc = False
+            continue
+        if ch == "\\":
+            esc = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if ch == "{":
+            brace_depth += 1
+        elif ch == "}":
+            brace_depth -= 1
+        elif ch == "[":
+            bracket_depth += 1
+        elif ch == "]":
+            bracket_depth -= 1
+    if brace_depth <= 0 and bracket_depth <= 0:
+        return None  # Not a bracket issue
+    suffix = "]" * max(0, bracket_depth) + "}" * max(0, brace_depth)
+    if suffix:
+        try:
+            return json.loads(text + suffix)
+        except json.JSONDecodeError:
+            return None
+    return None
+
+
 def _extract_json_objects(text: str) -> list[tuple[dict, str | None]]:
     """
-    Extract all top-level JSON objects from text, handling:
-    - Multi-line JSON (LLM inserts newlines within objects)
-    - Trailing garbage after valid JSON
-    - Concatenated JSON on one line
+    Extract JSON objects from A2UI JSONL text.
+
+    Strategy: line-by-line (JSONL format) with per-line bracket repair
+    for lines missing closing braces. Falls back to multi-line
+    concatenation if a JSON object spans multiple lines.
 
     Returns list of (parsed_obj, error_or_none).
     """
     results: list[tuple[dict, str | None]] = []
-    pos = 0
-    text = text.strip()
+    lines = text.strip().split("\n")
+    i = 0
 
-    while pos < len(text):
-        # Skip whitespace and newlines
-        while pos < len(text) and text[pos] in " \t\r\n":
-            pos += 1
-        if pos >= len(text):
-            break
-
-        if text[pos] != "{":
-            # Skip non-JSON content
-            next_brace = text.find("{", pos)
-            if next_brace == -1:
-                break
-            pos = next_brace
+    while i < len(lines):
+        line = lines[i].strip()
+        if not line:
+            i += 1
             continue
 
-        try:
-            obj, end = _decoder.raw_decode(text, pos)
-            results.append((obj, None))
-            pos = end
-        except json.JSONDecodeError:
-            # Try to find the matching closing brace by counting
-            depth = 0
-            i = pos
-            in_string = False
-            escape = False
-            while i < len(text):
-                ch = text[i]
-                if escape:
-                    escape = False
-                elif ch == "\\":
-                    escape = True
-                elif ch == '"' and not escape:
-                    in_string = not in_string
-                elif not in_string:
-                    if ch == "{":
-                        depth += 1
-                    elif ch == "}":
-                        depth -= 1
-                        if depth == 0:
-                            break
+        # Skip non-JSON lines (markdown, comments, etc.)
+        if not line.startswith("{"):
+            # Check if there's a { somewhere in the line
+            brace_pos = line.find("{")
+            if brace_pos == -1:
                 i += 1
+                continue
+            line = line[brace_pos:]
 
-            if depth == 0 and i < len(text):
-                candidate = text[pos : i + 1]
-                try:
-                    obj = json.loads(candidate)
-                    results.append((obj, None))
-                    pos = i + 1
-                    continue
-                except json.JSONDecodeError as e:
-                    results.append(({}, f"JSON parse error at pos {pos}: {e}"))
-                    pos = i + 1
-            else:
-                # Bracket repair: try closing unclosed braces/brackets
-                candidate = text[pos:]
-                # Count unbalanced openers
-                brace_depth = 0
-                bracket_depth = 0
-                in_str = False
-                esc = False
-                for ch in candidate:
-                    if esc:
-                        esc = False
-                        continue
-                    if ch == '\\':
-                        esc = True
-                        continue
-                    if ch == '"':
-                        in_str = not in_str
-                        continue
-                    if in_str:
-                        continue
-                    if ch == '{':
-                        brace_depth += 1
-                    elif ch == '}':
-                        brace_depth -= 1
-                    elif ch == '[':
-                        bracket_depth += 1
-                    elif ch == ']':
-                        bracket_depth -= 1
-                suffix = ']' * max(0, bracket_depth) + '}' * max(0, brace_depth)
-                if suffix:
-                    repaired = candidate.rstrip() + suffix
-                    try:
-                        obj = json.loads(repaired)
-                        results.append((obj, f"Repaired: added '{suffix}' to close object"))
-                        break
-                    except json.JSONDecodeError:
-                        pass
-                results.append(({}, f"Unclosed JSON object starting at pos {pos}"))
+        # Try direct parse (handles multiple objects on one line too)
+        parsed = _try_parse_with_trailing_trim(line)
+        if parsed is not None:
+            results.append((parsed, None))
+            # Check for additional objects on the same line after the first
+            try:
+                _, end = _decoder.raw_decode(line.strip())
+                remainder = line.strip()[end:].strip()
+                if remainder.startswith("{"):
+                    extra_objs = _extract_json_objects(remainder)
+                    results.extend(extra_objs)
+            except json.JSONDecodeError:
+                pass
+            i += 1
+            continue
+
+        # Try bracket repair on this single line
+        repaired_obj = _try_bracket_repair(line)
+        if repaired_obj is not None:
+            results.append((repaired_obj, f"Repaired: added closers to line {i+1}"))
+            i += 1
+            continue
+
+        # Try accumulating with subsequent lines (multi-line JSON from LLM)
+        accumulated = line
+        found = False
+        for j in range(i + 1, min(i + 5, len(lines))):
+            accumulated += "\n" + lines[j].strip()
+            parsed = _try_parse_with_trailing_trim(accumulated)
+            if parsed is not None:
+                results.append((parsed, None))
+                i = j + 1
+                found = True
                 break
+            repaired_obj = _try_bracket_repair(accumulated)
+            if repaired_obj is not None:
+                results.append((repaired_obj, f"Repaired: multi-line {i+1}-{j+1}"))
+                i = j + 1
+                found = True
+                break
+
+        if not found:
+            results.append(({}, f"Unparseable JSON at line {i+1}"))
+            i += 1
 
     return results
 
