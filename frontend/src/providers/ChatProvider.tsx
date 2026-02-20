@@ -10,7 +10,7 @@ interface ChatProviderProps {
   activeAssistant: Assistant | null;
   onHistoryRevalidate?: () => void;
   thread?: UseStreamThread<StateType>;
-  userId?: number;
+  userId?: string;
 }
 
 export function ChatProvider({

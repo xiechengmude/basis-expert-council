@@ -11,13 +11,13 @@ from langchain_core.tools import tool
 from .memory import get_memory, user_id_to_mem0
 
 
-def _extract_user_id(config: RunnableConfig) -> int:
-    """从 RunnableConfig 中提取 user_id"""
+def _extract_user_id(config: RunnableConfig) -> str | None:
+    """从 RunnableConfig 中提取 user_id (Supabase UUID)，无效时返回 None"""
     configurable = config.get("configurable", {})
     user_id = configurable.get("user_id")
-    if user_id is None:
-        raise ValueError("user_id 未在 config.configurable 中设置，无法使用记忆工具")
-    return int(user_id)
+    if not user_id:
+        return None
+    return str(user_id)
 
 
 @tool
@@ -43,6 +43,8 @@ def remember_fact(
         importance: 重要程度：high/medium/low
     """
     user_id = _extract_user_id(config)
+    if user_id is None:
+        return "记忆功能暂不可用（用户未登录或 user_id 未传入），但我会在本次对话中记住您的信息。"
     mem0_uid = user_id_to_mem0(user_id)
     mem = get_memory()
 
@@ -51,7 +53,7 @@ def remember_fact(
         user_id=mem0_uid,
         metadata={
             "source": "agent_explicit",
-            "basis_user_id": user_id,
+            "basis_user_id": str(user_id),
             "category": category,
             "subject": subject,
             "importance": importance,
@@ -79,6 +81,8 @@ def recall_memories(
         limit: 最多返回的记忆条数，默认 10
     """
     user_id = _extract_user_id(config)
+    if user_id is None:
+        return "未找到相关记忆。用户未登录或 user_id 未传入，这可能是匿名对话。"
     mem0_uid = user_id_to_mem0(user_id)
     mem = get_memory()
 
@@ -107,6 +111,8 @@ def get_user_memory_profile(config: RunnableConfig) -> str:
     在新对话开始时使用此工具，了解用户的完整背景信息。
     """
     user_id = _extract_user_id(config)
+    if user_id is None:
+        return "该用户暂无历史记忆。用户未登录或 user_id 未传入。"
     mem0_uid = user_id_to_mem0(user_id)
     mem = get_memory()
 
@@ -157,7 +163,9 @@ def forget_memory(
     Args:
         memory_id: 要删除的记忆 ID
     """
-    _extract_user_id(config)  # 验证 user_id 存在
+    user_id = _extract_user_id(config)
+    if user_id is None:
+        return "无法删除记忆：用户未登录或 user_id 未传入。"
     mem = get_memory()
 
     mem.delete(memory_id=memory_id)

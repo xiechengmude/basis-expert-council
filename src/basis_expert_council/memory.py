@@ -63,6 +63,6 @@ def get_memory():
         return _memory_instance
 
 
-def user_id_to_mem0(user_id: int) -> str:
-    """映射 biz_users.id → Mem0 user_id 字符串"""
+def user_id_to_mem0(user_id: str) -> str:
+    """映射 Supabase UUID → Mem0 user_id 字符串"""
     return f"basis_user_{user_id}"

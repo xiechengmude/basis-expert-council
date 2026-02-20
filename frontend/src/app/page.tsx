@@ -6,8 +6,9 @@ import { getConfig, saveConfig, StandaloneConfig } from "@/lib/config";
 import { ConfigDialog } from "@/app/components/ConfigDialog";
 import { Button } from "@/components/ui/button";
 import { Assistant } from "@langchain/langgraph-sdk";
+import Link from "next/link";
 import { ClientProvider, useClient } from "@/providers/ClientProvider";
-import { Settings, MessagesSquare, SquarePen, LogOut, Crown } from "lucide-react";
+import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
 import { useUser } from "@/app/hooks/useUser";
 import { QuotaBanner } from "@/app/components/QuotaBanner";
@@ -174,6 +175,12 @@ function HomePageInner({
                 <span className="hidden text-sm text-muted-foreground lg:inline">
                   {profile?.user.nickname || user.phone || user.email || "用户"}
                 </span>
+                <Link href="/onboarding">
+                  <Button variant="ghost" size="sm">
+                    <UserCircle className="mr-1 h-4 w-4" />
+                    <span className="hidden sm:inline">个人资料</span>
+                  </Button>
+                </Link>
                 <Button variant="ghost" size="sm" onClick={handleSignOut}>
                   <LogOut className="mr-1 h-4 w-4" />
                   <span className="hidden sm:inline">退出</span>
@@ -228,7 +235,7 @@ function HomePageInner({
                   mutateThreads?.();
                   refreshQuota();
                 }}
-                userId={profile?.user?.id}
+                userId={user?.id}
               >
                 <ChatInterface assistant={assistant} />
               </ChatProvider>

@@ -34,7 +34,7 @@ export function useChat({
   activeAssistant: Assistant | null;
   onHistoryRevalidate?: () => void;
   thread?: UseStreamThread<StateType>;
-  userId?: number;
+  userId?: string;
 }) {
   const [threadId, setThreadId] = useQueryState("threadId");
   const client = useClient();
