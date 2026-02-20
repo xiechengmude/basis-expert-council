@@ -29,15 +29,15 @@ const features = ["f1", "f2", "f3", "f4", "f5", "f6"];
 
 export default function PricingSection({ t }: Props) {
   return (
-    <section id="pricing" className="bg-gray-50/50 py-24 px-4">
+    <section id="pricing" className="bg-slate-900 py-24 px-4">
       <div className="max-w-7xl mx-auto">
-        <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider text-center">
+        <p className="text-sm font-semibold text-brand-400 uppercase tracking-wider text-center">
           {t("price_label")}
         </p>
-        <h2 className="mt-3 text-3xl md:text-4xl font-bold text-gray-900 text-center">
+        <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white text-center">
           {t("price_title")}
         </h2>
-        <p className="mt-4 text-lg text-gray-500 text-center max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-slate-400 text-center max-w-2xl mx-auto">
           {t("price_desc")}
         </p>
 
@@ -47,22 +47,22 @@ export default function PricingSection({ t }: Props) {
               key={tier.key}
               data-reveal
               className={[
-                "bg-white rounded-2xl border p-8 flex flex-col",
+                "rounded-2xl border p-8 flex flex-col",
                 tier.featured
-                  ? "scale-105 shadow-xl ring-2 ring-brand-500/20 border-brand-200 relative"
-                  : "border-gray-200 shadow-sm",
+                  ? "bg-white/[0.06] scale-105 shadow-2xl shadow-brand-500/10 ring-1 ring-brand-500/30 border-brand-500/20 relative"
+                  : "bg-white/[0.03] border-white/[0.06]",
               ].join(" ")}
             >
               {tier.featured && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-xs font-semibold px-4 py-1 rounded-full">
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-semibold px-4 py-1 rounded-full">
                   {t("price_popular")}
                 </span>
               )}
 
-              <p className="text-xl font-bold text-gray-900">
+              <p className="text-xl font-bold text-white">
                 {t(`price_${tier.key}_name`)}
               </p>
-              <p className="mt-2 text-sm text-gray-500">
+              <p className="mt-2 text-sm text-slate-400">
                 {t(`price_${tier.key}_desc`)}
               </p>
 
@@ -72,15 +72,15 @@ export default function PricingSection({ t }: Props) {
                   return (
                     <li key={f} className="flex items-center gap-3 text-sm">
                       {isIncluded ? (
-                        <Check className="w-5 h-5 text-brand-500 shrink-0" />
+                        <Check className="w-5 h-5 text-brand-400 shrink-0" />
                       ) : (
-                        <X className="w-5 h-5 text-gray-300 shrink-0" />
+                        <X className="w-5 h-5 text-slate-600 shrink-0" />
                       )}
                       <span
                         className={
                           isIncluded
-                            ? "text-gray-700"
-                            : "text-gray-400 line-through"
+                            ? "text-slate-300"
+                            : "text-slate-600 line-through"
                         }
                       >
                         {t(`price_${tier.key}_${f}`)}
@@ -95,8 +95,8 @@ export default function PricingSection({ t }: Props) {
                 className={[
                   "mt-8 block text-center rounded-full py-3 font-semibold transition",
                   tier.featured
-                    ? "bg-brand-600 text-white hover:bg-brand-700"
-                    : "border-2 border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white",
+                    ? "bg-brand-500 text-white hover:bg-brand-400"
+                    : "border border-white/20 text-white hover:bg-white/10",
                 ].join(" ")}
               >
                 {t(`price_${tier.key}_btn`)}

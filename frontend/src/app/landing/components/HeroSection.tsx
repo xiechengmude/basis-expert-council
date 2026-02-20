@@ -35,8 +35,8 @@ export default function HeroSection({ t }: HeroSectionProps) {
         }}
       />
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      {/* Bottom fade — blends into dark PainPoints section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent" />
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 py-32 w-full">
@@ -65,7 +65,7 @@ export default function HeroSection({ t }: HeroSectionProps) {
                 href="/login"
                 className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-colors"
               >
-                {t("hero_cta_primary")}
+                {t("hero_btn_assess")}
                 <ArrowRight size={18} />
               </Link>
 
@@ -73,7 +73,7 @@ export default function HeroSection({ t }: HeroSectionProps) {
                 href="#features"
                 className="text-slate-400 hover:text-white flex items-center gap-1 transition-colors"
               >
-                {t("hero_cta_secondary")}
+                {t("hero_btn_more")}
                 <ChevronDown size={18} className="animate-bounce" />
               </a>
             </div>

@@ -41,7 +41,7 @@ export default function LandingPage() {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 scroll-smooth">
+    <div className="min-h-screen bg-slate-950 text-gray-900 scroll-smooth">
       <LandingNav t={t} locale={locale} setLocale={setLocale} />
       <HeroSection t={t} />
       <PainPointsSection t={t} />

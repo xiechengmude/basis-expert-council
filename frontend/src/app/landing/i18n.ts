@@ -14,15 +14,15 @@ export type Locale =
   | "ru";
 
 export const LOCALE_LABELS: Record<Locale, string> = {
-  en: "English",
-  "zh-CN": "简体中文",
-  "zh-TW": "繁體中文",
-  ja: "日本語",
-  ko: "한국어",
-  es: "Español",
-  fr: "Français",
-  de: "Deutsch",
-  ru: "Русский",
+  en: "🇺🇸 English",
+  "zh-CN": "🇨🇳 简体中文",
+  "zh-TW": "🇹🇼 繁體中文",
+  ja: "🇯🇵 日本語",
+  ko: "🇰🇷 한국어",
+  es: "🇪🇸 Español",
+  fr: "🇫🇷 Français",
+  de: "🇩🇪 Deutsch",
+  ru: "🇷🇺 Русский",
 };
 
 type TranslationKeys = keyof (typeof T)["en"];
@@ -1285,14 +1285,9 @@ const STORAGE_KEY = "basispilot-locale";
 
 function detectLocale(): Locale {
   if (typeof window === "undefined") return "en";
+  // Only use explicitly-chosen locale; default to English
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored && stored in T) return stored as Locale;
-  const nav = navigator.language;
-  if (nav.startsWith("zh-TW") || nav.startsWith("zh-Hant")) return "zh-TW";
-  if (nav.startsWith("zh")) return "zh-CN";
-  for (const loc of Object.keys(T) as Locale[]) {
-    if (nav.startsWith(loc.split("-")[0])) return loc;
-  }
   return "en";
 }
 

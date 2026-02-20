@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Globe, Menu, X } from "lucide-react";
 import { LOCALE_LABELS, Locale } from "../i18n";
 
@@ -53,25 +52,23 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl border-gray-200/50 shadow-sm"
+          ? "bg-slate-950/80 backdrop-blur-xl border-white/[0.06] shadow-lg shadow-black/20"
           : "bg-transparent border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: Logo */}
-          <Link href="/landing" className="flex items-center gap-2 flex-shrink-0">
-            <Image
+          <Link href="/landing" className="flex items-center gap-2.5 flex-shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/logo-mark.svg"
               alt="BasisPilot logo"
               width={32}
               height={32}
+              className="rounded-lg"
             />
-            <span
-              className={`font-semibold text-lg transition-colors duration-300 ${
-                scrolled ? "text-brand-900" : "text-white"
-              }`}
-            >
+            <span className="font-semibold text-lg text-white">
               BasisPilot
             </span>
           </Link>
@@ -83,11 +80,7 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
                 key={key}
                 href={href}
                 onClick={(e) => handleNavClick(e, id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                  scrolled
-                    ? "text-gray-600 hover:text-brand-600"
-                    : "text-white/70 hover:text-white"
-                }`}
+                className="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:text-white transition-colors"
               >
                 {t(key)}
               </a>
@@ -100,11 +93,7 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
             <div className="relative" data-locale-dropdown>
               <button
                 onClick={() => setDropdownOpen((prev) => !prev)}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                  scrolled
-                    ? "text-gray-600 hover:text-brand-600"
-                    : "text-white/70 hover:text-white"
-                }`}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium text-slate-400 hover:text-white transition-colors"
               >
                 <Globe size={16} />
                 <span className="hidden sm:inline">
@@ -113,7 +102,7 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
               </button>
 
               {dropdownOpen && (
-                <div className="absolute right-0 top-full mt-2 w-40 bg-white rounded-xl shadow-xl border border-gray-100 py-1 z-50">
+                <div className="absolute right-0 top-full mt-2 w-40 bg-slate-900 rounded-xl shadow-xl border border-white/10 py-1 z-50">
                   {(Object.entries(LOCALE_LABELS) as [Locale, string][]).map(
                     ([code, label]) => (
                       <button
@@ -124,8 +113,8 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
                         }}
                         className={`w-full text-left px-4 py-2 text-sm transition-colors ${
                           locale === code
-                            ? "bg-brand-50 text-brand-600 font-medium"
-                            : "text-gray-700 hover:bg-gray-50"
+                            ? "bg-brand-500/20 text-brand-400 font-medium"
+                            : "text-slate-300 hover:bg-white/[0.06]"
                         }`}
                       >
                         {label}
@@ -139,11 +128,7 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
             {/* Login button (desktop) */}
             <Link
               href="/login"
-              className={`hidden md:inline-flex items-center rounded-full px-5 py-2 text-sm font-medium transition-colors duration-300 ${
-                scrolled
-                  ? "bg-brand-600 text-white hover:bg-brand-700"
-                  : "border border-white/30 text-white hover:bg-white/10"
-              }`}
+              className="hidden md:inline-flex items-center rounded-full px-5 py-2 text-sm font-medium border border-white/20 text-white hover:bg-white/10 transition-colors"
             >
               {t("nav_login")}
             </Link>
@@ -151,9 +136,7 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen((prev) => !prev)}
-              className={`md:hidden p-2 rounded-full transition-colors duration-300 ${
-                scrolled ? "text-gray-700" : "text-white"
-              }`}
+              className="md:hidden p-2 rounded-full text-white transition-colors"
               aria-label="Toggle mobile menu"
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -164,11 +147,11 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-white flex flex-col pt-20 px-6 pb-8">
+        <div className="md:hidden fixed inset-0 z-40 bg-slate-950 flex flex-col pt-20 px-6 pb-8">
           {/* Close button at top-right */}
           <button
             onClick={() => setMobileOpen(false)}
-            className="absolute top-4 right-4 p-2 text-gray-700 rounded-full hover:bg-gray-100"
+            className="absolute top-4 right-4 p-2 text-white rounded-full hover:bg-white/10"
             aria-label="Close menu"
           >
             <X size={24} />
@@ -181,7 +164,7 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
                 key={key}
                 href={href}
                 onClick={(e) => handleNavClick(e, id)}
-                className="px-4 py-3 text-lg font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors"
+                className="px-4 py-3 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] rounded-xl transition-colors"
               >
                 {t(key)}
               </a>
@@ -190,7 +173,7 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
 
           {/* Language selector */}
           <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 px-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2 px-4">
               Language
             </p>
             <div className="grid grid-cols-2 gap-1">
@@ -203,8 +186,8 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
                     }}
                     className={`text-left px-4 py-2.5 rounded-xl text-sm transition-colors ${
                       locale === code
-                        ? "bg-brand-50 text-brand-600 font-medium"
-                        : "text-gray-600 hover:bg-gray-50"
+                        ? "bg-brand-500/20 text-brand-400 font-medium"
+                        : "text-slate-400 hover:bg-white/[0.06]"
                     }`}
                   >
                     {label}
@@ -218,7 +201,7 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
           <Link
             href="/login"
             onClick={() => setMobileOpen(false)}
-            className="w-full text-center bg-brand-600 text-white hover:bg-brand-700 rounded-full px-5 py-3 text-base font-medium transition-colors"
+            className="w-full text-center border border-white/20 text-white hover:bg-white/10 rounded-full px-5 py-3 text-base font-medium transition-colors"
           >
             {t("nav_login")}
           </Link>

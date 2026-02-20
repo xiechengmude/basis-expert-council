@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 interface Props {
   t: (key: string) => string;
 }
@@ -10,7 +8,8 @@ export default function LandingFooter({ t }: Props) {
   return (
     <footer className="bg-slate-950 py-12 px-4 border-t border-white/5">
       <div className="max-w-7xl mx-auto text-center">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/logo-mark.svg"
           alt="BasisPilot"
           width={28}
