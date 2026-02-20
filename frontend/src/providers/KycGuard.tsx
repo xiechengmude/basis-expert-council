@@ -66,9 +66,8 @@ export function KycGuard({ children }: { children: React.ReactNode }) {
 
     if (kycCompleted === false && !isWhitelisted) {
       router.replace("/onboarding");
-    } else if (kycCompleted === true && pathname.startsWith("/onboarding")) {
-      router.replace("/");
     }
+    // Note: users who completed KYC can still visit /onboarding to update their profile
   }, [checking, kycCompleted, isWhitelisted, pathname, router]);
 
   // Loading state

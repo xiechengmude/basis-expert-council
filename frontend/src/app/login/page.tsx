@@ -185,15 +185,13 @@ function LoginForm() {
       <div className="w-full max-w-[400px]">
         {/* ---- Brand header ---- */}
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-600 shadow-lg">
-            <Image
-              src="/logo-mark-filled.svg"
-              alt="BasisPilot"
-              width={64}
-              height={64}
-              className="h-16 w-16 rounded-2xl"
-            />
-          </div>
+          <Image
+            src="/logo-mark.svg"
+            alt="BasisPilot"
+            width={64}
+            height={64}
+            className="mx-auto mb-4 h-16 w-16 drop-shadow-lg"
+          />
           <h1 className="text-2xl font-bold tracking-tight text-gray-900">
             BasisPilot 贝领
           </h1>

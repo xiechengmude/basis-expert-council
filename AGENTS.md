@@ -225,23 +225,25 @@ BASIS 起源于美国亚利桑那州（1998 年），由 Michael 和 Olga Block 
 4. 具体执行建议
 5. 风险提示和应对策略
 
-## 交互式 UI 组件 (A2UI)
+## 交互式 UI 组件 (A2UI) — 必须使用
 
-当回答中适合展示交互组件时（如测验卡片、学习进度仪表盘、学习清单、课程规划表等），使用 `a2ui_render` 工具输出 A2UI JSONL。
+**重要规则：** 当回答涉及以下场景时，**必须**使用 `a2ui_render` 工具生成交互式卡片，**禁止**用纯 Markdown 文本代替：
+
+| 场景 | 必须使用 A2UI | 组件组合 |
+|------|:---:|------|
+| 出题 / 选择题 / 测验 | ✅ **必须** | Card + MultipleChoice + Button |
+| 学习清单 / 待办事项 | ✅ **必须** | Card + CheckBox + Divider |
+| 成绩展示 / 进度仪表盘 | ✅ **必须** | Card + Row + Text |
+| 课程对比 / 选课建议 | ✅ **必须** | Card + Column/List + Text |
+| 纯概念讲解 / 问答 | ❌ 用 Markdown | — |
+
+**判断标准：** 如果回答中包含"选项 A/B/C/D"、"打勾"、"分数展示"、"对比表"等结构化交互内容，就应该使用 A2UI 而非 Markdown。
 
 **使用流程：**
-1. 先阅读 `a2ui-render` Skill 了解 A2UI 协议格式和可用组件
-2. 按照 Skill 中的格式生成 JSONL 字符串
-3. 调用 `a2ui_render(jsonl="...")` 工具将 JSONL 发送给前端渲染
-
-**适用场景：**
-- 选择题 / 测验卡片（MultipleChoice + Button）
-- 学习进度仪表盘（Card + Row + Text）
-- 学习清单 / Checklist（CheckBox + Card）
-- 课程对比表（List + Card）
-- 任何需要用户交互的结构化内容
-
-**注意：** 不是所有回答都需要 A2UI，纯文本解答仍然使用 Markdown。只在交互组件能显著提升用户体验时使用。
+1. 先阅读 `a2ui-render` Skill 了解 A2UI 协议格式和可用组件类型
+2. 按照 Skill 中的格式规范生成 A2UI JSONL 字符串
+3. 调用 `a2ui_render(jsonl="...")` 工具输出，前端会自动渲染为交互式卡片
+4. 在工具调用之后，可以附加简短的文字说明（如答案解析），但题目本身必须用 A2UI 卡片展示
 
 ## 记忆系统
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, BookOpen, ChevronLeft } from "lucide-react";
+import { Loader2, BookOpen, ChevronLeft, BarChart2, FileText } from "lucide-react";
 import { fetchWithAuth } from "@/app/hooks/useUser";
 
 interface TeacherCompleteFormProps {
@@ -36,14 +36,34 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100">
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 shadow-sm">
           <BookOpen className="h-8 w-8 text-blue-600" />
         </div>
-        <h2 className="text-lg font-semibold text-gray-900">教师身份已设置</h2>
+        <h2 className="text-lg font-bold text-gray-900">教师身份已设置</h2>
         <p className="mt-2 text-sm leading-relaxed text-gray-500">
-          您可以使用 AI 助手辅助教学、<br />
-          分析学生学情、生成教学报告。
+          欢迎加入 BasisPilot 教师助手
         </p>
+      </div>
+
+      <div className="space-y-3 rounded-xl bg-blue-50/60 p-4">
+        <div className="flex items-start gap-3">
+          <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-200">
+            <BarChart2 className="h-3 w-3 text-blue-700" />
+          </div>
+          <div>
+            <p className="text-sm font-medium text-gray-800">AI 辅助教学</p>
+            <p className="text-xs text-gray-500">智能分析学情，辅助备课和教学设计</p>
+          </div>
+        </div>
+        <div className="flex items-start gap-3">
+          <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-200">
+            <FileText className="h-3 w-3 text-blue-700" />
+          </div>
+          <div>
+            <p className="text-sm font-medium text-gray-800">生成教学报告</p>
+            <p className="text-xs text-gray-500">快速生成学生评估和班级分析报告</p>
+          </div>
+        </div>
       </div>
 
       {error && (
@@ -56,7 +76,7 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
         <button
           type="button"
           onClick={onBack}
-          className="flex h-11 items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50"
+          className="flex h-12 items-center justify-center gap-1.5 rounded-xl border border-gray-200 px-4 text-sm font-medium text-gray-600 transition-all hover:bg-gray-50 hover:shadow-sm"
         >
           <ChevronLeft className="h-4 w-4" />
           返回
@@ -65,7 +85,7 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
           type="button"
           onClick={handleComplete}
           disabled={submitting}
-          className="flex h-11 flex-1 items-center justify-center gap-2 rounded-lg bg-brand-600 text-sm font-medium text-white shadow-sm transition-all hover:bg-brand-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-brand-600 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-700 hover:shadow-md active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
         >
           {submitting ? (
             <>

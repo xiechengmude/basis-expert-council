@@ -296,11 +296,21 @@ export default {
           from: { transform: "translateX(var(--radix-toast-swipe-end-x))" },
           to: { transform: "translateX(calc(100% + var(--viewport-padding)))" },
         },
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        gridPulse: {
+          "0%, 100%": { opacity: "0.03" },
+          "50%": { opacity: "0.06" },
+        },
       },
       animation: {
         hide: "hide 100ms ease-in",
         slideIn: "slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         swipeOut: "swipeOut 100ms ease-out",
+        "fade-up": "fadeUp 0.6s ease-out forwards",
+        "grid-pulse": "gridPulse 4s ease-in-out infinite",
       },
     },
     typography: {
