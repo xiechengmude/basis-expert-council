@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BASIS 贝赛思 — 体系全景图</title>
+<style>
+  :root {
+    --primary: #1a365d;
+    --primary-light: #2b6cb0;
+    --accent: #ed8936;
+    --danger: #e53e3e;
+    --warning: #d69e2e;
+    --success: #38a169;
+    --bg: #f7fafc;
+    --card-bg: #ffffff;
+    --text: #2d3748;
+    --text-light: #718096;
+    --border: #e2e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #3182ce 100%);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  .hero h1 { font-size: 2.8em; font-weight: 800; margin-bottom: 12px; position: relative; }
+  .hero p { font-size: 1.2em; opacity: 0.85; position: relative; }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 6px 18px;
+    margin-top: 16px;
+    font-size: 0.9em;
+    position: relative;
+  }
+
+  /* Navigation */
+  .nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 40px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  .nav-tab {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    background: white;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: all 0.3s;
+  }
+  .nav-tab:hover { border-color: var(--primary-light); color: var(--primary); }
+  .nav-tab.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  /* Sections */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 40px;
+  }
+  .section-title {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    flex-shrink: 0;
+  }
+  .section-subtitle {
+    font-size: 1.05em;
+    color: var(--text-light);
+    margin-bottom: 36px;
+  }
+
+  /* ===== SECTION 1: Grade System ===== */
+  .grade-timeline {
+    position: relative;
+    padding-left: 0;
+  }
+  .grade-track {
+    display: flex;
+    gap: 0;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .grade-card {
+    flex: 1;
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px 20px;
+    border: 2px solid var(--border);
+    position: relative;
+    transition: all 0.3s;
+    min-width: 0;
+  }
+  .grade-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+  .grade-card .stage-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .grade-card .grade-label {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .grade-card .cn-label {
+    font-size: 0.85em;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+  .grade-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .grade-card ul li {
+    font-size: 0.85em;
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+    color: var(--text);
+  }
+  .grade-card ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--primary-light);
+  }
+
+  .grade-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 900px) {
+    .grade-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .grade-grid { grid-template-columns: 1fr; }
+  }
+
+  .stage-lower .stage-badge { background: #48bb78; }
+  .stage-bridge .stage-badge { background: #4299e1; }
+  .stage-middle .stage-badge { background: #805ad5; }
+  .stage-preap .stage-badge { background: #ed8936; }
+  .stage-ap .stage-badge { background: #e53e3e; }
+
+  .stage-lower { border-top: 4px solid #48bb78; }
+  .stage-bridge { border-top: 4px solid #4299e1; }
+  .stage-middle { border-top: 4px solid #805ad5; }
+  .stage-preap { border-top: 4px solid #ed8936; }
+  .stage-ap { border-top: 4px solid #e53e3e; }
+
+  /* Speed comparison bar */
+  .speed-compare {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 28px;
+    border: 2px solid var(--border);
+    margin-top: 30px;
+  }
+  .speed-compare h3 {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: var(--primary);
+  }
+  .speed-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    gap: 16px;
+  }
+  .speed-label {
+    width: 120px;
+    font-weight: 600;
+    font-size: 0.9em;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .speed-bar-wrap {
+    flex: 1;
+    background: #edf2f7;
+    border-radius: 8px;
+    height: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .speed-bar {
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: white;
+    transition: width 1.5s ease;
+  }
+
+  /* ===== SECTION 2: Elimination Mechanism ===== */
+  .elim-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .elim-step {
+    flex: 1;
+    min-width: 180px;
+    max-width: 240px;
+    padding: 24px 18px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  .elim-step:hover { transform: scale(1.03); }
+  .elim-step .step-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    margin: 0 auto 12px;
+  }
+  .elim-step h4 { font-size: 1em; margin-bottom: 4px; }
+  .elim-step p { font-size: 0.82em; line-height: 1.5; }
+  .elim-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+    color: #a0aec0;
+    padding: 0 4px;
+    flex-shrink: 0;
+  }
+
+  .step-green { background: #f0fff4; border: 2px solid #c6f6d5; }
+  .step-green .step-icon { background: #c6f6d5; }
+  .step-green h4 { color: #276749; }
+
+  .step-yellow { background: #fffff0; border: 2px solid #fefcbf; }
+  .step-yellow .step-icon { background: #fefcbf; }
+  .step-yellow h4 { color: #975a16; }
+
+  .step-orange { background: #fffaf0; border: 2px solid #feebc8; }
+  .step-orange .step-icon { background: #feebc8; }
+  .step-orange h4 { color: #c05621; }
+
+  .step-red { background: #fff5f5; border: 2px solid #fed7d7; }
+  .step-red .step-icon { background: #fed7d7; }
+  .step-red h4 { color: #c53030; }
+
+  /* Grading table */
+  .grade-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    margin-top: 30px;
+  }
+  .grade-table th {
+    background: var(--primary);
+    color: white;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+  .grade-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9em;
+  }
+  .grade-table tr:last-child td { border-bottom: none; }
+  .grade-table tr:hover td { background: #f7fafc; }
+
+  .grade-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85em;
+  }
+  .grade-a { background: #c6f6d5; color: #276749; }
+  .grade-b { background: #bee3f8; color: #2a4365; }
+  .grade-c { background: #fefcbf; color: #975a16; }
+  .grade-d { background: #feebc8; color: #c05621; }
+  .grade-f { background: #fed7d7; color: #c53030; }
+
+  /* Consequence cards */
+  .consequence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+  }
+  @media (max-width: 700px) {
+    .consequence-grid { grid-template-columns: 1fr; }
+  }
+  .consequence-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 24px;
+    border: 2px solid var(--border);
+    transition: all 0.3s;
+  }
+  .consequence-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .consequence-card h4 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .consequence-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .consequence-card ul li {
+    font-size: 0.85em;
+    padding: 4px 0;
+    padding-left: 18px;
+    position: relative;
+  }
+  .consequence-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 2px;
+    color: var(--primary-light);
+    font-weight: 700;
+  }
+
+  /* ===== SECTION 3: Business Conversion ===== */
+  .funnel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 40px;
+  }
+  .funnel-step {
+    position: relative;
+    text-align: center;
+    padding: 18px 30px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: transform 0.3s;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .funnel-step:hover { transform: scale(1.02); }
+  .funnel-step:first-child { clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%); }
+
+  .funnel-rate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 0;
+    font-size: 0.82em;
+    color: var(--text-light);
+    font-weight: 600;
+  }
+  .funnel-rate span {
+    background: #edf2f7;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.95em;
+  }
+
+  /* Timing cards */
+  .timing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 30px;
+  }
+  .timing-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 22px 18px;
+    border: 2px solid var(--border);
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .timing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .timing-card .timing-emoji {
+    font-size: 2em;
+    margin-bottom: 8px;
+  }
+  .timing-card h4 {
+    font-size: 0.95em;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .timing-card .timing-state {
+    font-size: 0.8em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+  }
+  .timing-card .timing-action {
+    display: inline-block;
+    background: #ebf8ff;
+    color: var(--primary-light);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.78em;
+    font-weight: 600;
+  }
+  .timing-card .price-tag {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.78em;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Parent types */
+  .parent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+  }
+  @media (max-width: 700px) {
+    .parent-grid { grid-template-columns: 1fr; }
+  }
+  .parent-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 24px;
+    border: 2px solid var(--border);
+    position: relative;
+    transition: all 0.3s;
+  }
+  .parent-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .parent-card .pct {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    font-size: 1.8em;
+    font-weight: 800;
+    opacity: 0.12;
+  }
+  .parent-card h4 {
+    font-size: 1em;
+    margin-bottom: 4px;
+    color: var(--primary);
+  }
+  .parent-card .parent-desc {
+    font-size: 0.82em;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+  .parent-card .inner-voice {
+    font-size: 0.85em;
+    background: #f7fafc;
+    border-left: 3px solid var(--primary-light);
+    padding: 8px 14px;
+    border-radius: 0 8px 8px 0;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  /* Connector line between sections */
+  .section-connector {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  .section-connector::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--border), var(--primary-light));
+    margin: 0 auto;
+  }
+  .connector-label {
+    display: inline-block;
+    background: var(--primary-light);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 30px 0;
+  }
+  @media (max-width: 700px) {
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  }
+  .stat-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid var(--border);
+  }
+  .stat-number {
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.82em;
+    color: var(--text-light);
+    margin-top: 6px;
+  }
+
+  /* Relationship diagram */
+  .relationship {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 32px;
+    border: 2px solid var(--border);
+    margin-top: 30px;
+  }
+  .relationship h3 {
+    font-size: 1.1em;
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .rel-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .rel-box {
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-align: center;
+    min-width: 140px;
+  }
+  .rel-arrow {
+    font-size: 1.5em;
+    color: #a0aec0;
+  }
+  .rel-school { background: #ebf8ff; color: #2b6cb0; border: 2px solid #bee3f8; }
+  .rel-pressure { background: #fff5f5; color: #c53030; border: 2px solid #fed7d7; }
+  .rel-need { background: #fffff0; color: #975a16; border: 2px solid #fefcbf; }
+  .rel-solution { background: #f0fff4; color: #276749; border: 2px solid #c6f6d5; }
+
+  /* Data Dashboard */
+  .data-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 10px;
+  }
+  .dashboard-title {
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .dashboard-subtitle {
+    font-size: 0.88em;
+    color: var(--text-light);
+    margin-bottom: 20px;
+  }
+  .data-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .data-tab {
+    padding: 7px 18px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    background: white;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: all 0.25s;
+  }
+  .data-tab:hover { border-color: var(--primary-light); color: var(--primary); }
+  .data-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+  .data-panel { display: none; }
+  .data-panel.active { display: block; }
+
+  .mega-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 800px) { .mega-stats { grid-template-columns: repeat(2, 1fr); } }
+  .mega-stat {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    border: 2px solid var(--border);
+    transition: all 0.25s;
+  }
+  .mega-stat:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .mega-stat .ms-number {
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .mega-stat .ms-unit {
+    font-size: 0.45em;
+    font-weight: 600;
+    opacity: 0.7;
+  }
+  .mega-stat .ms-label {
+    font-size: 0.78em;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+  .mega-stat .ms-sub {
+    font-size: 0.7em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 700px) { .detail-grid { grid-template-columns: 1fr; } }
+  .detail-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 22px;
+    border: 2px solid var(--border);
+  }
+  .detail-card h4 {
+    font-size: 0.95em;
+    color: var(--primary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82em;
+  }
+  .detail-table th {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 0.92em;
+  }
+  .detail-table td {
+    padding: 7px 8px;
+    border-bottom: 1px solid #f0f4f8;
+  }
+  .detail-table tr:last-child td { border-bottom: none; }
+  .detail-table tr:hover td { background: #f7fafc; }
+  .highlight-row td { font-weight: 700; color: var(--primary); background: #ebf8ff !important; }
+
+  .campus-chip {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin: 1px 2px;
+  }
+  .chip-intl { background: #ebf8ff; color: #2b6cb0; }
+  .chip-bi { background: #faf5ff; color: #805ad5; }
+  .chip-kg { background: #f0fff4; color: #38a169; }
+  .chip-new { background: #fffff0; color: #d69e2e; }
+
+  .sz-campus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .sz-campus-card {
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    border: 2px solid var(--border);
+    background: var(--card-bg);
+    transition: all 0.25s;
+  }
+  .sz-campus-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .sz-campus-card .sz-name { font-weight: 700; font-size: 0.9em; color: var(--primary); margin-bottom: 4px; }
+  .sz-campus-card .sz-year { font-size: 0.75em; color: var(--text-light); }
+  .sz-campus-card .sz-cap { font-size: 1.4em; font-weight: 800; color: var(--accent); margin: 6px 0 2px; }
+  .sz-campus-card .sz-type { font-size: 0.72em; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+    font-size: 0.85em;
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>BASIS 贝赛思 · 体系全景图</h1>
+  <p>学制结构 × 淘汰机制 × 商务转化 — 三位一体</p>
+  <div class="badge">1998 · Arizona · 40+ Schools Globally · 13 China Campuses · 2025 Data</div>
+</div>
+
+<!-- Nav -->
+<div class="nav-tabs">
+  <div class="nav-tab active" onclick="scrollToSection('data-overview')">2025 数据总览</div>
+  <div class="nav-tab" onclick="scrollToSection('grade-system')">学制结构</div>
+  <div class="nav-tab" onclick="scrollToSection('elimination')">淘汰机制</div>
+  <div class="nav-tab" onclick="scrollToSection('business')">商务转化</div>
+  <div class="nav-tab" onclick="scrollToSection('closed-loop')">三者闭环</div>
+</div>
+
+<!-- ==================== DATA DASHBOARD ==================== -->
+<div class="data-dashboard" id="data-overview">
+  <div class="dashboard-title">
+    <div class="icon" style="background:#ebf8ff;color:#2b6cb0;">📊</div>
+    2025 年数据总览
+  </div>
+  <div class="dashboard-subtitle">数据来源：BASIS 官方博客、新浪财经、各校区招生简章 · 截至 2025 年</div>
+
+  <!-- Sub-tabs -->
+  <div class="data-tabs">
+    <div class="data-tab active" onclick="switchDataTab('national')">全国概览</div>
+    <div class="data-tab" onclick="switchDataTab('shenzhen')">深圳专区</div>
+    <div class="data-tab" onclick="switchDataTab('courses')">课程体系</div>
+    <div class="data-tab" onclick="switchDataTab('graduates')">升学成果</div>
+  </div>
+
+  <!-- ===== Panel: National ===== -->
+  <div class="data-panel active" id="panel-national">
+    <div class="mega-stats">
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--primary);">13</div>
+        <div class="ms-label">运营中校区</div>
+        <div class="ms-sub">覆盖 7 城 5 省 · 2026 新增 2 所</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--accent);">10,000<span class="ms-unit">+</span></div>
+        <div class="ms-label">在校学生总数</div>
+        <div class="ms-sub">2015 年仅 400 人 · 10 年增长 25 倍</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--success);">1,689</div>
+        <div class="ms-label">专职教师</div>
+        <div class="ms-sub">录用率仅 4% · 流动率 7%</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:#805ad5;">3,800</div>
+        <div class="ms-label">全体员工</div>
+        <div class="ms-sub">硕士 60-70% · 博士 10%</div>
+      </div>
+    </div>
+
+    <!-- Detail cards -->
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h4>🏫 全国校区分布</h4>
+        <table class="detail-table">
+          <thead><tr><th>城市</th><th>校区数</th><th>类型</th></tr></thead>
+          <tbody>
+            <tr><td><strong>深圳</strong></td><td>5</td><td><span class="campus-chip chip-intl">国际</span><span class="campus-chip chip-bi">双语</span><span class="campus-chip chip-kg">幼儿园×2</span></td></tr>
+            <tr><td>广州</td><td>1</td><td><span class="campus-chip chip-intl">国际</span></td></tr>
+            <tr><td>杭州</td><td>1</td><td><span class="campus-chip chip-intl">国际</span></td></tr>
+            <tr><td>惠州（小径湾）</td><td>1</td><td><span class="campus-chip chip-intl">国际</span></td></tr>
+            <tr><td>南京</td><td>1</td><td><span class="campus-chip chip-intl">国际</span></td></tr>
+            <tr><td>成都</td><td>2</td><td><span class="campus-chip chip-intl">国际</span><span class="campus-chip chip-bi">双语</span></td></tr>
+            <tr><td>武汉</td><td>2</td><td><span class="campus-chip chip-intl">国际</span><span class="campus-chip chip-bi">双语</span></td></tr>
+            <tr style="border-top:2px solid var(--border);">
+              <td>北京 <span class="campus-chip chip-new">2026 秋</span></td><td>1</td><td><span class="campus-chip chip-bi">双语</span> 2,300 学位</td>
+            </tr>
+            <tr>
+              <td>广州二期 <span class="campus-chip chip-new">2026</span></td><td>1</td><td><span class="campus-chip chip-bi">双语</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="detail-card">
+        <h4>👨‍🏫 师资与师生比</h4>
+        <table class="detail-table">
+          <thead><tr><th>校区</th><th>师生比</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>深圳蛇口</td><td><strong>1:10</strong></td><td>历史最久，规模最大</td></tr>
+            <tr><td>深圳福田</td><td><strong>1:8</strong></td><td>479 员工 / 272 教师</td></tr>
+            <tr><td>惠州小径湾</td><td><strong>1:7</strong></td><td>寄宿制 800 床位</td></tr>
+            <tr><td>成都</td><td><strong>1:5</strong></td><td>新校区，师资充裕</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:14px;padding:12px;background:#f7fafc;border-radius:10px;font-size:0.82em;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+            <span>教师录用率</span><strong style="color:var(--danger);">4%</strong>
+          </div>
+          <div style="background:#edf2f7;border-radius:6px;height:8px;overflow:hidden;">
+            <div style="width:4%;height:100%;background:var(--danger);border-radius:6px;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:10px;margin-bottom:6px;">
+            <span>教师流动率</span><strong style="color:var(--success);">7%</strong>
+          </div>
+          <div style="background:#edf2f7;border-radius:6px;height:8px;overflow:hidden;">
+            <div style="width:7%;height:100%;background:var(--success);border-radius:6px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pain point stats -->
+    <div class="mega-stats" style="grid-template-columns:repeat(4,1fr);">
+      <div class="mega-stat" style="border-color:#fed7d7;">
+        <div class="ms-number" style="color:var(--danger);">85<span class="ms-unit">%</span></div>
+        <div class="ms-label">家长在"偷偷补课"</div>
+      </div>
+      <div class="mega-stat" style="border-color:#feebc8;">
+        <div class="ms-number" style="color:var(--accent);">68<span class="ms-unit">%</span></div>
+        <div class="ms-label">首年 GPA 下降</div>
+      </div>
+      <div class="mega-stat" style="border-color:#fefcbf;">
+        <div class="ms-number" style="color:var(--warning);">4.2<span class="ms-unit">h</span></div>
+        <div class="ms-label">日均课后学习时间</div>
+        <div class="ms-sub">IB 学生的 1.7 倍</div>
+      </div>
+      <div class="mega-stat" style="border-color:#fed7d7;">
+        <div class="ms-number" style="color:var(--danger);"><10<span class="ms-unit">%</span></div>
+        <div class="ms-label">热门校区录取率</div>
+        <div class="ms-sub">裸考上岸率 < 5%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Panel: Shenzhen ===== -->
+  <div class="data-panel" id="panel-shenzhen">
+    <div class="mega-stats">
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--primary);">5</div>
+        <div class="ms-label">深圳校区总数</div>
+        <div class="ms-sub">3 所学校 + 2 所幼儿园</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--accent);">4,900<span class="ms-unit">+</span></div>
+        <div class="ms-label">深圳总学位容量</div>
+        <div class="ms-sub">蛇口 1,600 + 福田 1,800 + 光明 1,500</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--success);">51</div>
+        <div class="ms-label">2025 届深圳毕业生</div>
+        <div class="ms-sub">蛇口 26 + 福田 25</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:#805ad5;">316</div>
+        <div class="ms-label">深圳大学录取 offer</div>
+        <div class="ms-sub">奖学金 $1,567,136</div>
+      </div>
+    </div>
+
+    <!-- Shenzhen campus cards -->
+    <div class="sz-campus-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="sz-campus-card" style="border-top:4px solid #2b6cb0;">
+        <div class="sz-name">蛇口贝赛思（蛇贝）</div>
+        <div class="sz-year">2015 年创办 · 中国首校</div>
+        <div class="sz-cap">1,600</div>
+        <div style="font-size:0.78em;color:var(--text-light);">学位容量</div>
+        <div class="sz-type"><span class="campus-chip chip-intl">纯外籍国际</span></div>
+        <div style="margin-top:10px;font-size:0.78em;text-align:left;padding:0 4px;">
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>位置</span><strong>南山区蛇口网谷</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>学段</span><strong>PreK — G12</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>G12 学费</span><strong style="color:var(--danger);">31.7 万/年</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>入学考试</span><strong>每年仅 1 次</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;">
+            <span>竞争度</span><strong style="color:var(--danger);">最高（长期候补）</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="sz-campus-card" style="border-top:4px solid #805ad5;">
+        <div class="sz-name">福田贝赛思（福贝）</div>
+        <div class="sz-year">2020 年创办</div>
+        <div class="sz-cap">1,800</div>
+        <div style="font-size:0.78em;color:var(--text-light);">学位容量</div>
+        <div class="sz-type"><span class="campus-chip chip-bi">双语学校</span></div>
+        <div style="margin-top:10px;font-size:0.78em;text-align:left;padding:0 4px;">
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>位置</span><strong>福田中心区</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>学段</span><strong>G1 — G12</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>G12 学费</span><strong style="color:var(--danger);">28.6 万/年</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>教师</span><strong>272 人（外教 140）</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;">
+            <span>竞争度</span><strong style="color:var(--accent);">极高</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="sz-campus-card" style="border-top:4px solid #ed8936;">
+        <div class="sz-name">光明贝赛思（光贝）</div>
+        <div class="sz-year">2024 年创办 · 最新校区</div>
+        <div class="sz-cap">1,500</div>
+        <div style="font-size:0.78em;color:var(--text-light);">学位容量（含 430 寄宿）</div>
+        <div class="sz-type"><span class="campus-chip chip-new">外国语学校</span></div>
+        <div style="margin-top:10px;font-size:0.78em;text-align:left;padding:0 4px;">
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>位置</span><strong>光明科学城中心</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>占地</span><strong>18,000㎡ / 建筑 56,000㎡</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>班额</span><strong>每班 ≤ 25 人</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0f4f8;">
+            <span>寄宿</span><strong>G5 起可寄宿</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;">
+            <span>注意</span><strong style="color:var(--danger);">首年 G10 约 1/3 转出</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tuition comparison -->
+    <div class="detail-card" style="margin-top:20px;">
+      <h4>💰 2025-2026 深圳三校学费对比（人民币/年）</h4>
+      <table class="detail-table">
+        <thead><tr><th>学段</th><th>蛇口（国际）</th><th>福田（双语）</th><th>光明（外国语）</th></tr></thead>
+        <tbody>
+          <tr><td>PreK</td><td>256,470</td><td>—</td><td>—</td></tr>
+          <tr><td>K</td><td>273,980</td><td>—</td><td>—</td></tr>
+          <tr><td>G1-G5/G6</td><td>296,640</td><td>250,500</td><td>250,500</td></tr>
+          <tr><td>G6-G8/G9</td><td>303,850</td><td>272,330</td><td>272,330</td></tr>
+          <tr class="highlight-row"><td>G9-G12</td><td>317,240</td><td>285,930</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:0.75em;color:var(--text-light);margin-top:8px;">* 学费同比上涨约 3% · 不含校车/餐饮/校服等杂费</div>
+    </div>
+  </div>
+
+  <!-- ===== Panel: Courses ===== -->
+  <div class="data-panel" id="panel-courses">
+    <div class="mega-stats">
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--primary);">38</div>
+        <div class="ms-label">AP 科目可选</div>
+        <div class="ms-sub">覆盖 7 大学科门类</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--accent);">12-14</div>
+        <div class="ms-label">毕业生平均 AP 科数</div>
+        <div class="ms-sub">毕业最低要求 4 门</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--success);">13,000<span class="ms-unit">+</span></div>
+        <div class="ms-label">AP 考试累计完成</div>
+        <div class="ms-sub">2018-2024 六届</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:#805ad5;">91-95<span class="ms-unit">%</span></div>
+        <div class="ms-label">AP 通过率</div>
+        <div class="ms-sub">平均分 4.4 / 5</div>
+      </div>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h4>📘 AP 七大门类</h4>
+        <table class="detail-table">
+          <thead><tr><th>#</th><th>门类</th><th>代表科目</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Arts 艺术</td><td>Art History, Music Theory</td></tr>
+            <tr><td>2</td><td>English 英语</td><td>Language & Composition, Literature</td></tr>
+            <tr><td>3</td><td>History & Social Science</td><td>US History, World History, Economics, Psychology</td></tr>
+            <tr><td>4</td><td>Math & CS 数学与计算机</td><td>Calculus AB/BC, Statistics, CS A</td></tr>
+            <tr><td>5</td><td>Natural Sciences 自然科学</td><td>Physics C, Chemistry, Biology, Env. Science</td></tr>
+            <tr><td>6</td><td>World Languages 世界语言</td><td>Chinese, Spanish, Latin</td></tr>
+            <tr><td>7</td><td>AP Capstone 顶石项目</td><td>AP Seminar, AP Research</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="detail-card">
+        <h4>🚀 独特的 Post-AP 顶点课程（G12）</h4>
+        <p style="font-size:0.82em;color:var(--text-light);margin-bottom:12px;">大学高阶水平，远超普通高中范畴</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="campus-chip" style="background:#fff5f5;color:#c53030;">Category Theory 范畴论</span>
+          <span class="campus-chip" style="background:#fff5f5;color:#c53030;">Quantum Mechanics 量子力学</span>
+          <span class="campus-chip" style="background:#fff5f5;color:#c53030;">Differential Equations 微分方程</span>
+          <span class="campus-chip" style="background:#fff5f5;color:#c53030;">Organic Chemistry 有机化学</span>
+          <span class="campus-chip" style="background:#faf5ff;color:#805ad5;">Literary Theory 文学理论</span>
+          <span class="campus-chip" style="background:#faf5ff;color:#805ad5;">Political Philosophy 政治哲学</span>
+          <span class="campus-chip" style="background:#fffff0;color:#975a16;">Game Theory 博弈论</span>
+        </div>
+        <div style="margin-top:16px;padding:12px;background:#fff5f5;border-radius:10px;font-size:0.82em;">
+          <strong style="color:var(--danger);">这就是为什么辅导难度极高</strong> — 需要教师同时具备大学级学科能力 + 英语教学能力 + 了解 BASIS 体系，市面上几乎找不到这样的人。
+        </div>
+      </div>
+    </div>
+
+    <!-- Curriculum by stage -->
+    <div class="detail-card" style="margin-top:16px;">
+      <h4>📅 各学段课程特征对比</h4>
+      <table class="detail-table">
+        <thead><tr><th>学段</th><th>科学课设置</th><th>数学进度</th><th>特色课程</th><th>压力指数</th></tr></thead>
+        <tbody>
+          <tr><td><strong>G1-G4</strong></td><td>综合科学</td><td>标准 +</td><td>跨学科探究</td><td style="color:var(--success);">★★☆☆☆</td></tr>
+          <tr><td><strong>G5</strong></td><td>分科导论</td><td>Pre-Algebra</td><td>自然地理、西方经典</td><td style="color:var(--warning);">★★★☆☆</td></tr>
+          <tr><td><strong>G6-G8</strong></td><td><strong>每天 3 节独立科学课</strong>（物/化/生）</td><td>Algebra I → Geometry</td><td>Latin、Logic、Economics</td><td style="color:var(--accent);">★★★★☆</td></tr>
+          <tr><td><strong>G9</strong></td><td>Pre-AP 科学</td><td>Pre-Calculus</td><td><strong>G8 即开始 AP 课程</strong></td><td style="color:var(--danger);">★★★★☆</td></tr>
+          <tr class="highlight-row"><td><strong>G10-G12</strong></td><td>全 AP 级别</td><td>Calculus AB/BC</td><td>6-12 门 AP + 顶点课程</td><td style="color:var(--danger);">★★★★★</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== Panel: Graduates ===== -->
+  <div class="data-panel" id="panel-graduates">
+    <div class="mega-stats">
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--primary);">910</div>
+        <div class="ms-label">累计毕业生（2018-2025）</div>
+        <div class="ms-sub">6 个校区 · 8 届</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--accent);">5,400<span class="ms-unit">+</span></div>
+        <div class="ms-label">累计大学录取 offer</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:var(--success);">$22M<span class="ms-unit">+</span></div>
+        <div class="ms-label">累计获得奖学金</div>
+      </div>
+      <div class="mega-stat">
+        <div class="ms-number" style="color:#805ad5;">132</div>
+        <div class="ms-label">藤校 / 美 Top10 / 牛剑 offer</div>
+      </div>
+    </div>
+
+    <!-- 2025 class detail -->
+    <div class="detail-card">
+      <h4>🎓 2025 届毕业数据（最新）</h4>
+      <div class="mega-stats" style="margin-bottom:16px;">
+        <div class="mega-stat" style="padding:12px;">
+          <div class="ms-number" style="font-size:1.6em;color:var(--primary);">245</div>
+          <div class="ms-label">毕业生</div>
+        </div>
+        <div class="mega-stat" style="padding:12px;">
+          <div class="ms-number" style="font-size:1.6em;color:var(--accent);">1,426</div>
+          <div class="ms-label">录取 offer</div>
+        </div>
+        <div class="mega-stat" style="padding:12px;">
+          <div class="ms-number" style="font-size:1.6em;color:var(--success);">67<span class="ms-unit">%</span></div>
+          <div class="ms-label">美 Top30 / 英 Top5</div>
+        </div>
+        <div class="mega-stat" style="padding:12px;">
+          <div class="ms-number" style="font-size:1.6em;color:#805ad5;">96<span class="ms-unit">%</span></div>
+          <div class="ms-label">美 Top50 / 英 Top10</div>
+        </div>
+      </div>
+      <table class="detail-table">
+        <thead><tr><th>校区</th><th>毕业生</th><th>offer 数</th><th>奖学金 (USD)</th></tr></thead>
+        <tbody>
+          <tr><td>深圳蛇口</td><td>26</td><td>170</td><td>$894,056</td></tr>
+          <tr><td>深圳福田</td><td>25</td><td>146</td><td>$673,080</td></tr>
+          <tr><td>广州</td><td>67</td><td>410</td><td>$1,695,274</td></tr>
+          <tr><td>惠州小径湾</td><td>73</td><td>394</td><td>$1,244,683</td></tr>
+          <tr><td>杭州</td><td>21</td><td>141</td><td>$813,500</td></tr>
+          <tr><td>南京</td><td>33</td><td>165</td><td>$698,460</td></tr>
+          <tr class="highlight-row"><td>合计</td><td>245</td><td>1,426</td><td>$6,019,053</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:14px;font-size:0.82em;color:var(--text-light);">
+        录取名校包括：Stanford、Johns Hopkins、Northwestern、Duke、UPenn、Cornell、Dartmouth、Williams、Cambridge 等
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Divider -->
+<div style="max-width:1200px;margin:0 auto;padding:0 40px;">
+  <hr style="border:none;border-top:2px solid var(--border);margin:10px 0 0;">
+</div>
+
+<!-- ==================== SECTION 1: Grade System ==================== -->
+<div class="section" id="grade-system">
+  <div class="section-title">
+    <div class="icon" style="background:#ebf8ff;color:#2b6cb0;">📚</div>
+    学制结构 — PreK 到 G12 全学段
+  </div>
+  <div class="section-subtitle">BASIS 是完整的 K-12 体系，但课程进度比普通美国学校加速 1-2 年</div>
+
+  <div class="grade-grid">
+    <!-- G1-G4 -->
+    <div class="grade-card stage-lower">
+      <div class="stage-badge">Lower School</div>
+      <div class="grade-label">G1 — G4</div>
+      <div class="cn-label">≈ 小学 1-4 年级</div>
+      <ul>
+        <li>SET（学科专家）+ LET（语言教师）双教师制</li>
+        <li>SET 教科学、社会学</li>
+        <li>LET 教 ELA 和数学基础</li>
+        <li>建立英文学术习惯</li>
+      </ul>
+    </div>
+    <!-- G5-G6 -->
+    <div class="grade-card stage-bridge">
+      <div class="stage-badge">Bridge 过渡</div>
+      <div class="grade-label">G5 — G6</div>
+      <div class="cn-label">≈ 小学 5-6 年级</div>
+      <ul>
+        <li>学科细分加深</li>
+        <li>增加 Latin / Mandarin 等语言</li>
+        <li>数学需达到 Pre-Algebra 水平</li>
+        <li>为 Middle School 做准备</li>
+      </ul>
+    </div>
+    <!-- G7-G8 -->
+    <div class="grade-card stage-middle">
+      <div class="stage-badge">Middle School</div>
+      <div class="grade-label">G7 — G8</div>
+      <div class="cn-label">≈ 初一、初二</div>
+      <ul>
+        <li>完全学科专家制</li>
+        <li>数学加速：G8 完成 Algebra I / Geometry</li>
+        <li>科学实验和 Lab Report</li>
+        <li>人文阅读量大幅增加</li>
+      </ul>
+    </div>
+    <!-- G9-G10 -->
+    <div class="grade-card stage-preap">
+      <div class="stage-badge">Pre-AP</div>
+      <div class="grade-label">G9 — G10</div>
+      <div class="cn-label">≈ 初三、高一</div>
+      <ul>
+        <li>Honors + Pre-AP 课程为主</li>
+        <li><strong>比普通美校早 1 年接触 AP</strong></li>
+        <li>学术压力显著增加</li>
+        <li>淘汰机制开始生效</li>
+      </ul>
+    </div>
+    <!-- G11-G12 -->
+    <div class="grade-card stage-ap">
+      <div class="stage-badge">AP / Post-AP</div>
+      <div class="grade-label">G11 — G12</div>
+      <div class="cn-label">≈ 高二、高三</div>
+      <ul>
+        <li>大量 AP 课程（6-12 门）</li>
+        <li>Senior Research Project</li>
+        <li>顶点课程：范畴论、量子力学、微分方程</li>
+        <li>大学申请冲刺</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Speed Comparison -->
+  <div class="speed-compare">
+    <h3>课程进度对比：BASIS vs 普通美国学校 vs 中国公立</h3>
+    <div class="speed-row">
+      <div class="speed-label">中国公立</div>
+      <div class="speed-bar-wrap">
+        <div class="speed-bar" style="width:60%;background:linear-gradient(90deg,#a0aec0,#718096);">
+          标准进度 · 高考出口
+        </div>
+      </div>
+    </div>
+    <div class="speed-row">
+      <div class="speed-label">普通美校</div>
+      <div class="speed-bar-wrap">
+        <div class="speed-bar" style="width:75%;background:linear-gradient(90deg,#4299e1,#3182ce);">
+          G10-11 开始 AP
+        </div>
+      </div>
+    </div>
+    <div class="speed-row">
+      <div class="speed-label" style="color:var(--danger);font-weight:800;">BASIS</div>
+      <div class="speed-bar-wrap">
+        <div class="speed-bar" style="width:95%;background:linear-gradient(90deg,#ed8936,#e53e3e);">
+          G9 开始 AP · 加速 1-2 年 · G12 大学级内容
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Connector -->
+<div class="section-connector">
+  <div></div>
+  <div class="connector-label">加速课程 → 高淘汰压力</div>
+</div>
+
+<!-- ==================== SECTION 2: Elimination ==================== -->
+<div class="section" id="elimination">
+  <div class="section-title">
+    <div class="icon" style="background:#fff5f5;color:#e53e3e;">⚠️</div>
+    淘汰机制 — Academic Probation 到劝退
+  </div>
+  <div class="section-subtitle">BASIS 有明确的学术标准和淘汰流程，这是它被称为"美式衡水"的核心原因</div>
+
+  <!-- Flow -->
+  <div class="elim-flow">
+    <div class="elim-step step-green">
+      <div class="step-icon">✅</div>
+      <h4>正常状态</h4>
+      <p>GPA ≥ C (70%)<br>所有科目达标</p>
+    </div>
+    <div class="elim-arrow">→</div>
+    <div class="elim-step step-yellow">
+      <div class="step-icon">📉</div>
+      <h4>成绩下滑</h4>
+      <p>单科出现 D/F<br>教师发出预警</p>
+    </div>
+    <div class="elim-arrow">→</div>
+    <div class="elim-step step-orange">
+      <div class="step-icon">🔶</div>
+      <h4>Academic Probation</h4>
+      <p>正式学术观察期<br>限期改善（通常 1 学期）</p>
+    </div>
+    <div class="elim-arrow">→</div>
+    <div class="elim-step step-red">
+      <div class="step-icon">🚫</div>
+      <h4>建议转学（劝退）</h4>
+      <p>观察期内未改善<br>"建议去更适合的学校"</p>
+    </div>
+  </div>
+
+  <!-- Grading Table -->
+  <table class="grade-table">
+    <thead>
+      <tr>
+        <th>等级</th>
+        <th>分数区间</th>
+        <th>状态</th>
+        <th>后果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="grade-badge grade-a">A</span></td>
+        <td>90 — 100%</td>
+        <td>优秀</td>
+        <td>可选更高阶 AP 课程</td>
+      </tr>
+      <tr>
+        <td><span class="grade-badge grade-b">B</span></td>
+        <td>80 — 89%</td>
+        <td>良好</td>
+        <td>正常进度，无风险</td>
+      </tr>
+      <tr>
+        <td><span class="grade-badge grade-c">C</span></td>
+        <td>70 — 79%</td>
+        <td>及格线</td>
+        <td>建议课外辅导</td>
+      </tr>
+      <tr>
+        <td><span class="grade-badge grade-d">D</span></td>
+        <td>60 — 69%</td>
+        <td style="color:#c05621;font-weight:600;">危险区</td>
+        <td style="color:#c05621;">进入 Academic Probation</td>
+      </tr>
+      <tr>
+        <td><span class="grade-badge grade-f">F</span></td>
+        <td>< 60%</td>
+        <td style="color:#c53030;font-weight:600;">不及格</td>
+        <td style="color:#c53030;">面临留级或劝退</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Consequences -->
+  <div class="consequence-grid">
+    <div class="consequence-card" style="border-top:4px solid #ed8936;">
+      <h4><span style="color:#ed8936;">⏰</span> 核心考核节点</h4>
+      <ul>
+        <li>Benchmark Assessment（每 6-8 周）</li>
+        <li>Comprehensive Exam（学期末，占 40-50%）</li>
+        <li>AP Exam（5 分制统考）</li>
+        <li>Classwork + Homework 日常分</li>
+      </ul>
+    </div>
+    <div class="consequence-card" style="border-top:4px solid #e53e3e;">
+      <h4><span style="color:#e53e3e;">🚨</span> 零容忍红线</h4>
+      <ul>
+        <li>Academic Integrity 学术诚信违规</li>
+        <li>抄袭 / 作弊 → 直接 F + 纪律处分</li>
+        <li>严重行为问题 → 可直接劝退</li>
+        <li>多次违规 → 永久记录</li>
+      </ul>
+    </div>
+    <div class="consequence-card" style="border-top:4px solid #38a169;">
+      <h4><span style="color:#38a169;">🛡️</span> 自救窗口期</h4>
+      <ul>
+        <li>Probation 期间有 1 学期改善机会</li>
+        <li>Teacher Office Hours 主动求助</li>
+        <li>课外辅导是最有效的干预手段</li>
+        <li>越早介入，成功率越高</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Connector -->
+<div class="section-connector">
+  <div></div>
+  <div class="connector-label">淘汰压力 → 辅导刚需 → 商业机会</div>
+</div>
+
+<!-- ==================== SECTION 3: Business ==================== -->
+<div class="section" id="business">
+  <div class="section-title">
+    <div class="icon" style="background:#fffff0;color:#d69e2e;">💰</div>
+    商务转化 — 从焦虑到签约
+  </div>
+  <div class="section-subtitle">淘汰机制创造刚需，刚需驱动转化。理解家长心理是商业模型的核心。</div>
+
+  <!-- Funnel -->
+  <div style="background:var(--card-bg);border-radius:16px;padding:32px;border:2px solid var(--border);">
+    <h3 style="text-align:center;color:var(--primary);margin-bottom:24px;font-size:1.1em;">转化漏斗：免费 → 付费</h3>
+    <div class="funnel-container">
+      <div class="funnel-step" style="width:90%;background:linear-gradient(90deg,#4299e1,#3182ce);">
+        🎯 免费学科测评 — 获取联系方式 + 建立信任
+      </div>
+      <div class="funnel-rate">↓ 转化率 <span>60%</span></div>
+      <div class="funnel-step" style="width:75%;background:linear-gradient(90deg,#805ad5,#6b46c1);">
+        📖 体验课 1-2 节 — 展示教学专业度
+      </div>
+      <div class="funnel-rate">↓ 转化率 <span>50%</span></div>
+      <div class="funnel-step" style="width:58%;background:linear-gradient(90deg,#ed8936,#dd6b20);">
+        📦 短期课包 10 课时 — 低门槛试水
+      </div>
+      <div class="funnel-rate">↓ 转化率 <span>70%</span></div>
+      <div class="funnel-step" style="width:42%;background:linear-gradient(90deg,#e53e3e,#c53030);">
+        🏆 长期课包 / 全托管方案 — 高客单价签约
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.82em;color:var(--text-light);margin-top:8px;">
+      综合转化率 ≈ 60% × 50% × 70% = <strong style="color:var(--primary);">21%</strong>（每 5 个测评用户中约 1 个成为长期客户）
+    </p>
+  </div>
+
+  <!-- Timing -->
+  <h3 style="margin-top:40px;margin-bottom:4px;color:var(--primary);font-size:1.1em;">五大黄金转化时机</h3>
+  <p style="font-size:0.9em;color:var(--text-light);margin-bottom:4px;">家长焦虑峰值 = 转化最佳窗口</p>
+  <div class="timing-grid">
+    <div class="timing-card">
+      <div class="timing-emoji">🎒</div>
+      <h4>入学前 3 个月</h4>
+      <div class="timing-state">兴奋 + 轻微焦虑</div>
+      <div class="timing-action">新生衔接班</div>
+      <span class="price-tag">客单价 ★★★</span>
+    </div>
+    <div class="timing-card">
+      <div class="timing-emoji">📊</div>
+      <h4>首次 Benchmark 后</h4>
+      <div class="timing-state">成绩出来，焦虑爆发</div>
+      <div class="timing-action">诊断 + 补救方案</div>
+      <span class="price-tag">客单价 ★★★★</span>
+    </div>
+    <div class="timing-card">
+      <div class="timing-emoji">📝</div>
+      <h4>期中考试后</h4>
+      <div class="timing-state">明确知道差距</div>
+      <div class="timing-action">冲刺 + 提分方案</div>
+      <span class="price-tag">客单价 ★★★★</span>
+    </div>
+    <div class="timing-card" style="border-color:#fed7d7;">
+      <div class="timing-emoji">🚨</div>
+      <h4>Academic Probation</h4>
+      <div class="timing-state" style="color:#c53030;font-weight:600;">恐慌，急需解决</div>
+      <div class="timing-action" style="background:#fff5f5;color:#c53030;">保级方案</div>
+      <span class="price-tag">客单价 ★★★★★</span>
+    </div>
+    <div class="timing-card">
+      <div class="timing-emoji">📋</div>
+      <h4>选课季（3-4月）</h4>
+      <div class="timing-state">规划下一年 AP</div>
+      <div class="timing-action">AP 预修 + 选课咨询</div>
+      <span class="price-tag">客单价 ★★★</span>
+    </div>
+  </div>
+
+  <!-- Parent Types -->
+  <h3 style="margin-top:40px;margin-bottom:4px;color:var(--primary);font-size:1.1em;">四种家长画像</h3>
+  <p style="font-size:0.9em;color:var(--text-light);margin-bottom:4px;">不同类型需要不同的沟通策略</p>
+  <div class="parent-grid">
+    <div class="parent-card">
+      <div class="pct">30%</div>
+      <h4>A. 精英规划型</h4>
+      <div class="parent-desc">企业高管 / 海归 / 高知 · 年收入 100 万+</div>
+      <div class="inner-voice">"孩子在 BASIS 跟不上，但目标必须是 Top 30"</div>
+    </div>
+    <div class="parent-card">
+      <div class="pct">40%</div>
+      <h4>B. 焦虑跟风型</h4>
+      <div class="parent-desc">中产家庭 · 年收入 50-100 万 · 周围人都上了</div>
+      <div class="inner-voice">"花了 30 万学费，孩子上课像听天书"</div>
+    </div>
+    <div class="parent-card">
+      <div class="pct">25%</div>
+      <h4>C. 问题驱动型</h4>
+      <div class="parent-desc">孩子已遇到困难 · 目标明确：保住学位</div>
+      <div class="inner-voice">"面临劝退，时间紧迫，什么方案能最快见效？"</div>
+    </div>
+    <div class="parent-card">
+      <div class="pct">5%</div>
+      <h4>D. 探索观望型</h4>
+      <div class="parent-desc">还在择校阶段 · 比较 BASIS vs IB vs A-Level</div>
+      <div class="inner-voice">"信息太多了，到底哪个体系适合我家孩子？"</div>
+    </div>
+  </div>
+</div>
+
+<!-- Connector -->
+<div class="section-connector">
+  <div></div>
+  <div class="connector-label">三者如何形成闭环？</div>
+</div>
+
+<!-- ==================== SECTION 4: Closed Loop ==================== -->
+<div class="section" id="closed-loop">
+  <div class="section-title">
+    <div class="icon" style="background:#f0fff4;color:#38a169;">🔄</div>
+    三位一体闭环
+  </div>
+  <div class="section-subtitle">学制 → 淘汰 → 商务，三者环环相扣，形成完整的商业逻辑</div>
+
+  <div class="relationship">
+    <h3>核心因果链</h3>
+    <div class="rel-diagram">
+      <div class="rel-box rel-school">
+        <div style="font-size:1.3em;margin-bottom:4px;">🏫</div>
+        BASIS 加速学制<br>
+        <small>超前 1-2 年 · 全英文</small>
+      </div>
+      <div class="rel-arrow">→</div>
+      <div class="rel-box rel-pressure">
+        <div style="font-size:1.3em;margin-bottom:4px;">📉</div>
+        高淘汰压力<br>
+        <small>68% 首年 GPA 下降</small>
+      </div>
+      <div class="rel-arrow">→</div>
+      <div class="rel-box rel-need">
+        <div style="font-size:1.3em;margin-bottom:4px;">🔥</div>
+        辅导刚需<br>
+        <small>85% 家长偷偷补课</small>
+      </div>
+      <div class="rel-arrow">→</div>
+      <div class="rel-box rel-solution">
+        <div style="font-size:1.3em;margin-bottom:4px;">🤖</div>
+        AI 辅导平台<br>
+        <small>绕过师资瓶颈</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why AI -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;">
+    <div class="consequence-card" style="border-top:4px solid #e53e3e;text-align:center;">
+      <h4 style="justify-content:center;">行业最大瓶颈</h4>
+      <p style="font-size:2.2em;font-weight:800;color:#e53e3e;margin:12px 0;">师资</p>
+      <p style="font-size:0.82em;color:var(--text-light);">培养 1 个合格教师需要 3-5 年<br>既懂 BASIS 体系 × 能英语教学 × 双语辅导</p>
+    </div>
+    <div class="consequence-card" style="border-top:4px solid #38a169;text-align:center;">
+      <h4 style="justify-content:center;">AI 如何破局</h4>
+      <p style="font-size:2.2em;font-weight:800;color:#38a169;margin:12px 0;">规模化</p>
+      <p style="font-size:0.82em;color:var(--text-light);">4 个 AI 专家 Agent（数学/科学/人文/课规）<br>覆盖全国 15 个校区 · 标准化 + 个性化</p>
+    </div>
+    <div class="consequence-card" style="border-top:4px solid #d69e2e;text-align:center;">
+      <h4 style="justify-content:center;">市场规模</h4>
+      <p style="font-size:2.2em;font-weight:800;color:#d69e2e;margin:12px 0;">2.5-6.3亿</p>
+      <p style="font-size:0.82em;color:var(--text-light);">仅 BASIS 体系 · 年度潜在规模<br>15 校区 × 800+ 学生 × 42% 付费意愿</p>
+    </div>
+  </div>
+
+  <!-- Summary formula -->
+  <div style="background:linear-gradient(135deg,#1a365d,#2b6cb0);border-radius:16px;padding:32px;margin-top:30px;text-align:center;color:white;">
+    <div style="font-size:1.1em;margin-bottom:16px;opacity:0.85;">商业逻辑公式</div>
+    <div style="font-size:1.3em;font-weight:700;line-height:1.8;">
+      <span style="background:rgba(255,255,255,0.15);padding:4px 14px;border-radius:8px;margin:4px;">加速学制</span>
+      <span style="opacity:0.6;margin:0 6px;">×</span>
+      <span style="background:rgba(255,255,255,0.15);padding:4px 14px;border-radius:8px;margin:4px;">淘汰机制</span>
+      <span style="opacity:0.6;margin:0 6px;">=</span>
+      <span style="background:rgba(237,137,54,0.4);padding:4px 14px;border-radius:8px;margin:4px;">刚需辅导</span>
+    </div>
+    <div style="font-size:1.3em;font-weight:700;margin-top:8px;line-height:1.8;">
+      <span style="background:rgba(255,255,255,0.15);padding:4px 14px;border-radius:8px;margin:4px;">刚需辅导</span>
+      <span style="opacity:0.6;margin:0 6px;">×</span>
+      <span style="background:rgba(255,255,255,0.15);padding:4px 14px;border-radius:8px;margin:4px;">师资稀缺</span>
+      <span style="opacity:0.6;margin:0 6px;">=</span>
+      <span style="background:rgba(56,161,105,0.4);padding:4px 14px;border-radius:8px;margin:4px;">AI 辅导蓝海</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  BASIS Expert Council · 贝赛思教育专家智囊团 · 2026
+</div>
+
+<script>
+// Data sub-tab switching
+function switchDataTab(tabName) {
+  document.querySelectorAll('.data-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.data-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + tabName).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Main section navigation
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// Update active tab on scroll
+window.addEventListener('scroll', () => {
+  const sections = ['data-overview', 'grade-system', 'elimination', 'business', 'closed-loop'];
+  const tabs = document.querySelectorAll('.nav-tab');
+  let current = 0;
+  sections.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top < 200) current = i;
+  });
+  tabs.forEach(t => t.classList.remove('active'));
+  if (tabs[current]) tabs[current].classList.add('active');
+});
+</script>
+</body>
+</html>

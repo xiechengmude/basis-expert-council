@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepAgents 上下文传递 & 数据流转架构图</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d2e;
+    --border: #2a2d3e;
+    --accent: #6c63ff;
+    --accent2: #00d4aa;
+    --accent3: #ff6b6b;
+    --accent4: #ffd93d;
+    --accent5: #4ecdc4;
+    --text: #e4e4e7;
+    --muted: #71717a;
+    --glow: rgba(108, 99, 255, 0.15);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 48px 24px 24px;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header p {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* Canvas */
+  .canvas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 56px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+  .section:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  /* Flow arrow between sections */
+  .flow-connector {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0;
+    position: relative;
+    z-index: 1;
+  }
+  .flow-connector .arrow {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--accent), var(--accent2));
+    position: relative;
+  }
+  .flow-connector .arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--accent2);
+  }
+
+  /* System Prompt Stack */
+  .prompt-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  }
+  .prompt-layer {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .prompt-layer:hover {
+    background: rgba(255,255,255,0.03);
+    padding-left: 26px;
+  }
+  .prompt-layer:last-child { border-bottom: none; }
+  .prompt-layer .layer-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .prompt-layer .layer-body h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .prompt-layer .layer-body p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .prompt-layer .layer-body code {
+    font-size: 11px;
+    background: rgba(108,99,255,0.15);
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  .layer-base { background: rgba(108,99,255,0.08); }
+  .layer-base .layer-icon { background: rgba(108,99,255,0.2); color: var(--accent); }
+  .layer-memory { background: rgba(0,212,170,0.06); }
+  .layer-memory .layer-icon { background: rgba(0,212,170,0.2); color: var(--accent2); }
+  .layer-skills { background: rgba(255,217,61,0.06); }
+  .layer-skills .layer-icon { background: rgba(255,217,61,0.2); color: var(--accent4); }
+  .layer-subagent { background: rgba(255,107,107,0.06); }
+  .layer-subagent .layer-icon { background: rgba(255,107,107,0.2); color: var(--accent3); }
+  .layer-other { background: rgba(78,205,196,0.06); }
+  .layer-other .layer-icon { background: rgba(78,205,196,0.2); color: var(--accent5); }
+
+  /* Middleware Pipeline */
+  .pipeline {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    padding: 4px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pipeline::-webkit-scrollbar { height: 4px; }
+  .pipeline::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  .pipe-item {
+    min-width: 130px;
+    padding: 14px 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+  .pipe-item:first-child { border-radius: 12px 0 0 12px; }
+  .pipe-item:last-child { border-radius: 0 12px 12px 0; }
+  .pipe-item:hover {
+    background: rgba(108,99,255,0.08);
+    border-color: var(--accent);
+    z-index: 2;
+    transform: translateY(-2px);
+  }
+  .pipe-item::after {
+    content: '→';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translate(50%, -50%);
+    color: var(--muted);
+    font-size: 14px;
+    z-index: 3;
+    background: var(--bg);
+    width: 16px;
+    text-align: center;
+  }
+  .pipe-item:last-child::after { display: none; }
+  .pipe-item .pipe-num {
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .pipe-item .pipe-name {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  .pipe-item .pipe-desc {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Data Flow */
+  .flow-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .flow-node {
+    padding: 12px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    min-width: 180px;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .flow-node:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--glow);
+    transform: scale(1.03);
+  }
+  .flow-node .fn-label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .flow-node .fn-detail {
+    font-size: 10px;
+    color: var(--muted);
+  }
+  .flow-node code {
+    font-size: 10px;
+    background: rgba(108,99,255,0.12);
+    color: var(--accent);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+  .flow-arrow-h {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    position: relative;
+    flex-shrink: 0;
+  }
+  .flow-arrow-h::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0; height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid var(--accent2);
+  }
+  .flow-arrow-v {
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(180deg, var(--accent), var(--accent2));
+    margin: 0 auto;
+    position: relative;
+  }
+  .flow-arrow-v::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid var(--accent2);
+  }
+
+  /* SubAgent Isolation */
+  .isolation-grid {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0;
+    align-items: center;
+  }
+  .iso-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+  }
+  .iso-box h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .iso-box ul {
+    list-style: none;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 2;
+  }
+  .iso-box ul li::before {
+    content: '•';
+    margin-right: 8px;
+    color: var(--accent);
+  }
+  .iso-wall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--accent3);
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .iso-wall .wall-line {
+    width: 2px;
+    height: 80px;
+    background: repeating-linear-gradient(
+      180deg,
+      var(--accent3) 0px,
+      var(--accent3) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+  }
+  .iso-wall .wall-arrow {
+    font-size: 18px;
+  }
+
+  /* Scenario */
+  .scenario {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .scenario-header {
+    padding: 14px 20px;
+    background: rgba(108,99,255,0.08);
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .scenario-steps {
+    padding: 16px 20px;
+  }
+  .step {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+  }
+  .step:last-child { border-bottom: none; }
+  .step::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 36px;
+    bottom: -12px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--border), transparent);
+  }
+  .step:last-child::before { display: none; }
+  .step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .step-body h5 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .step-body p {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .step-body .model-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  /* Table */
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .summary-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: rgba(108,99,255,0.08);
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .summary-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .summary-table tr:hover td {
+    background: rgba(255,255,255,0.02);
+  }
+  .summary-table code {
+    font-size: 11px;
+    background: rgba(108,99,255,0.12);
+    color: var(--accent);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .isolation-grid { grid-template-columns: 1fr; gap: 16px; }
+    .iso-wall { flex-direction: row; }
+    .iso-wall .wall-line { width: 80px; height: 2px; background: repeating-linear-gradient(90deg, var(--accent3) 0px, var(--accent3) 6px, transparent 6px, transparent 12px); }
+    .pipeline { flex-direction: column; }
+    .pipe-item { border-radius: 0 !important; }
+    .pipe-item:first-child { border-radius: 12px 12px 0 0 !important; }
+    .pipe-item:last-child { border-radius: 0 0 12px 12px !important; }
+    .pipe-item::after { display: none; }
+    .flow-row { flex-direction: column; }
+    .flow-arrow-h { width: 2px; height: 32px; background: linear-gradient(180deg, var(--accent), var(--accent2)); }
+    .flow-arrow-h::after { right: auto; bottom: -5px; top: auto; left: 50%; transform: translateX(-50%); border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid var(--accent2); border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>DeepAgents Context & Data Flow Architecture</h1>
+  <p>BASIS Expert Council &mdash; 上下文传递与数据流转全景图</p>
+</div>
+
+<div class="canvas">
+
+  <!-- ===== Section 1: System Prompt Stack ===== -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num" style="background:var(--accent);">1</span>
+      系统提示组装 &mdash; System Prompt Assembly
+    </div>
+    <div class="prompt-stack">
+      <div class="prompt-layer layer-base">
+        <div class="layer-icon">&#x1F4E6;</div>
+        <div class="layer-body">
+          <h4>BASE_AGENT_PROMPT</h4>
+          <p>框架硬编码的基础提示。定义 Deep Agent 的通用行为规范：简洁回答、工具使用指导、错误处理。</p>
+          <p><code>graph.py</code> 常量，每个智能体都包含</p>
+        </div>
+      </div>
+      <div class="prompt-layer layer-memory">
+        <div class="layer-icon">&#x1F9E0;</div>
+        <div class="layer-body">
+          <h4>MemoryMiddleware &rarr; AGENTS.md</h4>
+          <p>注入 <code>&lt;agent_memory&gt;</code> 标签，包含 <code>/AGENTS.md</code> 全文：BASIS 教育体系核心知识、年级结构、评估体系、教学方法论、中国学生常见挑战。</p>
+          <p><code>memory=[PROJECT_ROOT / "AGENTS.md"]</code></p>
+        </div>
+      </div>
+      <div class="prompt-layer layer-skills">
+        <div class="layer-icon">&#x1F527;</div>
+        <div class="layer-body">
+          <h4>SkillsMiddleware &rarr; 11 Skills 索引</h4>
+          <p><b>渐进式披露 (Progressive Disclosure)</b>：仅注入技能的名称 + 描述 + 路径。模型按需 <code>Read SKILL.md</code> 获取完整指令。节省 token。</p>
+          <p><code>skills=[PROJECT_ROOT / "skills/"]</code> &rarr; math-tutoring, science-tutoring, lesson-planning, ap-exam-prep ...</p>
+        </div>
+      </div>
+      <div class="prompt-layer layer-subagent">
+        <div class="layer-icon">&#x1F916;</div>
+        <div class="layer-body">
+          <h4>SubAgentMiddleware &rarr; 5 SubAgents</h4>
+          <p>注入 <code>task</code> 工具定义和可用子智能体列表：math-expert, science-expert, humanities-expert, curriculum-advisor, business-advisor。</p>
+          <p>主智能体仅看到描述，委派后子智能体获得<b>独立上下文</b></p>
+        </div>
+      </div>
+      <div class="prompt-layer layer-other">
+        <div class="layer-icon">&#x2699;</div>
+        <div class="layer-body">
+          <h4>其他中间件</h4>
+          <p>TodoListMiddleware (任务列表) &bull; FilesystemMiddleware (文件读写工具) &bull; SummarizationMiddleware (上下文压缩) &bull; AnthropicPromptCachingMiddleware (缓存优化) &bull; PatchToolCallsMiddleware (工具调用修复)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-connector"><div class="arrow"></div></div>
+
+  <!-- ===== Section 2: Middleware Pipeline ===== -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num" style="background:var(--accent2);">2</span>
+      中间件管道 &mdash; Middleware Pipeline
+    </div>
+    <div class="pipeline">
+      <div class="pipe-item">
+        <div class="pipe-num">#1</div>
+        <div class="pipe-name" style="color:var(--accent5);">TodoList</div>
+        <div class="pipe-desc">任务列表管理</div>
+      </div>
+      <div class="pipe-item">
+        <div class="pipe-num">#2</div>
+        <div class="pipe-name" style="color:var(--accent2);">Memory</div>
+        <div class="pipe-desc">读取 AGENTS.md<br>注入 &lt;agent_memory&gt;</div>
+      </div>
+      <div class="pipe-item">
+        <div class="pipe-num">#3</div>
+        <div class="pipe-name" style="color:var(--accent4);">Skills</div>
+        <div class="pipe-desc">扫描 /skills 目录<br>注入技能索引</div>
+      </div>
+      <div class="pipe-item">
+        <div class="pipe-num">#4</div>
+        <div class="pipe-name" style="color:var(--accent5);">Filesystem</div>
+        <div class="pipe-desc">提供 Read/Write<br>文件工具</div>
+      </div>
+      <div class="pipe-item">
+        <div class="pipe-num">#5</div>
+        <div class="pipe-name" style="color:var(--accent3);">SubAgent</div>
+        <div class="pipe-desc">构建 task 工具<br>注入子智能体列表</div>
+      </div>
+      <div class="pipe-item">
+        <div class="pipe-num">#6</div>
+        <div class="pipe-name" style="color:var(--muted);">Summarize</div>
+        <div class="pipe-desc">长对话<br>上下文压缩</div>
+      </div>
+      <div class="pipe-item">
+        <div class="pipe-num">#7</div>
+        <div class="pipe-name" style="color:var(--muted);">Cache</div>
+        <div class="pipe-desc">Anthropic<br>提示缓存</div>
+      </div>
+      <div class="pipe-item">
+        <div class="pipe-num">#8</div>
+        <div class="pipe-name" style="color:var(--muted);">PatchCalls</div>
+        <div class="pipe-desc">工具调用<br>格式修复</div>
+      </div>
+    </div>
+    <p style="margin-top:12px;font-size:11px;color:var(--muted);text-align:center;">
+      每个中间件在 <code>before_agent()</code> 加载资源，在 <code>wrap_model_call()</code> 拦截并修改系统提示 &rarr; 然后调用 <code>handler()</code> 传给下一层
+    </p>
+  </div>
+
+  <div class="flow-connector"><div class="arrow"></div></div>
+
+  <!-- ===== Section 3: Data Flow ===== -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num" style="background:var(--accent4);color:#000;">3</span>
+      数据流转全链路 &mdash; End-to-End Data Flow
+    </div>
+    <div class="flow-diagram">
+      <div class="flow-row">
+        <div class="flow-node" style="border-color:var(--accent4);">
+          <div class="fn-label">&#x1F4C1; 文件系统</div>
+          <div class="fn-detail">AGENTS.md &bull; /skills &bull; /agents</div>
+        </div>
+        <div class="flow-arrow-h"></div>
+        <div class="flow-node" style="border-color:var(--accent5);">
+          <div class="fn-label">&#x1F5C4; BackendProtocol</div>
+          <div class="fn-detail"><code>FilesystemBackend</code><br>read_file() &bull; ls_info()</div>
+        </div>
+        <div class="flow-arrow-h"></div>
+        <div class="flow-node" style="border-color:var(--accent2);">
+          <div class="fn-label">&#x2699; Middleware 加载</div>
+          <div class="fn-detail"><code>before_agent()</code><br>读取并解析文件内容</div>
+        </div>
+      </div>
+      <div class="flow-arrow-v"></div>
+      <div class="flow-row">
+        <div class="flow-node" style="border-color:var(--accent);">
+          <div class="fn-label">&#x1F4BE; State 存储</div>
+          <div class="fn-detail"><code>memory_contents</code><br><code>skills_metadata</code><br>(PrivateStateAttr)</div>
+        </div>
+        <div class="flow-arrow-h"></div>
+        <div class="flow-node" style="border-color:var(--accent3);">
+          <div class="fn-label">&#x1F50D; wrap_model_call()</div>
+          <div class="fn-detail">拦截每次 LLM 请求<br>从 State 读取数据</div>
+        </div>
+        <div class="flow-arrow-h"></div>
+        <div class="flow-node" style="border-color:var(--accent2);">
+          <div class="fn-label">&#x1F4DD; append_to_system_message()</div>
+          <div class="fn-detail">将内容追加到<br>SystemMessage</div>
+        </div>
+      </div>
+      <div class="flow-arrow-v"></div>
+      <div class="flow-row" style="justify-content:center;">
+        <div class="flow-node" style="border-color:var(--accent);box-shadow:0 0 24px var(--glow);min-width:280px;">
+          <div class="fn-label" style="font-size:15px;">&#x1F680; LLM API 调用</div>
+          <div class="fn-detail">完整 SystemPrompt + Messages &rarr; Model</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-connector"><div class="arrow"></div></div>
+
+  <!-- ===== Section 4: SubAgent Isolation ===== -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num" style="background:var(--accent3);">4</span>
+      子智能体上下文隔离 &mdash; SubAgent Context Isolation
+    </div>
+    <div class="isolation-grid">
+      <div class="iso-box">
+        <h4><span style="color:var(--accent);">&#x1F451;</span> 主智能体 (Lead Agent)</h4>
+        <ul>
+          <li>模型: <code>z-ai/glm-5</code></li>
+          <li>系统提示: BASE + AGENTS.md + Skills + SubAgents</li>
+          <li>State: messages, memory_contents, skills_metadata</li>
+          <li>工具: Read, Write, task, todo...</li>
+          <li>看到子智能体的 <b>名称 + 描述</b></li>
+        </ul>
+      </div>
+      <div class="iso-wall">
+        <div class="wall-arrow">&#x27A1;</div>
+        <div class="wall-line"></div>
+        <div>task()<br>工具调用</div>
+        <div class="wall-line"></div>
+        <div class="wall-arrow">&#x2B05;</div>
+        <div style="font-size:9px;color:var(--accent3);">ToolMessage<br>返回结果</div>
+      </div>
+      <div class="iso-box" style="border-color:rgba(255,107,107,0.3);">
+        <h4><span style="color:var(--accent3);">&#x1F9D1;&#x200D;&#x1F52C;</span> 子智能体 (SubAgent)</h4>
+        <ul>
+          <li>模型: <code>minimax/minimax-m2.5</code> (可独立配置)</li>
+          <li>系统提示: BASE + 自己的 AGENTS.md</li>
+          <li>State: <b>全新独立</b> (排除父级 private attrs)</li>
+          <li>Messages: 仅包含 task description</li>
+          <li>可有自己的 skills 和 middleware</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 16px;background:rgba(255,107,107,0.06);border:1px solid rgba(255,107,107,0.15);border-radius:10px;font-size:12px;color:var(--muted);">
+      <b style="color:var(--accent3);">PrivateStateAttr 隔离机制：</b>
+      <code>_EXCLUDED_STATE_KEYS</code> = {messages, todos, structured_response, skills_metadata, memory_contents}
+      &mdash; 这些键在传递给子智能体时被过滤掉，确保子智能体拥有独立的上下文窗口。
+    </div>
+  </div>
+
+  <div class="flow-connector"><div class="arrow"></div></div>
+
+  <!-- ===== Section 5: Scenario ===== -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num" style="background:var(--accent5);">5</span>
+      实际场景示例 &mdash; 数学问题处理流程
+    </div>
+    <div class="scenario">
+      <div class="scenario-header">
+        &#x1F4AC; 用户提问: "AP Calculus BC 的 Taylor Series 怎么理解？"
+      </div>
+      <div class="scenario-steps">
+        <div class="step">
+          <div class="step-dot" style="background:rgba(108,99,255,0.2);color:var(--accent);">&#x1F451;</div>
+          <div class="step-body">
+            <h5>主智能体接收请求</h5>
+            <p>系统提示已包含：AGENTS.md (BASIS 体系知识) + 11 个技能索引 + 5 个子智能体列表</p>
+            <span class="model-tag" style="background:rgba(108,99,255,0.15);color:var(--accent);">Lead: z-ai/glm-5</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot" style="background:rgba(255,217,61,0.2);color:var(--accent4);">&#x1F527;</div>
+          <div class="step-body">
+            <h5>识别匹配技能 & 子智能体</h5>
+            <p>看到 <code>math-tutoring</code> 技能和 <code>math-expert</code> 子智能体都匹配。判断为深度学科问题，委派给子专家。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot" style="background:rgba(255,107,107,0.2);color:var(--accent3);">&#x1F916;</div>
+          <div class="step-body">
+            <h5>task(subagent_type="math-expert")</h5>
+            <p>创建独立上下文窗口。math-expert 的系统提示 = <code>/agents/math-expert/AGENTS.md</code>（数学教师身份、教学原则、AP Calculus 知识、回答格式）</p>
+            <span class="model-tag" style="background:rgba(255,107,107,0.15);color:var(--accent3);">SubAgent: minimax/minimax-m2.5</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot" style="background:rgba(0,212,170,0.2);color:var(--accent2);">&#x2705;</div>
+          <div class="step-body">
+            <h5>子智能体生成专业回答</h5>
+            <p>中英双语讲解 Taylor Series 概念、推导过程、AP 考试题型、练习建议。结果以 <code>ToolMessage</code> 返回主智能体，呈现给用户。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-connector"><div class="arrow"></div></div>
+
+  <!-- ===== Section 6: Summary Table ===== -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num" style="background:var(--accent);color:#fff;">6</span>
+      上下文四层模型 &mdash; Context Layer Summary
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>层次</th>
+            <th>来源</th>
+            <th>注入机制</th>
+            <th>加载时机</th>
+            <th>特点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b style="color:var(--accent);">BasePrompt</b></td>
+            <td><code>BASE_AGENT_PROMPT</code> 常量</td>
+            <td>硬编码拼接</td>
+            <td>初始化</td>
+            <td>所有智能体共享</td>
+          </tr>
+          <tr>
+            <td><b style="color:var(--accent2);">Memory</b></td>
+            <td><code>AGENTS.md</code> 文件</td>
+            <td>MemoryMiddleware<br><code>&lt;agent_memory&gt;</code> 标签</td>
+            <td><code>before_agent()</code></td>
+            <td>智能体身份 & 领域知识</td>
+          </tr>
+          <tr>
+            <td><b style="color:var(--accent4);">Skills</b></td>
+            <td><code>/skills/*/SKILL.md</code></td>
+            <td>SkillsMiddleware<br>渐进式披露</td>
+            <td><code>before_agent()</code></td>
+            <td>仅索引，按需读取全文</td>
+          </tr>
+          <tr>
+            <td><b style="color:var(--accent3);">SubAgents</b></td>
+            <td><code>/agents/*/AGENTS.md</code></td>
+            <td>SubAgentMiddleware<br><code>task</code> 工具</td>
+            <td>task() 调用时</td>
+            <td>独立上下文 & State 隔离</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:20px;padding:16px 20px;background:linear-gradient(135deg,rgba(108,99,255,0.08),rgba(0,212,170,0.08));border:1px solid var(--border);border-radius:12px;">
+      <div style="font-size:13px;font-weight:600;margin-bottom:8px;">&#x1F504; 完整数据流公式</div>
+      <div style="font-family:'SF Mono','Fira Code',monospace;font-size:12px;color:var(--accent);line-height:2;">
+        文件系统 (AGENTS.md, /skills, /agents)<br>
+        &nbsp;&nbsp;&darr; <span style="color:var(--muted);">BackendProtocol.read_file()</span><br>
+        中间件加载 <span style="color:var(--muted);">(before_agent)</span><br>
+        &nbsp;&nbsp;&darr; <span style="color:var(--muted);">存入 State dict</span><br>
+        State 存储 <span style="color:var(--muted);">(memory_contents, skills_metadata)</span><br>
+        &nbsp;&nbsp;&darr; <span style="color:var(--muted);">wrap_model_call() 拦截</span><br>
+        系统提示修改 <span style="color:var(--muted);">(append_to_system_message)</span><br>
+        &nbsp;&nbsp;&darr;<br>
+        <span style="color:var(--accent2);font-weight:700;">LLM API 调用 &#x1F680;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  BASIS Expert Council &mdash; DeepAgents Architecture Diagram &bull; Generated 2026-02-20
+</div>
+
+</body>
+</html>

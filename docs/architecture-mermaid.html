@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BASIS Expert Council - 架构图</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    h1, h2 { text-align: center; }
+    .diagram-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 1200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .mermaid { display: flex; justify-content: center; }
+  </style>
+</head>
+<body>
+  <h1>BASIS Expert Council</h1>
+  <p style="text-align:center;color:#666;">贝赛思教育专家智囊团 — 系统架构图</p>
+
+  <!-- 整体架构 -->
+  <div class="diagram-container">
+    <h2>系统整体架构</h2>
+    <pre class="mermaid">
+graph TB
+    subgraph Browser["浏览器 (localhost:8015)"]
+        UI["deep-agents-ui<br/>Next.js 16 + Turbopack"]
+    end
+
+    subgraph Backend["LangGraph Server (127.0.0.1:5095)"]
+        GW["graph.py 入口"]
+        MAIN["主 Agent<br/>openai:z-ai/glm-5"]
+        SUP["Supervisor Router"]
+
+        subgraph Subagents["子 Agent (openai:minimax/minimax-m2.5)"]
+            MATH["math-expert<br/>数学学科专家"]
+            SCI["science-expert<br/>科学学科专家"]
+            HUM["humanities-expert<br/>人文学科专家"]
+            CUR["curriculum-advisor<br/>课程规划顾问"]
+        end
+    end
+
+    subgraph LLM["LLM 网关"]
+        LITE["LiteLLM Proxy<br/>150.109.16.195:8600"]
+    end
+
+    subgraph Providers["LLM Providers"]
+        GLM["GLM-5 (z-ai)"]
+        MMX["MiniMax M2.5"]
+    end
+
+    subgraph Observability["可观测性"]
+        LS["LangSmith<br/>basis-expert-council"]
+    end
+
+    UI -->|"HTTP/SSE<br/>LangGraph SDK"| GW
+    GW --> MAIN
+    MAIN --> SUP
+    SUP -->|数学问题| MATH
+    SUP -->|科学问题| SCI
+    SUP -->|人文问题| HUM
+    SUP -->|规划问题| CUR
+    MAIN -->|"OpenAI API"| LITE
+    MATH -->|"OpenAI API"| LITE
+    SCI -->|"OpenAI API"| LITE
+    HUM -->|"OpenAI API"| LITE
+    CUR -->|"OpenAI API"| LITE
+    LITE --> GLM
+    LITE --> MMX
+    Backend -.->|traces| LS
+
+    style Browser fill:#e3f2fd,stroke:#1565c0
+    style Backend fill:#e8f5e9,stroke:#2e7d32
+    style LLM fill:#fff3e0,stroke:#e65100
+    style Providers fill:#fce4ec,stroke:#c62828
+    style Observability fill:#f3e5f5,stroke:#6a1b9a
+    </pre>
+  </div>
+
+  <!-- 请求流程 -->
+  <div class="diagram-container">
+    <h2>请求处理流程</h2>
+    <pre class="mermaid">
+sequenceDiagram
+    participant U as 用户浏览器<br/>(localhost:8015)
+    participant FE as Next.js 前端
+    participant LG as LangGraph Server<br/>(127.0.0.1:5095)
+    participant MA as 主 Agent<br/>(GLM-5)
+    participant SA as 子 Agent<br/>(MiniMax M2.5)
+    participant LP as LiteLLM Proxy
+
+    U->>FE: 输入问题
+    FE->>LG: POST /runs/stream
+    LG->>MA: invoke
+    MA->>LP: chat/completions
+    LP-->>MA: 分析 & 路由决策
+    MA->>SA: delegate (e.g. math-expert)
+    SA->>LP: chat/completions
+    LP-->>SA: 专业领域回答
+    SA-->>MA: 子 Agent 结果
+    MA-->>LG: 最终响应
+    LG-->>FE: SSE 流式输出
+    FE-->>U: 渲染回答
+    </pre>
+  </div>
+
+  <!-- 文件结构 -->
+  <div class="diagram-container">
+    <h2>项目文件结构</h2>
+    <pre class="mermaid">
+graph LR
+    subgraph Root["basis-expert-council/"]
+        GP["graph.py<br/><i>LangGraph 入口</i>"]
+        LJ["langgraph.json<br/><i>服务器配置</i>"]
+        ENV[".env<br/><i>环境变量</i>"]
+        PT["pyproject.toml<br/><i>Python 配置</i>"]
+        AM["AGENTS.md<br/><i>主 Agent 提示词</i>"]
+    end
+
+    subgraph Src["src/basis_expert_council/"]
+        AG["agent.py<br/><i>Agent 工厂</i>"]
+    end
+
+    subgraph Agents["agents/"]
+        ME["math-expert/"]
+        SE["science-expert/"]
+        HE["humanities-expert/"]
+        CA["curriculum-advisor/"]
+    end
+
+    subgraph FE["frontend/"]
+        NX["Next.js App"]
+    end
+
+    GP --> AG
+    AG --> AM
+    AG --> Agents
+    LJ --> GP
+
+    style Root fill:#e8f5e9
+    style Src fill:#e3f2fd
+    style Agents fill:#fff3e0
+    style FE fill:#fce4ec
+    </pre>
+  </div>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: { curve: 'basis', useMaxWidth: true },
+      sequence: { useMaxWidth: true }
+    });
+  </script>
+</body>
+</html>
