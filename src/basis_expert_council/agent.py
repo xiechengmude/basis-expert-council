@@ -9,6 +9,7 @@ from typing import Any
 
 from deepagents import create_deep_agent
 from deepagents.backends import FilesystemBackend
+from langchain.chat_models import init_chat_model
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
@@ -108,6 +109,17 @@ def _load_subagents():
 # Agent 工厂
 # ---------------------------------------------------------------------------
 
+def _init_model(model_id: str):
+    """初始化 LLM 模型，绕过 DeepAgents 对 openai: 前缀的 Responses API 自动启用。
+
+    DeepAgents create_deep_agent() 检测到 "openai:" 前缀时会设置
+    use_responses_api=True，但 LiteLLM 代理不支持 OpenAI Responses API，
+    导致 tool_calls 全部丢失。这里预先初始化模型对象（use_responses_api=False），
+    传入对象而非字符串即可绕过该检测。
+    """
+    return init_chat_model(model_id, use_responses_api=False)
+
+
 def create_basis_expert_agent(
     model: str | None = None,
     **kwargs: Any,
@@ -124,11 +136,14 @@ def create_basis_expert_agent(
     if model is None:
         model = LEAD_MODEL
 
+    # 预初始化模型对象，避免 DeepAgents 自动启用 Responses API
+    model_instance = _init_model(model)
+
     backend = FilesystemBackend(root_dir=PROJECT_ROOT)
     subagents = _load_subagents()
 
     agent = create_deep_agent(
-        model=model,
+        model=model_instance,
         memory=[str(PROJECT_ROOT / "AGENTS.md")],
         skills=[str(PROJECT_ROOT / "skills") + "/"],
         subagents=subagents,
