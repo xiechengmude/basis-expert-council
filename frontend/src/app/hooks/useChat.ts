@@ -29,10 +29,12 @@ export function useChat({
   activeAssistant,
   onHistoryRevalidate,
   thread,
+  userId,
 }: {
   activeAssistant: Assistant | null;
   onHistoryRevalidate?: () => void;
   thread?: UseStreamThread<StateType>;
+  userId?: number;
 }) {
   const [threadId, setThreadId] = useQueryState("threadId");
   const client = useClient();
@@ -62,13 +64,31 @@ export function useChat({
           optimisticValues: (prev) => ({
             messages: [...(prev.messages ?? []), newMessage],
           }),
-          config: { ...(activeAssistant?.config ?? {}), recursion_limit: 100 },
+          config: {
+            ...(activeAssistant?.config ?? {}),
+            recursion_limit: 100,
+            configurable: {
+              ...(activeAssistant?.config?.configurable ?? {}),
+              ...(userId ? { user_id: userId } : {}),
+            },
+          },
         }
       );
       // Update thread list immediately when sending a message
       onHistoryRevalidate?.();
     },
-    [stream, activeAssistant?.config, onHistoryRevalidate]
+    [stream, activeAssistant?.config, onHistoryRevalidate, userId]
+  );
+
+  const configWithUserId = useCallback(
+    (base?: Record<string, any>) => ({
+      ...(base ?? {}),
+      configurable: {
+        ...(base?.configurable ?? {}),
+        ...(userId ? { user_id: userId } : {}),
+      },
+    }),
+    [userId]
   );
 
   const runSingleStep = useCallback(
@@ -83,7 +103,7 @@ export function useChat({
           ...(optimisticMessages
             ? { optimisticValues: { messages: optimisticMessages } }
             : {}),
-          config: activeAssistant?.config,
+          config: configWithUserId(activeAssistant?.config),
           checkpoint: checkpoint,
           ...(isRerunningSubagent
             ? { interruptAfter: ["tools"] }
@@ -92,11 +112,11 @@ export function useChat({
       } else {
         stream.submit(
           { messages },
-          { config: activeAssistant?.config, interruptBefore: ["tools"] }
+          { config: configWithUserId(activeAssistant?.config), interruptBefore: ["tools"] }
         );
       }
     },
-    [stream, activeAssistant?.config]
+    [stream, activeAssistant?.config, configWithUserId]
   );
 
   const setFiles = useCallback(
@@ -115,6 +135,10 @@ export function useChat({
         config: {
           ...(activeAssistant?.config || {}),
           recursion_limit: 100,
+          configurable: {
+            ...(activeAssistant?.config?.configurable ?? {}),
+            ...(userId ? { user_id: userId } : {}),
+          },
         },
         ...(hasTaskToolCall
           ? { interruptAfter: ["tools"] }
@@ -123,7 +147,7 @@ export function useChat({
       // Update thread list when continuing stream
       onHistoryRevalidate?.();
     },
-    [stream, activeAssistant?.config, onHistoryRevalidate]
+    [stream, activeAssistant?.config, onHistoryRevalidate, userId]
   );
 
   const markCurrentThreadAsResolved = useCallback(() => {

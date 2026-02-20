@@ -62,6 +62,27 @@ services:
       - basis-network
 
   # ============================================================================
+  # Qdrant — Mem0 向量存储
+  # ============================================================================
+  basis-qdrant:
+    image: qdrant/qdrant:v1.13.2
+    container_name: basisPilot-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - basis-qdrant-data:/qdrant/storage
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/healthz"]
+      interval: 15s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    networks:
+      - basis-network
+
+  # ============================================================================
   # LangGraph Agent — 官方镜像 (langgraph up 模式)
   # ============================================================================
   basis-agent:
@@ -76,6 +97,8 @@ services:
       basis-postgres:
         condition: service_healthy
       basis-redis:
+        condition: service_healthy
+      basis-qdrant:
         condition: service_healthy
     environment:
       # ---- Server ----
@@ -106,13 +129,23 @@ services:
       - BASIS_LEAD_MODEL=${BASIS_LEAD_MODEL:-openai:z-ai/glm-5}
       - BASIS_SUBAGENT_MODEL=${BASIS_SUBAGENT_MODEL:-openai:minimax/minimax-m2.5}
 
+      # ---- Mem0 记忆系统 ----
+      - MEM0_QDRANT_HOST=basis-qdrant
+      - MEM0_QDRANT_PORT=6333
+      - MEM0_QDRANT_COLLECTION=basispilot_memories
+      - MEM0_LLM_MODEL=${MEM0_LLM_MODEL:-Pro/deepseek-ai/DeepSeek-V3.2}
+      - MEM0_EMBEDDING_MODEL=${MEM0_EMBEDDING_MODEL:-Qwen/Qwen3-Embedding-4B}
+      - MEM0_EMBEDDING_DIMS=${MEM0_EMBEDDING_DIMS:-2560}
+      - EMBEDDING_API_KEY=${EMBEDDING_API_KEY:-${OPENAI_API_KEY}}
+      - EMBEDDING_BASE_URL=${EMBEDDING_BASE_URL:-${OPENAI_BASE_URL}}
+
       # ---- 功能开关 ----
       - AGENT_RECURSION_LIMIT=${AGENT_RECURSION_LIMIT:-200}
       - LANGGRAPH_DEFAULT_RECURSION_LIMIT=${LANGGRAPH_DEFAULT_RECURSION_LIMIT:-200}
       - LANGGRAPH_SKIP_BLOCKING_CHECK=${LANGGRAPH_SKIP_BLOCKING_CHECK:-true}
 
       # ---- 禁用代理 ----
-      - NO_PROXY=localhost,127.0.0.1,basis-postgres,basis-redis
+      - NO_PROXY=localhost,127.0.0.1,basis-postgres,basis-redis,basis-qdrant
       - HTTP_PROXY=
       - HTTPS_PROXY=
 
@@ -216,6 +249,7 @@ services:
 volumes:
   basis-postgres-data:
   basis-redis-data:
+  basis-qdrant-data:
 
 # ==============================================================================
 # Networks

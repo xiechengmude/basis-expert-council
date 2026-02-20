@@ -11,6 +11,8 @@ from deepagents import create_deep_agent
 from deepagents.backends import FilesystemBackend
 from langchain.chat_models import init_chat_model
 
+from .memory_tools import MEMORY_TOOLS
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 # ---------------------------------------------------------------------------
@@ -148,6 +150,7 @@ def create_basis_expert_agent(
         skills=[str(PROJECT_ROOT / "skills") + "/"],
         subagents=subagents,
         backend=backend,
+        tools=MEMORY_TOOLS,
         **kwargs,
     )
 

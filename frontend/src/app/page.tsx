@@ -227,6 +227,7 @@ function HomePageInner({
                   mutateThreads?.();
                   refreshQuota();
                 }}
+                userId={profile?.user?.id}
               >
                 <ChatInterface assistant={assistant} />
               </ChatProvider>
