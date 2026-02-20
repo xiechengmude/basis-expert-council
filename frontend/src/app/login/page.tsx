@@ -3,13 +3,13 @@
 import React, { useState, useEffect, useCallback, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import Image from "next/image";
 import {
   Smartphone,
   MessageSquare,
   Send,
   Loader2,
   ShieldCheck,
-  GraduationCap,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -180,16 +180,22 @@ function LoginForm() {
   /*  Render                                                           */
   /* ---------------------------------------------------------------- */
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#f0f7f7] to-white px-4 py-8">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-50 to-white px-4 py-8">
       {/* Card */}
       <div className="w-full max-w-[400px]">
         {/* ---- Brand header ---- */}
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#2F6868] shadow-lg">
-            <GraduationCap className="h-9 w-9 text-white" strokeWidth={1.8} />
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-600 shadow-lg">
+            <Image
+              src="/logo-mark-filled.svg"
+              alt="BasisPilot"
+              width={64}
+              height={64}
+              className="h-16 w-16 rounded-2xl"
+            />
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-            BASIS 教育专家
+            BasisPilot 贝领
           </h1>
           <p className="mt-1.5 text-sm text-gray-500">
             AI 驱动的国际学校学习助手
@@ -205,7 +211,7 @@ function LoginForm() {
               onClick={() => setActiveTab("phone")}
               className={`flex flex-1 items-center justify-center gap-2 py-3.5 text-sm font-medium transition-colors ${
                 activeTab === "phone"
-                  ? "border-b-2 border-[#2F6868] text-[#2F6868]"
+                  ? "border-b-2 border-brand-600 text-brand-600"
                   : "text-gray-400 hover:text-gray-600"
               }`}
             >
@@ -248,7 +254,7 @@ function LoginForm() {
                       onChange={(e) =>
                         setPhone(e.target.value.replace(/\D/g, "").slice(0, 11))
                       }
-                      className="h-11 flex-1 rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-[#2F6868] focus:outline-none focus:ring-2 focus:ring-[#2F6868]/20"
+                      className="h-11 flex-1 rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/20"
                     />
                   </div>
                 </div>
@@ -267,7 +273,7 @@ function LoginForm() {
                       onChange={(e) =>
                         setCode(e.target.value.replace(/\D/g, "").slice(0, 6))
                       }
-                      className="h-11 flex-1 rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-[#2F6868] focus:outline-none focus:ring-2 focus:ring-[#2F6868]/20"
+                      className="h-11 flex-1 rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/20"
                     />
                     <button
                       type="button"
@@ -277,7 +283,7 @@ function LoginForm() {
                         sendingCode ||
                         !/^1\d{10}$/.test(phone)
                       }
-                      className="flex h-11 w-[120px] shrink-0 items-center justify-center gap-1.5 rounded-lg border border-[#2F6868] text-sm font-medium text-[#2F6868] transition-colors hover:bg-[#2F6868]/5 disabled:cursor-not-allowed disabled:border-gray-200 disabled:text-gray-400 disabled:hover:bg-transparent"
+                      className="flex h-11 w-[120px] shrink-0 items-center justify-center gap-1.5 rounded-lg border border-brand-600 text-sm font-medium text-brand-600 transition-colors hover:bg-brand-600/5 disabled:cursor-not-allowed disabled:border-gray-200 disabled:text-gray-400 disabled:hover:bg-transparent"
                     >
                       {countdown > 0 ? (
                         `${countdown}s 后重发`
@@ -308,7 +314,7 @@ function LoginForm() {
                   type="button"
                   onClick={handlePhoneLogin}
                   disabled={loggingIn || !phone || code.length < 4}
-                  className="flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#2F6868] text-sm font-medium text-white shadow-sm transition-all hover:bg-[#256060] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100"
+                  className="flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-brand-600 text-sm font-medium text-white shadow-sm transition-all hover:bg-brand-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100"
                 >
                   {loggingIn ? (
                     <>
@@ -387,9 +393,9 @@ export default function LoginPage() {
   return (
     <Suspense
       fallback={
-        <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[#f0f7f7] to-white">
+        <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-brand-50 to-white">
           <div className="text-center">
-            <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#2F6868]" />
+            <Loader2 className="mx-auto h-8 w-8 animate-spin text-brand-600" />
             <p className="mt-3 text-sm text-gray-400">加载中...</p>
           </div>
         </div>

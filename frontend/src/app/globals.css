@@ -16,6 +16,30 @@
   }
 
   :root {
+    /* ============================================
+       BasisPilot Brand Color Scale (Teal)
+       Primary: brand-600 = #2F6868
+       ============================================ */
+    --brand-50:  #EDF7F7;
+    --brand-100: #D1ECEC;
+    --brand-200: #A3D4D4;
+    --brand-300: #6BB5B5;
+    --brand-400: #4A9494;
+    --brand-500: #357878;
+    --brand-600: #2F6868;
+    --brand-700: #245454;
+    --brand-800: #1E4E4E;
+    --brand-900: #1A4040;
+    --brand-950: #0F2B2B;
+
+    /* Subject accent colors */
+    --accent-math:      #2F6868;  /* teal — core analytical */
+    --accent-planning:  #B45309;  /* amber — aspiration */
+    --accent-onboard:   #1D4ED8;  /* blue — trust, clarity */
+    --accent-ap:        #BE123C;  /* rose — urgency, focus */
+    --accent-probation: #DC2626;  /* red — alert */
+    --accent-success:   #059669;  /* green — growth */
+
     /* App-specific color variables */
     --color-primary: #1c3c3c;
     --color-user-message: #076699;
@@ -138,6 +162,19 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
+      /* Brand scale — dark mode (brighter for contrast on dark bg) */
+      --brand-50:  #0F2B2B;
+      --brand-100: #1A4040;
+      --brand-200: #1E4E4E;
+      --brand-300: #245454;
+      --brand-400: #2F6868;
+      --brand-500: #4A9494;
+      --brand-600: #5CB8B8;
+      --brand-700: #7DD1D1;
+      --brand-800: #A3E4E4;
+      --brand-900: #D1F2F2;
+      --brand-950: #EDF7F7;
+
       /* App-specific color variables */
       --color-primary: #1c3c3c;
       --color-user-message: #065a8a;

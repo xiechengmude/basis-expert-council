@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   BookOpen,
   GraduationCap,
@@ -27,9 +28,9 @@ const PRODUCTS = [
     icon: BookOpen,
     title: "AI 学伴",
     features: ["24/7 学科答疑", "数学 / 科学 / 人文全科覆盖", "中英双语讲解"],
-    color: "bg-teal-50",
-    iconColor: "text-[#2F6868]",
-    borderColor: "border-teal-200",
+    color: "bg-brand-50",
+    iconColor: "text-brand-600",
+    borderColor: "border-brand-200",
   },
   {
     icon: GraduationCap,
@@ -128,32 +129,41 @@ export default function LandingPage() {
       {/* ============================================================ */}
       <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <span className="text-lg font-bold tracking-tight text-[#2F6868]">
-            BASIS 教育专家 AI
-          </span>
+          <Link href="/landing" className="flex items-center gap-2.5">
+            <Image
+              src="/logo-mark.svg"
+              alt="BasisPilot"
+              width={32}
+              height={32}
+              className="h-8 w-8"
+            />
+            <span className="text-lg font-bold tracking-tight text-brand-900">
+              BasisPilot
+            </span>
+          </Link>
 
           <div className="hidden items-center gap-6 text-sm font-medium text-gray-600 md:flex">
             <button
               onClick={() => scrollTo("products")}
-              className="transition hover:text-[#2F6868]"
+              className="transition hover:text-brand-600"
             >
               产品
             </button>
             <button
               onClick={() => scrollTo("pricing")}
-              className="transition hover:text-[#2F6868]"
+              className="transition hover:text-brand-600"
             >
               价格
             </button>
             <button
               onClick={() => scrollTo("addons")}
-              className="transition hover:text-[#2F6868]"
+              className="transition hover:text-brand-600"
             >
               增值服务
             </button>
             <Link
               href="/login"
-              className="rounded-full bg-[#2F6868] px-5 py-2 text-white transition hover:bg-[#245454]"
+              className="rounded-full bg-brand-600 px-5 py-2 text-white transition hover:bg-brand-700"
             >
               登录 / 注册
             </Link>
@@ -162,7 +172,7 @@ export default function LandingPage() {
           {/* Mobile CTA */}
           <Link
             href="/login"
-            className="rounded-full bg-[#2F6868] px-4 py-1.5 text-sm font-medium text-white md:hidden"
+            className="rounded-full bg-brand-600 px-4 py-1.5 text-sm font-medium text-white md:hidden"
           >
             登录
           </Link>
@@ -172,7 +182,7 @@ export default function LandingPage() {
       {/* ============================================================ */}
       {/*  Hero                                                         */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#2F6868] via-[#357878] to-[#1e4e4e]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-600 via-brand-500 to-brand-800">
         {/* Decorative circles */}
         <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-white/5" />
         <div className="pointer-events-none absolute -bottom-32 -left-32 h-[28rem] w-[28rem] rounded-full bg-white/5" />
@@ -183,9 +193,17 @@ export default function LandingPage() {
             专为贝赛思学生设计
           </p>
 
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            BASIS 教育专家 AI
-          </h1>
+          {/* Hero logo */}
+          <div className="mb-6 flex justify-center">
+            <Image
+              src="/logo-full-white.svg"
+              alt="BasisPilot 贝领"
+              width={280}
+              height={64}
+              className="h-16 w-auto"
+              priority
+            />
+          </div>
 
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">
             24/7 AI 学习助手 —— AP 课程辅导 &middot; 升学规划 &middot;
@@ -195,7 +213,7 @@ export default function LandingPage() {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/login"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-[#2F6868] shadow-lg transition hover:bg-gray-50 hover:shadow-xl"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-brand-600 shadow-lg transition hover:bg-gray-50 hover:shadow-xl"
             >
               免费体验
               <ArrowRight className="h-4 w-4" />
@@ -258,7 +276,7 @@ export default function LandingPage() {
                 <ul className="mt-3 space-y-2 text-sm text-gray-600">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#2F6868]" />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
                       {f}
                     </li>
                   ))}
@@ -290,12 +308,12 @@ export default function LandingPage() {
                 key={t.name}
                 className={`relative flex flex-col rounded-2xl border bg-white p-6 transition hover:shadow-lg ${
                   t.popular
-                    ? "border-[#2F6868] ring-2 ring-[#2F6868]/20"
+                    ? "border-brand-600 ring-2 ring-brand-600/20"
                     : "border-gray-200"
                 }`}
               >
                 {t.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-[#2F6868] px-3 py-0.5 text-xs font-semibold text-white">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-brand-600 px-3 py-0.5 text-xs font-semibold text-white">
                     <Star className="h-3 w-3" /> 热门推荐
                   </span>
                 )}
@@ -324,15 +342,15 @@ export default function LandingPage() {
 
                 <ul className="mt-6 flex-1 space-y-3 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
-                    <Zap className="mt-0.5 h-4 w-4 shrink-0 text-[#2F6868]" />
+                    <Zap className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
                     对话：{t.conversations}
                   </li>
                   <li className="flex items-start gap-2">
-                    <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-[#2F6868]" />
+                    <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
                     科目：{t.subjects}
                   </li>
                   <li className="flex items-start gap-2">
-                    <FileText className="mt-0.5 h-4 w-4 shrink-0 text-[#2F6868]" />
+                    <FileText className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
                     报告：{t.report}
                   </li>
                 </ul>
@@ -341,8 +359,8 @@ export default function LandingPage() {
                   href="/login"
                   className={`mt-6 block rounded-full py-2.5 text-center text-sm font-semibold transition ${
                     t.popular
-                      ? "bg-[#2F6868] text-white hover:bg-[#245454]"
-                      : "border border-[#2F6868] text-[#2F6868] hover:bg-[#2F6868] hover:text-white"
+                      ? "bg-brand-600 text-white hover:bg-brand-700"
+                      : "border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white"
                   }`}
                 >
                   {t.price === "0" ? "免费体验" : "立即开通"}
@@ -371,10 +389,10 @@ export default function LandingPage() {
           {ADDONS.map((a) => (
             <div
               key={a.name}
-              className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-6 py-5 transition hover:border-[#2F6868]/40 hover:shadow-md"
+              className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-6 py-5 transition hover:border-brand-600/40 hover:shadow-md"
             >
               <span className="font-medium text-gray-900">{a.name}</span>
-              <span className="whitespace-nowrap text-lg font-bold text-[#2F6868]">
+              <span className="whitespace-nowrap text-lg font-bold text-brand-600">
                 {a.price}
               </span>
             </div>
@@ -384,7 +402,7 @@ export default function LandingPage() {
         <div className="mt-10 text-center">
           <Link
             href="/login"
-            className="inline-flex items-center gap-2 rounded-full bg-[#2F6868] px-8 py-3 text-base font-semibold text-white shadow transition hover:bg-[#245454] hover:shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-600 px-8 py-3 text-base font-semibold text-white shadow transition hover:bg-brand-700 hover:shadow-lg"
           >
             立即开通
             <ArrowRight className="h-4 w-4" />
@@ -397,15 +415,23 @@ export default function LandingPage() {
       {/* ============================================================ */}
       <footer className="border-t border-gray-100 bg-gray-50 px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-4 flex justify-center">
+            <Image
+              src="/logo-mark.svg"
+              alt="BasisPilot"
+              width={28}
+              height={28}
+              className="h-7 w-7 opacity-40"
+            />
+          </div>
           <p className="text-base font-semibold text-gray-800">
-            BASIS 教育专家 AI —— 让每个 BASIS 学生都有专属顾问
+            BasisPilot 贝领 —— 让每个 BASIS 学生都有专属顾问
           </p>
           <p className="mt-3 text-sm text-gray-400">
             本平台为独立第三方教育工具，与 BASIS 学校无隶属关系
           </p>
           <p className="mt-4 text-xs text-gray-300">
-            &copy; {new Date().getFullYear()} BASIS 教育专家 AI. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} BasisPilot. All rights reserved.
           </p>
         </div>
       </footer>

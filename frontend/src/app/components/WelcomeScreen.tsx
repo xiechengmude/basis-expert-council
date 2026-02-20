@@ -144,13 +144,13 @@ export function WelcomeScreen({ onSendMessage, disabled }: WelcomeScreenProps) {
                   type="button"
                   disabled={disabled}
                   onClick={() => onSendMessage(card.prompt)}
-                  className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-[#2F6868]/40 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
+                  className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-brand-600/40 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <span className="mt-0.5 text-xl leading-none">
                     {card.icon}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-sm font-semibold text-primary group-hover:text-[#2F6868]">
+                    <h3 className="text-sm font-semibold text-primary group-hover:text-brand-600">
                       {card.title}
                     </h3>
                     <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">

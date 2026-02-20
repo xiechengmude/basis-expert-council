@@ -163,7 +163,7 @@ function HomePageInner({
               size="sm"
               onClick={() => setThreadId(null)}
               disabled={!threadId}
-              className="border-[#2F6868] bg-[#2F6868] text-white hover:bg-[#2F6868]/80"
+              className="border-brand-600 bg-brand-600 text-white hover:bg-brand-600/80"
             >
               <SquarePen className="mr-1 h-4 w-4" />
               <span className="hidden sm:inline">新对话</span>
