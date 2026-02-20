@@ -174,6 +174,7 @@ async def get_me(request: Request):
 
     return {
         "user": user_info,
+        "kyc_completed": bool(user.get("kyc_completed", False)),
         "student_profile": profile,
         "linked_students": linked_students,
         "subscription": {
@@ -195,6 +196,25 @@ async def get_usage(request: Request):
     usage = await db.get_daily_usage(auth_info["user_id"])
     quota = await db.check_quota(auth_info["user_id"])
     return {"usage": usage, "quota": quota}
+
+
+# ---------------------------------------------------------------------------
+# KYC
+# ---------------------------------------------------------------------------
+
+
+@app.post("/api/user/complete-kyc")
+async def complete_kyc_endpoint(request: Request):
+    """标记用户 KYC 已完成"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    ok = await db.complete_kyc(auth_info["user_id"])
+    if not ok:
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    return {"kyc_completed": True}
 
 
 # ---------------------------------------------------------------------------

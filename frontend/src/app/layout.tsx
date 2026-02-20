@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Toaster } from "sonner";
 import { AuthProvider } from "@/providers/AuthProvider";
+import { KycGuard } from "@/providers/KycGuard";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,8 +28,10 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AuthProvider>
-          <NuqsAdapter>{children}</NuqsAdapter>
-          <Toaster />
+          <KycGuard>
+            <NuqsAdapter>{children}</NuqsAdapter>
+            <Toaster />
+          </KycGuard>
         </AuthProvider>
       </body>
     </html>

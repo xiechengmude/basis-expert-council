@@ -7,6 +7,7 @@ export interface UserInfo {
   nickname: string;
   avatar_url: string | null;
   phone: string | null;
+  role: string;
 }
 
 export interface SubscriptionInfo {
@@ -27,6 +28,9 @@ export interface QuotaInfo {
 
 export interface UserProfile {
   user: UserInfo;
+  kyc_completed: boolean;
+  student_profile: Record<string, unknown> | null;
+  linked_students: Record<string, unknown>[] | null;
   subscription: SubscriptionInfo;
   quota: QuotaInfo;
 }
@@ -43,15 +47,20 @@ export function getPlanName(plan: string): string {
 }
 
 /**
- * Get the BASIS Business API base URL.
- * Reads from env var first, then tries to derive from LangGraph config.
+ * Get the stored BASIS JWT token
  */
-function getApiBaseUrl(): string {
+export function getBasisToken(): string | null {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem("basis-token");
+}
+
+/**
+ * Fetch with BASIS auth token
+ */
+export function getApiBaseUrl(): string {
   if (typeof window === "undefined") return "";
-  // Prefer explicit env var
   const envUrl = process.env.NEXT_PUBLIC_BASIS_API_URL;
   if (envUrl) return envUrl;
-  // Fallback: derive from LangGraph URL (port 5096 instead of 5095)
   try {
     const config = localStorage.getItem("deep-agent-config");
     if (config) {
@@ -63,18 +72,7 @@ function getApiBaseUrl(): string {
   return "http://127.0.0.1:5096";
 }
 
-/**
- * Get the stored BASIS JWT token
- */
-export function getBasisToken(): string | null {
-  if (typeof window === "undefined") return null;
-  return localStorage.getItem("basis-token");
-}
-
-/**
- * Fetch with BASIS auth token
- */
-async function fetchWithAuth(path: string, options: RequestInit = {}): Promise<Response> {
+export async function fetchWithAuth(path: string, options: RequestInit = {}): Promise<Response> {
   const baseUrl = getApiBaseUrl();
   const token = getBasisToken();
   const headers: Record<string, string> = {
