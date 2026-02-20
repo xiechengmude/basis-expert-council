@@ -1,5 +1,5 @@
 """
-BASIS Expert Council — 共享中间件工具
+BasisPilot (贝领) — 共享中间件工具
 供 server.py 使用的认证检查和配额验证工具函数。
 """
 

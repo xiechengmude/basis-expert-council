@@ -1,14 +1,14 @@
 [project]
 name = "basis-expert-council"
 version = "0.1.0"
-description = "贝赛思(BASIS)教育体系专家智囊团 AI Agent — 基于 DeepAgents/LangGraph 架构"
+description = "BasisPilot 贝领 — Your AI Co-Pilot Through BASIS · 基于 DeepAgents/LangGraph 架构"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
 authors = [
     { name = "xDAN-AI" },
 ]
-keywords = ["education", "BASIS", "AI", "agent", "LangGraph", "tutoring", "AP"]
+keywords = ["education", "BASIS", "BasisPilot", "AI", "agent", "LangGraph", "tutoring", "AP"]
 
 dependencies = [
     "deepagents>=0.1.0",

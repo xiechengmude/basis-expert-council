@@ -1,6 +1,6 @@
 """
-BASIS Expert Council Agent — 基于 DeepAgents / LangGraph 架构
-主入口：创建 BASIS 教育专家智囊团智能体
+BasisPilot (贝领) Agent — 基于 DeepAgents / LangGraph 架构
+主入口：创建 BasisPilot AI 教育领航智能体
 """
 
 import os
@@ -112,7 +112,7 @@ def create_basis_expert_agent(
     model: str | None = None,
     **kwargs: Any,
 ):
-    """创建 BASIS 教育专家智囊团智能体
+    """创建 BasisPilot (贝领) 教育领航智能体
 
     Args:
         model: 主智能体使用的模型。为 None 时从 BASIS_LEAD_MODEL 环境变量读取。
@@ -144,7 +144,7 @@ def create_basis_expert_agent(
 # ---------------------------------------------------------------------------
 
 def main():
-    """CLI 模式运行 BASIS 专家智囊团"""
+    """CLI 模式运行 BasisPilot 贝领"""
     import asyncio
 
     from dotenv import load_dotenv
@@ -153,7 +153,7 @@ def main():
     agent = create_basis_expert_agent()
 
     print("=" * 60)
-    print("  BASIS 教育专家智囊团 (贝赛思教育体系 AI 顾问)")
+    print("  BasisPilot · 贝领 — Your AI Co-Pilot Through BASIS")
     print("  Powered by DeepAgents + LangGraph")
     print(f"  Lead Model:     {LEAD_MODEL}")
     print(f"  Subagent Model: {SUBAGENT_MODEL}")

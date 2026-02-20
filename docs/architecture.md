@@ -1,8 +1,8 @@
-# BASIS Expert Council - 系统架构文档
+# BasisPilot 贝领 - 系统架构文档
 
 ## 概述
 
-BASIS 教育专家智囊团是基于 DeepAgents / LangGraph 架构的多智能体系统，为贝赛思 (BASIS) 教育体系提供 AI 辅导和咨询服务。
+BasisPilot（贝领）是基于 DeepAgents / LangGraph 架构的多智能体 AI 教育领航平台，为贝赛思 (BASIS) 教育体系提供课程同步辅导和咨询服务。
 
 ## 技术栈
 

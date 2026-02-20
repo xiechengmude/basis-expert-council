@@ -1,4 +1,4 @@
-# BASIS Expert Council — 部署文档
+# BasisPilot (贝领) — 部署文档
 
 ## 服务器信息
 

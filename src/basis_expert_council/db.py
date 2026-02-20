@@ -1,5 +1,5 @@
 """
-BASIS Expert Council — 业务数据库层
+BasisPilot (贝领) — 业务数据库层
 PostgreSQL 连接池 + 用户/订阅/用量 CRUD
 """
 

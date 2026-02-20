@@ -1,12 +1,12 @@
-# BASIS Expert Council — 贝赛思教育专家智囊团
+# BasisPilot · 贝领 — Your AI Co-Pilot Through BASIS
 
-基于 [DeepAgents](https://github.com/langchain-ai/deepagents) / LangGraph 架构构建的 AI 教育专家系统，专注于 **BASIS（贝赛思）国际学校教育体系**。
+基于 [DeepAgents](https://github.com/langchain-ai/deepagents) / LangGraph 架构构建的 AI 教育领航平台，专注于 **BASIS（贝赛思）国际学校教育体系**。
 
 ## 解决什么问题
 
 > 中国国际教育市场面临严重的 **师资瓶颈**：能用英语教授学科内容的合格教师极度稀缺。
 
-本项目通过 AI 将 BASIS 教学经验"封装"成可复用的智能体，让普通教师 + AI 系统 ≈ 有经验的 BASIS 教师。
+BasisPilot 通过 AI 将 BASIS 教学经验"封装"成可复用的智能体，让每个 BASIS 学生都有一个 AI 领航员。
 
 ## 架构
 
@@ -37,7 +37,7 @@ basis-expert-council/
 
 ```
                     ┌──────────────────────┐
-                    │   BASIS 专家智囊团    │
+                    │   BasisPilot 贝领    │
                     │   (Main Agent)       │
                     │   AGENTS.md          │
                     └──────┬───────────────┘
@@ -99,18 +99,18 @@ python -m basis_expert_council.agent
 ```
 你: 我孩子下学期要转入 BASIS 深圳 G7，现在该怎么准备？
 
-BASIS 专家: 从 G7 转入 BASIS 是一个关键节点，因为这是 Middle School 的开始，
+贝领: 从 G7 转入 BASIS 是一个关键节点，因为这是 Middle School 的开始，
 全部由 Subject Expert Teachers (SET) 授课...
 [详细的衔接方案]
 
 你: AP Calculus AB 的 FRQ 怎么拿高分？
 
-BASIS 专家: AP Calculus AB 的 FRQ 部分占总分 50%，共 6 题...
+贝领: AP Calculus AB 的 FRQ 部分占总分 50%，共 6 题...
 [委派给数学专家子智能体，给出详细备考策略]
 
 你: 帮我生成一份 G8 物理 Mechanics 的教案
 
-BASIS 专家: [委派给科学专家 + 教案生成 Skill，输出标准 BASIS 教案]
+贝领: [委派给科学专家 + 教案生成 Skill，输出标准 BASIS 教案]
 ```
 
 ## 技术栈

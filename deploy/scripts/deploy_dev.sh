@@ -42,7 +42,7 @@ else
 fi
 
 log "=========================================="
-log "Deploying BASIS Expert Council to DEV"
+log "Deploying BasisPilot to DEV"
 log "=========================================="
 
 # 1. 拉取代码

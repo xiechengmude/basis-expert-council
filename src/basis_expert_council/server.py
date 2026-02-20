@@ -1,5 +1,5 @@
 """
-BASIS Expert Council — 业务 API 服务
+BasisPilot (贝领) — 业务 API 服务
 独立 FastAPI 应用，处理认证、用户管理、配额、定价等业务逻辑。
 与 LangGraph Agent 服务并行运行。
 
@@ -56,7 +56,7 @@ async def lifespan(app: FastAPI):
 # ---------------------------------------------------------------------------
 
 app = FastAPI(
-    title="BASIS Expert Council API",
+    title="BasisPilot API",
     version="0.1.0",
     lifespan=lifespan,
 )

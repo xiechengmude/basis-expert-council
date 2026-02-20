@@ -1,3 +1,3 @@
-"""BASIS Expert Council — 贝赛思教育专家智囊团 AI Agent"""
+"""BasisPilot (贝领) — Your AI Co-Pilot Through BASIS"""
 
 __version__ = "0.1.0"

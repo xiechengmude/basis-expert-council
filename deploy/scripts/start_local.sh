@@ -82,7 +82,7 @@ done
 show_banner() {
     echo -e "${CYAN}"
     echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║       BASIS Expert Council — Local Development              ║"
+    echo "║       BasisPilot (贝领) — Local Development                  ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }

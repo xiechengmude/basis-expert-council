@@ -1,5 +1,5 @@
 """
-BASIS Expert Council — 认证模块
+BasisPilot (贝领) — 认证模块
 支持微信 H5 OAuth 和 Supabase JWT 两种认证方式
 """
 

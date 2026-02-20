@@ -1,4 +1,4 @@
-"""LangGraph Server entry point for BASIS Expert Council."""
+"""LangGraph Server entry point for BasisPilot (贝领)."""
 from dotenv import load_dotenv
 load_dotenv()
 

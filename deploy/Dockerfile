@@ -1,5 +1,5 @@
 # ==============================================================================
-# BASIS Expert Council — LangGraph Official Image + Custom Dependencies
+# BasisPilot (贝领) — LangGraph Official Image + Custom Dependencies
 # ==============================================================================
 # 基于官方 langgraph-api 镜像，预装业务依赖
 # 使用 langgraph up 模式 (uvicorn 生产服务)

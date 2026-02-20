@@ -1,5 +1,5 @@
 # ==============================================================================
-# BASIS Expert Council — Frontend (Next.js Standalone)
+# BasisPilot (贝领) — Frontend (Next.js Standalone)
 # ==============================================================================
 # 多阶段构建: builder → runner
 # 使用 standalone output 模式，最小化镜像体积

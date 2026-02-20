@@ -1,5 +1,5 @@
 """
-BASIS Expert Council — 全流程测试
+BasisPilot (贝领) — 全流程测试
 使用自定义 OpenAI 兼容 API 接入 Claude Sonnet
 教学问题 10 个 + 商务成单问题 10 个
 """
@@ -157,7 +157,7 @@ def run_test(client, system_prompt, question, question_idx, category):
 
 def main():
     print("=" * 70)
-    print("  BASIS 教育专家智囊团 — 全流程测试")
+    print("  BasisPilot 贝领 — 全流程测试")
     print(f"  Model: {MODEL}")
     print(f"  API: {BASE_URL}")
     print("=" * 70)

@@ -109,10 +109,10 @@ export function WelcomeScreen({ onSendMessage, disabled }: WelcomeScreenProps) {
       {/* Hero */}
       <div className="mb-8 text-center sm:mb-10">
         <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-          BASIS 教育专家智囊团
+          BasisPilot · 贝领
         </h2>
         <p className="mt-2 text-sm text-muted-foreground sm:text-base">
-          5 位 AI 专家协同为你解答学科辅导、选课规划、升学策略等问题
+          Your AI Co-Pilot Through BASIS — 学科辅导、选课规划、升学策略
         </p>
       </div>
 
