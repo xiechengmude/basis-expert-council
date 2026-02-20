@@ -14,9 +14,11 @@ from langchain.chat_models import init_chat_model
 # ---------------------------------------------------------------------------
 # Monkey-patch: deepagents _compute_summarization_defaults accesses
 # model.profile which newer langchain versions don't have.
+# Patch both the source module AND the importing module (deepagents.graph).
 # ---------------------------------------------------------------------------
 try:
     import deepagents.middleware.summarization as _summ
+    import deepagents.graph as _dgraph
 
     _orig_compute_defaults = _summ._compute_summarization_defaults
 
@@ -27,6 +29,8 @@ try:
             return {}
 
     _summ._compute_summarization_defaults = _safe_compute_defaults
+    if hasattr(_dgraph, "_compute_summarization_defaults"):
+        _dgraph._compute_summarization_defaults = _safe_compute_defaults
 except Exception:
     pass
 
