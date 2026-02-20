@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国际学校课外辅导市场调研报告 (2025)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface2: #334155;
+      --border: #475569;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent2: #818cf8;
+      --accent3: #34d399;
+      --red: #f87171;
+      --orange: #fb923c;
+      --yellow: #fbbf24;
+      --pink: #f472b6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.6;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 50%, #1a1040 100%);
+      padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(56,189,248,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 50%, rgba(129,140,248,0.08) 0%, transparent 50%);
+    }
+    .hero h1 {
+      font-size: 2.5rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative;
+    }
+    .hero .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-top: 12px; position: relative; }
+    .hero .date { color: var(--accent); font-size: 0.85rem; margin-top: 8px; position: relative; }
+
+    /* Nav */
+    .nav {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 12px 20px; position: sticky; top: 0; z-index: 100;
+      display: flex; gap: 8px; overflow-x: auto; justify-content: center; flex-wrap: wrap;
+    }
+    .nav a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.8rem; padding: 4px 14px;
+      border-radius: 20px; border: 1px solid transparent; white-space: nowrap; transition: all 0.2s;
+    }
+    .nav a:hover { color: var(--accent); border-color: var(--accent); background: rgba(56,189,248,0.06); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* KPI */
+    .kpi-strip {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px; margin: -30px auto 40px; position: relative; z-index: 1;
+    }
+    .kpi-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; text-align: center;
+    }
+    .kpi-card .value { font-size: 2rem; font-weight: 800; line-height: 1; }
+    .kpi-card .label { color: var(--text-muted); font-size: 0.8rem; margin-top: 6px; }
+    .kpi-card:nth-child(1) .value { color: var(--accent); }
+    .kpi-card:nth-child(2) .value { color: var(--accent2); }
+    .kpi-card:nth-child(3) .value { color: var(--accent3); }
+    .kpi-card:nth-child(4) .value { color: var(--orange); }
+    .kpi-card:nth-child(5) .value { color: var(--pink); }
+    .kpi-card:nth-child(6) .value { color: var(--yellow); }
+
+    /* Section */
+    .section { margin-bottom: 48px; scroll-margin-top: 60px; }
+    .section-title {
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;
+      padding-left: 16px; border-left: 4px solid var(--accent);
+    }
+
+    /* Card */
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px; margin-bottom: 20px;
+    }
+    .card h3 { font-size: 1.15rem; margin-bottom: 16px; color: var(--accent); }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 900px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+    /* Chart */
+    .chart-box {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px;
+    }
+    .chart-box h3 { font-size: 1rem; margin-bottom: 16px; color: var(--text-muted); text-align: center; }
+    .chart-wrapper { position: relative; width: 100%; max-height: 340px; }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--surface2); }
+    th {
+      color: var(--text-muted); font-weight: 600; font-size: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.5px; position: sticky; top: 0; background: var(--surface);
+    }
+    tr:hover td { background: rgba(56,189,248,0.04); }
+
+    /* Pain cards */
+    .pain-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; position: relative; overflow: hidden;
+    }
+    .pain-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+    .pain-card.critical::before { background: var(--red); }
+    .pain-card.high::before { background: var(--orange); }
+    .pain-card .pain-tag {
+      display: inline-block; padding: 2px 10px; border-radius: 20px;
+      font-size: 0.75rem; font-weight: 600; margin-bottom: 10px;
+    }
+    .pain-card.critical .pain-tag { background: rgba(248,113,113,0.15); color: var(--red); }
+    .pain-card.high .pain-tag { background: rgba(251,146,60,0.15); color: var(--orange); }
+    .pain-card h4 { font-size: 1.05rem; margin-bottom: 8px; }
+    .pain-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* Stars */
+    .stars { color: var(--yellow); letter-spacing: 1px; }
+    .stars-empty { color: var(--surface2); }
+
+    /* Opportunity matrix */
+    .opp-row {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+      align-items: center; padding: 12px 16px; border-radius: 8px; margin-bottom: 6px; font-size: 0.9rem;
+    }
+    .opp-row.header { color: var(--text-muted); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+    .opp-row:not(.header) { background: var(--surface); }
+    .opp-row:not(.header):hover { background: var(--surface2); }
+    .opp-row.top { border: 1px solid var(--accent); background: rgba(56,189,248,0.06); }
+    .opp-label { font-weight: 600; }
+    .opp-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+    .opp-badge.best { background: rgba(56,189,248,0.2); color: var(--accent); }
+    .opp-badge.great { background: rgba(129,140,248,0.2); color: var(--accent2); }
+    .opp-badge.good { background: rgba(52,211,153,0.2); color: var(--accent3); }
+    .opp-badge.ok { background: rgba(148,163,184,0.15); color: var(--text-muted); }
+
+    /* Competitor tiers */
+    .tier {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px;
+    }
+    .tier-label {
+      display: inline-block; padding: 3px 14px; border-radius: 20px;
+      font-size: 0.75rem; font-weight: 700; margin-bottom: 14px;
+    }
+    .tier:nth-child(1) .tier-label { background: rgba(56,189,248,0.15); color: var(--accent); }
+    .tier:nth-child(2) .tier-label { background: rgba(129,140,248,0.15); color: var(--accent2); }
+    .tier:nth-child(3) .tier-label { background: rgba(251,146,60,0.15); color: var(--orange); }
+    .tier ul { list-style: none; padding: 0; }
+    .tier li { padding: 6px 0; border-bottom: 1px solid var(--surface2); font-size: 0.9rem; }
+    .tier li:last-child { border-bottom: none; }
+    .tier li strong { color: var(--text); }
+    .tier li span { color: var(--text-muted); font-size: 0.85rem; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: ''; position: absolute; top: 0; bottom: 0; left: 11px; width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2), var(--accent3));
+    }
+    .timeline-item { position: relative; margin-bottom: 28px; }
+    .timeline-dot {
+      position: absolute; left: -28px; top: 4px; width: 16px; height: 16px;
+      border-radius: 50%; border: 3px solid var(--bg);
+    }
+    .timeline-item:nth-child(1) .timeline-dot { background: var(--accent); }
+    .timeline-item:nth-child(2) .timeline-dot { background: var(--accent2); }
+    .timeline-item:nth-child(3) .timeline-dot { background: var(--accent3); }
+    .timeline-item h4 { font-size: 1rem; margin-bottom: 4px; }
+    .timeline-item p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* Callout */
+    .callout {
+      background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(129,140,248,0.08));
+      border: 1px solid rgba(56,189,248,0.25); border-radius: 12px; padding: 28px; margin-top: 32px;
+    }
+    .callout h3 { color: var(--accent); margin-bottom: 12px; font-size: 1.2rem; }
+    .callout p { color: var(--text-muted); font-size: 0.95rem; }
+    .callout .big-num {
+      font-size: 2rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Warning callout */
+    .callout-warn {
+      background: linear-gradient(135deg, rgba(248,113,113,0.08), rgba(251,146,60,0.08));
+      border: 1px solid rgba(248,113,113,0.25); border-radius: 12px; padding: 28px; margin-top: 20px;
+    }
+    .callout-warn h3 { color: var(--red); margin-bottom: 12px; font-size: 1.1rem; }
+    .callout-warn p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* Badge inline */
+    .badge {
+      display: inline-block; padding: 2px 10px; border-radius: 20px;
+      font-size: 0.7rem; font-weight: 700; vertical-align: middle;
+    }
+    .badge-green { background: rgba(52,211,153,0.15); color: var(--accent3); }
+    .badge-blue { background: rgba(56,189,248,0.15); color: var(--accent); }
+    .badge-red { background: rgba(248,113,113,0.15); color: var(--red); }
+    .badge-orange { background: rgba(251,146,60,0.15); color: var(--orange); }
+    .badge-yellow { background: rgba(251,191,36,0.15); color: var(--yellow); }
+    .badge-purple { background: rgba(129,140,248,0.15); color: var(--accent2); }
+
+    /* Compliance grid */
+    .compliance-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px;
+    }
+    .compliance-card h4 { font-size: 0.95rem; margin-bottom: 8px; }
+    .compliance-card p { color: var(--text-muted); font-size: 0.85rem; }
+
+    .mermaid { display: flex; justify-content: center; }
+
+    .footer {
+      text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.8rem;
+      border-top: 1px solid var(--surface2); margin-top: 60px;
+    }
+    .footer a { color: var(--accent); text-decoration: none; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 4px; }
+
+    .stat { color: var(--accent); font-weight: 700; }
+    .stat-warn { color: var(--red); font-weight: 700; }
+    .stat-ok { color: var(--accent3); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<div class="hero">
+  <h1>中国国际学校课外辅导市场调研</h1>
+  <div class="subtitle">聚焦外籍国际学校 &middot; BASIS 体系深度分析 &middot; 深圳市场</div>
+  <div class="date">BASIS Expert Council &middot; 2025 数据版</div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="#market">市场全景</a>
+  <a href="#basis2025">BASIS 2025</a>
+  <a href="#pain">结构性缺口</a>
+  <a href="#demand">需求透视</a>
+  <a href="#competition">竞争格局</a>
+  <a href="#online">线上辅导机构</a>
+  <a href="#policy">双减政策</a>
+  <a href="#compliance">牌照合规</a>
+  <a href="#opportunity">机会矩阵</a>
+  <a href="#strategy">切入策略</a>
+</div>
+
+<!-- ==================== KPI STRIP ==================== -->
+<div class="container">
+  <div class="kpi-strip">
+    <div class="kpi-card">
+      <div class="value">1,400+</div>
+      <div class="label">国际学校总数 (2025)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="value">988亿</div>
+      <div class="label">2024 市场规模 (元)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="value">15</div>
+      <div class="label">贝赛思校区 (含在建)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="value">85%</div>
+      <div class="label">贝赛思家长补课比例</div>
+    </div>
+    <div class="kpi-card">
+      <div class="value">~0</div>
+      <div class="label">BASIS 课程同步辅导机构</div>
+    </div>
+    <div class="kpi-card">
+      <div class="value">245</div>
+      <div class="label">2025届 BASIS 毕业生</div>
+    </div>
+  </div>
+
+  <!-- ==================== 1. MARKET OVERVIEW ==================== -->
+  <div class="section" id="market">
+    <h2 class="section-title">一、市场全景 (2025 更新)</h2>
+    <div class="grid-2">
+      <div class="chart-box">
+        <h3>国际学校类型分布 (获认证 972 所)</h3>
+        <div class="chart-wrapper"><canvas id="chartSchoolType"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <h3>课程体系开设学校数量</h3>
+        <div class="chart-wrapper"><canvas id="chartCurriculum"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h3>市场规模演进</h3>
+      <div class="grid-2">
+        <div class="chart-wrapper" style="max-height:280px;"><canvas id="chartMarketSize"></canvas></div>
+        <div>
+          <table>
+            <tr><th>指标</th><th>数值</th></tr>
+            <tr><td>国际学校总量 (2025)</td><td><strong class="stat">1,400+ 所</strong></td></tr>
+            <tr><td>获国际认证</td><td><strong>972 所</strong></td></tr>
+            <tr><td>2024 年新开学校</td><td><strong>27 所</strong></td></tr>
+            <tr><td>在校生总数</td><td><strong>49.6 万人</strong></td></tr>
+            <tr><td>广东省学校数</td><td><strong class="stat">200+ 所</strong> (全国第一)</td></tr>
+            <tr><td>深圳国际学校</td><td><strong>60-77 所</strong></td></tr>
+            <tr><td>K12 教育总市场 (2025)</td><td><strong>~9,468 亿元</strong></td></tr>
+            <tr><td>学科培训 (双减后)</td><td class="stat-warn"><strong>589 亿</strong> (仅双减前 6%)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. BASIS 2025 ==================== -->
+  <div class="section" id="basis2025">
+    <h2 class="section-title">二、贝赛思 (BASIS) 2025 最新数据</h2>
+
+    <div class="card">
+      <h3>中国校区版图 &mdash; 7 城 15 校区</h3>
+      <div class="grid-3">
+        <div>
+          <table>
+            <tr><th>城市</th><th>校区</th></tr>
+            <tr><td>深圳</td><td><strong>5</strong> (蛇口/福田/光明 + 2幼儿园)</td></tr>
+            <tr><td>惠州</td><td><strong>1</strong> (华润小径湾)</td></tr>
+            <tr><td>广州</td><td><strong>1</strong> + 新校在建</td></tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr><th>城市</th><th>校区</th></tr>
+            <tr><td>杭州</td><td><strong>1</strong></td></tr>
+            <tr><td>南京</td><td><strong>1</strong></td></tr>
+            <tr><td>成都</td><td><strong>1</strong> (一址两校)</td></tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr><th>城市</th><th>校区</th></tr>
+            <tr><td>武汉</td><td><strong>1</strong> (一址两校)</td></tr>
+            <tr><td>北京 (在建)</td><td><strong>1</strong> (顺义 2026秋)</td></tr>
+            <tr><td>广州 (在建)</td><td><strong>1</strong> (大湾区第8所)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>2025 届升学成绩</h3>
+        <table>
+          <tr><th>指标</th><th>数据</th></tr>
+          <tr><td>毕业生总数</td><td><strong>245 人</strong> (6 大校区)</td></tr>
+          <tr><td>录取通知总数</td><td><strong class="stat">1,426 份</strong></td></tr>
+          <tr><td>奖学金总额</td><td><strong>601.9 万美元</strong></td></tr>
+          <tr><td>顶尖大学录取</td><td><strong>23 人 / 27 份</strong> (斯坦福/宾大/康奈尔/剑桥等)</td></tr>
+          <tr><td>TOP30 录取率</td><td><strong class="stat-ok">67%</strong> (162人)</td></tr>
+          <tr><td>康奈尔连续录取</td><td><strong>第 5 年</strong>，2025 年录取 10 人</td></tr>
+          <tr><td>历史累计 (2018-2025)</td><td>910 名毕业生，132 人次获哈佛/斯坦福/MIT</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>2025-2026 学年学费</h3>
+        <table>
+          <tr><th>校区</th><th>K</th><th>G1-G8</th><th>G9-G12</th></tr>
+          <tr><td>深圳蛇口</td><td>28.2万</td><td>30.6万</td><td><strong>32.7万</strong></td></tr>
+          <tr><td>北京顺义</td><td>-</td><td>32-32.8万</td><td><strong>34.3万</strong></td></tr>
+          <tr><td>惠州小径湾</td><td>20.1万</td><td>25.0万</td><td>26.6万</td></tr>
+          <tr><td>武汉</td><td>21万</td><td>24.3-26.4万</td><td>27.7万</td></tr>
+        </table>
+        <p style="color:var(--text-muted);font-size:0.8rem;margin-top:12px;">
+          年涨幅 ~3%。住宿费：两人间 7万/年，三人间 6万/年。北京校区总投资 <strong>11亿元</strong>，提供 2,300 个学位。
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>核心定位</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;">
+        贝赛思 (BASIS) 是一个<span class="stat">国际学校连锁品牌</span>（非通用教学体系），1998年创立于美国亚利桑那州。
+        它采用<strong>自有超前课程 + AP 课程</strong>作为核心学术框架&mdash;&mdash;课程比同等学校快 1-2 年级，G9 即开始 AP 课程，毕业生平均修读 <strong>12+ 门 AP</strong>。
+        被称为"美式衡水中学"，入学评估录取比约 <span class="stat-warn">10:1</span>。
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== 3. PAIN POINTS ==================== -->
+  <div class="section" id="pain">
+    <h2 class="section-title">三、四大结构性缺口</h2>
+    <div class="grid-2">
+      <div class="pain-card critical">
+        <span class="pain-tag">极度稀缺</span>
+        <h4>BASIS 课程同步辅导 &mdash; 几乎空白</h4>
+        <p>现有机构 90% 以上只做入学备考 (MAP)，<span class="stat-warn">68% 学生首年 GPA 滑坡</span>，42% 家长开学 3 个月内就寻求辅导，但市场上几乎无人提供日常课程同步辅导。仅赛米国际覆盖了部分 GPA 管理。</p>
+      </div>
+      <div class="pain-card critical">
+        <span class="pain-tag">核心瓶颈</span>
+        <h4>师资严重短缺且质量参差</h4>
+        <p>既懂国际课程体系、又有教学经验、还能中英双语辅导的教师极度稀缺，培养周期 3-5 年。外籍教师流动性极大，每学年都有大批离职。</p>
+      </div>
+      <div class="pain-card high">
+        <span class="pain-tag">供给失配</span>
+        <h4>日常学科辅导供给严重不足</h4>
+        <p>现有机构过度集中于"入学备考"和"竞赛辅导"。<span class="stat-warn">65% 新生面临知识断层</span>，58% 高二学生深陷课程衔接困境。</p>
+      </div>
+      <div class="pain-card high">
+        <span class="pain-tag">地域不均</span>
+        <h4>非一线城市覆盖极为不足</h4>
+        <p>辅导资源集中在上海、北京、深圳，但武汉、成都、杭州、南京等贝赛思新兴校区城市的供给近乎为零。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 4. DEMAND DATA ==================== -->
+  <div class="section" id="demand">
+    <h2 class="section-title">四、需求数据透视</h2>
+    <div class="grid-2">
+      <div class="chart-box">
+        <h3>贝赛思学生学业困境</h3>
+        <div class="chart-wrapper"><canvas id="chartPainData"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <h3>需求 vs 供给差距 (雷达)</h3>
+        <div class="chart-wrapper"><canvas id="chartDemand"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 5. COMPETITION ==================== -->
+  <div class="section" id="competition">
+    <h2 class="section-title">五、竞争格局</h2>
+    <div class="grid-3">
+      <div class="tier">
+        <span class="tier-label">T1 全国品牌</span>
+        <ul>
+          <li><strong>犀牛国际教育</strong><br><span>OMO &middot; 17城40+校区 &middot; 深圳有校区 &middot; 300-1500元/课时</span></li>
+          <li><strong>唯寻国际教育</strong><br><span>竞赛+申请规划 &middot; A-Level/IB强</span></li>
+          <li><strong>新东方国际教育</strong><br><span>品牌知名度高 &middot; 标化考试强</span></li>
+        </ul>
+      </div>
+      <div class="tier">
+        <span class="tier-label">T2 细分强者</span>
+        <ul>
+          <li><strong>翰林国际教育</strong><br><span>竞赛辅导领先 &middot; 深圳有校区 &middot; 600-1200元/课时</span></li>
+          <li><strong>留美汇</strong><br><span>美国总部 &middot; TOP30师资 &middot; 180+科目 &middot; 纯线上</span></li>
+          <li><strong>菠萝在线</strong><br><span>自研教学平台 &middot; 500-800元/课时 &middot; A轮融资</span></li>
+          <li><strong>学而思国际</strong><br><span>九章大模型+DeepSeek &middot; AI最强但未用于国际课程</span></li>
+        </ul>
+      </div>
+      <div class="tier">
+        <span class="tier-label">T3 BASIS 备考</span>
+        <ul>
+          <li><strong>无老师国际教育</strong><br><span>95名教师 &middot; MAP命中率88% &middot; AI模考系统 &middot; 仅备考</span></li>
+          <li><strong>赛米国际教育</strong><br><span>860+offer &middot; <strong style="color:var(--accent3)">唯一覆盖GPA同步</strong> &middot; AI路径规划</span></li>
+          <li><strong>寰宇教育</strong><br><span>2015年随蛇口贝赛思开校 &middot; 2000+学员 &middot; 深圳本地</span></li>
+          <li><strong>诺程教育</strong><br><span>深圳福田 &middot; 2011年成立 &middot; GPA管理</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px;">
+      <h3>关键洞察</h3>
+      <p style="color:var(--text-muted);">
+        市场 <span class="stat">高度分散</span>，前五大公司合计份额极小。T1/T2 机构聚焦标化和竞赛，<span class="stat-warn">无人覆盖 BASIS 课程同步辅导</span>。
+        T3 中仅赛米国际同时覆盖"备考+同步+培优"全链条，但 <span class="stat-warn">无 AI 深度应用于国际课程教学</span>。
+        深圳是贝赛思家庭最密集的城市，但 AI + BASIS 同步辅导的组合完全空白。
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== 6. ONLINE TUTORING ==================== -->
+  <div class="section" id="online">
+    <h2 class="section-title">六、线上辅导机构深度对比</h2>
+    <div class="card" style="overflow-x:auto;">
+      <h3>11 家机构综合对比</h3>
+      <table>
+        <tr>
+          <th>机构</th><th>服务模式</th><th>定价 (元/课时)</th>
+          <th>AI应用</th><th>覆盖深圳</th><th>BASIS同步</th><th>课程体系</th>
+        </tr>
+        <tr>
+          <td><strong>犀牛国际教育</strong></td><td>OMO/一对一+班课</td><td>300-1,500</td>
+          <td><span class="badge badge-red">无</span></td>
+          <td><span class="badge badge-green">有校区</span></td>
+          <td><span class="badge badge-red">否</span></td><td>IB/AP/A-Level/竞赛</td>
+        </tr>
+        <tr>
+          <td><strong>翰林国际教育</strong></td><td>线上线下/一对一+小班</td><td>600-1,200</td>
+          <td><span class="badge badge-red">无</span></td>
+          <td><span class="badge badge-green">有校区</span></td>
+          <td><span class="badge badge-red">否</span></td><td>IB/AP/A-Level/竞赛(核心)</td>
+        </tr>
+        <tr>
+          <td><strong>菠萝在线</strong></td><td>线上为主/一对一</td><td>500-800</td>
+          <td><span class="badge badge-red">无</span></td>
+          <td><span class="badge badge-yellow">线上可达</span></td>
+          <td><span class="badge badge-red">否</span></td><td>A-Level/IB/AP/IGCSE</td>
+        </tr>
+        <tr>
+          <td><strong>留美汇</strong></td><td>纯线上/一对一</td><td>800-2,000</td>
+          <td><span class="badge badge-red">无</span></td>
+          <td><span class="badge badge-yellow">线上可达</span></td>
+          <td><span class="badge badge-red">否</span></td><td>180+科目全覆盖</td>
+        </tr>
+        <tr>
+          <td><strong>学而思国际</strong></td><td>线上线下/小班+一对一</td><td>200-1,000</td>
+          <td><span class="badge badge-purple">有(未用于国际课程)</span></td>
+          <td><span class="badge badge-red">无校区</span></td>
+          <td><span class="badge badge-red">否</span></td><td>AP/SAT/托福(窄)</td>
+        </tr>
+        <tr>
+          <td><strong>Lanterna</strong></td><td>纯线上/一对一+小班</td><td>600-750</td>
+          <td><span class="badge badge-red">无</span></td>
+          <td><span class="badge badge-yellow">线上可达</span></td>
+          <td><span class="badge badge-red">否</span></td><td>IB专项</td>
+        </tr>
+        <tr style="background:rgba(56,189,248,0.04);">
+          <td><strong>Tutopiya</strong></td><td>纯线上/一对一+AI自学</td><td><strong class="stat-ok">65-300</strong></td>
+          <td><span class="badge badge-green">深度应用</span></td>
+          <td><span class="badge badge-yellow">线上可达</span></td>
+          <td><span class="badge badge-red">否</span></td><td>IGCSE/A-Level/IB</td>
+        </tr>
+        <tr>
+          <td><strong>名津学院</strong></td><td>纯线上/一对一</td><td>350-1,050</td>
+          <td><span class="badge badge-red">无</span></td>
+          <td><span class="badge badge-yellow">线上可达</span></td>
+          <td><span class="badge badge-red">否</span></td><td>全阶段全专业</td>
+        </tr>
+        <tr>
+          <td><strong>TutorChase</strong></td><td>纯线上/一对一</td><td>440+</td>
+          <td><span class="badge badge-red">无</span></td>
+          <td><span class="badge badge-yellow">线上可达</span></td>
+          <td><span class="badge badge-red">否</span></td><td>IB/A-Level/AP</td>
+        </tr>
+        <tr>
+          <td><strong>无老师国际教育</strong></td><td>OMO/一对一+集训营</td><td>未公开</td>
+          <td><span class="badge badge-orange">AI模考</span></td>
+          <td><span class="badge badge-green">覆盖</span></td>
+          <td><span class="badge badge-red">否(仅备考)</span></td><td>BASIS入学备考</td>
+        </tr>
+        <tr style="background:rgba(52,211,153,0.04);">
+          <td><strong>赛米国际教育</strong></td><td>OMO/一对一+小班</td><td>500-2,000</td>
+          <td><span class="badge badge-orange">AI路径规划</span></td>
+          <td><span class="badge badge-green">覆盖</span></td>
+          <td><span class="badge badge-green">是</span></td><td>BASIS全链条</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="chart-box">
+        <h3>AI 应用深度对比</h3>
+        <div class="chart-wrapper"><canvas id="chartAI"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <h3>定价区间对比 (元/课时)</h3>
+        <div class="chart-wrapper"><canvas id="chartPricing"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h3>三大关键发现</h3>
+      <div class="grid-3">
+        <div>
+          <p style="font-size:0.95rem;margin-bottom:6px;"><strong>1. AI 教学是蓝海</strong></p>
+          <p style="color:var(--text-muted);font-size:0.85rem;">11 家机构中仅 Tutopiya 将 AI 深度应用于学习全流程，但它主要服务东南亚。中国本土尚无 AI 深度融入国际课程辅导的机构。</p>
+        </div>
+        <div>
+          <p style="font-size:0.95rem;margin-bottom:6px;"><strong>2. BASIS 同步辅导空白</strong></p>
+          <p style="color:var(--text-muted);font-size:0.85rem;">仅赛米覆盖"备考+同步+培优"全链条。市场上没有任何机构使用 AI 进行 BASIS 课程同步辅导。</p>
+        </div>
+        <div>
+          <p style="font-size:0.95rem;margin-bottom:6px;"><strong>3. 深圳存在组合空白</strong></p>
+          <p style="color:var(--text-muted);font-size:0.85rem;">深圳是全国贝赛思最密集城市，但既没有 AI 深度教学平台，也缺乏 BASIS 课程同步辅导。<span class="stat">"AI + BASIS"组合完全空白</span>。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 7. POLICY ==================== -->
+  <div class="section" id="policy">
+    <h2 class="section-title">七、双减政策影响 (2025 更新)</h2>
+    <div class="card">
+      <pre class="mermaid">
+flowchart LR
+    A["2021 双减政策"] --> B["K12 学科培训<br/>严格监管"]
+    A --> C["国际课程辅导<br/>灰色地带"]
+    B --> D["学科培训仅剩<br/>双减前 6%"]
+    D --> E["师资人才释放"]
+    C --> F["非义务教育 +<br/>非标准学科"]
+    F --> G["受监管影响最小"]
+    E --> H["结构性机遇窗口"]
+    G --> H
+    H --> I["2025 教育强国纲要<br/>分类管理趋势"]
+
+    style A fill:#dc2626,stroke:#dc2626,color:#fff
+    style H fill:#059669,stroke:#059669,color:#fff
+    style I fill:#0284c7,stroke:#0284c7,color:#fff
+    style B fill:#92400e,stroke:#92400e,color:#fff
+    style D fill:#92400e,stroke:#92400e,color:#fff
+    style C fill:#1e40af,stroke:#1e40af,color:#fff
+    style F fill:#1e40af,stroke:#1e40af,color:#fff
+    style G fill:#1e40af,stroke:#1e40af,color:#fff
+    style E fill:#065f46,stroke:#065f46,color:#fff
+      </pre>
+      <p style="color:var(--text-muted);margin-top:16px;font-size:0.9rem;">
+        <strong>2025 年最新动态：</strong>《教育强国建设规划纲要 (2024-2035)》发布，从"一刀切"转向<span class="stat">"分类管理"</span>。
+        2024年8月国务院将"教育培训消费"纳入促消费政策，是重要松动信号。
+        但学科类培训仍严监管，2023年学科培训市场仅剩 <span class="stat-warn">589 亿元</span>（双减前的 6%）。
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== 8. COMPLIANCE ==================== -->
+  <div class="section" id="compliance">
+    <h2 class="section-title">八、牌照与合规分析 (深圳)</h2>
+
+    <div class="card">
+      <h3>国际课程辅导的监管分类</h3>
+      <pre class="mermaid">
+flowchart TB
+    Q["国际课程辅导<br/>AP/IB/A-Level/BASIS"] --> D{"面向哪个阶段？"}
+    D -->|"义务教育 (K9)"| H["高风险"]
+    D -->|"高中 (G10-12)"| M["灰色地带"]
+    H --> H1["极可能被认定为学科类"]
+    H1 --> H2["不再审批新机构<br/>必须非营利"]
+    M --> M1["国际课程 ≠ 国家课程标准"]
+    M1 --> M2["但实质上教数学/物理/英语<br/>→ 可能被'一案一判'"]
+    M2 --> R["建议: 定位为非学科类<br/>(科技/素质/学术素养)"]
+
+    style H fill:#dc2626,stroke:#dc2626,color:#fff
+    style H1 fill:#dc2626,stroke:#dc2626,color:#fff
+    style H2 fill:#dc2626,stroke:#dc2626,color:#fff
+    style M fill:#d97706,stroke:#d97706,color:#fff
+    style M1 fill:#1e40af,stroke:#1e40af,color:#fff
+    style M2 fill:#d97706,stroke:#d97706,color:#fff
+    style R fill:#059669,stroke:#059669,color:#fff
+    style Q fill:#6d28d9,stroke:#6d28d9,color:#fff
+    style D fill:#334155,stroke:#475569,color:#e2e8f0
+      </pre>
+    </div>
+
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card">
+        <h3>必备牌照清单</h3>
+        <table>
+          <tr><th>牌照</th><th>说明</th></tr>
+          <tr><td><strong>办学许可证</strong></td><td>非学科类 (科技类)，区教育局审批，先证后照</td></tr>
+          <tr><td><strong>营业执照</strong></td><td>营利性法人，市场监管局登记</td></tr>
+          <tr><td><strong>ICP 经营许可证</strong></td><td>线上收费课程必备</td></tr>
+          <tr><td><strong>算法备案</strong></td><td>使用生成式 AI 服务必备</td></tr>
+          <tr><td><strong>大模型备案</strong></td><td>自研/微调大模型必备</td></tr>
+          <tr><td><strong>等保 2.0</strong></td><td>网络安全等级保护认证</td></tr>
+          <tr><td><strong>消防合格证</strong></td><td>线下场所必备</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>深圳特殊要求</h3>
+        <table>
+          <tr><th>要求</th><th>详情</th></tr>
+          <tr><td>场地面积</td><td>总面积 ≥ <strong>200㎡</strong></td></tr>
+          <tr><td>租赁期限</td><td>≥ <strong>2 年</strong></td></tr>
+          <tr><td>开办资金</td><td>≥ <strong>10 万元</strong></td></tr>
+          <tr><td>视频监控</td><td>全覆盖，存储 ≥ 30 天</td></tr>
+          <tr><td>资金监管</td><td>数字人民币预付 / 先学后付</td></tr>
+          <tr><td>收费限制</td><td>一次性 <span class="stat-warn">≤ 3个月或60课时</span></td></tr>
+          <tr><td>白名单</td><td>必须纳入教育局白名单 + 全国监管平台</td></tr>
+          <tr><td>教师资质</td><td>须持教师资格证或相应专业资质</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h3>合规风险等级</h3>
+      <div class="chart-wrapper" style="max-height:280px;"><canvas id="chartCompliance"></canvas></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card">
+        <h3>推荐合规架构 (双主体)</h3>
+        <pre class="mermaid">
+flowchart TB
+    A["主体1: XX教育科技公司"] --> A1["品牌运营"]
+    A --> A2["AI平台研发"]
+    A --> A3["获客/营销"]
+    A --> A4["教育咨询"]
+    B["主体2: XX培训学校"] --> B1["办学许可证(非学科类)"]
+    B --> B2["实际教学活动"]
+    B --> B3["教师管理"]
+    A -.->|"合作协议"| B
+
+    style A fill:#0284c7,stroke:#0284c7,color:#fff
+    style B fill:#059669,stroke:#059669,color:#fff
+    style A1 fill:#1e40af,stroke:#1e40af,color:#fff
+    style A2 fill:#1e40af,stroke:#1e40af,color:#fff
+    style A3 fill:#1e40af,stroke:#1e40af,color:#fff
+    style A4 fill:#1e40af,stroke:#1e40af,color:#fff
+    style B1 fill:#065f46,stroke:#065f46,color:#fff
+    style B2 fill:#065f46,stroke:#065f46,color:#fff
+    style B3 fill:#065f46,stroke:#065f46,color:#fff
+        </pre>
+      </div>
+      <div class="card">
+        <h3>AI 平台额外资质</h3>
+        <table>
+          <tr><th>资质</th><th>说明</th></tr>
+          <tr><td>算法备案</td><td>国家互联网信息办公室</td></tr>
+          <tr><td>大模型备案</td><td>"双备案制"</td></tr>
+          <tr><td>AI内容标识</td><td>2025年9月起所有AI生成内容须标识</td></tr>
+          <tr><td>安全评估</td><td>按国家规定开展</td></tr>
+          <tr><td>数据合规</td><td>《个人信息保护法》</td></tr>
+        </table>
+        <div class="callout-warn" style="margin-top:16px;">
+          <h3>AI 教学特别警示</h3>
+          <p>教育部已将"虚拟者、人工智能"纳入"教师"概念。AI 如果实质上提供学科知识讲解，<strong>仍可能被认定为学科类培训</strong>。需确保 AI 定位为"学习辅助工具"而非"授课主体"。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-warn" style="margin-top:20px;">
+      <h3>现有机构合规现状</h3>
+      <p>调研发现，大部分 BASIS 辅导机构可能<strong>并未取得办学许可证</strong>，以"教育咨询""教育科技"名义经营。
+        但教育部《校外培训行政处罚暂行办法》(2023年10月起施行) 已明确：以此类名义实质开展培训属<span class="stat-warn">违法经营</span>，已有多起处罚案例。
+        贝赛思学校也已声明：所有辅导机构均为独立第三方，与学校无任何官方合作。
+        <strong>建议：优先获取正规办学许可证，走合规路径。</strong></p>
+    </div>
+  </div>
+
+  <!-- ==================== 9. OPPORTUNITY MATRIX ==================== -->
+  <div class="section" id="opportunity">
+    <h2 class="section-title">九、机会矩阵</h2>
+    <div class="card" style="overflow-x:auto;">
+      <div class="opp-row header">
+        <div>细分领域</div><div>空白度</div><div>需求强度</div><div>客单价</div><div>进入难度</div><div>综合评分</div>
+      </div>
+      <div class="opp-row top">
+        <div class="opp-label">BASIS 课程同步辅导</div>
+        <div><span class="stars">★★★★★</span></div><div><span class="stars">★★★★★</span></div>
+        <div><span class="stars">★★★★</span><span class="stars-empty">★</span></div>
+        <div><span class="stars">★★★★</span><span class="stars-empty">★</span></div>
+        <div><span class="opp-badge best">最优</span></div>
+      </div>
+      <div class="opp-row">
+        <div class="opp-label">AP 理科深度辅导</div>
+        <div><span class="stars">★★★★</span><span class="stars-empty">★</span></div><div><span class="stars">★★★★★</span></div>
+        <div><span class="stars">★★★★★</span></div><div><span class="stars">★★★★</span><span class="stars-empty">★</span></div>
+        <div><span class="opp-badge great">极优</span></div>
+      </div>
+      <div class="opp-row">
+        <div class="opp-label">非一线城市国际课程辅导</div>
+        <div><span class="stars">★★★★★</span></div><div><span class="stars">★★★★</span><span class="stars-empty">★</span></div>
+        <div><span class="stars">★★★</span><span class="stars-empty">★★</span></div><div><span class="stars">★★★</span><span class="stars-empty">★★</span></div>
+        <div><span class="opp-badge good">优</span></div>
+      </div>
+      <div class="opp-row">
+        <div class="opp-label">AI 驱动个性化辅导</div>
+        <div><span class="stars">★★★★</span><span class="stars-empty">★</span></div><div><span class="stars">★★★★</span><span class="stars-empty">★</span></div>
+        <div><span class="stars">★★★</span><span class="stars-empty">★★</span></div><div><span class="stars">★★★★★</span></div>
+        <div><span class="opp-badge ok">良</span></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="chart-box">
+        <h3>机会气泡图：空白度 vs 需求强度</h3>
+        <div class="chart-wrapper"><canvas id="chartBubble"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <h3>行业进入壁垒</h3>
+        <div class="chart-wrapper"><canvas id="chartBarrier"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 10. STRATEGY ==================== -->
+  <div class="section" id="strategy">
+    <h2 class="section-title">十、深圳切入策略</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>BASIS Expert Council 的市场定位</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px;">
+          多智能体 AI 辅导系统 (数学/科学/人文/课程规划) 切中两大空白：<span class="stat">BASIS 课程同步辅导</span> + <span class="stat">AI 驱动教学</span>。
+          用 AI 解决师资瓶颈，以深圳为首发市场 (5 个贝赛思校区)，线上覆盖全国。
+        </p>
+        <pre class="mermaid">
+flowchart TB
+    U["深圳 BASIS 学生"] --> MC["BASIS Expert Council"]
+    MC --> M["math-expert<br/>数学专家"]
+    MC --> S["science-expert<br/>科学专家"]
+    MC --> H["humanities-expert<br/>人文专家"]
+    MC --> C["curriculum-advisor<br/>课程顾问"]
+    M --> R["GPA提升 &<br/>升学竞争力"]
+    S --> R
+    H --> R
+    C --> R
+
+    style MC fill:#0284c7,stroke:#0284c7,color:#fff
+    style R fill:#059669,stroke:#059669,color:#fff
+    style U fill:#6d28d9,stroke:#6d28d9,color:#fff
+    style M fill:#1e40af,stroke:#1e40af,color:#fff
+    style S fill:#1e40af,stroke:#1e40af,color:#fff
+    style H fill:#1e40af,stroke:#1e40af,color:#fff
+    style C fill:#1e40af,stroke:#1e40af,color:#fff
+        </pre>
+      </div>
+      <div class="card">
+        <h3>分阶段切入路径</h3>
+        <div class="timeline" style="margin-top:8px;">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>第一阶段 &mdash; 深圳核心验证</h4>
+            <p>BASIS 课程同步辅导 + MAP 入学备考。聚焦深圳蛇口/福田/光明 3 校区，注册教育科技公司 + 申请非学科类办学许可。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>第二阶段 &mdash; 粤港澳扩展</h4>
+            <p>AP 全科辅导 + 国际竞赛 (AMC/物理碗)。扩展至惠州小径湾、广州校区，线上覆盖杭州/南京/成都/武汉。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>第三阶段 &mdash; 一体化平台</h4>
+            <p>升学规划 + 标化备考 + 学科辅导一站式。拓展至 IB/A-Level 体系。对接北京新校区 (2026秋)。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>市场规模估算</h3>
+      <div class="grid-3" style="margin-top:16px;">
+        <div style="text-align:center;">
+          <div class="big-num">15 校区</div>
+          <div style="color:var(--text-muted);font-size:0.85rem;margin-top:4px;">x 800-1000 学生/校</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="big-num">42%</div>
+          <div style="color:var(--text-muted);font-size:0.85rem;margin-top:4px;">付费辅导意愿</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="big-num">2.5-6.3 亿</div>
+          <div style="color:var(--text-muted);font-size:0.85rem;margin-top:4px;">仅 BASIS 体系年潜在规模</div>
+        </div>
+      </div>
+      <p style="margin-top:16px;">深圳市场 (5 校区) 约占 <strong>三分之一</strong>，即 <span class="stat">0.8-2.1 亿元/年</span>。
+        加上 IB/AP/A-Level 体系需求，深圳国际课程辅导市场在 <strong>数亿元</strong> 级别。
+        北京校区 (2026) 开学后，全国市场进一步放大。</p>
+    </div>
+  </div>
+
+  <!-- ==================== SOURCES ==================== -->
+  <div class="section">
+    <h2 class="section-title">参考来源</h2>
+    <div class="card" style="font-size:0.82rem;color:var(--text-muted);columns:2;column-gap:32px;">
+      <p style="margin-bottom:5px;">&#8226; 2025 胡润百学中国国际学校排名</p>
+      <p style="margin-bottom:5px;">&#8226; 新东方《中国国际学校学生发展报告》2024</p>
+      <p style="margin-bottom:5px;">&#8226; 华经产业研究院：中国国际学校行业现状</p>
+      <p style="margin-bottom:5px;">&#8226; 前瞻产业研究院 / 智研咨询：K12市场数据</p>
+      <p style="margin-bottom:5px;">&#8226; Mordor Intelligence / Technavio: Tutoring Market</p>
+      <p style="margin-bottom:5px;">&#8226; 贝赛思中国官网 basischina.com</p>
+      <p style="margin-bottom:5px;">&#8226; 贝赛思 2025 届升学成绩公报</p>
+      <p style="margin-bottom:5px;">&#8226; 2025 贝赛思备考机构 TOP5 评测</p>
+      <p style="margin-bottom:5px;">&#8226; 犀牛/翰林/菠萝/留美汇/学而思/Tutopiya 官网</p>
+      <p style="margin-bottom:5px;">&#8226; 《教育强国建设规划纲要 2024-2035》</p>
+      <p style="margin-bottom:5px;">&#8226; 教育部《校外培训行政处罚暂行办法》</p>
+      <p style="margin-bottom:5px;">&#8226; 教育部《义务教育阶段校外培训项目分类鉴别指南》</p>
+      <p style="margin-bottom:5px;">&#8226; 广东省《民办培训机构设置标准》(2025.1.1)</p>
+      <p style="margin-bottom:5px;">&#8226; 深圳市非学科类校外培训机构审批流程指引</p>
+      <p style="margin-bottom:5px;">&#8226; 《生成式人工智能服务管理暂行办法》</p>
+      <p style="margin-bottom:5px;">&#8226; 36氪/澎湃新闻/虎嗅网 行业报道</p>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  BASIS Expert Council &middot; 市场调研报告 &middot; 2025 数据版<br>
+  <a href="architecture-mermaid.html">查看系统架构图 &rarr;</a>
+</div>
+
+<!-- ==================== CHARTS ==================== -->
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', flowchart: { curve: 'basis', useMaxWidth: true } });
+  Chart.defaults.color = '#94a3b8';
+  Chart.defaults.borderColor = 'rgba(71,85,105,0.4)';
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+
+  // School Type Doughnut
+  new Chart(document.getElementById('chartSchoolType'), {
+    type: 'doughnut',
+    data: {
+      labels: ['民办国际学校 555所 (57%)', '公立学校国际部 260所 (27%)', '外籍人员子女学校 157所 (16%)'],
+      datasets: [{ data: [555, 260, 157], backgroundColor: ['#38bdf8','#818cf8','#f472b6'], borderColor: '#1e293b', borderWidth: 3 }]
+    },
+    options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true, pointStyle: 'circle', font: { size: 11 } } } } }
+  });
+
+  // Curriculum Bar (updated with school counts)
+  new Chart(document.getElementById('chartCurriculum'), {
+    type: 'bar',
+    data: {
+      labels: ['AP', 'A-Level', 'IB (DP)', '其他/DSE'],
+      datasets: [{ label: '学校数量', data: [400, 300, 200, 200], backgroundColor: ['#818cf8','#38bdf8','#34d399','#fb923c'], borderRadius: 6, borderSkipped: false }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: false } },
+      scales: { y: { grid: { color: 'rgba(71,85,105,0.2)' }, title: { display: true, text: '开设学校数 (估)' } }, x: { grid: { display: false } } }
+    }
+  });
+
+  // Market Size Line
+  new Chart(document.getElementById('chartMarketSize'), {
+    type: 'line',
+    data: {
+      labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024(E)'],
+      datasets: [{
+        label: '国际学校市场规模 (亿元)',
+        data: [464, 520, 480, 530, 495, 918, 988],
+        borderColor: '#38bdf8', backgroundColor: 'rgba(56,189,248,0.1)',
+        fill: true, tension: 0.4, pointRadius: 5, pointBackgroundColor: '#38bdf8'
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { grid: { color: 'rgba(71,85,105,0.2)' }, title: { display: true, text: '亿元' } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+
+  // Pain Data Bar
+  new Chart(document.getElementById('chartPainData'), {
+    type: 'bar',
+    data: {
+      labels: ['家长补课比例', '首年GPA滑坡', '新生知识断层', '课程衔接困境', '开学3月内求助'],
+      datasets: [{ label: '%', data: [85, 68, 65, 58, 42], backgroundColor: ['#f87171','#fb923c','#fbbf24','#818cf8','#38bdf8'], borderRadius: 6, borderSkipped: false }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: false } },
+      scales: { x: { max: 100, ticks: { callback: v => v+'%' }, grid: { color: 'rgba(71,85,105,0.2)' } }, y: { grid: { display: false } } }
+    }
+  });
+
+  // Demand Radar
+  new Chart(document.getElementById('chartDemand'), {
+    type: 'radar',
+    data: {
+      labels: ['课程同步辅导', '衔接课程', 'AP全科辅导', '升学规划一体化', '个性化学习', '中英双语辅导', '非一线城市覆盖'],
+      datasets: [
+        { label: '需求程度', data: [10,8,8,8,7,8,10], backgroundColor: 'rgba(56,189,248,0.15)', borderColor: '#38bdf8', pointBackgroundColor: '#38bdf8', pointRadius: 4 },
+        { label: '供给水平', data: [1,3,4,5,3,2,1], backgroundColor: 'rgba(248,113,113,0.1)', borderColor: '#f87171', pointBackgroundColor: '#f87171', pointRadius: 4 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      scales: { r: { beginAtZero: true, max: 10, grid: { color: 'rgba(71,85,105,0.3)' }, angleLines: { color: 'rgba(71,85,105,0.3)' }, pointLabels: { font: { size: 11 } } } },
+      plugins: { legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } } }
+    }
+  });
+
+  // AI Application Bar
+  new Chart(document.getElementById('chartAI'), {
+    type: 'bar',
+    data: {
+      labels: ['Tutopiya', '学而思国际', '赛米国际', '无老师教育', '犀牛', '翰林', '菠萝在线', '留美汇', 'Lanterna', 'TutorChase'],
+      datasets: [{ label: 'AI应用深度', data: [95, 80, 40, 35, 5, 5, 5, 5, 5, 5],
+        backgroundColor: v => v.raw > 50 ? 'rgba(52,211,153,0.7)' : v.raw > 20 ? 'rgba(251,146,60,0.7)' : 'rgba(71,85,105,0.4)',
+        borderRadius: 6, borderSkipped: false }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: false } },
+      scales: { x: { max: 100, grid: { color: 'rgba(71,85,105,0.2)' }, title: { display: true, text: 'AI应用深度 (0-100)' } }, y: { grid: { display: false } } }
+    }
+  });
+
+  // Pricing Range
+  new Chart(document.getElementById('chartPricing'), {
+    type: 'bar',
+    data: {
+      labels: ['Tutopiya', '学而思国际', '犀牛国际', '名津学院', '菠萝在线', '翰林国际', 'Lanterna', '赛米国际', '留美汇', 'TutorChase'],
+      datasets: [
+        { label: '最低价', data: [65,200,300,350,500,600,600,500,800,440], backgroundColor: 'rgba(56,189,248,0.5)', borderRadius: 6 },
+        { label: '最高价', data: [300,1000,1500,1050,800,1200,750,2000,2000,800], backgroundColor: 'rgba(129,140,248,0.5)', borderRadius: 6 }
+      ]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'circle' } } },
+      scales: { x: { grid: { color: 'rgba(71,85,105,0.2)' }, title: { display: true, text: '元/课时' } }, y: { grid: { display: false } } }
+    }
+  });
+
+  // Compliance Risk Bar
+  new Chart(document.getElementById('chartCompliance'), {
+    type: 'bar',
+    data: {
+      labels: ['"教育咨询"名义培训', '义务教育学科类(新)', '高中国际课程辅导', 'AI平台(工具属性)', '非学科类(持许可证)', '留学咨询/升学规划'],
+      datasets: [{
+        label: '风险等级',
+        data: [95, 100, 65, 50, 15, 30],
+        backgroundColor: v => v.raw > 80 ? 'rgba(248,113,113,0.7)' : v.raw > 50 ? 'rgba(251,146,60,0.7)' : v.raw > 30 ? 'rgba(251,191,36,0.7)' : 'rgba(52,211,153,0.7)',
+        borderRadius: 6, borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => { const l = ['极高风险','不可行','中高风险','中等风险','低风险','中低风险']; return l[ctx.dataIndex]; } } } },
+      scales: { x: { max: 100, grid: { color: 'rgba(71,85,105,0.2)' }, title: { display: true, text: '风险等级 (0=安全 100=极高)' } }, y: { grid: { display: false } } }
+    }
+  });
+
+  // Bubble Chart
+  new Chart(document.getElementById('chartBubble'), {
+    type: 'bubble',
+    data: {
+      datasets: [
+        { label: 'BASIS同步辅导', data: [{x:10,y:10,r:22}], backgroundColor: 'rgba(56,189,248,0.6)' },
+        { label: 'AP理科深度', data: [{x:8,y:10,r:20}], backgroundColor: 'rgba(129,140,248,0.6)' },
+        { label: '非一线城市', data: [{x:10,y:8,r:14}], backgroundColor: 'rgba(251,146,60,0.6)' },
+        { label: 'AI个性化', data: [{x:8,y:8,r:12}], backgroundColor: 'rgba(244,114,182,0.6)' },
+        { label: '升学一体化', data: [{x:6,y:8,r:18}], backgroundColor: 'rgba(148,163,184,0.4)' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      scales: {
+        x: { title: { display: true, text: '市场空白度 →' }, min: 4, max: 12, grid: { color: 'rgba(71,85,105,0.2)' } },
+        y: { title: { display: true, text: '需求强度 →' }, min: 6, max: 12, grid: { color: 'rgba(71,85,105,0.2)' } }
+      },
+      plugins: { legend: { position: 'bottom', labels: { padding: 12, usePointStyle: true, pointStyle: 'circle', font: { size: 11 } } } }
+    }
+  });
+
+  // Barrier Bar
+  new Chart(document.getElementById('chartBarrier'), {
+    type: 'bar',
+    data: {
+      labels: ['师资壁垒', '合规壁垒', '口碑壁垒', '内容壁垒', '技术壁垒'],
+      datasets: [{ label: '壁垒高度', data: [95,75,70,60,50],
+        backgroundColor: ['rgba(248,113,113,0.7)','rgba(251,146,60,0.7)','rgba(251,191,36,0.7)','rgba(129,140,248,0.7)','rgba(56,189,248,0.7)'],
+        borderRadius: 6, borderSkipped: false }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: false } },
+      scales: { x: { max: 100, grid: { color: 'rgba(71,85,105,0.2)' } }, y: { grid: { display: false } } }
+    }
+  });
+</script>
+
+</body>
+</html>
