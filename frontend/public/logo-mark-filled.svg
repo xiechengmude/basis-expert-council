@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- BasisPilot Logo Mark (Filled) — favicon / standalone -->
+  <!-- BasisPilot Logo Mark (Filled) — Blackletter "Bi" + AI pulse -->
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#2563EB"/>
@@ -11,14 +11,22 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- Blackletter "B" -->
   <path fill-rule="evenodd" d="
-    M18 13 C18 11.9 18.9 11 20 11 H33
-    C39 11 43.5 15 43.5 21 C43.5 25.2 41 28.5 37.5 30
-    C41.8 31.5 45 35.5 45 41 C45 47.5 40.5 52 34 52
-    H20 C18.9 52 18 51.1 18 50 Z
-    M26 18 H31.5 C34.5 18 37 20.2 37 23 C37 25.8 34.5 28 31.5 28 H26 Z
-    M26 35 H32.5 C36 35 38.5 37.2 38.5 40.5 C38.5 43.8 36 46 32.5 46 H26 Z
+    M11 12 H28
+    C34 12 37 16 37 21.5 C37 25.5 35 28.5 31.5 30
+    C35.5 31.5 39 35.5 39 41 C39 47.5 35.5 52 29 52
+    H11 Z
+    M19 18 H26 C29.5 18 31.5 20 31.5 22.5 C31.5 25 29.5 27 26 27 H19 Z
+    M19 35.5 H27.5 C31 35.5 33.5 38 33.5 41 C33.5 44 31 46.5 27.5 46.5 H19 Z
   " fill="white"/>
-  <circle cx="47" cy="13" r="5.5" fill="url(#pulse)"/>
-  <circle cx="47" cy="13" r="2.5" fill="white"/>
+  <path d="M14.5 8.5 L18 11 L14.5 12 L11 11 Z" fill="white"/>
+  <path d="M14.5 55.5 L18 53 L14.5 52 L11 53 Z" fill="white"/>
+  <!-- Blackletter "i" -->
+  <rect x="43" y="28" width="6" height="24" rx="0.5" fill="white"/>
+  <path d="M46 25.5 L49 28 L46 29 L43 28 Z" fill="white"/>
+  <path d="M46 54.5 L49 52 L46 51 L43 52 Z" fill="white"/>
+  <!-- AI pulse = i-dot -->
+  <circle cx="46" cy="16" r="5.5" fill="url(#pulse)"/>
+  <circle cx="46" cy="16" r="2.5" fill="white"/>
 </svg>
