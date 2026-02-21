@@ -12,6 +12,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "BasisPilot 贝领 — 专为贝赛思学生设计的 AI 学习助手",
   description: "BasisPilot 贝领 — 24/7 AI 学习助手，覆盖数学/科学/人文全科辅导、AP 课程备考、升学规划、新生衔接。专为 BASIS 国际学校学生和家庭设计。",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/logo-mark-filled.svg",
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

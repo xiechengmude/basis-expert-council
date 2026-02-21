@@ -1,0 +1,22 @@
+{
+  "name": "BasisPilot 贝领",
+  "short_name": "贝领",
+  "description": "专为贝赛思学生设计的 AI 学习助手",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/logo-mark-filled.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "maskable"
+    }
+  ]
+}
