@@ -290,7 +290,19 @@ def create_basis_expert_agent_with_vision(**kwargs):
     inner_agent = create_basis_expert_agent(**kwargs)
 
     # 获取内部 Agent 的 state schema
-    state_schema = inner_agent.builder.schema_ if hasattr(inner_agent, "builder") else None
+    state_schema = None
+    if hasattr(inner_agent, "builder"):
+        b = inner_agent.builder
+        # LangGraph 不同版本属性名不同
+        for attr in ("schema", "schema_", "schemas"):
+            if hasattr(b, attr):
+                val = getattr(b, attr)
+                if isinstance(val, type):
+                    state_schema = val
+                    break
+                elif isinstance(val, dict) and "state" in val:
+                    state_schema = val["state"]
+                    break
 
     if state_schema is None:
         # Fallback: 直接返回内部 agent，跳过视觉预处理
