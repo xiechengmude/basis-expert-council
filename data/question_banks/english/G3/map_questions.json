@@ -1,0 +1,1067 @@
+{
+  "batch_name": "MAP_english_G3_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G3",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "reading_comp",
+      "subtopic": "main_idea",
+      "difficulty": 0.15,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which title best fits a passage about a sailor who endures a storm and completes his journey?",
+        "options": [
+          "A. The Terrible Storm",
+          "B. A Successful Journey",
+          "C. Life at Sea",
+          "D. The Brave Sailor"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which title best fits a passage about a sailor who endures a storm and completes his journey?",
+        "options": [
+          "A. The Terrible Storm",
+          "B. A Successful Journey",
+          "C. Life at Sea",
+          "D. The Brave Sailor"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage focuses on the complete journey including overcoming the storm, making 'A Successful Journey' the most comprehensive title.",
+      "explanation_zh": "The passage focuses on the complete journey including overcoming the storm, making 'A Successful Journey' the most comprehensive title.",
+      "tags": [
+        "best_title",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "best_title",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "reading_comp",
+      "subtopic": "theme",
+      "difficulty": 0.16,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A passage describes four animals with camouflage abilities. What common trait do they share?",
+        "options": [
+          "A. They all live in forests",
+          "B. They can all mask themselves",
+          "C. They all eat insects",
+          "D. They are all endangered"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A passage describes four animals with camouflage abilities. What common trait do they share?",
+        "options": [
+          "A. They all live in forests",
+          "B. They can all mask themselves",
+          "C. They all eat insects",
+          "D. They are all endangered"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The common trait described across all four animals is their ability to camouflage or mask themselves.",
+      "explanation_zh": "The common trait described across all four animals is their ability to camouflage or mask themselves.",
+      "tags": [
+        "common_themes",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "common_themes",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.18,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In the sentence 'She enjoys the company of her friends', what does 'company' mean?",
+        "options": [
+          "A. A business organization",
+          "B. The person or people who are with you",
+          "C. A military unit",
+          "D. Visitors at your home"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In the sentence 'She enjoys the company of her friends', what does 'company' mean?",
+        "options": [
+          "A. A business organization",
+          "B. The person or people who are with you",
+          "C. A military unit",
+          "D. Visitors at your home"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "In this context, 'company' means the people who are with you — her friends.",
+      "explanation_zh": "In this context, 'company' means the people who are with you — her friends.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "grammar",
+      "subtopic": "plurals",
+      "difficulty": 0.19,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which word is a correctly spelled plural noun?",
+        "options": [
+          "A. Childs",
+          "B. Gooses",
+          "C. Teeth",
+          "D. Mouses"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which word is a correctly spelled plural noun?",
+        "options": [
+          "A. Childs",
+          "B. Gooses",
+          "C. Teeth",
+          "D. Mouses"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Teeth is the correct irregular plural of tooth. The others should be children, geese, and mice.",
+      "explanation_zh": "Teeth is the correct irregular plural of tooth. The others should be children, geese, and mice.",
+      "tags": [
+        "plural_spelling",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "plural_spelling",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "grammar",
+      "subtopic": "verb_tense",
+      "difficulty": 0.2,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Complete the sentence: 'The race had already _______ by the time we arrived.'",
+        "options": [
+          "A. begin",
+          "B. began",
+          "C. begun",
+          "D. beginning"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Complete the sentence: 'The race had already _______ by the time we arrived.'",
+        "options": [
+          "A. begin",
+          "B. began",
+          "C. begun",
+          "D. beginning"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "After 'had' (past perfect), use the past participle 'begun'.",
+      "explanation_zh": "After 'had' (past perfect), use the past participle 'begun'.",
+      "tags": [
+        "verb_tense",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "verb_tense",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "grammar",
+      "subtopic": "sentence_structure",
+      "difficulty": 0.22,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence has correct word order?",
+        "options": [
+          "A. The quickly dog ran.",
+          "B. The dog quickly ran.",
+          "C. Quickly the dog ran.",
+          "D. The dog ran quickly."
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Which sentence has correct word order?",
+        "options": [
+          "A. The quickly dog ran.",
+          "B. The dog quickly ran.",
+          "C. Quickly the dog ran.",
+          "D. The dog ran quickly."
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "In standard English, adverbs of manner typically come after the verb: 'The dog ran quickly.'",
+      "explanation_zh": "In standard English, adverbs of manner typically come after the verb: 'The dog ran quickly.'",
+      "tags": [
+        "word_order",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "word_order",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "writing",
+      "subtopic": "paragraph_structure",
+      "difficulty": 0.23,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence best concludes a paragraph about endangered Javan rhinoceros?",
+        "options": [
+          "A. There are many animals in the zoo.",
+          "B. Rhinoceros are very large animals.",
+          "C. We must act now to protect the Javan rhinoceros before it is too late.",
+          "D. Africa has many different animals."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which sentence best concludes a paragraph about endangered Javan rhinoceros?",
+        "options": [
+          "A. There are many animals in the zoo.",
+          "B. Rhinoceros are very large animals.",
+          "C. We must act now to protect the Javan rhinoceros before it is too late.",
+          "D. Africa has many different animals."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A concluding sentence should summarize the main idea and provide a call to action related to the topic — protecting the endangered species.",
+      "explanation_zh": "A concluding sentence should summarize the main idea and provide a call to action related to the topic — protecting the endangered species.",
+      "tags": [
+        "concluding_sentence",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-LANG-004",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "concluding_sentence",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "main_idea_vs_details",
+      "subtopic": null,
+      "difficulty": 0.25,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Dolphins are amazing swimmers. They can swim up to 20 miles per hour. They use their tails to push through the water. Dolphins also jump high out of the water. Which is a supporting detail, NOT the main idea?",
+        "options": [
+          "A. Dolphins are amazing swimmers",
+          "B. They can swim up to 20 miles per hour",
+          "C. Dolphins live in the ocean",
+          "D. Dolphins are mammals"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Dolphins are amazing swimmers. They can swim up to 20 miles per hour. They use their tails to push through the water. Dolphins also jump high out of the water. Which is a supporting detail, NOT the main idea?",
+        "options": [
+          "A. Dolphins are amazing swimmers",
+          "B. They can swim up to 20 miles per hour",
+          "C. Dolphins live in the ocean",
+          "D. Dolphins are mammals"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The main idea is that dolphins are amazing swimmers. 'They can swim up to 20 miles per hour' is a supporting detail that shows how they are amazing.",
+      "explanation_zh": "The main idea is that dolphins are amazing swimmers. 'They can swim up to 20 miles per hour' is a supporting detail that shows how they are amazing.",
+      "tags": [
+        "main_idea_vs_details",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "main_idea_vs_details",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "inference",
+      "subtopic": null,
+      "difficulty": 0.26,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Maria looked out the window and smiled. The trees had bright red and orange leaves. She put on her favorite sweater and went outside to pick apples. What season is it most likely?",
+        "options": [
+          "A. Summer",
+          "B. Winter",
+          "C. Fall",
+          "D. Spring"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Maria looked out the window and smiled. The trees had bright red and orange leaves. She put on her favorite sweater and went outside to pick apples. What season is it most likely?",
+        "options": [
+          "A. Summer",
+          "B. Winter",
+          "C. Fall",
+          "D. Spring"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Red and orange leaves, wearing a sweater, and picking apples are all clues that point to fall (autumn).",
+      "explanation_zh": "Red and orange leaves, wearing a sweater, and picking apples are all clues that point to fall (autumn).",
+      "tags": [
+        "inference",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "inference",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "compare_contrast",
+      "subtopic": null,
+      "difficulty": 0.27,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Frogs and toads look similar, but they are different. Frogs have smooth, wet skin. Toads have rough, bumpy skin. Frogs live near water, but toads can live in drier places. How are frogs and toads different?",
+        "options": [
+          "A. Frogs are bigger than toads",
+          "B. Frogs have smooth skin and toads have bumpy skin",
+          "C. Toads can swim but frogs cannot",
+          "D. They eat different foods"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Frogs and toads look similar, but they are different. Frogs have smooth, wet skin. Toads have rough, bumpy skin. Frogs live near water, but toads can live in drier places. How are frogs and toads different?",
+        "options": [
+          "A. Frogs are bigger than toads",
+          "B. Frogs have smooth skin and toads have bumpy skin",
+          "C. Toads can swim but frogs cannot",
+          "D. They eat different foods"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage directly states that frogs have smooth, wet skin while toads have rough, bumpy skin.",
+      "explanation_zh": "The passage directly states that frogs have smooth, wet skin while toads have rough, bumpy skin.",
+      "tags": [
+        "compare_contrast",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "compare_contrast",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "cause_and_effect",
+      "subtopic": null,
+      "difficulty": 0.29,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: The farmer did not water his crops for two weeks. The sun was very hot every day. Soon, the plants turned brown and stopped growing. Why did the plants turn brown?",
+        "options": [
+          "A. The farmer planted the wrong seeds",
+          "B. Bugs ate the plants",
+          "C. The plants did not get enough water and the sun was too hot",
+          "D. Winter came early"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: The farmer did not water his crops for two weeks. The sun was very hot every day. Soon, the plants turned brown and stopped growing. Why did the plants turn brown?",
+        "options": [
+          "A. The farmer planted the wrong seeds",
+          "B. Bugs ate the plants",
+          "C. The plants did not get enough water and the sun was too hot",
+          "D. Winter came early"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The passage states two causes: no water for two weeks and very hot sun. These caused the plants to turn brown.",
+      "explanation_zh": "The passage states two causes: no water for two weeks and very hot sun. These caused the plants to turn brown.",
+      "tags": [
+        "cause_and_effect",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "cause_and_effect",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "text_structure",
+      "subtopic": null,
+      "difficulty": 0.3,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: How to Make a Peanut Butter Sandwich. Step 1: Get two slices of bread. Step 2: Spread peanut butter on one slice. Step 3: Put the other slice on top. Step 4: Cut in half and enjoy! How is this passage organized?",
+        "options": [
+          "A. Compare and contrast",
+          "B. Problem and solution",
+          "C. Sequence or steps in order",
+          "D. Cause and effect"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: How to Make a Peanut Butter Sandwich. Step 1: Get two slices of bread. Step 2: Spread peanut butter on one slice. Step 3: Put the other slice on top. Step 4: Cut in half and enjoy! How is this passage organized?",
+        "options": [
+          "A. Compare and contrast",
+          "B. Problem and solution",
+          "C. Sequence or steps in order",
+          "D. Cause and effect"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The passage uses numbered steps (Step 1, Step 2, Step 3, Step 4) to show a process in order. This is a sequence structure.",
+      "explanation_zh": "The passage uses numbered steps (Step 1, Step 2, Step 3, Step 4) to show a process in order. This is a sequence structure.",
+      "tags": [
+        "text_structure",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "text_structure",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "reading_comp",
+      "subtopic": "figurative_language",
+      "difficulty": 0.31,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: The stars were like tiny diamonds in the sky. What does this sentence compare the stars to?",
+        "options": [
+          "A. Fireflies",
+          "B. Diamonds",
+          "C. The moon",
+          "D. Candles"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: The stars were like tiny diamonds in the sky. What does this sentence compare the stars to?",
+        "options": [
+          "A. Fireflies",
+          "B. Diamonds",
+          "C. The moon",
+          "D. Candles"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The sentence uses a simile (using the word 'like') to compare stars to tiny diamonds because they both sparkle and shine.",
+      "explanation_zh": "The sentence uses a simile (using the word 'like') to compare stars to tiny diamonds because they both sparkle and shine.",
+      "tags": [
+        "figurative_language",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "figurative_language",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "reading_comp",
+      "subtopic": "authors_purpose",
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Please recycle your cans and bottles! Recycling helps keep the earth clean. When you recycle, less trash goes to landfills. Everyone should recycle every day! Why did the author write this passage?",
+        "options": [
+          "A. To entertain the reader with a funny story",
+          "B. To teach the reader how cans are made",
+          "C. To persuade the reader to recycle",
+          "D. To describe what a landfill looks like"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Please recycle your cans and bottles! Recycling helps keep the earth clean. When you recycle, less trash goes to landfills. Everyone should recycle every day! Why did the author write this passage?",
+        "options": [
+          "A. To entertain the reader with a funny story",
+          "B. To teach the reader how cans are made",
+          "C. To persuade the reader to recycle",
+          "D. To describe what a landfill looks like"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The author uses words like 'Please' and 'Everyone should' to convince the reader to recycle. The purpose is to persuade.",
+      "explanation_zh": "The author uses words like 'Please' and 'Everyone should' to convince the reader to recycle. The purpose is to persuade.",
+      "tags": [
+        "authors_purpose",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "authors_purpose",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.34,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: The little girl was watching a rocket launch on her tablet. The rocket roared and lifted off the ground. She gasped as it soared higher and higher until it disappeared into the clouds. What does 'soared' most likely mean?",
+        "options": [
+          "A. Fell down quickly",
+          "B. Flew high into the air",
+          "C. Moved sideways",
+          "D. Stopped suddenly"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: The little girl was watching a rocket launch on her tablet. The rocket roared and lifted off the ground. She gasped as it soared higher and higher until it disappeared into the clouds. What does 'soared' most likely mean?",
+        "options": [
+          "A. Fell down quickly",
+          "B. Flew high into the air",
+          "C. Moved sideways",
+          "D. Stopped suddenly"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Context clues ('higher and higher' and 'disappeared into the clouds') tell us that 'soared' means flew high into the air.",
+      "explanation_zh": "Context clues ('higher and higher' and 'disappeared into the clouds') tell us that 'soared' means flew high into the air.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G3",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "common_proper_nouns",
+      "subtopic": null,
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: 'In January, our class visited the National Air and Space Museum in Washington.' Which words are proper nouns?",
+        "options": [
+          "A. class, museum",
+          "B. January, Washington",
+          "C. January, National Air and Space Museum, Washington",
+          "D. class, January"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: 'In January, our class visited the National Air and Space Museum in Washington.' Which words are proper nouns?",
+        "options": [
+          "A. class, museum",
+          "B. January, Washington",
+          "C. January, National Air and Space Museum, Washington",
+          "D. class, January"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Proper nouns name specific things: 'January' is a specific month, 'National Air and Space Museum' is a specific place, and 'Washington' is a specific city.",
+      "explanation_zh": "Proper nouns name specific things: 'January' is a specific month, 'National Air and Space Museum' is a specific place, and 'Washington' is a specific city.",
+      "tags": [
+        "common_proper_nouns",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "common_proper_nouns",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "verb_tense_future",
+      "subtopic": null,
+      "difficulty": 0.37,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the future tense correctly?",
+        "options": [
+          "A. Tomorrow we go to the science fair.",
+          "B. Tomorrow we will go to the science fair.",
+          "C. Tomorrow we went to the science fair.",
+          "D. Tomorrow we going to the science fair."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the future tense correctly?",
+        "options": [
+          "A. Tomorrow we go to the science fair.",
+          "B. Tomorrow we will go to the science fair.",
+          "C. Tomorrow we went to the science fair.",
+          "D. Tomorrow we going to the science fair."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The future tense uses 'will' before the verb. Since the action happens 'tomorrow,' the correct form is 'will go'.",
+      "explanation_zh": "The future tense uses 'will' before the verb. Since the action happens 'tomorrow,' the correct form is 'will go'.",
+      "tags": [
+        "verb_tense_future",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "verb_tense_future",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "grammar",
+      "subtopic": "contractions",
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which contraction correctly replaces the underlined words? 'They are going to the park after school.'",
+        "options": [
+          "A. Their",
+          "B. There",
+          "C. They're",
+          "D. Theyr'e"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which contraction correctly replaces the underlined words? 'They are going to the park after school.'",
+        "options": [
+          "A. Their",
+          "B. There",
+          "C. They're",
+          "D. Theyr'e"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'They're' is the contraction of 'they are.' The apostrophe replaces the letter 'a'. 'Their' shows ownership and 'there' shows a place.",
+      "explanation_zh": "'They're' is the contraction of 'they are.' The apostrophe replaces the letter 'a'. 'Their' shows ownership and 'there' shows a place.",
+      "tags": [
+        "contractions",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "contractions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "vocabulary",
+      "subtopic": "irregular_forms",
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the correct plural forms?",
+        "options": [
+          "A. The womans carried the boxs to the shelf.",
+          "B. The women carried the boxes to the shelves.",
+          "C. The womens carried the boxes to the shelfs.",
+          "D. The women carried the boxs to the shelves."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the correct plural forms?",
+        "options": [
+          "A. The womans carried the boxs to the shelf.",
+          "B. The women carried the boxes to the shelves.",
+          "C. The womens carried the boxes to the shelfs.",
+          "D. The women carried the boxs to the shelves."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Women' is the irregular plural of 'woman.' 'Boxes' adds -es because the word ends in x. 'Shelves' changes the f to v and adds -es.",
+      "explanation_zh": "'Women' is the irregular plural of 'woman.' 'Boxes' adds -es because the word ends in x. 'Shelves' changes the f to v and adds -es.",
+      "tags": [
+        "irregular_plurals",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "irregular_plurals",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "simple_punctuation",
+      "subtopic": null,
+      "difficulty": 0.41,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence is punctuated correctly?",
+        "options": [
+          "A. Wow that was an amazing goal",
+          "B. Wow, that was an amazing goal!",
+          "C. Wow that was an amazing goal!",
+          "D. Wow, that was an amazing goal."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence is punctuated correctly?",
+        "options": [
+          "A. Wow that was an amazing goal",
+          "B. Wow, that was an amazing goal!",
+          "C. Wow that was an amazing goal!",
+          "D. Wow, that was an amazing goal."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "An interjection like 'Wow' is followed by a comma. The sentence expresses strong excitement, so it ends with an exclamation mark.",
+      "explanation_zh": "An interjection like 'Wow' is followed by a comma. The sentence expresses strong excitement, so it ends with an exclamation mark.",
+      "tags": [
+        "simple_punctuation",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "simple_punctuation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "regular_plurals",
+      "subtopic": null,
+      "difficulty": 0.42,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which word correctly completes the sentence? 'The _______ on the table need to be washed.'",
+        "options": [
+          "A. dishs",
+          "B. dish",
+          "C. dishes",
+          "D. dishies"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which word correctly completes the sentence? 'The _______ on the table need to be washed.'",
+        "options": [
+          "A. dishs",
+          "B. dish",
+          "C. dishes",
+          "D. dishies"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Nouns ending in -sh form their plural by adding -es: dish becomes dishes.",
+      "explanation_zh": "Nouns ending in -sh form their plural by adding -es: dish becomes dishes.",
+      "tags": [
+        "regular_plurals",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "regular_plurals",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "grammar",
+      "subtopic": "capitalization",
+      "difficulty": 0.44,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A student wrote: 'my Family visited uncle James in dallas, texas, last summer.' How many capitalization errors are in this sentence?",
+        "options": [
+          "A. 2",
+          "B. 3",
+          "C. 4",
+          "D. 5"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A student wrote: 'my Family visited uncle James in dallas, texas, last summer.' How many capitalization errors are in this sentence?",
+        "options": [
+          "A. 2",
+          "B. 3",
+          "C. 4",
+          "D. 5"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Three errors: 'my' should be 'My' (start of sentence), 'dallas' should be 'Dallas,' and 'texas' should be 'Texas' (city/state names are proper nouns). 'Family' and 'summer' are correctly lowercase.",
+      "explanation_zh": "Three errors: 'my' should be 'My' (start of sentence), 'dallas' should be 'Dallas,' and 'texas' should be 'Texas' (city/state names are proper nouns). 'Family' and 'summer' are correctly lowercase.",
+      "tags": [
+        "capitalization",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "capitalization",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G3",
+      "topic": "sentence_vs_fragment",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which group of words is a sentence fragment?",
+        "options": [
+          "A. The robot completed all the tasks quickly.",
+          "B. After the rain stopped falling on Tuesday afternoon.",
+          "C. Our teacher read us a new story.",
+          "D. Birds sing loudly every morning."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which group of words is a sentence fragment?",
+        "options": [
+          "A. The robot completed all the tasks quickly.",
+          "B. After the rain stopped falling on Tuesday afternoon.",
+          "C. Our teacher read us a new story.",
+          "D. Birds sing loudly every morning."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'After the rain stopped falling on Tuesday afternoon' begins with 'after,' making it a dependent clause. It does not express a complete thought on its own.",
+      "explanation_zh": "'After the rain stopped falling on Tuesday afternoon' begins with 'after,' making it a dependent clause. It does not express a complete thought on its own.",
+      "tags": [
+        "sentence_vs_fragment",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G3",
+        "original_topic": "sentence_vs_fragment",
+        "is_seed": false
+      }
+    }
+  ]
+}

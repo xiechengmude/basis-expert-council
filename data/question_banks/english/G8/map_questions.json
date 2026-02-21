@@ -1,0 +1,1113 @@
+{
+  "batch_name": "MAP_english_G8_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G8",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "reading_comp",
+      "subtopic": "figurative_language",
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses figurative language to convey an abstract idea? (Passage about 'Powers of Ten' film)",
+        "options": [
+          "A. The camera steadily zooms outward, expanding the view by a power of ten each interval.",
+          "B. Trying to grasp these extremes feels like trying to hold the ocean in a teacup.",
+          "C. The film reverses direction and explores the microscopic world of cells and proteins.",
+          "D. The distances in the universe stretch the limits of human imagination."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses figurative language to convey an abstract idea? (Passage about 'Powers of Ten' film)",
+        "options": [
+          "A. The camera steadily zooms outward, expanding the view by a power of ten each interval.",
+          "B. Trying to grasp these extremes feels like trying to hold the ocean in a teacup.",
+          "C. The film reverses direction and explores the microscopic world of cells and proteins.",
+          "D. The distances in the universe stretch the limits of human imagination."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Option B uses a simile comparing conceptual difficulty to an impossible physical task, expressing an abstract idea through vivid comparison.",
+      "explanation_zh": "Option B uses a simile comparing conceptual difficulty to an impossible physical task, expressing an abstract idea through vivid comparison.",
+      "tags": [
+        "figurative_language",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "figurative_language",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "reading_comp",
+      "subtopic": "authors_craft",
+      "difficulty": 0.41,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which technique does the author use most effectively to help readers understand the extreme nature of fleas' abilities?",
+        "options": [
+          "A. Emphasizing scientific terminology to highlight biological precision",
+          "B. Presenting direct factual descriptions of the flea's anatomy and daily behavior",
+          "C. Framing flea abilities through large-scale numerical and conceptual comparisons",
+          "D. Using vivid adjectives to portray fleas as remarkable and unusual creatures"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which technique does the author use most effectively to help readers understand the extreme nature of fleas' abilities?",
+        "options": [
+          "A. Emphasizing scientific terminology to highlight biological precision",
+          "B. Presenting direct factual descriptions of the flea's anatomy and daily behavior",
+          "C. Framing flea abilities through large-scale numerical and conceptual comparisons",
+          "D. Using vivid adjectives to portray fleas as remarkable and unusual creatures"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The author repeatedly translates flea abilities into human-scale comparisons (e.g., 'a jump would launch a person high enough to clear a skyscraper').",
+      "explanation_zh": "The author repeatedly translates flea abilities into human-scale comparisons (e.g., 'a jump would launch a person high enough to clear a skyscraper').",
+      "tags": [
+        "authors_technique",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "authors_technique",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.43,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Determine the definition of 'cajole' based on context: (1) politician cajoled voters with tax reduction promises; (2) friend cajoled her into attending event.",
+        "options": [
+          "A. To compel someone into action by creating urgency",
+          "B. To persuade someone by sustained coaxing or flattery",
+          "C. To subtly manipulate outcomes without direct interaction",
+          "D. To engage in negotiation involving concessions"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Determine the definition of 'cajole' based on context: (1) politician cajoled voters with tax reduction promises; (2) friend cajoled her into attending event.",
+        "options": [
+          "A. To compel someone into action by creating urgency",
+          "B. To persuade someone by sustained coaxing or flattery",
+          "C. To subtly manipulate outcomes without direct interaction",
+          "D. To engage in negotiation involving concessions"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Context shows gentle, personal persuasion through repeated urging and attractive promises — 'cajole' means to persuade by coaxing or flattery.",
+      "explanation_zh": "Context shows gentle, personal persuasion through repeated urging and attractive promises — 'cajole' means to persuade by coaxing or flattery.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "reading_comp",
+      "subtopic": "poetry",
+      "difficulty": 0.44,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which statement is true about Emily Dickinson's poem 'I'm nobody! Who are you?'",
+        "options": [
+          "A. The poem maintains a consistent rhyme scheme.",
+          "B. The poem maintains a consistent pattern of meter.",
+          "C. Each line of the poem is in tetrameter form.",
+          "D. The poem is a limerick."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which statement is true about Emily Dickinson's poem 'I'm nobody! Who are you?'",
+        "options": [
+          "A. The poem maintains a consistent rhyme scheme.",
+          "B. The poem maintains a consistent pattern of meter.",
+          "C. Each line of the poem is in tetrameter form.",
+          "D. The poem is a limerick."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The poem follows alternating long/short line patterns throughout, demonstrating consistent meter despite varying rhyme density.",
+      "explanation_zh": "The poem follows alternating long/short line patterns throughout, demonstrating consistent meter despite varying rhyme density.",
+      "tags": [
+        "poetry_form",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-READ-004",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "poetry_form",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "grammar",
+      "subtopic": "sentence_structure",
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the function of the final sentence: 'Even so, interest in the deep ocean continues to grow as researchers learn more about its potential value'?",
+        "options": [
+          "A. It reinforces the earlier idea that the deep ocean holds important resources.",
+          "B. It provides evidence that challenges the claim made in the first sentence.",
+          "C. It explains why deep-sea exploration has become less common in recent years.",
+          "D. It contrasts the growing interest with the difficulties mentioned earlier."
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "What is the function of the final sentence: 'Even so, interest in the deep ocean continues to grow as researchers learn more about its potential value'?",
+        "options": [
+          "A. It reinforces the earlier idea that the deep ocean holds important resources.",
+          "B. It provides evidence that challenges the claim made in the first sentence.",
+          "C. It explains why deep-sea exploration has become less common in recent years.",
+          "D. It contrasts the growing interest with the difficulties mentioned earlier."
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "'Even so' signals contrast between previously mentioned obstacles and continuing increased interest.",
+      "explanation_zh": "'Even so' signals contrast between previously mentioned obstacles and continuing increased interest.",
+      "tags": [
+        "sentence_function",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "sentence_function",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "writing",
+      "subtopic": "revision",
+      "difficulty": 0.47,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which revision best improves clarity and removes ambiguity from: 'Because the committee wanted community members to share their opinions in as many ways as possible, they allowed an online form, individual interviews, and a suggestion box, which made the results more confusing than expected.'",
+        "options": [
+          "A. Seeking extensive public input, the committee implemented multiple feedback methods...which ultimately produced data that was difficult to interpret.",
+          "B. To gather community opinions through varied channels, the committee offered several participation options; however, these methods collectively generated results that were unexpectedly complex to analyze.",
+          "C. Wanting a wide range of perspectives, the committee provided an online form, individual interviews, and a suggestion box, although the combination...",
+          "D. To encourage contributions through multiple avenues, the committee adopted an online form..."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which revision best improves clarity and removes ambiguity from: 'Because the committee wanted community members to share their opinions in as many ways as possible, they allowed an online form, individual interviews, and a suggestion box, which made the results more confusing than expected.'",
+        "options": [
+          "A. Seeking extensive public input, the committee implemented multiple feedback methods...which ultimately produced data that was difficult to interpret.",
+          "B. To gather community opinions through varied channels, the committee offered several participation options; however, these methods collectively generated results that were unexpectedly complex to analyze.",
+          "C. Wanting a wide range of perspectives, the committee provided an online form, individual interviews, and a suggestion box, although the combination...",
+          "D. To encourage contributions through multiple avenues, the committee adopted an online form..."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Option B eliminates pronoun ambiguity by naming 'committee' directly and clarifies cause-effect with 'collectively generated results'.",
+      "explanation_zh": "Option B eliminates pronoun ambiguity by naming 'committee' directly and clarifies cause-effect with 'collectively generated results'.",
+      "tags": [
+        "sentence_clarity",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "sentence_clarity",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "writing",
+      "subtopic": "sentence_combining",
+      "difficulty": 0.48,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Combine three statements about the Hubble Space Telescope: (1) launched 1990; (2) instrumental in major discoveries; (3) orbits Earth at 340 miles.",
+        "options": [
+          "A. Launched in 1990 and instrumental in many major discoveries, the Hubble Space Telescope orbits Earth at approximately 340 miles above the surface.",
+          "B. Orbiting Earth at 340 miles above the surface, the Hubble Space Telescope was launched in 1990, and it has been instrumental...",
+          "C. The Hubble Space Telescope, a device instrumental in numerous major astronomical discoveries, was launched in 1990 and orbits Earth at approximately 340 miles above the surface.",
+          "D. Instrumental in numerous major astronomical discoveries and orbiting Earth, the Hubble Space Telescope was launched in 1990..."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Combine three statements about the Hubble Space Telescope: (1) launched 1990; (2) instrumental in major discoveries; (3) orbits Earth at 340 miles.",
+        "options": [
+          "A. Launched in 1990 and instrumental in many major discoveries, the Hubble Space Telescope orbits Earth at approximately 340 miles above the surface.",
+          "B. Orbiting Earth at 340 miles above the surface, the Hubble Space Telescope was launched in 1990, and it has been instrumental...",
+          "C. The Hubble Space Telescope, a device instrumental in numerous major astronomical discoveries, was launched in 1990 and orbits Earth at approximately 340 miles above the surface.",
+          "D. Instrumental in numerous major astronomical discoveries and orbiting Earth, the Hubble Space Telescope was launched in 1990..."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Option C uses an appositive phrase to integrate the discoveries fact smoothly while presenting launch date and orbital information in balanced parallel structure.",
+      "explanation_zh": "Option C uses an appositive phrase to integrate the discoveries fact smoothly while presenting launch date and orbital information in balanced parallel structure.",
+      "tags": [
+        "sentence_combining",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "sentence_combining",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "grammar",
+      "subtopic": "agreement",
+      "difficulty": 0.49,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Select the sentence using correct pronoun-antecedent agreement and maintaining grammatical parallelism.",
+        "options": [
+          "A. Every student must submit their project proposal and be sure they proofread carefully.",
+          "B. Each student must submit their project proposal and ensure they proofreads carefully.",
+          "C. Every student must submit his or her project proposal and ensure that it is proofread carefully.",
+          "D. Each student must submit his or her student's project proposal and ensure that it is proofread carefully."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Select the sentence using correct pronoun-antecedent agreement and maintaining grammatical parallelism.",
+        "options": [
+          "A. Every student must submit their project proposal and be sure they proofread carefully.",
+          "B. Each student must submit their project proposal and ensure they proofreads carefully.",
+          "C. Every student must submit his or her project proposal and ensure that it is proofread carefully.",
+          "D. Each student must submit his or her student's project proposal and ensure that it is proofread carefully."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Option C uses singular 'his or her' matching singular antecedent 'Every student' and maintains parallel verb structure.",
+      "explanation_zh": "Option C uses singular 'his or her' matching singular antecedent 'Every student' and maintains parallel verb structure.",
+      "tags": [
+        "pronoun_antecedent_agreement",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-LANG-004",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "pronoun_antecedent_agreement",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "theme_analysis",
+      "subtopic": null,
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In the novel, twelve-year-old Kwame is the only student in his class who cannot afford the school trip to Washington, D.C. His classmates start a fundraiser without telling him. When Kwame finds out, he feels ashamed at first. But his friend Jasmine says, 'We did this because you belong with us, not because you need help.' Kwame realizes that accepting support from people who care about you is not weakness — it is community. What theme does this passage explore?",
+        "options": [
+          "A. Money is the root of all problems",
+          "B. True community means supporting each other without shame",
+          "C. School trips are not worth the cost",
+          "D. Students should never accept charity"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In the novel, twelve-year-old Kwame is the only student in his class who cannot afford the school trip to Washington, D.C. His classmates start a fundraiser without telling him. When Kwame finds out, he feels ashamed at first. But his friend Jasmine says, 'We did this because you belong with us, not because you need help.' Kwame realizes that accepting support from people who care about you is not weakness — it is community. What theme does this passage explore?",
+        "options": [
+          "A. Money is the root of all problems",
+          "B. True community means supporting each other without shame",
+          "C. School trips are not worth the cost",
+          "D. Students should never accept charity"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage shows that genuine community means caring for each other. Jasmine reframes the fundraiser as belonging, not charity, revealing the theme of mutual support.",
+      "explanation_zh": "The passage shows that genuine community means caring for each other. Jasmine reframes the fundraiser as belonging, not charity, revealing the theme of mutual support.",
+      "tags": [
+        "theme_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "theme_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "literary_devices_allusion",
+      "subtopic": null,
+      "difficulty": 0.52,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence from a short story: 'Elena had opened Pandora's box when she revealed the family secret at dinner.' What does the allusion to Pandora's box suggest?",
+        "options": [
+          "A. Elena received a beautiful gift",
+          "B. Elena's revelation released a cascade of problems that cannot be undone",
+          "C. Elena found a hidden treasure",
+          "D. Elena solved a mystery"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the sentence from a short story: 'Elena had opened Pandora's box when she revealed the family secret at dinner.' What does the allusion to Pandora's box suggest?",
+        "options": [
+          "A. Elena received a beautiful gift",
+          "B. Elena's revelation released a cascade of problems that cannot be undone",
+          "C. Elena found a hidden treasure",
+          "D. Elena solved a mystery"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "In Greek mythology, opening Pandora's box released all evils into the world. The allusion suggests Elena's revelation unleashed problems that cannot be taken back.",
+      "explanation_zh": "In Greek mythology, opening Pandora's box released all evils into the world. The allusion suggests Elena's revelation unleashed problems that cannot be taken back.",
+      "tags": [
+        "literary_devices_allusion",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "literary_devices_allusion",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "informational_text_analysis",
+      "subtopic": null,
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Ocean surface temperatures in 2025 averaged 1.3 degrees Celsius above pre-industrial levels, according to data from the Copernicus Climate Change Service. The warming has accelerated the melting of Antarctic ice shelves, contributed to more intense hurricanes in the Atlantic, and triggered mass coral bleaching events across the Indian and Pacific Oceans. However, some researchers caution that natural climate cycles, such as El Nino, also played a significant role in the 2025 temperature spike. What organizational pattern does this passage primarily use?",
+        "options": [
+          "A. Narrative chronological order",
+          "B. Cause and effect with a qualifying counterpoint",
+          "C. Compare and contrast of two oceans",
+          "D. Problem and step-by-step solution"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Ocean surface temperatures in 2025 averaged 1.3 degrees Celsius above pre-industrial levels, according to data from the Copernicus Climate Change Service. The warming has accelerated the melting of Antarctic ice shelves, contributed to more intense hurricanes in the Atlantic, and triggered mass coral bleaching events across the Indian and Pacific Oceans. However, some researchers caution that natural climate cycles, such as El Nino, also played a significant role in the 2025 temperature spike. What organizational pattern does this passage primarily use?",
+        "options": [
+          "A. Narrative chronological order",
+          "B. Cause and effect with a qualifying counterpoint",
+          "C. Compare and contrast of two oceans",
+          "D. Problem and step-by-step solution"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage presents a cause (rising temperatures) and multiple effects (ice melting, hurricanes, bleaching), then qualifies with a counterpoint about natural cycles.",
+      "explanation_zh": "The passage presents a cause (rising temperatures) and multiple effects (ice melting, hurricanes, bleaching), then qualifies with a counterpoint about natural cycles.",
+      "tags": [
+        "informational_text_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "informational_text_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "argument_evaluation",
+      "subtopic": null,
+      "difficulty": 0.54,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: 'Schools should replace all textbooks with tablets,' argues tech columnist Mark Reed. 'Tablets are lighter, can be updated instantly, and give students access to interactive content.' Education professor Dr. Walsh responds: 'Studies show students retain information better from print. Tablets also introduce distractions — social media is just a tap away. The cost of replacing damaged tablets far exceeds the cost of replacing textbooks.' Which statement best evaluates these arguments?",
+        "options": [
+          "A. Reed's argument is stronger because technology is always better",
+          "B. Walsh's argument is stronger because it cites research evidence and addresses practical concerns",
+          "C. Both arguments are equally weak because neither uses data",
+          "D. Reed's argument is stronger because tablets are more popular"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: 'Schools should replace all textbooks with tablets,' argues tech columnist Mark Reed. 'Tablets are lighter, can be updated instantly, and give students access to interactive content.' Education professor Dr. Walsh responds: 'Studies show students retain information better from print. Tablets also introduce distractions — social media is just a tap away. The cost of replacing damaged tablets far exceeds the cost of replacing textbooks.' Which statement best evaluates these arguments?",
+        "options": [
+          "A. Reed's argument is stronger because technology is always better",
+          "B. Walsh's argument is stronger because it cites research evidence and addresses practical concerns",
+          "C. Both arguments are equally weak because neither uses data",
+          "D. Reed's argument is stronger because tablets are more popular"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Dr. Walsh references studies about retention, identifies a concrete problem (distractions), and raises cost concerns — making her argument more evidence-based and thorough.",
+      "explanation_zh": "Dr. Walsh references studies about retention, identifies a concrete problem (distractions), and raises cost concerns — making her argument more evidence-based and thorough.",
+      "tags": [
+        "argument_evaluation",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "argument_evaluation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "reading_comp",
+      "subtopic": "poetry",
+      "difficulty": 0.56,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the poem:\n'Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth.'\n— Robert Frost\nWhat is the rhyme scheme of this stanza?",
+        "options": [
+          "A. ABAB",
+          "B. ABAAB",
+          "C. ABCAB",
+          "D. AABBA"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the poem:\n'Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth.'\n— Robert Frost\nWhat is the rhyme scheme of this stanza?",
+        "options": [
+          "A. ABAB",
+          "B. ABAAB",
+          "C. ABCAB",
+          "D. AABBA"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The end words are: wood (A), both (B), stood (A), could (A), undergrowth (B). The rhyme scheme is ABAAB.",
+      "explanation_zh": "The end words are: wood (A), both (B), stood (A), could (A), undergrowth (B). The rhyme scheme is ABAAB.",
+      "tags": [
+        "poetry_form",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "poetry_form",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.57,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: The scientist's findings were so unprecedented that the journal requested three independent peer reviews before publishing the paper. Colleagues expressed both admiration and skepticism, calling the results 'paradigm-shifting if verified.' What does 'unprecedented' most likely mean?",
+        "options": [
+          "A. Expected and ordinary",
+          "B. Never done or experienced before",
+          "C. Incorrect and misleading",
+          "D. Published multiple times"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: The scientist's findings were so unprecedented that the journal requested three independent peer reviews before publishing the paper. Colleagues expressed both admiration and skepticism, calling the results 'paradigm-shifting if verified.' What does 'unprecedented' most likely mean?",
+        "options": [
+          "A. Expected and ordinary",
+          "B. Never done or experienced before",
+          "C. Incorrect and misleading",
+          "D. Published multiple times"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The context — requiring extra reviews, being called 'paradigm-shifting' — suggests the findings were extraordinary and had never been seen before. 'Unprecedented' means without previous example.",
+      "explanation_zh": "The context — requiring extra reviews, being called 'paradigm-shifting' — suggests the findings were extraordinary and had never been seen before. 'Unprecedented' means without previous example.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "character_development",
+      "subtopic": null,
+      "difficulty": 0.58,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Captain Torres had always followed orders without question. When headquarters commanded him to abandon the coastal village before the hurricane, he prepared to leave. But then he saw the elderly residents who had no transportation. For the first time in his career, Torres disobeyed an order. He stayed, used military vehicles to evacuate every resident, and filed his report honestly: 'I chose lives over protocol.' How does the author develop Torres's character?",
+        "options": [
+          "A. Through dialogue with headquarters",
+          "B. By contrasting his habitual obedience with a moment of moral independence",
+          "C. Through detailed physical description",
+          "D. By comparing him to other officers"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Captain Torres had always followed orders without question. When headquarters commanded him to abandon the coastal village before the hurricane, he prepared to leave. But then he saw the elderly residents who had no transportation. For the first time in his career, Torres disobeyed an order. He stayed, used military vehicles to evacuate every resident, and filed his report honestly: 'I chose lives over protocol.' How does the author develop Torres's character?",
+        "options": [
+          "A. Through dialogue with headquarters",
+          "B. By contrasting his habitual obedience with a moment of moral independence",
+          "C. Through detailed physical description",
+          "D. By comparing him to other officers"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The author establishes Torres as someone who 'always followed orders' then shows a dramatic departure — disobeying orders to save lives. The contrast reveals his moral growth.",
+      "explanation_zh": "The author establishes Torres as someone who 'always followed orders' then shows a dramatic departure — disobeying orders to save lives. The contrast reveals his moral growth.",
+      "tags": [
+        "character_development",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "character_development",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "vocabulary_greek_latin_roots",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The Greek root 'chron' means time and the Greek root 'logos' means study or word. Based on these roots, what does 'chronological' most likely relate to?",
+        "options": [
+          "A. Arranged by color",
+          "B. Arranged by size",
+          "C. Arranged in order of time",
+          "D. Arranged by importance"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "The Greek root 'chron' means time and the Greek root 'logos' means study or word. Based on these roots, what does 'chronological' most likely relate to?",
+        "options": [
+          "A. Arranged by color",
+          "B. Arranged by size",
+          "C. Arranged in order of time",
+          "D. Arranged by importance"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Chron' (time) plus the suffix '-logical' (relating to the study of) gives 'chronological,' meaning arranged in the order in which events occurred over time.",
+      "explanation_zh": "'Chron' (time) plus the suffix '-logical' (relating to the study of) gives 'chronological,' meaning arranged in the order in which events occurred over time.",
+      "tags": [
+        "vocabulary_greek_latin_roots",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G8",
+        "original_topic": "vocabulary_greek_latin_roots",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "writing",
+      "subtopic": "sentence_combining",
+      "difficulty": 0.61,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Combine these sentences effectively: (1) AI chatbots can answer questions instantly. (2) They sometimes provide inaccurate information. (3) Users should verify important facts independently.",
+        "options": [
+          "A. AI chatbots can answer questions instantly, but they sometimes provide inaccurate information, so users should verify important facts independently.",
+          "B. AI chatbots answer questions instantly and they sometimes provide inaccurate information and users should verify facts independently.",
+          "C. Although AI chatbots can answer questions instantly, they sometimes provide inaccurate information. Users should verify facts independently.",
+          "D. AI chatbots can answer questions instantly. They sometimes provide inaccurate information. Users should verify important facts independently."
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Combine these sentences effectively: (1) AI chatbots can answer questions instantly. (2) They sometimes provide inaccurate information. (3) Users should verify important facts independently.",
+        "options": [
+          "A. AI chatbots can answer questions instantly, but they sometimes provide inaccurate information, so users should verify important facts independently.",
+          "B. AI chatbots answer questions instantly and they sometimes provide inaccurate information and users should verify facts independently.",
+          "C. Although AI chatbots can answer questions instantly, they sometimes provide inaccurate information. Users should verify facts independently.",
+          "D. AI chatbots can answer questions instantly. They sometimes provide inaccurate information. Users should verify important facts independently."
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Option A combines all three ideas into one fluid compound sentence using coordinating conjunctions ('but' and 'so') that clearly show the logical relationships: contrast and consequence.",
+      "explanation_zh": "Option A combines all three ideas into one fluid compound sentence using coordinating conjunctions ('but' and 'so') that clearly show the logical relationships: contrast and consequence.",
+      "tags": [
+        "sentence_combining",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "sentence_combining",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "grammar",
+      "subtopic": "modifiers",
+      "difficulty": 0.62,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence corrects the dangling modifier? Original: 'Walking through the museum, the dinosaur skeleton amazed the visitors.'",
+        "options": [
+          "A. The dinosaur skeleton amazed the visitors walking through the museum.",
+          "B. Walking through the museum, the visitors were amazed by the dinosaur skeleton.",
+          "C. The dinosaur skeleton, walking through the museum, amazed the visitors.",
+          "D. Through the museum walking, the dinosaur skeleton amazed visitors."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence corrects the dangling modifier? Original: 'Walking through the museum, the dinosaur skeleton amazed the visitors.'",
+        "options": [
+          "A. The dinosaur skeleton amazed the visitors walking through the museum.",
+          "B. Walking through the museum, the visitors were amazed by the dinosaur skeleton.",
+          "C. The dinosaur skeleton, walking through the museum, amazed the visitors.",
+          "D. Through the museum walking, the dinosaur skeleton amazed visitors."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The participial phrase 'Walking through the museum' must be followed by the noun it describes. The visitors were walking, not the skeleton. Option B correctly places 'the visitors' right after the modifier.",
+      "explanation_zh": "The participial phrase 'Walking through the museum' must be followed by the noun it describes. The visitors were walking, not the skeleton. Option B correctly places 'the visitors' right after the modifier.",
+      "tags": [
+        "misplaced_modifiers",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "misplaced_modifiers",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "comma_splices",
+      "subtopic": null,
+      "difficulty": 0.63,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence contains a comma splice?",
+        "options": [
+          "A. The rover landed on Mars, and scientists began analyzing the soil samples.",
+          "B. The rover landed on Mars, scientists began analyzing the soil samples.",
+          "C. After the rover landed on Mars, scientists began analyzing the soil samples.",
+          "D. The rover landed on Mars; scientists began analyzing the soil samples."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence contains a comma splice?",
+        "options": [
+          "A. The rover landed on Mars, and scientists began analyzing the soil samples.",
+          "B. The rover landed on Mars, scientists began analyzing the soil samples.",
+          "C. After the rover landed on Mars, scientists began analyzing the soil samples.",
+          "D. The rover landed on Mars; scientists began analyzing the soil samples."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A comma splice occurs when two independent clauses are joined by only a comma, without a conjunction. Option B incorrectly uses just a comma between two complete sentences. Fix it with a semicolon, period, or conjunction.",
+      "explanation_zh": "A comma splice occurs when two independent clauses are joined by only a comma, without a conjunction. Option B incorrectly uses just a comma between two complete sentences. Fix it with a semicolon, period, or conjunction.",
+      "tags": [
+        "comma_splices",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "comma_splices",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "formal_informal_tone",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A student is writing a formal research paper. Which sentence uses the most appropriate tone?",
+        "options": [
+          "A. Climate change is super bad and we gotta do something about it ASAP.",
+          "B. Climate change poses significant environmental challenges that require immediate policy action.",
+          "C. I totally think climate change is a big deal and stuff.",
+          "D. Basically, climate change is kind of a problem that people should probably fix."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A student is writing a formal research paper. Which sentence uses the most appropriate tone?",
+        "options": [
+          "A. Climate change is super bad and we gotta do something about it ASAP.",
+          "B. Climate change poses significant environmental challenges that require immediate policy action.",
+          "C. I totally think climate change is a big deal and stuff.",
+          "D. Basically, climate change is kind of a problem that people should probably fix."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Formal academic writing uses precise vocabulary ('significant,' 'environmental challenges'), avoids slang and contractions, and maintains an objective, professional tone.",
+      "explanation_zh": "Formal academic writing uses precise vocabulary ('significant,' 'environmental challenges'), avoids slang and contractions, and maintains an objective, professional tone.",
+      "tags": [
+        "formal_informal_tone",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "formal_informal_tone",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "grammar",
+      "subtopic": "agreement",
+      "difficulty": 0.66,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence demonstrates correct pronoun-antecedent agreement?",
+        "options": [
+          "A. Each of the girls brought their own laptop to class.",
+          "B. Each of the girls brought her own laptop to class.",
+          "C. Each of the girls brought its own laptop to class.",
+          "D. Each of the girls brought our own laptop to class."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence demonstrates correct pronoun-antecedent agreement?",
+        "options": [
+          "A. Each of the girls brought their own laptop to class.",
+          "B. Each of the girls brought her own laptop to class.",
+          "C. Each of the girls brought its own laptop to class.",
+          "D. Each of the girls brought our own laptop to class."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Each' is a singular indefinite pronoun. In formal writing, the pronoun must agree in number: 'Each...brought her own laptop.' The antecedent 'each' refers to one girl at a time.",
+      "explanation_zh": "'Each' is a singular indefinite pronoun. In formal writing, the pronoun must agree in number: 'Each...brought her own laptop.' The antecedent 'each' refers to one girl at a time.",
+      "tags": [
+        "pronoun_antecedent_agreement",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "pronoun_antecedent_agreement",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "argumentative_structure",
+      "subtopic": null,
+      "difficulty": 0.67,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In an argumentative essay about whether schools should ban smartphones, which element should come directly after the thesis statement?",
+        "options": [
+          "A. The conclusion restating the main argument",
+          "B. A counterargument acknowledging the other side",
+          "C. The first body paragraph with supporting evidence for the claim",
+          "D. A personal anecdote about the writer's phone use"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "In an argumentative essay about whether schools should ban smartphones, which element should come directly after the thesis statement?",
+        "options": [
+          "A. The conclusion restating the main argument",
+          "B. A counterargument acknowledging the other side",
+          "C. The first body paragraph with supporting evidence for the claim",
+          "D. A personal anecdote about the writer's phone use"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "After the thesis, an argumentative essay presents body paragraphs with evidence supporting the claim. Counterarguments typically come later, after the writer's position is established.",
+      "explanation_zh": "After the thesis, an argumentative essay presents body paragraphs with evidence supporting the claim. Counterarguments typically come later, after the writer's position is established.",
+      "tags": [
+        "argumentative_structure",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "argumentative_structure",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "run_on_sentences",
+      "subtopic": null,
+      "difficulty": 0.69,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which of the following is a run-on sentence?",
+        "options": [
+          "A. The SpaceX Starship launched successfully, and it reached orbit for the first time.",
+          "B. The SpaceX Starship launched successfully it reached orbit for the first time.",
+          "C. After the SpaceX Starship launched successfully, it reached orbit for the first time.",
+          "D. The SpaceX Starship launched successfully; it reached orbit for the first time."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which of the following is a run-on sentence?",
+        "options": [
+          "A. The SpaceX Starship launched successfully, and it reached orbit for the first time.",
+          "B. The SpaceX Starship launched successfully it reached orbit for the first time.",
+          "C. After the SpaceX Starship launched successfully, it reached orbit for the first time.",
+          "D. The SpaceX Starship launched successfully; it reached orbit for the first time."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A run-on sentence joins two independent clauses with no punctuation or conjunction. Option B fuses two complete thoughts without any separator.",
+      "explanation_zh": "A run-on sentence joins two independent clauses with no punctuation or conjunction. Option B fuses two complete thoughts without any separator.",
+      "tags": [
+        "run_on_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "run_on_sentences",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G8",
+      "topic": "rhetorical_questions",
+      "subtopic": null,
+      "difficulty": 0.7,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In a persuasive essay, what is the purpose of the rhetorical question 'If we do not protect our oceans today, what kind of planet will future generations inherit?'",
+        "options": [
+          "A. To request specific data from the reader about ocean pollution",
+          "B. To provoke the reader to think critically and feel urgency about ocean conservation",
+          "C. To show that the writer does not know the answer",
+          "D. To end the essay with an open-ended conclusion that avoids taking a position"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In a persuasive essay, what is the purpose of the rhetorical question 'If we do not protect our oceans today, what kind of planet will future generations inherit?'",
+        "options": [
+          "A. To request specific data from the reader about ocean pollution",
+          "B. To provoke the reader to think critically and feel urgency about ocean conservation",
+          "C. To show that the writer does not know the answer",
+          "D. To end the essay with an open-ended conclusion that avoids taking a position"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A rhetorical question is not meant to be answered literally. It engages the reader emotionally and encourages reflection, strengthening the persuasive argument by creating a sense of urgency.",
+      "explanation_zh": "A rhetorical question is not meant to be answered literally. It engages the reader emotionally and encourages reflection, strengthening the persuasive argument by creating a sense of urgency.",
+      "tags": [
+        "rhetorical_questions",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G8",
+        "original_topic": "rhetorical_questions",
+        "is_seed": false
+      }
+    }
+  ]
+}

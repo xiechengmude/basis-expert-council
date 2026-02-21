@@ -1,0 +1,607 @@
+{
+  "batch_name": "MAP_english_G1_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G1",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "reading_mechanics",
+      "subtopic": "punctuation",
+      "difficulty": 0.1,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the name of your teacher. Which punctuation mark should go at the end of this sentence?",
+        "options": [
+          "A. !",
+          "B. .",
+          "C. ,",
+          "D. ?"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "What is the name of your teacher. Which punctuation mark should go at the end of this sentence?",
+        "options": [
+          "A. !",
+          "B. .",
+          "C. ,",
+          "D. ?"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "This is a question (it asks for information), so it needs a question mark (?).",
+      "explanation_zh": "This is a question (it asks for information), so it needs a question mark (?).",
+      "tags": [
+        "punctuation",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-READ-001",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "punctuation",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "vocabulary",
+      "subtopic": "synonyms",
+      "difficulty": 0.1,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which pair of words are synonyms (have the same meaning)?",
+        "options": [
+          "A. Afraid, Scared",
+          "B. Angry, Sad",
+          "C. Short, Long",
+          "D. Food, Drink"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which pair of words are synonyms (have the same meaning)?",
+        "options": [
+          "A. Afraid, Scared",
+          "B. Angry, Sad",
+          "C. Short, Long",
+          "D. Food, Drink"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Afraid and Scared both mean feeling fear. The other pairs have different meanings.",
+      "explanation_zh": "Afraid and Scared both mean feeling fear. The other pairs have different meanings.",
+      "tags": [
+        "synonyms",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-READ-002",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "synonyms",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "vocabulary",
+      "subtopic": "irregular_forms",
+      "difficulty": 0.1,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the plural form of 'mouse'?",
+        "options": [
+          "A. Mouses",
+          "B. Mousess",
+          "C. Mice",
+          "D. Mouse"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is the plural form of 'mouse'?",
+        "options": [
+          "A. Mouses",
+          "B. Mousess",
+          "C. Mice",
+          "D. Mouse"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Mouse is an irregular noun. Its plural form is 'mice', not 'mouses'.",
+      "explanation_zh": "Mouse is an irregular noun. Its plural form is 'mice', not 'mouses'.",
+      "tags": [
+        "irregular_plurals",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-READ-003",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "irregular_plurals",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "grammar",
+      "subtopic": "comparatives_superlatives",
+      "difficulty": 0.12,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What does 'tallest' mean?",
+        "options": [
+          "A. The least tall",
+          "B. The most tall",
+          "C. Not tall",
+          "D. As tall as others"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What does 'tallest' mean?",
+        "options": [
+          "A. The least tall",
+          "B. The most tall",
+          "C. Not tall",
+          "D. As tall as others"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The suffix '-est' means the most. 'Tallest' means the most tall of all.",
+      "explanation_zh": "The suffix '-est' means the most. 'Tallest' means the most tall of all.",
+      "tags": [
+        "superlatives",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-READ-004",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "superlatives",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "reading_comp",
+      "subtopic": "text_features",
+      "difficulty": 0.15,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What type of text is shown?",
+        "options": [
+          "A. A story",
+          "B. A letter",
+          "C. A poem",
+          "D. A list"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "What type of text is shown?",
+        "options": [
+          "A. A story",
+          "B. A letter",
+          "C. A poem",
+          "D. A list"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "The text shows items arranged in a vertical format with bullet points or numbers, which is the format of a list.",
+      "explanation_zh": "The text shows items arranged in a vertical format with bullet points or numbers, which is the format of a list.",
+      "tags": [
+        "text_types",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-005 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-READ-005",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "text_types",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "letter_sounds",
+      "subtopic": null,
+      "difficulty": 0.18,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which word begins with the same sound as 'ball'?",
+        "options": [
+          "A. Dog",
+          "B. Bear",
+          "C. Fish",
+          "D. Cat"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which word begins with the same sound as 'ball'?",
+        "options": [
+          "A. Dog",
+          "B. Bear",
+          "C. Fish",
+          "D. Cat"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Bear and ball both begin with the /b/ sound. The other words begin with different sounds.",
+      "explanation_zh": "Bear and ball both begin with the /b/ sound. The other words begin with different sounds.",
+      "tags": [
+        "letter_sounds",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-READ-101",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "letter_sounds",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "sight_words",
+      "subtopic": null,
+      "difficulty": 0.2,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: 'I can see the ___.' Which sight word best completes the sentence if there is a picture of a dog?",
+        "options": [
+          "A. dog",
+          "B. run",
+          "C. big",
+          "D. go"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: 'I can see the ___.' Which sight word best completes the sentence if there is a picture of a dog?",
+        "options": [
+          "A. dog",
+          "B. run",
+          "C. big",
+          "D. go"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "The sight word 'dog' matches the picture and completes the sentence: 'I can see the dog.'",
+      "explanation_zh": "The sight word 'dog' matches the picture and completes the sentence: 'I can see the dog.'",
+      "tags": [
+        "sight_words",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-READ-102",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "sight_words",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "main_idea",
+      "subtopic": null,
+      "difficulty": 0.23,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Sam has a red hat. He wears it every day. He wears it to school. He wears it to the park. What is the passage mostly about?",
+        "options": [
+          "A. Sam goes to school",
+          "B. Sam loves his red hat",
+          "C. Sam goes to the park",
+          "D. Sam has a dog"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Sam has a red hat. He wears it every day. He wears it to school. He wears it to the park. What is the passage mostly about?",
+        "options": [
+          "A. Sam goes to school",
+          "B. Sam loves his red hat",
+          "C. Sam goes to the park",
+          "D. Sam has a dog"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Every sentence talks about Sam and his red hat. The main idea is that Sam loves wearing his red hat.",
+      "explanation_zh": "Every sentence talks about Sam and his red hat. The main idea is that Sam loves wearing his red hat.",
+      "tags": [
+        "main_idea",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-READ-103",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "main_idea",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "sequencing",
+      "subtopic": null,
+      "difficulty": 0.25,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: First, Mia woke up. Next, she brushed her teeth. Then, she ate breakfast. What did Mia do right after she woke up?",
+        "options": [
+          "A. She ate breakfast",
+          "B. She went to school",
+          "C. She brushed her teeth",
+          "D. She played outside"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: First, Mia woke up. Next, she brushed her teeth. Then, she ate breakfast. What did Mia do right after she woke up?",
+        "options": [
+          "A. She ate breakfast",
+          "B. She went to school",
+          "C. She brushed her teeth",
+          "D. She played outside"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The passage says 'First, Mia woke up. Next, she brushed her teeth.' So brushing teeth came right after waking up.",
+      "explanation_zh": "The passage says 'First, Mia woke up. Next, she brushed her teeth.' So brushing teeth came right after waking up.",
+      "tags": [
+        "sequencing",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-READ-104",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "sequencing",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "character_identification",
+      "subtopic": null,
+      "difficulty": 0.28,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Tom and his sister Lily went to the pond. Lily saw a frog. She was so happy! Who saw the frog?",
+        "options": [
+          "A. Tom",
+          "B. Lily",
+          "C. Mom",
+          "D. The frog"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Tom and his sister Lily went to the pond. Lily saw a frog. She was so happy! Who saw the frog?",
+        "options": [
+          "A. Tom",
+          "B. Lily",
+          "C. Mom",
+          "D. The frog"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage says 'Lily saw a frog.' Lily is the one who saw it.",
+      "explanation_zh": "The passage says 'Lily saw a frog.' Lily is the one who saw it.",
+      "tags": [
+        "character_identification",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-READ-105",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "character_identification",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "reading_comp",
+      "subtopic": "text_features",
+      "difficulty": 0.3,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A book cover shows the words 'The Big Red Truck' at the top and 'By Amy Lee' at the bottom. What is the title of the book?",
+        "options": [
+          "A. Amy Lee",
+          "B. The Big Red Truck",
+          "C. By Amy",
+          "D. Red Truck"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A book cover shows the words 'The Big Red Truck' at the top and 'By Amy Lee' at the bottom. What is the title of the book?",
+        "options": [
+          "A. Amy Lee",
+          "B. The Big Red Truck",
+          "C. By Amy",
+          "D. Red Truck"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The title of a book is the name at the top of the cover. 'The Big Red Truck' is the title. 'Amy Lee' is the author.",
+      "explanation_zh": "The title of a book is the name at the top of the cover. 'The Big Red Truck' is the title. 'Amy Lee' is the author.",
+      "tags": [
+        "text_features",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-READ-106",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "text_features",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "vocabulary",
+      "subtopic": "general",
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Emma watched the big rocket go up, up, up into the sky! She clapped her hands. 'Wow!' she said. The rocket flew so fast! What does the word 'fast' mean?",
+        "options": [
+          "A. Slow",
+          "B. Quick",
+          "C. Small",
+          "D. Loud"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Emma watched the big rocket go up, up, up into the sky! She clapped her hands. 'Wow!' she said. The rocket flew so fast! What does the word 'fast' mean?",
+        "options": [
+          "A. Slow",
+          "B. Quick",
+          "C. Small",
+          "D. Loud"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Fast means quick or moving with high speed. The rocket went up very quickly.",
+      "explanation_zh": "Fast means quick or moving with high speed. The rocket went up very quickly.",
+      "tags": [
+        "vocabulary",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-READ-107",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "vocabulary",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G1",
+      "topic": "picture_clues",
+      "subtopic": null,
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A picture shows a child with an umbrella and rain falling. What is the weather like in the picture?",
+        "options": [
+          "A. Sunny",
+          "B. Snowy",
+          "C. Rainy",
+          "D. Windy"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A picture shows a child with an umbrella and rain falling. What is the weather like in the picture?",
+        "options": [
+          "A. Sunny",
+          "B. Snowy",
+          "C. Rainy",
+          "D. Windy"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The picture shows rain falling and a child holding an umbrella, which means the weather is rainy.",
+      "explanation_zh": "The picture shows rain falling and a child holding an umbrella, which means the weather is rainy.",
+      "tags": [
+        "picture_clues",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-READ-108",
+        "original_subject": "reading",
+        "original_grade": "K-1",
+        "original_topic": "picture_clues",
+        "is_seed": false
+      }
+    }
+  ]
+}

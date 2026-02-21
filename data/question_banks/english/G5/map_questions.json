@@ -1,0 +1,1067 @@
+{
+  "batch_name": "MAP_english_G5_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G5",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "reading_comp",
+      "subtopic": "point_of_view",
+      "difficulty": 0.25,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What point of view is used in the excerpt from Anne of Green Gables?",
+        "options": [
+          "A. First person",
+          "B. Second person",
+          "C. Third person omniscient",
+          "D. Third person limited"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What point of view is used in the excerpt from Anne of Green Gables?",
+        "options": [
+          "A. First person",
+          "B. Second person",
+          "C. Third person omniscient",
+          "D. Third person limited"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The narrator refers to characters by name (he/she) and has access to multiple characters' thoughts — this is third person omniscient.",
+      "explanation_zh": "The narrator refers to characters by name (he/she) and has access to multiple characters' thoughts — this is third person omniscient.",
+      "tags": [
+        "point_of_view",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "point_of_view",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "reading_comp",
+      "subtopic": "informational",
+      "difficulty": 0.26,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A passage about the Galápagos Islands states several facts. What does the passage NOT state?",
+        "options": [
+          "A. The islands are volcanic",
+          "B. Darwin visited the islands",
+          "C. Unique species live there",
+          "D. It is a popular tourist destination"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "A passage about the Galápagos Islands states several facts. What does the passage NOT state?",
+        "options": [
+          "A. The islands are volcanic",
+          "B. Darwin visited the islands",
+          "C. Unique species live there",
+          "D. It is a popular tourist destination"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "The passage describes the islands' geology, Darwin's visit, and wildlife, but does not mention tourism.",
+      "explanation_zh": "The passage describes the islands' geology, Darwin's visit, and wildlife, but does not mention tourism.",
+      "tags": [
+        "informational_text",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "informational_text",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "vocabulary",
+      "subtopic": "general",
+      "difficulty": 0.28,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the closest meaning to 'fallacy'?",
+        "options": [
+          "A. Truth",
+          "B. Prediction",
+          "C. Misconception",
+          "D. Solution"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is the closest meaning to 'fallacy'?",
+        "options": [
+          "A. Truth",
+          "B. Prediction",
+          "C. Misconception",
+          "D. Solution"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A fallacy is a mistaken belief or misconception — something that appears true but is actually false.",
+      "explanation_zh": "A fallacy is a mistaken belief or misconception — something that appears true but is actually false.",
+      "tags": [
+        "vocabulary",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "vocabulary",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "grammar",
+      "subtopic": "punctuation",
+      "difficulty": 0.29,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly uses commas with direct address?",
+        "options": [
+          "A. Thank you Manuel for your help yesterday.",
+          "B. Thank you, Manuel for your help yesterday.",
+          "C. Thank you Manuel, for your help yesterday.",
+          "D. Thank you, Manuel, for your help yesterday."
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly uses commas with direct address?",
+        "options": [
+          "A. Thank you Manuel for your help yesterday.",
+          "B. Thank you, Manuel for your help yesterday.",
+          "C. Thank you Manuel, for your help yesterday.",
+          "D. Thank you, Manuel, for your help yesterday."
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Names used in direct address must be set off by commas on both sides when they appear in the middle of a sentence.",
+      "explanation_zh": "Names used in direct address must be set off by commas on both sides when they appear in the middle of a sentence.",
+      "tags": [
+        "direct_address_punctuation",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "direct_address_punctuation",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "grammar",
+      "subtopic": "parts_of_speech",
+      "difficulty": 0.3,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which word is the active verb in the sentence?",
+        "options": [
+          "A. broken",
+          "B. painted",
+          "C. visited",
+          "D. tired"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which word is the active verb in the sentence?",
+        "options": [
+          "A. broken",
+          "B. painted",
+          "C. visited",
+          "D. tired"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Visited' is the active verb — it shows the subject performing an action. The others can function as adjectives or passive participles.",
+      "explanation_zh": "'Visited' is the active verb — it shows the subject performing an action. The others can function as adjectives or passive participles.",
+      "tags": [
+        "active_verbs",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "active_verbs",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "grammar",
+      "subtopic": "sentence_structure",
+      "difficulty": 0.32,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which of the following is a compound sentence?",
+        "options": [
+          "A. The cat sat on the mat and purred.",
+          "B. Because it rained, we stayed inside.",
+          "C. It was hot yesterday, so I wore short pants and a t-shirt.",
+          "D. Running through the park, she tripped."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which of the following is a compound sentence?",
+        "options": [
+          "A. The cat sat on the mat and purred.",
+          "B. Because it rained, we stayed inside.",
+          "C. It was hot yesterday, so I wore short pants and a t-shirt.",
+          "D. Running through the park, she tripped."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A compound sentence has two independent clauses joined by a coordinating conjunction. 'It was hot yesterday' and 'I wore short pants and a t-shirt' are both independent clauses joined by 'so'.",
+      "explanation_zh": "A compound sentence has two independent clauses joined by a coordinating conjunction. 'It was hot yesterday' and 'I wore short pants and a t-shirt' are both independent clauses joined by 'so'.",
+      "tags": [
+        "compound_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "compound_sentences",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "writing",
+      "subtopic": "text_structure",
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A passage uses signal words like 'start by', 'then', 'once'. What organizational pattern is this?",
+        "options": [
+          "A. Compare and contrast",
+          "B. Cause and effect",
+          "C. Problem and solution",
+          "D. Sequence"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "A passage uses signal words like 'start by', 'then', 'once'. What organizational pattern is this?",
+        "options": [
+          "A. Compare and contrast",
+          "B. Cause and effect",
+          "C. Problem and solution",
+          "D. Sequence"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Words like 'start by', 'then', and 'once' indicate sequential steps — a sequence organizational pattern.",
+      "explanation_zh": "Words like 'start by', 'then', and 'once' indicate sequential steps — a sequence organizational pattern.",
+      "tags": [
+        "organizational_patterns",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-LANG-004",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "organizational_patterns",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "reading_comp",
+      "subtopic": "theme",
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Rosa wanted to win the art contest more than anything. She spent weeks on her painting. When the winners were announced, Rosa did not win. She felt terrible. But her friend Maya, who won second place, said, 'Your painting inspired me to try harder. Thank you, Rosa.' Rosa smiled, realizing her work mattered even without a prize. What is the theme of this passage?",
+        "options": [
+          "A. Winning is the most important thing",
+          "B. Art contests are unfair",
+          "C. Your efforts can inspire others even if you do not win",
+          "D. Friends should always let you win"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Rosa wanted to win the art contest more than anything. She spent weeks on her painting. When the winners were announced, Rosa did not win. She felt terrible. But her friend Maya, who won second place, said, 'Your painting inspired me to try harder. Thank you, Rosa.' Rosa smiled, realizing her work mattered even without a prize. What is the theme of this passage?",
+        "options": [
+          "A. Winning is the most important thing",
+          "B. Art contests are unfair",
+          "C. Your efforts can inspire others even if you do not win",
+          "D. Friends should always let you win"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Rosa learned that her painting inspired her friend, even though she did not win the prize. The theme is that effort matters beyond just winning.",
+      "explanation_zh": "Rosa learned that her painting inspired her friend, even though she did not win the prize. The theme is that effort matters beyond just winning.",
+      "tags": [
+        "theme",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "theme",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "inference",
+      "subtopic": null,
+      "difficulty": 0.36,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Mr. Tanaka looked at the clock and sighed. He had been waiting at the airport for three hours. The departure board changed again: 'Flight 402 — Delayed.' He called his wife and said, 'Don't wait up for me.' What can you infer about Mr. Tanaka's situation?",
+        "options": [
+          "A. He is excited to travel",
+          "B. His flight keeps getting delayed and he will arrive home very late",
+          "C. He is picking someone up from the airport",
+          "D. He decided not to fly"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Mr. Tanaka looked at the clock and sighed. He had been waiting at the airport for three hours. The departure board changed again: 'Flight 402 — Delayed.' He called his wife and said, 'Don't wait up for me.' What can you infer about Mr. Tanaka's situation?",
+        "options": [
+          "A. He is excited to travel",
+          "B. His flight keeps getting delayed and he will arrive home very late",
+          "C. He is picking someone up from the airport",
+          "D. He decided not to fly"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The clues — waiting three hours, the board showing 'Delayed' again, and telling his wife not to wait up — all suggest repeated delays and a very late arrival.",
+      "explanation_zh": "The clues — waiting three hours, the board showing 'Delayed' again, and telling his wife not to wait up — all suggest repeated delays and a very late arrival.",
+      "tags": [
+        "inference",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "inference",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "cause_and_effect",
+      "subtopic": null,
+      "difficulty": 0.37,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In 2025, new AI tutoring programs became available in many schools. These programs could adjust their lessons based on each student's skill level. As a result, students who struggled with reading improved their scores by an average of 15 percent. Teachers reported spending less time on review and more time on new material. What was the effect of the AI tutoring programs?",
+        "options": [
+          "A. Teachers stopped teaching reading",
+          "B. Students' reading scores improved and teachers had more time for new lessons",
+          "C. Schools closed because AI replaced teachers",
+          "D. Students stopped doing homework"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In 2025, new AI tutoring programs became available in many schools. These programs could adjust their lessons based on each student's skill level. As a result, students who struggled with reading improved their scores by an average of 15 percent. Teachers reported spending less time on review and more time on new material. What was the effect of the AI tutoring programs?",
+        "options": [
+          "A. Teachers stopped teaching reading",
+          "B. Students' reading scores improved and teachers had more time for new lessons",
+          "C. Schools closed because AI replaced teachers",
+          "D. Students stopped doing homework"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage states two effects: students improved scores by 15 percent, and teachers spent more time on new material instead of review.",
+      "explanation_zh": "The passage states two effects: students improved scores by 15 percent, and teachers spent more time on new material instead of review.",
+      "tags": [
+        "cause_and_effect",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "cause_and_effect",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "reading_comp",
+      "subtopic": "figurative_language",
+      "difficulty": 0.39,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: The wind whispered secrets through the trees. What type of figurative language is used in this sentence?",
+        "options": [
+          "A. Simile",
+          "B. Metaphor",
+          "C. Personification",
+          "D. Hyperbole"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: The wind whispered secrets through the trees. What type of figurative language is used in this sentence?",
+        "options": [
+          "A. Simile",
+          "B. Metaphor",
+          "C. Personification",
+          "D. Hyperbole"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Personification gives human qualities to non-human things. The wind cannot actually whisper secrets — this is a human action given to the wind.",
+      "explanation_zh": "Personification gives human qualities to non-human things. The wind cannot actually whisper secrets — this is a human action given to the wind.",
+      "tags": [
+        "figurative_language",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "figurative_language",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "text_structure",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Earthquakes and volcanic eruptions are both natural disasters caused by activity beneath Earth's surface. Earthquakes happen when tectonic plates shift suddenly, shaking the ground. Volcanic eruptions happen when hot magma pushes up through an opening in the Earth's crust. Both can cause great damage, but eruptions also release ash and lava. How is this passage organized?",
+        "options": [
+          "A. Problem and solution",
+          "B. Chronological order",
+          "C. Compare and contrast",
+          "D. Cause and effect"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Earthquakes and volcanic eruptions are both natural disasters caused by activity beneath Earth's surface. Earthquakes happen when tectonic plates shift suddenly, shaking the ground. Volcanic eruptions happen when hot magma pushes up through an opening in the Earth's crust. Both can cause great damage, but eruptions also release ash and lava. How is this passage organized?",
+        "options": [
+          "A. Problem and solution",
+          "B. Chronological order",
+          "C. Compare and contrast",
+          "D. Cause and effect"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The passage compares earthquakes and volcanic eruptions (both are natural disasters) and contrasts them (different causes, eruptions also release ash and lava).",
+      "explanation_zh": "The passage compares earthquakes and volcanic eruptions (both are natural disasters) and contrasts them (different causes, eruptions also release ash and lava).",
+      "tags": [
+        "text_structure",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "text_structure",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.41,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: The diplomat tried to mediate the conflict between the two countries by listening to both sides and suggesting a compromise. What does 'mediate' mean?",
+        "options": [
+          "A. To start a fight",
+          "B. To help settle a disagreement",
+          "C. To ignore a problem",
+          "D. To take one side"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: The diplomat tried to mediate the conflict between the two countries by listening to both sides and suggesting a compromise. What does 'mediate' mean?",
+        "options": [
+          "A. To start a fight",
+          "B. To help settle a disagreement",
+          "C. To ignore a problem",
+          "D. To take one side"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Context clues ('listening to both sides' and 'suggesting a compromise') show that mediate means to help settle a disagreement.",
+      "explanation_zh": "Context clues ('listening to both sides' and 'suggesting a compromise') show that mediate means to help settle a disagreement.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "genre",
+      "subtopic": null,
+      "difficulty": 0.43,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the excerpt: 'Once upon a time, in a kingdom beyond the clouds, a young girl discovered she could talk to animals. The wise owl told her she must find the golden feather before the next full moon.' What genre is this text?",
+        "options": [
+          "A. Biography",
+          "B. Fantasy",
+          "C. Informational text",
+          "D. Realistic fiction"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the excerpt: 'Once upon a time, in a kingdom beyond the clouds, a young girl discovered she could talk to animals. The wise owl told her she must find the golden feather before the next full moon.' What genre is this text?",
+        "options": [
+          "A. Biography",
+          "B. Fantasy",
+          "C. Informational text",
+          "D. Realistic fiction"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The text includes magical elements (a kingdom beyond the clouds, talking animals, a golden feather), which are characteristics of fantasy.",
+      "explanation_zh": "The text includes magical elements (a kingdom beyond the clouds, talking animals, a golden feather), which are characteristics of fantasy.",
+      "tags": [
+        "genre",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "genre",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "reading_comp",
+      "subtopic": "point_of_view",
+      "difficulty": 0.44,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Lena did not want to give the speech. She stood backstage, her hands trembling. She thought about running away but knew her classmates were counting on her. She took a deep breath and walked to the microphone. What point of view is used?",
+        "options": [
+          "A. First person",
+          "B. Second person",
+          "C. Third person limited",
+          "D. Third person omniscient"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Lena did not want to give the speech. She stood backstage, her hands trembling. She thought about running away but knew her classmates were counting on her. She took a deep breath and walked to the microphone. What point of view is used?",
+        "options": [
+          "A. First person",
+          "B. Second person",
+          "C. Third person limited",
+          "D. Third person omniscient"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The narrator uses 'she' and shares only Lena's thoughts and feelings, not anyone else's. This is third person limited point of view.",
+      "explanation_zh": "The narrator uses 'she' and shares only Lena's thoughts and feelings, not anyone else's. This is third person limited point of view.",
+      "tags": [
+        "point_of_view",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G5",
+        "original_topic": "point_of_view",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "subject_verb_agreement",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence has correct subject-verb agreement?",
+        "options": [
+          "A. Neither the teacher nor the students was prepared for the fire drill.",
+          "B. Neither the teacher nor the students were prepared for the fire drill.",
+          "C. Neither the teacher nor the students has been prepared for the fire drill.",
+          "D. Neither the teacher nor the students is prepared for the fire drill."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence has correct subject-verb agreement?",
+        "options": [
+          "A. Neither the teacher nor the students was prepared for the fire drill.",
+          "B. Neither the teacher nor the students were prepared for the fire drill.",
+          "C. Neither the teacher nor the students has been prepared for the fire drill.",
+          "D. Neither the teacher nor the students is prepared for the fire drill."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "With 'neither...nor,' the verb agrees with the subject closest to it. 'Students' (plural) is closest, so 'were' is correct.",
+      "explanation_zh": "With 'neither...nor,' the verb agrees with the subject closest to it. 'Students' (plural) is closest, so 'were' is correct.",
+      "tags": [
+        "subject_verb_agreement",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "subject_verb_agreement",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "possessive_pronouns",
+      "subtopic": null,
+      "difficulty": 0.47,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses possessive pronouns correctly?",
+        "options": [
+          "A. The cat licked it's paw after eating its food.",
+          "B. The cat licked its paw after eating it's food.",
+          "C. The cat licked its paw after eating its food.",
+          "D. The cat licked it's paw after eating it's food."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses possessive pronouns correctly?",
+        "options": [
+          "A. The cat licked it's paw after eating its food.",
+          "B. The cat licked its paw after eating it's food.",
+          "C. The cat licked its paw after eating its food.",
+          "D. The cat licked it's paw after eating it's food."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Its' (no apostrophe) is the possessive pronoun meaning 'belonging to it.' 'It's' means 'it is' or 'it has,' which does not fit here.",
+      "explanation_zh": "'Its' (no apostrophe) is the possessive pronoun meaning 'belonging to it.' 'It's' means 'it is' or 'it has,' which does not fit here.",
+      "tags": [
+        "possessive_pronouns",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "possessive_pronouns",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "grammar",
+      "subtopic": "sentence_structure",
+      "difficulty": 0.48,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which option correctly combines these two sentences into a compound sentence? 'The Mars rover collected soil samples. Scientists on Earth analyzed the data.'",
+        "options": [
+          "A. The Mars rover collected soil samples, scientists on Earth analyzed the data.",
+          "B. The Mars rover collected soil samples, and scientists on Earth analyzed the data.",
+          "C. The Mars rover collected soil samples and scientists on Earth analyzed the data.",
+          "D. Collecting soil samples, scientists on Earth analyzed the data."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which option correctly combines these two sentences into a compound sentence? 'The Mars rover collected soil samples. Scientists on Earth analyzed the data.'",
+        "options": [
+          "A. The Mars rover collected soil samples, scientists on Earth analyzed the data.",
+          "B. The Mars rover collected soil samples, and scientists on Earth analyzed the data.",
+          "C. The Mars rover collected soil samples and scientists on Earth analyzed the data.",
+          "D. Collecting soil samples, scientists on Earth analyzed the data."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A compound sentence joins two independent clauses with a comma followed by a coordinating conjunction ('and'). Option A is a comma splice, and C lacks the required comma.",
+      "explanation_zh": "A compound sentence joins two independent clauses with a comma followed by a coordinating conjunction ('and'). Option A is a comma splice, and C lacks the required comma.",
+      "tags": [
+        "compound_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "compound_sentences",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "writing",
+      "subtopic": "paragraph_structure",
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence best concludes a paragraph about how solar panels help the environment?",
+        "options": [
+          "A. Solar panels are made of silicon.",
+          "B. Many homes have rooftops.",
+          "C. In short, solar panels offer a clean energy source that reduces pollution and protects our planet.",
+          "D. Wind turbines are another type of renewable energy."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which sentence best concludes a paragraph about how solar panels help the environment?",
+        "options": [
+          "A. Solar panels are made of silicon.",
+          "B. Many homes have rooftops.",
+          "C. In short, solar panels offer a clean energy source that reduces pollution and protects our planet.",
+          "D. Wind turbines are another type of renewable energy."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A good concluding sentence summarizes the paragraph's main idea. Option C restates the environmental benefits of solar panels and wraps up the paragraph.",
+      "explanation_zh": "A good concluding sentence summarizes the paragraph's main idea. Option C restates the environmental benefits of solar panels and wraps up the paragraph.",
+      "tags": [
+        "concluding_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "concluding_sentences",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "homophones",
+      "subtopic": null,
+      "difficulty": 0.51,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Choose the sentence that uses homophones correctly.",
+        "options": [
+          "A. The whether outside will affect weather we go on the field trip.",
+          "B. The weather outside will affect whether we go on the field trip.",
+          "C. The weather outside will effect whether we go on the field trip.",
+          "D. The whether outside will effect weather we go on the field trip."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Choose the sentence that uses homophones correctly.",
+        "options": [
+          "A. The whether outside will affect weather we go on the field trip.",
+          "B. The weather outside will affect whether we go on the field trip.",
+          "C. The weather outside will effect whether we go on the field trip.",
+          "D. The whether outside will effect weather we go on the field trip."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Weather' refers to atmospheric conditions. 'Whether' introduces a choice or condition. 'Affect' is the correct verb meaning 'to influence.'",
+      "explanation_zh": "'Weather' refers to atmospheric conditions. 'Whether' introduces a choice or condition. 'Affect' is the correct verb meaning 'to influence.'",
+      "tags": [
+        "homophones",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "homophones",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "quotation_marks",
+      "subtopic": null,
+      "difficulty": 0.52,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly punctuates a direct quotation?",
+        "options": [
+          "A. \"The new AI tool\" said the teacher \"can check your spelling.\"",
+          "B. \"The new AI tool,\" said the teacher, \"can check your spelling.\"",
+          "C. \"The new AI tool\", said the teacher, \"Can check your spelling.\"",
+          "D. \"The new AI tool,\" said the teacher \"Can check your spelling.\""
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly punctuates a direct quotation?",
+        "options": [
+          "A. \"The new AI tool\" said the teacher \"can check your spelling.\"",
+          "B. \"The new AI tool,\" said the teacher, \"can check your spelling.\"",
+          "C. \"The new AI tool\", said the teacher, \"Can check your spelling.\"",
+          "D. \"The new AI tool,\" said the teacher \"Can check your spelling.\""
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "In a split quotation, commas go inside the quotation marks. The second part continues the same sentence, so 'can' is lowercase. A comma separates the speaker tag from the second part.",
+      "explanation_zh": "In a split quotation, commas go inside the quotation marks. The second part continues the same sentence, so 'can' is lowercase. A comma separates the speaker tag from the second part.",
+      "tags": [
+        "quotation_marks",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "quotation_marks",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "conjunctions",
+      "subtopic": null,
+      "difficulty": 0.54,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which conjunction best connects these ideas? 'Students must study for the exam _______ they want to earn a good grade.'",
+        "options": [
+          "A. but",
+          "B. or",
+          "C. if",
+          "D. yet"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which conjunction best connects these ideas? 'Students must study for the exam _______ they want to earn a good grade.'",
+        "options": [
+          "A. but",
+          "B. or",
+          "C. if",
+          "D. yet"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'If' is a subordinating conjunction that introduces a condition. Studying is the condition required for earning a good grade.",
+      "explanation_zh": "'If' is a subordinating conjunction that introduces a condition. Studying is the condition required for earning a good grade.",
+      "tags": [
+        "conjunctions",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "conjunctions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G5",
+      "topic": "paragraph_organization",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A student is writing about the water cycle. Which sentence does NOT belong in the paragraph? (1) Water evaporates from oceans and lakes. (2) Vapor rises and forms clouds. (3) Dolphins are mammals that live in the ocean. (4) Rain falls back to Earth, completing the cycle.",
+        "options": [
+          "A. Sentence 1",
+          "B. Sentence 2",
+          "C. Sentence 3",
+          "D. Sentence 4"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A student is writing about the water cycle. Which sentence does NOT belong in the paragraph? (1) Water evaporates from oceans and lakes. (2) Vapor rises and forms clouds. (3) Dolphins are mammals that live in the ocean. (4) Rain falls back to Earth, completing the cycle.",
+        "options": [
+          "A. Sentence 1",
+          "B. Sentence 2",
+          "C. Sentence 3",
+          "D. Sentence 4"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Sentence 3 is about dolphins, which is not related to how the water cycle works. The other sentences describe steps in the water cycle.",
+      "explanation_zh": "Sentence 3 is about dolphins, which is not related to how the water cycle works. The other sentences describe steps in the water cycle.",
+      "tags": [
+        "paragraph_organization",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G5",
+        "original_topic": "paragraph_organization",
+        "is_seed": false
+      }
+    }
+  ]
+}

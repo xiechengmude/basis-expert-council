@@ -1,0 +1,643 @@
+{
+  "batch_name": "MAP_math_G5_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G5",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "decimals_visual",
+      "subtopic": null,
+      "difficulty": 0.25,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which decimal is represented by the shaded region of a 10×10 grid?",
+        "options": [
+          "A. 0.24",
+          "B. 0.28",
+          "C. 0.47",
+          "D. 0.72",
+          "E. 2.8"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which decimal is represented by the shaded region of a 10×10 grid?",
+        "options": [
+          "A. 0.24",
+          "B. 0.28",
+          "C. 0.47",
+          "D. 0.72",
+          "E. 2.8"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Count the shaded squares in the 10×10 grid: 28 out of 100 = 0.28.",
+      "explanation_zh": "Count the shaded squares in the 10×10 grid: 28 out of 100 = 0.28.",
+      "tags": [
+        "decimals_visual",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "decimals_visual",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "fraction_subtraction",
+      "subtopic": null,
+      "difficulty": 0.27,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is 7/8 − 1/6?",
+        "options": [
+          "A. 6/2",
+          "B. 6/8",
+          "C. 6/24",
+          "D. 17/24"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "What is 7/8 − 1/6?",
+        "options": [
+          "A. 6/2",
+          "B. 6/8",
+          "C. 6/24",
+          "D. 17/24"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Find common denominator 24: 7/8 = 21/24, 1/6 = 4/24. 21/24 − 4/24 = 17/24.",
+      "explanation_zh": "Find common denominator 24: 7/8 = 21/24, 1/6 = 4/24. 21/24 − 4/24 = 17/24.",
+      "tags": [
+        "fraction_subtraction",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "fraction_subtraction",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "triangle_angles",
+      "subtopic": null,
+      "difficulty": 0.3,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Find the missing angle in a triangle with two known angles of 25° and 42°.",
+        "options": [
+          "A. 67°",
+          "B. 93°",
+          "C. 103°",
+          "D. 113°"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Find the missing angle in a triangle with two known angles of 25° and 42°.",
+        "options": [
+          "A. 67°",
+          "B. 93°",
+          "C. 103°",
+          "D. 113°"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Sum of angles in a triangle = 180°. Missing angle = 180° − 25° − 42° = 113°.",
+      "explanation_zh": "Sum of angles in a triangle = 180°. Missing angle = 180° − 25° − 42° = 113°.",
+      "tags": [
+        "triangle_angles",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "triangle_angles",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "unit_conversion",
+      "subtopic": null,
+      "difficulty": 0.32,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Select all measurements equal to six hours.",
+        "options": [
+          "A. 3,600 seconds",
+          "B. 21,600 seconds",
+          "C. 36 minutes",
+          "D. 216 minutes",
+          "E. 360 minutes"
+        ],
+        "answer": "B,E"
+      },
+      "content_zh": {
+        "stem": "Select all measurements equal to six hours.",
+        "options": [
+          "A. 3,600 seconds",
+          "B. 21,600 seconds",
+          "C. 36 minutes",
+          "D. 216 minutes",
+          "E. 360 minutes"
+        ],
+        "answer": "B,E"
+      },
+      "explanation_en": "6 hours = 6 × 60 = 360 minutes. 6 hours = 6 × 3600 = 21,600 seconds.",
+      "explanation_zh": "6 hours = 6 × 60 = 360 minutes. 6 hours = 6 × 3600 = 21,600 seconds.",
+      "tags": [
+        "unit_conversion",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-004",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "unit_conversion",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "fraction_addition",
+      "subtopic": null,
+      "difficulty": 0.34,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is 2/5 + 1/3?",
+        "options": [
+          "A. 3/8",
+          "B. 3/15",
+          "C. 11/15",
+          "D. 7/15"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is 2/5 + 1/3?",
+        "options": [
+          "A. 3/8",
+          "B. 3/15",
+          "C. 11/15",
+          "D. 7/15"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Find a common denominator: 2/5 = 6/15, 1/3 = 5/15. Then 6/15 + 5/15 = 11/15.",
+      "explanation_zh": "Find a common denominator: 2/5 = 6/15, 1/3 = 5/15. Then 6/15 + 5/15 = 11/15.",
+      "tags": [
+        "fraction_addition",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "fraction_addition",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "decimal_multiplication",
+      "subtopic": null,
+      "difficulty": 0.37,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is 3.6 × 0.4?",
+        "options": [
+          "A. 1.24",
+          "B. 1.44",
+          "C. 14.4",
+          "D. 0.144"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What is 3.6 × 0.4?",
+        "options": [
+          "A. 1.24",
+          "B. 1.44",
+          "C. 14.4",
+          "D. 0.144"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "36 × 4 = 144. Count decimal places: 3.6 has 1, 0.4 has 1, total 2 decimal places. So 1.44.",
+      "explanation_zh": "36 × 4 = 144. Count decimal places: 3.6 has 1, 0.4 has 1, total 2 decimal places. So 1.44.",
+      "tags": [
+        "decimal_multiplication",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "decimal_multiplication",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "volume",
+      "subtopic": null,
+      "difficulty": 0.39,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A rectangular box is 5 cm long, 3 cm wide, and 4 cm tall. What is the volume of the box?",
+        "options": [
+          "A. 12 cubic cm",
+          "B. 24 cubic cm",
+          "C. 48 cubic cm",
+          "D. 60 cubic cm"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "A rectangular box is 5 cm long, 3 cm wide, and 4 cm tall. What is the volume of the box?",
+        "options": [
+          "A. 12 cubic cm",
+          "B. 24 cubic cm",
+          "C. 48 cubic cm",
+          "D. 60 cubic cm"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Volume = length × width × height = 5 × 3 × 4 = 60 cubic centimeters.",
+      "explanation_zh": "Volume = length × width × height = 5 × 3 × 4 = 60 cubic centimeters.",
+      "tags": [
+        "volume",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "volume",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "coordinate_plane",
+      "subtopic": null,
+      "difficulty": 0.41,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which ordered pair represents a point that is 4 units to the right and 3 units up from the origin?",
+        "options": [
+          "A. (3, 4)",
+          "B. (4, 3)",
+          "C. (4, -3)",
+          "D. (-4, 3)"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which ordered pair represents a point that is 4 units to the right and 3 units up from the origin?",
+        "options": [
+          "A. (3, 4)",
+          "B. (4, 3)",
+          "C. (4, -3)",
+          "D. (-4, 3)"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "On a coordinate plane, the first number (x) shows right/left and the second (y) shows up/down. 4 right and 3 up is (4, 3).",
+      "explanation_zh": "On a coordinate plane, the first number (x) shows right/left and the second (y) shows up/down. 4 right and 3 up is (4, 3).",
+      "tags": [
+        "coordinate_plane",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "coordinate_plane",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "order_of_operations",
+      "subtopic": null,
+      "difficulty": 0.43,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the value of 8 + 3 × (10 - 4)?",
+        "options": [
+          "A. 26",
+          "B. 44",
+          "C. 66",
+          "D. 38"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "What is the value of 8 + 3 × (10 - 4)?",
+        "options": [
+          "A. 26",
+          "B. 44",
+          "C. 66",
+          "D. 38"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Using order of operations (PEMDAS): parentheses first: 10 - 4 = 6. Then multiply: 3 × 6 = 18. Then add: 8 + 18 = 26.",
+      "explanation_zh": "Using order of operations (PEMDAS): parentheses first: 10 - 4 = 6. Then multiply: 3 × 6 = 18. Then add: 8 + 18 = 26.",
+      "tags": [
+        "order_of_operations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G5-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "order_of_operations",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "fraction_division",
+      "subtopic": null,
+      "difficulty": 0.46,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is 3/4 ÷ 1/2?",
+        "options": [
+          "A. 3/8",
+          "B. 3/2",
+          "C. 1/2",
+          "D. 2/3"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What is 3/4 ÷ 1/2?",
+        "options": [
+          "A. 3/8",
+          "B. 3/2",
+          "C. 1/2",
+          "D. 2/3"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "To divide fractions, multiply by the reciprocal: 3/4 × 2/1 = 6/4 = 3/2.",
+      "explanation_zh": "To divide fractions, multiply by the reciprocal: 3/4 × 2/1 = 6/4 = 3/2.",
+      "tags": [
+        "fraction_division",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "fraction_division",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "algebraic_thinking",
+      "subtopic": null,
+      "difficulty": 0.48,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "If 5n + 3 = 28, what is the value of n?",
+        "options": [
+          "A. 3",
+          "B. 5",
+          "C. 6",
+          "D. 7"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "If 5n + 3 = 28, what is the value of n?",
+        "options": [
+          "A. 3",
+          "B. 5",
+          "C. 6",
+          "D. 7"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "5n + 3 = 28. Subtract 3: 5n = 25. Divide by 5: n = 5.",
+      "explanation_zh": "5n + 3 = 28. Subtract 3: 5n = 25. Divide by 5: n = 5.",
+      "tags": [
+        "algebraic_thinking",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "algebraic_thinking",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "decimal_division",
+      "subtopic": null,
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Climate scientists recorded 12.6 inches of rain over 3 days. What was the average daily rainfall?",
+        "options": [
+          "A. 3.8 inches",
+          "B. 4.0 inches",
+          "C. 4.2 inches",
+          "D. 4.6 inches"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Climate scientists recorded 12.6 inches of rain over 3 days. What was the average daily rainfall?",
+        "options": [
+          "A. 3.8 inches",
+          "B. 4.0 inches",
+          "C. 4.2 inches",
+          "D. 4.6 inches"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Average = total ÷ number of days = 12.6 ÷ 3 = 4.2 inches per day.",
+      "explanation_zh": "Average = total ÷ number of days = 12.6 ÷ 3 = 4.2 inches per day.",
+      "tags": [
+        "decimal_division",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "decimal_division",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "fraction_multiplication",
+      "subtopic": null,
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A recipe calls for 2/3 cup of sugar. If you want to make half the recipe, how much sugar do you need?",
+        "options": [
+          "A. 1/6 cup",
+          "B. 1/3 cup",
+          "C. 2/6 cup",
+          "D. 4/3 cups"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A recipe calls for 2/3 cup of sugar. If you want to make half the recipe, how much sugar do you need?",
+        "options": [
+          "A. 1/6 cup",
+          "B. 1/3 cup",
+          "C. 2/6 cup",
+          "D. 4/3 cups"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Half of 2/3 = 1/2 × 2/3 = 2/6 = 1/3 cup. Note that 2/6 simplifies to 1/3.",
+      "explanation_zh": "Half of 2/3 = 1/2 × 2/3 = 2/6 = 1/3 cup. Note that 2/6 simplifies to 1/3.",
+      "tags": [
+        "fraction_multiplication",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "fraction_multiplication",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G5",
+      "topic": "volume_word_problem",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "An Artemis supply container for the Moon mission is 8 feet long, 5 feet wide, and 3 feet high. What is its volume?",
+        "options": [
+          "A. 40 cubic feet",
+          "B. 79 cubic feet",
+          "C. 120 cubic feet",
+          "D. 160 cubic feet"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "An Artemis supply container for the Moon mission is 8 feet long, 5 feet wide, and 3 feet high. What is its volume?",
+        "options": [
+          "A. 40 cubic feet",
+          "B. 79 cubic feet",
+          "C. 120 cubic feet",
+          "D. 160 cubic feet"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Volume = length × width × height = 8 × 5 × 3 = 120 cubic feet.",
+      "explanation_zh": "Volume = length × width × height = 8 × 5 × 3 = 120 cubic feet.",
+      "tags": [
+        "volume_word_problem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G5-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G5-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G5",
+        "original_topic": "volume_word_problem",
+        "is_seed": false
+      }
+    }
+  ]
+}

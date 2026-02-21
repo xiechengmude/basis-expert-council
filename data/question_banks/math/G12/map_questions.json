@@ -1,0 +1,598 @@
+{
+  "batch_name": "MAP_math_G12_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G12",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "factoring",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which expression is equivalent to 9x⁴ + 21x² + 3x?",
+        "options": [
+          "A. 9x⁴ + 3x(7 + 1)",
+          "B. 3x(3x³ + 7x + 1)",
+          "C. 3x²(3x² + 7x) + 3x",
+          "D. 3x(3x³ + 7x² + 3x)",
+          "E. x(9x³ + 21x + 3x)"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which expression is equivalent to 9x⁴ + 21x² + 3x?",
+        "options": [
+          "A. 9x⁴ + 3x(7 + 1)",
+          "B. 3x(3x³ + 7x + 1)",
+          "C. 3x²(3x² + 7x) + 3x",
+          "D. 3x(3x³ + 7x² + 3x)",
+          "E. x(9x³ + 21x + 3x)"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Factor out 3x: 9x⁴/3x = 3x³, 21x²/3x = 7x, 3x/3x = 1. So 3x(3x³ + 7x + 1).",
+      "explanation_zh": "Factor out 3x: 9x⁴/3x = 3x³, 21x²/3x = 7x, 3x/3x = 1. So 3x(3x³ + 7x + 1).",
+      "tags": [
+        "factoring",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "factoring",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "volume_scaling",
+      "subtopic": null,
+      "difficulty": 0.62,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "For a cylinder with volume V = πr²h, what is the new volume if the radius r is tripled?",
+        "options": [
+          "A. Vnew = 9 × Vold",
+          "B. Vnew = 3 × Vold",
+          "C. Vnew = Vold + 3r",
+          "D. Vnew = Vold + 2r"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "For a cylinder with volume V = πr²h, what is the new volume if the radius r is tripled?",
+        "options": [
+          "A. Vnew = 9 × Vold",
+          "B. Vnew = 3 × Vold",
+          "C. Vnew = Vold + 3r",
+          "D. Vnew = Vold + 2r"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "V = πr²h. Tripling r: V_new = π(3r)²h = π(9r²)h = 9πr²h = 9 × V_old.",
+      "explanation_zh": "V = πr²h. Tripling r: V_new = π(3r)²h = π(9r²)h = 9πr²h = 9 × V_old.",
+      "tags": [
+        "volume_scaling",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "volume_scaling",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "multi_step_word_problem",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Jake's apple tree produces 50 apples monthly. Family eats 33; remaining sold at $2 each. Family eats 18 bananas monthly at $3 each. How many extra dollars beyond apple profits are needed for bananas?",
+        "options": [
+          "A. $0",
+          "B. $1",
+          "C. $2",
+          "D. $17",
+          "E. $20"
+        ],
+        "answer": "E"
+      },
+      "content_zh": {
+        "stem": "Jake's apple tree produces 50 apples monthly. Family eats 33; remaining sold at $2 each. Family eats 18 bananas monthly at $3 each. How many extra dollars beyond apple profits are needed for bananas?",
+        "options": [
+          "A. $0",
+          "B. $1",
+          "C. $2",
+          "D. $17",
+          "E. $20"
+        ],
+        "answer": "E"
+      },
+      "explanation_en": "Apple profit: (50 − 33) × $2 = 17 × $2 = $34. Banana cost: 18 × $3 = $54. Extra needed: $54 − $34 = $20.",
+      "explanation_zh": "Apple profit: (50 − 33) × $2 = 17 × $2 = $34. Banana cost: 18 × $3 = $54. Extra needed: $54 − $34 = $20.",
+      "tags": [
+        "multi_step_word_problem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "multi_step_word_problem",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "derivatives_concept",
+      "subtopic": null,
+      "difficulty": 0.68,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "If f(x) = 5x³ − 2x + 7, what is f'(x)?",
+        "options": [
+          "A. 15x² − 2",
+          "B. 15x² − 2x",
+          "C. 5x² − 2",
+          "D. 15x³ − 2"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "If f(x) = 5x³ − 2x + 7, what is f'(x)?",
+        "options": [
+          "A. 15x² − 2",
+          "B. 15x² − 2x",
+          "C. 5x² − 2",
+          "D. 15x³ − 2"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Apply power rule: d/dx(5x³) = 15x², d/dx(−2x) = −2, d/dx(7) = 0. So f'(x) = 15x² − 2.",
+      "explanation_zh": "Apply power rule: d/dx(5x³) = 15x², d/dx(−2x) = −2, d/dx(7) = 0. So f'(x) = 15x² − 2.",
+      "tags": [
+        "derivatives_concept",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "derivatives_concept",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "optimization",
+      "subtopic": null,
+      "difficulty": 0.7,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A farmer has 120 meters of fencing to enclose a rectangular field. What dimensions maximize the area?",
+        "options": [
+          "A. 20 m × 40 m",
+          "B. 30 m × 30 m",
+          "C. 25 m × 35 m",
+          "D. 10 m × 50 m"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A farmer has 120 meters of fencing to enclose a rectangular field. What dimensions maximize the area?",
+        "options": [
+          "A. 20 m × 40 m",
+          "B. 30 m × 30 m",
+          "C. 25 m × 35 m",
+          "D. 10 m × 50 m"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Perimeter = 2l + 2w = 120, so l + w = 60. Area A = l(60 − l). A'(l) = 60 − 2l = 0 → l = 30. So w = 30. Maximum area is a 30 × 30 square.",
+      "explanation_zh": "Perimeter = 2l + 2w = 120, so l + w = 60. Area A = l(60 − l). A'(l) = 60 − 2l = 0 → l = 30. So w = 30. Maximum area is a 30 × 30 square.",
+      "tags": [
+        "optimization",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "optimization",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "statistical_inference",
+      "subtopic": null,
+      "difficulty": 0.72,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A random sample of 100 lightbulbs has a mean lifetime of 1,200 hours with a standard deviation of 80 hours. What is the 95% confidence interval for the population mean? (z* = 1.96)",
+        "options": [
+          "A. (1,184.3, 1,215.7)",
+          "B. (1,180.0, 1,220.0)",
+          "C. (1,190.0, 1,210.0)",
+          "D. (1,170.0, 1,230.0)"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "A random sample of 100 lightbulbs has a mean lifetime of 1,200 hours with a standard deviation of 80 hours. What is the 95% confidence interval for the population mean? (z* = 1.96)",
+        "options": [
+          "A. (1,184.3, 1,215.7)",
+          "B. (1,180.0, 1,220.0)",
+          "C. (1,190.0, 1,210.0)",
+          "D. (1,170.0, 1,230.0)"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Margin of error = z* × (s/sqrt(n)) = 1.96 × (80/10) = 1.96 × 8 = 15.68. CI: (1200 − 15.68, 1200 + 15.68) = (1184.32, 1215.68).",
+      "explanation_zh": "Margin of error = z* × (s/sqrt(n)) = 1.96 × (80/10) = 1.96 × 8 = 15.68. CI: (1200 − 15.68, 1200 + 15.68) = (1184.32, 1215.68).",
+      "tags": [
+        "statistical_inference",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "statistical_inference",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "normal_distribution",
+      "subtopic": null,
+      "difficulty": 0.75,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Scores on a standardized test are normally distributed with mean 500 and standard deviation 100. What percentage of students score between 400 and 600?",
+        "options": [
+          "A. About 50%",
+          "B. About 68%",
+          "C. About 95%",
+          "D. About 99.7%"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Scores on a standardized test are normally distributed with mean 500 and standard deviation 100. What percentage of students score between 400 and 600?",
+        "options": [
+          "A. About 50%",
+          "B. About 68%",
+          "C. About 95%",
+          "D. About 99.7%"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "400 and 600 are each 1 standard deviation from the mean (z = ±1). By the empirical rule, about 68% of data falls within 1 standard deviation.",
+      "explanation_zh": "400 and 600 are each 1 standard deviation from the mean (z = ±1). By the empirical rule, about 68% of data falls within 1 standard deviation.",
+      "tags": [
+        "normal_distribution",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "normal_distribution",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "regression_climate",
+      "subtopic": null,
+      "difficulty": 0.78,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A climate scientist fits a linear regression to global average temperature anomalies (in °C) from 2000 to 2025, yielding T(y) = 0.022y − 43.6 where y is the year. What is the predicted anomaly for 2030?",
+        "options": [
+          "A. 0.96°C",
+          "B. 1.06°C",
+          "C. 1.16°C",
+          "D. 1.26°C"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A climate scientist fits a linear regression to global average temperature anomalies (in °C) from 2000 to 2025, yielding T(y) = 0.022y − 43.6 where y is the year. What is the predicted anomaly for 2030?",
+        "options": [
+          "A. 0.96°C",
+          "B. 1.06°C",
+          "C. 1.16°C",
+          "D. 1.26°C"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "T(2030) = 0.022(2030) − 43.6 = 44.66 − 43.6 = 1.06°C.",
+      "explanation_zh": "T(2030) = 0.022(2030) − 43.6 = 44.66 − 43.6 = 1.06°C.",
+      "tags": [
+        "regression_climate",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "regression_climate",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "combinatorics",
+      "subtopic": null,
+      "difficulty": 0.8,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A committee of 3 is to be chosen from 10 candidates. How many different committees are possible?",
+        "options": [
+          "A. 30",
+          "B. 120",
+          "C. 720",
+          "D. 1,000"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A committee of 3 is to be chosen from 10 candidates. How many different committees are possible?",
+        "options": [
+          "A. 30",
+          "B. 120",
+          "C. 720",
+          "D. 1,000"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "C(10,3) = 10!/(3!×7!) = (10 × 9 × 8)/(3 × 2 × 1) = 720/6 = 120.",
+      "explanation_zh": "C(10,3) = 10!/(3!×7!) = (10 × 9 × 8)/(3 × 2 × 1) = 720/6 = 120.",
+      "tags": [
+        "combinatorics",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "combinatorics",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "derivatives_concept",
+      "subtopic": null,
+      "difficulty": 0.82,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The position of a particle is given by s(t) = t³ − 6t² + 9t + 2. At what time(s) is the particle at rest?",
+        "options": [
+          "A. t = 1 only",
+          "B. t = 3 only",
+          "C. t = 1 and t = 3",
+          "D. t = 2"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "The position of a particle is given by s(t) = t³ − 6t² + 9t + 2. At what time(s) is the particle at rest?",
+        "options": [
+          "A. t = 1 only",
+          "B. t = 3 only",
+          "C. t = 1 and t = 3",
+          "D. t = 2"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Velocity v(t) = s'(t) = 3t² − 12t + 9 = 3(t² − 4t + 3) = 3(t − 1)(t − 3). Set v = 0: t = 1 and t = 3.",
+      "explanation_zh": "Velocity v(t) = s'(t) = 3t² − 12t + 9 = 3(t² − 4t + 3) = 3(t − 1)(t − 3). Set v = 0: t = 1 and t = 3.",
+      "tags": [
+        "derivatives_concept",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "derivatives_concept",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "regression_climate",
+      "subtopic": null,
+      "difficulty": 0.85,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A researcher collects temperature data for 10 years and calculates r² = 0.87 for a linear model. Which interpretation is correct?",
+        "options": [
+          "A. 87% of the variation in temperature is explained by the linear relationship with year",
+          "B. The correlation coefficient is 0.87",
+          "C. 87% of the data points lie on the regression line",
+          "D. The model predicts temperature with 87% accuracy"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "A researcher collects temperature data for 10 years and calculates r² = 0.87 for a linear model. Which interpretation is correct?",
+        "options": [
+          "A. 87% of the variation in temperature is explained by the linear relationship with year",
+          "B. The correlation coefficient is 0.87",
+          "C. 87% of the data points lie on the regression line",
+          "D. The model predicts temperature with 87% accuracy"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "r² (coefficient of determination) represents the proportion of variance in the dependent variable explained by the independent variable.",
+      "explanation_zh": "r² (coefficient of determination) represents the proportion of variance in the dependent variable explained by the independent variable.",
+      "tags": [
+        "regression_climate",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "regression_climate",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "combinatorics",
+      "subtopic": null,
+      "difficulty": 0.88,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "How many ways can the letters of the word 'LEVEL' be arranged?",
+        "options": [
+          "A. 20",
+          "B. 30",
+          "C. 60",
+          "D. 120"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "How many ways can the letters of the word 'LEVEL' be arranged?",
+        "options": [
+          "A. 20",
+          "B. 30",
+          "C. 60",
+          "D. 120"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "LEVEL has 5 letters with L repeated 2 times and E repeated 2 times. Arrangements = 5!/(2! × 2!) = 120/4 = 30.",
+      "explanation_zh": "LEVEL has 5 letters with L repeated 2 times and E repeated 2 times. Arrangements = 5!/(2! × 2!) = 120/4 = 30.",
+      "tags": [
+        "combinatorics",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "combinatorics",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G12",
+      "topic": "optimization_earthquake",
+      "subtopic": null,
+      "difficulty": 0.9,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "After a 2025 earthquake, a relief agency models supply delivery cost as C(x) = 500/x + 2x, where x is the number of trucks dispatched. How many trucks minimize cost?",
+        "options": [
+          "A. 10 trucks",
+          "B. 15 trucks",
+          "C. 16 trucks",
+          "D. 25 trucks"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "After a 2025 earthquake, a relief agency models supply delivery cost as C(x) = 500/x + 2x, where x is the number of trucks dispatched. How many trucks minimize cost?",
+        "options": [
+          "A. 10 trucks",
+          "B. 15 trucks",
+          "C. 16 trucks",
+          "D. 25 trucks"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "C'(x) = −500/x² + 2 = 0 → 500/x² = 2 → x² = 250 → x = sqrt(250) ≈ 15.81. Since x must be a whole number, x = 16 trucks.",
+      "explanation_zh": "C'(x) = −500/x² + 2 = 0 → 500/x² = 2 → x² = 250 → x = sqrt(250) ≈ 15.81. Since x must be a whole number, x = 16 trucks.",
+      "tags": [
+        "optimization_earthquake",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G12",
+        "original_topic": "optimization_earthquake",
+        "is_seed": false
+      }
+    }
+  ]
+}

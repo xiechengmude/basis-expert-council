@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "K1-READ-101",
+    "grade": "K-1",
+    "subject": "reading",
+    "topic": "letter_sounds",
+    "question": "Which word begins with the same sound as 'ball'?",
+    "options": [
+      {"label": "A", "text": "Dog"},
+      {"label": "B", "text": "Bear"},
+      {"label": "C", "text": "Fish"},
+      {"label": "D", "text": "Cat"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Bear and ball both begin with the /b/ sound. The other words begin with different sounds."
+  },
+  {
+    "id": "K1-READ-102",
+    "grade": "K-1",
+    "subject": "reading",
+    "topic": "sight_words",
+    "question": "Read the sentence: 'I can see the ___.' Which sight word best completes the sentence if there is a picture of a dog?",
+    "options": [
+      {"label": "A", "text": "dog"},
+      {"label": "B", "text": "run"},
+      {"label": "C", "text": "big"},
+      {"label": "D", "text": "go"}
+    ],
+    "correct_answer": "A",
+    "explanation": "The sight word 'dog' matches the picture and completes the sentence: 'I can see the dog.'"
+  },
+  {
+    "id": "K1-READ-103",
+    "grade": "K-1",
+    "subject": "reading",
+    "topic": "main_idea",
+    "question": "Read the passage: Sam has a red hat. He wears it every day. He wears it to school. He wears it to the park. What is the passage mostly about?",
+    "options": [
+      {"label": "A", "text": "Sam goes to school"},
+      {"label": "B", "text": "Sam loves his red hat"},
+      {"label": "C", "text": "Sam goes to the park"},
+      {"label": "D", "text": "Sam has a dog"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Every sentence talks about Sam and his red hat. The main idea is that Sam loves wearing his red hat."
+  },
+  {
+    "id": "K1-READ-104",
+    "grade": "K-1",
+    "subject": "reading",
+    "topic": "sequencing",
+    "question": "Read the passage: First, Mia woke up. Next, she brushed her teeth. Then, she ate breakfast. What did Mia do right after she woke up?",
+    "options": [
+      {"label": "A", "text": "She ate breakfast"},
+      {"label": "B", "text": "She went to school"},
+      {"label": "C", "text": "She brushed her teeth"},
+      {"label": "D", "text": "She played outside"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The passage says 'First, Mia woke up. Next, she brushed her teeth.' So brushing teeth came right after waking up."
+  },
+  {
+    "id": "K1-READ-105",
+    "grade": "K-1",
+    "subject": "reading",
+    "topic": "character_identification",
+    "question": "Read the passage: Tom and his sister Lily went to the pond. Lily saw a frog. She was so happy! Who saw the frog?",
+    "options": [
+      {"label": "A", "text": "Tom"},
+      {"label": "B", "text": "Lily"},
+      {"label": "C", "text": "Mom"},
+      {"label": "D", "text": "The frog"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage says 'Lily saw a frog.' Lily is the one who saw it."
+  },
+  {
+    "id": "K1-READ-106",
+    "grade": "K-1",
+    "subject": "reading",
+    "topic": "text_features",
+    "question": "A book cover shows the words 'The Big Red Truck' at the top and 'By Amy Lee' at the bottom. What is the title of the book?",
+    "options": [
+      {"label": "A", "text": "Amy Lee"},
+      {"label": "B", "text": "The Big Red Truck"},
+      {"label": "C", "text": "By Amy"},
+      {"label": "D", "text": "Red Truck"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The title of a book is the name at the top of the cover. 'The Big Red Truck' is the title. 'Amy Lee' is the author."
+  },
+  {
+    "id": "K1-READ-107",
+    "grade": "K-1",
+    "subject": "reading",
+    "topic": "vocabulary",
+    "question": "Read the passage: Emma watched the big rocket go up, up, up into the sky! She clapped her hands. 'Wow!' she said. The rocket flew so fast! What does the word 'fast' mean?",
+    "options": [
+      {"label": "A", "text": "Slow"},
+      {"label": "B", "text": "Quick"},
+      {"label": "C", "text": "Small"},
+      {"label": "D", "text": "Loud"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Fast means quick or moving with high speed. The rocket went up very quickly."
+  },
+  {
+    "id": "K1-READ-108",
+    "grade": "K-1",
+    "subject": "reading",
+    "topic": "picture_clues",
+    "question": "A picture shows a child with an umbrella and rain falling. What is the weather like in the picture?",
+    "options": [
+      {"label": "A", "text": "Sunny"},
+      {"label": "B", "text": "Snowy"},
+      {"label": "C", "text": "Rainy"},
+      {"label": "D", "text": "Windy"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The picture shows rain falling and a child holding an umbrella, which means the weather is rainy."
+  },
+  {
+    "id": "G2-READ-101",
+    "grade": "G2",
+    "subject": "reading",
+    "topic": "main_idea",
+    "question": "Read the passage: Bees are very important. They fly from flower to flower. They carry pollen on their legs. This helps flowers grow into fruits and vegetables. Without bees, we would not have many of the foods we eat. What is the main idea of this passage?",
+    "options": [
+      {"label": "A", "text": "Bees like to fly"},
+      {"label": "B", "text": "Bees are important because they help food grow"},
+      {"label": "C", "text": "Flowers are pretty"},
+      {"label": "D", "text": "Bees have legs"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage explains how bees help food grow by carrying pollen. The main idea is that bees are important for food production."
+  },
+  {
+    "id": "G2-READ-102",
+    "grade": "G2",
+    "subject": "reading",
+    "topic": "sequencing",
+    "question": "Read the passage: Ben wanted to build a birdhouse. First, he gathered wood and nails. Next, he hammered the pieces together. Then, he painted it blue. Last, he hung it on a tree. What did Ben do right before hanging the birdhouse?",
+    "options": [
+      {"label": "A", "text": "He gathered wood"},
+      {"label": "B", "text": "He hammered pieces together"},
+      {"label": "C", "text": "He painted it blue"},
+      {"label": "D", "text": "He found a tree"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The passage lists the steps in order. Right before hanging the birdhouse on a tree, Ben painted it blue."
+  },
+  {
+    "id": "G2-READ-103",
+    "grade": "G2",
+    "subject": "reading",
+    "topic": "character_feelings",
+    "question": "Read the passage: Kai's family went to the beach. Kai built a big sandcastle. Then a wave washed it away. Kai sat down and put his head in his hands. How did Kai most likely feel when the wave washed away his sandcastle?",
+    "options": [
+      {"label": "A", "text": "Happy"},
+      {"label": "B", "text": "Excited"},
+      {"label": "C", "text": "Sad"},
+      {"label": "D", "text": "Angry at his family"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Kai sat down and put his head in his hands after his sandcastle was destroyed. This shows he felt sad."
+  },
+  {
+    "id": "G2-READ-104",
+    "grade": "G2",
+    "subject": "reading",
+    "topic": "text_features",
+    "question": "A table of contents shows: Chapter 1 — Cats ... page 3, Chapter 2 — Dogs ... page 12, Chapter 3 — Birds ... page 20. On which page should you start reading to learn about dogs?",
+    "options": [
+      {"label": "A", "text": "Page 3"},
+      {"label": "B", "text": "Page 12"},
+      {"label": "C", "text": "Page 20"},
+      {"label": "D", "text": "Page 1"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The table of contents shows that the chapter about Dogs starts on page 12."
+  },
+  {
+    "id": "G2-READ-105",
+    "grade": "G2",
+    "subject": "reading",
+    "topic": "vocabulary",
+    "question": "Read the sentence: The enormous elephant walked slowly through the forest. What does 'enormous' mean?",
+    "options": [
+      {"label": "A", "text": "Very small"},
+      {"label": "B", "text": "Very fast"},
+      {"label": "C", "text": "Very big"},
+      {"label": "D", "text": "Very quiet"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Enormous means very large or very big. Elephants are known for being very large animals."
+  },
+  {
+    "id": "G2-READ-106",
+    "grade": "G2",
+    "subject": "reading",
+    "topic": "cause_and_effect",
+    "question": "Read the passage: Leo watched a big rocket launch on TV with his dad. The rocket made a loud roar and shot up into the sky with bright flames. Leo jumped up and shouted, 'I want to be an astronaut!' Why did Leo want to be an astronaut?",
+    "options": [
+      {"label": "A", "text": "His dad told him to be one"},
+      {"label": "B", "text": "He was excited by seeing the rocket launch"},
+      {"label": "C", "text": "He was scared of the loud noise"},
+      {"label": "D", "text": "He wanted to watch more TV"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Seeing the exciting rocket launch inspired Leo. He jumped up and shouted with excitement, showing the launch caused his dream."
+  },
+  {
+    "id": "G2-READ-107",
+    "grade": "G2",
+    "subject": "reading",
+    "topic": "fact_vs_opinion",
+    "question": "Which sentence is an opinion?",
+    "options": [
+      {"label": "A", "text": "Cats have four legs."},
+      {"label": "B", "text": "Cats are the best pets ever."},
+      {"label": "C", "text": "Some cats have stripes."},
+      {"label": "D", "text": "Cats can see in the dark."}
+    ],
+    "correct_answer": "B",
+    "explanation": "An opinion is what someone believes or feels. 'Cats are the best pets ever' is a personal feeling, not a fact that can be proven."
+  },
+  {
+    "id": "G2-READ-108",
+    "grade": "G2",
+    "subject": "reading",
+    "topic": "making_predictions",
+    "question": "Read the passage: Ava looked at the dark clouds in the sky. She grabbed her raincoat and umbrella before leaving the house. What will most likely happen next?",
+    "options": [
+      {"label": "A", "text": "It will be a sunny day"},
+      {"label": "B", "text": "It will rain"},
+      {"label": "C", "text": "Ava will go swimming"},
+      {"label": "D", "text": "Ava will stay home all day"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Dark clouds and bringing a raincoat and umbrella are clues that rain is coming. Ava prepared for rain."
+  },
+  {
+    "id": "G3-READ-101",
+    "grade": "G3",
+    "subject": "reading",
+    "topic": "main_idea_vs_details",
+    "question": "Read the passage: Dolphins are amazing swimmers. They can swim up to 20 miles per hour. They use their tails to push through the water. Dolphins also jump high out of the water. Which is a supporting detail, NOT the main idea?",
+    "options": [
+      {"label": "A", "text": "Dolphins are amazing swimmers"},
+      {"label": "B", "text": "They can swim up to 20 miles per hour"},
+      {"label": "C", "text": "Dolphins live in the ocean"},
+      {"label": "D", "text": "Dolphins are mammals"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The main idea is that dolphins are amazing swimmers. 'They can swim up to 20 miles per hour' is a supporting detail that shows how they are amazing."
+  },
+  {
+    "id": "G3-READ-102",
+    "grade": "G3",
+    "subject": "reading",
+    "topic": "inference",
+    "question": "Read the passage: Maria looked out the window and smiled. The trees had bright red and orange leaves. She put on her favorite sweater and went outside to pick apples. What season is it most likely?",
+    "options": [
+      {"label": "A", "text": "Summer"},
+      {"label": "B", "text": "Winter"},
+      {"label": "C", "text": "Fall"},
+      {"label": "D", "text": "Spring"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Red and orange leaves, wearing a sweater, and picking apples are all clues that point to fall (autumn)."
+  },
+  {
+    "id": "G3-READ-103",
+    "grade": "G3",
+    "subject": "reading",
+    "topic": "compare_contrast",
+    "question": "Read the passage: Frogs and toads look similar, but they are different. Frogs have smooth, wet skin. Toads have rough, bumpy skin. Frogs live near water, but toads can live in drier places. How are frogs and toads different?",
+    "options": [
+      {"label": "A", "text": "Frogs are bigger than toads"},
+      {"label": "B", "text": "Frogs have smooth skin and toads have bumpy skin"},
+      {"label": "C", "text": "Toads can swim but frogs cannot"},
+      {"label": "D", "text": "They eat different foods"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage directly states that frogs have smooth, wet skin while toads have rough, bumpy skin."
+  },
+  {
+    "id": "G3-READ-104",
+    "grade": "G3",
+    "subject": "reading",
+    "topic": "cause_and_effect",
+    "question": "Read the passage: The farmer did not water his crops for two weeks. The sun was very hot every day. Soon, the plants turned brown and stopped growing. Why did the plants turn brown?",
+    "options": [
+      {"label": "A", "text": "The farmer planted the wrong seeds"},
+      {"label": "B", "text": "Bugs ate the plants"},
+      {"label": "C", "text": "The plants did not get enough water and the sun was too hot"},
+      {"label": "D", "text": "Winter came early"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The passage states two causes: no water for two weeks and very hot sun. These caused the plants to turn brown."
+  },
+  {
+    "id": "G3-READ-105",
+    "grade": "G3",
+    "subject": "reading",
+    "topic": "text_structure",
+    "question": "Read the passage: How to Make a Peanut Butter Sandwich. Step 1: Get two slices of bread. Step 2: Spread peanut butter on one slice. Step 3: Put the other slice on top. Step 4: Cut in half and enjoy! How is this passage organized?",
+    "options": [
+      {"label": "A", "text": "Compare and contrast"},
+      {"label": "B", "text": "Problem and solution"},
+      {"label": "C", "text": "Sequence or steps in order"},
+      {"label": "D", "text": "Cause and effect"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The passage uses numbered steps (Step 1, Step 2, Step 3, Step 4) to show a process in order. This is a sequence structure."
+  },
+  {
+    "id": "G3-READ-106",
+    "grade": "G3",
+    "subject": "reading",
+    "topic": "figurative_language",
+    "question": "Read the sentence: The stars were like tiny diamonds in the sky. What does this sentence compare the stars to?",
+    "options": [
+      {"label": "A", "text": "Fireflies"},
+      {"label": "B", "text": "Diamonds"},
+      {"label": "C", "text": "The moon"},
+      {"label": "D", "text": "Candles"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The sentence uses a simile (using the word 'like') to compare stars to tiny diamonds because they both sparkle and shine."
+  },
+  {
+    "id": "G3-READ-107",
+    "grade": "G3",
+    "subject": "reading",
+    "topic": "authors_purpose",
+    "question": "Read the passage: Please recycle your cans and bottles! Recycling helps keep the earth clean. When you recycle, less trash goes to landfills. Everyone should recycle every day! Why did the author write this passage?",
+    "options": [
+      {"label": "A", "text": "To entertain the reader with a funny story"},
+      {"label": "B", "text": "To teach the reader how cans are made"},
+      {"label": "C", "text": "To persuade the reader to recycle"},
+      {"label": "D", "text": "To describe what a landfill looks like"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The author uses words like 'Please' and 'Everyone should' to convince the reader to recycle. The purpose is to persuade."
+  },
+  {
+    "id": "G3-READ-108",
+    "grade": "G3",
+    "subject": "reading",
+    "topic": "vocabulary_in_context",
+    "question": "Read the passage: The little girl was watching a rocket launch on her tablet. The rocket roared and lifted off the ground. She gasped as it soared higher and higher until it disappeared into the clouds. What does 'soared' most likely mean?",
+    "options": [
+      {"label": "A", "text": "Fell down quickly"},
+      {"label": "B", "text": "Flew high into the air"},
+      {"label": "C", "text": "Moved sideways"},
+      {"label": "D", "text": "Stopped suddenly"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Context clues ('higher and higher' and 'disappeared into the clouds') tell us that 'soared' means flew high into the air."
+  },
+  {
+    "id": "G4-READ-101",
+    "grade": "G4",
+    "subject": "reading",
+    "topic": "main_idea_vs_details",
+    "question": "Read the passage: Many schools now use AI assistants to help students learn. These computer programs can answer questions, explain math problems, and even help with writing. Students can ask the AI for help at any time, not just during class. Some teachers say AI helps students who are shy about raising their hand. What is the main idea of this passage?",
+    "options": [
+      {"label": "A", "text": "AI programs can solve math problems"},
+      {"label": "B", "text": "AI assistants are being used in schools to help students learn"},
+      {"label": "C", "text": "Some students are shy"},
+      {"label": "D", "text": "Teachers like using computers"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The main idea is that AI assistants are being used in schools to help students learn. The other options are supporting details."
+  },
+  {
+    "id": "G4-READ-102",
+    "grade": "G4",
+    "subject": "reading",
+    "topic": "inference",
+    "question": "Read the passage: Jake looked at the scoreboard and groaned. His team was behind by ten points with only two minutes left. The coach patted his shoulder and said, 'You played your best.' Jake nodded and forced a small smile. How does Jake most likely feel?",
+    "options": [
+      {"label": "A", "text": "Proud of winning"},
+      {"label": "B", "text": "Disappointed but accepting"},
+      {"label": "C", "text": "Angry at the coach"},
+      {"label": "D", "text": "Confused about the score"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Jake groaned (showing disappointment) but forced a small smile and nodded when the coach encouraged him, showing he is accepting the loss."
+  },
+  {
+    "id": "G4-READ-103",
+    "grade": "G4",
+    "subject": "reading",
+    "topic": "compare_contrast",
+    "question": "Read the passage: The Arctic and the Antarctic are both freezing cold places at the ends of the Earth. However, the Arctic is an ocean covered by ice, while the Antarctic is a continent covered by ice. Polar bears live in the Arctic, but penguins live in the Antarctic. You will never find polar bears and penguins living together in the wild. What is one way the Arctic and Antarctic are alike?",
+    "options": [
+      {"label": "A", "text": "Both have polar bears"},
+      {"label": "B", "text": "Both are very cold"},
+      {"label": "C", "text": "Both are continents"},
+      {"label": "D", "text": "Both have penguins"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage states that both the Arctic and Antarctic are 'freezing cold places at the ends of the Earth.'"
+  },
+  {
+    "id": "G4-READ-104",
+    "grade": "G4",
+    "subject": "reading",
+    "topic": "text_structure",
+    "question": "Read the passage: The school playground had a big problem: there was nowhere for students to sit and eat lunch outside. Students had to sit on the ground or stand. The PTA raised money and bought ten new picnic tables. Now students enjoy eating lunch outdoors every day. How is this passage organized?",
+    "options": [
+      {"label": "A", "text": "Cause and effect"},
+      {"label": "B", "text": "Compare and contrast"},
+      {"label": "C", "text": "Problem and solution"},
+      {"label": "D", "text": "Chronological order"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The passage presents a problem (no place to sit outside) and then a solution (PTA bought picnic tables). This is problem-and-solution structure."
+  },
+  {
+    "id": "G4-READ-105",
+    "grade": "G4",
+    "subject": "reading",
+    "topic": "figurative_language",
+    "question": "Read the sentence: 'Time is money,' said Mr. Clark to his students. What type of figurative language is this?",
+    "options": [
+      {"label": "A", "text": "Simile"},
+      {"label": "B", "text": "Metaphor"},
+      {"label": "C", "text": "Personification"},
+      {"label": "D", "text": "Alliteration"}
+    ],
+    "correct_answer": "B",
+    "explanation": "This is a metaphor because it says time IS money — it directly compares two unlike things without using 'like' or 'as.'"
+  },
+  {
+    "id": "G4-READ-106",
+    "grade": "G4",
+    "subject": "reading",
+    "topic": "authors_purpose",
+    "question": "Read the passage: AI assistants are computer programs that can talk to you and answer your questions. They work by reading millions of books and websites to learn about many topics. When you type a question, the AI finds the best answer it can. Some AI assistants can even write stories or explain science experiments step by step. Why did the author most likely write this passage?",
+    "options": [
+      {"label": "A", "text": "To persuade readers to buy an AI assistant"},
+      {"label": "B", "text": "To inform readers about how AI assistants work"},
+      {"label": "C", "text": "To entertain readers with a story about robots"},
+      {"label": "D", "text": "To warn readers about the dangers of AI"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage gives factual information about what AI assistants are and how they work. The author's purpose is to inform."
+  },
+  {
+    "id": "G4-READ-107",
+    "grade": "G4",
+    "subject": "reading",
+    "topic": "vocabulary_in_context",
+    "question": "Read the sentence: The ancient castle was magnificent, with tall towers and colorful stained-glass windows that glowed in the sunlight. What does 'magnificent' most likely mean?",
+    "options": [
+      {"label": "A", "text": "Very old and falling apart"},
+      {"label": "B", "text": "Very small and plain"},
+      {"label": "C", "text": "Very impressive and beautiful"},
+      {"label": "D", "text": "Very dark and scary"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Context clues like 'tall towers,' 'colorful stained-glass windows,' and 'glowed in the sunlight' describe something impressive and beautiful."
+  },
+  {
+    "id": "G4-READ-108",
+    "grade": "G4",
+    "subject": "reading",
+    "topic": "point_of_view",
+    "question": "Read the passage: I walked into the classroom and could not believe my eyes. Every desk had a brand-new laptop on it! My teacher, Mrs. Garcia, smiled and said we would use them for our science project. I could barely contain my excitement. From whose point of view is this passage told?",
+    "options": [
+      {"label": "A", "text": "Mrs. Garcia"},
+      {"label": "B", "text": "A student in the class"},
+      {"label": "C", "text": "The principal"},
+      {"label": "D", "text": "A narrator who is not in the story"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage uses 'I' and 'my,' showing first-person point of view. The narrator is a student who walks into the classroom and talks about 'my teacher.'"
+  },
+  {
+    "id": "G5-READ-101",
+    "grade": "G5",
+    "subject": "reading",
+    "topic": "theme",
+    "question": "Read the passage: Rosa wanted to win the art contest more than anything. She spent weeks on her painting. When the winners were announced, Rosa did not win. She felt terrible. But her friend Maya, who won second place, said, 'Your painting inspired me to try harder. Thank you, Rosa.' Rosa smiled, realizing her work mattered even without a prize. What is the theme of this passage?",
+    "options": [
+      {"label": "A", "text": "Winning is the most important thing"},
+      {"label": "B", "text": "Art contests are unfair"},
+      {"label": "C", "text": "Your efforts can inspire others even if you do not win"},
+      {"label": "D", "text": "Friends should always let you win"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Rosa learned that her painting inspired her friend, even though she did not win the prize. The theme is that effort matters beyond just winning."
+  },
+  {
+    "id": "G5-READ-102",
+    "grade": "G5",
+    "subject": "reading",
+    "topic": "inference",
+    "question": "Read the passage: Mr. Tanaka looked at the clock and sighed. He had been waiting at the airport for three hours. The departure board changed again: 'Flight 402 — Delayed.' He called his wife and said, 'Don't wait up for me.' What can you infer about Mr. Tanaka's situation?",
+    "options": [
+      {"label": "A", "text": "He is excited to travel"},
+      {"label": "B", "text": "His flight keeps getting delayed and he will arrive home very late"},
+      {"label": "C", "text": "He is picking someone up from the airport"},
+      {"label": "D", "text": "He decided not to fly"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The clues — waiting three hours, the board showing 'Delayed' again, and telling his wife not to wait up — all suggest repeated delays and a very late arrival."
+  },
+  {
+    "id": "G5-READ-103",
+    "grade": "G5",
+    "subject": "reading",
+    "topic": "cause_and_effect",
+    "question": "Read the passage: In 2025, new AI tutoring programs became available in many schools. These programs could adjust their lessons based on each student's skill level. As a result, students who struggled with reading improved their scores by an average of 15 percent. Teachers reported spending less time on review and more time on new material. What was the effect of the AI tutoring programs?",
+    "options": [
+      {"label": "A", "text": "Teachers stopped teaching reading"},
+      {"label": "B", "text": "Students' reading scores improved and teachers had more time for new lessons"},
+      {"label": "C", "text": "Schools closed because AI replaced teachers"},
+      {"label": "D", "text": "Students stopped doing homework"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage states two effects: students improved scores by 15 percent, and teachers spent more time on new material instead of review."
+  },
+  {
+    "id": "G5-READ-104",
+    "grade": "G5",
+    "subject": "reading",
+    "topic": "figurative_language",
+    "question": "Read the sentence: The wind whispered secrets through the trees. What type of figurative language is used in this sentence?",
+    "options": [
+      {"label": "A", "text": "Simile"},
+      {"label": "B", "text": "Metaphor"},
+      {"label": "C", "text": "Personification"},
+      {"label": "D", "text": "Hyperbole"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Personification gives human qualities to non-human things. The wind cannot actually whisper secrets — this is a human action given to the wind."
+  },
+  {
+    "id": "G5-READ-105",
+    "grade": "G5",
+    "subject": "reading",
+    "topic": "text_structure",
+    "question": "Read the passage: Earthquakes and volcanic eruptions are both natural disasters caused by activity beneath Earth's surface. Earthquakes happen when tectonic plates shift suddenly, shaking the ground. Volcanic eruptions happen when hot magma pushes up through an opening in the Earth's crust. Both can cause great damage, but eruptions also release ash and lava. How is this passage organized?",
+    "options": [
+      {"label": "A", "text": "Problem and solution"},
+      {"label": "B", "text": "Chronological order"},
+      {"label": "C", "text": "Compare and contrast"},
+      {"label": "D", "text": "Cause and effect"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The passage compares earthquakes and volcanic eruptions (both are natural disasters) and contrasts them (different causes, eruptions also release ash and lava)."
+  },
+  {
+    "id": "G5-READ-106",
+    "grade": "G5",
+    "subject": "reading",
+    "topic": "vocabulary_in_context",
+    "question": "Read the sentence: The diplomat tried to mediate the conflict between the two countries by listening to both sides and suggesting a compromise. What does 'mediate' mean?",
+    "options": [
+      {"label": "A", "text": "To start a fight"},
+      {"label": "B", "text": "To help settle a disagreement"},
+      {"label": "C", "text": "To ignore a problem"},
+      {"label": "D", "text": "To take one side"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Context clues ('listening to both sides' and 'suggesting a compromise') show that mediate means to help settle a disagreement."
+  },
+  {
+    "id": "G5-READ-107",
+    "grade": "G5",
+    "subject": "reading",
+    "topic": "genre",
+    "question": "Read the excerpt: 'Once upon a time, in a kingdom beyond the clouds, a young girl discovered she could talk to animals. The wise owl told her she must find the golden feather before the next full moon.' What genre is this text?",
+    "options": [
+      {"label": "A", "text": "Biography"},
+      {"label": "B", "text": "Fantasy"},
+      {"label": "C", "text": "Informational text"},
+      {"label": "D", "text": "Realistic fiction"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The text includes magical elements (a kingdom beyond the clouds, talking animals, a golden feather), which are characteristics of fantasy."
+  },
+  {
+    "id": "G5-READ-108",
+    "grade": "G5",
+    "subject": "reading",
+    "topic": "point_of_view",
+    "question": "Read the passage: Lena did not want to give the speech. She stood backstage, her hands trembling. She thought about running away but knew her classmates were counting on her. She took a deep breath and walked to the microphone. What point of view is used?",
+    "options": [
+      {"label": "A", "text": "First person"},
+      {"label": "B", "text": "Second person"},
+      {"label": "C", "text": "Third person limited"},
+      {"label": "D", "text": "Third person omniscient"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The narrator uses 'she' and shares only Lena's thoughts and feelings, not anyone else's. This is third person limited point of view."
+  },
+  {
+    "id": "G6-READ-101",
+    "grade": "G6",
+    "subject": "reading",
+    "topic": "theme_analysis",
+    "question": "Read the passage: When Dara moved to a new city, she missed her old friends terribly. At her new school, a girl named Priya invited her to join the robotics club. At first, Dara said no — she had never built a robot before. But Priya kept asking, and Dara finally agreed. By the end of the semester, Dara had built her first robot and made three new friends. She realized that saying yes to something unfamiliar had changed everything. What theme does this passage convey?",
+    "options": [
+      {"label": "A", "text": "Technology is more important than friendship"},
+      {"label": "B", "text": "Being open to new experiences can lead to growth and connection"},
+      {"label": "C", "text": "Moving to a new city is always a positive experience"},
+      {"label": "D", "text": "Robotics is the best extracurricular activity"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Dara was reluctant to try something new but found friendship and achievement when she did. The theme is that openness to new experiences brings growth."
+  },
+  {
+    "id": "G6-READ-102",
+    "grade": "G6",
+    "subject": "reading",
+    "topic": "character_development",
+    "question": "Read the passage: At the start of the school year, Marcus avoided speaking in class. He sat in the back row and never raised his hand. When his teacher assigned a group project on AI technology, Marcus was forced to present his research on how AI assistants help students study. His group members encouraged him, and he practiced every night. On presentation day, Marcus spoke clearly and even answered questions from the audience. How does Marcus change over the course of the passage?",
+    "options": [
+      {"label": "A", "text": "He becomes more rebellious"},
+      {"label": "B", "text": "He grows from being shy and withdrawn to confident"},
+      {"label": "C", "text": "He decides he does not like school"},
+      {"label": "D", "text": "He becomes the class clown"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Marcus starts by avoiding speaking and sitting in the back, but by the end he speaks clearly and answers questions — showing growth from shy to confident."
+  },
+  {
+    "id": "G6-READ-103",
+    "grade": "G6",
+    "subject": "reading",
+    "topic": "literary_devices",
+    "question": "Read the sentences: 'The classroom was a zoo on the last day of school. Students were running, laughing, and throwing paper airplanes.' What literary device is used in the first sentence?",
+    "options": [
+      {"label": "A", "text": "Simile"},
+      {"label": "B", "text": "Metaphor"},
+      {"label": "C", "text": "Onomatopoeia"},
+      {"label": "D", "text": "Alliteration"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Calling the classroom 'a zoo' is a metaphor — it directly compares the chaotic classroom to a zoo without using 'like' or 'as.'"
+  },
+  {
+    "id": "G6-READ-104",
+    "grade": "G6",
+    "subject": "reading",
+    "topic": "informational_text_analysis",
+    "question": "Read the passage: In 2025, a new kind of AI assistant became popular in classrooms. Unlike search engines, these AI tools could have conversations with students, breaking down difficult concepts step by step. A study by the National Education Association found that 72 percent of teachers reported students asking more questions when an AI tutor was available. Critics warned, however, that students might rely too heavily on AI instead of developing their own problem-solving skills. What is the author's approach to presenting this topic?",
+    "options": [
+      {"label": "A", "text": "Completely against AI in schools"},
+      {"label": "B", "text": "Presenting only the benefits of AI"},
+      {"label": "C", "text": "Balanced, showing both benefits and concerns"},
+      {"label": "D", "text": "Humorous and sarcastic"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The author presents benefits (students asking more questions) and concerns (over-reliance), giving a balanced perspective on AI in education."
+  },
+  {
+    "id": "G6-READ-105",
+    "grade": "G6",
+    "subject": "reading",
+    "topic": "argument_evaluation",
+    "question": "Read the passage: Some people argue that students should not use calculators in math class because it prevents them from learning basic skills. Others say calculators allow students to focus on understanding complex concepts rather than wasting time on simple calculations. Which statement best evaluates these arguments?",
+    "options": [
+      {"label": "A", "text": "The first argument is clearly wrong"},
+      {"label": "B", "text": "Both arguments make valid points about different aspects of learning"},
+      {"label": "C", "text": "The second argument has no evidence"},
+      {"label": "D", "text": "Neither argument is worth considering"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Both arguments address legitimate educational concerns: basic skill mastery versus higher-level conceptual understanding. Both sides make valid points."
+  },
+  {
+    "id": "G6-READ-106",
+    "grade": "G6",
+    "subject": "reading",
+    "topic": "poetry_analysis",
+    "question": "Read the poem:\n'The fog comes\non little cat feet.\nIt sits looking\nover harbor and city\non silent haunches\nand then moves on.'\n— Carl Sandburg\nWhat is the fog compared to in this poem?",
+    "options": [
+      {"label": "A", "text": "A dog"},
+      {"label": "B", "text": "A ship"},
+      {"label": "C", "text": "A cat"},
+      {"label": "D", "text": "A person sitting"}
+    ],
+    "correct_answer": "C",
+    "explanation": "The fog is compared to a cat through extended metaphor: it comes on 'little cat feet,' 'sits' on 'silent haunches,' and 'moves on' — all cat-like behaviors."
+  },
+  {
+    "id": "G6-READ-107",
+    "grade": "G6",
+    "subject": "reading",
+    "topic": "vocabulary_greek_latin_roots",
+    "question": "The word 'microscope' contains the Greek roots 'micro' (small) and 'scope' (to look). Based on these roots, what does 'microscope' literally mean?",
+    "options": [
+      {"label": "A", "text": "A tool to look at small things"},
+      {"label": "B", "text": "A small tool for looking far away"},
+      {"label": "C", "text": "A device that makes things smaller"},
+      {"label": "D", "text": "A tiny camera"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Combining 'micro' (small) and 'scope' (to look at), a microscope is literally an instrument to look at small things."
+  },
+  {
+    "id": "G6-READ-108",
+    "grade": "G6",
+    "subject": "reading",
+    "topic": "text_evidence",
+    "question": "Read the passage: Ocean temperatures around the world reached record highs in 2025. Scientists measured water temperatures that were higher than any time in recorded history. Marine biologists reported that coral reefs were bleaching at alarming rates, and fish populations were moving to cooler waters farther north. Which sentence from the passage best supports the idea that marine life is being affected by warming oceans?",
+    "options": [
+      {"label": "A", "text": "Ocean temperatures around the world reached record highs in 2025."},
+      {"label": "B", "text": "Scientists measured water temperatures that were higher than any time in recorded history."},
+      {"label": "C", "text": "Marine biologists reported that coral reefs were bleaching at alarming rates, and fish populations were moving to cooler waters farther north."},
+      {"label": "D", "text": "Ocean temperatures around the world reached record highs."}
+    ],
+    "correct_answer": "C",
+    "explanation": "This sentence directly describes effects on marine life: coral bleaching and fish moving to cooler waters. The other sentences describe temperatures, not effects on life."
+  },
+  {
+    "id": "G7-READ-101",
+    "grade": "G7",
+    "subject": "reading",
+    "topic": "theme_analysis",
+    "question": "Read the passage: In the novel, the main character, Amir, cheats on his final exam and gets the highest grade. At first, he feels proud. But when his honest friend Hasan receives a lower grade and loses a scholarship opportunity, Amir cannot sleep. He finally confesses to his teacher and accepts a zero on the test. What is the central theme?",
+    "options": [
+      {"label": "A", "text": "Cheating is the easiest way to succeed"},
+      {"label": "B", "text": "Honesty and integrity matter more than achievement"},
+      {"label": "C", "text": "Scholarships are unfair"},
+      {"label": "D", "text": "Teachers should not trust students"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Amir's guilt and eventual confession show that personal integrity matters more than the grade he achieved through dishonesty."
+  },
+  {
+    "id": "G7-READ-102",
+    "grade": "G7",
+    "subject": "reading",
+    "topic": "character_development",
+    "question": "Read the passage: At the beginning of the story, Nadia refused to eat lunch with anyone new. She carried her tray to the same corner table every day and read alone. When the school started a 'Mix-It-Up' lunch program, she was furious. But after being seated next to Caleb, who shared her love of marine biology, Nadia found herself talking nonstop. By the end of the month, she was the one suggesting new seating combinations. Which word best describes Nadia's character arc?",
+    "options": [
+      {"label": "A", "text": "Stubborn to defeated"},
+      {"label": "B", "text": "Isolated to socially engaged"},
+      {"label": "C", "text": "Happy to miserable"},
+      {"label": "D", "text": "Confident to insecure"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Nadia moves from eating alone and refusing to meet people (isolated) to suggesting new seating combinations (socially engaged)."
+  },
+  {
+    "id": "G7-READ-103",
+    "grade": "G7",
+    "subject": "reading",
+    "topic": "literary_devices_irony",
+    "question": "Read the passage: The fire station burned down last Tuesday. Firefighters from three neighboring towns had to come put out the blaze. The chief said, 'Of all the buildings in town, this was the one we never expected to need help with.' What type of irony is present in this situation?",
+    "options": [
+      {"label": "A", "text": "Verbal irony"},
+      {"label": "B", "text": "Situational irony"},
+      {"label": "C", "text": "Dramatic irony"},
+      {"label": "D", "text": "No irony is present"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Situational irony occurs when the outcome is the opposite of what is expected. A fire station — the place designed to fight fires — burning down is the opposite of what anyone would expect."
+  },
+  {
+    "id": "G7-READ-104",
+    "grade": "G7",
+    "subject": "reading",
+    "topic": "informational_text_analysis",
+    "question": "Read the passage: In 2025, ocean temperatures broke records for the third consecutive year. Scientists at NOAA recorded surface temperatures 1.2 degrees Celsius above the 20th-century average. Deep-sea researchers noted that species previously found only near the equator were appearing in waters off the coast of Virginia. Marine ecologist Dr. Rivera warned, 'We are witnessing a fundamental reorganization of ocean ecosystems.' What is the primary purpose of the quotation from Dr. Rivera?",
+    "options": [
+      {"label": "A", "text": "To add a personal opinion that contradicts the data"},
+      {"label": "B", "text": "To provide expert authority that emphasizes the significance of the data"},
+      {"label": "C", "text": "To entertain the reader with dramatic language"},
+      {"label": "D", "text": "To introduce a new, unrelated topic"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Dr. Rivera's quote, as a marine ecologist, provides expert credibility and underscores the seriousness of the data presented in the passage."
+  },
+  {
+    "id": "G7-READ-105",
+    "grade": "G7",
+    "subject": "reading",
+    "topic": "symbolism",
+    "question": "Read the passage: In the story, the old lighthouse had not been lit for twenty years. When the new keeper arrived and finally turned on the light, ships that had been avoiding the harbor began returning. The town, which had been slowly dying, started to come back to life. The lighthouse in this story most likely symbolizes:",
+    "options": [
+      {"label": "A", "text": "Modern technology"},
+      {"label": "B", "text": "Hope and renewal"},
+      {"label": "C", "text": "Danger and warning"},
+      {"label": "D", "text": "Loneliness"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The lighthouse's light brings ships back and revives the town. It symbolizes hope and renewal — when the light returns, life returns."
+  },
+  {
+    "id": "G7-READ-106",
+    "grade": "G7",
+    "subject": "reading",
+    "topic": "vocabulary_greek_latin_roots",
+    "question": "The Latin root 'aqua' means water and the Latin root 'duct' means to lead or carry. What does 'aqueduct' most likely mean?",
+    "options": [
+      {"label": "A", "text": "A device that purifies water"},
+      {"label": "B", "text": "A structure that carries water from one place to another"},
+      {"label": "C", "text": "An underwater tunnel"},
+      {"label": "D", "text": "A type of waterproof fabric"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Combining 'aqua' (water) and 'duct' (to lead/carry), an aqueduct is a structure that leads or carries water from one place to another."
+  },
+  {
+    "id": "G7-READ-107",
+    "grade": "G7",
+    "subject": "reading",
+    "topic": "text_evidence",
+    "question": "Read the passage: Deep-sea explorers made a stunning discovery in 2025. Using advanced submersible vehicles, a team descended to 8,200 meters in the Pacific Ocean. They found thriving communities of organisms near hydrothermal vents — tube worms, shrimp, and bacteria that convert chemicals into energy without sunlight. Lead researcher Dr. Park stated, 'These organisms rewrite our understanding of where life can exist.' Which claim is best supported by evidence in the passage?",
+    "options": [
+      {"label": "A", "text": "Deep-sea exploration is too expensive to continue"},
+      {"label": "B", "text": "Life can thrive in extreme environments without sunlight"},
+      {"label": "C", "text": "The Pacific Ocean is the deepest ocean"},
+      {"label": "D", "text": "Submersible technology has not improved in decades"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage describes organisms that 'convert chemicals into energy without sunlight' at extreme depths, directly supporting the claim that life thrives without sunlight."
+  },
+  {
+    "id": "G7-READ-108",
+    "grade": "G7",
+    "subject": "reading",
+    "topic": "poetry_tone",
+    "question": "Read the poem excerpt:\n'I wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils.'\n— William Wordsworth\nHow does the tone shift between the first two lines and the last two lines?",
+    "options": [
+      {"label": "A", "text": "From angry to peaceful"},
+      {"label": "B", "text": "From solitary and drifting to surprised and delighted"},
+      {"label": "C", "text": "From joyful to sorrowful"},
+      {"label": "D", "text": "From fearful to relieved"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The first lines describe lonely wandering ('lonely as a cloud'). The tone shifts at 'all at once I saw' — surprise and delight at discovering the golden daffodils."
+  },
+  {
+    "id": "G8-READ-101",
+    "grade": "G8",
+    "subject": "reading",
+    "topic": "theme_analysis",
+    "question": "Read the passage: In the novel, twelve-year-old Kwame is the only student in his class who cannot afford the school trip to Washington, D.C. His classmates start a fundraiser without telling him. When Kwame finds out, he feels ashamed at first. But his friend Jasmine says, 'We did this because you belong with us, not because you need help.' Kwame realizes that accepting support from people who care about you is not weakness — it is community. What theme does this passage explore?",
+    "options": [
+      {"label": "A", "text": "Money is the root of all problems"},
+      {"label": "B", "text": "True community means supporting each other without shame"},
+      {"label": "C", "text": "School trips are not worth the cost"},
+      {"label": "D", "text": "Students should never accept charity"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage shows that genuine community means caring for each other. Jasmine reframes the fundraiser as belonging, not charity, revealing the theme of mutual support."
+  },
+  {
+    "id": "G8-READ-102",
+    "grade": "G8",
+    "subject": "reading",
+    "topic": "literary_devices_allusion",
+    "question": "Read the sentence from a short story: 'Elena had opened Pandora's box when she revealed the family secret at dinner.' What does the allusion to Pandora's box suggest?",
+    "options": [
+      {"label": "A", "text": "Elena received a beautiful gift"},
+      {"label": "B", "text": "Elena's revelation released a cascade of problems that cannot be undone"},
+      {"label": "C", "text": "Elena found a hidden treasure"},
+      {"label": "D", "text": "Elena solved a mystery"}
+    ],
+    "correct_answer": "B",
+    "explanation": "In Greek mythology, opening Pandora's box released all evils into the world. The allusion suggests Elena's revelation unleashed problems that cannot be taken back."
+  },
+  {
+    "id": "G8-READ-103",
+    "grade": "G8",
+    "subject": "reading",
+    "topic": "informational_text_analysis",
+    "question": "Read the passage: Ocean surface temperatures in 2025 averaged 1.3 degrees Celsius above pre-industrial levels, according to data from the Copernicus Climate Change Service. The warming has accelerated the melting of Antarctic ice shelves, contributed to more intense hurricanes in the Atlantic, and triggered mass coral bleaching events across the Indian and Pacific Oceans. However, some researchers caution that natural climate cycles, such as El Nino, also played a significant role in the 2025 temperature spike. What organizational pattern does this passage primarily use?",
+    "options": [
+      {"label": "A", "text": "Narrative chronological order"},
+      {"label": "B", "text": "Cause and effect with a qualifying counterpoint"},
+      {"label": "C", "text": "Compare and contrast of two oceans"},
+      {"label": "D", "text": "Problem and step-by-step solution"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage presents a cause (rising temperatures) and multiple effects (ice melting, hurricanes, bleaching), then qualifies with a counterpoint about natural cycles."
+  },
+  {
+    "id": "G8-READ-104",
+    "grade": "G8",
+    "subject": "reading",
+    "topic": "argument_evaluation",
+    "question": "Read the passage: 'Schools should replace all textbooks with tablets,' argues tech columnist Mark Reed. 'Tablets are lighter, can be updated instantly, and give students access to interactive content.' Education professor Dr. Walsh responds: 'Studies show students retain information better from print. Tablets also introduce distractions — social media is just a tap away. The cost of replacing damaged tablets far exceeds the cost of replacing textbooks.' Which statement best evaluates these arguments?",
+    "options": [
+      {"label": "A", "text": "Reed's argument is stronger because technology is always better"},
+      {"label": "B", "text": "Walsh's argument is stronger because it cites research evidence and addresses practical concerns"},
+      {"label": "C", "text": "Both arguments are equally weak because neither uses data"},
+      {"label": "D", "text": "Reed's argument is stronger because tablets are more popular"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Dr. Walsh references studies about retention, identifies a concrete problem (distractions), and raises cost concerns — making her argument more evidence-based and thorough."
+  },
+  {
+    "id": "G8-READ-105",
+    "grade": "G8",
+    "subject": "reading",
+    "topic": "poetry_form",
+    "question": "Read the poem:\n'Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth.'\n— Robert Frost\nWhat is the rhyme scheme of this stanza?",
+    "options": [
+      {"label": "A", "text": "ABAB"},
+      {"label": "B", "text": "ABAAB"},
+      {"label": "C", "text": "ABCAB"},
+      {"label": "D", "text": "AABBA"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The end words are: wood (A), both (B), stood (A), could (A), undergrowth (B). The rhyme scheme is ABAAB."
+  },
+  {
+    "id": "G8-READ-106",
+    "grade": "G8",
+    "subject": "reading",
+    "topic": "vocabulary_in_context",
+    "question": "Read the passage: The scientist's findings were so unprecedented that the journal requested three independent peer reviews before publishing the paper. Colleagues expressed both admiration and skepticism, calling the results 'paradigm-shifting if verified.' What does 'unprecedented' most likely mean?",
+    "options": [
+      {"label": "A", "text": "Expected and ordinary"},
+      {"label": "B", "text": "Never done or experienced before"},
+      {"label": "C", "text": "Incorrect and misleading"},
+      {"label": "D", "text": "Published multiple times"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The context — requiring extra reviews, being called 'paradigm-shifting' — suggests the findings were extraordinary and had never been seen before. 'Unprecedented' means without previous example."
+  },
+  {
+    "id": "G8-READ-107",
+    "grade": "G8",
+    "subject": "reading",
+    "topic": "character_development",
+    "question": "Read the passage: Captain Torres had always followed orders without question. When headquarters commanded him to abandon the coastal village before the hurricane, he prepared to leave. But then he saw the elderly residents who had no transportation. For the first time in his career, Torres disobeyed an order. He stayed, used military vehicles to evacuate every resident, and filed his report honestly: 'I chose lives over protocol.' How does the author develop Torres's character?",
+    "options": [
+      {"label": "A", "text": "Through dialogue with headquarters"},
+      {"label": "B", "text": "By contrasting his habitual obedience with a moment of moral independence"},
+      {"label": "C", "text": "Through detailed physical description"},
+      {"label": "D", "text": "By comparing him to other officers"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The author establishes Torres as someone who 'always followed orders' then shows a dramatic departure — disobeying orders to save lives. The contrast reveals his moral growth."
+  },
+  {
+    "id": "G8-READ-108",
+    "grade": "G8",
+    "subject": "reading",
+    "topic": "vocabulary_greek_latin_roots",
+    "question": "The Greek root 'chron' means time and the Greek root 'logos' means study or word. Based on these roots, what does 'chronological' most likely relate to?",
+    "options": [
+      {"label": "A", "text": "Arranged by color"},
+      {"label": "B", "text": "Arranged by size"},
+      {"label": "C", "text": "Arranged in order of time"},
+      {"label": "D", "text": "Arranged by importance"}
+    ],
+    "correct_answer": "C",
+    "explanation": "'Chron' (time) plus the suffix '-logical' (relating to the study of) gives 'chronological,' meaning arranged in the order in which events occurred over time."
+  },
+  {
+    "id": "G9-READ-101",
+    "grade": "G9",
+    "subject": "reading",
+    "topic": "rhetorical_analysis",
+    "question": "Read the passage: In his 1963 'Letter from Birmingham Jail,' Martin Luther King Jr. wrote: 'Injustice anywhere is a threat to justice everywhere. We are caught in an inescapable network of mutuality, tied in a single garment of destiny.' King uses the metaphor of a 'garment of destiny' primarily to:",
+    "options": [
+      {"label": "A", "text": "Describe the fashion of the civil rights movement"},
+      {"label": "B", "text": "Argue that all people are interconnected and that injustice affects everyone"},
+      {"label": "C", "text": "Suggest that destiny cannot be changed"},
+      {"label": "D", "text": "Criticize the textile industry"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The 'garment of destiny' metaphor illustrates interconnectedness — like threads in a single garment, all people are woven together, so injustice to one threatens all."
+  },
+  {
+    "id": "G9-READ-102",
+    "grade": "G9",
+    "subject": "reading",
+    "topic": "dual_passage_comparison",
+    "question": "Read the passages:\nPassage 1: 'Ocean temperatures in 2025 have risen to levels that marine ecosystems cannot sustain. Coral bleaching events now occur annually rather than once a decade. Without immediate carbon reduction, we will lose 90 percent of coral reefs by 2040.'\nPassage 2: 'While ocean warming is a serious concern, recent data shows that some coral species are adapting to higher temperatures. Researchers in Australia documented heat-resistant coral strains spreading naturally across damaged reefs, offering cautious hope for reef recovery.'\nHow do the two passages differ in perspective?",
+    "options": [
+      {"label": "A", "text": "Passage 1 denies climate change; Passage 2 accepts it"},
+      {"label": "B", "text": "Passage 1 emphasizes urgency and catastrophic outcomes; Passage 2 acknowledges the problem but highlights adaptive resilience"},
+      {"label": "C", "text": "Both passages are equally optimistic"},
+      {"label": "D", "text": "Passage 1 focuses on coral; Passage 2 focuses on fish"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Passage 1 presents an urgent, alarming view with dire predictions. Passage 2 acknowledges warming but introduces evidence of natural adaptation, offering a more cautiously hopeful perspective."
+  },
+  {
+    "id": "G9-READ-103",
+    "grade": "G9",
+    "subject": "reading",
+    "topic": "authors_craft",
+    "question": "Read the passage: The submarine descended into total darkness. At 3,000 meters, the only light came from bioluminescent creatures drifting past the porthole like living constellations. Dr. Okafor pressed her face to the glass and whispered, 'We know more about the surface of Mars than we do about this.' The author chose to include Dr. Okafor's whispered statement most likely to:",
+    "options": [
+      {"label": "A", "text": "Show that Dr. Okafor is afraid of the dark"},
+      {"label": "B", "text": "Emphasize the mystery and vastness of the unexplored deep ocean"},
+      {"label": "C", "text": "Compare the submarine to a spaceship"},
+      {"label": "D", "text": "Prove that Mars exploration is more important"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The whispered comparison to Mars emphasizes how little we know about the deep ocean. The whispering conveys awe, and the Mars reference underscores the ocean's unexplored vastness."
+  },
+  {
+    "id": "G9-READ-104",
+    "grade": "G9",
+    "subject": "reading",
+    "topic": "historical_context",
+    "question": "Read the passage: Frederick Douglass's autobiography, published in 1845, was a radical act. By writing his own life story in eloquent, precise English, Douglass directly refuted the prevailing argument that enslaved people were intellectually inferior. The book became a bestseller in both America and Europe, forcing readers to confront the humanity of those their society had dehumanized. Why was the act of writing the autobiography itself a form of argument?",
+    "options": [
+      {"label": "A", "text": "It proved Douglass was a professional writer"},
+      {"label": "B", "text": "Its very existence as an eloquent text disproved claims of intellectual inferiority"},
+      {"label": "C", "text": "It was the first autobiography ever published"},
+      {"label": "D", "text": "It was written in a foreign language"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage states Douglass's eloquent writing 'directly refuted' claims of intellectual inferiority. The autobiography's quality was itself proof against racist arguments."
+  },
+  {
+    "id": "G9-READ-105",
+    "grade": "G9",
+    "subject": "reading",
+    "topic": "critical_evaluation",
+    "question": "Read the passage: A popular science article claims: 'Studies prove that listening to classical music makes you smarter. Researchers played Mozart to college students, and the students scored higher on spatial reasoning tests immediately afterward.' A critical reader should question this claim because:",
+    "options": [
+      {"label": "A", "text": "Mozart is not considered classical music"},
+      {"label": "B", "text": "The study measures only immediate, temporary effects on one skill, not overall intelligence"},
+      {"label": "C", "text": "College students are too old for the study to matter"},
+      {"label": "D", "text": "The article does not mention the composer's nationality"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The article overgeneralizes from a narrow finding. The study only showed a short-term boost in spatial reasoning, not that music 'makes you smarter' in general."
+  },
+  {
+    "id": "G9-READ-106",
+    "grade": "G9",
+    "subject": "reading",
+    "topic": "complex_vocabulary",
+    "question": "Read the sentence: 'The senator's equivocation during the hearing frustrated journalists, who wanted clear answers rather than deliberately ambiguous responses.' Based on context, 'equivocation' most nearly means:",
+    "options": [
+      {"label": "A", "text": "Loud and passionate speaking"},
+      {"label": "B", "text": "Using vague or misleading language to avoid committing to a position"},
+      {"label": "C", "text": "Providing too many specific details"},
+      {"label": "D", "text": "Refusing to attend the hearing"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Context clues ('deliberately ambiguous responses' and journalists wanting 'clear answers') indicate that equivocation means using vague language to avoid giving a direct answer."
+  },
+  {
+    "id": "G9-READ-107",
+    "grade": "G9",
+    "subject": "reading",
+    "topic": "synthesis_across_texts",
+    "question": "Read the passages:\nText 1: 'Deep-sea mining could provide rare minerals essential for renewable energy technology — cobalt, manganese, and lithium found in polymetallic nodules on the ocean floor.'\nText 2: 'Deep-sea ecosystems are among the least understood on Earth. Mining operations would destroy habitats that took millions of years to develop, potentially eliminating species before we even discover them.'\nWhat tension do these two texts reveal?",
+    "options": [
+      {"label": "A", "text": "The conflict between the need for clean energy materials and the protection of fragile ocean ecosystems"},
+      {"label": "B", "text": "The disagreement about whether the ocean floor exists"},
+      {"label": "C", "text": "The debate over whether renewable energy is worthwhile"},
+      {"label": "D", "text": "The question of who owns the ocean floor"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Text 1 presents deep-sea mining as necessary for renewable energy. Text 2 warns it would destroy irreplaceable ecosystems. The tension is between environmental and energy goals."
+  },
+  {
+    "id": "G9-READ-108",
+    "grade": "G9",
+    "subject": "reading",
+    "topic": "philosophical_themes",
+    "question": "Read the passage: In Plato's Allegory of the Cave, prisoners chained in a cave see only shadows on the wall and believe those shadows are reality. When one prisoner is freed and sees the actual world outside, he is blinded by sunlight and struggles to accept that the shadows were not real. When he returns to tell the others, they refuse to believe him. What philosophical idea does this allegory primarily explore?",
+    "options": [
+      {"label": "A", "text": "Physical exercise is important for health"},
+      {"label": "B", "text": "The difficulty of distinguishing appearance from reality and the resistance to new understanding"},
+      {"label": "C", "text": "Caves are dangerous places to live"},
+      {"label": "D", "text": "Prisoners should be treated more humanely"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Plato's allegory explores epistemology — how we know what is real. The prisoners mistake shadows for reality, and the freed prisoner's struggle illustrates how difficult it is to accept deeper truths."
+  },
+  {
+    "id": "G10-READ-101",
+    "grade": "G10",
+    "subject": "reading",
+    "topic": "rhetorical_analysis",
+    "question": "Read the passage: In her commencement address, the speaker began: 'Ten years ago, I sat exactly where you sit now — terrified, excited, and completely unsure of what came next. I failed my first job interview. I was rejected from graduate school twice. And I am standing here today as the CEO of a company that did not exist when I graduated.' What rhetorical strategy does the speaker primarily employ?",
+    "options": [
+      {"label": "A", "text": "Appeal to authority by listing her credentials"},
+      {"label": "B", "text": "Establishing ethos through vulnerability and personal narrative to connect with the audience"},
+      {"label": "C", "text": "Using statistics to prove her point"},
+      {"label": "D", "text": "Attacking opposing viewpoints"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The speaker builds credibility (ethos) by sharing personal failures and connecting with the audience's current experience. Vulnerability creates trust and relatability."
+  },
+  {
+    "id": "G10-READ-102",
+    "grade": "G10",
+    "subject": "reading",
+    "topic": "dual_passage_comparison",
+    "question": "Read the passages:\nPassage 1 (EU Official, 2025): 'The European Union's AI Act establishes the world's first comprehensive legal framework for artificial intelligence. By classifying AI systems by risk level and banning the most dangerous applications, we are ensuring that innovation serves humanity rather than threatening it. Regulation is not the enemy of progress — it is its guardian.'\nPassage 2 (US Tech Executive, 2025): 'Heavy-handed regulation like the EU AI Act will drive AI innovation to countries with fewer restrictions. The companies building the most advanced AI systems are already reconsidering their European operations. If we want to lead the AI revolution, we need flexible guidelines, not rigid laws that cannot keep pace with technology.'\nWhat is the fundamental disagreement between these two passages?",
+    "options": [
+      {"label": "A", "text": "Whether AI technology actually exists"},
+      {"label": "B", "text": "Whether strict regulation protects society or stifles innovation and competitiveness"},
+      {"label": "C", "text": "Whether Europe or the US has better technology"},
+      {"label": "D", "text": "Whether AI should be used in healthcare"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Passage 1 argues regulation guards progress and protects humanity. Passage 2 argues strict regulation drives innovation elsewhere and stifles competitiveness. The core disagreement is regulation's effect."
+  },
+  {
+    "id": "G10-READ-103",
+    "grade": "G10",
+    "subject": "reading",
+    "topic": "authors_craft",
+    "question": "Read the passage: George Orwell opens 'Nineteen Eighty-Four' with: 'It was a bright cold day in April, and the clocks were striking thirteen.' The detail of clocks striking thirteen serves to:",
+    "options": [
+      {"label": "A", "text": "Indicate the story takes place in a different time zone"},
+      {"label": "B", "text": "Immediately signal that this world operates by different rules than the reader's own"},
+      {"label": "C", "text": "Show that the clocks are broken"},
+      {"label": "D", "text": "Describe a military time system"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Clocks do not normally strike thirteen. This single, unsettling detail immediately tells the reader that the story's world is fundamentally different — something is wrong with this society."
+  },
+  {
+    "id": "G10-READ-104",
+    "grade": "G10",
+    "subject": "reading",
+    "topic": "historical_context",
+    "question": "Read the passage: During the Harlem Renaissance (1920s-1930s), African American writers, musicians, and artists created works that celebrated Black identity and culture. Langston Hughes wrote poems in the rhythms of jazz and blues, while Zora Neale Hurston captured the voices of rural Black communities. This cultural movement was not merely artistic — it was a deliberate assertion of dignity and intellectual equality in a society that systematically denied both. How does understanding the historical context enhance the reader's interpretation of Harlem Renaissance literature?",
+    "options": [
+      {"label": "A", "text": "It explains why the writing style was informal"},
+      {"label": "B", "text": "It reveals that the artistic choices were political acts of resistance and self-definition, not just aesthetic preferences"},
+      {"label": "C", "text": "It proves the literature was of lower quality"},
+      {"label": "D", "text": "It shows the movement had no lasting impact"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Knowing that these artists worked in a society that denied Black intellectual equality reveals that their artistic choices were deliberate assertions of dignity — political acts, not merely aesthetic ones."
+  },
+  {
+    "id": "G10-READ-105",
+    "grade": "G10",
+    "subject": "reading",
+    "topic": "critical_evaluation",
+    "question": "Read the passage: An online article states: 'A new survey of 500 high school students found that 89 percent prefer learning with AI tutors over traditional classroom instruction. This proves that AI should replace human teachers in all subjects.' A critical reader should identify what flaw in this argument?",
+    "options": [
+      {"label": "A", "text": "The survey sample is too small to draw any conclusions"},
+      {"label": "B", "text": "Student preference does not equal educational effectiveness, and the conclusion vastly overgeneralizes the finding"},
+      {"label": "C", "text": "The percentage is too low to be meaningful"},
+      {"label": "D", "text": "Online articles are never trustworthy"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The argument conflates preference with effectiveness and makes a sweeping conclusion ('replace teachers in all subjects') from a narrow finding about preference. This is a logical overreach."
+  },
+  {
+    "id": "G10-READ-106",
+    "grade": "G10",
+    "subject": "reading",
+    "topic": "complex_vocabulary",
+    "question": "Read the sentence: 'The author's prose style is characterized by its laconic precision — she conveys in ten words what most writers need fifty to express, yet nothing essential is lost.' What does 'laconic' mean?",
+    "options": [
+      {"label": "A", "text": "Flowery and elaborate"},
+      {"label": "B", "text": "Using very few words; concise"},
+      {"label": "C", "text": "Emotionally charged"},
+      {"label": "D", "text": "Difficult to understand"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Context clues ('ten words what most writers need fifty') clearly indicate that laconic means using very few words while still being effective."
+  },
+  {
+    "id": "G10-READ-107",
+    "grade": "G10",
+    "subject": "reading",
+    "topic": "synthesis_across_texts",
+    "question": "Read the passages:\nText 1: 'The James Webb Space Telescope revealed in 2025 that a distant exoplanet's atmosphere contains methane and carbon dioxide — a chemical signature that, on Earth, is produced by living organisms. Scientists caution that non-biological processes could also explain these gases.'\nText 2: 'The discovery of biosignature gases on exoplanets does not prove extraterrestrial life exists. However, it narrows the search in ways that were impossible before Webb. Each detection is like finding footprints — they suggest someone walked here, but you still need to see the walker.'\nHow does Text 2 build upon the information in Text 1?",
+    "options": [
+      {"label": "A", "text": "It contradicts Text 1 entirely"},
+      {"label": "B", "text": "It provides the same information in different words"},
+      {"label": "C", "text": "It contextualizes the discovery through analogy and explains its significance within the broader search for life"},
+      {"label": "D", "text": "It argues that the James Webb telescope is not useful"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Text 2 takes the finding from Text 1 and adds interpretive depth through the footprints analogy, explaining what the discovery means for the broader scientific quest."
+  },
+  {
+    "id": "G10-READ-108",
+    "grade": "G10",
+    "subject": "reading",
+    "topic": "philosophical_themes",
+    "question": "Read the passage: In Albert Camus's 'The Myth of Sisyphus,' Camus reimagines the Greek figure condemned to push a boulder up a hill for eternity, only to watch it roll back down each time. Camus concludes: 'One must imagine Sisyphus happy.' He argues that Sisyphus, by accepting his fate and finding meaning in the struggle itself rather than the outcome, achieves a form of freedom. What philosophical concept does Camus explore?",
+    "options": [
+      {"label": "A", "text": "That physical exercise leads to happiness"},
+      {"label": "B", "text": "That meaning can be created through the acceptance of an absurd existence"},
+      {"label": "C", "text": "That Greek myths are historically accurate"},
+      {"label": "D", "text": "That punishment always leads to wisdom"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Camus explores absurdism — the idea that life may lack inherent meaning, but humans can create their own meaning through conscious engagement with existence, even in futile circumstances."
+  },
+  {
+    "id": "G11-READ-101",
+    "grade": "G11",
+    "subject": "reading",
+    "topic": "rhetorical_analysis",
+    "question": "Read the passage: In 'A Modest Proposal' (1729), Jonathan Swift suggests that impoverished Irish families sell their children as food to wealthy English landlords. He writes with the calm, rational tone of an economist presenting data: 'A young healthy child well nursed is at a year old a most delicious, nourishing, and wholesome food.' Swift's use of a rational, matter-of-fact tone to present a horrifying suggestion is an example of what rhetorical technique?",
+    "options": [
+      {"label": "A", "text": "Understatement"},
+      {"label": "B", "text": "Satire through sustained irony — the rational tone exposes the inhumanity of how the poor were actually treated"},
+      {"label": "C", "text": "Direct persuasion to change dietary habits"},
+      {"label": "D", "text": "Emotional appeal through vivid imagery"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Swift uses sustained irony: the calm, economic language treating children as commodities satirizes how English policies already treated the Irish poor as less than human."
+  },
+  {
+    "id": "G11-READ-102",
+    "grade": "G11",
+    "subject": "reading",
+    "topic": "dual_passage_comparison",
+    "question": "Read the passages:\nPassage 1 (2025 EU AI Act Advocate): 'The AI Act categorizes systems by risk: unacceptable (banned), high-risk (regulated), and minimal-risk (unrestricted). This tiered approach ensures safety without blocking low-risk innovation. Facial recognition in public spaces, social scoring, and manipulative AI are rightly prohibited. Citizens deserve protection from technologies that erode autonomy.'\nPassage 2 (2025 US Policy Analyst): 'America's voluntary AI guidelines trust companies to self-regulate, preserving the competitive agility that made Silicon Valley dominant. Mandatory compliance costs would devastate startups. The EU approach may protect citizens in theory, but in practice it exports AI leadership to less regulated markets.'\nWhat assumption underlies each author's argument?",
+    "options": [
+      {"label": "A", "text": "Passage 1 assumes regulation effectively prevents harm; Passage 2 assumes market competition naturally produces ethical outcomes"},
+      {"label": "B", "text": "Both assume AI is too dangerous to develop"},
+      {"label": "C", "text": "Passage 1 assumes all AI is high-risk; Passage 2 assumes all AI is safe"},
+      {"label": "D", "text": "Both assume the same solution but disagree on timeline"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Passage 1 implicitly assumes that government regulation can effectively prevent AI harms. Passage 2 implicitly assumes that free-market competition, not government mandates, best guides responsible AI development."
+  },
+  {
+    "id": "G11-READ-103",
+    "grade": "G11",
+    "subject": "reading",
+    "topic": "authors_craft",
+    "question": "Read the passage: Toni Morrison opens 'Beloved' with: 'l24 was spiteful. Full of a baby's venom.' By giving the house a street number as its name and attributing human malice to it, Morrison achieves several effects in just seven words. What is the primary literary effect of this opening?",
+    "options": [
+      {"label": "A", "text": "It establishes a lighthearted, comedic tone"},
+      {"label": "B", "text": "It immediately blurs the boundary between the physical and the supernatural, establishing the haunted house as a character"},
+      {"label": "C", "text": "It provides the reader with the exact address for plot clarity"},
+      {"label": "D", "text": "It describes a typical neighborhood setting"}
+    ],
+    "correct_answer": "B",
+    "explanation": "By giving the house human emotion ('spiteful') and attributing it to a baby's malice, Morrison makes the house itself a character and signals that the supernatural is woven into this narrative's reality."
+  },
+  {
+    "id": "G11-READ-104",
+    "grade": "G11",
+    "subject": "reading",
+    "topic": "historical_context",
+    "question": "Read the passage: Mary Shelley wrote 'Frankenstein' in 1818, during a period when galvanism — the idea that electricity could reanimate dead tissue — was being publicly demonstrated on executed criminals' bodies. Luigi Galvani's experiments had shown that electrical impulses could make dead frogs' legs twitch, and Giovanni Aldini had applied similar techniques to human corpses before audiences. How does this historical context deepen interpretation of 'Frankenstein'?",
+    "options": [
+      {"label": "A", "text": "It shows Shelley was a trained scientist"},
+      {"label": "B", "text": "It reveals that Shelley's novel engaged with real scientific anxieties of her era, making Victor Frankenstein's ambition frighteningly plausible to contemporary readers"},
+      {"label": "C", "text": "It proves that the novel is nonfiction"},
+      {"label": "D", "text": "It suggests Shelley opposed all scientific progress"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Knowing that real scientists were experimenting with electrical reanimation makes Victor's creation not fantasy but an extension of actual scientific ambition, deepening the novel's ethical urgency."
+  },
+  {
+    "id": "G11-READ-105",
+    "grade": "G11",
+    "subject": "reading",
+    "topic": "critical_evaluation",
+    "question": "Read the passage: A 2025 report by a major AI company claims: 'Our large language model scored in the 90th percentile on the bar exam, demonstrating human-level legal reasoning. AI can now replace entry-level lawyers for routine legal work.' What critical questions should a reader ask about this claim?",
+    "options": [
+      {"label": "A", "text": "Whether the AI company is based in the United States"},
+      {"label": "B", "text": "Whether test performance equals real-world legal reasoning, whether the company has a financial incentive to overstate capabilities, and whether 'routine legal work' is adequately defined"},
+      {"label": "C", "text": "Whether the bar exam is difficult enough"},
+      {"label": "D", "text": "Whether other companies have made similar claims"}
+    ],
+    "correct_answer": "B",
+    "explanation": "A critical reader should question whether a standardized test score translates to real-world competence, note the source's financial bias, and challenge vague terms like 'routine legal work.'"
+  },
+  {
+    "id": "G11-READ-106",
+    "grade": "G11",
+    "subject": "reading",
+    "topic": "complex_vocabulary",
+    "question": "Read the passage: 'The politician's speech was an exercise in specious reasoning. Each argument appeared logically sound on the surface but collapsed under scrutiny, built on premises that were either unverifiable or deliberately misleading.' What does 'specious' mean in this context?",
+    "options": [
+      {"label": "A", "text": "Genuinely brilliant and well-supported"},
+      {"label": "B", "text": "Seemingly plausible but actually false or deceptive"},
+      {"label": "C", "text": "Extremely boring and repetitive"},
+      {"label": "D", "text": "Highly emotional and passionate"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Context clues ('appeared logically sound on the surface but collapsed under scrutiny') define specious: something that seems correct but is actually false or misleading."
+  },
+  {
+    "id": "G11-READ-107",
+    "grade": "G11",
+    "subject": "reading",
+    "topic": "synthesis_across_texts",
+    "question": "Read the passages:\nText 1: 'In 2025, the James Webb Space Telescope detected dimethyl sulfide in the atmosphere of exoplanet K2-18b, a gas that on Earth is produced exclusively by living organisms. The finding, published in Nature Astronomy, has reignited debate about biosignatures as evidence for extraterrestrial life.'\nText 2: 'Philosopher of science Karl Popper argued that a scientific claim must be falsifiable — it must be possible to prove it wrong. The challenge with biosignature detections is that we cannot yet travel to these exoplanets to confirm or deny biological origins, making these claims difficult to falsify in Popper's framework.'\nHow does Text 2 complicate the scientific significance described in Text 1?",
+    "options": [
+      {"label": "A", "text": "It suggests the James Webb Telescope is unreliable"},
+      {"label": "B", "text": "It raises the epistemological problem that biosignature detection, while exciting, cannot currently meet the philosophical standard of falsifiability"},
+      {"label": "C", "text": "It proves that extraterrestrial life does not exist"},
+      {"label": "D", "text": "It argues that philosophy has no role in science"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Text 2 introduces Popper's falsifiability criterion to show that while the detection is significant, the inability to independently verify the biological origin creates a philosophical limitation on the claim."
+  },
+  {
+    "id": "G11-READ-108",
+    "grade": "G11",
+    "subject": "reading",
+    "topic": "philosophical_themes",
+    "question": "Read the passage: In Fyodor Dostoevsky's 'Crime and Punishment,' the protagonist Raskolnikov develops a theory that extraordinary people are morally exempt from ordinary laws — they may commit crimes if those crimes serve a higher purpose. He murders a pawnbroker to test this theory. Yet afterward, he is consumed by guilt, paranoia, and psychological torment until he confesses. What philosophical tension does Dostoevsky explore through Raskolnikov's experience?",
+    "options": [
+      {"label": "A", "text": "The conflict between rational self-interest and the psychological reality of conscience and moral law"},
+      {"label": "B", "text": "The economic inequality between rich and poor"},
+      {"label": "C", "text": "The superiority of intellectual thought over action"},
+      {"label": "D", "text": "The argument that crime should never be punished"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Raskolnikov's theory claims rational justification for crime, but his psychological collapse reveals that conscience and moral awareness cannot be overridden by intellectual argument."
+  },
+  {
+    "id": "G12-READ-101",
+    "grade": "G12",
+    "subject": "reading",
+    "topic": "rhetorical_analysis",
+    "question": "Read the passage: In her essay 'Politics and the English Language' (1946), George Orwell argues: 'Political language is designed to make lies sound truthful and murder respectable, and to give an appearance of solidity to pure wind.' Orwell employs the metaphor 'pure wind' to accomplish which rhetorical purpose?",
+    "options": [
+      {"label": "A", "text": "To describe weather patterns in political speeches"},
+      {"label": "B", "text": "To reduce political rhetoric to its essence — empty, insubstantial air — thereby exposing the vacuity that elaborate language conceals"},
+      {"label": "C", "text": "To praise political language for its flexibility"},
+      {"label": "D", "text": "To suggest that political speeches should be given outdoors"}
+    ],
+    "correct_answer": "B",
+    "explanation": "By calling political language 'pure wind,' Orwell strips away its pretension to reveal emptiness. The metaphor's bluntness contrasts with the elaborate language it criticizes, reinforcing his point through style."
+  },
+  {
+    "id": "G12-READ-102",
+    "grade": "G12",
+    "subject": "reading",
+    "topic": "dual_passage_comparison",
+    "question": "Read the passages:\nPassage 1 (European Regulator, 2025): 'The EU AI Act's requirement that AI systems disclose when content is machine-generated is a fundamental safeguard for democratic discourse. Citizens have an inalienable right to know whether they are interacting with a human or a machine. Transparency is the foundation of informed consent.'\nPassage 2 (AI Researcher, 2025): 'Mandatory AI disclosure requirements presuppose that the distinction between human and AI-generated content remains meaningful. As AI systems become indistinguishable from human output, disclosure labels become a performative ritual — they signal transparency while failing to address the deeper question of whether the content is truthful, regardless of its origin.'\nHow does Passage 2 challenge the philosophical foundation of Passage 1?",
+    "options": [
+      {"label": "A", "text": "It argues that the EU AI Act is too expensive to implement"},
+      {"label": "B", "text": "It questions whether the human/AI distinction that Passage 1 treats as fundamental remains philosophically coherent as AI capabilities converge with human ones"},
+      {"label": "C", "text": "It agrees with Passage 1 but suggests a later implementation date"},
+      {"label": "D", "text": "It argues that AI should never be regulated"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Passage 2 undermines Passage 1's foundational assumption — that the human/AI distinction is meaningful — by arguing that as AI output becomes indistinguishable, the disclosure framework becomes superficial."
+  },
+  {
+    "id": "G12-READ-103",
+    "grade": "G12",
+    "subject": "reading",
+    "topic": "authors_craft",
+    "question": "Read the passage: In Kazuo Ishiguro's 'Never Let Me Go,' the narrator Kathy H. describes her childhood at Hailsham boarding school with nostalgic warmth, recounting games, friendships, and school art exhibitions. Only gradually does the reader realize that Kathy and her classmates are clones raised to be organ donors. Ishiguro never uses the word 'horror.' How does the author's restrained narrative voice function in the novel?",
+    "options": [
+      {"label": "A", "text": "It makes the story boring and unemotional"},
+      {"label": "B", "text": "The calm acceptance of a horrifying reality forces the reader to supply the emotional response the narrator withholds, making the horror more devastating"},
+      {"label": "C", "text": "It proves that Kathy does not understand her situation"},
+      {"label": "D", "text": "It shows that Ishiguro could not write emotionally intense scenes"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Ishiguro's technique transfers emotional labor to the reader. Kathy's matter-of-fact tone about organ donation creates a dissonance that is more unsettling than explicit horror would be."
+  },
+  {
+    "id": "G12-READ-104",
+    "grade": "G12",
+    "subject": "reading",
+    "topic": "historical_context",
+    "question": "Read the passage: Chinua Achebe wrote 'Things Fall Apart' (1958) partly in response to Joseph Conrad's 'Heart of Darkness' (1899), which depicted Africa as a primitive, speechless backdrop for European psychological drama. Achebe later called Conrad's novel 'an offensive and deplorable book' that 'dehumanizes' Africans. By centering his novel on Okonkwo, a complex Igbo leader navigating colonialism, Achebe created what scholars call a 'counter-narrative.' What does it mean to describe 'Things Fall Apart' as a counter-narrative?",
+    "options": [
+      {"label": "A", "text": "It is a sequel to 'Heart of Darkness'"},
+      {"label": "B", "text": "It deliberately challenges and corrects a dominant narrative by presenting the perspective that was silenced or distorted in the original"},
+      {"label": "C", "text": "It argues that colonialism was beneficial"},
+      {"label": "D", "text": "It is written in a language other than English"}
+    ],
+    "correct_answer": "B",
+    "explanation": "A counter-narrative deliberately provides the voice, complexity, and humanity that a dominant narrative denied. Achebe gave African characters the interiority and agency that Conrad's novel withheld."
+  },
+  {
+    "id": "G12-READ-105",
+    "grade": "G12",
+    "subject": "reading",
+    "topic": "critical_evaluation",
+    "question": "Read the passage: 'The James Webb Space Telescope's 2025 discovery of atmospheric biosignatures on two exoplanets has been called the most important scientific finding of the century by several news outlets. NASA scientists, while cautiously optimistic, have emphasized that the data requires years of follow-up observations and that abiotic chemical processes could produce similar signatures.' A critical reader should recognize that the primary tension in this passage is between:",
+    "options": [
+      {"label": "A", "text": "NASA and the James Webb Telescope program"},
+      {"label": "B", "text": "Media sensationalism and scientific caution — the gap between how discoveries are reported and how scientists actually interpret preliminary data"},
+      {"label": "C", "text": "American and European space agencies"},
+      {"label": "D", "text": "Old telescopes and new telescopes"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The passage highlights the gap between media framing ('most important finding of the century') and scientific practice ('years of follow-up,' 'abiotic processes could explain it')."
+  },
+  {
+    "id": "G12-READ-106",
+    "grade": "G12",
+    "subject": "reading",
+    "topic": "complex_vocabulary",
+    "question": "Read the passage: 'The essayist's aphoristic style distills vast ideas into memorable single sentences. Her essay on grief contains the line: \"Sorrow is not a place to visit but a neighborhood where you learn to live.\" Each sentence functions as a self-contained philosophical statement.' What does 'aphoristic' mean?",
+    "options": [
+      {"label": "A", "text": "Long-winded and digressive"},
+      {"label": "B", "text": "Expressed in short, pithy, and memorable statements that convey a general truth"},
+      {"label": "C", "text": "Written in formal academic language"},
+      {"label": "D", "text": "Deliberately confusing and obscure"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Context clues ('distills vast ideas into memorable single sentences' and 'self-contained philosophical statement') define aphoristic as expressing truths in concise, memorable form."
+  },
+  {
+    "id": "G12-READ-107",
+    "grade": "G12",
+    "subject": "reading",
+    "topic": "synthesis_across_texts",
+    "question": "Read the passages:\nText 1: 'Hannah Arendt coined the phrase \"the banality of evil\" after observing Adolf Eichmann's trial in 1961. She argued that Eichmann was not a monster but an ordinary bureaucrat who committed atrocities by refusing to think critically about his actions. Evil, Arendt suggested, does not require malice — only thoughtlessness.'\nText 2: 'In 2025, AI ethicists raised concerns about \"algorithmic banality\" — the way AI systems can perpetuate discrimination not through malicious intent but through uncritical replication of biased training data. Like Eichmann's bureaucratic compliance, these systems follow instructions without moral reasoning.'\nWhat conceptual connection does Text 2 draw from Text 1?",
+    "options": [
+      {"label": "A", "text": "That AI systems are as evil as Nazi war criminals"},
+      {"label": "B", "text": "That the absence of critical thinking — whether in humans or algorithms — can produce harmful outcomes without deliberate malice, extending Arendt's insight to technology"},
+      {"label": "C", "text": "That Arendt's philosophy is outdated"},
+      {"label": "D", "text": "That AI training data is always biased"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Text 2 extends Arendt's concept: just as Eichmann caused harm through thoughtless compliance, AI systems cause harm through uncritical pattern replication. Both texts center on the danger of absent moral reasoning."
+  },
+  {
+    "id": "G12-READ-108",
+    "grade": "G12",
+    "subject": "reading",
+    "topic": "philosophical_themes",
+    "question": "Read the passage: In Jorge Luis Borges's short story 'The Library of Babel,' the universe is an infinite library containing every possible 410-page book — every book that has been or could be written. Most books contain only random letters, but somewhere in the library exists a book containing the complete truth about everything. Inhabitants spend their lives searching for meaningful texts amid overwhelming nonsense. Some worship the library; others despair and destroy books. What epistemological problem does Borges explore through this allegory?",
+    "options": [
+      {"label": "A", "text": "That libraries should be better organized"},
+      {"label": "B", "text": "That the existence of all possible knowledge does not guarantee the ability to find, recognize, or use it — infinite information can be indistinguishable from meaninglessness"},
+      {"label": "C", "text": "That books are more important than digital media"},
+      {"label": "D", "text": "That writing random letters is a valid form of literature"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Borges explores the paradox that total information equals total noise. If every possible text exists, finding truth becomes impossible — infinite potential knowledge collapses into practical meaninglessness."
+  }
+]

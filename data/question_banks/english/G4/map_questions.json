@@ -1,0 +1,1067 @@
+{
+  "batch_name": "MAP_english_G4_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G4",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "reading_comp",
+      "subtopic": "theme",
+      "difficulty": 0.2,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the theme of Joyce Kilmer's poem 'Trees'?",
+        "options": [
+          "A. The sadness of deforestation",
+          "B. Praising nature's beauty",
+          "C. The difficulty of writing poetry",
+          "D. Human superiority over nature"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What is the theme of Joyce Kilmer's poem 'Trees'?",
+        "options": [
+          "A. The sadness of deforestation",
+          "B. Praising nature's beauty",
+          "C. The difficulty of writing poetry",
+          "D. Human superiority over nature"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The poem celebrates and praises the beauty of trees and nature.",
+      "explanation_zh": "The poem celebrates and praises the beauty of trees and nature.",
+      "tags": [
+        "theme",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "theme",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "reading_comp",
+      "subtopic": "authors_purpose",
+      "difficulty": 0.21,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A passage about Antarctica mentions its size compared to Europe and Australia. Why does the author mention these continents?",
+        "options": [
+          "A. To show how big Antarctica is",
+          "B. To compare their climates",
+          "C. To discuss their wildlife",
+          "D. To explain their history"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "A passage about Antarctica mentions its size compared to Europe and Australia. Why does the author mention these continents?",
+        "options": [
+          "A. To show how big Antarctica is",
+          "B. To compare their climates",
+          "C. To discuss their wildlife",
+          "D. To explain their history"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "The author uses familiar continents as reference points to help readers understand Antarctica's enormous size.",
+      "explanation_zh": "The author uses familiar continents as reference points to help readers understand Antarctica's enormous size.",
+      "tags": [
+        "authors_purpose",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "authors_purpose",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "vocabulary",
+      "subtopic": "word_parts",
+      "difficulty": 0.23,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In the word 'unemployed', what does the prefix 'un-' mean?",
+        "options": [
+          "A. Again",
+          "B. Before",
+          "C. Under",
+          "D. Not"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "In the word 'unemployed', what does the prefix 'un-' mean?",
+        "options": [
+          "A. Again",
+          "B. Before",
+          "C. Under",
+          "D. Not"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "The prefix 'un-' means 'not'. Unemployed = not employed.",
+      "explanation_zh": "The prefix 'un-' means 'not'. Unemployed = not employed.",
+      "tags": [
+        "prefix_meaning",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "prefix_meaning",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "grammar",
+      "subtopic": "plurals",
+      "difficulty": 0.24,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the correct spelling for more than one wolf?",
+        "options": [
+          "A. Wolfs",
+          "B. Wolfes",
+          "C. Wolves",
+          "D. Wolvs"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is the correct spelling for more than one wolf?",
+        "options": [
+          "A. Wolfs",
+          "B. Wolfes",
+          "C. Wolves",
+          "D. Wolvs"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Words ending in 'f' change to 'ves' in plural form: wolf → wolves.",
+      "explanation_zh": "Words ending in 'f' change to 'ves' in plural form: wolf → wolves.",
+      "tags": [
+        "plural_rules",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "plural_rules",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "grammar",
+      "subtopic": "parts_of_speech",
+      "difficulty": 0.25,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the definition of a proper noun?",
+        "options": [
+          "A. A word that describes an action",
+          "B. A word that describes another word",
+          "C. A general word for a person, place, or thing",
+          "D. A word that names a particular person, place, or thing"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "What is the definition of a proper noun?",
+        "options": [
+          "A. A word that describes an action",
+          "B. A word that describes another word",
+          "C. A general word for a person, place, or thing",
+          "D. A word that names a particular person, place, or thing"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "A proper noun names a specific, particular person, place, or thing and is always capitalized.",
+      "explanation_zh": "A proper noun names a specific, particular person, place, or thing and is always capitalized.",
+      "tags": [
+        "proper_nouns",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "proper_nouns",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "grammar",
+      "subtopic": "parts_of_speech",
+      "difficulty": 0.27,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In the sentence 'Ethan almost left his white socks at the gym', what is the subject?",
+        "options": [
+          "A. socks",
+          "B. gym",
+          "C. left",
+          "D. Ethan"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "In the sentence 'Ethan almost left his white socks at the gym', what is the subject?",
+        "options": [
+          "A. socks",
+          "B. gym",
+          "C. left",
+          "D. Ethan"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "The subject is the person performing the action. Ethan is the one who almost left his socks.",
+      "explanation_zh": "The subject is the person performing the action. Ethan is the one who almost left his socks.",
+      "tags": [
+        "subject_identification",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "subject_identification",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "writing",
+      "subtopic": "research",
+      "difficulty": 0.28,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is required in research writing?",
+        "options": [
+          "A. Personal opinions only",
+          "B. Fictional characters",
+          "C. A list of references",
+          "D. Rhyming words"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is required in research writing?",
+        "options": [
+          "A. Personal opinions only",
+          "B. Fictional characters",
+          "C. A list of references",
+          "D. Rhyming words"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Research writing requires citing sources and providing a list of references to support the information presented.",
+      "explanation_zh": "Research writing requires citing sources and providing a list of references to support the information presented.",
+      "tags": [
+        "research_writing",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-LANG-004",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "research_writing",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "main_idea_vs_details",
+      "subtopic": null,
+      "difficulty": 0.3,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Many schools now use AI assistants to help students learn. These computer programs can answer questions, explain math problems, and even help with writing. Students can ask the AI for help at any time, not just during class. Some teachers say AI helps students who are shy about raising their hand. What is the main idea of this passage?",
+        "options": [
+          "A. AI programs can solve math problems",
+          "B. AI assistants are being used in schools to help students learn",
+          "C. Some students are shy",
+          "D. Teachers like using computers"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Many schools now use AI assistants to help students learn. These computer programs can answer questions, explain math problems, and even help with writing. Students can ask the AI for help at any time, not just during class. Some teachers say AI helps students who are shy about raising their hand. What is the main idea of this passage?",
+        "options": [
+          "A. AI programs can solve math problems",
+          "B. AI assistants are being used in schools to help students learn",
+          "C. Some students are shy",
+          "D. Teachers like using computers"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The main idea is that AI assistants are being used in schools to help students learn. The other options are supporting details.",
+      "explanation_zh": "The main idea is that AI assistants are being used in schools to help students learn. The other options are supporting details.",
+      "tags": [
+        "main_idea_vs_details",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "main_idea_vs_details",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "inference",
+      "subtopic": null,
+      "difficulty": 0.31,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Jake looked at the scoreboard and groaned. His team was behind by ten points with only two minutes left. The coach patted his shoulder and said, 'You played your best.' Jake nodded and forced a small smile. How does Jake most likely feel?",
+        "options": [
+          "A. Proud of winning",
+          "B. Disappointed but accepting",
+          "C. Angry at the coach",
+          "D. Confused about the score"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Jake looked at the scoreboard and groaned. His team was behind by ten points with only two minutes left. The coach patted his shoulder and said, 'You played your best.' Jake nodded and forced a small smile. How does Jake most likely feel?",
+        "options": [
+          "A. Proud of winning",
+          "B. Disappointed but accepting",
+          "C. Angry at the coach",
+          "D. Confused about the score"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Jake groaned (showing disappointment) but forced a small smile and nodded when the coach encouraged him, showing he is accepting the loss.",
+      "explanation_zh": "Jake groaned (showing disappointment) but forced a small smile and nodded when the coach encouraged him, showing he is accepting the loss.",
+      "tags": [
+        "inference",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "inference",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "compare_contrast",
+      "subtopic": null,
+      "difficulty": 0.32,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: The Arctic and the Antarctic are both freezing cold places at the ends of the Earth. However, the Arctic is an ocean covered by ice, while the Antarctic is a continent covered by ice. Polar bears live in the Arctic, but penguins live in the Antarctic. You will never find polar bears and penguins living together in the wild. What is one way the Arctic and Antarctic are alike?",
+        "options": [
+          "A. Both have polar bears",
+          "B. Both are very cold",
+          "C. Both are continents",
+          "D. Both have penguins"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: The Arctic and the Antarctic are both freezing cold places at the ends of the Earth. However, the Arctic is an ocean covered by ice, while the Antarctic is a continent covered by ice. Polar bears live in the Arctic, but penguins live in the Antarctic. You will never find polar bears and penguins living together in the wild. What is one way the Arctic and Antarctic are alike?",
+        "options": [
+          "A. Both have polar bears",
+          "B. Both are very cold",
+          "C. Both are continents",
+          "D. Both have penguins"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage states that both the Arctic and Antarctic are 'freezing cold places at the ends of the Earth.'",
+      "explanation_zh": "The passage states that both the Arctic and Antarctic are 'freezing cold places at the ends of the Earth.'",
+      "tags": [
+        "compare_contrast",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "compare_contrast",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "text_structure",
+      "subtopic": null,
+      "difficulty": 0.34,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: The school playground had a big problem: there was nowhere for students to sit and eat lunch outside. Students had to sit on the ground or stand. The PTA raised money and bought ten new picnic tables. Now students enjoy eating lunch outdoors every day. How is this passage organized?",
+        "options": [
+          "A. Cause and effect",
+          "B. Compare and contrast",
+          "C. Problem and solution",
+          "D. Chronological order"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: The school playground had a big problem: there was nowhere for students to sit and eat lunch outside. Students had to sit on the ground or stand. The PTA raised money and bought ten new picnic tables. Now students enjoy eating lunch outdoors every day. How is this passage organized?",
+        "options": [
+          "A. Cause and effect",
+          "B. Compare and contrast",
+          "C. Problem and solution",
+          "D. Chronological order"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The passage presents a problem (no place to sit outside) and then a solution (PTA bought picnic tables). This is problem-and-solution structure.",
+      "explanation_zh": "The passage presents a problem (no place to sit outside) and then a solution (PTA bought picnic tables). This is problem-and-solution structure.",
+      "tags": [
+        "text_structure",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "text_structure",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "reading_comp",
+      "subtopic": "figurative_language",
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: 'Time is money,' said Mr. Clark to his students. What type of figurative language is this?",
+        "options": [
+          "A. Simile",
+          "B. Metaphor",
+          "C. Personification",
+          "D. Alliteration"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: 'Time is money,' said Mr. Clark to his students. What type of figurative language is this?",
+        "options": [
+          "A. Simile",
+          "B. Metaphor",
+          "C. Personification",
+          "D. Alliteration"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "This is a metaphor because it says time IS money — it directly compares two unlike things without using 'like' or 'as.'",
+      "explanation_zh": "This is a metaphor because it says time IS money — it directly compares two unlike things without using 'like' or 'as.'",
+      "tags": [
+        "figurative_language",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "figurative_language",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "reading_comp",
+      "subtopic": "authors_purpose",
+      "difficulty": 0.36,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: AI assistants are computer programs that can talk to you and answer your questions. They work by reading millions of books and websites to learn about many topics. When you type a question, the AI finds the best answer it can. Some AI assistants can even write stories or explain science experiments step by step. Why did the author most likely write this passage?",
+        "options": [
+          "A. To persuade readers to buy an AI assistant",
+          "B. To inform readers about how AI assistants work",
+          "C. To entertain readers with a story about robots",
+          "D. To warn readers about the dangers of AI"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: AI assistants are computer programs that can talk to you and answer your questions. They work by reading millions of books and websites to learn about many topics. When you type a question, the AI finds the best answer it can. Some AI assistants can even write stories or explain science experiments step by step. Why did the author most likely write this passage?",
+        "options": [
+          "A. To persuade readers to buy an AI assistant",
+          "B. To inform readers about how AI assistants work",
+          "C. To entertain readers with a story about robots",
+          "D. To warn readers about the dangers of AI"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage gives factual information about what AI assistants are and how they work. The author's purpose is to inform.",
+      "explanation_zh": "The passage gives factual information about what AI assistants are and how they work. The author's purpose is to inform.",
+      "tags": [
+        "authors_purpose",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "authors_purpose",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: The ancient castle was magnificent, with tall towers and colorful stained-glass windows that glowed in the sunlight. What does 'magnificent' most likely mean?",
+        "options": [
+          "A. Very old and falling apart",
+          "B. Very small and plain",
+          "C. Very impressive and beautiful",
+          "D. Very dark and scary"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: The ancient castle was magnificent, with tall towers and colorful stained-glass windows that glowed in the sunlight. What does 'magnificent' most likely mean?",
+        "options": [
+          "A. Very old and falling apart",
+          "B. Very small and plain",
+          "C. Very impressive and beautiful",
+          "D. Very dark and scary"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Context clues like 'tall towers,' 'colorful stained-glass windows,' and 'glowed in the sunlight' describe something impressive and beautiful.",
+      "explanation_zh": "Context clues like 'tall towers,' 'colorful stained-glass windows,' and 'glowed in the sunlight' describe something impressive and beautiful.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "reading_comp",
+      "subtopic": "point_of_view",
+      "difficulty": 0.39,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: I walked into the classroom and could not believe my eyes. Every desk had a brand-new laptop on it! My teacher, Mrs. Garcia, smiled and said we would use them for our science project. I could barely contain my excitement. From whose point of view is this passage told?",
+        "options": [
+          "A. Mrs. Garcia",
+          "B. A student in the class",
+          "C. The principal",
+          "D. A narrator who is not in the story"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: I walked into the classroom and could not believe my eyes. Every desk had a brand-new laptop on it! My teacher, Mrs. Garcia, smiled and said we would use them for our science project. I could barely contain my excitement. From whose point of view is this passage told?",
+        "options": [
+          "A. Mrs. Garcia",
+          "B. A student in the class",
+          "C. The principal",
+          "D. A narrator who is not in the story"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage uses 'I' and 'my,' showing first-person point of view. The narrator is a student who walks into the classroom and talks about 'my teacher.'",
+      "explanation_zh": "The passage uses 'I' and 'my,' showing first-person point of view. The narrator is a student who walks into the classroom and talks about 'my teacher.'",
+      "tags": [
+        "point_of_view",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G4",
+        "original_topic": "point_of_view",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "subject_verb_agreement",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence has correct subject-verb agreement?",
+        "options": [
+          "A. The group of students are ready for the test.",
+          "B. The group of students is ready for the test.",
+          "C. The group of students were ready for the test.",
+          "D. The group of students have been ready for the test."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence has correct subject-verb agreement?",
+        "options": [
+          "A. The group of students are ready for the test.",
+          "B. The group of students is ready for the test.",
+          "C. The group of students were ready for the test.",
+          "D. The group of students have been ready for the test."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The subject is 'group' (singular), not 'students.' A singular subject takes a singular verb: 'group...is ready.'",
+      "explanation_zh": "The subject is 'group' (singular), not 'students.' A singular subject takes a singular verb: 'group...is ready.'",
+      "tags": [
+        "subject_verb_agreement",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "subject_verb_agreement",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "pronoun_types",
+      "subtopic": null,
+      "difficulty": 0.42,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the correct pronoun?",
+        "options": [
+          "A. Him and Jake went to soccer practice.",
+          "B. He and Jake went to soccer practice.",
+          "C. Jake and him went to soccer practice.",
+          "D. Me and Jake went to soccer practice."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the correct pronoun?",
+        "options": [
+          "A. Him and Jake went to soccer practice.",
+          "B. He and Jake went to soccer practice.",
+          "C. Jake and him went to soccer practice.",
+          "D. Me and Jake went to soccer practice."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Subject pronouns (he, she, I) are used when the pronoun is the subject of the sentence. 'He and Jake' is correct because both are subjects performing the action.",
+      "explanation_zh": "Subject pronouns (he, she, I) are used when the pronoun is the subject of the sentence. 'He and Jake' is correct because both are subjects performing the action.",
+      "tags": [
+        "pronoun_types",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "pronoun_types",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "quotation_marks",
+      "subtopic": null,
+      "difficulty": 0.43,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses quotation marks and punctuation correctly?",
+        "options": [
+          "A. Mom said \"please clean your room\".",
+          "B. Mom said, \"Please clean your room.\"",
+          "C. Mom said \"Please clean your room\".",
+          "D. Mom said, \"please clean your room\"."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses quotation marks and punctuation correctly?",
+        "options": [
+          "A. Mom said \"please clean your room\".",
+          "B. Mom said, \"Please clean your room.\"",
+          "C. Mom said \"Please clean your room\".",
+          "D. Mom said, \"please clean your room\"."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A comma follows the speaker tag before the quote. The first word of a direct quote is capitalized. The period goes inside the closing quotation mark.",
+      "explanation_zh": "A comma follows the speaker tag before the quote. The first word of a direct quote is capitalized. The period goes inside the closing quotation mark.",
+      "tags": [
+        "quotation_marks",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "quotation_marks",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "apostrophes",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the apostrophe correctly to show possession?",
+        "options": [
+          "A. The dogs' bone was buried in the yard. (one dog)",
+          "B. The dog's bone was buried in the yard. (one dog)",
+          "C. The dogs bone was buried in the yard. (one dog)",
+          "D. The dogs's bone was buried in the yard. (one dog)"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the apostrophe correctly to show possession?",
+        "options": [
+          "A. The dogs' bone was buried in the yard. (one dog)",
+          "B. The dog's bone was buried in the yard. (one dog)",
+          "C. The dogs bone was buried in the yard. (one dog)",
+          "D. The dogs's bone was buried in the yard. (one dog)"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "For a singular noun, add 's to show possession: dog's (one dog owns the bone). Dogs' would mean more than one dog.",
+      "explanation_zh": "For a singular noun, add 's to show possession: dog's (one dog owns the bone). Dogs' would mean more than one dog.",
+      "tags": [
+        "apostrophes",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "apostrophes",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "conjunctions",
+      "subtopic": null,
+      "difficulty": 0.46,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which conjunction best completes this sentence? 'I wanted to play outside, _______ it was raining heavily.'",
+        "options": [
+          "A. and",
+          "B. so",
+          "C. but",
+          "D. or"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which conjunction best completes this sentence? 'I wanted to play outside, _______ it was raining heavily.'",
+        "options": [
+          "A. and",
+          "B. so",
+          "C. but",
+          "D. or"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'But' is the correct conjunction because it shows contrast. The speaker wanted to play outside; however, rain prevented it. The two ideas oppose each other.",
+      "explanation_zh": "'But' is the correct conjunction because it shows contrast. The speaker wanted to play outside; however, rain prevented it. The two ideas oppose each other.",
+      "tags": [
+        "conjunctions",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "conjunctions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "writing",
+      "subtopic": "paragraph_structure",
+      "difficulty": 0.47,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which is the best topic sentence for a paragraph about how an AI assistant called ChatGPT can help students with homework?",
+        "options": [
+          "A. ChatGPT was created by a company called OpenAI.",
+          "B. AI assistants like ChatGPT can help students study more effectively by explaining difficult concepts.",
+          "C. Many people use computers every day.",
+          "D. Homework can be very hard sometimes."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which is the best topic sentence for a paragraph about how an AI assistant called ChatGPT can help students with homework?",
+        "options": [
+          "A. ChatGPT was created by a company called OpenAI.",
+          "B. AI assistants like ChatGPT can help students study more effectively by explaining difficult concepts.",
+          "C. Many people use computers every day.",
+          "D. Homework can be very hard sometimes."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A good topic sentence introduces the main idea of the paragraph. Option B directly states how AI assistants can help students, which is the paragraph's focus.",
+      "explanation_zh": "A good topic sentence introduces the main idea of the paragraph. Option B directly states how AI assistants can help students, which is the paragraph's focus.",
+      "tags": [
+        "topic_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "topic_sentences",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "homophones",
+      "subtopic": null,
+      "difficulty": 0.49,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Choose the correct words: '_______ going to bring _______ lunches to the picnic over _______.'",
+        "options": [
+          "A. Their / they're / there",
+          "B. They're / their / there",
+          "C. There / their / they're",
+          "D. They're / there / their"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Choose the correct words: '_______ going to bring _______ lunches to the picnic over _______.'",
+        "options": [
+          "A. Their / they're / there",
+          "B. They're / their / there",
+          "C. There / their / they're",
+          "D. They're / there / their"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'They're' = they are (going). 'Their' = belonging to them (lunches). 'There' = a place (over there).",
+      "explanation_zh": "'They're' = they are (going). 'Their' = belonging to them (lunches). 'There' = a place (over there).",
+      "tags": [
+        "homophones",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "homophones",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G4",
+      "topic": "paragraph_organization",
+      "subtopic": null,
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In a paragraph, a student wrote these sentences out of order. Which is the correct sequence? (1) Finally, the butterfly emerges from the chrysalis. (2) First, the butterfly lays eggs on a leaf. (3) Next, a caterpillar hatches from the egg. (4) Then, the caterpillar forms a chrysalis.",
+        "options": [
+          "A. 1, 2, 3, 4",
+          "B. 2, 3, 4, 1",
+          "C. 3, 2, 4, 1",
+          "D. 2, 4, 3, 1"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In a paragraph, a student wrote these sentences out of order. Which is the correct sequence? (1) Finally, the butterfly emerges from the chrysalis. (2) First, the butterfly lays eggs on a leaf. (3) Next, a caterpillar hatches from the egg. (4) Then, the caterpillar forms a chrysalis.",
+        "options": [
+          "A. 1, 2, 3, 4",
+          "B. 2, 3, 4, 1",
+          "C. 3, 2, 4, 1",
+          "D. 2, 4, 3, 1"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The signal words show the order: First (eggs) -> Next (caterpillar hatches) -> Then (chrysalis) -> Finally (butterfly emerges). The correct sequence is 2, 3, 4, 1.",
+      "explanation_zh": "The signal words show the order: First (eggs) -> Next (caterpillar hatches) -> Then (chrysalis) -> Finally (butterfly emerges). The correct sequence is 2, 3, 4, 1.",
+      "tags": [
+        "paragraph_organization",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G4",
+        "original_topic": "paragraph_organization",
+        "is_seed": false
+      }
+    }
+  ]
+}

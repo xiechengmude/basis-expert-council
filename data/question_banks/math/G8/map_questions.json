@@ -1,0 +1,639 @@
+{
+  "batch_name": "MAP_math_G8_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G8",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "exterior_angles",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the value of angle α in a triangle where one exterior angle measures 145° and an adjacent interior angle is 60°?",
+        "options": [
+          "A. 65°",
+          "B. 70°",
+          "C. 75°",
+          "D. 85°"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "What is the value of angle α in a triangle where one exterior angle measures 145° and an adjacent interior angle is 60°?",
+        "options": [
+          "A. 65°",
+          "B. 70°",
+          "C. 75°",
+          "D. 85°"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "By the Exterior Angle Theorem, the exterior angle equals the sum of the two remote interior angles: 60° + α = 145°, so α = 85°.",
+      "explanation_zh": "By the Exterior Angle Theorem, the exterior angle equals the sum of the two remote interior angles: 60° + α = 145°, so α = 85°.",
+      "tags": [
+        "exterior_angles",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "exterior_angles",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "ratio_changes",
+      "subtopic": null,
+      "difficulty": 0.42,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A school choir has 84 students. The ratio of boys to girls is 3:4. After auditions, 12 new girls join and 6 boys leave. What is the new ratio of girls to boys?",
+        "options": [
+          "A. 4:3",
+          "B. 5:2",
+          "C. 2:1",
+          "D. 8:3"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A school choir has 84 students. The ratio of boys to girls is 3:4. After auditions, 12 new girls join and 6 boys leave. What is the new ratio of girls to boys?",
+        "options": [
+          "A. 4:3",
+          "B. 5:2",
+          "C. 2:1",
+          "D. 8:3"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Original: 36 boys, 48 girls. After changes: 30 boys, 60 girls. New ratio: 60:30 = 2:1.",
+      "explanation_zh": "Original: 36 boys, 48 girls. After changes: 30 boys, 60 girls. New ratio: 60:30 = 2:1.",
+      "tags": [
+        "ratio_changes",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "ratio_changes",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "linear_equations",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Solve for y: 2y/3 + 17 = −51",
+        "options": [
+          "A. y = −76",
+          "B. y = −102",
+          "C. y = −136",
+          "D. y = −174"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Solve for y: 2y/3 + 17 = −51",
+        "options": [
+          "A. y = −76",
+          "B. y = −102",
+          "C. y = −136",
+          "D. y = −174"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Subtract 17: 2y/3 = −68. Multiply by 3/2: y = −102.",
+      "explanation_zh": "Subtract 17: 2y/3 = −68. Multiply by 3/2: y = −102.",
+      "tags": [
+        "linear_equations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "linear_equations",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "probability_without_replacement",
+      "subtopic": null,
+      "difficulty": 0.47,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A baseball cap contains 9 baseballs: 4 blue, 3 white, 2 orange. A player selects 3 one at a time without replacement. What is the probability that none are blue?",
+        "options": [
+          "A. 1/6",
+          "B. 10/27",
+          "C. 5/42",
+          "D. 35/108"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A baseball cap contains 9 baseballs: 4 blue, 3 white, 2 orange. A player selects 3 one at a time without replacement. What is the probability that none are blue?",
+        "options": [
+          "A. 1/6",
+          "B. 10/27",
+          "C. 5/42",
+          "D. 35/108"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "P(no blue) = (5/9) × (4/8) × (3/7) = 60/504 = 5/42.",
+      "explanation_zh": "P(no blue) = (5/9) × (4/8) × (3/7) = 60/504 = 5/42.",
+      "tags": [
+        "probability_without_replacement",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-004",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "probability_without_replacement",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "linear_equations",
+      "subtopic": null,
+      "difficulty": 0.49,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A plumber charges $50 for a house call plus $35 per hour. If the total bill was $207.50, how many hours did the plumber work?",
+        "options": [
+          "A. 3.5 hours",
+          "B. 4 hours",
+          "C. 4.25 hours",
+          "D. 4.5 hours"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "A plumber charges $50 for a house call plus $35 per hour. If the total bill was $207.50, how many hours did the plumber work?",
+        "options": [
+          "A. 3.5 hours",
+          "B. 4 hours",
+          "C. 4.25 hours",
+          "D. 4.5 hours"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Set up equation: 50 + 35h = 207.50. Subtract 50: 35h = 157.50. Divide: h = 157.50/35 = 4.5 hours.",
+      "explanation_zh": "Set up equation: 50 + 35h = 207.50. Subtract 50: 35h = 157.50. Divide: h = 157.50/35 = 4.5 hours.",
+      "tags": [
+        "linear_equations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "linear_equations",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "pythagorean_theorem",
+      "subtopic": null,
+      "difficulty": 0.52,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A 13-foot ladder leans against a wall. The base of the ladder is 5 feet from the wall. How high up the wall does the ladder reach?",
+        "options": [
+          "A. 8 feet",
+          "B. 10 feet",
+          "C. 12 feet",
+          "D. 14 feet"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A 13-foot ladder leans against a wall. The base of the ladder is 5 feet from the wall. How high up the wall does the ladder reach?",
+        "options": [
+          "A. 8 feet",
+          "B. 10 feet",
+          "C. 12 feet",
+          "D. 14 feet"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Using Pythagorean theorem: a² + b² = c². So 5² + b² = 13² → 25 + b² = 169 → b² = 144 → b = 12 feet.",
+      "explanation_zh": "Using Pythagorean theorem: a² + b² = c². So 5² + b² = 13² → 25 + b² = 169 → b² = 144 → b = 12 feet.",
+      "tags": [
+        "pythagorean_theorem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "pythagorean_theorem",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "transformations",
+      "subtopic": null,
+      "difficulty": 0.54,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Triangle ABC has vertices A(1, 2), B(4, 2), and C(4, 6). If the triangle is reflected over the y-axis, what are the new coordinates of vertex B?",
+        "options": [
+          "A. (−4, 2)",
+          "B. (4, −2)",
+          "C. (−4, −2)",
+          "D. (−2, 4)"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Triangle ABC has vertices A(1, 2), B(4, 2), and C(4, 6). If the triangle is reflected over the y-axis, what are the new coordinates of vertex B?",
+        "options": [
+          "A. (−4, 2)",
+          "B. (4, −2)",
+          "C. (−4, −2)",
+          "D. (−2, 4)"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Reflection over the y-axis negates the x-coordinate: B(4, 2) → B'(−4, 2).",
+      "explanation_zh": "Reflection over the y-axis negates the x-coordinate: B(4, 2) → B'(−4, 2).",
+      "tags": [
+        "transformations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "transformations",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "scatter_plots",
+      "subtopic": null,
+      "difficulty": 0.56,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A scatter plot shows hours studied vs. test scores for 20 students. The line of best fit is y = 5x + 55. Based on this model, what score would be predicted for a student who studies 6 hours?",
+        "options": [
+          "A. 80",
+          "B. 85",
+          "C. 90",
+          "D. 95"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A scatter plot shows hours studied vs. test scores for 20 students. The line of best fit is y = 5x + 55. Based on this model, what score would be predicted for a student who studies 6 hours?",
+        "options": [
+          "A. 80",
+          "B. 85",
+          "C. 90",
+          "D. 95"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Substitute x = 6: y = 5(6) + 55 = 30 + 55 = 85.",
+      "explanation_zh": "Substitute x = 6: y = 5(6) + 55 = 30 + 55 = 85.",
+      "tags": [
+        "scatter_plots",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "scatter_plots",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "irrational_numbers",
+      "subtopic": null,
+      "difficulty": 0.58,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which of the following numbers is irrational?",
+        "options": [
+          "A. 0.3333...",
+          "B. sqrt(49)",
+          "C. sqrt(50)",
+          "D. −7/4"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which of the following numbers is irrational?",
+        "options": [
+          "A. 0.3333...",
+          "B. sqrt(49)",
+          "C. sqrt(50)",
+          "D. −7/4"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "0.333... = 1/3 (rational), sqrt(49) = 7 (rational), −7/4 (rational). sqrt(50) cannot be expressed as a fraction, so it is irrational.",
+      "explanation_zh": "0.333... = 1/3 (rational), sqrt(49) = 7 (rational), −7/4 (rational). sqrt(50) cannot be expressed as a fraction, so it is irrational.",
+      "tags": [
+        "irrational_numbers",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G8-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "irrational_numbers",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "exponent_rules",
+      "subtopic": null,
+      "difficulty": 0.61,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Simplify: (2x³)⁴ / (4x²)",
+        "options": [
+          "A. 4x¹⁰",
+          "B. 2x¹⁰",
+          "C. 4x⁵",
+          "D. 8x¹⁰"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Simplify: (2x³)⁴ / (4x²)",
+        "options": [
+          "A. 4x¹⁰",
+          "B. 2x¹⁰",
+          "C. 4x⁵",
+          "D. 8x¹⁰"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "(2x³)⁴ = 2⁴ × x¹² = 16x¹². Then 16x¹² / (4x²) = 4x¹⁰.",
+      "explanation_zh": "(2x³)⁴ = 2⁴ × x¹² = 16x¹². Then 16x¹² / (4x²) = 4x¹⁰.",
+      "tags": [
+        "exponent_rules",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "exponent_rules",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "volume_cylinders",
+      "subtopic": null,
+      "difficulty": 0.63,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A cylindrical water tank has a radius of 3 feet and a height of 8 feet. What is its volume? (Use pi ≈ 3.14)",
+        "options": [
+          "A. 75.36 ft³",
+          "B. 150.72 ft³",
+          "C. 226.08 ft³",
+          "D. 301.44 ft³"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A cylindrical water tank has a radius of 3 feet and a height of 8 feet. What is its volume? (Use pi ≈ 3.14)",
+        "options": [
+          "A. 75.36 ft³",
+          "B. 150.72 ft³",
+          "C. 226.08 ft³",
+          "D. 301.44 ft³"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "V = pi × r² × h = 3.14 × 9 × 8 = 3.14 × 72 = 226.08 ft³.",
+      "explanation_zh": "V = pi × r² × h = 3.14 × 9 × 8 = 3.14 × 72 = 226.08 ft³.",
+      "tags": [
+        "volume_cylinders",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "volume_cylinders",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "systems_intro_starship",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "SpaceX's Starship carries x tons of payload and the booster weighs y tons. Together they weigh 5,000 tons fully fueled. The booster weighs 3,400 tons more than the payload. What is the payload capacity (x)?",
+        "options": [
+          "A. 600 tons",
+          "B. 800 tons",
+          "C. 1,000 tons",
+          "D. 1,200 tons"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "SpaceX's Starship carries x tons of payload and the booster weighs y tons. Together they weigh 5,000 tons fully fueled. The booster weighs 3,400 tons more than the payload. What is the payload capacity (x)?",
+        "options": [
+          "A. 600 tons",
+          "B. 800 tons",
+          "C. 1,000 tons",
+          "D. 1,200 tons"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Set up: x + y = 5000 and y = x + 3400. Substitute: x + (x + 3400) = 5000 → 2x = 1600 → x = 800 tons.",
+      "explanation_zh": "Set up: x + y = 5000 and y = x + 3400. Substitute: x + (x + 3400) = 5000 → 2x = 1600 → x = 800 tons.",
+      "tags": [
+        "systems_intro_starship",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "systems_intro_starship",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "scientific_notation_starship",
+      "subtopic": null,
+      "difficulty": 0.68,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The Starship rocket produces approximately 7.59 × 10⁷ newtons of thrust at liftoff. Express this number in standard form.",
+        "options": [
+          "A. 759,000",
+          "B. 7,590,000",
+          "C. 75,900,000",
+          "D. 759,000,000"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "The Starship rocket produces approximately 7.59 × 10⁷ newtons of thrust at liftoff. Express this number in standard form.",
+        "options": [
+          "A. 759,000",
+          "B. 7,590,000",
+          "C. 75,900,000",
+          "D. 759,000,000"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "7.59 × 10⁷ = 7.59 × 10,000,000 = 75,900,000.",
+      "explanation_zh": "7.59 × 10⁷ = 7.59 × 10,000,000 = 75,900,000.",
+      "tags": [
+        "scientific_notation_starship",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "scientific_notation_starship",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G8",
+      "topic": "linear_functions",
+      "subtopic": null,
+      "difficulty": 0.7,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The function f(x) = 2x − 3 represents the elevation (in thousands of feet) of a drone after x minutes. What is the elevation after 4.5 minutes?",
+        "options": [
+          "A. 5,000 ft",
+          "B. 6,000 ft",
+          "C. 7,000 ft",
+          "D. 9,000 ft"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "The function f(x) = 2x − 3 represents the elevation (in thousands of feet) of a drone after x minutes. What is the elevation after 4.5 minutes?",
+        "options": [
+          "A. 5,000 ft",
+          "B. 6,000 ft",
+          "C. 7,000 ft",
+          "D. 9,000 ft"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "f(4.5) = 2(4.5) − 3 = 9 − 3 = 6 (thousands of feet) = 6,000 ft.",
+      "explanation_zh": "f(4.5) = 2(4.5) − 3 = 9 − 3 = 6 (thousands of feet) = 6,000 ft.",
+      "tags": [
+        "linear_functions",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G8-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G8-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G8",
+        "original_topic": "linear_functions",
+        "is_seed": false
+      }
+    }
+  ]
+}

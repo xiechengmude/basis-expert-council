@@ -1,0 +1,902 @@
+[
+  {
+    "id": "G7-MATH-101",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "proportional_relationships",
+    "question": "A recipe calls for 3 cups of flour to make 24 cookies. If Maria wants to make 60 cookies for a bake sale, how many cups of flour does she need?",
+    "options": [
+      {"label": "A", "text": "5 cups"},
+      {"label": "B", "text": "6.5 cups"},
+      {"label": "C", "text": "7.5 cups"},
+      {"label": "D", "text": "8 cups"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Set up the proportion: 3/24 = x/60. Cross multiply: 24x = 180. Divide: x = 7.5 cups."
+  },
+  {
+    "id": "G7-MATH-102",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "percent_problems",
+    "question": "A store marks a $45 jacket down by 20%, then adds 8% sales tax to the sale price. What is the total cost?",
+    "options": [
+      {"label": "A", "text": "$36.00"},
+      {"label": "B", "text": "$38.88"},
+      {"label": "C", "text": "$38.16"},
+      {"label": "D", "text": "$41.40"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Sale price: $45 × 0.80 = $36.00. Tax: $36.00 × 0.08 = $2.88. Total: $36.00 + $2.88 = $38.88."
+  },
+  {
+    "id": "G7-MATH-103",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "scale_drawings",
+    "question": "On a map, 1 inch represents 15 miles. Two cities are 4.5 inches apart on the map. If a car travels at 45 miles per hour, how long will the trip take?",
+    "options": [
+      {"label": "A", "text": "1 hour"},
+      {"label": "B", "text": "1.5 hours"},
+      {"label": "C", "text": "2 hours"},
+      {"label": "D", "text": "2.5 hours"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Actual distance: 4.5 × 15 = 67.5 miles. Time = distance/speed = 67.5/45 = 1.5 hours."
+  },
+  {
+    "id": "G7-MATH-104",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "probability",
+    "question": "A bag contains 5 red, 3 blue, and 2 green marbles. If one marble is drawn at random, what is the probability that it is NOT red?",
+    "options": [
+      {"label": "A", "text": "1/5"},
+      {"label": "B", "text": "2/5"},
+      {"label": "C", "text": "1/2"},
+      {"label": "D", "text": "3/5"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Total marbles: 5 + 3 + 2 = 10. Non-red: 3 + 2 = 5. P(not red) = 5/10 = 1/2."
+  },
+  {
+    "id": "G7-MATH-105",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "integer_operations",
+    "question": "Evaluate: (−8) × 3 + (−4) × (−5) − 12",
+    "options": [
+      {"label": "A", "text": "−16"},
+      {"label": "B", "text": "−28"},
+      {"label": "C", "text": "−36"},
+      {"label": "D", "text": "4"}
+    ],
+    "correct_answer": "A",
+    "explanation": "(−8) × 3 = −24. (−4) × (−5) = 20. Then −24 + 20 − 12 = −16."
+  },
+  {
+    "id": "G7-MATH-106",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "inequalities",
+    "question": "Solve the inequality: 3x − 7 > 14. Which value is in the solution set?",
+    "options": [
+      {"label": "A", "text": "5"},
+      {"label": "B", "text": "7"},
+      {"label": "C", "text": "8"},
+      {"label": "D", "text": "6"}
+    ],
+    "correct_answer": "C",
+    "explanation": "3x − 7 > 14 → 3x > 21 → x > 7. Only x = 8 satisfies x > 7."
+  },
+  {
+    "id": "G7-MATH-107",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "circumference_area_circles",
+    "question": "A circular garden has a diameter of 14 meters. What is the area of the garden? (Use pi = 22/7)",
+    "options": [
+      {"label": "A", "text": "44 m²"},
+      {"label": "B", "text": "154 m²"},
+      {"label": "C", "text": "308 m²"},
+      {"label": "D", "text": "616 m²"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Radius = 14/2 = 7 m. Area = pi × r² = (22/7) × 49 = 154 m²."
+  },
+  {
+    "id": "G7-MATH-108",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "cross_sections_3d",
+    "question": "A right rectangular prism is sliced with a plane that passes through it at an angle, cutting through all four lateral faces. What shape is the cross-section?",
+    "options": [
+      {"label": "A", "text": "Triangle"},
+      {"label": "B", "text": "Rectangle"},
+      {"label": "C", "text": "Parallelogram"},
+      {"label": "D", "text": "Pentagon"}
+    ],
+    "correct_answer": "C",
+    "explanation": "An angled plane cutting through all four lateral faces of a rectangular prism creates a parallelogram cross-section."
+  },
+  {
+    "id": "G7-MATH-109",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "ratio_proportion_starship",
+    "question": "SpaceX's Starship booster uses 33 Raptor engines. During a 2025 test flight, 30 of the 33 engines ignited successfully. If this success rate held for a cluster of 99 engines, how many would be expected to ignite?",
+    "options": [
+      {"label": "A", "text": "88"},
+      {"label": "B", "text": "90"},
+      {"label": "C", "text": "93"},
+      {"label": "D", "text": "96"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Success rate: 30/33 = 10/11. For 99 engines: (10/11) × 99 = 90 engines."
+  },
+  {
+    "id": "G7-MATH-110",
+    "grade": "G7",
+    "subject": "math",
+    "topic": "percent_change_starship",
+    "question": "The Starship rocket stands 121 meters tall. The previous Falcon 9 rocket stands 70 meters tall. What is the approximate percent increase in height from Falcon 9 to Starship?",
+    "options": [
+      {"label": "A", "text": "42%"},
+      {"label": "B", "text": "57%"},
+      {"label": "C", "text": "63%"},
+      {"label": "D", "text": "73%"}
+    ],
+    "correct_answer": "D",
+    "explanation": "Percent increase = (121 − 70)/70 × 100 = 51/70 × 100 ≈ 72.9% ≈ 73%."
+  },
+  {
+    "id": "G8-MATH-101",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "linear_equations",
+    "question": "A plumber charges $50 for a house call plus $35 per hour. If the total bill was $207.50, how many hours did the plumber work?",
+    "options": [
+      {"label": "A", "text": "3.5 hours"},
+      {"label": "B", "text": "4 hours"},
+      {"label": "C", "text": "4.25 hours"},
+      {"label": "D", "text": "4.5 hours"}
+    ],
+    "correct_answer": "D",
+    "explanation": "Set up equation: 50 + 35h = 207.50. Subtract 50: 35h = 157.50. Divide: h = 157.50/35 = 4.5 hours."
+  },
+  {
+    "id": "G8-MATH-102",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "pythagorean_theorem",
+    "question": "A 13-foot ladder leans against a wall. The base of the ladder is 5 feet from the wall. How high up the wall does the ladder reach?",
+    "options": [
+      {"label": "A", "text": "8 feet"},
+      {"label": "B", "text": "10 feet"},
+      {"label": "C", "text": "12 feet"},
+      {"label": "D", "text": "14 feet"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Using Pythagorean theorem: a² + b² = c². So 5² + b² = 13² → 25 + b² = 169 → b² = 144 → b = 12 feet."
+  },
+  {
+    "id": "G8-MATH-103",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "transformations",
+    "question": "Triangle ABC has vertices A(1, 2), B(4, 2), and C(4, 6). If the triangle is reflected over the y-axis, what are the new coordinates of vertex B?",
+    "options": [
+      {"label": "A", "text": "(−4, 2)"},
+      {"label": "B", "text": "(4, −2)"},
+      {"label": "C", "text": "(−4, −2)"},
+      {"label": "D", "text": "(−2, 4)"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Reflection over the y-axis negates the x-coordinate: B(4, 2) → B'(−4, 2)."
+  },
+  {
+    "id": "G8-MATH-104",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "scatter_plots",
+    "question": "A scatter plot shows hours studied vs. test scores for 20 students. The line of best fit is y = 5x + 55. Based on this model, what score would be predicted for a student who studies 6 hours?",
+    "options": [
+      {"label": "A", "text": "80"},
+      {"label": "B", "text": "85"},
+      {"label": "C", "text": "90"},
+      {"label": "D", "text": "95"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Substitute x = 6: y = 5(6) + 55 = 30 + 55 = 85."
+  },
+  {
+    "id": "G8-MATH-105",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "irrational_numbers",
+    "question": "Which of the following numbers is irrational?",
+    "options": [
+      {"label": "A", "text": "0.3333..."},
+      {"label": "B", "text": "sqrt(49)"},
+      {"label": "C", "text": "sqrt(50)"},
+      {"label": "D", "text": "−7/4"}
+    ],
+    "correct_answer": "C",
+    "explanation": "0.333... = 1/3 (rational), sqrt(49) = 7 (rational), −7/4 (rational). sqrt(50) cannot be expressed as a fraction, so it is irrational."
+  },
+  {
+    "id": "G8-MATH-106",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "exponent_rules",
+    "question": "Simplify: (2x³)⁴ / (4x²)",
+    "options": [
+      {"label": "A", "text": "4x¹⁰"},
+      {"label": "B", "text": "2x¹⁰"},
+      {"label": "C", "text": "4x⁵"},
+      {"label": "D", "text": "8x¹⁰"}
+    ],
+    "correct_answer": "A",
+    "explanation": "(2x³)⁴ = 2⁴ × x¹² = 16x¹². Then 16x¹² / (4x²) = 4x¹⁰."
+  },
+  {
+    "id": "G8-MATH-107",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "volume_cylinders",
+    "question": "A cylindrical water tank has a radius of 3 feet and a height of 8 feet. What is its volume? (Use pi ≈ 3.14)",
+    "options": [
+      {"label": "A", "text": "75.36 ft³"},
+      {"label": "B", "text": "150.72 ft³"},
+      {"label": "C", "text": "226.08 ft³"},
+      {"label": "D", "text": "301.44 ft³"}
+    ],
+    "correct_answer": "C",
+    "explanation": "V = pi × r² × h = 3.14 × 9 × 8 = 3.14 × 72 = 226.08 ft³."
+  },
+  {
+    "id": "G8-MATH-108",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "systems_intro_starship",
+    "question": "SpaceX's Starship carries x tons of payload and the booster weighs y tons. Together they weigh 5,000 tons fully fueled. The booster weighs 3,400 tons more than the payload. What is the payload capacity (x)?",
+    "options": [
+      {"label": "A", "text": "600 tons"},
+      {"label": "B", "text": "800 tons"},
+      {"label": "C", "text": "1,000 tons"},
+      {"label": "D", "text": "1,200 tons"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Set up: x + y = 5000 and y = x + 3400. Substitute: x + (x + 3400) = 5000 → 2x = 1600 → x = 800 tons."
+  },
+  {
+    "id": "G8-MATH-109",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "scientific_notation_starship",
+    "question": "The Starship rocket produces approximately 7.59 × 10⁷ newtons of thrust at liftoff. Express this number in standard form.",
+    "options": [
+      {"label": "A", "text": "759,000"},
+      {"label": "B", "text": "7,590,000"},
+      {"label": "C", "text": "75,900,000"},
+      {"label": "D", "text": "759,000,000"}
+    ],
+    "correct_answer": "C",
+    "explanation": "7.59 × 10⁷ = 7.59 × 10,000,000 = 75,900,000."
+  },
+  {
+    "id": "G8-MATH-110",
+    "grade": "G8",
+    "subject": "math",
+    "topic": "linear_functions",
+    "question": "The function f(x) = 2x − 3 represents the elevation (in thousands of feet) of a drone after x minutes. What is the elevation after 4.5 minutes?",
+    "options": [
+      {"label": "A", "text": "5,000 ft"},
+      {"label": "B", "text": "6,000 ft"},
+      {"label": "C", "text": "7,000 ft"},
+      {"label": "D", "text": "9,000 ft"}
+    ],
+    "correct_answer": "B",
+    "explanation": "f(4.5) = 2(4.5) − 3 = 9 − 3 = 6 (thousands of feet) = 6,000 ft."
+  },
+  {
+    "id": "G9-MATH-101",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "quadratic_expressions",
+    "question": "Factor completely: 3x² − 12x − 36",
+    "options": [
+      {"label": "A", "text": "3(x − 6)(x + 2)"},
+      {"label": "B", "text": "3(x + 6)(x − 2)"},
+      {"label": "C", "text": "(3x − 6)(x + 6)"},
+      {"label": "D", "text": "3(x − 3)(x + 4)"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Factor out 3: 3(x² − 4x − 12). Find factors of −12 that add to −4: −6 and 2. So 3(x − 6)(x + 2)."
+  },
+  {
+    "id": "G9-MATH-102",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "radical_expressions",
+    "question": "Simplify: sqrt(72) + sqrt(18)",
+    "options": [
+      {"label": "A", "text": "9sqrt(2)"},
+      {"label": "B", "text": "6sqrt(2) + 3sqrt(2)"},
+      {"label": "C", "text": "sqrt(90)"},
+      {"label": "D", "text": "9sqrt(2)"}
+    ],
+    "correct_answer": "A",
+    "explanation": "sqrt(72) = sqrt(36 × 2) = 6sqrt(2). sqrt(18) = sqrt(9 × 2) = 3sqrt(2). Sum: 6sqrt(2) + 3sqrt(2) = 9sqrt(2)."
+  },
+  {
+    "id": "G9-MATH-103",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "function_notation",
+    "question": "Given f(x) = 2x² − 3x + 1, what is f(−2)?",
+    "options": [
+      {"label": "A", "text": "3"},
+      {"label": "B", "text": "11"},
+      {"label": "C", "text": "15"},
+      {"label": "D", "text": "−1"}
+    ],
+    "correct_answer": "C",
+    "explanation": "f(−2) = 2(−2)² − 3(−2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15."
+  },
+  {
+    "id": "G9-MATH-104",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "arithmetic_sequences",
+    "question": "An arithmetic sequence starts at 7 and has a common difference of 4. What is the 25th term?",
+    "options": [
+      {"label": "A", "text": "100"},
+      {"label": "B", "text": "103"},
+      {"label": "C", "text": "107"},
+      {"label": "D", "text": "111"}
+    ],
+    "correct_answer": "B",
+    "explanation": "a_n = a_1 + (n − 1)d. a_25 = 7 + (24)(4) = 7 + 96 = 103."
+  },
+  {
+    "id": "G9-MATH-105",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "modeling_equations",
+    "question": "A phone plan charges a $25 monthly base fee plus $0.10 per text message. If a customer's bill is $43.50, how many text messages were sent?",
+    "options": [
+      {"label": "A", "text": "165"},
+      {"label": "B", "text": "175"},
+      {"label": "C", "text": "185"},
+      {"label": "D", "text": "195"}
+    ],
+    "correct_answer": "C",
+    "explanation": "25 + 0.10m = 43.50 → 0.10m = 18.50 → m = 185 messages."
+  },
+  {
+    "id": "G9-MATH-106",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "right_triangle_trig",
+    "question": "In a right triangle, the side opposite angle A is 5 and the hypotenuse is 13. What is sin(A)?",
+    "options": [
+      {"label": "A", "text": "5/13"},
+      {"label": "B", "text": "12/13"},
+      {"label": "C", "text": "5/12"},
+      {"label": "D", "text": "13/5"}
+    ],
+    "correct_answer": "A",
+    "explanation": "sin(A) = opposite/hypotenuse = 5/13."
+  },
+  {
+    "id": "G9-MATH-107",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "modeling_equations_gdp",
+    "question": "In 2025, a country's GDP was $2.4 trillion, growing at 3.5% annually. Which equation models the GDP (in trillions) after t years?",
+    "options": [
+      {"label": "A", "text": "G(t) = 2.4 + 0.035t"},
+      {"label": "B", "text": "G(t) = 2.4(1.035)^t"},
+      {"label": "C", "text": "G(t) = 2.4(0.965)^t"},
+      {"label": "D", "text": "G(t) = 2.4 × 3.5^t"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Exponential growth model: G(t) = initial × (1 + rate)^t = 2.4(1.035)^t. Option A is linear, not exponential."
+  },
+  {
+    "id": "G9-MATH-108",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "quadratic_applications_gdp",
+    "question": "A country's quarterly GDP growth rate (in %) over 8 quarters is modeled by r(q) = −0.5q² + 4q − 2. During which quarter does the growth rate peak?",
+    "options": [
+      {"label": "A", "text": "Quarter 2"},
+      {"label": "B", "text": "Quarter 3"},
+      {"label": "C", "text": "Quarter 4"},
+      {"label": "D", "text": "Quarter 5"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Vertex: q = −b/(2a) = −4/(2 × −0.5) = −4/(−1) = 4. The growth rate peaks in Quarter 4."
+  },
+  {
+    "id": "G9-MATH-109",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "radical_expressions",
+    "question": "Rationalize the denominator: 6 / sqrt(3)",
+    "options": [
+      {"label": "A", "text": "2sqrt(3)"},
+      {"label": "B", "text": "6sqrt(3)"},
+      {"label": "C", "text": "3sqrt(6)"},
+      {"label": "D", "text": "sqrt(12)"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Multiply numerator and denominator by sqrt(3): 6/sqrt(3) × sqrt(3)/sqrt(3) = 6sqrt(3)/3 = 2sqrt(3)."
+  },
+  {
+    "id": "G9-MATH-110",
+    "grade": "G9",
+    "subject": "math",
+    "topic": "function_notation",
+    "question": "If g(x) = 3x + 2, find x when g(x) = 20.",
+    "options": [
+      {"label": "A", "text": "4"},
+      {"label": "B", "text": "5"},
+      {"label": "C", "text": "6"},
+      {"label": "D", "text": "7"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Set 3x + 2 = 20. Subtract 2: 3x = 18. Divide by 3: x = 6."
+  },
+  {
+    "id": "G10-MATH-101",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "polynomial_operations",
+    "question": "Multiply: (2x + 3)(x² − x + 4)",
+    "options": [
+      {"label": "A", "text": "2x³ + x² + 5x + 12"},
+      {"label": "B", "text": "2x³ + x² + 11x + 12"},
+      {"label": "C", "text": "2x³ − 2x² + 11x + 12"},
+      {"label": "D", "text": "2x³ + x² + 5x + 7"}
+    ],
+    "correct_answer": "A",
+    "explanation": "2x(x² − x + 4) + 3(x² − x + 4) = 2x³ − 2x² + 8x + 3x² − 3x + 12 = 2x³ + x² + 5x + 12."
+  },
+  {
+    "id": "G10-MATH-102",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "rational_expressions",
+    "question": "Simplify: (x² − 9) / (x² + 5x + 6)",
+    "options": [
+      {"label": "A", "text": "(x − 3) / (x + 2)"},
+      {"label": "B", "text": "(x + 3) / (x + 2)"},
+      {"label": "C", "text": "(x − 3) / (x + 3)"},
+      {"label": "D", "text": "(x + 3) / (x − 2)"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Factor: (x − 3)(x + 3) / (x + 2)(x + 3). Cancel (x + 3): (x − 3)/(x + 2)."
+  },
+  {
+    "id": "G10-MATH-103",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "exponential_growth_population",
+    "question": "A country's population was 50 million in 2020 and grows at 1.8% per year. What is the projected population in 2030, to the nearest million?",
+    "options": [
+      {"label": "A", "text": "56 million"},
+      {"label": "B", "text": "59 million"},
+      {"label": "C", "text": "60 million"},
+      {"label": "D", "text": "63 million"}
+    ],
+    "correct_answer": "C",
+    "explanation": "P = 50(1.018)^10. (1.018)^10 ≈ 1.1956. P ≈ 50 × 1.1956 ≈ 59.78 ≈ 60 million."
+  },
+  {
+    "id": "G10-MATH-104",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "circle_theorems",
+    "question": "In a circle, an inscribed angle intercepts an arc of 124°. What is the measure of the inscribed angle?",
+    "options": [
+      {"label": "A", "text": "62°"},
+      {"label": "B", "text": "124°"},
+      {"label": "C", "text": "56°"},
+      {"label": "D", "text": "248°"}
+    ],
+    "correct_answer": "A",
+    "explanation": "An inscribed angle is half the intercepted arc: 124°/2 = 62°."
+  },
+  {
+    "id": "G10-MATH-105",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "geometric_proofs",
+    "question": "In triangle PQR, angle P = angle R. Which statement MUST be true?",
+    "options": [
+      {"label": "A", "text": "PQ = QR"},
+      {"label": "B", "text": "PQ = PR"},
+      {"label": "C", "text": "QR = PR"},
+      {"label": "D", "text": "The triangle is equilateral"}
+    ],
+    "correct_answer": "A",
+    "explanation": "By the Isosceles Triangle Theorem, if two angles are equal, the sides opposite those angles are equal. Angle P is opposite QR and angle R is opposite PQ, so PQ = QR."
+  },
+  {
+    "id": "G10-MATH-106",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "conditional_probability",
+    "question": "In a class of 30 students, 18 play sports and 12 are in band. 5 students do both. What is the probability that a randomly selected student plays sports, given that they are in band?",
+    "options": [
+      {"label": "A", "text": "5/18"},
+      {"label": "B", "text": "5/12"},
+      {"label": "C", "text": "5/30"},
+      {"label": "D", "text": "12/18"}
+    ],
+    "correct_answer": "B",
+    "explanation": "P(Sports | Band) = P(Sports AND Band)/P(Band) = (5/30)/(12/30) = 5/12."
+  },
+  {
+    "id": "G10-MATH-107",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "exponential_decay_gdp",
+    "question": "A country's manufacturing sector output decreases by 4% annually from its 2025 level of $800 billion. Which expression gives the output after n years?",
+    "options": [
+      {"label": "A", "text": "800(0.96)^n"},
+      {"label": "B", "text": "800(1.04)^n"},
+      {"label": "C", "text": "800 − 0.04n"},
+      {"label": "D", "text": "800(0.04)^n"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Exponential decay: multiply by (1 − rate) each year. Output = 800(1 − 0.04)^n = 800(0.96)^n."
+  },
+  {
+    "id": "G10-MATH-108",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "polynomial_operations",
+    "question": "What is the remainder when f(x) = x³ − 2x² + 3x − 5 is divided by (x − 2)?",
+    "options": [
+      {"label": "A", "text": "−1"},
+      {"label": "B", "text": "1"},
+      {"label": "C", "text": "3"},
+      {"label": "D", "text": "5"}
+    ],
+    "correct_answer": "B",
+    "explanation": "By the Remainder Theorem, the remainder is f(2) = 8 − 8 + 6 − 5 = 1."
+  },
+  {
+    "id": "G10-MATH-109",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "exponential_growth_population",
+    "question": "The global population reached approximately 8.1 billion in 2025. If the growth rate is 0.9% per year, in approximately how many years will the population reach 9 billion? (Use log(9/8.1)/log(1.009))",
+    "options": [
+      {"label": "A", "text": "About 8 years"},
+      {"label": "B", "text": "About 12 years"},
+      {"label": "C", "text": "About 16 years"},
+      {"label": "D", "text": "About 20 years"}
+    ],
+    "correct_answer": "B",
+    "explanation": "8.1(1.009)^t = 9. (1.009)^t = 9/8.1 ≈ 1.1111. t = ln(1.1111)/ln(1.009) ≈ 0.1054/0.00896 ≈ 11.8 ≈ 12 years."
+  },
+  {
+    "id": "G10-MATH-110",
+    "grade": "G10",
+    "subject": "math",
+    "topic": "rational_expressions",
+    "question": "Solve: 3/(x − 1) = 5/(x + 3)",
+    "options": [
+      {"label": "A", "text": "x = 7"},
+      {"label": "B", "text": "x = −7"},
+      {"label": "C", "text": "x = 14"},
+      {"label": "D", "text": "x = −14"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Cross multiply: 3(x + 3) = 5(x − 1). 3x + 9 = 5x − 5. 14 = 2x. x = 7."
+  },
+  {
+    "id": "G11-MATH-101",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "logarithmic_functions",
+    "question": "Solve for x: log₃(2x + 1) = 4",
+    "options": [
+      {"label": "A", "text": "13"},
+      {"label": "B", "text": "40"},
+      {"label": "C", "text": "80"},
+      {"label": "D", "text": "121"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Convert to exponential form: 3⁴ = 2x + 1 → 81 = 2x + 1 → 2x = 80 → x = 40."
+  },
+  {
+    "id": "G11-MATH-102",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "conic_sections",
+    "question": "What is the center and radius of the circle given by x² + y² − 6x + 4y − 12 = 0?",
+    "options": [
+      {"label": "A", "text": "Center (3, −2), radius 5"},
+      {"label": "B", "text": "Center (−3, 2), radius 5"},
+      {"label": "C", "text": "Center (3, −2), radius 25"},
+      {"label": "D", "text": "Center (6, −4), radius 12"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Complete the square: (x² − 6x + 9) + (y² + 4y + 4) = 12 + 9 + 4 → (x − 3)² + (y + 2)² = 25. Center (3, −2), radius = sqrt(25) = 5."
+  },
+  {
+    "id": "G11-MATH-103",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "matrices_intro",
+    "question": "If A = [[2, 1], [3, 4]] and B = [[5, 0], [−1, 2]], what is A + B?",
+    "options": [
+      {"label": "A", "text": "[[7, 1], [2, 6]]"},
+      {"label": "B", "text": "[[7, 1], [4, 6]]"},
+      {"label": "C", "text": "[[10, 0], [−3, 8]]"},
+      {"label": "D", "text": "[[3, 1], [4, 2]]"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Add corresponding elements: [[2+5, 1+0], [3+(−1), 4+2]] = [[7, 1], [2, 6]]."
+  },
+  {
+    "id": "G11-MATH-104",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "complex_numbers",
+    "question": "Simplify: (3 + 2i)(4 − 5i)",
+    "options": [
+      {"label": "A", "text": "22 − 7i"},
+      {"label": "B", "text": "12 − 10i"},
+      {"label": "C", "text": "2 + 7i"},
+      {"label": "D", "text": "22 + 7i"}
+    ],
+    "correct_answer": "A",
+    "explanation": "(3)(4) + (3)(−5i) + (2i)(4) + (2i)(−5i) = 12 − 15i + 8i − 10i² = 12 − 7i + 10 = 22 − 7i."
+  },
+  {
+    "id": "G11-MATH-105",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "law_of_cosines",
+    "question": "In triangle ABC, a = 8, b = 11, and angle C = 60°. Find side c to the nearest tenth.",
+    "options": [
+      {"label": "A", "text": "9.5"},
+      {"label": "B", "text": "9.8"},
+      {"label": "C", "text": "10.1"},
+      {"label": "D", "text": "11.4"}
+    ],
+    "correct_answer": "B",
+    "explanation": "c² = a² + b² − 2ab·cos(C) = 64 + 121 − 2(8)(11)(0.5) = 185 − 88 = 97. c = sqrt(97) ≈ 9.849 ≈ 9.8."
+  },
+  {
+    "id": "G11-MATH-106",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "limits_intro",
+    "question": "Evaluate: lim(x→3) (x² − 9)/(x − 3)",
+    "options": [
+      {"label": "A", "text": "0"},
+      {"label": "B", "text": "3"},
+      {"label": "C", "text": "6"},
+      {"label": "D", "text": "Undefined"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Factor: (x − 3)(x + 3)/(x − 3) = x + 3. As x → 3: 3 + 3 = 6."
+  },
+  {
+    "id": "G11-MATH-107",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "logarithmic_functions_ai",
+    "question": "The total compute used for AI training has been doubling every 6 months since 2020. If the compute in January 2020 was C₀, which expression gives the compute at month t?",
+    "options": [
+      {"label": "A", "text": "C₀ × 2^(t/6)"},
+      {"label": "B", "text": "C₀ × 2^(6t)"},
+      {"label": "C", "text": "C₀ + 2t/6"},
+      {"label": "D", "text": "C₀ × (t/6)²"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Doubling every 6 months means after t months there are t/6 doublings. Compute = C₀ × 2^(t/6)."
+  },
+  {
+    "id": "G11-MATH-108",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "logarithmic_functions_ai",
+    "question": "AI training compute doubled every 6 months from 2020, starting at C₀. How many months does it take for compute to reach 1024 × C₀?",
+    "options": [
+      {"label": "A", "text": "30 months"},
+      {"label": "B", "text": "48 months"},
+      {"label": "C", "text": "60 months"},
+      {"label": "D", "text": "72 months"}
+    ],
+    "correct_answer": "C",
+    "explanation": "C₀ × 2^(t/6) = 1024 × C₀. So 2^(t/6) = 1024 = 2^10. Then t/6 = 10, t = 60 months."
+  },
+  {
+    "id": "G11-MATH-109",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "law_of_sines",
+    "question": "In triangle DEF, angle D = 45°, angle E = 75°, and side d = 10. Find side e to the nearest tenth.",
+    "options": [
+      {"label": "A", "text": "12.2"},
+      {"label": "B", "text": "13.7"},
+      {"label": "C", "text": "14.1"},
+      {"label": "D", "text": "15.3"}
+    ],
+    "correct_answer": "B",
+    "explanation": "By Law of Sines: e/sin(E) = d/sin(D). e = 10 × sin(75°)/sin(45°) = 10 × 0.9659/0.7071 ≈ 13.66 ≈ 13.7."
+  },
+  {
+    "id": "G11-MATH-110",
+    "grade": "G11",
+    "subject": "math",
+    "topic": "conic_sections",
+    "question": "Identify the conic section: 4x² + 9y² = 36",
+    "options": [
+      {"label": "A", "text": "Circle"},
+      {"label": "B", "text": "Ellipse"},
+      {"label": "C", "text": "Parabola"},
+      {"label": "D", "text": "Hyperbola"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Divide by 36: x²/9 + y²/4 = 1. This is the standard form of an ellipse with a² = 9 and b² = 4 (a ≠ b, so not a circle)."
+  },
+  {
+    "id": "G12-MATH-101",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "derivatives_concept",
+    "question": "If f(x) = 5x³ − 2x + 7, what is f'(x)?",
+    "options": [
+      {"label": "A", "text": "15x² − 2"},
+      {"label": "B", "text": "15x² − 2x"},
+      {"label": "C", "text": "5x² − 2"},
+      {"label": "D", "text": "15x³ − 2"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Apply power rule: d/dx(5x³) = 15x², d/dx(−2x) = −2, d/dx(7) = 0. So f'(x) = 15x² − 2."
+  },
+  {
+    "id": "G12-MATH-102",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "optimization",
+    "question": "A farmer has 120 meters of fencing to enclose a rectangular field. What dimensions maximize the area?",
+    "options": [
+      {"label": "A", "text": "20 m × 40 m"},
+      {"label": "B", "text": "30 m × 30 m"},
+      {"label": "C", "text": "25 m × 35 m"},
+      {"label": "D", "text": "10 m × 50 m"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Perimeter = 2l + 2w = 120, so l + w = 60. Area A = l(60 − l). A'(l) = 60 − 2l = 0 → l = 30. So w = 30. Maximum area is a 30 × 30 square."
+  },
+  {
+    "id": "G12-MATH-103",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "statistical_inference",
+    "question": "A random sample of 100 lightbulbs has a mean lifetime of 1,200 hours with a standard deviation of 80 hours. What is the 95% confidence interval for the population mean? (z* = 1.96)",
+    "options": [
+      {"label": "A", "text": "(1,184.3, 1,215.7)"},
+      {"label": "B", "text": "(1,180.0, 1,220.0)"},
+      {"label": "C", "text": "(1,190.0, 1,210.0)"},
+      {"label": "D", "text": "(1,170.0, 1,230.0)"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Margin of error = z* × (s/sqrt(n)) = 1.96 × (80/10) = 1.96 × 8 = 15.68. CI: (1200 − 15.68, 1200 + 15.68) = (1184.32, 1215.68)."
+  },
+  {
+    "id": "G12-MATH-104",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "normal_distribution",
+    "question": "Scores on a standardized test are normally distributed with mean 500 and standard deviation 100. What percentage of students score between 400 and 600?",
+    "options": [
+      {"label": "A", "text": "About 50%"},
+      {"label": "B", "text": "About 68%"},
+      {"label": "C", "text": "About 95%"},
+      {"label": "D", "text": "About 99.7%"}
+    ],
+    "correct_answer": "B",
+    "explanation": "400 and 600 are each 1 standard deviation from the mean (z = ±1). By the empirical rule, about 68% of data falls within 1 standard deviation."
+  },
+  {
+    "id": "G12-MATH-105",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "regression_climate",
+    "question": "A climate scientist fits a linear regression to global average temperature anomalies (in °C) from 2000 to 2025, yielding T(y) = 0.022y − 43.6 where y is the year. What is the predicted anomaly for 2030?",
+    "options": [
+      {"label": "A", "text": "0.96°C"},
+      {"label": "B", "text": "1.06°C"},
+      {"label": "C", "text": "1.16°C"},
+      {"label": "D", "text": "1.26°C"}
+    ],
+    "correct_answer": "B",
+    "explanation": "T(2030) = 0.022(2030) − 43.6 = 44.66 − 43.6 = 1.06°C."
+  },
+  {
+    "id": "G12-MATH-106",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "combinatorics",
+    "question": "A committee of 3 is to be chosen from 10 candidates. How many different committees are possible?",
+    "options": [
+      {"label": "A", "text": "30"},
+      {"label": "B", "text": "120"},
+      {"label": "C", "text": "720"},
+      {"label": "D", "text": "1,000"}
+    ],
+    "correct_answer": "B",
+    "explanation": "C(10,3) = 10!/(3!×7!) = (10 × 9 × 8)/(3 × 2 × 1) = 720/6 = 120."
+  },
+  {
+    "id": "G12-MATH-107",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "derivatives_concept",
+    "question": "The position of a particle is given by s(t) = t³ − 6t² + 9t + 2. At what time(s) is the particle at rest?",
+    "options": [
+      {"label": "A", "text": "t = 1 only"},
+      {"label": "B", "text": "t = 3 only"},
+      {"label": "C", "text": "t = 1 and t = 3"},
+      {"label": "D", "text": "t = 2"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Velocity v(t) = s'(t) = 3t² − 12t + 9 = 3(t² − 4t + 3) = 3(t − 1)(t − 3). Set v = 0: t = 1 and t = 3."
+  },
+  {
+    "id": "G12-MATH-108",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "regression_climate",
+    "question": "A researcher collects temperature data for 10 years and calculates r² = 0.87 for a linear model. Which interpretation is correct?",
+    "options": [
+      {"label": "A", "text": "87% of the variation in temperature is explained by the linear relationship with year"},
+      {"label": "B", "text": "The correlation coefficient is 0.87"},
+      {"label": "C", "text": "87% of the data points lie on the regression line"},
+      {"label": "D", "text": "The model predicts temperature with 87% accuracy"}
+    ],
+    "correct_answer": "A",
+    "explanation": "r² (coefficient of determination) represents the proportion of variance in the dependent variable explained by the independent variable."
+  },
+  {
+    "id": "G12-MATH-109",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "combinatorics",
+    "question": "How many ways can the letters of the word 'LEVEL' be arranged?",
+    "options": [
+      {"label": "A", "text": "20"},
+      {"label": "B", "text": "30"},
+      {"label": "C", "text": "60"},
+      {"label": "D", "text": "120"}
+    ],
+    "correct_answer": "B",
+    "explanation": "LEVEL has 5 letters with L repeated 2 times and E repeated 2 times. Arrangements = 5!/(2! × 2!) = 120/4 = 30."
+  },
+  {
+    "id": "G12-MATH-110",
+    "grade": "G12",
+    "subject": "math",
+    "topic": "optimization_earthquake",
+    "question": "After a 2025 earthquake, a relief agency models supply delivery cost as C(x) = 500/x + 2x, where x is the number of trucks dispatched. How many trucks minimize cost?",
+    "options": [
+      {"label": "A", "text": "10 trucks"},
+      {"label": "B", "text": "15 trucks"},
+      {"label": "C", "text": "16 trucks"},
+      {"label": "D", "text": "25 trucks"}
+    ],
+    "correct_answer": "C",
+    "explanation": "C'(x) = −500/x² + 2 = 0 → 500/x² = 2 → x² = 250 → x = sqrt(250) ≈ 15.81. Since x must be a whole number, x = 16 trucks."
+  }
+]

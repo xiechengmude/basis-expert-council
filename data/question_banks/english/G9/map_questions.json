@@ -1,0 +1,1021 @@
+{
+  "batch_name": "MAP_english_G9_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G9",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "reading_comp",
+      "subtopic": "characterization",
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What does the author emphasize by describing Katherine Johnson's early education?",
+        "options": [
+          "A. Elite private school attendance",
+          "B. Family sacrifice and determination",
+          "C. Teacher discouragement",
+          "D. Self-taught education"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What does the author emphasize by describing Katherine Johnson's early education?",
+        "options": [
+          "A. Elite private school attendance",
+          "B. Family sacrifice and determination",
+          "C. Teacher discouragement",
+          "D. Self-taught education"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The text explicitly states the family's relocation decision 'underscored both sacrifices and determination to learn.'",
+      "explanation_zh": "The text explicitly states the family's relocation decision 'underscored both sacrifices and determination to learn.'",
+      "tags": [
+        "characterization",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "characterization",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.46,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In paragraph three about Katherine Johnson, 'rigor' most nearly means:",
+        "options": [
+          "A. Difficulty or strictness",
+          "B. Fear",
+          "C. Opportunity",
+          "D. Discovery"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "In paragraph three about Katherine Johnson, 'rigor' most nearly means:",
+        "options": [
+          "A. Difficulty or strictness",
+          "B. Fear",
+          "C. Opportunity",
+          "D. Discovery"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Context shows mathematical work demanding 'intellectual rigor' — referring to exacting precision standards required for space calculations.",
+      "explanation_zh": "Context shows mathematical work demanding 'intellectual rigor' — referring to exacting precision standards required for space calculations.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "reading_comp",
+      "subtopic": "text_evidence",
+      "difficulty": 0.48,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence best supports the idea that Katherine Johnson helped open doors for others?",
+        "options": [
+          "A. Excellence under mentorship",
+          "B. Indispensable to orbital calculations",
+          "C. Her journey reveals how individual brilliance can confront and ultimately reshape systemic injustice",
+          "D. Recognition through awards"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which sentence best supports the idea that Katherine Johnson helped open doors for others?",
+        "options": [
+          "A. Excellence under mentorship",
+          "B. Indispensable to orbital calculations",
+          "C. Her journey reveals how individual brilliance can confront and ultimately reshape systemic injustice",
+          "D. Recognition through awards"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "This sentence demonstrates how her work created opportunities for future generations by reshaping systemic injustice.",
+      "explanation_zh": "This sentence demonstrates how her work created opportunities for future generations by reshaping systemic injustice.",
+      "tags": [
+        "textual_evidence",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "textual_evidence",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "grammar",
+      "subtopic": "spelling",
+      "difficulty": 0.49,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Choose the correct spelling: 'The movie was [incredable/incredible] and it had a very [sensable/sensible] morale.'",
+        "options": [
+          "A. incredable / sensible",
+          "B. incredible / sensible",
+          "C. incredible / sensable",
+          "D. incredable / sensable"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Choose the correct spelling: 'The movie was [incredable/incredible] and it had a very [sensable/sensible] morale.'",
+        "options": [
+          "A. incredable / sensible",
+          "B. incredible / sensible",
+          "C. incredible / sensable",
+          "D. incredable / sensable"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Both words use the '-ible' suffix: incredible and sensible.",
+      "explanation_zh": "Both words use the '-ible' suffix: incredible and sensible.",
+      "tags": [
+        "spelling",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "spelling",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "writing",
+      "subtopic": "research",
+      "difficulty": 0.51,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "For Maria's paper on ocean temperature effects on global ecosystems, which source is most credible and comprehensive?",
+        "options": [
+          "A. NOAA Arctic report",
+          "B. Peer-reviewed journal analyzing worldwide marine warming impacts",
+          "C. Scientific American article on economic effects",
+          "D. Climate policy adaptation report"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "For Maria's paper on ocean temperature effects on global ecosystems, which source is most credible and comprehensive?",
+        "options": [
+          "A. NOAA Arctic report",
+          "B. Peer-reviewed journal analyzing worldwide marine warming impacts",
+          "C. Scientific American article on economic effects",
+          "D. Climate policy adaptation report"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Peer-reviewed sources provide highest academic credibility and this one directly addresses global ecosystem effects.",
+      "explanation_zh": "Peer-reviewed sources provide highest academic credibility and this one directly addresses global ecosystem effects.",
+      "tags": [
+        "source_evaluation",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "source_evaluation",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "grammar",
+      "subtopic": "voice",
+      "difficulty": 0.52,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "'The research team _______ three hours analyzing data before presenting findings.' Which active voice verb phrase completes it?",
+        "options": [
+          "A. will have spent",
+          "B. had been assigned to spend",
+          "C. decided to spend",
+          "D. made the decision of spending"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "'The research team _______ three hours analyzing data before presenting findings.' Which active voice verb phrase completes it?",
+        "options": [
+          "A. will have spent",
+          "B. had been assigned to spend",
+          "C. decided to spend",
+          "D. made the decision of spending"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Decided to spend' uses active voice (team performs the action) and maintains past tense consistency.",
+      "explanation_zh": "'Decided to spend' uses active voice (team performs the action) and maintains past tense consistency.",
+      "tags": [
+        "active_voice",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "active_voice",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "rhetorical_analysis",
+      "subtopic": null,
+      "difficulty": 0.54,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In his 1963 'Letter from Birmingham Jail,' Martin Luther King Jr. wrote: 'Injustice anywhere is a threat to justice everywhere. We are caught in an inescapable network of mutuality, tied in a single garment of destiny.' King uses the metaphor of a 'garment of destiny' primarily to:",
+        "options": [
+          "A. Describe the fashion of the civil rights movement",
+          "B. Argue that all people are interconnected and that injustice affects everyone",
+          "C. Suggest that destiny cannot be changed",
+          "D. Criticize the textile industry"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In his 1963 'Letter from Birmingham Jail,' Martin Luther King Jr. wrote: 'Injustice anywhere is a threat to justice everywhere. We are caught in an inescapable network of mutuality, tied in a single garment of destiny.' King uses the metaphor of a 'garment of destiny' primarily to:",
+        "options": [
+          "A. Describe the fashion of the civil rights movement",
+          "B. Argue that all people are interconnected and that injustice affects everyone",
+          "C. Suggest that destiny cannot be changed",
+          "D. Criticize the textile industry"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The 'garment of destiny' metaphor illustrates interconnectedness — like threads in a single garment, all people are woven together, so injustice to one threatens all.",
+      "explanation_zh": "The 'garment of destiny' metaphor illustrates interconnectedness — like threads in a single garment, all people are woven together, so injustice to one threatens all.",
+      "tags": [
+        "rhetorical_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "rhetorical_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "dual_passage_comparison",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passages:\nPassage 1: 'Ocean temperatures in 2025 have risen to levels that marine ecosystems cannot sustain. Coral bleaching events now occur annually rather than once a decade. Without immediate carbon reduction, we will lose 90 percent of coral reefs by 2040.'\nPassage 2: 'While ocean warming is a serious concern, recent data shows that some coral species are adapting to higher temperatures. Researchers in Australia documented heat-resistant coral strains spreading naturally across damaged reefs, offering cautious hope for reef recovery.'\nHow do the two passages differ in perspective?",
+        "options": [
+          "A. Passage 1 denies climate change; Passage 2 accepts it",
+          "B. Passage 1 emphasizes urgency and catastrophic outcomes; Passage 2 acknowledges the problem but highlights adaptive resilience",
+          "C. Both passages are equally optimistic",
+          "D. Passage 1 focuses on coral; Passage 2 focuses on fish"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passages:\nPassage 1: 'Ocean temperatures in 2025 have risen to levels that marine ecosystems cannot sustain. Coral bleaching events now occur annually rather than once a decade. Without immediate carbon reduction, we will lose 90 percent of coral reefs by 2040.'\nPassage 2: 'While ocean warming is a serious concern, recent data shows that some coral species are adapting to higher temperatures. Researchers in Australia documented heat-resistant coral strains spreading naturally across damaged reefs, offering cautious hope for reef recovery.'\nHow do the two passages differ in perspective?",
+        "options": [
+          "A. Passage 1 denies climate change; Passage 2 accepts it",
+          "B. Passage 1 emphasizes urgency and catastrophic outcomes; Passage 2 acknowledges the problem but highlights adaptive resilience",
+          "C. Both passages are equally optimistic",
+          "D. Passage 1 focuses on coral; Passage 2 focuses on fish"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Passage 1 presents an urgent, alarming view with dire predictions. Passage 2 acknowledges warming but introduces evidence of natural adaptation, offering a more cautiously hopeful perspective.",
+      "explanation_zh": "Passage 1 presents an urgent, alarming view with dire predictions. Passage 2 acknowledges warming but introduces evidence of natural adaptation, offering a more cautiously hopeful perspective.",
+      "tags": [
+        "dual_passage_comparison",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "dual_passage_comparison",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "authors_craft",
+      "subtopic": null,
+      "difficulty": 0.56,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: The submarine descended into total darkness. At 3,000 meters, the only light came from bioluminescent creatures drifting past the porthole like living constellations. Dr. Okafor pressed her face to the glass and whispered, 'We know more about the surface of Mars than we do about this.' The author chose to include Dr. Okafor's whispered statement most likely to:",
+        "options": [
+          "A. Show that Dr. Okafor is afraid of the dark",
+          "B. Emphasize the mystery and vastness of the unexplored deep ocean",
+          "C. Compare the submarine to a spaceship",
+          "D. Prove that Mars exploration is more important"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: The submarine descended into total darkness. At 3,000 meters, the only light came from bioluminescent creatures drifting past the porthole like living constellations. Dr. Okafor pressed her face to the glass and whispered, 'We know more about the surface of Mars than we do about this.' The author chose to include Dr. Okafor's whispered statement most likely to:",
+        "options": [
+          "A. Show that Dr. Okafor is afraid of the dark",
+          "B. Emphasize the mystery and vastness of the unexplored deep ocean",
+          "C. Compare the submarine to a spaceship",
+          "D. Prove that Mars exploration is more important"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The whispered comparison to Mars emphasizes how little we know about the deep ocean. The whispering conveys awe, and the Mars reference underscores the ocean's unexplored vastness.",
+      "explanation_zh": "The whispered comparison to Mars emphasizes how little we know about the deep ocean. The whispering conveys awe, and the Mars reference underscores the ocean's unexplored vastness.",
+      "tags": [
+        "authors_craft",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "authors_craft",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "historical_context",
+      "subtopic": null,
+      "difficulty": 0.58,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Frederick Douglass's autobiography, published in 1845, was a radical act. By writing his own life story in eloquent, precise English, Douglass directly refuted the prevailing argument that enslaved people were intellectually inferior. The book became a bestseller in both America and Europe, forcing readers to confront the humanity of those their society had dehumanized. Why was the act of writing the autobiography itself a form of argument?",
+        "options": [
+          "A. It proved Douglass was a professional writer",
+          "B. Its very existence as an eloquent text disproved claims of intellectual inferiority",
+          "C. It was the first autobiography ever published",
+          "D. It was written in a foreign language"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Frederick Douglass's autobiography, published in 1845, was a radical act. By writing his own life story in eloquent, precise English, Douglass directly refuted the prevailing argument that enslaved people were intellectually inferior. The book became a bestseller in both America and Europe, forcing readers to confront the humanity of those their society had dehumanized. Why was the act of writing the autobiography itself a form of argument?",
+        "options": [
+          "A. It proved Douglass was a professional writer",
+          "B. Its very existence as an eloquent text disproved claims of intellectual inferiority",
+          "C. It was the first autobiography ever published",
+          "D. It was written in a foreign language"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage states Douglass's eloquent writing 'directly refuted' claims of intellectual inferiority. The autobiography's quality was itself proof against racist arguments.",
+      "explanation_zh": "The passage states Douglass's eloquent writing 'directly refuted' claims of intellectual inferiority. The autobiography's quality was itself proof against racist arguments.",
+      "tags": [
+        "historical_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "historical_context",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "critical_evaluation",
+      "subtopic": null,
+      "difficulty": 0.59,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: A popular science article claims: 'Studies prove that listening to classical music makes you smarter. Researchers played Mozart to college students, and the students scored higher on spatial reasoning tests immediately afterward.' A critical reader should question this claim because:",
+        "options": [
+          "A. Mozart is not considered classical music",
+          "B. The study measures only immediate, temporary effects on one skill, not overall intelligence",
+          "C. College students are too old for the study to matter",
+          "D. The article does not mention the composer's nationality"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: A popular science article claims: 'Studies prove that listening to classical music makes you smarter. Researchers played Mozart to college students, and the students scored higher on spatial reasoning tests immediately afterward.' A critical reader should question this claim because:",
+        "options": [
+          "A. Mozart is not considered classical music",
+          "B. The study measures only immediate, temporary effects on one skill, not overall intelligence",
+          "C. College students are too old for the study to matter",
+          "D. The article does not mention the composer's nationality"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The article overgeneralizes from a narrow finding. The study only showed a short-term boost in spatial reasoning, not that music 'makes you smarter' in general.",
+      "explanation_zh": "The article overgeneralizes from a narrow finding. The study only showed a short-term boost in spatial reasoning, not that music 'makes you smarter' in general.",
+      "tags": [
+        "critical_evaluation",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "critical_evaluation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "complex_vocabulary",
+      "subtopic": null,
+      "difficulty": 0.61,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: 'The senator's equivocation during the hearing frustrated journalists, who wanted clear answers rather than deliberately ambiguous responses.' Based on context, 'equivocation' most nearly means:",
+        "options": [
+          "A. Loud and passionate speaking",
+          "B. Using vague or misleading language to avoid committing to a position",
+          "C. Providing too many specific details",
+          "D. Refusing to attend the hearing"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: 'The senator's equivocation during the hearing frustrated journalists, who wanted clear answers rather than deliberately ambiguous responses.' Based on context, 'equivocation' most nearly means:",
+        "options": [
+          "A. Loud and passionate speaking",
+          "B. Using vague or misleading language to avoid committing to a position",
+          "C. Providing too many specific details",
+          "D. Refusing to attend the hearing"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Context clues ('deliberately ambiguous responses' and journalists wanting 'clear answers') indicate that equivocation means using vague language to avoid giving a direct answer.",
+      "explanation_zh": "Context clues ('deliberately ambiguous responses' and journalists wanting 'clear answers') indicate that equivocation means using vague language to avoid giving a direct answer.",
+      "tags": [
+        "complex_vocabulary",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "complex_vocabulary",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "synthesis_across_texts",
+      "subtopic": null,
+      "difficulty": 0.62,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passages:\nText 1: 'Deep-sea mining could provide rare minerals essential for renewable energy technology — cobalt, manganese, and lithium found in polymetallic nodules on the ocean floor.'\nText 2: 'Deep-sea ecosystems are among the least understood on Earth. Mining operations would destroy habitats that took millions of years to develop, potentially eliminating species before we even discover them.'\nWhat tension do these two texts reveal?",
+        "options": [
+          "A. The conflict between the need for clean energy materials and the protection of fragile ocean ecosystems",
+          "B. The disagreement about whether the ocean floor exists",
+          "C. The debate over whether renewable energy is worthwhile",
+          "D. The question of who owns the ocean floor"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Read the passages:\nText 1: 'Deep-sea mining could provide rare minerals essential for renewable energy technology — cobalt, manganese, and lithium found in polymetallic nodules on the ocean floor.'\nText 2: 'Deep-sea ecosystems are among the least understood on Earth. Mining operations would destroy habitats that took millions of years to develop, potentially eliminating species before we even discover them.'\nWhat tension do these two texts reveal?",
+        "options": [
+          "A. The conflict between the need for clean energy materials and the protection of fragile ocean ecosystems",
+          "B. The disagreement about whether the ocean floor exists",
+          "C. The debate over whether renewable energy is worthwhile",
+          "D. The question of who owns the ocean floor"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Text 1 presents deep-sea mining as necessary for renewable energy. Text 2 warns it would destroy irreplaceable ecosystems. The tension is between environmental and energy goals.",
+      "explanation_zh": "Text 1 presents deep-sea mining as necessary for renewable energy. Text 2 warns it would destroy irreplaceable ecosystems. The tension is between environmental and energy goals.",
+      "tags": [
+        "synthesis_across_texts",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "synthesis_across_texts",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "philosophical_themes",
+      "subtopic": null,
+      "difficulty": 0.64,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In Plato's Allegory of the Cave, prisoners chained in a cave see only shadows on the wall and believe those shadows are reality. When one prisoner is freed and sees the actual world outside, he is blinded by sunlight and struggles to accept that the shadows were not real. When he returns to tell the others, they refuse to believe him. What philosophical idea does this allegory primarily explore?",
+        "options": [
+          "A. Physical exercise is important for health",
+          "B. The difficulty of distinguishing appearance from reality and the resistance to new understanding",
+          "C. Caves are dangerous places to live",
+          "D. Prisoners should be treated more humanely"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In Plato's Allegory of the Cave, prisoners chained in a cave see only shadows on the wall and believe those shadows are reality. When one prisoner is freed and sees the actual world outside, he is blinded by sunlight and struggles to accept that the shadows were not real. When he returns to tell the others, they refuse to believe him. What philosophical idea does this allegory primarily explore?",
+        "options": [
+          "A. Physical exercise is important for health",
+          "B. The difficulty of distinguishing appearance from reality and the resistance to new understanding",
+          "C. Caves are dangerous places to live",
+          "D. Prisoners should be treated more humanely"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Plato's allegory explores epistemology — how we know what is real. The prisoners mistake shadows for reality, and the freed prisoner's struggle illustrates how difficult it is to accept deeper truths.",
+      "explanation_zh": "Plato's allegory explores epistemology — how we know what is real. The prisoners mistake shadows for reality, and the freed prisoner's struggle illustrates how difficult it is to accept deeper truths.",
+      "tags": [
+        "philosophical_themes",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G9",
+        "original_topic": "philosophical_themes",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "writing",
+      "subtopic": "sentence_combining",
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which revision most effectively combines these sentences? (1) Artificial intelligence can analyze medical images. (2) AI detects patterns that human doctors might miss. (3) This technology could improve early diagnosis of diseases.",
+        "options": [
+          "A. Artificial intelligence can analyze medical images and detect patterns that human doctors might miss, potentially improving early diagnosis of diseases.",
+          "B. AI can analyze medical images. It detects patterns human doctors miss. It could improve early diagnosis.",
+          "C. Artificial intelligence analyzes medical images and it detects patterns and this could improve diagnosis of diseases.",
+          "D. By analyzing medical images, artificial intelligence, which detects patterns, that human doctors might miss, could improve early diagnosis."
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which revision most effectively combines these sentences? (1) Artificial intelligence can analyze medical images. (2) AI detects patterns that human doctors might miss. (3) This technology could improve early diagnosis of diseases.",
+        "options": [
+          "A. Artificial intelligence can analyze medical images and detect patterns that human doctors might miss, potentially improving early diagnosis of diseases.",
+          "B. AI can analyze medical images. It detects patterns human doctors miss. It could improve early diagnosis.",
+          "C. Artificial intelligence analyzes medical images and it detects patterns and this could improve diagnosis of diseases.",
+          "D. By analyzing medical images, artificial intelligence, which detects patterns, that human doctors might miss, could improve early diagnosis."
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Option A smoothly integrates all three ideas using a compound predicate ('analyze...and detect') and a participial phrase ('potentially improving'), creating a cohesive sentence without redundancy.",
+      "explanation_zh": "Option A smoothly integrates all three ideas using a compound predicate ('analyze...and detect') and a participial phrase ('potentially improving'), creating a cohesive sentence without redundancy.",
+      "tags": [
+        "sentence_combining",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "sentence_combining",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "grammar",
+      "subtopic": "modifiers",
+      "difficulty": 0.66,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence contains a misplaced modifier?",
+        "options": [
+          "A. The student who studied diligently earned the highest grade.",
+          "B. Nearly finished, the teacher collected the exams from the students.",
+          "C. The teacher collected the nearly finished exams from the students.",
+          "D. After studying diligently, the student earned the highest grade."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence contains a misplaced modifier?",
+        "options": [
+          "A. The student who studied diligently earned the highest grade.",
+          "B. Nearly finished, the teacher collected the exams from the students.",
+          "C. The teacher collected the nearly finished exams from the students.",
+          "D. After studying diligently, the student earned the highest grade."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Nearly finished' appears to modify 'the teacher' but should modify 'the exams.' The modifier is misplaced because it is adjacent to the wrong noun.",
+      "explanation_zh": "'Nearly finished' appears to modify 'the teacher' but should modify 'the exams.' The modifier is misplaced because it is adjacent to the wrong noun.",
+      "tags": [
+        "misplaced_modifiers",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "misplaced_modifiers",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "comma_splices_run_ons",
+      "subtopic": null,
+      "difficulty": 0.68,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which revision correctly fixes the comma splice? Original: 'The James Webb Space Telescope captured stunning images of distant galaxies, astronomers are now analyzing the data for signs of early star formation.'",
+        "options": [
+          "A. The James Webb Space Telescope captured stunning images of distant galaxies astronomers are now analyzing the data for signs of early star formation.",
+          "B. The James Webb Space Telescope captured stunning images of distant galaxies; astronomers are now analyzing the data for signs of early star formation.",
+          "C. The James Webb Space Telescope captured stunning images of distant galaxies, and, astronomers are now analyzing the data for signs of early star formation.",
+          "D. The James Webb Space Telescope captured, stunning images of distant galaxies, astronomers are now analyzing the data for signs of early star formation."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which revision correctly fixes the comma splice? Original: 'The James Webb Space Telescope captured stunning images of distant galaxies, astronomers are now analyzing the data for signs of early star formation.'",
+        "options": [
+          "A. The James Webb Space Telescope captured stunning images of distant galaxies astronomers are now analyzing the data for signs of early star formation.",
+          "B. The James Webb Space Telescope captured stunning images of distant galaxies; astronomers are now analyzing the data for signs of early star formation.",
+          "C. The James Webb Space Telescope captured stunning images of distant galaxies, and, astronomers are now analyzing the data for signs of early star formation.",
+          "D. The James Webb Space Telescope captured, stunning images of distant galaxies, astronomers are now analyzing the data for signs of early star formation."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A semicolon correctly joins two closely related independent clauses. Option A creates a run-on. Option C adds an unnecessary comma after 'and.' Option D misplaces a comma.",
+      "explanation_zh": "A semicolon correctly joins two closely related independent clauses. Option A creates a run-on. Option C adds an unnecessary comma after 'and.' Option D misplaces a comma.",
+      "tags": [
+        "comma_splices_run_ons",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "comma_splices_run_ons",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "formal_informal_tone",
+      "subtopic": null,
+      "difficulty": 0.69,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Revise this informal sentence for an academic paper: 'Tons of kids are glued to their screens all day and it's messing up their sleep big time.'",
+        "options": [
+          "A. A lot of kids watch screens a lot and do not sleep well.",
+          "B. Research indicates that excessive screen time among adolescents is significantly associated with disrupted sleep patterns.",
+          "C. Kids these days spend way too much time on screens, which is bad for sleep.",
+          "D. It has been found that kids are on screens and not sleeping."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Revise this informal sentence for an academic paper: 'Tons of kids are glued to their screens all day and it's messing up their sleep big time.'",
+        "options": [
+          "A. A lot of kids watch screens a lot and do not sleep well.",
+          "B. Research indicates that excessive screen time among adolescents is significantly associated with disrupted sleep patterns.",
+          "C. Kids these days spend way too much time on screens, which is bad for sleep.",
+          "D. It has been found that kids are on screens and not sleeping."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Academic writing uses precise language ('excessive screen time,' 'significantly associated'), cites evidence ('research indicates'), and avoids colloquialisms and vague quantifiers.",
+      "explanation_zh": "Academic writing uses precise language ('excessive screen time,' 'significantly associated'), cites evidence ('research indicates'), and avoids colloquialisms and vague quantifiers.",
+      "tags": [
+        "formal_informal_tone",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "formal_informal_tone",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "argumentative_structure",
+      "subtopic": null,
+      "difficulty": 0.71,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In this argumentative essay outline about renewable energy, which element is in the wrong position? I. Introduction/Thesis II. Counterargument and rebuttal III. Body paragraph 1: Solar energy benefits IV. Body paragraph 2: Wind energy benefits V. Conclusion",
+        "options": [
+          "A. The thesis is in the wrong position.",
+          "B. The counterargument should come after the body paragraphs, not before them.",
+          "C. The conclusion should come before the body paragraphs.",
+          "D. The body paragraphs should come before the introduction."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In this argumentative essay outline about renewable energy, which element is in the wrong position? I. Introduction/Thesis II. Counterargument and rebuttal III. Body paragraph 1: Solar energy benefits IV. Body paragraph 2: Wind energy benefits V. Conclusion",
+        "options": [
+          "A. The thesis is in the wrong position.",
+          "B. The counterargument should come after the body paragraphs, not before them.",
+          "C. The conclusion should come before the body paragraphs.",
+          "D. The body paragraphs should come before the introduction."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "In a standard argumentative essay, body paragraphs with supporting evidence come before the counterargument. The writer should first establish their position, then address opposing views.",
+      "explanation_zh": "In a standard argumentative essay, body paragraphs with supporting evidence come before the counterargument. The writer should first establish their position, then address opposing views.",
+      "tags": [
+        "argumentative_structure",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "argumentative_structure",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "grammar",
+      "subtopic": "agreement",
+      "difficulty": 0.72,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence has a pronoun-antecedent agreement error?",
+        "options": [
+          "A. The committee announced their decision after deliberating for three hours.",
+          "B. Neither the coach nor the players could find his equipment.",
+          "C. The scientists published their findings in a peer-reviewed journal.",
+          "D. Maria told her mother about the award she received."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence has a pronoun-antecedent agreement error?",
+        "options": [
+          "A. The committee announced their decision after deliberating for three hours.",
+          "B. Neither the coach nor the players could find his equipment.",
+          "C. The scientists published their findings in a peer-reviewed journal.",
+          "D. Maria told her mother about the award she received."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "With 'neither...nor,' the pronoun should agree with the nearer antecedent. 'Players' is plural, so the pronoun should be 'their,' not 'his.' The sentence should read 'their equipment.'",
+      "explanation_zh": "With 'neither...nor,' the pronoun should agree with the nearer antecedent. 'Players' is plural, so the pronoun should be 'their,' not 'his.' The sentence should read 'their equipment.'",
+      "tags": [
+        "pronoun_antecedent_agreement",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "pronoun_antecedent_agreement",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "mla_awareness",
+      "subtopic": null,
+      "difficulty": 0.74,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "According to MLA format, which in-text citation is correct for a quote from page 42 of a book by Dr. Sarah Chen?",
+        "options": [
+          "A. (Dr. Chen, 42)",
+          "B. (Chen 42)",
+          "C. (Sarah Chen, p. 42)",
+          "D. (Chen, 2025, p. 42)"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "According to MLA format, which in-text citation is correct for a quote from page 42 of a book by Dr. Sarah Chen?",
+        "options": [
+          "A. (Dr. Chen, 42)",
+          "B. (Chen 42)",
+          "C. (Sarah Chen, p. 42)",
+          "D. (Chen, 2025, p. 42)"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "MLA in-text citations use the author's last name and the page number with no comma: (Chen 42). Titles like 'Dr.' are not included. APA (not MLA) uses the year and 'p.'",
+      "explanation_zh": "MLA in-text citations use the author's last name and the page number with no comma: (Chen 42). Titles like 'Dr.' are not included. APA (not MLA) uses the year and 'p.'",
+      "tags": [
+        "mla_awareness",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "mla_awareness",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G9",
+      "topic": "dangling_modifiers",
+      "subtopic": null,
+      "difficulty": 0.75,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence contains a dangling modifier?",
+        "options": [
+          "A. After reviewing the data, the researchers published their conclusions.",
+          "B. Having completed the experiment, the results were submitted to the journal.",
+          "C. While waiting for the bus, Sarah read her notes.",
+          "D. Exhausted from the hike, the campers set up their tents quickly."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence contains a dangling modifier?",
+        "options": [
+          "A. After reviewing the data, the researchers published their conclusions.",
+          "B. Having completed the experiment, the results were submitted to the journal.",
+          "C. While waiting for the bus, Sarah read her notes.",
+          "D. Exhausted from the hike, the campers set up their tents quickly."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Having completed the experiment' implies a person performed the action, but the subject is 'the results,' which cannot complete an experiment. The modifier dangles because it has no logical subject.",
+      "explanation_zh": "'Having completed the experiment' implies a person performed the action, but the subject is 'the results,' which cannot complete an experiment. The modifier dangles because it has no logical subject.",
+      "tags": [
+        "dangling_modifiers",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G9",
+        "original_topic": "dangling_modifiers",
+        "is_seed": false
+      }
+    }
+  ]
+}

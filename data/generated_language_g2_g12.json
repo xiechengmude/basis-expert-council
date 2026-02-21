@@ -1,0 +1,1322 @@
+[
+  {
+    "id": "G2-LANG-101",
+    "grade": "G2",
+    "subject": "language_usage",
+    "topic": "common_proper_nouns",
+    "question": "Which word in the sentence is a proper noun? 'My dog Max loves to play in the park.'",
+    "options": [
+      {"label": "A", "text": "dog"},
+      {"label": "B", "text": "Max"},
+      {"label": "C", "text": "park"},
+      {"label": "D", "text": "play"}
+    ],
+    "correct_answer": "B",
+    "explanation": "A proper noun names a specific person, place, or thing and is capitalized. 'Max' is a specific name for the dog."
+  },
+  {
+    "id": "G2-LANG-102",
+    "grade": "G2",
+    "subject": "language_usage",
+    "topic": "verb_tense",
+    "question": "Choose the correct verb: 'Yesterday, we _______ to the library.'",
+    "options": [
+      {"label": "A", "text": "walk"},
+      {"label": "B", "text": "walked"},
+      {"label": "C", "text": "will walk"},
+      {"label": "D", "text": "walking"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The word 'yesterday' tells us the action happened in the past, so we use the past tense verb 'walked'."
+  },
+  {
+    "id": "G2-LANG-103",
+    "grade": "G2",
+    "subject": "language_usage",
+    "topic": "adjectives",
+    "question": "Which word is an adjective in this sentence? 'The tiny kitten climbed the tall tree.'",
+    "options": [
+      {"label": "A", "text": "kitten"},
+      {"label": "B", "text": "climbed"},
+      {"label": "C", "text": "tiny"},
+      {"label": "D", "text": "tree"}
+    ],
+    "correct_answer": "C",
+    "explanation": "An adjective describes a noun. 'Tiny' describes what kind of kitten it is. ('Tall' is also an adjective, but 'tiny' is the listed answer.)"
+  },
+  {
+    "id": "G2-LANG-104",
+    "grade": "G2",
+    "subject": "language_usage",
+    "topic": "punctuation",
+    "question": "Which sentence uses the correct end punctuation?",
+    "options": [
+      {"label": "A", "text": "Where is my backpack."},
+      {"label": "B", "text": "Where is my backpack?"},
+      {"label": "C", "text": "Where is my backpack!"},
+      {"label": "D", "text": "Where is my backpack,"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Questions that ask for information end with a question mark. 'Where is my backpack' is asking a question."
+  },
+  {
+    "id": "G2-LANG-105",
+    "grade": "G2",
+    "subject": "language_usage",
+    "topic": "irregular_plurals",
+    "question": "What is the correct plural of 'mouse'?",
+    "options": [
+      {"label": "A", "text": "mouses"},
+      {"label": "B", "text": "mousies"},
+      {"label": "C", "text": "mice"},
+      {"label": "D", "text": "mices"}
+    ],
+    "correct_answer": "C",
+    "explanation": "'Mouse' has an irregular plural form. Instead of adding -s or -es, it changes to 'mice'."
+  },
+  {
+    "id": "G2-LANG-106",
+    "grade": "G2",
+    "subject": "language_usage",
+    "topic": "capitalization",
+    "question": "Which sentence has correct capitalization?",
+    "options": [
+      {"label": "A", "text": "we went to the Store on monday."},
+      {"label": "B", "text": "We went to the store on Monday."},
+      {"label": "C", "text": "we went to the Store on Monday."},
+      {"label": "D", "text": "We Went To The Store On Monday."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Capitalize the first word of a sentence and proper nouns. Days of the week like 'Monday' are always capitalized. 'Store' is not a proper noun here."
+  },
+  {
+    "id": "G2-LANG-107",
+    "grade": "G2",
+    "subject": "language_usage",
+    "topic": "sentence_vs_fragment",
+    "question": "Which of these is a complete sentence?",
+    "options": [
+      {"label": "A", "text": "Running in the yard."},
+      {"label": "B", "text": "The big brown."},
+      {"label": "C", "text": "She likes to read books."},
+      {"label": "D", "text": "Because it was raining."}
+    ],
+    "correct_answer": "C",
+    "explanation": "A complete sentence needs a subject and a verb and expresses a complete thought. 'She likes to read books' has a subject (she), a verb (likes), and tells a complete idea."
+  },
+  {
+    "id": "G2-LANG-108",
+    "grade": "G2",
+    "subject": "language_usage",
+    "topic": "commas_in_lists",
+    "question": "Which sentence uses commas correctly in a list?",
+    "options": [
+      {"label": "A", "text": "I packed apples oranges and grapes."},
+      {"label": "B", "text": "I packed apples, oranges, and grapes."},
+      {"label": "C", "text": "I packed, apples oranges, and grapes."},
+      {"label": "D", "text": "I packed apples oranges, and, grapes."}
+    ],
+    "correct_answer": "B",
+    "explanation": "When listing three or more items, place a comma after each item except the last. A comma before 'and' (the Oxford comma) keeps the list clear."
+  },
+  {
+    "id": "G3-LANG-101",
+    "grade": "G3",
+    "subject": "language_usage",
+    "topic": "common_proper_nouns",
+    "question": "Read the sentence: 'In January, our class visited the National Air and Space Museum in Washington.' Which words are proper nouns?",
+    "options": [
+      {"label": "A", "text": "class, museum"},
+      {"label": "B", "text": "January, Washington"},
+      {"label": "C", "text": "January, National Air and Space Museum, Washington"},
+      {"label": "D", "text": "class, January"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Proper nouns name specific things: 'January' is a specific month, 'National Air and Space Museum' is a specific place, and 'Washington' is a specific city."
+  },
+  {
+    "id": "G3-LANG-102",
+    "grade": "G3",
+    "subject": "language_usage",
+    "topic": "verb_tense_future",
+    "question": "Which sentence uses the future tense correctly?",
+    "options": [
+      {"label": "A", "text": "Tomorrow we go to the science fair."},
+      {"label": "B", "text": "Tomorrow we will go to the science fair."},
+      {"label": "C", "text": "Tomorrow we went to the science fair."},
+      {"label": "D", "text": "Tomorrow we going to the science fair."}
+    ],
+    "correct_answer": "B",
+    "explanation": "The future tense uses 'will' before the verb. Since the action happens 'tomorrow,' the correct form is 'will go'."
+  },
+  {
+    "id": "G3-LANG-103",
+    "grade": "G3",
+    "subject": "language_usage",
+    "topic": "contractions",
+    "question": "Which contraction correctly replaces the underlined words? 'They are going to the park after school.'",
+    "options": [
+      {"label": "A", "text": "Their"},
+      {"label": "B", "text": "There"},
+      {"label": "C", "text": "They're"},
+      {"label": "D", "text": "Theyr'e"}
+    ],
+    "correct_answer": "C",
+    "explanation": "'They're' is the contraction of 'they are.' The apostrophe replaces the letter 'a'. 'Their' shows ownership and 'there' shows a place."
+  },
+  {
+    "id": "G3-LANG-104",
+    "grade": "G3",
+    "subject": "language_usage",
+    "topic": "irregular_plurals",
+    "question": "Which sentence uses the correct plural forms?",
+    "options": [
+      {"label": "A", "text": "The womans carried the boxs to the shelf."},
+      {"label": "B", "text": "The women carried the boxes to the shelves."},
+      {"label": "C", "text": "The womens carried the boxes to the shelfs."},
+      {"label": "D", "text": "The women carried the boxs to the shelves."}
+    ],
+    "correct_answer": "B",
+    "explanation": "'Women' is the irregular plural of 'woman.' 'Boxes' adds -es because the word ends in x. 'Shelves' changes the f to v and adds -es."
+  },
+  {
+    "id": "G3-LANG-105",
+    "grade": "G3",
+    "subject": "language_usage",
+    "topic": "simple_punctuation",
+    "question": "Which sentence is punctuated correctly?",
+    "options": [
+      {"label": "A", "text": "Wow that was an amazing goal"},
+      {"label": "B", "text": "Wow, that was an amazing goal!"},
+      {"label": "C", "text": "Wow that was an amazing goal!"},
+      {"label": "D", "text": "Wow, that was an amazing goal."}
+    ],
+    "correct_answer": "B",
+    "explanation": "An interjection like 'Wow' is followed by a comma. The sentence expresses strong excitement, so it ends with an exclamation mark."
+  },
+  {
+    "id": "G3-LANG-106",
+    "grade": "G3",
+    "subject": "language_usage",
+    "topic": "regular_plurals",
+    "question": "Which word correctly completes the sentence? 'The _______ on the table need to be washed.'",
+    "options": [
+      {"label": "A", "text": "dishs"},
+      {"label": "B", "text": "dish"},
+      {"label": "C", "text": "dishes"},
+      {"label": "D", "text": "dishies"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Nouns ending in -sh form their plural by adding -es: dish becomes dishes."
+  },
+  {
+    "id": "G3-LANG-107",
+    "grade": "G3",
+    "subject": "language_usage",
+    "topic": "capitalization",
+    "question": "A student wrote: 'my Family visited uncle James in dallas, texas, last summer.' How many capitalization errors are in this sentence?",
+    "options": [
+      {"label": "A", "text": "2"},
+      {"label": "B", "text": "3"},
+      {"label": "C", "text": "4"},
+      {"label": "D", "text": "5"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Three errors: 'my' should be 'My' (start of sentence), 'dallas' should be 'Dallas,' and 'texas' should be 'Texas' (city/state names are proper nouns). 'Family' and 'summer' are correctly lowercase."
+  },
+  {
+    "id": "G3-LANG-108",
+    "grade": "G3",
+    "subject": "language_usage",
+    "topic": "sentence_vs_fragment",
+    "question": "Which group of words is a sentence fragment?",
+    "options": [
+      {"label": "A", "text": "The robot completed all the tasks quickly."},
+      {"label": "B", "text": "After the rain stopped falling on Tuesday afternoon."},
+      {"label": "C", "text": "Our teacher read us a new story."},
+      {"label": "D", "text": "Birds sing loudly every morning."}
+    ],
+    "correct_answer": "B",
+    "explanation": "'After the rain stopped falling on Tuesday afternoon' begins with 'after,' making it a dependent clause. It does not express a complete thought on its own."
+  },
+  {
+    "id": "G4-LANG-101",
+    "grade": "G4",
+    "subject": "language_usage",
+    "topic": "subject_verb_agreement",
+    "question": "Which sentence has correct subject-verb agreement?",
+    "options": [
+      {"label": "A", "text": "The group of students are ready for the test."},
+      {"label": "B", "text": "The group of students is ready for the test."},
+      {"label": "C", "text": "The group of students were ready for the test."},
+      {"label": "D", "text": "The group of students have been ready for the test."}
+    ],
+    "correct_answer": "B",
+    "explanation": "The subject is 'group' (singular), not 'students.' A singular subject takes a singular verb: 'group...is ready.'"
+  },
+  {
+    "id": "G4-LANG-102",
+    "grade": "G4",
+    "subject": "language_usage",
+    "topic": "pronoun_types",
+    "question": "Which sentence uses the correct pronoun?",
+    "options": [
+      {"label": "A", "text": "Him and Jake went to soccer practice."},
+      {"label": "B", "text": "He and Jake went to soccer practice."},
+      {"label": "C", "text": "Jake and him went to soccer practice."},
+      {"label": "D", "text": "Me and Jake went to soccer practice."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Subject pronouns (he, she, I) are used when the pronoun is the subject of the sentence. 'He and Jake' is correct because both are subjects performing the action."
+  },
+  {
+    "id": "G4-LANG-103",
+    "grade": "G4",
+    "subject": "language_usage",
+    "topic": "quotation_marks",
+    "question": "Which sentence uses quotation marks and punctuation correctly?",
+    "options": [
+      {"label": "A", "text": "Mom said \"please clean your room\"."},
+      {"label": "B", "text": "Mom said, \"Please clean your room.\""},
+      {"label": "C", "text": "Mom said \"Please clean your room\"."},
+      {"label": "D", "text": "Mom said, \"please clean your room\"."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A comma follows the speaker tag before the quote. The first word of a direct quote is capitalized. The period goes inside the closing quotation mark."
+  },
+  {
+    "id": "G4-LANG-104",
+    "grade": "G4",
+    "subject": "language_usage",
+    "topic": "apostrophes",
+    "question": "Which sentence uses the apostrophe correctly to show possession?",
+    "options": [
+      {"label": "A", "text": "The dogs' bone was buried in the yard. (one dog)"},
+      {"label": "B", "text": "The dog's bone was buried in the yard. (one dog)"},
+      {"label": "C", "text": "The dogs bone was buried in the yard. (one dog)"},
+      {"label": "D", "text": "The dogs's bone was buried in the yard. (one dog)"}
+    ],
+    "correct_answer": "B",
+    "explanation": "For a singular noun, add 's to show possession: dog's (one dog owns the bone). Dogs' would mean more than one dog."
+  },
+  {
+    "id": "G4-LANG-105",
+    "grade": "G4",
+    "subject": "language_usage",
+    "topic": "conjunctions",
+    "question": "Which conjunction best completes this sentence? 'I wanted to play outside, _______ it was raining heavily.'",
+    "options": [
+      {"label": "A", "text": "and"},
+      {"label": "B", "text": "so"},
+      {"label": "C", "text": "but"},
+      {"label": "D", "text": "or"}
+    ],
+    "correct_answer": "C",
+    "explanation": "'But' is the correct conjunction because it shows contrast. The speaker wanted to play outside; however, rain prevented it. The two ideas oppose each other."
+  },
+  {
+    "id": "G4-LANG-106",
+    "grade": "G4",
+    "subject": "language_usage",
+    "topic": "topic_sentences",
+    "question": "Which is the best topic sentence for a paragraph about how an AI assistant called ChatGPT can help students with homework?",
+    "options": [
+      {"label": "A", "text": "ChatGPT was created by a company called OpenAI."},
+      {"label": "B", "text": "AI assistants like ChatGPT can help students study more effectively by explaining difficult concepts."},
+      {"label": "C", "text": "Many people use computers every day."},
+      {"label": "D", "text": "Homework can be very hard sometimes."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A good topic sentence introduces the main idea of the paragraph. Option B directly states how AI assistants can help students, which is the paragraph's focus."
+  },
+  {
+    "id": "G4-LANG-107",
+    "grade": "G4",
+    "subject": "language_usage",
+    "topic": "homophones",
+    "question": "Choose the correct words: '_______ going to bring _______ lunches to the picnic over _______.'",
+    "options": [
+      {"label": "A", "text": "Their / they're / there"},
+      {"label": "B", "text": "They're / their / there"},
+      {"label": "C", "text": "There / their / they're"},
+      {"label": "D", "text": "They're / there / their"}
+    ],
+    "correct_answer": "B",
+    "explanation": "'They're' = they are (going). 'Their' = belonging to them (lunches). 'There' = a place (over there)."
+  },
+  {
+    "id": "G4-LANG-108",
+    "grade": "G4",
+    "subject": "language_usage",
+    "topic": "paragraph_organization",
+    "question": "In a paragraph, a student wrote these sentences out of order. Which is the correct sequence? (1) Finally, the butterfly emerges from the chrysalis. (2) First, the butterfly lays eggs on a leaf. (3) Next, a caterpillar hatches from the egg. (4) Then, the caterpillar forms a chrysalis.",
+    "options": [
+      {"label": "A", "text": "1, 2, 3, 4"},
+      {"label": "B", "text": "2, 3, 4, 1"},
+      {"label": "C", "text": "3, 2, 4, 1"},
+      {"label": "D", "text": "2, 4, 3, 1"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The signal words show the order: First (eggs) -> Next (caterpillar hatches) -> Then (chrysalis) -> Finally (butterfly emerges). The correct sequence is 2, 3, 4, 1."
+  },
+  {
+    "id": "G5-LANG-101",
+    "grade": "G5",
+    "subject": "language_usage",
+    "topic": "subject_verb_agreement",
+    "question": "Which sentence has correct subject-verb agreement?",
+    "options": [
+      {"label": "A", "text": "Neither the teacher nor the students was prepared for the fire drill."},
+      {"label": "B", "text": "Neither the teacher nor the students were prepared for the fire drill."},
+      {"label": "C", "text": "Neither the teacher nor the students has been prepared for the fire drill."},
+      {"label": "D", "text": "Neither the teacher nor the students is prepared for the fire drill."}
+    ],
+    "correct_answer": "B",
+    "explanation": "With 'neither...nor,' the verb agrees with the subject closest to it. 'Students' (plural) is closest, so 'were' is correct."
+  },
+  {
+    "id": "G5-LANG-102",
+    "grade": "G5",
+    "subject": "language_usage",
+    "topic": "possessive_pronouns",
+    "question": "Which sentence uses possessive pronouns correctly?",
+    "options": [
+      {"label": "A", "text": "The cat licked it's paw after eating its food."},
+      {"label": "B", "text": "The cat licked its paw after eating it's food."},
+      {"label": "C", "text": "The cat licked its paw after eating its food."},
+      {"label": "D", "text": "The cat licked it's paw after eating it's food."}
+    ],
+    "correct_answer": "C",
+    "explanation": "'Its' (no apostrophe) is the possessive pronoun meaning 'belonging to it.' 'It's' means 'it is' or 'it has,' which does not fit here."
+  },
+  {
+    "id": "G5-LANG-103",
+    "grade": "G5",
+    "subject": "language_usage",
+    "topic": "compound_sentences",
+    "question": "Which option correctly combines these two sentences into a compound sentence? 'The Mars rover collected soil samples. Scientists on Earth analyzed the data.'",
+    "options": [
+      {"label": "A", "text": "The Mars rover collected soil samples, scientists on Earth analyzed the data."},
+      {"label": "B", "text": "The Mars rover collected soil samples, and scientists on Earth analyzed the data."},
+      {"label": "C", "text": "The Mars rover collected soil samples and scientists on Earth analyzed the data."},
+      {"label": "D", "text": "Collecting soil samples, scientists on Earth analyzed the data."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A compound sentence joins two independent clauses with a comma followed by a coordinating conjunction ('and'). Option A is a comma splice, and C lacks the required comma."
+  },
+  {
+    "id": "G5-LANG-104",
+    "grade": "G5",
+    "subject": "language_usage",
+    "topic": "concluding_sentences",
+    "question": "Which sentence best concludes a paragraph about how solar panels help the environment?",
+    "options": [
+      {"label": "A", "text": "Solar panels are made of silicon."},
+      {"label": "B", "text": "Many homes have rooftops."},
+      {"label": "C", "text": "In short, solar panels offer a clean energy source that reduces pollution and protects our planet."},
+      {"label": "D", "text": "Wind turbines are another type of renewable energy."}
+    ],
+    "correct_answer": "C",
+    "explanation": "A good concluding sentence summarizes the paragraph's main idea. Option C restates the environmental benefits of solar panels and wraps up the paragraph."
+  },
+  {
+    "id": "G5-LANG-105",
+    "grade": "G5",
+    "subject": "language_usage",
+    "topic": "homophones",
+    "question": "Choose the sentence that uses homophones correctly.",
+    "options": [
+      {"label": "A", "text": "The whether outside will affect weather we go on the field trip."},
+      {"label": "B", "text": "The weather outside will affect whether we go on the field trip."},
+      {"label": "C", "text": "The weather outside will effect whether we go on the field trip."},
+      {"label": "D", "text": "The whether outside will effect weather we go on the field trip."}
+    ],
+    "correct_answer": "B",
+    "explanation": "'Weather' refers to atmospheric conditions. 'Whether' introduces a choice or condition. 'Affect' is the correct verb meaning 'to influence.'"
+  },
+  {
+    "id": "G5-LANG-106",
+    "grade": "G5",
+    "subject": "language_usage",
+    "topic": "quotation_marks",
+    "question": "Which sentence correctly punctuates a direct quotation?",
+    "options": [
+      {"label": "A", "text": "\"The new AI tool\" said the teacher \"can check your spelling.\""},
+      {"label": "B", "text": "\"The new AI tool,\" said the teacher, \"can check your spelling.\""},
+      {"label": "C", "text": "\"The new AI tool\", said the teacher, \"Can check your spelling.\""},
+      {"label": "D", "text": "\"The new AI tool,\" said the teacher \"Can check your spelling.\""}
+    ],
+    "correct_answer": "B",
+    "explanation": "In a split quotation, commas go inside the quotation marks. The second part continues the same sentence, so 'can' is lowercase. A comma separates the speaker tag from the second part."
+  },
+  {
+    "id": "G5-LANG-107",
+    "grade": "G5",
+    "subject": "language_usage",
+    "topic": "conjunctions",
+    "question": "Which conjunction best connects these ideas? 'Students must study for the exam _______ they want to earn a good grade.'",
+    "options": [
+      {"label": "A", "text": "but"},
+      {"label": "B", "text": "or"},
+      {"label": "C", "text": "if"},
+      {"label": "D", "text": "yet"}
+    ],
+    "correct_answer": "C",
+    "explanation": "'If' is a subordinating conjunction that introduces a condition. Studying is the condition required for earning a good grade."
+  },
+  {
+    "id": "G5-LANG-108",
+    "grade": "G5",
+    "subject": "language_usage",
+    "topic": "paragraph_organization",
+    "question": "A student is writing about the water cycle. Which sentence does NOT belong in the paragraph? (1) Water evaporates from oceans and lakes. (2) Vapor rises and forms clouds. (3) Dolphins are mammals that live in the ocean. (4) Rain falls back to Earth, completing the cycle.",
+    "options": [
+      {"label": "A", "text": "Sentence 1"},
+      {"label": "B", "text": "Sentence 2"},
+      {"label": "C", "text": "Sentence 3"},
+      {"label": "D", "text": "Sentence 4"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Sentence 3 is about dolphins, which is not related to how the water cycle works. The other sentences describe steps in the water cycle."
+  },
+  {
+    "id": "G6-LANG-101",
+    "grade": "G6",
+    "subject": "language_usage",
+    "topic": "independent_dependent_clauses",
+    "question": "Identify the dependent clause: 'Although the experiment failed, the students learned valuable lessons about the scientific method.'",
+    "options": [
+      {"label": "A", "text": "the students learned valuable lessons"},
+      {"label": "B", "text": "about the scientific method"},
+      {"label": "C", "text": "Although the experiment failed"},
+      {"label": "D", "text": "the students learned valuable lessons about the scientific method"}
+    ],
+    "correct_answer": "C",
+    "explanation": "'Although the experiment failed' begins with the subordinating conjunction 'although,' making it a dependent clause that cannot stand alone as a sentence."
+  },
+  {
+    "id": "G6-LANG-102",
+    "grade": "G6",
+    "subject": "language_usage",
+    "topic": "semicolons",
+    "question": "Which sentence uses a semicolon correctly?",
+    "options": [
+      {"label": "A", "text": "The test was difficult; because we didn't study enough."},
+      {"label": "B", "text": "The test was difficult; we should have studied more."},
+      {"label": "C", "text": "The test was difficult; and we should have studied more."},
+      {"label": "D", "text": "The test; was difficult we should have studied more."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A semicolon joins two closely related independent clauses without a conjunction. 'The test was difficult' and 'we should have studied more' are both independent clauses."
+  },
+  {
+    "id": "G6-LANG-103",
+    "grade": "G6",
+    "subject": "language_usage",
+    "topic": "active_passive_voice",
+    "question": "Which sentence is written in active voice?",
+    "options": [
+      {"label": "A", "text": "The award was given to Maria by the principal."},
+      {"label": "B", "text": "The principal gave the award to Maria."},
+      {"label": "C", "text": "The award had been presented at the ceremony."},
+      {"label": "D", "text": "Maria was recognized by the principal for her work."}
+    ],
+    "correct_answer": "B",
+    "explanation": "In active voice, the subject performs the action. 'The principal' (subject) 'gave' (action) 'the award' (object). The other sentences use passive voice, where the subject receives the action."
+  },
+  {
+    "id": "G6-LANG-104",
+    "grade": "G6",
+    "subject": "language_usage",
+    "topic": "transitional_words",
+    "question": "Which transitional word best fits? 'Electric cars produce zero tailpipe emissions. _______, they still require electricity that may come from fossil fuels.'",
+    "options": [
+      {"label": "A", "text": "Furthermore"},
+      {"label": "B", "text": "However"},
+      {"label": "C", "text": "Therefore"},
+      {"label": "D", "text": "Similarly"}
+    ],
+    "correct_answer": "B",
+    "explanation": "'However' signals a contrast. The first sentence presents a benefit; the second sentence presents a limitation that contrasts with it."
+  },
+  {
+    "id": "G6-LANG-105",
+    "grade": "G6",
+    "subject": "language_usage",
+    "topic": "parallel_structure",
+    "question": "Which sentence uses parallel structure correctly?",
+    "options": [
+      {"label": "A", "text": "The students enjoy reading, writing, and to solve math problems."},
+      {"label": "B", "text": "The students enjoy reading, writing, and solving math problems."},
+      {"label": "C", "text": "The students enjoy reading, to write, and solving math problems."},
+      {"label": "D", "text": "The students enjoy to read, writing, and solving math problems."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Parallel structure means using the same grammatical form for items in a list. 'Reading, writing, and solving' all use the -ing (gerund) form."
+  },
+  {
+    "id": "G6-LANG-106",
+    "grade": "G6",
+    "subject": "language_usage",
+    "topic": "colons",
+    "question": "Which sentence uses a colon correctly?",
+    "options": [
+      {"label": "A", "text": "For the science project, you need: cardboard, glue, and markers."},
+      {"label": "B", "text": "You need several supplies for the science project: cardboard, glue, and markers."},
+      {"label": "C", "text": "You need: several supplies for the science project."},
+      {"label": "D", "text": "The supplies include: glue and markers and cardboard."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A colon follows a complete sentence that introduces a list. 'You need several supplies for the science project' is a complete independent clause, so a colon is appropriate before the list."
+  },
+  {
+    "id": "G6-LANG-107",
+    "grade": "G6",
+    "subject": "language_usage",
+    "topic": "text_evidence",
+    "question": "A student claims: 'Climate change is affecting Arctic wildlife.' Which piece of text evidence best supports this claim?",
+    "options": [
+      {"label": "A", "text": "The Arctic is a very cold region near the North Pole."},
+      {"label": "B", "text": "According to NOAA, polar bear populations have declined 40% as sea ice shrinks due to rising temperatures."},
+      {"label": "C", "text": "Many scientists study climate change."},
+      {"label": "D", "text": "Some animals have adapted to cold weather over millions of years."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Strong text evidence includes specific data (40% decline), a credible source (NOAA), and a direct connection between climate change (rising temperatures, shrinking ice) and wildlife impact (polar bear decline)."
+  },
+  {
+    "id": "G6-LANG-108",
+    "grade": "G6",
+    "subject": "language_usage",
+    "topic": "thesis_statements",
+    "question": "Which thesis statement is most effective for an argumentative essay about school uniforms?",
+    "options": [
+      {"label": "A", "text": "School uniforms are interesting."},
+      {"label": "B", "text": "Many schools around the world require uniforms."},
+      {"label": "C", "text": "School uniforms reduce bullying, promote equality, and help students focus on learning rather than fashion."},
+      {"label": "D", "text": "I think school uniforms are a good idea."}
+    ],
+    "correct_answer": "C",
+    "explanation": "An effective thesis takes a clear position and previews the supporting arguments. Option C states the claim and outlines three specific reasons that can be developed in body paragraphs."
+  },
+  {
+    "id": "G7-LANG-101",
+    "grade": "G7",
+    "subject": "language_usage",
+    "topic": "independent_dependent_clauses",
+    "question": "Which sentence correctly combines an independent and dependent clause?",
+    "options": [
+      {"label": "A", "text": "Because NASA's Artemis mission aims to return astronauts to the Moon. Scientists are excited."},
+      {"label": "B", "text": "Because NASA's Artemis mission aims to return astronauts to the Moon, scientists are excited about new discoveries."},
+      {"label": "C", "text": "NASA's Artemis mission aims to return astronauts to the Moon, because. Scientists are excited."},
+      {"label": "D", "text": "Because, NASA's Artemis mission aims to return astronauts to the Moon scientists are excited."}
+    ],
+    "correct_answer": "B",
+    "explanation": "When a dependent clause ('Because NASA's Artemis mission...') comes before an independent clause, it is followed by a comma. Together they form a complete complex sentence."
+  },
+  {
+    "id": "G7-LANG-102",
+    "grade": "G7",
+    "subject": "language_usage",
+    "topic": "semicolons",
+    "question": "Which sentence uses the semicolon correctly?",
+    "options": [
+      {"label": "A", "text": "The hurricane was downgraded; to a tropical storm by evening."},
+      {"label": "B", "text": "The hurricane was downgraded to a tropical storm; nevertheless, many coastal areas still experienced flooding."},
+      {"label": "C", "text": "The hurricane; was downgraded to a tropical storm, nevertheless many areas experienced flooding."},
+      {"label": "D", "text": "The hurricane was downgraded to a tropical storm, nevertheless; many coastal areas still experienced flooding."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A semicolon can join two independent clauses when the second begins with a conjunctive adverb like 'nevertheless,' which is followed by a comma."
+  },
+  {
+    "id": "G7-LANG-103",
+    "grade": "G7",
+    "subject": "language_usage",
+    "topic": "active_passive_voice",
+    "question": "Rewrite in active voice: 'The new climate report was released by the United Nations in 2025.'",
+    "options": [
+      {"label": "A", "text": "The United Nations released the new climate report in 2025."},
+      {"label": "B", "text": "In 2025, the new climate report released the United Nations."},
+      {"label": "C", "text": "The new climate report in 2025 was released."},
+      {"label": "D", "text": "Released in 2025 was the new climate report by the United Nations."}
+    ],
+    "correct_answer": "A",
+    "explanation": "Active voice places the doer of the action as the subject. 'The United Nations' performed the action of releasing, so it becomes the subject."
+  },
+  {
+    "id": "G7-LANG-104",
+    "grade": "G7",
+    "subject": "language_usage",
+    "topic": "parallel_structure",
+    "question": "Which sentence demonstrates correct parallel structure?",
+    "options": [
+      {"label": "A", "text": "The coach told the team to stretch, run laps, and they should practice free throws."},
+      {"label": "B", "text": "The coach told the team to stretch, to run laps, and practicing free throws."},
+      {"label": "C", "text": "The coach told the team to stretch, run laps, and practice free throws."},
+      {"label": "D", "text": "The coach told the team stretching, to run laps, and practice free throws."}
+    ],
+    "correct_answer": "C",
+    "explanation": "After 'to,' each item should use the base form of the verb: stretch, run, practice. This creates parallel structure across the list."
+  },
+  {
+    "id": "G7-LANG-105",
+    "grade": "G7",
+    "subject": "language_usage",
+    "topic": "source_credibility",
+    "question": "A student is writing a research paper on the effects of screen time on teenagers. Which source is LEAST credible?",
+    "options": [
+      {"label": "A", "text": "A 2025 study published in the Journal of Adolescent Health"},
+      {"label": "B", "text": "A blog post titled 'Why I Think Phones Are Bad' by an anonymous author"},
+      {"label": "C", "text": "A report from the American Academy of Pediatrics"},
+      {"label": "D", "text": "A peer-reviewed meta-analysis of 50 studies on adolescent screen use"}
+    ],
+    "correct_answer": "B",
+    "explanation": "An anonymous blog post lacks author credentials, peer review, and institutional backing. The other sources are from reputable, verifiable organizations or peer-reviewed publications."
+  },
+  {
+    "id": "G7-LANG-106",
+    "grade": "G7",
+    "subject": "language_usage",
+    "topic": "transitional_words",
+    "question": "Choose the best transition: 'The Amazon rainforest absorbs vast amounts of carbon dioxide. _______, deforestation has reduced its capacity to do so over the past decade.'",
+    "options": [
+      {"label": "A", "text": "In addition"},
+      {"label": "B", "text": "For example"},
+      {"label": "C", "text": "Unfortunately"},
+      {"label": "D", "text": "As a result"}
+    ],
+    "correct_answer": "C",
+    "explanation": "'Unfortunately' signals that the following information is a negative development related to the first statement. It transitions from a positive fact to a concerning reality."
+  },
+  {
+    "id": "G7-LANG-107",
+    "grade": "G7",
+    "subject": "language_usage",
+    "topic": "colons",
+    "question": "Which sentence uses the colon correctly?",
+    "options": [
+      {"label": "A", "text": "The three branches of government are: legislative, executive, and judicial."},
+      {"label": "B", "text": "The U.S. government has three branches: legislative, executive, and judicial."},
+      {"label": "C", "text": "The three branches: are legislative, executive, and judicial."},
+      {"label": "D", "text": "Legislative, executive, and judicial: are the three branches."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A colon must follow a complete independent clause. 'The U.S. government has three branches' is complete. Option A incorrectly places a colon after the verb 'are,' interrupting the sentence."
+  },
+  {
+    "id": "G7-LANG-108",
+    "grade": "G7",
+    "subject": "language_usage",
+    "topic": "text_evidence",
+    "question": "Which sentence provides the strongest textual evidence for the claim 'Space exploration leads to technological innovation'?",
+    "options": [
+      {"label": "A", "text": "Space is a fascinating subject for many students."},
+      {"label": "B", "text": "NASA's development of water purification systems for the International Space Station led to portable filters now used in disaster relief worldwide."},
+      {"label": "C", "text": "Many countries have space programs."},
+      {"label": "D", "text": "Astronauts train for years before going to space."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Option B provides a specific example of space technology (water purification for ISS) directly leading to a real-world innovation (portable filters for disaster relief), strongly supporting the claim."
+  },
+  {
+    "id": "G8-LANG-101",
+    "grade": "G8",
+    "subject": "language_usage",
+    "topic": "sentence_combining",
+    "question": "Combine these sentences effectively: (1) AI chatbots can answer questions instantly. (2) They sometimes provide inaccurate information. (3) Users should verify important facts independently.",
+    "options": [
+      {"label": "A", "text": "AI chatbots can answer questions instantly, but they sometimes provide inaccurate information, so users should verify important facts independently."},
+      {"label": "B", "text": "AI chatbots answer questions instantly and they sometimes provide inaccurate information and users should verify facts independently."},
+      {"label": "C", "text": "Although AI chatbots can answer questions instantly, they sometimes provide inaccurate information. Users should verify facts independently."},
+      {"label": "D", "text": "AI chatbots can answer questions instantly. They sometimes provide inaccurate information. Users should verify important facts independently."}
+    ],
+    "correct_answer": "A",
+    "explanation": "Option A combines all three ideas into one fluid compound sentence using coordinating conjunctions ('but' and 'so') that clearly show the logical relationships: contrast and consequence."
+  },
+  {
+    "id": "G8-LANG-102",
+    "grade": "G8",
+    "subject": "language_usage",
+    "topic": "misplaced_modifiers",
+    "question": "Which sentence corrects the dangling modifier? Original: 'Walking through the museum, the dinosaur skeleton amazed the visitors.'",
+    "options": [
+      {"label": "A", "text": "The dinosaur skeleton amazed the visitors walking through the museum."},
+      {"label": "B", "text": "Walking through the museum, the visitors were amazed by the dinosaur skeleton."},
+      {"label": "C", "text": "The dinosaur skeleton, walking through the museum, amazed the visitors."},
+      {"label": "D", "text": "Through the museum walking, the dinosaur skeleton amazed visitors."}
+    ],
+    "correct_answer": "B",
+    "explanation": "The participial phrase 'Walking through the museum' must be followed by the noun it describes. The visitors were walking, not the skeleton. Option B correctly places 'the visitors' right after the modifier."
+  },
+  {
+    "id": "G8-LANG-103",
+    "grade": "G8",
+    "subject": "language_usage",
+    "topic": "comma_splices",
+    "question": "Which sentence contains a comma splice?",
+    "options": [
+      {"label": "A", "text": "The rover landed on Mars, and scientists began analyzing the soil samples."},
+      {"label": "B", "text": "The rover landed on Mars, scientists began analyzing the soil samples."},
+      {"label": "C", "text": "After the rover landed on Mars, scientists began analyzing the soil samples."},
+      {"label": "D", "text": "The rover landed on Mars; scientists began analyzing the soil samples."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A comma splice occurs when two independent clauses are joined by only a comma, without a conjunction. Option B incorrectly uses just a comma between two complete sentences. Fix it with a semicolon, period, or conjunction."
+  },
+  {
+    "id": "G8-LANG-104",
+    "grade": "G8",
+    "subject": "language_usage",
+    "topic": "formal_informal_tone",
+    "question": "A student is writing a formal research paper. Which sentence uses the most appropriate tone?",
+    "options": [
+      {"label": "A", "text": "Climate change is super bad and we gotta do something about it ASAP."},
+      {"label": "B", "text": "Climate change poses significant environmental challenges that require immediate policy action."},
+      {"label": "C", "text": "I totally think climate change is a big deal and stuff."},
+      {"label": "D", "text": "Basically, climate change is kind of a problem that people should probably fix."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Formal academic writing uses precise vocabulary ('significant,' 'environmental challenges'), avoids slang and contractions, and maintains an objective, professional tone."
+  },
+  {
+    "id": "G8-LANG-105",
+    "grade": "G8",
+    "subject": "language_usage",
+    "topic": "pronoun_antecedent_agreement",
+    "question": "Which sentence demonstrates correct pronoun-antecedent agreement?",
+    "options": [
+      {"label": "A", "text": "Each of the girls brought their own laptop to class."},
+      {"label": "B", "text": "Each of the girls brought her own laptop to class."},
+      {"label": "C", "text": "Each of the girls brought its own laptop to class."},
+      {"label": "D", "text": "Each of the girls brought our own laptop to class."}
+    ],
+    "correct_answer": "B",
+    "explanation": "'Each' is a singular indefinite pronoun. In formal writing, the pronoun must agree in number: 'Each...brought her own laptop.' The antecedent 'each' refers to one girl at a time."
+  },
+  {
+    "id": "G8-LANG-106",
+    "grade": "G8",
+    "subject": "language_usage",
+    "topic": "argumentative_structure",
+    "question": "In an argumentative essay about whether schools should ban smartphones, which element should come directly after the thesis statement?",
+    "options": [
+      {"label": "A", "text": "The conclusion restating the main argument"},
+      {"label": "B", "text": "A counterargument acknowledging the other side"},
+      {"label": "C", "text": "The first body paragraph with supporting evidence for the claim"},
+      {"label": "D", "text": "A personal anecdote about the writer's phone use"}
+    ],
+    "correct_answer": "C",
+    "explanation": "After the thesis, an argumentative essay presents body paragraphs with evidence supporting the claim. Counterarguments typically come later, after the writer's position is established."
+  },
+  {
+    "id": "G8-LANG-107",
+    "grade": "G8",
+    "subject": "language_usage",
+    "topic": "run_on_sentences",
+    "question": "Which of the following is a run-on sentence?",
+    "options": [
+      {"label": "A", "text": "The SpaceX Starship launched successfully, and it reached orbit for the first time."},
+      {"label": "B", "text": "The SpaceX Starship launched successfully it reached orbit for the first time."},
+      {"label": "C", "text": "After the SpaceX Starship launched successfully, it reached orbit for the first time."},
+      {"label": "D", "text": "The SpaceX Starship launched successfully; it reached orbit for the first time."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A run-on sentence joins two independent clauses with no punctuation or conjunction. Option B fuses two complete thoughts without any separator."
+  },
+  {
+    "id": "G8-LANG-108",
+    "grade": "G8",
+    "subject": "language_usage",
+    "topic": "rhetorical_questions",
+    "question": "In a persuasive essay, what is the purpose of the rhetorical question 'If we do not protect our oceans today, what kind of planet will future generations inherit?'",
+    "options": [
+      {"label": "A", "text": "To request specific data from the reader about ocean pollution"},
+      {"label": "B", "text": "To provoke the reader to think critically and feel urgency about ocean conservation"},
+      {"label": "C", "text": "To show that the writer does not know the answer"},
+      {"label": "D", "text": "To end the essay with an open-ended conclusion that avoids taking a position"}
+    ],
+    "correct_answer": "B",
+    "explanation": "A rhetorical question is not meant to be answered literally. It engages the reader emotionally and encourages reflection, strengthening the persuasive argument by creating a sense of urgency."
+  },
+  {
+    "id": "G9-LANG-101",
+    "grade": "G9",
+    "subject": "language_usage",
+    "topic": "sentence_combining",
+    "question": "Which revision most effectively combines these sentences? (1) Artificial intelligence can analyze medical images. (2) AI detects patterns that human doctors might miss. (3) This technology could improve early diagnosis of diseases.",
+    "options": [
+      {"label": "A", "text": "Artificial intelligence can analyze medical images and detect patterns that human doctors might miss, potentially improving early diagnosis of diseases."},
+      {"label": "B", "text": "AI can analyze medical images. It detects patterns human doctors miss. It could improve early diagnosis."},
+      {"label": "C", "text": "Artificial intelligence analyzes medical images and it detects patterns and this could improve diagnosis of diseases."},
+      {"label": "D", "text": "By analyzing medical images, artificial intelligence, which detects patterns, that human doctors might miss, could improve early diagnosis."}
+    ],
+    "correct_answer": "A",
+    "explanation": "Option A smoothly integrates all three ideas using a compound predicate ('analyze...and detect') and a participial phrase ('potentially improving'), creating a cohesive sentence without redundancy."
+  },
+  {
+    "id": "G9-LANG-102",
+    "grade": "G9",
+    "subject": "language_usage",
+    "topic": "misplaced_modifiers",
+    "question": "Which sentence contains a misplaced modifier?",
+    "options": [
+      {"label": "A", "text": "The student who studied diligently earned the highest grade."},
+      {"label": "B", "text": "Nearly finished, the teacher collected the exams from the students."},
+      {"label": "C", "text": "The teacher collected the nearly finished exams from the students."},
+      {"label": "D", "text": "After studying diligently, the student earned the highest grade."}
+    ],
+    "correct_answer": "B",
+    "explanation": "'Nearly finished' appears to modify 'the teacher' but should modify 'the exams.' The modifier is misplaced because it is adjacent to the wrong noun."
+  },
+  {
+    "id": "G9-LANG-103",
+    "grade": "G9",
+    "subject": "language_usage",
+    "topic": "comma_splices_run_ons",
+    "question": "Which revision correctly fixes the comma splice? Original: 'The James Webb Space Telescope captured stunning images of distant galaxies, astronomers are now analyzing the data for signs of early star formation.'",
+    "options": [
+      {"label": "A", "text": "The James Webb Space Telescope captured stunning images of distant galaxies astronomers are now analyzing the data for signs of early star formation."},
+      {"label": "B", "text": "The James Webb Space Telescope captured stunning images of distant galaxies; astronomers are now analyzing the data for signs of early star formation."},
+      {"label": "C", "text": "The James Webb Space Telescope captured stunning images of distant galaxies, and, astronomers are now analyzing the data for signs of early star formation."},
+      {"label": "D", "text": "The James Webb Space Telescope captured, stunning images of distant galaxies, astronomers are now analyzing the data for signs of early star formation."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A semicolon correctly joins two closely related independent clauses. Option A creates a run-on. Option C adds an unnecessary comma after 'and.' Option D misplaces a comma."
+  },
+  {
+    "id": "G9-LANG-104",
+    "grade": "G9",
+    "subject": "language_usage",
+    "topic": "formal_informal_tone",
+    "question": "Revise this informal sentence for an academic paper: 'Tons of kids are glued to their screens all day and it's messing up their sleep big time.'",
+    "options": [
+      {"label": "A", "text": "A lot of kids watch screens a lot and do not sleep well."},
+      {"label": "B", "text": "Research indicates that excessive screen time among adolescents is significantly associated with disrupted sleep patterns."},
+      {"label": "C", "text": "Kids these days spend way too much time on screens, which is bad for sleep."},
+      {"label": "D", "text": "It has been found that kids are on screens and not sleeping."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Academic writing uses precise language ('excessive screen time,' 'significantly associated'), cites evidence ('research indicates'), and avoids colloquialisms and vague quantifiers."
+  },
+  {
+    "id": "G9-LANG-105",
+    "grade": "G9",
+    "subject": "language_usage",
+    "topic": "argumentative_structure",
+    "question": "In this argumentative essay outline about renewable energy, which element is in the wrong position? I. Introduction/Thesis II. Counterargument and rebuttal III. Body paragraph 1: Solar energy benefits IV. Body paragraph 2: Wind energy benefits V. Conclusion",
+    "options": [
+      {"label": "A", "text": "The thesis is in the wrong position."},
+      {"label": "B", "text": "The counterargument should come after the body paragraphs, not before them."},
+      {"label": "C", "text": "The conclusion should come before the body paragraphs."},
+      {"label": "D", "text": "The body paragraphs should come before the introduction."}
+    ],
+    "correct_answer": "B",
+    "explanation": "In a standard argumentative essay, body paragraphs with supporting evidence come before the counterargument. The writer should first establish their position, then address opposing views."
+  },
+  {
+    "id": "G9-LANG-106",
+    "grade": "G9",
+    "subject": "language_usage",
+    "topic": "pronoun_antecedent_agreement",
+    "question": "Which sentence has a pronoun-antecedent agreement error?",
+    "options": [
+      {"label": "A", "text": "The committee announced their decision after deliberating for three hours."},
+      {"label": "B", "text": "Neither the coach nor the players could find his equipment."},
+      {"label": "C", "text": "The scientists published their findings in a peer-reviewed journal."},
+      {"label": "D", "text": "Maria told her mother about the award she received."}
+    ],
+    "correct_answer": "B",
+    "explanation": "With 'neither...nor,' the pronoun should agree with the nearer antecedent. 'Players' is plural, so the pronoun should be 'their,' not 'his.' The sentence should read 'their equipment.'"
+  },
+  {
+    "id": "G9-LANG-107",
+    "grade": "G9",
+    "subject": "language_usage",
+    "topic": "mla_awareness",
+    "question": "According to MLA format, which in-text citation is correct for a quote from page 42 of a book by Dr. Sarah Chen?",
+    "options": [
+      {"label": "A", "text": "(Dr. Chen, 42)"},
+      {"label": "B", "text": "(Chen 42)"},
+      {"label": "C", "text": "(Sarah Chen, p. 42)"},
+      {"label": "D", "text": "(Chen, 2025, p. 42)"}
+    ],
+    "correct_answer": "B",
+    "explanation": "MLA in-text citations use the author's last name and the page number with no comma: (Chen 42). Titles like 'Dr.' are not included. APA (not MLA) uses the year and 'p.'"
+  },
+  {
+    "id": "G9-LANG-108",
+    "grade": "G9",
+    "subject": "language_usage",
+    "topic": "dangling_modifiers",
+    "question": "Which sentence contains a dangling modifier?",
+    "options": [
+      {"label": "A", "text": "After reviewing the data, the researchers published their conclusions."},
+      {"label": "B", "text": "Having completed the experiment, the results were submitted to the journal."},
+      {"label": "C", "text": "While waiting for the bus, Sarah read her notes."},
+      {"label": "D", "text": "Exhausted from the hike, the campers set up their tents quickly."}
+    ],
+    "correct_answer": "B",
+    "explanation": "'Having completed the experiment' implies a person performed the action, but the subject is 'the results,' which cannot complete an experiment. The modifier dangles because it has no logical subject."
+  },
+  {
+    "id": "G10-LANG-101",
+    "grade": "G10",
+    "subject": "language_usage",
+    "topic": "semicolons_in_series",
+    "question": "Which sentence correctly uses semicolons in a complex list?",
+    "options": [
+      {"label": "A", "text": "The conference featured speakers from Tokyo, Japan, Berlin, Germany, and Nairobi, Kenya."},
+      {"label": "B", "text": "The conference featured speakers from Tokyo, Japan; Berlin, Germany; and Nairobi, Kenya."},
+      {"label": "C", "text": "The conference featured speakers from Tokyo; Japan, Berlin; Germany, and Nairobi; Kenya."},
+      {"label": "D", "text": "The conference featured speakers from; Tokyo, Japan; Berlin, Germany; Nairobi, Kenya."}
+    ],
+    "correct_answer": "B",
+    "explanation": "When list items contain internal commas (city, country), semicolons separate the major items to prevent confusion. Each city-country pair is separated by semicolons."
+  },
+  {
+    "id": "G10-LANG-102",
+    "grade": "G10",
+    "subject": "language_usage",
+    "topic": "subjunctive_mood",
+    "question": "Which sentence correctly uses the subjunctive mood?",
+    "options": [
+      {"label": "A", "text": "The professor recommended that the student studies more before the exam."},
+      {"label": "B", "text": "The professor recommended that the student study more before the exam."},
+      {"label": "C", "text": "The professor recommended that the student studied more before the exam."},
+      {"label": "D", "text": "The professor recommended that the student is studying more before the exam."}
+    ],
+    "correct_answer": "B",
+    "explanation": "The subjunctive mood uses the base form of the verb after expressions of recommendation, demand, or suggestion. 'Recommended that the student study' is correct, not 'studies' or 'studied.'"
+  },
+  {
+    "id": "G10-LANG-103",
+    "grade": "G10",
+    "subject": "language_usage",
+    "topic": "dashes",
+    "question": "Which sentence uses em dashes correctly?",
+    "options": [
+      {"label": "A", "text": "The findings\u2014which contradicted earlier studies\u2014prompted a new round of research."},
+      {"label": "B", "text": "The findings\u2014which contradicted earlier studies prompted\u2014a new round of research."},
+      {"label": "C", "text": "The findings which\u2014contradicted earlier\u2014studies prompted a new round of research."},
+      {"label": "D", "text": "\u2014The findings which contradicted earlier studies\u2014prompted a new round of research."}
+    ],
+    "correct_answer": "A",
+    "explanation": "Em dashes set off a parenthetical element within a sentence. The dashes must surround the complete interrupting phrase: 'which contradicted earlier studies.'"
+  },
+  {
+    "id": "G10-LANG-104",
+    "grade": "G10",
+    "subject": "language_usage",
+    "topic": "conditional_sentences",
+    "question": "Which sentence uses the correct conditional form?",
+    "options": [
+      {"label": "A", "text": "If the experiment would have succeeded, the team would publish the results."},
+      {"label": "B", "text": "If the experiment had succeeded, the team would have published the results."},
+      {"label": "C", "text": "If the experiment has succeeded, the team would have published the results."},
+      {"label": "D", "text": "If the experiment succeeded, the team would had published the results."}
+    ],
+    "correct_answer": "B",
+    "explanation": "The third conditional (past unreal) uses 'had + past participle' in the if-clause and 'would have + past participle' in the result clause: 'If...had succeeded...would have published.'"
+  },
+  {
+    "id": "G10-LANG-105",
+    "grade": "G10",
+    "subject": "language_usage",
+    "topic": "academic_tone_revision",
+    "question": "Which revision best improves this sentence for an academic essay? Original: 'Social media is basically ruining how kids talk to each other in real life.'",
+    "options": [
+      {"label": "A", "text": "Social media is kind of changing the way children communicate face to face."},
+      {"label": "B", "text": "Recent studies suggest that extensive social media use may diminish adolescents' face-to-face communication skills."},
+      {"label": "C", "text": "Social media is ruining kids' ability to talk."},
+      {"label": "D", "text": "I believe social media ruins real-life communication for children."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Academic tone requires evidence-based language ('recent studies suggest'), precise terminology ('diminish,' 'face-to-face communication skills'), hedging for nuance ('may'), and formal word choices ('adolescents')."
+  },
+  {
+    "id": "G10-LANG-106",
+    "grade": "G10",
+    "subject": "language_usage",
+    "topic": "parenthetical_commas",
+    "question": "Which sentence correctly uses commas to set off a parenthetical expression?",
+    "options": [
+      {"label": "A", "text": "The new policy, which was approved last month will take effect in January."},
+      {"label": "B", "text": "The new policy which was approved last month, will take effect in January."},
+      {"label": "C", "text": "The new policy, which was approved last month, will take effect in January."},
+      {"label": "D", "text": "The new policy which, was approved last month, will take effect in January."}
+    ],
+    "correct_answer": "C",
+    "explanation": "A nonessential (parenthetical) clause must be enclosed by commas on both sides. 'Which was approved last month' adds extra information and needs commas before and after."
+  },
+  {
+    "id": "G10-LANG-107",
+    "grade": "G10",
+    "subject": "language_usage",
+    "topic": "word_choice_precision",
+    "question": "Which word most precisely replaces the vague word in this sentence? 'The scientist said that the results were good.'",
+    "options": [
+      {"label": "A", "text": "nice"},
+      {"label": "B", "text": "conclusive"},
+      {"label": "C", "text": "great"},
+      {"label": "D", "text": "fine"}
+    ],
+    "correct_answer": "B",
+    "explanation": "'Conclusive' precisely conveys that the results provided definitive evidence, which is what a scientist would value. 'Good,' 'nice,' 'great,' and 'fine' are vague and informal."
+  },
+  {
+    "id": "G10-LANG-108",
+    "grade": "G10",
+    "subject": "language_usage",
+    "topic": "synthesis_writing",
+    "question": "When writing a synthesis essay using multiple sources, what is the writer's primary task?",
+    "options": [
+      {"label": "A", "text": "Summarize each source one at a time in separate paragraphs"},
+      {"label": "B", "text": "Copy the strongest quotes from each source and present them in order"},
+      {"label": "C", "text": "Combine ideas from multiple sources to develop and support an original argument"},
+      {"label": "D", "text": "Choose the best source and use only that one to support the thesis"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Synthesis writing requires integrating ideas from multiple sources to build an original argument. It goes beyond summarizing individual sources by finding connections and drawing conclusions across them."
+  },
+  {
+    "id": "G11-LANG-101",
+    "grade": "G11",
+    "subject": "language_usage",
+    "topic": "rhetorical_devices",
+    "question": "Identify the rhetorical device: 'We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets.'",
+    "options": [
+      {"label": "A", "text": "Chiasmus"},
+      {"label": "B", "text": "Anaphora"},
+      {"label": "C", "text": "Litotes"},
+      {"label": "D", "text": "Antithesis"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Anaphora is the repetition of a word or phrase at the beginning of successive clauses. 'We shall fight' is repeated at the start of each clause to build emphasis and rhythm."
+  },
+  {
+    "id": "G11-LANG-102",
+    "grade": "G11",
+    "subject": "language_usage",
+    "topic": "logical_fallacies",
+    "question": "Which statement contains a logical fallacy? The topic is whether AI should be used in hiring decisions.",
+    "options": [
+      {"label": "A", "text": "Studies from MIT show that AI screening tools can reduce unconscious bias in resume review by 35%."},
+      {"label": "B", "text": "If we let AI make hiring decisions, next it will control our entire lives and we will have no freedom."},
+      {"label": "C", "text": "AI hiring tools must be regularly audited for algorithmic bias to ensure fair outcomes."},
+      {"label": "D", "text": "While AI can process applications faster, human judgment remains essential for evaluating cultural fit."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Option B is a slippery slope fallacy. It assumes that one action (AI in hiring) will inevitably lead to extreme consequences (AI controlling all of life) without logical evidence for each step."
+  },
+  {
+    "id": "G11-LANG-103",
+    "grade": "G11",
+    "subject": "language_usage",
+    "topic": "advanced_transitions",
+    "question": "Which transition best connects these two sentences in an analytical essay? 'The 2025 UN Climate Report documented a 1.5-degree rise in global temperatures. _______, several island nations reported unprecedented coastal flooding that displaced thousands of residents.'",
+    "options": [
+      {"label": "A", "text": "On the other hand"},
+      {"label": "B", "text": "Concurrently"},
+      {"label": "C", "text": "In spite of this"},
+      {"label": "D", "text": "Regardless"}
+    ],
+    "correct_answer": "B",
+    "explanation": "'Concurrently' indicates that two events happened at the same time and are connected. The temperature rise and coastal flooding are simultaneous, related developments that reinforce each other."
+  },
+  {
+    "id": "G11-LANG-104",
+    "grade": "G11",
+    "subject": "language_usage",
+    "topic": "chiasmus",
+    "question": "Which sentence is an example of chiasmus?",
+    "options": [
+      {"label": "A", "text": "She worked hard and hard she played."},
+      {"label": "B", "text": "Ask not what your country can do for you; ask what you can do for your country."},
+      {"label": "C", "text": "The rain fell, the wind blew, and the thunder roared."},
+      {"label": "D", "text": "He was tired, exhausted, and completely drained."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Chiasmus reverses the grammatical structure of a parallel phrase: 'country can do for you' becomes 'you can do for your country.' The AB-BA pattern creates rhetorical balance and memorability."
+  },
+  {
+    "id": "G11-LANG-105",
+    "grade": "G11",
+    "subject": "language_usage",
+    "topic": "subjunctive_mood",
+    "question": "Which sentence correctly uses the subjunctive mood?",
+    "options": [
+      {"label": "A", "text": "If I was the president, I would increase funding for public schools."},
+      {"label": "B", "text": "If I were the president, I would increase funding for public schools."},
+      {"label": "C", "text": "If I am the president, I would increase funding for public schools."},
+      {"label": "D", "text": "If I be the president, I would increase funding for public schools."}
+    ],
+    "correct_answer": "B",
+    "explanation": "The subjunctive mood uses 'were' (not 'was') for hypothetical or contrary-to-fact conditions. 'If I were the president' correctly expresses an unreal situation."
+  },
+  {
+    "id": "G11-LANG-106",
+    "grade": "G11",
+    "subject": "language_usage",
+    "topic": "academic_tone_revision",
+    "question": "Which revision demonstrates the most effective academic tone for this sentence? Original: 'Everyone knows that getting enough sleep is really important for doing well in school.'",
+    "options": [
+      {"label": "A", "text": "It is universally acknowledged that sleep is really important for academic success."},
+      {"label": "B", "text": "Multiple peer-reviewed studies have established a significant correlation between adequate sleep and improved academic performance."},
+      {"label": "C", "text": "Everybody agrees that sleeping well helps students do better."},
+      {"label": "D", "text": "Obviously, sleep matters a lot for school performance."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Option B replaces the unsupported generalization ('everyone knows') with evidence-based language ('multiple peer-reviewed studies'), uses precise academic vocabulary ('significant correlation'), and avoids informal phrasing."
+  },
+  {
+    "id": "G11-LANG-107",
+    "grade": "G11",
+    "subject": "language_usage",
+    "topic": "complex_punctuation",
+    "question": "Which sentence is punctuated correctly?",
+    "options": [
+      {"label": "A", "text": "The report identified three key challenges: funding shortages, which affected rural districts most; staffing gaps, particularly in STEM subjects; and outdated technology infrastructure."},
+      {"label": "B", "text": "The report identified three key challenges; funding shortages, which affected rural districts most, staffing gaps, particularly in STEM subjects, and outdated technology infrastructure."},
+      {"label": "C", "text": "The report identified three key challenges: funding shortages which affected rural districts most; staffing gaps particularly in STEM subjects; and outdated technology infrastructure."},
+      {"label": "D", "text": "The report identified three key challenges, funding shortages, which affected rural districts most; staffing gaps, particularly in STEM subjects; and outdated technology infrastructure."}
+    ],
+    "correct_answer": "A",
+    "explanation": "A colon introduces the list after a complete clause. Semicolons separate list items that contain internal commas. Each item's nonessential clause is correctly set off with commas."
+  },
+  {
+    "id": "G11-LANG-108",
+    "grade": "G11",
+    "subject": "language_usage",
+    "topic": "word_choice_precision",
+    "question": "In this excerpt from a literary analysis, which word best replaces the underlined word for greater precision? 'The author uses imagery to show the character's inner conflict.'",
+    "options": [
+      {"label": "A", "text": "tell"},
+      {"label": "B", "text": "display"},
+      {"label": "C", "text": "illuminate"},
+      {"label": "D", "text": "do"}
+    ],
+    "correct_answer": "C",
+    "explanation": "'Illuminate' precisely conveys that the imagery sheds light on and reveals the complexity of the character's inner conflict. It is more analytical and sophisticated than 'show' while fitting the literary analysis context."
+  },
+  {
+    "id": "G12-LANG-101",
+    "grade": "G12",
+    "subject": "language_usage",
+    "topic": "rhetorical_devices",
+    "question": "Which sentence uses antithesis?",
+    "options": [
+      {"label": "A", "text": "The research was thorough, detailed, and comprehensive."},
+      {"label": "B", "text": "It was the best of times, it was the worst of times."},
+      {"label": "C", "text": "The waves crashed, the wind howled, the rain poured."},
+      {"label": "D", "text": "She spoke softly, gently, and kindly."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Antithesis juxtaposes contrasting ideas in balanced grammatical structures. 'Best of times' and 'worst of times' are direct opposites presented in parallel form to create dramatic emphasis."
+  },
+  {
+    "id": "G12-LANG-102",
+    "grade": "G12",
+    "subject": "language_usage",
+    "topic": "logical_fallacies",
+    "question": "Identify the logical fallacy: 'Dr. Martinez is a renowned physicist, so her opinion on economic policy must be correct.'",
+    "options": [
+      {"label": "A", "text": "Ad hominem"},
+      {"label": "B", "text": "Appeal to authority"},
+      {"label": "C", "text": "Straw man"},
+      {"label": "D", "text": "Circular reasoning"}
+    ],
+    "correct_answer": "B",
+    "explanation": "This is an appeal to authority (or appeal to false authority). Dr. Martinez's expertise in physics does not qualify her as an authority on economics. Authority in one field does not transfer to another."
+  },
+  {
+    "id": "G12-LANG-103",
+    "grade": "G12",
+    "subject": "language_usage",
+    "topic": "synthesis_writing",
+    "question": "A student is writing a synthesis essay using three sources about AI in education. Which approach best demonstrates synthesis?",
+    "options": [
+      {"label": "A", "text": "Source 1 says AI helps students. Source 2 says AI is expensive. Source 3 says AI needs regulation."},
+      {"label": "B", "text": "While Source 1 highlights AI's potential to personalize learning and Source 2 raises concerns about implementation costs, Source 3's call for regulatory frameworks suggests that effective AI integration requires balancing innovation with accountability."},
+      {"label": "C", "text": "I agree with Source 1 because AI is helpful. Sources 2 and 3 are wrong."},
+      {"label": "D", "text": "All three sources agree that AI is important in education."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Synthesis weaves multiple sources together to develop a nuanced argument. Option B connects ideas across sources, identifies relationships (potential vs. concerns vs. solutions), and draws an original conclusion."
+  },
+  {
+    "id": "G12-LANG-104",
+    "grade": "G12",
+    "subject": "language_usage",
+    "topic": "conditional_sentences",
+    "question": "Which sentence uses the mixed conditional correctly?",
+    "options": [
+      {"label": "A", "text": "If she had studied medicine, she will be a doctor now."},
+      {"label": "B", "text": "If she had studied medicine, she would be a doctor now."},
+      {"label": "C", "text": "If she studied medicine, she would have been a doctor now."},
+      {"label": "D", "text": "If she would study medicine, she had been a doctor now."}
+    ],
+    "correct_answer": "B",
+    "explanation": "A mixed conditional combines a past unreal condition ('had studied' — third conditional if-clause) with a present unreal result ('would be' — second conditional result clause). This describes how a past action would affect the present."
+  },
+  {
+    "id": "G12-LANG-105",
+    "grade": "G12",
+    "subject": "language_usage",
+    "topic": "advanced_transitions",
+    "question": "Which transition best fits this passage? 'Some educators argue that standardized testing provides objective data for comparing student achievement across districts. _______, critics contend that these tests measure test-taking ability rather than genuine understanding and disproportionately disadvantage students from under-resourced schools.'",
+    "options": [
+      {"label": "A", "text": "Moreover"},
+      {"label": "B", "text": "Conversely"},
+      {"label": "C", "text": "Subsequently"},
+      {"label": "D", "text": "Accordingly"}
+    ],
+    "correct_answer": "B",
+    "explanation": "'Conversely' signals a direct opposing viewpoint. The first sentence presents an argument in favor of testing; the second presents the opposite perspective. 'Conversely' marks this shift precisely."
+  },
+  {
+    "id": "G12-LANG-106",
+    "grade": "G12",
+    "subject": "language_usage",
+    "topic": "complex_punctuation",
+    "question": "Which sentence correctly uses a dash for emphasis?",
+    "options": [
+      {"label": "A", "text": "The expedition faced every obstacle imaginable\u2014extreme cold, equipment failure, and dwindling supplies\u2014yet the team pressed on."},
+      {"label": "B", "text": "The expedition faced every obstacle\u2014imaginable extreme cold, equipment failure\u2014and dwindling supplies yet the team pressed on."},
+      {"label": "C", "text": "The expedition\u2014faced every obstacle imaginable extreme cold, equipment failure, and dwindling supplies\u2014yet the team pressed on."},
+      {"label": "D", "text": "The expedition faced every obstacle imaginable extreme cold\u2014equipment failure, and dwindling supplies\u2014yet the team pressed on."}
+    ],
+    "correct_answer": "A",
+    "explanation": "Em dashes set off a list that amplifies the preceding statement. The dashes correctly surround the explanatory list ('extreme cold, equipment failure, and dwindling supplies'), and 'yet' continues the main sentence."
+  },
+  {
+    "id": "G12-LANG-107",
+    "grade": "G12",
+    "subject": "language_usage",
+    "topic": "academic_tone_revision",
+    "question": "Which revision most effectively elevates this sentence to a scholarly register? Original: 'The government should totally ban single-use plastics because they mess up the environment.'",
+    "options": [
+      {"label": "A", "text": "The government should ban plastics because they are bad for nature."},
+      {"label": "B", "text": "Policymakers should enact comprehensive legislation prohibiting single-use plastics, which contribute significantly to environmental degradation and marine ecosystem contamination."},
+      {"label": "C", "text": "It would be great if the government could ban single-use plastics to help the environment."},
+      {"label": "D", "text": "In my opinion, single-use plastics should definitely be banned by the government."}
+    ],
+    "correct_answer": "B",
+    "explanation": "Scholarly writing uses precise agents ('policymakers'), formal verbs ('enact,' 'prohibiting'), specific consequences ('environmental degradation,' 'marine ecosystem contamination'), and avoids colloquialisms and first-person opinion."
+  },
+  {
+    "id": "G12-LANG-108",
+    "grade": "G12",
+    "subject": "language_usage",
+    "topic": "logical_fallacies",
+    "question": "Identify the logical fallacy: 'We shouldn't listen to Senator Park's argument for education reform because she didn't even graduate from a prestigious university.'",
+    "options": [
+      {"label": "A", "text": "Red herring"},
+      {"label": "B", "text": "Bandwagon appeal"},
+      {"label": "C", "text": "Ad hominem"},
+      {"label": "D", "text": "False dilemma"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Ad hominem attacks the person making the argument rather than addressing the argument itself. Dismissing Senator Park's policy proposal based on her university background is irrelevant to the merits of her education reform plan."
+  }
+]

@@ -1,0 +1,1025 @@
+{
+  "batch_name": "MAP_english_G12_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G12",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "reading_comp",
+      "subtopic": "data_interpretation",
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Based on a chart about company performance across Sales, Customer Service, and Productivity, which conclusion is best supported?",
+        "options": [
+          "A. Customer service is the strongest area",
+          "B. Reps handle phone calls better than emails",
+          "C. Overall phone performance exceeds email performance",
+          "D. Productivity/Satisfaction needs most improvement",
+          "E. Rudeness/late arrivals/cleaning are most urgent fixes"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Based on a chart about company performance across Sales, Customer Service, and Productivity, which conclusion is best supported?",
+        "options": [
+          "A. Customer service is the strongest area",
+          "B. Reps handle phone calls better than emails",
+          "C. Overall phone performance exceeds email performance",
+          "D. Productivity/Satisfaction needs most improvement",
+          "E. Rudeness/late arrivals/cleaning are most urgent fixes"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The chart data shows both positive and negative ratings for phone calls and emails, with general phone performance metrics being higher overall.",
+      "explanation_zh": "The chart data shows both positive and negative ratings for phone calls and emails, with general phone performance metrics being higher overall.",
+      "tags": [
+        "chart_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "chart_analysis",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "reading_comp",
+      "subtopic": "compare_contrast",
+      "difficulty": 0.61,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Two passages about adolescent mental health: 'Empowering Adolescents' (data-driven) and 'A Call for Change' (advocacy-focused). Which statement best captures their distinct emphasis?",
+        "options": [
+          "A. Both focus on societal attitudes",
+          "B. Text 1 emphasizes early intervention effectiveness; Text 2 emphasizes systemic education integration",
+          "C. Both emphasize individual student responsibility",
+          "D. Text 1 highlights peer support; Text 2 focuses on social media"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Two passages about adolescent mental health: 'Empowering Adolescents' (data-driven) and 'A Call for Change' (advocacy-focused). Which statement best captures their distinct emphasis?",
+        "options": [
+          "A. Both focus on societal attitudes",
+          "B. Text 1 emphasizes early intervention effectiveness; Text 2 emphasizes systemic education integration",
+          "C. Both emphasize individual student responsibility",
+          "D. Text 1 highlights peer support; Text 2 focuses on social media"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Text 1 uses empirical data to showcase program success. Text 2 uses emotional testimony to advocate for structural policy reform.",
+      "explanation_zh": "Text 1 uses empirical data to showcase program success. Text 2 uses emotional testimony to advocate for structural policy reform.",
+      "tags": [
+        "dual_text_comparison",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "dual_text_comparison",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "reading_comp",
+      "subtopic": "rhetoric",
+      "difficulty": 0.63,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which statement best reflects the differing rhetorical strategies in two texts about adolescent mental health?",
+        "options": [
+          "A. Text 1 uses pathos; Text 2 uses ethos",
+          "B. Text 1 employs logos; Text 2 uses pathos and ethos",
+          "C. Both primarily use pathos",
+          "D. Both utilize logos"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which statement best reflects the differing rhetorical strategies in two texts about adolescent mental health?",
+        "options": [
+          "A. Text 1 uses pathos; Text 2 uses ethos",
+          "B. Text 1 employs logos; Text 2 uses pathos and ethos",
+          "C. Both primarily use pathos",
+          "D. Both utilize logos"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Text 1 relies on research, facts, data (logos). Text 2 combines emotional appeal (pathos) through personal narrative and credibility (ethos) through advocacy authority.",
+      "explanation_zh": "Text 1 relies on research, facts, data (logos). Text 2 combines emotional appeal (pathos) through personal narrative and credibility (ethos) through advocacy authority.",
+      "tags": [
+        "rhetorical_strategy",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "rhetorical_strategy",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "writing",
+      "subtopic": "transitions",
+      "difficulty": 0.64,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Fill in four transition blanks in Sofia's essay on test-optional university admissions.",
+        "options": [
+          "A. (1) Furthermore (2) In contrast (3) For instance (4) Therefore",
+          "B. (1) In contrast (2) Furthermore (3) As a result (4) However",
+          "C. (1) Furthermore (2) However (3) As a result (4) In conclusion",
+          "D. (1) For instance (2) In contrast (3) Therefore (4) Moreover",
+          "E. (1) For instance (2) On the other hand (3) As a result (4) Nevertheless"
+        ],
+        "answer": "E"
+      },
+      "content_zh": {
+        "stem": "Fill in four transition blanks in Sofia's essay on test-optional university admissions.",
+        "options": [
+          "A. (1) Furthermore (2) In contrast (3) For instance (4) Therefore",
+          "B. (1) In contrast (2) Furthermore (3) As a result (4) However",
+          "C. (1) Furthermore (2) However (3) As a result (4) In conclusion",
+          "D. (1) For instance (2) In contrast (3) Therefore (4) Moreover",
+          "E. (1) For instance (2) On the other hand (3) As a result (4) Nevertheless"
+        ],
+        "answer": "E"
+      },
+      "explanation_en": "(1) introduces example; (2) signals opposing view; (3) shows consequence; (4) concedes limitation while maintaining support.",
+      "explanation_zh": "(1) introduces example; (2) signals opposing view; (3) shows consequence; (4) concedes limitation while maintaining support.",
+      "tags": [
+        "transitions",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "transitions",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "writing",
+      "subtopic": "word_choice",
+      "difficulty": 0.66,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Elena preparing for a speech at an auditorium. Choose between [hesitated/composed herself] and [quivered/resonated].",
+        "options": [
+          "A. hesitated; quivered",
+          "B. hesitated; resonated",
+          "C. composed herself; quivered",
+          "D. composed herself; resonated"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Elena preparing for a speech at an auditorium. Choose between [hesitated/composed herself] and [quivered/resonated].",
+        "options": [
+          "A. hesitated; quivered",
+          "B. hesitated; resonated",
+          "C. composed herself; quivered",
+          "D. composed herself; resonated"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "'Composed herself' reflects prepared confidence. 'Resonated' conveys strong, assured delivery — matching a formal, polished tone.",
+      "explanation_zh": "'Composed herself' reflects prepared confidence. 'Resonated' conveys strong, assured delivery — matching a formal, polished tone.",
+      "tags": [
+        "word_choice_tone",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "word_choice_tone",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "writing",
+      "subtopic": "revision",
+      "difficulty": 0.67,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Adrian at a station opens a long-held letter. Which sentence best describes his emotional reaction?",
+        "options": [
+          "A. He raised the letter slowly, paper bending between careful hands",
+          "B. His breath caught as he unfolds the letter; a tremor through his fingers despite the stillness",
+          "C. He turned the letter in his hands; the air heavy and hushed",
+          "D. His eyes drifted across the page; light glimmering over ink"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Adrian at a station opens a long-held letter. Which sentence best describes his emotional reaction?",
+        "options": [
+          "A. He raised the letter slowly, paper bending between careful hands",
+          "B. His breath caught as he unfolds the letter; a tremor through his fingers despite the stillness",
+          "C. He turned the letter in his hands; the air heavy and hushed",
+          "D. His eyes drifted across the page; light glimmering over ink"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Option B shows involuntary physical response ('breath caught', 'tremor') — genuine emotional reaction rather than scenery or controlled actions.",
+      "explanation_zh": "Option B shows involuntary physical response ('breath caught', 'tremor') — genuine emotional reaction rather than scenery or controlled actions.",
+      "tags": [
+        "descriptive_revision",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "descriptive_revision",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "rhetorical_analysis",
+      "subtopic": null,
+      "difficulty": 0.69,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In her essay 'Politics and the English Language' (1946), George Orwell argues: 'Political language is designed to make lies sound truthful and murder respectable, and to give an appearance of solidity to pure wind.' Orwell employs the metaphor 'pure wind' to accomplish which rhetorical purpose?",
+        "options": [
+          "A. To describe weather patterns in political speeches",
+          "B. To reduce political rhetoric to its essence — empty, insubstantial air — thereby exposing the vacuity that elaborate language conceals",
+          "C. To praise political language for its flexibility",
+          "D. To suggest that political speeches should be given outdoors"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In her essay 'Politics and the English Language' (1946), George Orwell argues: 'Political language is designed to make lies sound truthful and murder respectable, and to give an appearance of solidity to pure wind.' Orwell employs the metaphor 'pure wind' to accomplish which rhetorical purpose?",
+        "options": [
+          "A. To describe weather patterns in political speeches",
+          "B. To reduce political rhetoric to its essence — empty, insubstantial air — thereby exposing the vacuity that elaborate language conceals",
+          "C. To praise political language for its flexibility",
+          "D. To suggest that political speeches should be given outdoors"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "By calling political language 'pure wind,' Orwell strips away its pretension to reveal emptiness. The metaphor's bluntness contrasts with the elaborate language it criticizes, reinforcing his point through style.",
+      "explanation_zh": "By calling political language 'pure wind,' Orwell strips away its pretension to reveal emptiness. The metaphor's bluntness contrasts with the elaborate language it criticizes, reinforcing his point through style.",
+      "tags": [
+        "rhetorical_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "rhetorical_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "dual_passage_comparison",
+      "subtopic": null,
+      "difficulty": 0.7,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passages:\nPassage 1 (European Regulator, 2025): 'The EU AI Act's requirement that AI systems disclose when content is machine-generated is a fundamental safeguard for democratic discourse. Citizens have an inalienable right to know whether they are interacting with a human or a machine. Transparency is the foundation of informed consent.'\nPassage 2 (AI Researcher, 2025): 'Mandatory AI disclosure requirements presuppose that the distinction between human and AI-generated content remains meaningful. As AI systems become indistinguishable from human output, disclosure labels become a performative ritual — they signal transparency while failing to address the deeper question of whether the content is truthful, regardless of its origin.'\nHow does Passage 2 challenge the philosophical foundation of Passage 1?",
+        "options": [
+          "A. It argues that the EU AI Act is too expensive to implement",
+          "B. It questions whether the human/AI distinction that Passage 1 treats as fundamental remains philosophically coherent as AI capabilities converge with human ones",
+          "C. It agrees with Passage 1 but suggests a later implementation date",
+          "D. It argues that AI should never be regulated"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passages:\nPassage 1 (European Regulator, 2025): 'The EU AI Act's requirement that AI systems disclose when content is machine-generated is a fundamental safeguard for democratic discourse. Citizens have an inalienable right to know whether they are interacting with a human or a machine. Transparency is the foundation of informed consent.'\nPassage 2 (AI Researcher, 2025): 'Mandatory AI disclosure requirements presuppose that the distinction between human and AI-generated content remains meaningful. As AI systems become indistinguishable from human output, disclosure labels become a performative ritual — they signal transparency while failing to address the deeper question of whether the content is truthful, regardless of its origin.'\nHow does Passage 2 challenge the philosophical foundation of Passage 1?",
+        "options": [
+          "A. It argues that the EU AI Act is too expensive to implement",
+          "B. It questions whether the human/AI distinction that Passage 1 treats as fundamental remains philosophically coherent as AI capabilities converge with human ones",
+          "C. It agrees with Passage 1 but suggests a later implementation date",
+          "D. It argues that AI should never be regulated"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Passage 2 undermines Passage 1's foundational assumption — that the human/AI distinction is meaningful — by arguing that as AI output becomes indistinguishable, the disclosure framework becomes superficial.",
+      "explanation_zh": "Passage 2 undermines Passage 1's foundational assumption — that the human/AI distinction is meaningful — by arguing that as AI output becomes indistinguishable, the disclosure framework becomes superficial.",
+      "tags": [
+        "dual_passage_comparison",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "dual_passage_comparison",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "authors_craft",
+      "subtopic": null,
+      "difficulty": 0.71,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In Kazuo Ishiguro's 'Never Let Me Go,' the narrator Kathy H. describes her childhood at Hailsham boarding school with nostalgic warmth, recounting games, friendships, and school art exhibitions. Only gradually does the reader realize that Kathy and her classmates are clones raised to be organ donors. Ishiguro never uses the word 'horror.' How does the author's restrained narrative voice function in the novel?",
+        "options": [
+          "A. It makes the story boring and unemotional",
+          "B. The calm acceptance of a horrifying reality forces the reader to supply the emotional response the narrator withholds, making the horror more devastating",
+          "C. It proves that Kathy does not understand her situation",
+          "D. It shows that Ishiguro could not write emotionally intense scenes"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In Kazuo Ishiguro's 'Never Let Me Go,' the narrator Kathy H. describes her childhood at Hailsham boarding school with nostalgic warmth, recounting games, friendships, and school art exhibitions. Only gradually does the reader realize that Kathy and her classmates are clones raised to be organ donors. Ishiguro never uses the word 'horror.' How does the author's restrained narrative voice function in the novel?",
+        "options": [
+          "A. It makes the story boring and unemotional",
+          "B. The calm acceptance of a horrifying reality forces the reader to supply the emotional response the narrator withholds, making the horror more devastating",
+          "C. It proves that Kathy does not understand her situation",
+          "D. It shows that Ishiguro could not write emotionally intense scenes"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Ishiguro's technique transfers emotional labor to the reader. Kathy's matter-of-fact tone about organ donation creates a dissonance that is more unsettling than explicit horror would be.",
+      "explanation_zh": "Ishiguro's technique transfers emotional labor to the reader. Kathy's matter-of-fact tone about organ donation creates a dissonance that is more unsettling than explicit horror would be.",
+      "tags": [
+        "authors_craft",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "authors_craft",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "historical_context",
+      "subtopic": null,
+      "difficulty": 0.73,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Chinua Achebe wrote 'Things Fall Apart' (1958) partly in response to Joseph Conrad's 'Heart of Darkness' (1899), which depicted Africa as a primitive, speechless backdrop for European psychological drama. Achebe later called Conrad's novel 'an offensive and deplorable book' that 'dehumanizes' Africans. By centering his novel on Okonkwo, a complex Igbo leader navigating colonialism, Achebe created what scholars call a 'counter-narrative.' What does it mean to describe 'Things Fall Apart' as a counter-narrative?",
+        "options": [
+          "A. It is a sequel to 'Heart of Darkness'",
+          "B. It deliberately challenges and corrects a dominant narrative by presenting the perspective that was silenced or distorted in the original",
+          "C. It argues that colonialism was beneficial",
+          "D. It is written in a language other than English"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Chinua Achebe wrote 'Things Fall Apart' (1958) partly in response to Joseph Conrad's 'Heart of Darkness' (1899), which depicted Africa as a primitive, speechless backdrop for European psychological drama. Achebe later called Conrad's novel 'an offensive and deplorable book' that 'dehumanizes' Africans. By centering his novel on Okonkwo, a complex Igbo leader navigating colonialism, Achebe created what scholars call a 'counter-narrative.' What does it mean to describe 'Things Fall Apart' as a counter-narrative?",
+        "options": [
+          "A. It is a sequel to 'Heart of Darkness'",
+          "B. It deliberately challenges and corrects a dominant narrative by presenting the perspective that was silenced or distorted in the original",
+          "C. It argues that colonialism was beneficial",
+          "D. It is written in a language other than English"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A counter-narrative deliberately provides the voice, complexity, and humanity that a dominant narrative denied. Achebe gave African characters the interiority and agency that Conrad's novel withheld.",
+      "explanation_zh": "A counter-narrative deliberately provides the voice, complexity, and humanity that a dominant narrative denied. Achebe gave African characters the interiority and agency that Conrad's novel withheld.",
+      "tags": [
+        "historical_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "historical_context",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "critical_evaluation",
+      "subtopic": null,
+      "difficulty": 0.74,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: 'The James Webb Space Telescope's 2025 discovery of atmospheric biosignatures on two exoplanets has been called the most important scientific finding of the century by several news outlets. NASA scientists, while cautiously optimistic, have emphasized that the data requires years of follow-up observations and that abiotic chemical processes could produce similar signatures.' A critical reader should recognize that the primary tension in this passage is between:",
+        "options": [
+          "A. NASA and the James Webb Telescope program",
+          "B. Media sensationalism and scientific caution — the gap between how discoveries are reported and how scientists actually interpret preliminary data",
+          "C. American and European space agencies",
+          "D. Old telescopes and new telescopes"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: 'The James Webb Space Telescope's 2025 discovery of atmospheric biosignatures on two exoplanets has been called the most important scientific finding of the century by several news outlets. NASA scientists, while cautiously optimistic, have emphasized that the data requires years of follow-up observations and that abiotic chemical processes could produce similar signatures.' A critical reader should recognize that the primary tension in this passage is between:",
+        "options": [
+          "A. NASA and the James Webb Telescope program",
+          "B. Media sensationalism and scientific caution — the gap between how discoveries are reported and how scientists actually interpret preliminary data",
+          "C. American and European space agencies",
+          "D. Old telescopes and new telescopes"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage highlights the gap between media framing ('most important finding of the century') and scientific practice ('years of follow-up,' 'abiotic processes could explain it').",
+      "explanation_zh": "The passage highlights the gap between media framing ('most important finding of the century') and scientific practice ('years of follow-up,' 'abiotic processes could explain it').",
+      "tags": [
+        "critical_evaluation",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "critical_evaluation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "complex_vocabulary",
+      "subtopic": null,
+      "difficulty": 0.76,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: 'The essayist's aphoristic style distills vast ideas into memorable single sentences. Her essay on grief contains the line: \"Sorrow is not a place to visit but a neighborhood where you learn to live.\" Each sentence functions as a self-contained philosophical statement.' What does 'aphoristic' mean?",
+        "options": [
+          "A. Long-winded and digressive",
+          "B. Expressed in short, pithy, and memorable statements that convey a general truth",
+          "C. Written in formal academic language",
+          "D. Deliberately confusing and obscure"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: 'The essayist's aphoristic style distills vast ideas into memorable single sentences. Her essay on grief contains the line: \"Sorrow is not a place to visit but a neighborhood where you learn to live.\" Each sentence functions as a self-contained philosophical statement.' What does 'aphoristic' mean?",
+        "options": [
+          "A. Long-winded and digressive",
+          "B. Expressed in short, pithy, and memorable statements that convey a general truth",
+          "C. Written in formal academic language",
+          "D. Deliberately confusing and obscure"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Context clues ('distills vast ideas into memorable single sentences' and 'self-contained philosophical statement') define aphoristic as expressing truths in concise, memorable form.",
+      "explanation_zh": "Context clues ('distills vast ideas into memorable single sentences' and 'self-contained philosophical statement') define aphoristic as expressing truths in concise, memorable form.",
+      "tags": [
+        "complex_vocabulary",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "complex_vocabulary",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "synthesis_across_texts",
+      "subtopic": null,
+      "difficulty": 0.77,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passages:\nText 1: 'Hannah Arendt coined the phrase \"the banality of evil\" after observing Adolf Eichmann's trial in 1961. She argued that Eichmann was not a monster but an ordinary bureaucrat who committed atrocities by refusing to think critically about his actions. Evil, Arendt suggested, does not require malice — only thoughtlessness.'\nText 2: 'In 2025, AI ethicists raised concerns about \"algorithmic banality\" — the way AI systems can perpetuate discrimination not through malicious intent but through uncritical replication of biased training data. Like Eichmann's bureaucratic compliance, these systems follow instructions without moral reasoning.'\nWhat conceptual connection does Text 2 draw from Text 1?",
+        "options": [
+          "A. That AI systems are as evil as Nazi war criminals",
+          "B. That the absence of critical thinking — whether in humans or algorithms — can produce harmful outcomes without deliberate malice, extending Arendt's insight to technology",
+          "C. That Arendt's philosophy is outdated",
+          "D. That AI training data is always biased"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passages:\nText 1: 'Hannah Arendt coined the phrase \"the banality of evil\" after observing Adolf Eichmann's trial in 1961. She argued that Eichmann was not a monster but an ordinary bureaucrat who committed atrocities by refusing to think critically about his actions. Evil, Arendt suggested, does not require malice — only thoughtlessness.'\nText 2: 'In 2025, AI ethicists raised concerns about \"algorithmic banality\" — the way AI systems can perpetuate discrimination not through malicious intent but through uncritical replication of biased training data. Like Eichmann's bureaucratic compliance, these systems follow instructions without moral reasoning.'\nWhat conceptual connection does Text 2 draw from Text 1?",
+        "options": [
+          "A. That AI systems are as evil as Nazi war criminals",
+          "B. That the absence of critical thinking — whether in humans or algorithms — can produce harmful outcomes without deliberate malice, extending Arendt's insight to technology",
+          "C. That Arendt's philosophy is outdated",
+          "D. That AI training data is always biased"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Text 2 extends Arendt's concept: just as Eichmann caused harm through thoughtless compliance, AI systems cause harm through uncritical pattern replication. Both texts center on the danger of absent moral reasoning.",
+      "explanation_zh": "Text 2 extends Arendt's concept: just as Eichmann caused harm through thoughtless compliance, AI systems cause harm through uncritical pattern replication. Both texts center on the danger of absent moral reasoning.",
+      "tags": [
+        "synthesis_across_texts",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "synthesis_across_texts",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "philosophical_themes",
+      "subtopic": null,
+      "difficulty": 0.79,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In Jorge Luis Borges's short story 'The Library of Babel,' the universe is an infinite library containing every possible 410-page book — every book that has been or could be written. Most books contain only random letters, but somewhere in the library exists a book containing the complete truth about everything. Inhabitants spend their lives searching for meaningful texts amid overwhelming nonsense. Some worship the library; others despair and destroy books. What epistemological problem does Borges explore through this allegory?",
+        "options": [
+          "A. That libraries should be better organized",
+          "B. That the existence of all possible knowledge does not guarantee the ability to find, recognize, or use it — infinite information can be indistinguishable from meaninglessness",
+          "C. That books are more important than digital media",
+          "D. That writing random letters is a valid form of literature"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In Jorge Luis Borges's short story 'The Library of Babel,' the universe is an infinite library containing every possible 410-page book — every book that has been or could be written. Most books contain only random letters, but somewhere in the library exists a book containing the complete truth about everything. Inhabitants spend their lives searching for meaningful texts amid overwhelming nonsense. Some worship the library; others despair and destroy books. What epistemological problem does Borges explore through this allegory?",
+        "options": [
+          "A. That libraries should be better organized",
+          "B. That the existence of all possible knowledge does not guarantee the ability to find, recognize, or use it — infinite information can be indistinguishable from meaninglessness",
+          "C. That books are more important than digital media",
+          "D. That writing random letters is a valid form of literature"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Borges explores the paradox that total information equals total noise. If every possible text exists, finding truth becomes impossible — infinite potential knowledge collapses into practical meaninglessness.",
+      "explanation_zh": "Borges explores the paradox that total information equals total noise. If every possible text exists, finding truth becomes impossible — infinite potential knowledge collapses into practical meaninglessness.",
+      "tags": [
+        "philosophical_themes",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G12",
+        "original_topic": "philosophical_themes",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "rhetorical_devices",
+      "subtopic": null,
+      "difficulty": 0.8,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses antithesis?",
+        "options": [
+          "A. The research was thorough, detailed, and comprehensive.",
+          "B. It was the best of times, it was the worst of times.",
+          "C. The waves crashed, the wind howled, the rain poured.",
+          "D. She spoke softly, gently, and kindly."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses antithesis?",
+        "options": [
+          "A. The research was thorough, detailed, and comprehensive.",
+          "B. It was the best of times, it was the worst of times.",
+          "C. The waves crashed, the wind howled, the rain poured.",
+          "D. She spoke softly, gently, and kindly."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Antithesis juxtaposes contrasting ideas in balanced grammatical structures. 'Best of times' and 'worst of times' are direct opposites presented in parallel form to create dramatic emphasis.",
+      "explanation_zh": "Antithesis juxtaposes contrasting ideas in balanced grammatical structures. 'Best of times' and 'worst of times' are direct opposites presented in parallel form to create dramatic emphasis.",
+      "tags": [
+        "rhetorical_devices",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "rhetorical_devices",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "logical_fallacies",
+      "subtopic": null,
+      "difficulty": 0.81,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Identify the logical fallacy: 'Dr. Martinez is a renowned physicist, so her opinion on economic policy must be correct.'",
+        "options": [
+          "A. Ad hominem",
+          "B. Appeal to authority",
+          "C. Straw man",
+          "D. Circular reasoning"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Identify the logical fallacy: 'Dr. Martinez is a renowned physicist, so her opinion on economic policy must be correct.'",
+        "options": [
+          "A. Ad hominem",
+          "B. Appeal to authority",
+          "C. Straw man",
+          "D. Circular reasoning"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "This is an appeal to authority (or appeal to false authority). Dr. Martinez's expertise in physics does not qualify her as an authority on economics. Authority in one field does not transfer to another.",
+      "explanation_zh": "This is an appeal to authority (or appeal to false authority). Dr. Martinez's expertise in physics does not qualify her as an authority on economics. Authority in one field does not transfer to another.",
+      "tags": [
+        "logical_fallacies",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "logical_fallacies",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "synthesis_writing",
+      "subtopic": null,
+      "difficulty": 0.83,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A student is writing a synthesis essay using three sources about AI in education. Which approach best demonstrates synthesis?",
+        "options": [
+          "A. Source 1 says AI helps students. Source 2 says AI is expensive. Source 3 says AI needs regulation.",
+          "B. While Source 1 highlights AI's potential to personalize learning and Source 2 raises concerns about implementation costs, Source 3's call for regulatory frameworks suggests that effective AI integration requires balancing innovation with accountability.",
+          "C. I agree with Source 1 because AI is helpful. Sources 2 and 3 are wrong.",
+          "D. All three sources agree that AI is important in education."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A student is writing a synthesis essay using three sources about AI in education. Which approach best demonstrates synthesis?",
+        "options": [
+          "A. Source 1 says AI helps students. Source 2 says AI is expensive. Source 3 says AI needs regulation.",
+          "B. While Source 1 highlights AI's potential to personalize learning and Source 2 raises concerns about implementation costs, Source 3's call for regulatory frameworks suggests that effective AI integration requires balancing innovation with accountability.",
+          "C. I agree with Source 1 because AI is helpful. Sources 2 and 3 are wrong.",
+          "D. All three sources agree that AI is important in education."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Synthesis weaves multiple sources together to develop a nuanced argument. Option B connects ideas across sources, identifies relationships (potential vs. concerns vs. solutions), and draws an original conclusion.",
+      "explanation_zh": "Synthesis weaves multiple sources together to develop a nuanced argument. Option B connects ideas across sources, identifies relationships (potential vs. concerns vs. solutions), and draws an original conclusion.",
+      "tags": [
+        "synthesis_writing",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "synthesis_writing",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "conditional_sentences",
+      "subtopic": null,
+      "difficulty": 0.84,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the mixed conditional correctly?",
+        "options": [
+          "A. If she had studied medicine, she will be a doctor now.",
+          "B. If she had studied medicine, she would be a doctor now.",
+          "C. If she studied medicine, she would have been a doctor now.",
+          "D. If she would study medicine, she had been a doctor now."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the mixed conditional correctly?",
+        "options": [
+          "A. If she had studied medicine, she will be a doctor now.",
+          "B. If she had studied medicine, she would be a doctor now.",
+          "C. If she studied medicine, she would have been a doctor now.",
+          "D. If she would study medicine, she had been a doctor now."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A mixed conditional combines a past unreal condition ('had studied' — third conditional if-clause) with a present unreal result ('would be' — second conditional result clause). This describes how a past action would affect the present.",
+      "explanation_zh": "A mixed conditional combines a past unreal condition ('had studied' — third conditional if-clause) with a present unreal result ('would be' — second conditional result clause). This describes how a past action would affect the present.",
+      "tags": [
+        "conditional_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "conditional_sentences",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "advanced_transitions",
+      "subtopic": null,
+      "difficulty": 0.86,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which transition best fits this passage? 'Some educators argue that standardized testing provides objective data for comparing student achievement across districts. _______, critics contend that these tests measure test-taking ability rather than genuine understanding and disproportionately disadvantage students from under-resourced schools.'",
+        "options": [
+          "A. Moreover",
+          "B. Conversely",
+          "C. Subsequently",
+          "D. Accordingly"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which transition best fits this passage? 'Some educators argue that standardized testing provides objective data for comparing student achievement across districts. _______, critics contend that these tests measure test-taking ability rather than genuine understanding and disproportionately disadvantage students from under-resourced schools.'",
+        "options": [
+          "A. Moreover",
+          "B. Conversely",
+          "C. Subsequently",
+          "D. Accordingly"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Conversely' signals a direct opposing viewpoint. The first sentence presents an argument in favor of testing; the second presents the opposite perspective. 'Conversely' marks this shift precisely.",
+      "explanation_zh": "'Conversely' signals a direct opposing viewpoint. The first sentence presents an argument in favor of testing; the second presents the opposite perspective. 'Conversely' marks this shift precisely.",
+      "tags": [
+        "advanced_transitions",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G12-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "advanced_transitions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "complex_punctuation",
+      "subtopic": null,
+      "difficulty": 0.87,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly uses a dash for emphasis?",
+        "options": [
+          "A. The expedition faced every obstacle imaginable—extreme cold, equipment failure, and dwindling supplies—yet the team pressed on.",
+          "B. The expedition faced every obstacle—imaginable extreme cold, equipment failure—and dwindling supplies yet the team pressed on.",
+          "C. The expedition—faced every obstacle imaginable extreme cold, equipment failure, and dwindling supplies—yet the team pressed on.",
+          "D. The expedition faced every obstacle imaginable extreme cold—equipment failure, and dwindling supplies—yet the team pressed on."
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly uses a dash for emphasis?",
+        "options": [
+          "A. The expedition faced every obstacle imaginable—extreme cold, equipment failure, and dwindling supplies—yet the team pressed on.",
+          "B. The expedition faced every obstacle—imaginable extreme cold, equipment failure—and dwindling supplies yet the team pressed on.",
+          "C. The expedition—faced every obstacle imaginable extreme cold, equipment failure, and dwindling supplies—yet the team pressed on.",
+          "D. The expedition faced every obstacle imaginable extreme cold—equipment failure, and dwindling supplies—yet the team pressed on."
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Em dashes set off a list that amplifies the preceding statement. The dashes correctly surround the explanatory list ('extreme cold, equipment failure, and dwindling supplies'), and 'yet' continues the main sentence.",
+      "explanation_zh": "Em dashes set off a list that amplifies the preceding statement. The dashes correctly surround the explanatory list ('extreme cold, equipment failure, and dwindling supplies'), and 'yet' continues the main sentence.",
+      "tags": [
+        "complex_punctuation",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "complex_punctuation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "academic_tone_revision",
+      "subtopic": null,
+      "difficulty": 0.89,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which revision most effectively elevates this sentence to a scholarly register? Original: 'The government should totally ban single-use plastics because they mess up the environment.'",
+        "options": [
+          "A. The government should ban plastics because they are bad for nature.",
+          "B. Policymakers should enact comprehensive legislation prohibiting single-use plastics, which contribute significantly to environmental degradation and marine ecosystem contamination.",
+          "C. It would be great if the government could ban single-use plastics to help the environment.",
+          "D. In my opinion, single-use plastics should definitely be banned by the government."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which revision most effectively elevates this sentence to a scholarly register? Original: 'The government should totally ban single-use plastics because they mess up the environment.'",
+        "options": [
+          "A. The government should ban plastics because they are bad for nature.",
+          "B. Policymakers should enact comprehensive legislation prohibiting single-use plastics, which contribute significantly to environmental degradation and marine ecosystem contamination.",
+          "C. It would be great if the government could ban single-use plastics to help the environment.",
+          "D. In my opinion, single-use plastics should definitely be banned by the government."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Scholarly writing uses precise agents ('policymakers'), formal verbs ('enact,' 'prohibiting'), specific consequences ('environmental degradation,' 'marine ecosystem contamination'), and avoids colloquialisms and first-person opinion.",
+      "explanation_zh": "Scholarly writing uses precise agents ('policymakers'), formal verbs ('enact,' 'prohibiting'), specific consequences ('environmental degradation,' 'marine ecosystem contamination'), and avoids colloquialisms and first-person opinion.",
+      "tags": [
+        "academic_tone_revision",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "academic_tone_revision",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G12",
+      "topic": "logical_fallacies",
+      "subtopic": null,
+      "difficulty": 0.9,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Identify the logical fallacy: 'We shouldn't listen to Senator Park's argument for education reform because she didn't even graduate from a prestigious university.'",
+        "options": [
+          "A. Red herring",
+          "B. Bandwagon appeal",
+          "C. Ad hominem",
+          "D. False dilemma"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Identify the logical fallacy: 'We shouldn't listen to Senator Park's argument for education reform because she didn't even graduate from a prestigious university.'",
+        "options": [
+          "A. Red herring",
+          "B. Bandwagon appeal",
+          "C. Ad hominem",
+          "D. False dilemma"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Ad hominem attacks the person making the argument rather than addressing the argument itself. Dismissing Senator Park's policy proposal based on her university background is irrelevant to the merits of her education reform plan.",
+      "explanation_zh": "Ad hominem attacks the person making the argument rather than addressing the argument itself. Dismissing Senator Park's policy proposal based on her university background is irrelevant to the merits of her education reform plan.",
+      "tags": [
+        "logical_fallacies",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G12-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G12-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G12",
+        "original_topic": "logical_fallacies",
+        "is_seed": false
+      }
+    }
+  ]
+}

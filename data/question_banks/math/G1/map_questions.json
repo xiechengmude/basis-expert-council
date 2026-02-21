@@ -1,0 +1,694 @@
+{
+  "batch_name": "MAP_math_G1_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G1",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "addition_word_problem",
+      "subtopic": null,
+      "difficulty": 0.1,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Jane has 6 flowers. She planted 3 more flowers. How many flowers does Jane have now?",
+        "options": [
+          "A. 3",
+          "B. 6",
+          "C. 7",
+          "D. 8",
+          "E. 9"
+        ],
+        "answer": "E"
+      },
+      "content_zh": {
+        "stem": "Jane has 6 flowers. She planted 3 more flowers. How many flowers does Jane have now?",
+        "options": [
+          "A. 3",
+          "B. 6",
+          "C. 7",
+          "D. 8",
+          "E. 9"
+        ],
+        "answer": "E"
+      },
+      "explanation_en": "Jane started with 6 flowers and planted 3 more. 6 + 3 = 9 flowers total.",
+      "explanation_zh": "Jane started with 6 flowers and planted 3 more. 6 + 3 = 9 flowers total.",
+      "tags": [
+        "addition_word_problem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-001",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "addition_word_problem",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "geometry_3d_shapes",
+      "subtopic": null,
+      "difficulty": 0.1,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Identify the three-dimensional shape shown in the image.",
+        "options": [
+          "A. Cube",
+          "B. Pyramid",
+          "C. Cone",
+          "D. Cylinder"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Identify the three-dimensional shape shown in the image.",
+        "options": [
+          "A. Cube",
+          "B. Pyramid",
+          "C. Cone",
+          "D. Cylinder"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "The shape shown is a cylinder — it has two circular bases and a curved surface connecting them.",
+      "explanation_zh": "The shape shown is a cylinder — it has two circular bases and a curved surface connecting them.",
+      "tags": [
+        "geometry_3d_shapes",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-002",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "geometry_3d_shapes",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "data_interpretation",
+      "subtopic": null,
+      "difficulty": 0.1,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "According to the bar graph, which food was chosen by the fewest students?",
+        "options": [
+          "A. Soup",
+          "B. Salad",
+          "C. Hamburger",
+          "D. Pizza",
+          "E. Ice cream"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "According to the bar graph, which food was chosen by the fewest students?",
+        "options": [
+          "A. Soup",
+          "B. Salad",
+          "C. Hamburger",
+          "D. Pizza",
+          "E. Ice cream"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Reading the bar graph, hamburger has the shortest bar, meaning the fewest students chose it.",
+      "explanation_zh": "Reading the bar graph, hamburger has the shortest bar, meaning the fewest students chose it.",
+      "tags": [
+        "data_interpretation",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-003",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "data_interpretation",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "missing_number",
+      "subtopic": null,
+      "difficulty": 0.11,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "5 + ___ = 12. What is the missing number?",
+        "options": [
+          "A. 4",
+          "B. 5",
+          "C. 6",
+          "D. 7",
+          "E. 8"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "5 + ___ = 12. What is the missing number?",
+        "options": [
+          "A. 4",
+          "B. 5",
+          "C. 6",
+          "D. 7",
+          "E. 8"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "To find the missing number: 12 - 5 = 7. So 5 + 7 = 12.",
+      "explanation_zh": "To find the missing number: 12 - 5 = 7. So 5 + 7 = 12.",
+      "tags": [
+        "missing_number",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-004",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "missing_number",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "number_patterns",
+      "subtopic": null,
+      "difficulty": 0.14,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "10, 12, 14, 16, 18, ___. What is the next number?",
+        "options": [
+          "A. 19",
+          "B. 20",
+          "C. 21",
+          "D. 22"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "10, 12, 14, 16, 18, ___. What is the next number?",
+        "options": [
+          "A. 19",
+          "B. 20",
+          "C. 21",
+          "D. 22"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The pattern increases by 2 each time: 10, 12, 14, 16, 18, 20.",
+      "explanation_zh": "The pattern increases by 2 each time: 10, 12, 14, 16, 18, 20.",
+      "tags": [
+        "number_patterns",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-005 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-005",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "number_patterns",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "counting_objects",
+      "subtopic": null,
+      "difficulty": 0.16,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Count the stars: ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★. How many stars are there?",
+        "options": [
+          "A. 11",
+          "B. 12",
+          "C. 13",
+          "D. 14"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Count the stars: ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★. How many stars are there?",
+        "options": [
+          "A. 11",
+          "B. 12",
+          "C. 13",
+          "D. 14"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Counting each star one by one gives us 13 stars.",
+      "explanation_zh": "Counting each star one by one gives us 13 stars.",
+      "tags": [
+        "counting_objects",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-MATH-101",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "counting_objects",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "subtraction_within_20",
+      "subtopic": null,
+      "difficulty": 0.18,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "There are 15 birds sitting on a fence. 8 birds fly away. How many birds are still on the fence?",
+        "options": [
+          "A. 5",
+          "B. 6",
+          "C. 7",
+          "D. 8",
+          "E. 9"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "There are 15 birds sitting on a fence. 8 birds fly away. How many birds are still on the fence?",
+        "options": [
+          "A. 5",
+          "B. 6",
+          "C. 7",
+          "D. 8",
+          "E. 9"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "15 birds minus 8 that flew away: 15 - 8 = 7 birds are still on the fence.",
+      "explanation_zh": "15 birds minus 8 that flew away: 15 - 8 = 7 birds are still on the fence.",
+      "tags": [
+        "subtraction_within_20",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-MATH-102",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "subtraction_within_20",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "comparing_numbers",
+      "subtopic": null,
+      "difficulty": 0.2,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which number is greater: 14 or 9?",
+        "options": [
+          "A. 14",
+          "B. 9",
+          "C. They are equal",
+          "D. Cannot tell"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which number is greater: 14 or 9?",
+        "options": [
+          "A. 14",
+          "B. 9",
+          "C. They are equal",
+          "D. Cannot tell"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "14 is greater than 9 because 14 comes after 9 when counting.",
+      "explanation_zh": "14 is greater than 9 because 14 comes after 9 when counting.",
+      "tags": [
+        "comparing_numbers",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-MATH-103",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "comparing_numbers",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "2d_shapes",
+      "subtopic": null,
+      "difficulty": 0.22,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "How many sides does a triangle have?",
+        "options": [
+          "A. 2",
+          "B. 3",
+          "C. 4",
+          "D. 5"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "How many sides does a triangle have?",
+        "options": [
+          "A. 2",
+          "B. 3",
+          "C. 4",
+          "D. 5"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A triangle has exactly 3 sides. The prefix 'tri' means three.",
+      "explanation_zh": "A triangle has exactly 3 sides. The prefix 'tri' means three.",
+      "tags": [
+        "2d_shapes",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-MATH-104",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "2d_shapes",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "addition_within_20",
+      "subtopic": null,
+      "difficulty": 0.24,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "NASA's Artemis rocket carried 7 experiments on one trip and 6 experiments on the next trip to the Moon. How many experiments were carried in total?",
+        "options": [
+          "A. 11",
+          "B. 12",
+          "C. 13",
+          "D. 14",
+          "E. 15"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "NASA's Artemis rocket carried 7 experiments on one trip and 6 experiments on the next trip to the Moon. How many experiments were carried in total?",
+        "options": [
+          "A. 11",
+          "B. 12",
+          "C. 13",
+          "D. 14",
+          "E. 15"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "7 experiments + 6 experiments = 13 experiments in total.",
+      "explanation_zh": "7 experiments + 6 experiments = 13 experiments in total.",
+      "tags": [
+        "addition_within_20",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "K1-MATH-105",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "addition_within_20",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "simple_patterns",
+      "subtopic": null,
+      "difficulty": 0.26,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What comes next in the pattern? Circle, Square, Circle, Square, Circle, ___",
+        "options": [
+          "A. Circle",
+          "B. Square",
+          "C. Triangle",
+          "D. Rectangle"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What comes next in the pattern? Circle, Square, Circle, Square, Circle, ___",
+        "options": [
+          "A. Circle",
+          "B. Square",
+          "C. Triangle",
+          "D. Rectangle"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The pattern alternates between Circle and Square. After Circle, the next shape is Square.",
+      "explanation_zh": "The pattern alternates between Circle and Square. After Circle, the next shape is Square.",
+      "tags": [
+        "simple_patterns",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-106",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "simple_patterns",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "position_words",
+      "subtopic": null,
+      "difficulty": 0.29,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The cat is ON the table. The dog is UNDER the table. Where is the cat?",
+        "options": [
+          "A. Under the table",
+          "B. On the table",
+          "C. Next to the table",
+          "D. Behind the table"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "The cat is ON the table. The dog is UNDER the table. Where is the cat?",
+        "options": [
+          "A. Under the table",
+          "B. On the table",
+          "C. Next to the table",
+          "D. Behind the table"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The sentence says 'The cat is ON the table,' so the cat is on top of the table.",
+      "explanation_zh": "The sentence says 'The cat is ON the table,' so the cat is on top of the table.",
+      "tags": [
+        "position_words",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-107",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "position_words",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "sorting_classifying",
+      "subtopic": null,
+      "difficulty": 0.31,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which of these does NOT belong in a group of round objects?",
+        "options": [
+          "A. Basketball",
+          "B. Orange",
+          "C. Box",
+          "D. Marble"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which of these does NOT belong in a group of round objects?",
+        "options": [
+          "A. Basketball",
+          "B. Orange",
+          "C. Box",
+          "D. Marble"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A basketball, orange, and marble are all round. A box is not round — it has flat sides and corners.",
+      "explanation_zh": "A basketball, orange, and marble are all round. A box is not round — it has flat sides and corners.",
+      "tags": [
+        "sorting_classifying",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-108",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "sorting_classifying",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "3d_shapes",
+      "subtopic": null,
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A ball is shaped like which 3D shape?",
+        "options": [
+          "A. Cube",
+          "B. Sphere",
+          "C. Cylinder",
+          "D. Cone"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A ball is shaped like which 3D shape?",
+        "options": [
+          "A. Cube",
+          "B. Sphere",
+          "C. Cylinder",
+          "D. Cone"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A ball is perfectly round in all directions, which is the shape of a sphere.",
+      "explanation_zh": "A ball is perfectly round in all directions, which is the shape of a sphere.",
+      "tags": [
+        "3d_shapes",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-109",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "3d_shapes",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G1",
+      "topic": "number_order",
+      "subtopic": null,
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Put these numbers in order from smallest to largest: 18, 4, 11. Which is the correct order?",
+        "options": [
+          "A. 18, 11, 4",
+          "B. 4, 11, 18",
+          "C. 11, 4, 18",
+          "D. 4, 18, 11"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Put these numbers in order from smallest to largest: 18, 4, 11. Which is the correct order?",
+        "options": [
+          "A. 18, 11, 4",
+          "B. 4, 11, 18",
+          "C. 11, 4, 18",
+          "D. 4, 18, 11"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "From smallest to largest: 4 < 11 < 18. The correct order is 4, 11, 18.",
+      "explanation_zh": "From smallest to largest: 4 < 11 < 18. The correct order is 4, 11, 18.",
+      "tags": [
+        "number_order",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question K1-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "K1-MATH-110",
+        "original_subject": "math",
+        "original_grade": "K-1",
+        "original_topic": "number_order",
+        "is_seed": false
+      }
+    }
+  ]
+}

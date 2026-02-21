@@ -1,0 +1,596 @@
+{
+  "batch_name": "MAP_math_G6_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G6",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "decomposition_multiplication",
+      "subtopic": null,
+      "difficulty": 0.3,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which is the best decomposition to simplify the multiplication 382 × 17?",
+        "options": [
+          "A. 380 × 17 + 2",
+          "B. 382 × 10 + 382 × 7",
+          "C. (300 + 80 + 2) × 17",
+          "D. 400 × 17 − 18 × 17"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which is the best decomposition to simplify the multiplication 382 × 17?",
+        "options": [
+          "A. 380 × 17 + 2",
+          "B. 382 × 10 + 382 × 7",
+          "C. (300 + 80 + 2) × 17",
+          "D. 400 × 17 − 18 × 17"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Breaking 382 into 300 + 80 + 2, then multiplying each by 17 uses place value to simplify the calculation.",
+      "explanation_zh": "Breaking 382 into 300 + 80 + 2, then multiplying each by 17 uses place value to simplify the calculation.",
+      "tags": [
+        "decomposition_multiplication",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "decomposition_multiplication",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "data_representation",
+      "subtopic": null,
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which line plot correctly represents the swimming time data from a given table?",
+        "options": [
+          "A. Plot A",
+          "B. Plot B",
+          "C. Plot C",
+          "D. Plot D"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which line plot correctly represents the swimming time data from a given table?",
+        "options": [
+          "A. Plot A",
+          "B. Plot B",
+          "C. Plot C",
+          "D. Plot D"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Plot B correctly shows the frequency distribution across fractional values matching the data table.",
+      "explanation_zh": "Plot B correctly shows the frequency distribution across fractional values matching the data table.",
+      "tags": [
+        "data_representation",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "data_representation",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "perimeter_area",
+      "subtopic": null,
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The perimeter of a rectangle is 32. The width is 7. What is the area?",
+        "options": [
+          "A. 25",
+          "B. 32",
+          "C. 49",
+          "D. 56",
+          "E. 63"
+        ],
+        "answer": "E"
+      },
+      "content_zh": {
+        "stem": "The perimeter of a rectangle is 32. The width is 7. What is the area?",
+        "options": [
+          "A. 25",
+          "B. 32",
+          "C. 49",
+          "D. 56",
+          "E. 63"
+        ],
+        "answer": "E"
+      },
+      "explanation_en": "Perimeter = 2(l + w) → 32 = 2(l + 7) → l = 9. Area = l × w = 9 × 7 = 63.",
+      "explanation_zh": "Perimeter = 2(l + w) → 32 = 2(l + 7) → l = 9. Area = l × w = 9 × 7 = 63.",
+      "tags": [
+        "perimeter_area",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "perimeter_area",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "ratios",
+      "subtopic": null,
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In a class, the ratio of boys to girls is 3:5. If there are 24 students in total, how many are boys?",
+        "options": [
+          "A. 6",
+          "B. 9",
+          "C. 12",
+          "D. 15"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In a class, the ratio of boys to girls is 3:5. If there are 24 students in total, how many are boys?",
+        "options": [
+          "A. 6",
+          "B. 9",
+          "C. 12",
+          "D. 15"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Total parts = 3 + 5 = 8. Each part = 24 ÷ 8 = 3 students. Boys = 3 × 3 = 9.",
+      "explanation_zh": "Total parts = 3 + 5 = 8. Each part = 24 ÷ 8 = 3 students. Boys = 3 × 3 = 9.",
+      "tags": [
+        "ratios",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "ratios",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "percent",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A store is having a 25% off sale. If a jacket originally costs $80, what is the sale price?",
+        "options": [
+          "A. $20",
+          "B. $55",
+          "C. $60",
+          "D. $65"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A store is having a 25% off sale. If a jacket originally costs $80, what is the sale price?",
+        "options": [
+          "A. $20",
+          "B. $55",
+          "C. $60",
+          "D. $65"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "25% of $80 = 0.25 × 80 = $20 discount. Sale price = $80 - $20 = $60.",
+      "explanation_zh": "25% of $80 = 0.25 × 80 = $20 discount. Sale price = $80 - $20 = $60.",
+      "tags": [
+        "percent",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "percent",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "integers",
+      "subtopic": null,
+      "difficulty": 0.43,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is -8 + 5?",
+        "options": [
+          "A. -13",
+          "B. -3",
+          "C. 3",
+          "D. 13"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What is -8 + 5?",
+        "options": [
+          "A. -13",
+          "B. -3",
+          "C. 3",
+          "D. 13"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Starting at -8 on the number line and moving 5 units to the right gives -3.",
+      "explanation_zh": "Starting at -8 on the number line and moving 5 units to the right gives -3.",
+      "tags": [
+        "integers",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "integers",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "expressions_equations",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Solve for x: 3x - 7 = 14",
+        "options": [
+          "A. 3",
+          "B. 5",
+          "C. 7",
+          "D. 9"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Solve for x: 3x - 7 = 14",
+        "options": [
+          "A. 3",
+          "B. 5",
+          "C. 7",
+          "D. 9"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "3x - 7 = 14. Add 7 to both sides: 3x = 21. Divide by 3: x = 7.",
+      "explanation_zh": "3x - 7 = 14. Add 7 to both sides: 3x = 21. Divide by 3: x = 7.",
+      "tags": [
+        "expressions_equations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "expressions_equations",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "area_of_polygons",
+      "subtopic": null,
+      "difficulty": 0.48,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the area of a triangle with a base of 10 cm and a height of 6 cm?",
+        "options": [
+          "A. 16 cm²",
+          "B. 30 cm²",
+          "C. 60 cm²",
+          "D. 36 cm²"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What is the area of a triangle with a base of 10 cm and a height of 6 cm?",
+        "options": [
+          "A. 16 cm²",
+          "B. 30 cm²",
+          "C. 60 cm²",
+          "D. 36 cm²"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Area of a triangle = 1/2 × base × height = 1/2 × 10 × 6 = 30 cm².",
+      "explanation_zh": "Area of a triangle = 1/2 × base × height = 1/2 × 10 × 6 = 30 cm².",
+      "tags": [
+        "area_of_polygons",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "area_of_polygons",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "statistical_measures",
+      "subtopic": null,
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Find the median of this data set: 12, 7, 15, 3, 9, 20, 11",
+        "options": [
+          "A. 9",
+          "B. 11",
+          "C. 12",
+          "D. 15"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Find the median of this data set: 12, 7, 15, 3, 9, 20, 11",
+        "options": [
+          "A. 9",
+          "B. 11",
+          "C. 12",
+          "D. 15"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "First, order the data: 3, 7, 9, 11, 12, 15, 20. The middle value (4th out of 7) is 11.",
+      "explanation_zh": "First, order the data: 3, 7, 9, 11, 12, 15, 20. The middle value (4th out of 7) is 11.",
+      "tags": [
+        "statistical_measures",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "statistical_measures",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "ratio_word_problem",
+      "subtopic": null,
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "An AI system processes requests at a rate of 450 per second. At this rate, how many requests does it process in 20 seconds?",
+        "options": [
+          "A. 4,500",
+          "B. 9,000",
+          "C. 9,500",
+          "D. 45,000"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "An AI system processes requests at a rate of 450 per second. At this rate, how many requests does it process in 20 seconds?",
+        "options": [
+          "A. 4,500",
+          "B. 9,000",
+          "C. 9,500",
+          "D. 45,000"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "450 requests per second × 20 seconds = 9,000 requests.",
+      "explanation_zh": "450 requests per second × 20 seconds = 9,000 requests.",
+      "tags": [
+        "ratio_word_problem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "ratio_word_problem",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "box_plots",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A box plot shows: minimum = 10, Q1 = 15, median = 22, Q3 = 30, maximum = 40. What is the interquartile range (IQR)?",
+        "options": [
+          "A. 8",
+          "B. 12",
+          "C. 15",
+          "D. 30"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A box plot shows: minimum = 10, Q1 = 15, median = 22, Q3 = 30, maximum = 40. What is the interquartile range (IQR)?",
+        "options": [
+          "A. 8",
+          "B. 12",
+          "C. 15",
+          "D. 30"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "IQR = Q3 - Q1 = 30 - 15 = 15.",
+      "explanation_zh": "IQR = Q3 - Q1 = 30 - 15 = 15.",
+      "tags": [
+        "box_plots",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "box_plots",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "percent_word_problem",
+      "subtopic": null,
+      "difficulty": 0.57,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In 2025, a city's average temperature increased by 2°F. If the original average was 58°F, what is the percent increase, rounded to the nearest whole number?",
+        "options": [
+          "A. 2%",
+          "B. 3%",
+          "C. 5%",
+          "D. 8%"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In 2025, a city's average temperature increased by 2°F. If the original average was 58°F, what is the percent increase, rounded to the nearest whole number?",
+        "options": [
+          "A. 2%",
+          "B. 3%",
+          "C. 5%",
+          "D. 8%"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Percent increase = (increase ÷ original) × 100 = (2 ÷ 58) × 100 ≈ 3.4%, which rounds to 3%.",
+      "explanation_zh": "Percent increase = (increase ÷ original) × 100 = (2 ÷ 58) × 100 ≈ 3.4%, which rounds to 3%.",
+      "tags": [
+        "percent_word_problem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "percent_word_problem",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G6",
+      "topic": "coordinate_plane_distance",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the distance between the points (2, 3) and (2, -4) on the coordinate plane?",
+        "options": [
+          "A. 1",
+          "B. 5",
+          "C. 7",
+          "D. 10"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is the distance between the points (2, 3) and (2, -4) on the coordinate plane?",
+        "options": [
+          "A. 1",
+          "B. 5",
+          "C. 7",
+          "D. 10"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Both points have the same x-coordinate (2), so the distance is the difference in y-coordinates: |3 - (-4)| = |3 + 4| = 7.",
+      "explanation_zh": "Both points have the same x-coordinate (2), so the distance is the difference in y-coordinates: |3 - (-4)| = |3 + 4| = 7.",
+      "tags": [
+        "coordinate_plane_distance",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G6",
+        "original_topic": "coordinate_plane_distance",
+        "is_seed": false
+      }
+    }
+  ]
+}

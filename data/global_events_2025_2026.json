@@ -1,0 +1,506 @@
+[
+  {
+    "event": "DeepSeek R1 Reasoning Model Release",
+    "date": "2025-01",
+    "description": "Chinese AI company DeepSeek released its R1 reasoning model, matching OpenAI's ChatGPT o1 on key benchmarks while being trained at a fraction of the cost, challenging assumptions about AI development costs.",
+    "category": "science_tech",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate cost ratios between AI training budgets ($5.6M vs $100M+) and compare efficiency metrics.",
+      "reading": "Passage analyzing how competition drives innovation in the AI industry and the implications of open-source AI models.",
+      "language": "Write a persuasive essay on whether AI development should be open-source or proprietary."
+    }
+  },
+  {
+    "event": "Blue Origin New Glenn Maiden Flight",
+    "date": "2025-01",
+    "description": "Blue Origin's New Glenn rocket completed its maiden flight on January 16, reaching orbit from Cape Canaveral. While the booster was lost during reentry, it marked a major milestone after 25 years of development.",
+    "category": "space",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate the height and thrust of the New Glenn rocket (98m tall, 3.85 million pounds of thrust) compared to other rockets.",
+      "reading": "Passage about the history of rocket development and the challenges of reusable launch vehicles.",
+      "language": "Use transitional phrases to describe the sequence of events in a rocket launch."
+    }
+  },
+  {
+    "event": "January 2025 Los Angeles Wildfires",
+    "date": "2025-01",
+    "description": "Devastating wildfires struck the Los Angeles area, destroying over 18,000 structures, killing 31 people, and causing an estimated $61.2 billion in damages -- the costliest wildfire event on record.",
+    "category": "environment",
+    "grade_levels": ["G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the total area burned (57,529 acres), convert to square miles, or compute average cost per destroyed structure.",
+      "reading": "Passage about wildfire science, Santa Ana winds, and community resilience in disaster recovery.",
+      "language": "Identify cause-and-effect relationships in a news article about wildfire conditions."
+    }
+  },
+  {
+    "event": "SpaceX Starship Flight 7 Booster Catch",
+    "date": "2025-01",
+    "description": "SpaceX successfully repeated its 'chopsticks' catch of the Super Heavy booster during Starship's seventh test flight, while also testing satellite deployment with 10 dummy Starlink payloads for the first time.",
+    "category": "space",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate the speed and deceleration needed for a 230-foot booster to slow from supersonic speeds to a precise landing.",
+      "reading": "Passage about reusable rocket technology and how it reduces the cost of space access.",
+      "language": "Use precise technical vocabulary to describe the engineering challenges of catching a rocket booster."
+    }
+  },
+  {
+    "event": "Tibet Earthquake",
+    "date": "2025-01",
+    "description": "A magnitude 7.1 earthquake struck Tingri County in Tibet on January 7, killing at least 126 people and injuring nearly 200, highlighting seismic risks in the Himalayan region.",
+    "category": "environment",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Compare earthquake magnitudes using the Richter scale (logarithmic): how much more energy does a 7.1 release vs a 5.1?",
+      "reading": "Passage about tectonic plates, the Himalayan fault system, and earthquake preparedness.",
+      "language": "Write an informational paragraph using domain-specific vocabulary (epicenter, magnitude, tectonic)."
+    }
+  },
+  {
+    "event": "Germany Snap Federal Election",
+    "date": "2025-02",
+    "description": "Germany held an early federal election on February 23 after the coalition government lost a no-confidence vote, demonstrating how parliamentary democracies handle political crises.",
+    "category": "geography",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Analyze election results using percentages, calculate seat allocation in a proportional representation system.",
+      "reading": "Passage comparing parliamentary systems (Germany) with presidential systems (USA).",
+      "language": "Identify author's purpose and point of view in political news coverage from different countries."
+    }
+  },
+  {
+    "event": "Grant Fisher Indoor Running Records",
+    "date": "2025-02",
+    "description": "American runner Grant Fisher broke both the men's indoor 5000m record (12:44.09) and the indoor 3000m record (7:22.91) within a week in February 2025.",
+    "category": "sports",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate Fisher's average speed in meters per second and miles per hour. Compare old and new records.",
+      "reading": "Passage about the science of endurance running, VO2 max, and how track records have improved over decades.",
+      "language": "Use comparative and superlative adjectives to describe athletic achievements."
+    }
+  },
+  {
+    "event": "LeBron James 50,000 Combined Points Milestone",
+    "date": "2025-03",
+    "description": "LeBron James became the first NBA player to amass 50,000 combined points between the regular season and playoffs, cementing his legacy as one of basketball's greatest scorers.",
+    "category": "sports",
+    "grade_levels": ["K-G3", "G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate LeBron's points-per-game average over his career. How many games to reach 50,000 at his average?",
+      "reading": "Passage about perseverance and longevity in professional sports, using LeBron's 22-year career as an example.",
+      "language": "Identify the main idea and supporting details in a biographical text about an athlete."
+    }
+  },
+  {
+    "event": "Stephen Curry 4,000 Career Three-Pointers",
+    "date": "2025-03",
+    "description": "Stephen Curry became the first NBA player to make 4,000 regular-season three-point shots, extending his own all-time record in a sport he helped revolutionize.",
+    "category": "sports",
+    "grade_levels": ["K-G3", "G4-G6"],
+    "question_use": {
+      "math": "Calculate Curry's three-point shooting percentage. If he attempts 8 threes per game, how many games to reach 4,000?",
+      "reading": "Passage about how one player's skill changed the strategy of an entire sport.",
+      "language": "Use context clues to determine the meaning of sports-related vocabulary."
+    }
+  },
+  {
+    "event": "Myanmar Earthquake",
+    "date": "2025-03",
+    "description": "A magnitude 7.7-7.9 earthquake struck Myanmar, causing unprecedented destruction and killing over 5,400 people, making it the deadliest earthquake of 2025.",
+    "category": "environment",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the energy difference between a 7.7 and 7.9 magnitude earthquake using logarithmic scales.",
+      "reading": "Passage about international disaster response, humanitarian aid logistics, and earthquake-resistant building design.",
+      "language": "Analyze the structure of a news report that conveys urgency while maintaining factual accuracy."
+    }
+  },
+  {
+    "event": "JWST Discovers Most Distant Galaxy (MoM-z14)",
+    "date": "2025-04",
+    "description": "The James Webb Space Telescope detected galaxy MoM-z14, seen just 280 million years after the Big Bang, the most distant galaxy ever observed, challenging models of early universe star formation.",
+    "category": "space",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the light-travel distance: if the universe is 13.8 billion years old and MoM-z14 formed 280 million years after the Big Bang, how far is its light traveling?",
+      "reading": "Passage about how telescopes act as time machines, observing light from billions of years ago.",
+      "language": "Write an explanatory text using cause-and-effect structure to describe how JWST works."
+    }
+  },
+  {
+    "event": "Possible Biosignature Gases on Exoplanet K2-18b",
+    "date": "2025-04",
+    "description": "JWST data revealed possible biosignature gases (dimethyl sulfide) in the atmosphere of exoplanet K2-18b, a 'Hycean' world 120 light-years away, fueling excitement about the search for extraterrestrial life.",
+    "category": "space",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "If K2-18b is 120 light-years away and light travels at 186,000 miles per second, calculate the distance in miles.",
+      "reading": "Passage about the scientific method applied to the search for life beyond Earth.",
+      "language": "Distinguish between claims supported by evidence and speculation in a scientific article."
+    }
+  },
+  {
+    "event": "Kanlaon Volcano Major Eruption (Philippines)",
+    "date": "2025-05",
+    "description": "Kanlaon Volcano in the Philippines intensified eruptions in early 2025, with a major eruption in May forcing thousands to evacuate and authorities declaring a wide evacuation zone.",
+    "category": "environment",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate the area of the evacuation zone given a radius in kilometers. Convert between metric and imperial units.",
+      "reading": "Passage about the Ring of Fire, volcanic activity in Southeast Asia, and how communities prepare for eruptions.",
+      "language": "Use sequential order words to describe the stages of a volcanic eruption and evacuation process."
+    }
+  },
+  {
+    "event": "Green Sea Turtles Downgraded from Endangered",
+    "date": "2025-06",
+    "description": "Green sea turtles were reclassified from 'endangered' to 'least concern' on the IUCN Red List after decades of conservation efforts, including beach protection and improved fisheries practices.",
+    "category": "environment",
+    "grade_levels": ["K-G3", "G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Graph population recovery data over decades and calculate percent increase in turtle populations.",
+      "reading": "Passage about conservation success stories and what it takes to bring a species back from the brink.",
+      "language": "Write a summary identifying the problem, actions taken, and results in a conservation narrative."
+    }
+  },
+  {
+    "event": "FIFA Club World Cup 2025",
+    "date": "2025-06",
+    "description": "The first expanded 32-team FIFA Club World Cup was held across the USA from June 14 to July 13, featuring top clubs like Real Madrid and Manchester City in a new global tournament format.",
+    "category": "sports",
+    "grade_levels": ["K-G3", "G4-G6"],
+    "question_use": {
+      "math": "Calculate the total number of matches in a 32-team tournament with group stages and knockout rounds.",
+      "reading": "Passage about how international sports tournaments bring together diverse cultures and countries.",
+      "language": "Use a map to identify the host cities and write directional sentences about their locations."
+    }
+  },
+  {
+    "event": "Mondo Duplantis Breaks Pole Vault World Record Again",
+    "date": "2025-07",
+    "description": "Swedish pole vaulter Mondo Duplantis broke four world records in 2025, raising the bar from 6.27m to 6.30m, continuing his dominance as the greatest pole vaulter in history.",
+    "category": "sports",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Convert 6.30 meters to feet and inches. Calculate the percentage improvement from previous records.",
+      "reading": "Passage about the physics of pole vaulting: kinetic energy, potential energy, and the flexible pole.",
+      "language": "Identify and use superlative forms correctly when writing about record-breaking achievements."
+    }
+  },
+  {
+    "event": "Faith Kipyegon Breaks Women's 1500m World Record",
+    "date": "2025-07",
+    "description": "Kenyan runner Faith Kipyegon broke the women's 1,500m world record with a time of 3:48.68 at the Prefontaine Classic, further establishing herself as the greatest women's middle-distance runner ever.",
+    "category": "sports",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate Kipyegon's average speed in meters per second and convert to km/h. Compare with the men's record.",
+      "reading": "Passage about Kenya's tradition of producing world-class distance runners and the science of altitude training.",
+      "language": "Write a news headline and lead paragraph using the inverted pyramid structure."
+    }
+  },
+  {
+    "event": "Jacob Kiplimo Half Marathon World Record",
+    "date": "2025-09",
+    "description": "Uganda's Jacob Kiplimo shattered the half marathon world record with a time of 56:42, an improvement of 48 seconds -- one of the largest single improvements in distance running history.",
+    "category": "sports",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate his pace per mile and per kilometer. What would be his projected marathon time at the same pace?",
+      "reading": "Passage about the evolution of running shoes and their impact on record-breaking performances.",
+      "language": "Use precise numerical data and units of measurement in descriptive writing about athletic events."
+    }
+  },
+  {
+    "event": "Pig Kidney Transplant Survives Record 271 Days",
+    "date": "2025-10",
+    "description": "A patient lived with a gene-edited pig kidney for a record-breaking 271 days, the fourth such xenotransplant in the US, advancing the science of cross-species organ transplantation.",
+    "category": "science_tech",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the survival rate improvement: compare 271 days to previous records. Estimate how many patients could benefit if the success rate improves by a given percentage.",
+      "reading": "Passage about the ethics and science of xenotransplantation and the organ donor shortage crisis.",
+      "language": "Analyze arguments for and against gene-editing animals for human medical use."
+    }
+  },
+  {
+    "event": "Blue Origin New Glenn Booster Landing Success",
+    "date": "2025-11",
+    "description": "Blue Origin successfully landed its New Glenn first-stage booster on the landing platform vessel Jacklyn, 375 miles offshore, becoming the second company after SpaceX to land an orbital-class booster.",
+    "category": "space",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate the distance the booster traveled (375 miles offshore) and the precision needed for a sea landing on a platform.",
+      "reading": "Passage about the space launch industry competition and why reusable rockets reduce costs.",
+      "language": "Compare and contrast two companies' approaches to the same engineering challenge."
+    }
+  },
+  {
+    "event": "COP30 Climate Summit in Belem, Brazil",
+    "date": "2025-11",
+    "description": "COP30 concluded with the Belem Package: 29 consensus decisions including tripling adaptation finance to $120B/year, a $5.5B Tropical Forests Forever Fund, and the Belem Health Action Plan.",
+    "category": "environment",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate percentage increases in climate finance commitments. Create graphs showing funding trends from COP21 to COP30.",
+      "reading": "Passage about international climate negotiations, the Paris Agreement's 10-year progress, and tropical forest conservation.",
+      "language": "Evaluate the effectiveness of persuasive language used in climate policy documents."
+    }
+  },
+  {
+    "event": "Hayli Gubbi Volcano Erupts After 12,000 Years (Ethiopia)",
+    "date": "2025-11",
+    "description": "Ethiopia's Hayli Gubbi volcano erupted for the first time in nearly 12,000 years, sending ash 14 km into the atmosphere and blanketing villages in the Afar region.",
+    "category": "environment",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate how high 14 km is compared to commercial airplane cruising altitude (10 km). Convert 12,000 years to other time units.",
+      "reading": "Passage about dormant vs. extinct volcanoes and what triggers eruptions after thousands of years of dormancy.",
+      "language": "Use descriptive language and sensory details to write about a volcanic eruption from a witness's perspective."
+    }
+  },
+  {
+    "event": "Cyclone Ditwah Devastates Sri Lanka",
+    "date": "2025-11",
+    "description": "Cyclonic Storm Ditwah struck Sri Lanka causing the worst flooding and landslides since the 2004 tsunami, killing over 643 people, displacing millions, and causing over $4 billion in damages.",
+    "category": "environment",
+    "grade_levels": ["G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate $4 billion as a percentage of Sri Lanka's GDP. Compare disaster costs relative to country size.",
+      "reading": "Passage about tropical cyclone formation, the Indian Ocean monsoon system, and disaster preparedness in island nations.",
+      "language": "Analyze how different media sources frame the same natural disaster event."
+    }
+  },
+  {
+    "event": "Interstellar Comet 3I/ATLAS Discovered",
+    "date": "2025-07",
+    "description": "Astronomers discovered 3I/ATLAS, only the third known interstellar visitor to our solar system, with an icy core up to 3.5 miles wide and unusual chemical composition revealed by the Hubble Space Telescope.",
+    "category": "space",
+    "grade_levels": ["G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the speed of an interstellar object traveling through our solar system. Compare the size of 3I/ATLAS to familiar objects.",
+      "reading": "Passage about how objects from other star systems reach our solar system and what they reveal about distant worlds.",
+      "language": "Write a scientific explanation using appropriate transition words and domain-specific terminology."
+    }
+  },
+  {
+    "event": "Huntington's Disease Gene Therapy Breakthrough (UK)",
+    "date": "2025-09",
+    "description": "UK doctors reported a new gene therapy that slows the progression of Huntington's disease by 75%, offering hope for patients with this devastating inherited neurological disorder.",
+    "category": "science_tech",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "If disease progression is slowed by 75%, model how this changes the timeline of symptom development over 10 years.",
+      "reading": "Passage about genetic inheritance patterns and how gene therapy works to correct or compensate for defective genes.",
+      "language": "Distinguish between scientific facts and hopeful projections in a medical news article."
+    }
+  },
+  {
+    "event": "First Personalized CRISPR Treatment for an Infant",
+    "date": "2025-06",
+    "description": "In a medical first, a bespoke in vivo CRISPR gene therapy was developed and delivered to an infant patient in just six months, demonstrating the potential for personalized genetic medicine.",
+    "category": "science_tech",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the time reduction: traditional drug development takes 10-15 years; this was done in 6 months. Express as a ratio.",
+      "reading": "Passage about CRISPR gene-editing technology, how it works like molecular scissors, and its potential to cure genetic diseases.",
+      "language": "Write an argumentative paragraph weighing the benefits and risks of genetic modification in medicine."
+    }
+  },
+  {
+    "event": "AI Tool Evo 2 Designs DNA Sequences",
+    "date": "2025-02",
+    "description": "AI tool Evo 2, trained on data from all known living species, demonstrated the ability to design DNA and RNA sequences and predict protein functions, potentially revolutionizing biological research.",
+    "category": "science_tech",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the scale of genomic data: if each species has ~3 billion base pairs, estimate the total data for all known species.",
+      "reading": "Passage about the intersection of artificial intelligence and biology, and how AI accelerates scientific discovery.",
+      "language": "Evaluate the author's use of evidence in an article about AI applications in science."
+    }
+  },
+  {
+    "event": "Magnetic Milli-Spinner Robot for Blood Clots",
+    "date": "2025-03",
+    "description": "Scientists developed the magnetic milli-spinner, a tiny robot that rotates to shrink and suction blood clots without rupturing them, with potential to improve treatment of strokes, heart attacks, and pulmonary embolisms.",
+    "category": "science_tech",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate the scale: if the robot is 3mm long and a blood vessel is 25mm wide, what fraction of the vessel does it occupy?",
+      "reading": "Passage about nanotechnology in medicine and how tiny robots could transform healthcare.",
+      "language": "Use precise measurement vocabulary and scientific terms to describe how a medical device works."
+    }
+  },
+  {
+    "event": "2026 Milano Cortina Winter Olympics",
+    "date": "2026-02",
+    "description": "The 2026 Winter Olympics are held in Milan and Cortina d'Ampezzo, Italy, featuring 16 disciplines across the Italian Alps, with Team USA winning 10+ gold medals.",
+    "category": "sports",
+    "grade_levels": ["K-G3", "G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Create and interpret medal count tables and bar graphs. Calculate percentages of medals by country.",
+      "reading": "Passage about the history of the Winter Olympics and how host cities are selected.",
+      "language": "Write a descriptive paragraph about an Olympic event using vivid action verbs and sensory details."
+    }
+  },
+  {
+    "event": "NASA Artemis 2 Moon Mission Preparation",
+    "date": "2026-04",
+    "description": "NASA's Artemis 2 mission prepares to send four astronauts on a 10-day journey around the Moon, the first crewed voyage beyond low Earth orbit since Apollo 17 in December 1972 -- over 53 years ago.",
+    "category": "space",
+    "grade_levels": ["K-G3", "G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the distance to the Moon (238,900 miles) and the spacecraft's average speed over a 10-day mission.",
+      "reading": "Passage comparing the Apollo program of the 1960s-70s with the Artemis program, exploring how technology has changed.",
+      "language": "Write a narrative from an astronaut's perspective using first-person point of view and chronological order."
+    }
+  },
+  {
+    "event": "2026 FIFA World Cup (USA/Canada/Mexico)",
+    "date": "2026-06",
+    "description": "The FIFA World Cup is held across 16 cities in three countries (USA, Canada, Mexico) with an expanded 48-team field, the first World Cup co-hosted by three nations.",
+    "category": "sports",
+    "grade_levels": ["K-G3", "G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate total matches in a 48-team tournament. Find distances between host cities. Compute time zone differences.",
+      "reading": "Passage about the geography and cultures of the three host nations and what hosting a World Cup means for a country.",
+      "language": "Use a map to write comparative sentences about locations of host cities across three countries."
+    }
+  },
+  {
+    "event": "America's 250th Anniversary (Semiquincentennial)",
+    "date": "2026-07",
+    "description": "The United States celebrates its 250th anniversary of the Declaration of Independence on July 4, 2026, with nationwide events including an International Fleet Review in New York Harbor with 60 ships from 30 countries.",
+    "category": "culture",
+    "grade_levels": ["K-G3", "G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate years and centuries: 2026 - 1776 = 250. How many decades? What fraction of a millennium?",
+      "reading": "Passage about the signing of the Declaration of Independence and how the nation has changed over 250 years.",
+      "language": "Compare historical language from the Declaration of Independence with modern English."
+    }
+  },
+  {
+    "event": "JAXA Martian Moons eXploration (MMX) Mission Launch",
+    "date": "2026-11",
+    "description": "Japan's JAXA plans to launch the MMX mission to Mars's moon Phobos, where it will collect samples and return them to Earth, the first sample-return mission from a Martian moon.",
+    "category": "space",
+    "grade_levels": ["G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the distance from Earth to Mars at various orbital positions. Compare Phobos's size (22 km) to Earth's Moon (3,474 km).",
+      "reading": "Passage about Mars's two moons, Phobos and Deimos, and theories about their origin.",
+      "language": "Write a compare-and-contrast essay about Earth's Moon and Mars's moon Phobos."
+    }
+  },
+  {
+    "event": "India Surpasses China as World's Most Populous Country",
+    "date": "2025-01",
+    "description": "India's population reached approximately 1.46 billion, firmly surpassing China's declining population, a historic demographic shift driven by differing fertility trends over decades.",
+    "category": "geography",
+    "grade_levels": ["G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Create population growth graphs. Calculate growth rates: India growing vs. China declining. Project future populations.",
+      "reading": "Passage about demographic transitions, why birth rates decline as countries develop, and implications for economies.",
+      "language": "Analyze how data and statistics are used to support claims in an informational article."
+    }
+  },
+  {
+    "event": "World Population Reaches 8.3 Billion",
+    "date": "2025-07",
+    "description": "Global population reached approximately 8.3 billion in 2025, with growth rates slowing from 1.25% in 2015 to 0.85% in 2025, signaling a gradual demographic transition worldwide.",
+    "category": "geography",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate annual population increase at 0.85% of 8.3 billion. Graph the slowing growth rate trend over decades.",
+      "reading": "Passage about what population growth means for food, water, energy resources, and the environment.",
+      "language": "Interpret and write about data presented in charts and graphs using appropriate academic language."
+    }
+  },
+  {
+    "event": "Mountain Gorilla Population Surpasses 1,100",
+    "date": "2025-06",
+    "description": "Mountain gorilla populations grew to over 1,100 individuals, a remarkable recovery from just 620 in 1989, demonstrating how sustained conservation efforts can reverse species decline.",
+    "category": "environment",
+    "grade_levels": ["K-G3", "G4-G6"],
+    "question_use": {
+      "math": "Calculate the percent increase from 620 to 1,100. Create a line graph showing population growth over 36 years.",
+      "reading": "Passage about mountain gorillas, their habitat in Central Africa, and the rangers who protect them.",
+      "language": "Write a persuasive letter arguing for continued funding of wildlife conservation programs."
+    }
+  },
+  {
+    "event": "DeepSeekMath-V2 Outscores Humans on Putnam Math Competition",
+    "date": "2025-11",
+    "description": "DeepSeekMath-V2 scored 118/120 on the prestigious William Lowell Putnam Mathematical Competition, surpassing the top human score of 90, and achieved gold-medal level on the International Mathematical Olympiad.",
+    "category": "science_tech",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Compare scores: AI scored 118/120 (98.3%) vs human top score 90/120 (75%). Calculate the performance gap.",
+      "reading": "Passage about whether AI can truly 'understand' mathematics or is just pattern-matching at an advanced level.",
+      "language": "Write a debate argument on whether AI achieving superhuman math performance is a benefit or concern."
+    }
+  },
+  {
+    "event": "Kamchatka Peninsula Magnitude 8.8 Earthquake",
+    "date": "2025-08",
+    "description": "A magnitude 8.8 earthquake struck the Kamchatka Peninsula in Russia, the first 8+ magnitude earthquake since 2021 and the sixth-largest instrumentally recorded earthquake in history.",
+    "category": "environment",
+    "grade_levels": ["G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Use the Richter scale logarithm: an 8.8 is how many times more powerful than a 7.0? Calculate using powers of 10.",
+      "reading": "Passage about the Pacific Ring of Fire, subduction zones, and how seismologists monitor earthquake activity globally.",
+      "language": "Compare primary and secondary source descriptions of the same seismic event."
+    }
+  },
+  {
+    "event": "Bulgaria and Romania Join Schengen Area",
+    "date": "2025-01",
+    "description": "Bulgaria and Romania finalized their entry into the Schengen Area, lifting land border controls and allowing free movement across the European free-travel zone after years of negotiations.",
+    "category": "geography",
+    "grade_levels": ["G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the total area and population of the Schengen zone with the new additions. Compute travel time savings.",
+      "reading": "Passage about the European Union, the Schengen Agreement, and how open borders affect economies and cultures.",
+      "language": "Analyze how political agreements use formal language to establish rules and obligations."
+    }
+  },
+  {
+    "event": "Record US Billion-Dollar Weather Disasters",
+    "date": "2025-12",
+    "description": "The US experienced 23 billion-dollar weather and climate disasters in 2025, costing $115 billion total, including a record 21 severe weather events with major tornado outbreaks across the central US.",
+    "category": "environment",
+    "grade_levels": ["G4-G6", "G7-G9", "G10-G12"],
+    "question_use": {
+      "math": "Calculate the average cost per disaster ($115B / 23). Create bar charts comparing disaster costs year over year.",
+      "reading": "Passage about the link between climate change and increasing frequency/severity of extreme weather events.",
+      "language": "Evaluate how statistics and data are used in argumentative writing about climate policy."
+    }
+  },
+  {
+    "event": "Mass Coral Bleaching Event Continues",
+    "date": "2025-06",
+    "description": "The world's largest-ever mass coral bleaching event, which began in 2023, continued through 2025 as the fourth such event on record, threatening marine ecosystems worldwide.",
+    "category": "environment",
+    "grade_levels": ["G4-G6", "G7-G9"],
+    "question_use": {
+      "math": "Calculate the percentage of global reefs affected. Graph ocean temperature changes correlated with bleaching events.",
+      "reading": "Passage about coral reef ecosystems, symbiotic relationships between coral and algae, and what causes bleaching.",
+      "language": "Write an explanatory essay using cause-and-effect text structure about coral bleaching."
+    }
+  },
+  {
+    "event": "Iberian Lynx Upgraded from Endangered to Vulnerable",
+    "date": "2025-03",
+    "description": "The Iberian Lynx improved from Endangered to Vulnerable on the IUCN Red List, continuing its dramatic recovery from near extinction, with populations growing thanks to sustained conservation in Spain and Portugal.",
+    "category": "environment",
+    "grade_levels": ["K-G3", "G4-G6"],
+    "question_use": {
+      "math": "Graph the Iberian Lynx population recovery from fewer than 100 to over 2,000. Calculate doubling time.",
+      "reading": "Passage about the Iberian Peninsula's unique wildlife and how breeding programs help save endangered species.",
+      "language": "Identify the main idea and key details in an informational text about wildlife conservation."
+    }
+  }
+]

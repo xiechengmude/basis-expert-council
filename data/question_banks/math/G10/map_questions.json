@@ -1,0 +1,594 @@
+{
+  "batch_name": "MAP_math_G10_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G10",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "systems_of_equations",
+      "subtopic": null,
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which coordinates represent the solution to the system: X + 3Y = 6 and 2X + Y = 7?",
+        "options": [
+          "A. (3, 1)",
+          "B. (1, 3)",
+          "C. (2, 3)",
+          "D. (0, 2)"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which coordinates represent the solution to the system: X + 3Y = 6 and 2X + Y = 7?",
+        "options": [
+          "A. (3, 1)",
+          "B. (1, 3)",
+          "C. (2, 3)",
+          "D. (0, 2)"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "From equation 1: X = 6 − 3Y. Substitute into equation 2: 2(6 − 3Y) + Y = 7 → 12 − 6Y + Y = 7 → Y = 1, X = 3.",
+      "explanation_zh": "From equation 1: X = 6 − 3Y. Substitute into equation 2: 2(6 − 3Y) + Y = 7 → 12 − 6Y + Y = 7 → Y = 1, X = 3.",
+      "tags": [
+        "systems_of_equations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "systems_of_equations",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "ordering_fractions_decimals",
+      "subtopic": null,
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Place the following numbers in order from lowest to highest: 5/6, 7/12, 0.8, 11/20, 9/4",
+        "options": [
+          "A. 11/20, 7/12, 5/6, 0.8, 9/4",
+          "B. 7/12, 11/20, 0.8, 5/6, 9/4",
+          "C. 11/20, 0.8, 7/12, 5/6, 9/4",
+          "D. 7/12, 11/20, 5/6, 0.8, 9/4"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Place the following numbers in order from lowest to highest: 5/6, 7/12, 0.8, 11/20, 9/4",
+        "options": [
+          "A. 11/20, 7/12, 5/6, 0.8, 9/4",
+          "B. 7/12, 11/20, 0.8, 5/6, 9/4",
+          "C. 11/20, 0.8, 7/12, 5/6, 9/4",
+          "D. 7/12, 11/20, 5/6, 0.8, 9/4"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Convert to common denominator 60: 33/60, 35/60, 48/60, 50/60, 135/60. Order: 11/20 < 7/12 < 0.8 < 5/6 < 9/4.",
+      "explanation_zh": "Convert to common denominator 60: 33/60, 35/60, 48/60, 50/60, 135/60. Order: 11/20 < 7/12 < 0.8 < 5/6 < 9/4.",
+      "tags": [
+        "ordering_fractions_decimals",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "ordering_fractions_decimals",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "basic_probability",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A jar contains 15 cookies: 6 oatmeal, 5 chocolate chip, 4 peanut butter. What is the probability of grabbing a chocolate chip cookie?",
+        "options": [
+          "A. 2/5",
+          "B. 1/3",
+          "C. 4/15",
+          "D. 1/15"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A jar contains 15 cookies: 6 oatmeal, 5 chocolate chip, 4 peanut butter. What is the probability of grabbing a chocolate chip cookie?",
+        "options": [
+          "A. 2/5",
+          "B. 1/3",
+          "C. 4/15",
+          "D. 1/15"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "P = favorable/total = 5/15 = 1/3.",
+      "explanation_zh": "P = favorable/total = 5/15 = 1/3.",
+      "tags": [
+        "basic_probability",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "basic_probability",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "polynomial_operations",
+      "subtopic": null,
+      "difficulty": 0.58,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Multiply: (2x + 3)(x² − x + 4)",
+        "options": [
+          "A. 2x³ + x² + 5x + 12",
+          "B. 2x³ + x² + 11x + 12",
+          "C. 2x³ − 2x² + 11x + 12",
+          "D. 2x³ + x² + 5x + 7"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Multiply: (2x + 3)(x² − x + 4)",
+        "options": [
+          "A. 2x³ + x² + 5x + 12",
+          "B. 2x³ + x² + 11x + 12",
+          "C. 2x³ − 2x² + 11x + 12",
+          "D. 2x³ + x² + 5x + 7"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "2x(x² − x + 4) + 3(x² − x + 4) = 2x³ − 2x² + 8x + 3x² − 3x + 12 = 2x³ + x² + 5x + 12.",
+      "explanation_zh": "2x(x² − x + 4) + 3(x² − x + 4) = 2x³ − 2x² + 8x + 3x² − 3x + 12 = 2x³ + x² + 5x + 12.",
+      "tags": [
+        "polynomial_operations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "polynomial_operations",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "rational_expressions",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Simplify: (x² − 9) / (x² + 5x + 6)",
+        "options": [
+          "A. (x − 3) / (x + 2)",
+          "B. (x + 3) / (x + 2)",
+          "C. (x − 3) / (x + 3)",
+          "D. (x + 3) / (x − 2)"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Simplify: (x² − 9) / (x² + 5x + 6)",
+        "options": [
+          "A. (x − 3) / (x + 2)",
+          "B. (x + 3) / (x + 2)",
+          "C. (x − 3) / (x + 3)",
+          "D. (x + 3) / (x − 2)"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Factor: (x − 3)(x + 3) / (x + 2)(x + 3). Cancel (x + 3): (x − 3)/(x + 2).",
+      "explanation_zh": "Factor: (x − 3)(x + 3) / (x + 2)(x + 3). Cancel (x + 3): (x − 3)/(x + 2).",
+      "tags": [
+        "rational_expressions",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "rational_expressions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "exponential_growth_population",
+      "subtopic": null,
+      "difficulty": 0.62,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A country's population was 50 million in 2020 and grows at 1.8% per year. What is the projected population in 2030, to the nearest million?",
+        "options": [
+          "A. 56 million",
+          "B. 59 million",
+          "C. 60 million",
+          "D. 63 million"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A country's population was 50 million in 2020 and grows at 1.8% per year. What is the projected population in 2030, to the nearest million?",
+        "options": [
+          "A. 56 million",
+          "B. 59 million",
+          "C. 60 million",
+          "D. 63 million"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "P = 50(1.018)^10. (1.018)^10 ≈ 1.1956. P ≈ 50 × 1.1956 ≈ 59.78 ≈ 60 million.",
+      "explanation_zh": "P = 50(1.018)^10. (1.018)^10 ≈ 1.1956. P ≈ 50 × 1.1956 ≈ 59.78 ≈ 60 million.",
+      "tags": [
+        "exponential_growth_population",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "exponential_growth_population",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "circle_theorems",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In a circle, an inscribed angle intercepts an arc of 124°. What is the measure of the inscribed angle?",
+        "options": [
+          "A. 62°",
+          "B. 124°",
+          "C. 56°",
+          "D. 248°"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "In a circle, an inscribed angle intercepts an arc of 124°. What is the measure of the inscribed angle?",
+        "options": [
+          "A. 62°",
+          "B. 124°",
+          "C. 56°",
+          "D. 248°"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "An inscribed angle is half the intercepted arc: 124°/2 = 62°.",
+      "explanation_zh": "An inscribed angle is half the intercepted arc: 124°/2 = 62°.",
+      "tags": [
+        "circle_theorems",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "circle_theorems",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "geometric_proofs",
+      "subtopic": null,
+      "difficulty": 0.68,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In triangle PQR, angle P = angle R. Which statement MUST be true?",
+        "options": [
+          "A. PQ = QR",
+          "B. PQ = PR",
+          "C. QR = PR",
+          "D. The triangle is equilateral"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "In triangle PQR, angle P = angle R. Which statement MUST be true?",
+        "options": [
+          "A. PQ = QR",
+          "B. PQ = PR",
+          "C. QR = PR",
+          "D. The triangle is equilateral"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "By the Isosceles Triangle Theorem, if two angles are equal, the sides opposite those angles are equal. Angle P is opposite QR and angle R is opposite PQ, so PQ = QR.",
+      "explanation_zh": "By the Isosceles Triangle Theorem, if two angles are equal, the sides opposite those angles are equal. Angle P is opposite QR and angle R is opposite PQ, so PQ = QR.",
+      "tags": [
+        "geometric_proofs",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "geometric_proofs",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "conditional_probability",
+      "subtopic": null,
+      "difficulty": 0.7,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In a class of 30 students, 18 play sports and 12 are in band. 5 students do both. What is the probability that a randomly selected student plays sports, given that they are in band?",
+        "options": [
+          "A. 5/18",
+          "B. 5/12",
+          "C. 5/30",
+          "D. 12/18"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In a class of 30 students, 18 play sports and 12 are in band. 5 students do both. What is the probability that a randomly selected student plays sports, given that they are in band?",
+        "options": [
+          "A. 5/18",
+          "B. 5/12",
+          "C. 5/30",
+          "D. 12/18"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "P(Sports | Band) = P(Sports AND Band)/P(Band) = (5/30)/(12/30) = 5/12.",
+      "explanation_zh": "P(Sports | Band) = P(Sports AND Band)/P(Band) = (5/30)/(12/30) = 5/12.",
+      "tags": [
+        "conditional_probability",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "conditional_probability",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "exponential_decay_gdp",
+      "subtopic": null,
+      "difficulty": 0.72,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A country's manufacturing sector output decreases by 4% annually from its 2025 level of $800 billion. Which expression gives the output after n years?",
+        "options": [
+          "A. 800(0.96)^n",
+          "B. 800(1.04)^n",
+          "C. 800 − 0.04n",
+          "D. 800(0.04)^n"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "A country's manufacturing sector output decreases by 4% annually from its 2025 level of $800 billion. Which expression gives the output after n years?",
+        "options": [
+          "A. 800(0.96)^n",
+          "B. 800(1.04)^n",
+          "C. 800 − 0.04n",
+          "D. 800(0.04)^n"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Exponential decay: multiply by (1 − rate) each year. Output = 800(1 − 0.04)^n = 800(0.96)^n.",
+      "explanation_zh": "Exponential decay: multiply by (1 − rate) each year. Output = 800(1 − 0.04)^n = 800(0.96)^n.",
+      "tags": [
+        "exponential_decay_gdp",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "exponential_decay_gdp",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "polynomial_operations",
+      "subtopic": null,
+      "difficulty": 0.75,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the remainder when f(x) = x³ − 2x² + 3x − 5 is divided by (x − 2)?",
+        "options": [
+          "A. −1",
+          "B. 1",
+          "C. 3",
+          "D. 5"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What is the remainder when f(x) = x³ − 2x² + 3x − 5 is divided by (x − 2)?",
+        "options": [
+          "A. −1",
+          "B. 1",
+          "C. 3",
+          "D. 5"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "By the Remainder Theorem, the remainder is f(2) = 8 − 8 + 6 − 5 = 1.",
+      "explanation_zh": "By the Remainder Theorem, the remainder is f(2) = 8 − 8 + 6 − 5 = 1.",
+      "tags": [
+        "polynomial_operations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "polynomial_operations",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "exponential_growth_population",
+      "subtopic": null,
+      "difficulty": 0.78,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The global population reached approximately 8.1 billion in 2025. If the growth rate is 0.9% per year, in approximately how many years will the population reach 9 billion? (Use log(9/8.1)/log(1.009))",
+        "options": [
+          "A. About 8 years",
+          "B. About 12 years",
+          "C. About 16 years",
+          "D. About 20 years"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "The global population reached approximately 8.1 billion in 2025. If the growth rate is 0.9% per year, in approximately how many years will the population reach 9 billion? (Use log(9/8.1)/log(1.009))",
+        "options": [
+          "A. About 8 years",
+          "B. About 12 years",
+          "C. About 16 years",
+          "D. About 20 years"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "8.1(1.009)^t = 9. (1.009)^t = 9/8.1 ≈ 1.1111. t = ln(1.1111)/ln(1.009) ≈ 0.1054/0.00896 ≈ 11.8 ≈ 12 years.",
+      "explanation_zh": "8.1(1.009)^t = 9. (1.009)^t = 9/8.1 ≈ 1.1111. t = ln(1.1111)/ln(1.009) ≈ 0.1054/0.00896 ≈ 11.8 ≈ 12 years.",
+      "tags": [
+        "exponential_growth_population",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "exponential_growth_population",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G10",
+      "topic": "rational_expressions",
+      "subtopic": null,
+      "difficulty": 0.8,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Solve: 3/(x − 1) = 5/(x + 3)",
+        "options": [
+          "A. x = 7",
+          "B. x = −7",
+          "C. x = 14",
+          "D. x = −14"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Solve: 3/(x − 1) = 5/(x + 3)",
+        "options": [
+          "A. x = 7",
+          "B. x = −7",
+          "C. x = 14",
+          "D. x = −14"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Cross multiply: 3(x + 3) = 5(x − 1). 3x + 9 = 5x − 5. 14 = 2x. x = 7.",
+      "explanation_zh": "Cross multiply: 3(x + 3) = 5(x − 1). 3x + 9 = 5x − 5. 14 = 2x. x = 7.",
+      "tags": [
+        "rational_expressions",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G10",
+        "original_topic": "rational_expressions",
+        "is_seed": false
+      }
+    }
+  ]
+}

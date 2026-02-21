@@ -1,0 +1,639 @@
+{
+  "batch_name": "MAP_math_G3_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G3",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "number_sequences",
+      "subtopic": null,
+      "difficulty": 0.15,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which number is missing from this sequence? 750, 725, 700, ___, 625",
+        "options": [
+          "A. 650",
+          "B. 660",
+          "C. 670",
+          "D. 675"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Which number is missing from this sequence? 750, 725, 700, ___, 625",
+        "options": [
+          "A. 650",
+          "B. 660",
+          "C. 670",
+          "D. 675"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "The pattern decreases by 25 each time: 750, 725, 700, 675, 650. The missing number is 675.",
+      "explanation_zh": "The pattern decreases by 25 each time: 750, 725, 700, 675, 650. The missing number is 675.",
+      "tags": [
+        "number_sequences",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "number_sequences",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "multiplication_word_problem",
+      "subtopic": null,
+      "difficulty": 0.17,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Mary needs eggs for cake dough. How many eggs does she need?",
+        "options": [
+          "A. 12",
+          "B. 15",
+          "C. 18",
+          "D. 24"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Mary needs eggs for cake dough. How many eggs does she need?",
+        "options": [
+          "A. 12",
+          "B. 15",
+          "C. 18",
+          "D. 24"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Based on the recipe proportions, Mary needs 18 eggs.",
+      "explanation_zh": "Based on the recipe proportions, Mary needs 18 eggs.",
+      "tags": [
+        "multiplication_word_problem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "multiplication_word_problem",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "fractions_visual",
+      "subtopic": null,
+      "difficulty": 0.2,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which picture shows 1/3 of a region shaded?",
+        "options": [
+          "A. Shape with 1/4 shaded",
+          "B. Shape with 1/3 shaded",
+          "C. Shape with 1/2 shaded",
+          "D. Shape with 2/3 shaded"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which picture shows 1/3 of a region shaded?",
+        "options": [
+          "A. Shape with 1/4 shaded",
+          "B. Shape with 1/3 shaded",
+          "C. Shape with 1/2 shaded",
+          "D. Shape with 2/3 shaded"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "1/3 means the shape is divided into 3 equal parts and 1 part is shaded.",
+      "explanation_zh": "1/3 means the shape is divided into 3 equal parts and 1 part is shaded.",
+      "tags": [
+        "fractions_visual",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "fractions_visual",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "perimeter",
+      "subtopic": null,
+      "difficulty": 0.22,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the perimeter of a rectangle that is 7 inches long and 3 inches wide?",
+        "options": [
+          "A. 10 inches",
+          "B. 14 inches",
+          "C. 20 inches",
+          "D. 21 inches"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is the perimeter of a rectangle that is 7 inches long and 3 inches wide?",
+        "options": [
+          "A. 10 inches",
+          "B. 14 inches",
+          "C. 20 inches",
+          "D. 21 inches"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Perimeter = 2 × (length + width) = 2 × (7 + 3) = 2 × 10 = 20 inches.",
+      "explanation_zh": "Perimeter = 2 × (length + width) = 2 × (7 + 3) = 2 × 10 = 20 inches.",
+      "tags": [
+        "perimeter",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-004",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "perimeter",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "multiplication_facts",
+      "subtopic": null,
+      "difficulty": 0.24,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is 7 × 8?",
+        "options": [
+          "A. 48",
+          "B. 54",
+          "C. 56",
+          "D. 63"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is 7 × 8?",
+        "options": [
+          "A. 48",
+          "B. 54",
+          "C. 56",
+          "D. 63"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "7 × 8 = 56.",
+      "explanation_zh": "7 × 8 = 56.",
+      "tags": [
+        "multiplication_facts",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "multiplication_facts",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "division_facts",
+      "subtopic": null,
+      "difficulty": 0.27,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A bakery made 36 cupcakes and packed them equally into 4 boxes. How many cupcakes are in each box?",
+        "options": [
+          "A. 7",
+          "B. 8",
+          "C. 9",
+          "D. 10"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A bakery made 36 cupcakes and packed them equally into 4 boxes. How many cupcakes are in each box?",
+        "options": [
+          "A. 7",
+          "B. 8",
+          "C. 9",
+          "D. 10"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "36 ÷ 4 = 9 cupcakes per box.",
+      "explanation_zh": "36 ÷ 4 = 9 cupcakes per box.",
+      "tags": [
+        "division_facts",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "division_facts",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "fractions_comparison",
+      "subtopic": null,
+      "difficulty": 0.29,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which fraction is larger: 1/3 or 1/6?",
+        "options": [
+          "A. 1/3",
+          "B. 1/6",
+          "C. They are equal",
+          "D. Cannot be determined"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which fraction is larger: 1/3 or 1/6?",
+        "options": [
+          "A. 1/3",
+          "B. 1/6",
+          "C. They are equal",
+          "D. Cannot be determined"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "When the numerators are the same, the fraction with the smaller denominator is larger. Since 3 < 6, we have 1/3 > 1/6.",
+      "explanation_zh": "When the numerators are the same, the fraction with the smaller denominator is larger. Since 3 < 6, we have 1/3 > 1/6.",
+      "tags": [
+        "fractions_comparison",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "fractions_comparison",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "rounding",
+      "subtopic": null,
+      "difficulty": 0.31,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Round 467 to the nearest hundred.",
+        "options": [
+          "A. 400",
+          "B. 460",
+          "C. 470",
+          "D. 500"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Round 467 to the nearest hundred.",
+        "options": [
+          "A. 400",
+          "B. 460",
+          "C. 470",
+          "D. 500"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "To round to the nearest hundred, look at the tens digit. The tens digit is 6, which is 5 or more, so round up. 467 rounds to 500.",
+      "explanation_zh": "To round to the nearest hundred, look at the tens digit. The tens digit is 6, which is 5 or more, so round up. 467 rounds to 500.",
+      "tags": [
+        "rounding",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "rounding",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "elapsed_time",
+      "subtopic": null,
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A movie starts at 2:15 PM and ends at 4:00 PM. How long is the movie?",
+        "options": [
+          "A. 1 hour 15 minutes",
+          "B. 1 hour 30 minutes",
+          "C. 1 hour 45 minutes",
+          "D. 2 hours 15 minutes"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A movie starts at 2:15 PM and ends at 4:00 PM. How long is the movie?",
+        "options": [
+          "A. 1 hour 15 minutes",
+          "B. 1 hour 30 minutes",
+          "C. 1 hour 45 minutes",
+          "D. 2 hours 15 minutes"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "From 2:15 PM to 4:00 PM: 2:15 to 3:15 is 1 hour, then 3:15 to 4:00 is 45 minutes. Total: 1 hour 45 minutes.",
+      "explanation_zh": "From 2:15 PM to 4:00 PM: 2:15 to 3:15 is 1 hour, then 3:15 to 4:00 is 45 minutes. Total: 1 hour 45 minutes.",
+      "tags": [
+        "elapsed_time",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G3-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "elapsed_time",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "area",
+      "subtopic": null,
+      "difficulty": 0.36,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Scientists studying climate change measured a rectangular field that is 9 meters long and 4 meters wide. What is the area of the field?",
+        "options": [
+          "A. 13 square meters",
+          "B. 26 square meters",
+          "C. 36 square meters",
+          "D. 40 square meters"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Scientists studying climate change measured a rectangular field that is 9 meters long and 4 meters wide. What is the area of the field?",
+        "options": [
+          "A. 13 square meters",
+          "B. 26 square meters",
+          "C. 36 square meters",
+          "D. 40 square meters"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Area of a rectangle = length × width = 9 × 4 = 36 square meters.",
+      "explanation_zh": "Area of a rectangle = length × width = 9 × 4 = 36 square meters.",
+      "tags": [
+        "area",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "area",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "perimeter",
+      "subtopic": null,
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A square garden has sides of 6 feet each. What is the perimeter of the garden?",
+        "options": [
+          "A. 12 feet",
+          "B. 18 feet",
+          "C. 24 feet",
+          "D. 36 feet"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A square garden has sides of 6 feet each. What is the perimeter of the garden?",
+        "options": [
+          "A. 12 feet",
+          "B. 18 feet",
+          "C. 24 feet",
+          "D. 36 feet"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Perimeter of a square = 4 × side = 4 × 6 = 24 feet.",
+      "explanation_zh": "Perimeter of a square = 4 × side = 4 × 6 = 24 feet.",
+      "tags": [
+        "perimeter",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "perimeter",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "line_plots",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A line plot shows how many books students read in a week: 1 book (3 students), 2 books (5 students), 3 books (4 students), 4 books (2 students). How many students read exactly 2 books?",
+        "options": [
+          "A. 2",
+          "B. 3",
+          "C. 4",
+          "D. 5"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "A line plot shows how many books students read in a week: 1 book (3 students), 2 books (5 students), 3 books (4 students), 4 books (2 students). How many students read exactly 2 books?",
+        "options": [
+          "A. 2",
+          "B. 3",
+          "C. 4",
+          "D. 5"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "According to the line plot, 5 students read exactly 2 books.",
+      "explanation_zh": "According to the line plot, 5 students read exactly 2 books.",
+      "tags": [
+        "line_plots",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "line_plots",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "multiplication_word_problem",
+      "subtopic": null,
+      "difficulty": 0.43,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "An AI company's server room has 6 rows of computers with 9 computers in each row. How many computers are there in all?",
+        "options": [
+          "A. 15",
+          "B. 45",
+          "C. 54",
+          "D. 63"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "An AI company's server room has 6 rows of computers with 9 computers in each row. How many computers are there in all?",
+        "options": [
+          "A. 15",
+          "B. 45",
+          "C. 54",
+          "D. 63"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "6 rows × 9 computers per row = 54 computers in total.",
+      "explanation_zh": "6 rows × 9 computers per row = 54 computers in total.",
+      "tags": [
+        "multiplication_word_problem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "multiplication_word_problem",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G3",
+      "topic": "fractions_number_line",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Where does the fraction 3/4 fall on a number line between 0 and 1?",
+        "options": [
+          "A. Closer to 0",
+          "B. Exactly at the halfway point",
+          "C. Closer to 1",
+          "D. At 1"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Where does the fraction 3/4 fall on a number line between 0 and 1?",
+        "options": [
+          "A. Closer to 0",
+          "B. Exactly at the halfway point",
+          "C. Closer to 1",
+          "D. At 1"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "3/4 = 0.75, which is past the halfway point (1/2 = 0.50) and closer to 1.",
+      "explanation_zh": "3/4 = 0.75, which is past the halfway point (1/2 = 0.50) and closer to 1.",
+      "tags": [
+        "fractions_number_line",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G3-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G3-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G3",
+        "original_topic": "fractions_number_line",
+        "is_seed": false
+      }
+    }
+  ]
+}

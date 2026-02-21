@@ -1,0 +1,594 @@
+{
+  "batch_name": "MAP_math_G11_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G11",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "quadratic_vertex",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A ball's height (in feet) after t seconds is modeled by h(t) = −16t² + 48t + 5. What is the maximum height the ball reaches?",
+        "options": [
+          "A. 29 ft",
+          "B. 41 ft",
+          "C. 53 ft",
+          "D. 77 ft"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A ball's height (in feet) after t seconds is modeled by h(t) = −16t² + 48t + 5. What is the maximum height the ball reaches?",
+        "options": [
+          "A. 29 ft",
+          "B. 41 ft",
+          "C. 53 ft",
+          "D. 77 ft"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Use vertex formula t = −b/(2a) = −48/(2×−16) = 1.5. h(1.5) = −16(2.25) + 48(1.5) + 5 = −36 + 72 + 5 = 41 ft.",
+      "explanation_zh": "Use vertex formula t = −b/(2a) = −48/(2×−16) = 1.5. h(1.5) = −16(2.25) + 48(1.5) + 5 = −36 + 72 + 5 = 41 ft.",
+      "tags": [
+        "quadratic_vertex",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "quadratic_vertex",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "proportional_triangles",
+      "subtopic": null,
+      "difficulty": 0.57,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In a right triangle with sides proportional to 3:4:5, if the hypotenuse is 25 cm, what are the other two sides?",
+        "options": [
+          "A. 10 cm and 15 cm",
+          "B. 12 cm and 16 cm",
+          "C. 15 cm and 20 cm",
+          "D. 18 cm and 24 cm"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "In a right triangle with sides proportional to 3:4:5, if the hypotenuse is 25 cm, what are the other two sides?",
+        "options": [
+          "A. 10 cm and 15 cm",
+          "B. 12 cm and 16 cm",
+          "C. 15 cm and 20 cm",
+          "D. 18 cm and 24 cm"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Scale factor k: 5k = 25, k = 5. Sides: 3(5) = 15 cm and 4(5) = 20 cm.",
+      "explanation_zh": "Scale factor k: 5k = 25, k = 5. Sides: 3(5) = 15 cm and 4(5) = 20 cm.",
+      "tags": [
+        "proportional_triangles",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "proportional_triangles",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "logarithmic_equations",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "If log₂(x − 1) + log₂(x + 1) = 3, what is x? (Domain: x > 1)",
+        "options": [
+          "A. −3",
+          "B. −1",
+          "C. 1",
+          "D. 3"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "If log₂(x − 1) + log₂(x + 1) = 3, what is x? (Domain: x > 1)",
+        "options": [
+          "A. −3",
+          "B. −1",
+          "C. 1",
+          "D. 3"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Combine: log₂((x−1)(x+1)) = 3 → log₂(x²−1) = 3 → x²−1 = 8 → x² = 9 → x = ±3. Domain x > 1, so x = 3.",
+      "explanation_zh": "Combine: log₂((x−1)(x+1)) = 3 → log₂(x²−1) = 3 → x²−1 = 8 → x² = 9 → x = ±3. Domain x > 1, so x = 3.",
+      "tags": [
+        "logarithmic_equations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "logarithmic_equations",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "logarithmic_functions",
+      "subtopic": null,
+      "difficulty": 0.62,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Solve for x: log₃(2x + 1) = 4",
+        "options": [
+          "A. 13",
+          "B. 40",
+          "C. 80",
+          "D. 121"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Solve for x: log₃(2x + 1) = 4",
+        "options": [
+          "A. 13",
+          "B. 40",
+          "C. 80",
+          "D. 121"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Convert to exponential form: 3⁴ = 2x + 1 → 81 = 2x + 1 → 2x = 80 → x = 40.",
+      "explanation_zh": "Convert to exponential form: 3⁴ = 2x + 1 → 81 = 2x + 1 → 2x = 80 → x = 40.",
+      "tags": [
+        "logarithmic_functions",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "logarithmic_functions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "conic_sections",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the center and radius of the circle given by x² + y² − 6x + 4y − 12 = 0?",
+        "options": [
+          "A. Center (3, −2), radius 5",
+          "B. Center (−3, 2), radius 5",
+          "C. Center (3, −2), radius 25",
+          "D. Center (6, −4), radius 12"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "What is the center and radius of the circle given by x² + y² − 6x + 4y − 12 = 0?",
+        "options": [
+          "A. Center (3, −2), radius 5",
+          "B. Center (−3, 2), radius 5",
+          "C. Center (3, −2), radius 25",
+          "D. Center (6, −4), radius 12"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Complete the square: (x² − 6x + 9) + (y² + 4y + 4) = 12 + 9 + 4 → (x − 3)² + (y + 2)² = 25. Center (3, −2), radius = sqrt(25) = 5.",
+      "explanation_zh": "Complete the square: (x² − 6x + 9) + (y² + 4y + 4) = 12 + 9 + 4 → (x − 3)² + (y + 2)² = 25. Center (3, −2), radius = sqrt(25) = 5.",
+      "tags": [
+        "conic_sections",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "conic_sections",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "matrices_intro",
+      "subtopic": null,
+      "difficulty": 0.67,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "If A = [[2, 1], [3, 4]] and B = [[5, 0], [−1, 2]], what is A + B?",
+        "options": [
+          "A. [[7, 1], [2, 6]]",
+          "B. [[7, 1], [4, 6]]",
+          "C. [[10, 0], [−3, 8]]",
+          "D. [[3, 1], [4, 2]]"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "If A = [[2, 1], [3, 4]] and B = [[5, 0], [−1, 2]], what is A + B?",
+        "options": [
+          "A. [[7, 1], [2, 6]]",
+          "B. [[7, 1], [4, 6]]",
+          "C. [[10, 0], [−3, 8]]",
+          "D. [[3, 1], [4, 2]]"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Add corresponding elements: [[2+5, 1+0], [3+(−1), 4+2]] = [[7, 1], [2, 6]].",
+      "explanation_zh": "Add corresponding elements: [[2+5, 1+0], [3+(−1), 4+2]] = [[7, 1], [2, 6]].",
+      "tags": [
+        "matrices_intro",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "matrices_intro",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "complex_numbers",
+      "subtopic": null,
+      "difficulty": 0.7,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Simplify: (3 + 2i)(4 − 5i)",
+        "options": [
+          "A. 22 − 7i",
+          "B. 12 − 10i",
+          "C. 2 + 7i",
+          "D. 22 + 7i"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Simplify: (3 + 2i)(4 − 5i)",
+        "options": [
+          "A. 22 − 7i",
+          "B. 12 − 10i",
+          "C. 2 + 7i",
+          "D. 22 + 7i"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "(3)(4) + (3)(−5i) + (2i)(4) + (2i)(−5i) = 12 − 15i + 8i − 10i² = 12 − 7i + 10 = 22 − 7i.",
+      "explanation_zh": "(3)(4) + (3)(−5i) + (2i)(4) + (2i)(−5i) = 12 − 15i + 8i − 10i² = 12 − 7i + 10 = 22 − 7i.",
+      "tags": [
+        "complex_numbers",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "complex_numbers",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "law_of_cosines",
+      "subtopic": null,
+      "difficulty": 0.72,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In triangle ABC, a = 8, b = 11, and angle C = 60°. Find side c to the nearest tenth.",
+        "options": [
+          "A. 9.5",
+          "B. 9.8",
+          "C. 10.1",
+          "D. 11.4"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In triangle ABC, a = 8, b = 11, and angle C = 60°. Find side c to the nearest tenth.",
+        "options": [
+          "A. 9.5",
+          "B. 9.8",
+          "C. 10.1",
+          "D. 11.4"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "c² = a² + b² − 2ab·cos(C) = 64 + 121 − 2(8)(11)(0.5) = 185 − 88 = 97. c = sqrt(97) ≈ 9.849 ≈ 9.8.",
+      "explanation_zh": "c² = a² + b² − 2ab·cos(C) = 64 + 121 − 2(8)(11)(0.5) = 185 − 88 = 97. c = sqrt(97) ≈ 9.849 ≈ 9.8.",
+      "tags": [
+        "law_of_cosines",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "law_of_cosines",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "limits_intro",
+      "subtopic": null,
+      "difficulty": 0.75,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Evaluate: lim(x→3) (x² − 9)/(x − 3)",
+        "options": [
+          "A. 0",
+          "B. 3",
+          "C. 6",
+          "D. Undefined"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Evaluate: lim(x→3) (x² − 9)/(x − 3)",
+        "options": [
+          "A. 0",
+          "B. 3",
+          "C. 6",
+          "D. Undefined"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Factor: (x − 3)(x + 3)/(x − 3) = x + 3. As x → 3: 3 + 3 = 6.",
+      "explanation_zh": "Factor: (x − 3)(x + 3)/(x − 3) = x + 3. As x → 3: 3 + 3 = 6.",
+      "tags": [
+        "limits_intro",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "limits_intro",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "logarithmic_functions_ai",
+      "subtopic": null,
+      "difficulty": 0.77,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The total compute used for AI training has been doubling every 6 months since 2020. If the compute in January 2020 was C₀, which expression gives the compute at month t?",
+        "options": [
+          "A. C₀ × 2^(t/6)",
+          "B. C₀ × 2^(6t)",
+          "C. C₀ + 2t/6",
+          "D. C₀ × (t/6)²"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "The total compute used for AI training has been doubling every 6 months since 2020. If the compute in January 2020 was C₀, which expression gives the compute at month t?",
+        "options": [
+          "A. C₀ × 2^(t/6)",
+          "B. C₀ × 2^(6t)",
+          "C. C₀ + 2t/6",
+          "D. C₀ × (t/6)²"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Doubling every 6 months means after t months there are t/6 doublings. Compute = C₀ × 2^(t/6).",
+      "explanation_zh": "Doubling every 6 months means after t months there are t/6 doublings. Compute = C₀ × 2^(t/6).",
+      "tags": [
+        "logarithmic_functions_ai",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "logarithmic_functions_ai",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "logarithmic_functions_ai",
+      "subtopic": null,
+      "difficulty": 0.8,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "AI training compute doubled every 6 months from 2020, starting at C₀. How many months does it take for compute to reach 1024 × C₀?",
+        "options": [
+          "A. 30 months",
+          "B. 48 months",
+          "C. 60 months",
+          "D. 72 months"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "AI training compute doubled every 6 months from 2020, starting at C₀. How many months does it take for compute to reach 1024 × C₀?",
+        "options": [
+          "A. 30 months",
+          "B. 48 months",
+          "C. 60 months",
+          "D. 72 months"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "C₀ × 2^(t/6) = 1024 × C₀. So 2^(t/6) = 1024 = 2^10. Then t/6 = 10, t = 60 months.",
+      "explanation_zh": "C₀ × 2^(t/6) = 1024 × C₀. So 2^(t/6) = 1024 = 2^10. Then t/6 = 10, t = 60 months.",
+      "tags": [
+        "logarithmic_functions_ai",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "logarithmic_functions_ai",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "law_of_sines",
+      "subtopic": null,
+      "difficulty": 0.82,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In triangle DEF, angle D = 45°, angle E = 75°, and side d = 10. Find side e to the nearest tenth.",
+        "options": [
+          "A. 12.2",
+          "B. 13.7",
+          "C. 14.1",
+          "D. 15.3"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In triangle DEF, angle D = 45°, angle E = 75°, and side d = 10. Find side e to the nearest tenth.",
+        "options": [
+          "A. 12.2",
+          "B. 13.7",
+          "C. 14.1",
+          "D. 15.3"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "By Law of Sines: e/sin(E) = d/sin(D). e = 10 × sin(75°)/sin(45°) = 10 × 0.9659/0.7071 ≈ 13.66 ≈ 13.7.",
+      "explanation_zh": "By Law of Sines: e/sin(E) = d/sin(D). e = 10 × sin(75°)/sin(45°) = 10 × 0.9659/0.7071 ≈ 13.66 ≈ 13.7.",
+      "tags": [
+        "law_of_sines",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "law_of_sines",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G11",
+      "topic": "conic_sections",
+      "subtopic": null,
+      "difficulty": 0.85,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Identify the conic section: 4x² + 9y² = 36",
+        "options": [
+          "A. Circle",
+          "B. Ellipse",
+          "C. Parabola",
+          "D. Hyperbola"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Identify the conic section: 4x² + 9y² = 36",
+        "options": [
+          "A. Circle",
+          "B. Ellipse",
+          "C. Parabola",
+          "D. Hyperbola"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Divide by 36: x²/9 + y²/4 = 1. This is the standard form of an ellipse with a² = 9 and b² = 4 (a ≠ b, so not a circle).",
+      "explanation_zh": "Divide by 36: x²/9 + y²/4 = 1. This is the standard form of an ellipse with a² = 9 and b² = 4 (a ≠ b, so not a circle).",
+      "tags": [
+        "conic_sections",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G11",
+        "original_topic": "conic_sections",
+        "is_seed": false
+      }
+    }
+  ]
+}

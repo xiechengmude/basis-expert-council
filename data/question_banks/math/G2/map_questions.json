@@ -1,0 +1,639 @@
+{
+  "batch_name": "MAP_math_G2_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G2",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "multiplication_visual",
+      "subtopic": null,
+      "difficulty": 0.1,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which of the following represents the multiplication 2 × 4?",
+        "options": [
+          "A. Image showing apples in two groups (4 and 2)",
+          "B. Image showing two groups of 3 books each",
+          "C. Image showing two groups of 2 glasses each",
+          "D. Image showing 2 bunches of 4 bananas each"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Which of the following represents the multiplication 2 × 4?",
+        "options": [
+          "A. Image showing apples in two groups (4 and 2)",
+          "B. Image showing two groups of 3 books each",
+          "C. Image showing two groups of 2 glasses each",
+          "D. Image showing 2 bunches of 4 bananas each"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "2 × 4 means 2 groups with 4 items each. Only option D shows this correctly with 2 bunches of 4 bananas.",
+      "explanation_zh": "2 × 4 means 2 groups with 4 items each. Only option D shows this correctly with 2 bunches of 4 bananas.",
+      "tags": [
+        "multiplication_visual",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "multiplication_visual",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "place_value_word_problem",
+      "subtopic": null,
+      "difficulty": 0.12,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A farm has a total of 23 animals. There are as many cows as the tens digit in the total number of animals on the farm. There are as many pigs as the ones digit in total number of animals on the farm. The rest of the animals are sheep. What is the correct distribution of animals in the farm?",
+        "options": [
+          "A. Three cows, two pigs, and 18 sheep",
+          "B. Three cows, two pigs, and 23 sheep",
+          "C. Two cows, three pigs, and 18 sheep",
+          "D. Two cows, three pigs, and 23 sheep"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A farm has a total of 23 animals. There are as many cows as the tens digit in the total number of animals on the farm. There are as many pigs as the ones digit in total number of animals on the farm. The rest of the animals are sheep. What is the correct distribution of animals in the farm?",
+        "options": [
+          "A. Three cows, two pigs, and 18 sheep",
+          "B. Three cows, two pigs, and 23 sheep",
+          "C. Two cows, three pigs, and 18 sheep",
+          "D. Two cows, three pigs, and 23 sheep"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The number 23 has tens digit 2 and ones digit 3, meaning 2 cows and 3 pigs. 23 - 2 - 3 = 18 sheep.",
+      "explanation_zh": "The number 23 has tens digit 2 and ones digit 3, meaning 2 cows and 3 pigs. 23 - 2 - 3 = 18 sheep.",
+      "tags": [
+        "place_value_word_problem",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "place_value_word_problem",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "equal_parts",
+      "subtopic": null,
+      "difficulty": 0.15,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which of the following shapes has been divided into equal parts?",
+        "options": [
+          "A. Triangle divided into three smaller triangles",
+          "B. L-shaped figure with unequal parts",
+          "C. Trapezoid divided into three different-sized triangles",
+          "D. Circle divided into four quarters"
+        ],
+        "answer": "A,D"
+      },
+      "content_zh": {
+        "stem": "Which of the following shapes has been divided into equal parts?",
+        "options": [
+          "A. Triangle divided into three smaller triangles",
+          "B. L-shaped figure with unequal parts",
+          "C. Trapezoid divided into three different-sized triangles",
+          "D. Circle divided into four quarters"
+        ],
+        "answer": "A,D"
+      },
+      "explanation_en": "Both the triangle (three identical triangular pieces) and the circle (four equal quarter-sections) show shapes divided into congruent sections.",
+      "explanation_zh": "Both the triangle (three identical triangular pieces) and the circle (four equal quarter-sections) show shapes divided into congruent sections.",
+      "tags": [
+        "equal_parts",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "equal_parts",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "bar_graph_reading",
+      "subtopic": null,
+      "difficulty": 0.17,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "How many books were read in the month of August? (Based on bar graph)",
+        "options": [
+          "A. 200",
+          "B. 400",
+          "C. 450",
+          "D. 600"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "How many books were read in the month of August? (Based on bar graph)",
+        "options": [
+          "A. 200",
+          "B. 400",
+          "C. 450",
+          "D. 600"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Reading the bar graph, the August bar reaches the 400 mark on the vertical axis.",
+      "explanation_zh": "Reading the bar graph, the August bar reaches the 400 mark on the vertical axis.",
+      "tags": [
+        "bar_graph_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-004",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "bar_graph_reading",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "place_value",
+      "subtopic": null,
+      "difficulty": 0.19,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In the number 537, what digit is in the hundreds place?",
+        "options": [
+          "A. 3",
+          "B. 5",
+          "C. 7",
+          "D. 53"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In the number 537, what digit is in the hundreds place?",
+        "options": [
+          "A. 3",
+          "B. 5",
+          "C. 7",
+          "D. 53"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "In 537, the digit 5 is in the hundreds place, 3 is in the tens place, and 7 is in the ones place.",
+      "explanation_zh": "In 537, the digit 5 is in the hundreds place, 3 is in the tens place, and 7 is in the ones place.",
+      "tags": [
+        "place_value",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "place_value",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "addition_within_100",
+      "subtopic": null,
+      "difficulty": 0.22,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "47 + 36 = ?",
+        "options": [
+          "A. 73",
+          "B. 83",
+          "C. 81",
+          "D. 77"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "47 + 36 = ?",
+        "options": [
+          "A. 73",
+          "B. 83",
+          "C. 81",
+          "D. 77"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "47 + 36: add the ones (7 + 6 = 13, write 3 carry 1), then the tens (4 + 3 + 1 = 8). The answer is 83.",
+      "explanation_zh": "47 + 36: add the ones (7 + 6 = 13, write 3 carry 1), then the tens (4 + 3 + 1 = 8). The answer is 83.",
+      "tags": [
+        "addition_within_100",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "addition_within_100",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "telling_time",
+      "subtopic": null,
+      "difficulty": 0.24,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A clock shows the hour hand on 3 and the minute hand on 6. What time is it?",
+        "options": [
+          "A. 3:06",
+          "B. 3:30",
+          "C. 6:03",
+          "D. 6:15"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A clock shows the hour hand on 3 and the minute hand on 6. What time is it?",
+        "options": [
+          "A. 3:06",
+          "B. 3:30",
+          "C. 6:03",
+          "D. 6:15"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "When the minute hand points to 6, it means 30 minutes. The hour hand on 3 means the hour is 3. So the time is 3:30.",
+      "explanation_zh": "When the minute hand points to 6, it means 30 minutes. The hour hand on 3 means the hour is 3. So the time is 3:30.",
+      "tags": [
+        "telling_time",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "telling_time",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "money",
+      "subtopic": null,
+      "difficulty": 0.26,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Emma has 3 dimes and 2 nickels. How much money does she have?",
+        "options": [
+          "A. 25 cents",
+          "B. 35 cents",
+          "C. 40 cents",
+          "D. 50 cents"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Emma has 3 dimes and 2 nickels. How much money does she have?",
+        "options": [
+          "A. 25 cents",
+          "B. 35 cents",
+          "C. 40 cents",
+          "D. 50 cents"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "3 dimes = 3 × 10 = 30 cents. 2 nickels = 2 × 5 = 10 cents. Total: 30 + 10 = 40 cents.",
+      "explanation_zh": "3 dimes = 3 × 10 = 30 cents. 2 nickels = 2 × 5 = 10 cents. Total: 30 + 10 = 40 cents.",
+      "tags": [
+        "money",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "money",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "intro_multiplication",
+      "subtopic": null,
+      "difficulty": 0.28,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "There are 5 bags with 3 apples in each bag. How many apples are there in all?",
+        "options": [
+          "A. 8",
+          "B. 12",
+          "C. 15",
+          "D. 18"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "There are 5 bags with 3 apples in each bag. How many apples are there in all?",
+        "options": [
+          "A. 8",
+          "B. 12",
+          "C. 15",
+          "D. 18"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "5 bags × 3 apples per bag = 15 apples in all.",
+      "explanation_zh": "5 bags × 3 apples per bag = 15 apples in all.",
+      "tags": [
+        "intro_multiplication",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "intro_multiplication",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "subtraction_within_100",
+      "subtopic": null,
+      "difficulty": 0.31,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "NASA's Artemis team had 82 mission tasks. They completed 37 tasks in the first week. How many tasks are left?",
+        "options": [
+          "A. 35",
+          "B. 45",
+          "C. 55",
+          "D. 49"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "NASA's Artemis team had 82 mission tasks. They completed 37 tasks in the first week. How many tasks are left?",
+        "options": [
+          "A. 35",
+          "B. 45",
+          "C. 55",
+          "D. 49"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "82 - 37 = 45 tasks remaining.",
+      "explanation_zh": "82 - 37 = 45 tasks remaining.",
+      "tags": [
+        "subtraction_within_100",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "subtraction_within_100",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "measurement_length",
+      "subtopic": null,
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A pencil is 19 centimeters long and a crayon is 12 centimeters long. How much longer is the pencil than the crayon?",
+        "options": [
+          "A. 5 cm",
+          "B. 6 cm",
+          "C. 7 cm",
+          "D. 8 cm"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A pencil is 19 centimeters long and a crayon is 12 centimeters long. How much longer is the pencil than the crayon?",
+        "options": [
+          "A. 5 cm",
+          "B. 6 cm",
+          "C. 7 cm",
+          "D. 8 cm"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "19 - 12 = 7. The pencil is 7 centimeters longer than the crayon.",
+      "explanation_zh": "19 - 12 = 7. The pencil is 7 centimeters longer than the crayon.",
+      "tags": [
+        "measurement_length",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "measurement_length",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "bar_graphs",
+      "subtopic": null,
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A bar graph shows the number of pets students have: Dogs = 8, Cats = 6, Fish = 3, Birds = 2. How many more students have dogs than fish?",
+        "options": [
+          "A. 3",
+          "B. 4",
+          "C. 5",
+          "D. 6"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A bar graph shows the number of pets students have: Dogs = 8, Cats = 6, Fish = 3, Birds = 2. How many more students have dogs than fish?",
+        "options": [
+          "A. 3",
+          "B. 4",
+          "C. 5",
+          "D. 6"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Dogs = 8, Fish = 3. The difference is 8 - 3 = 5 more students have dogs.",
+      "explanation_zh": "Dogs = 8, Fish = 3. The difference is 8 - 3 = 5 more students have dogs.",
+      "tags": [
+        "bar_graphs",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "bar_graphs",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "odd_even",
+      "subtopic": null,
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which of the following numbers is an odd number?",
+        "options": [
+          "A. 14",
+          "B. 28",
+          "C. 33",
+          "D. 46"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which of the following numbers is an odd number?",
+        "options": [
+          "A. 14",
+          "B. 28",
+          "C. 33",
+          "D. 46"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "An odd number is not evenly divisible by 2. 33 ends in 3, so it is odd. The other numbers (14, 28, 46) are all even.",
+      "explanation_zh": "An odd number is not evenly divisible by 2. 33 ends in 3, so it is odd. The other numbers (14, 28, 46) are all even.",
+      "tags": [
+        "odd_even",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "odd_even",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G2",
+      "topic": "skip_counting",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Count by 5s: 45, 50, 55, 60, ___. What comes next?",
+        "options": [
+          "A. 62",
+          "B. 63",
+          "C. 65",
+          "D. 70"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Count by 5s: 45, 50, 55, 60, ___. What comes next?",
+        "options": [
+          "A. 62",
+          "B. 63",
+          "C. 65",
+          "D. 70"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Counting by 5s: each number is 5 more than the previous. 60 + 5 = 65.",
+      "explanation_zh": "Counting by 5s: each number is 5 more than the previous. 60 + 5 = 65.",
+      "tags": [
+        "skip_counting",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G2",
+        "original_topic": "skip_counting",
+        "is_seed": false
+      }
+    }
+  ]
+}

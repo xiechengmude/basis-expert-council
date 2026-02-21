@@ -1,0 +1,1067 @@
+{
+  "batch_name": "MAP_english_G6_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G6",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "reading_comp",
+      "subtopic": "authors_purpose",
+      "difficulty": 0.3,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A passage describes sweet potatoes and their characteristics. Why did the author write this passage?",
+        "options": [
+          "A. To entertain",
+          "B. To inform",
+          "C. To persuade",
+          "D. To express feelings"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A passage describes sweet potatoes and their characteristics. Why did the author write this passage?",
+        "options": [
+          "A. To entertain",
+          "B. To inform",
+          "C. To persuade",
+          "D. To express feelings"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage presents factual information about sweet potatoes, indicating the author's purpose is to inform.",
+      "explanation_zh": "The passage presents factual information about sweet potatoes, indicating the author's purpose is to inform.",
+      "tags": [
+        "authors_purpose",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "authors_purpose",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "reading_comp",
+      "subtopic": "figurative_language",
+      "difficulty": 0.31,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In a storm scene with children in an attic, what does the phrase 'deafeningly silent' accomplish?",
+        "options": [
+          "A. Describes the weather accurately",
+          "B. Creates a dramatic effect",
+          "C. Shows the children are sleeping",
+          "D. Indicates the storm has passed"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In a storm scene with children in an attic, what does the phrase 'deafeningly silent' accomplish?",
+        "options": [
+          "A. Describes the weather accurately",
+          "B. Creates a dramatic effect",
+          "C. Shows the children are sleeping",
+          "D. Indicates the storm has passed"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Deafeningly silent' is an oxymoron — combining contradictory words creates a dramatic, tense effect.",
+      "explanation_zh": "'Deafeningly silent' is an oxymoron — combining contradictory words creates a dramatic, tense effect.",
+      "tags": [
+        "figurative_language",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "figurative_language",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Jane moved gingerly through the dangerous forest. What does 'gingerly' mean?",
+        "options": [
+          "A. With extreme caution",
+          "B. Very quickly",
+          "C. With great excitement",
+          "D. Carelessly"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Jane moved gingerly through the dangerous forest. What does 'gingerly' mean?",
+        "options": [
+          "A. With extreme caution",
+          "B. Very quickly",
+          "C. With great excitement",
+          "D. Carelessly"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Context clues ('dangerous forest') suggest Jane was moving carefully. 'Gingerly' means with extreme caution.",
+      "explanation_zh": "Context clues ('dangerous forest') suggest Jane was moving carefully. 'Gingerly' means with extreme caution.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "grammar",
+      "subtopic": "punctuation",
+      "difficulty": 0.34,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly punctuates a split quotation?",
+        "options": [
+          "A. \"Students\" Mr. Hernandez instructed \"please bring your history books tomorrow.\"",
+          "B. \"Students,\" Mr. Hernandez instructed, \"Please bring your history books tomorrow.\"",
+          "C. \"Students,\" Mr. Hernandez instructed, \"please bring your history books tomorrow.\"",
+          "D. \"Students\", Mr. Hernandez instructed, \"please bring your history books tomorrow.\""
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly punctuates a split quotation?",
+        "options": [
+          "A. \"Students\" Mr. Hernandez instructed \"please bring your history books tomorrow.\"",
+          "B. \"Students,\" Mr. Hernandez instructed, \"Please bring your history books tomorrow.\"",
+          "C. \"Students,\" Mr. Hernandez instructed, \"please bring your history books tomorrow.\"",
+          "D. \"Students\", Mr. Hernandez instructed, \"please bring your history books tomorrow.\""
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "In a split quotation, the second part uses lowercase unless it starts a new sentence. Commas go inside quotation marks.",
+      "explanation_zh": "In a split quotation, the second part uses lowercase unless it starts a new sentence. Commas go inside quotation marks.",
+      "tags": [
+        "quotation_punctuation",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "quotation_punctuation",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "grammar",
+      "subtopic": "pronouns",
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses pronouns correctly?",
+        "options": [
+          "A. My parents ask my sister and I to help with chores.",
+          "B. My parents ask I and my sister to help with chores.",
+          "C. My parents ask my sister and me to help with chores.",
+          "D. My parents ask me and my sister to help with chores."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses pronouns correctly?",
+        "options": [
+          "A. My parents ask my sister and I to help with chores.",
+          "B. My parents ask I and my sister to help with chores.",
+          "C. My parents ask my sister and me to help with chores.",
+          "D. My parents ask me and my sister to help with chores."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Object pronouns ('me') follow verbs that direct action toward them. 'My sister and me' is the correct object form.",
+      "explanation_zh": "Object pronouns ('me') follow verbs that direct action toward them. 'My sister and me' is the correct object form.",
+      "tags": [
+        "pronoun_usage",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "pronoun_usage",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "grammar",
+      "subtopic": "clauses",
+      "difficulty": 0.37,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which underlined portion is an independent clause?",
+        "options": [
+          "A. the ship stayed on course",
+          "B. despite the heavy winds",
+          "C. sailing across the ocean",
+          "D. which was built in 1920"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which underlined portion is an independent clause?",
+        "options": [
+          "A. the ship stayed on course",
+          "B. despite the heavy winds",
+          "C. sailing across the ocean",
+          "D. which was built in 1920"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "'The ship stayed on course' has a subject and verb and expresses a complete thought — it's an independent clause.",
+      "explanation_zh": "'The ship stayed on course' has a subject and verb and expresses a complete thought — it's an independent clause.",
+      "tags": [
+        "independent_clauses",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "independent_clauses",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "writing",
+      "subtopic": "paragraph_structure",
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the best topic sentence for a paragraph about dog care?",
+        "options": [
+          "A. Dogs are the most popular pets in the world.",
+          "B. Dog care requires both a daily routine and checkups with a veterinarian.",
+          "C. My dog likes to play fetch in the park.",
+          "D. There are many breeds of dogs."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What is the best topic sentence for a paragraph about dog care?",
+        "options": [
+          "A. Dogs are the most popular pets in the world.",
+          "B. Dog care requires both a daily routine and checkups with a veterinarian.",
+          "C. My dog likes to play fetch in the park.",
+          "D. There are many breeds of dogs."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A good topic sentence introduces the main idea broadly enough to support the paragraph's details about dog care.",
+      "explanation_zh": "A good topic sentence introduces the main idea broadly enough to support the paragraph's details about dog care.",
+      "tags": [
+        "topic_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-LANG-004",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "topic_sentences",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "theme_analysis",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: When Dara moved to a new city, she missed her old friends terribly. At her new school, a girl named Priya invited her to join the robotics club. At first, Dara said no — she had never built a robot before. But Priya kept asking, and Dara finally agreed. By the end of the semester, Dara had built her first robot and made three new friends. She realized that saying yes to something unfamiliar had changed everything. What theme does this passage convey?",
+        "options": [
+          "A. Technology is more important than friendship",
+          "B. Being open to new experiences can lead to growth and connection",
+          "C. Moving to a new city is always a positive experience",
+          "D. Robotics is the best extracurricular activity"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: When Dara moved to a new city, she missed her old friends terribly. At her new school, a girl named Priya invited her to join the robotics club. At first, Dara said no — she had never built a robot before. But Priya kept asking, and Dara finally agreed. By the end of the semester, Dara had built her first robot and made three new friends. She realized that saying yes to something unfamiliar had changed everything. What theme does this passage convey?",
+        "options": [
+          "A. Technology is more important than friendship",
+          "B. Being open to new experiences can lead to growth and connection",
+          "C. Moving to a new city is always a positive experience",
+          "D. Robotics is the best extracurricular activity"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Dara was reluctant to try something new but found friendship and achievement when she did. The theme is that openness to new experiences brings growth.",
+      "explanation_zh": "Dara was reluctant to try something new but found friendship and achievement when she did. The theme is that openness to new experiences brings growth.",
+      "tags": [
+        "theme_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "theme_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "character_development",
+      "subtopic": null,
+      "difficulty": 0.41,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: At the start of the school year, Marcus avoided speaking in class. He sat in the back row and never raised his hand. When his teacher assigned a group project on AI technology, Marcus was forced to present his research on how AI assistants help students study. His group members encouraged him, and he practiced every night. On presentation day, Marcus spoke clearly and even answered questions from the audience. How does Marcus change over the course of the passage?",
+        "options": [
+          "A. He becomes more rebellious",
+          "B. He grows from being shy and withdrawn to confident",
+          "C. He decides he does not like school",
+          "D. He becomes the class clown"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: At the start of the school year, Marcus avoided speaking in class. He sat in the back row and never raised his hand. When his teacher assigned a group project on AI technology, Marcus was forced to present his research on how AI assistants help students study. His group members encouraged him, and he practiced every night. On presentation day, Marcus spoke clearly and even answered questions from the audience. How does Marcus change over the course of the passage?",
+        "options": [
+          "A. He becomes more rebellious",
+          "B. He grows from being shy and withdrawn to confident",
+          "C. He decides he does not like school",
+          "D. He becomes the class clown"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Marcus starts by avoiding speaking and sitting in the back, but by the end he speaks clearly and answers questions — showing growth from shy to confident.",
+      "explanation_zh": "Marcus starts by avoiding speaking and sitting in the back, but by the end he speaks clearly and answers questions — showing growth from shy to confident.",
+      "tags": [
+        "character_development",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "character_development",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "literary_devices",
+      "subtopic": null,
+      "difficulty": 0.42,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentences: 'The classroom was a zoo on the last day of school. Students were running, laughing, and throwing paper airplanes.' What literary device is used in the first sentence?",
+        "options": [
+          "A. Simile",
+          "B. Metaphor",
+          "C. Onomatopoeia",
+          "D. Alliteration"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the sentences: 'The classroom was a zoo on the last day of school. Students were running, laughing, and throwing paper airplanes.' What literary device is used in the first sentence?",
+        "options": [
+          "A. Simile",
+          "B. Metaphor",
+          "C. Onomatopoeia",
+          "D. Alliteration"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Calling the classroom 'a zoo' is a metaphor — it directly compares the chaotic classroom to a zoo without using 'like' or 'as.'",
+      "explanation_zh": "Calling the classroom 'a zoo' is a metaphor — it directly compares the chaotic classroom to a zoo without using 'like' or 'as.'",
+      "tags": [
+        "literary_devices",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "literary_devices",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "informational_text_analysis",
+      "subtopic": null,
+      "difficulty": 0.44,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In 2025, a new kind of AI assistant became popular in classrooms. Unlike search engines, these AI tools could have conversations with students, breaking down difficult concepts step by step. A study by the National Education Association found that 72 percent of teachers reported students asking more questions when an AI tutor was available. Critics warned, however, that students might rely too heavily on AI instead of developing their own problem-solving skills. What is the author's approach to presenting this topic?",
+        "options": [
+          "A. Completely against AI in schools",
+          "B. Presenting only the benefits of AI",
+          "C. Balanced, showing both benefits and concerns",
+          "D. Humorous and sarcastic"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In 2025, a new kind of AI assistant became popular in classrooms. Unlike search engines, these AI tools could have conversations with students, breaking down difficult concepts step by step. A study by the National Education Association found that 72 percent of teachers reported students asking more questions when an AI tutor was available. Critics warned, however, that students might rely too heavily on AI instead of developing their own problem-solving skills. What is the author's approach to presenting this topic?",
+        "options": [
+          "A. Completely against AI in schools",
+          "B. Presenting only the benefits of AI",
+          "C. Balanced, showing both benefits and concerns",
+          "D. Humorous and sarcastic"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The author presents benefits (students asking more questions) and concerns (over-reliance), giving a balanced perspective on AI in education.",
+      "explanation_zh": "The author presents benefits (students asking more questions) and concerns (over-reliance), giving a balanced perspective on AI in education.",
+      "tags": [
+        "informational_text_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "informational_text_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "argument_evaluation",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Some people argue that students should not use calculators in math class because it prevents them from learning basic skills. Others say calculators allow students to focus on understanding complex concepts rather than wasting time on simple calculations. Which statement best evaluates these arguments?",
+        "options": [
+          "A. The first argument is clearly wrong",
+          "B. Both arguments make valid points about different aspects of learning",
+          "C. The second argument has no evidence",
+          "D. Neither argument is worth considering"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Some people argue that students should not use calculators in math class because it prevents them from learning basic skills. Others say calculators allow students to focus on understanding complex concepts rather than wasting time on simple calculations. Which statement best evaluates these arguments?",
+        "options": [
+          "A. The first argument is clearly wrong",
+          "B. Both arguments make valid points about different aspects of learning",
+          "C. The second argument has no evidence",
+          "D. Neither argument is worth considering"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Both arguments address legitimate educational concerns: basic skill mastery versus higher-level conceptual understanding. Both sides make valid points.",
+      "explanation_zh": "Both arguments address legitimate educational concerns: basic skill mastery versus higher-level conceptual understanding. Both sides make valid points.",
+      "tags": [
+        "argument_evaluation",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "argument_evaluation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "poetry_analysis",
+      "subtopic": null,
+      "difficulty": 0.46,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the poem:\n'The fog comes\non little cat feet.\nIt sits looking\nover harbor and city\non silent haunches\nand then moves on.'\n— Carl Sandburg\nWhat is the fog compared to in this poem?",
+        "options": [
+          "A. A dog",
+          "B. A ship",
+          "C. A cat",
+          "D. A person sitting"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the poem:\n'The fog comes\non little cat feet.\nIt sits looking\nover harbor and city\non silent haunches\nand then moves on.'\n— Carl Sandburg\nWhat is the fog compared to in this poem?",
+        "options": [
+          "A. A dog",
+          "B. A ship",
+          "C. A cat",
+          "D. A person sitting"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The fog is compared to a cat through extended metaphor: it comes on 'little cat feet,' 'sits' on 'silent haunches,' and 'moves on' — all cat-like behaviors.",
+      "explanation_zh": "The fog is compared to a cat through extended metaphor: it comes on 'little cat feet,' 'sits' on 'silent haunches,' and 'moves on' — all cat-like behaviors.",
+      "tags": [
+        "poetry_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "poetry_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "vocabulary_greek_latin_roots",
+      "subtopic": null,
+      "difficulty": 0.48,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The word 'microscope' contains the Greek roots 'micro' (small) and 'scope' (to look). Based on these roots, what does 'microscope' literally mean?",
+        "options": [
+          "A. A tool to look at small things",
+          "B. A small tool for looking far away",
+          "C. A device that makes things smaller",
+          "D. A tiny camera"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "The word 'microscope' contains the Greek roots 'micro' (small) and 'scope' (to look). Based on these roots, what does 'microscope' literally mean?",
+        "options": [
+          "A. A tool to look at small things",
+          "B. A small tool for looking far away",
+          "C. A device that makes things smaller",
+          "D. A tiny camera"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Combining 'micro' (small) and 'scope' (to look at), a microscope is literally an instrument to look at small things.",
+      "explanation_zh": "Combining 'micro' (small) and 'scope' (to look at), a microscope is literally an instrument to look at small things.",
+      "tags": [
+        "vocabulary_greek_latin_roots",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "vocabulary_greek_latin_roots",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "text_evidence",
+      "subtopic": null,
+      "difficulty": 0.49,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Ocean temperatures around the world reached record highs in 2025. Scientists measured water temperatures that were higher than any time in recorded history. Marine biologists reported that coral reefs were bleaching at alarming rates, and fish populations were moving to cooler waters farther north. Which sentence from the passage best supports the idea that marine life is being affected by warming oceans?",
+        "options": [
+          "A. Ocean temperatures around the world reached record highs in 2025.",
+          "B. Scientists measured water temperatures that were higher than any time in recorded history.",
+          "C. Marine biologists reported that coral reefs were bleaching at alarming rates, and fish populations were moving to cooler waters farther north.",
+          "D. Ocean temperatures around the world reached record highs."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Ocean temperatures around the world reached record highs in 2025. Scientists measured water temperatures that were higher than any time in recorded history. Marine biologists reported that coral reefs were bleaching at alarming rates, and fish populations were moving to cooler waters farther north. Which sentence from the passage best supports the idea that marine life is being affected by warming oceans?",
+        "options": [
+          "A. Ocean temperatures around the world reached record highs in 2025.",
+          "B. Scientists measured water temperatures that were higher than any time in recorded history.",
+          "C. Marine biologists reported that coral reefs were bleaching at alarming rates, and fish populations were moving to cooler waters farther north.",
+          "D. Ocean temperatures around the world reached record highs."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "This sentence directly describes effects on marine life: coral bleaching and fish moving to cooler waters. The other sentences describe temperatures, not effects on life.",
+      "explanation_zh": "This sentence directly describes effects on marine life: coral bleaching and fish moving to cooler waters. The other sentences describe temperatures, not effects on life.",
+      "tags": [
+        "text_evidence",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G6",
+        "original_topic": "text_evidence",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "grammar",
+      "subtopic": "clauses",
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Identify the dependent clause: 'Although the experiment failed, the students learned valuable lessons about the scientific method.'",
+        "options": [
+          "A. the students learned valuable lessons",
+          "B. about the scientific method",
+          "C. Although the experiment failed",
+          "D. the students learned valuable lessons about the scientific method"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Identify the dependent clause: 'Although the experiment failed, the students learned valuable lessons about the scientific method.'",
+        "options": [
+          "A. the students learned valuable lessons",
+          "B. about the scientific method",
+          "C. Although the experiment failed",
+          "D. the students learned valuable lessons about the scientific method"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Although the experiment failed' begins with the subordinating conjunction 'although,' making it a dependent clause that cannot stand alone as a sentence.",
+      "explanation_zh": "'Although the experiment failed' begins with the subordinating conjunction 'although,' making it a dependent clause that cannot stand alone as a sentence.",
+      "tags": [
+        "independent_dependent_clauses",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "independent_dependent_clauses",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "semicolons",
+      "subtopic": null,
+      "difficulty": 0.52,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses a semicolon correctly?",
+        "options": [
+          "A. The test was difficult; because we didn't study enough.",
+          "B. The test was difficult; we should have studied more.",
+          "C. The test was difficult; and we should have studied more.",
+          "D. The test; was difficult we should have studied more."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses a semicolon correctly?",
+        "options": [
+          "A. The test was difficult; because we didn't study enough.",
+          "B. The test was difficult; we should have studied more.",
+          "C. The test was difficult; and we should have studied more.",
+          "D. The test; was difficult we should have studied more."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A semicolon joins two closely related independent clauses without a conjunction. 'The test was difficult' and 'we should have studied more' are both independent clauses.",
+      "explanation_zh": "A semicolon joins two closely related independent clauses without a conjunction. 'The test was difficult' and 'we should have studied more' are both independent clauses.",
+      "tags": [
+        "semicolons",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "semicolons",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "active_passive_voice",
+      "subtopic": null,
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence is written in active voice?",
+        "options": [
+          "A. The award was given to Maria by the principal.",
+          "B. The principal gave the award to Maria.",
+          "C. The award had been presented at the ceremony.",
+          "D. Maria was recognized by the principal for her work."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence is written in active voice?",
+        "options": [
+          "A. The award was given to Maria by the principal.",
+          "B. The principal gave the award to Maria.",
+          "C. The award had been presented at the ceremony.",
+          "D. Maria was recognized by the principal for her work."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "In active voice, the subject performs the action. 'The principal' (subject) 'gave' (action) 'the award' (object). The other sentences use passive voice, where the subject receives the action.",
+      "explanation_zh": "In active voice, the subject performs the action. 'The principal' (subject) 'gave' (action) 'the award' (object). The other sentences use passive voice, where the subject receives the action.",
+      "tags": [
+        "active_passive_voice",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "active_passive_voice",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "transitional_words",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which transitional word best fits? 'Electric cars produce zero tailpipe emissions. _______, they still require electricity that may come from fossil fuels.'",
+        "options": [
+          "A. Furthermore",
+          "B. However",
+          "C. Therefore",
+          "D. Similarly"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which transitional word best fits? 'Electric cars produce zero tailpipe emissions. _______, they still require electricity that may come from fossil fuels.'",
+        "options": [
+          "A. Furthermore",
+          "B. However",
+          "C. Therefore",
+          "D. Similarly"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'However' signals a contrast. The first sentence presents a benefit; the second sentence presents a limitation that contrasts with it.",
+      "explanation_zh": "'However' signals a contrast. The first sentence presents a benefit; the second sentence presents a limitation that contrasts with it.",
+      "tags": [
+        "transitional_words",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "transitional_words",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "parallel_structure",
+      "subtopic": null,
+      "difficulty": 0.56,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses parallel structure correctly?",
+        "options": [
+          "A. The students enjoy reading, writing, and to solve math problems.",
+          "B. The students enjoy reading, writing, and solving math problems.",
+          "C. The students enjoy reading, to write, and solving math problems.",
+          "D. The students enjoy to read, writing, and solving math problems."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses parallel structure correctly?",
+        "options": [
+          "A. The students enjoy reading, writing, and to solve math problems.",
+          "B. The students enjoy reading, writing, and solving math problems.",
+          "C. The students enjoy reading, to write, and solving math problems.",
+          "D. The students enjoy to read, writing, and solving math problems."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Parallel structure means using the same grammatical form for items in a list. 'Reading, writing, and solving' all use the -ing (gerund) form.",
+      "explanation_zh": "Parallel structure means using the same grammatical form for items in a list. 'Reading, writing, and solving' all use the -ing (gerund) form.",
+      "tags": [
+        "parallel_structure",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G6-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "parallel_structure",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "colons",
+      "subtopic": null,
+      "difficulty": 0.57,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses a colon correctly?",
+        "options": [
+          "A. For the science project, you need: cardboard, glue, and markers.",
+          "B. You need several supplies for the science project: cardboard, glue, and markers.",
+          "C. You need: several supplies for the science project.",
+          "D. The supplies include: glue and markers and cardboard."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses a colon correctly?",
+        "options": [
+          "A. For the science project, you need: cardboard, glue, and markers.",
+          "B. You need several supplies for the science project: cardboard, glue, and markers.",
+          "C. You need: several supplies for the science project.",
+          "D. The supplies include: glue and markers and cardboard."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A colon follows a complete sentence that introduces a list. 'You need several supplies for the science project' is a complete independent clause, so a colon is appropriate before the list.",
+      "explanation_zh": "A colon follows a complete sentence that introduces a list. 'You need several supplies for the science project' is a complete independent clause, so a colon is appropriate before the list.",
+      "tags": [
+        "colons",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "colons",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "text_evidence",
+      "subtopic": null,
+      "difficulty": 0.59,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A student claims: 'Climate change is affecting Arctic wildlife.' Which piece of text evidence best supports this claim?",
+        "options": [
+          "A. The Arctic is a very cold region near the North Pole.",
+          "B. According to NOAA, polar bear populations have declined 40% as sea ice shrinks due to rising temperatures.",
+          "C. Many scientists study climate change.",
+          "D. Some animals have adapted to cold weather over millions of years."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A student claims: 'Climate change is affecting Arctic wildlife.' Which piece of text evidence best supports this claim?",
+        "options": [
+          "A. The Arctic is a very cold region near the North Pole.",
+          "B. According to NOAA, polar bear populations have declined 40% as sea ice shrinks due to rising temperatures.",
+          "C. Many scientists study climate change.",
+          "D. Some animals have adapted to cold weather over millions of years."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Strong text evidence includes specific data (40% decline), a credible source (NOAA), and a direct connection between climate change (rising temperatures, shrinking ice) and wildlife impact (polar bear decline).",
+      "explanation_zh": "Strong text evidence includes specific data (40% decline), a credible source (NOAA), and a direct connection between climate change (rising temperatures, shrinking ice) and wildlife impact (polar bear decline).",
+      "tags": [
+        "text_evidence",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "text_evidence",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G6",
+      "topic": "writing",
+      "subtopic": "thesis",
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which thesis statement is most effective for an argumentative essay about school uniforms?",
+        "options": [
+          "A. School uniforms are interesting.",
+          "B. Many schools around the world require uniforms.",
+          "C. School uniforms reduce bullying, promote equality, and help students focus on learning rather than fashion.",
+          "D. I think school uniforms are a good idea."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which thesis statement is most effective for an argumentative essay about school uniforms?",
+        "options": [
+          "A. School uniforms are interesting.",
+          "B. Many schools around the world require uniforms.",
+          "C. School uniforms reduce bullying, promote equality, and help students focus on learning rather than fashion.",
+          "D. I think school uniforms are a good idea."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "An effective thesis takes a clear position and previews the supporting arguments. Option C states the claim and outlines three specific reasons that can be developed in body paragraphs.",
+      "explanation_zh": "An effective thesis takes a clear position and previews the supporting arguments. Option C states the claim and outlines three specific reasons that can be developed in body paragraphs.",
+      "tags": [
+        "thesis_statements",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G6-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G6-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G6",
+        "original_topic": "thesis_statements",
+        "is_seed": false
+      }
+    }
+  ]
+}

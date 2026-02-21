@@ -1,0 +1,641 @@
+{
+  "batch_name": "MAP_math_G4_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G4",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "division_multiplication",
+      "subtopic": null,
+      "difficulty": 0.2,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A supermarket packed 60 eggs into four egg boxes, split equally. How many eggs were in three boxes?",
+        "options": [
+          "A. 15",
+          "B. 20",
+          "C. 36",
+          "D. 45"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "A supermarket packed 60 eggs into four egg boxes, split equally. How many eggs were in three boxes?",
+        "options": [
+          "A. 15",
+          "B. 20",
+          "C. 36",
+          "D. 45"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "60 ÷ 4 = 15 eggs per box. 15 × 3 = 45 eggs in three boxes.",
+      "explanation_zh": "60 ÷ 4 = 15 eggs per box. 15 × 3 = 45 eggs in three boxes.",
+      "tags": [
+        "division_multiplication",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "division_multiplication",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "number_patterns",
+      "subtopic": null,
+      "difficulty": 0.22,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A number pattern starts with 12 and ends with 39. Which rule is suitable?",
+        "options": [
+          "A. Skip count by 2s",
+          "B. Skip count by 4s",
+          "C. Skip count by 5s",
+          "D. Skip count by 7s",
+          "E. Skip count by 9s"
+        ],
+        "answer": "E"
+      },
+      "content_zh": {
+        "stem": "A number pattern starts with 12 and ends with 39. Which rule is suitable?",
+        "options": [
+          "A. Skip count by 2s",
+          "B. Skip count by 4s",
+          "C. Skip count by 5s",
+          "D. Skip count by 7s",
+          "E. Skip count by 9s"
+        ],
+        "answer": "E"
+      },
+      "explanation_en": "39 - 12 = 27. 27 ÷ 9 = 3 steps. Pattern: 12, 21, 30, 39. Skip counting by 9s works.",
+      "explanation_zh": "39 - 12 = 27. 27 ÷ 9 = 3 steps. Pattern: 12, 21, 30, 39. Skip counting by 9s works.",
+      "tags": [
+        "number_patterns",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "number_patterns",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "geometry_triangles",
+      "subtopic": null,
+      "difficulty": 0.25,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which triangle is isosceles based on its angle measurements?",
+        "options": [
+          "A. Triangle with angles 60°, 70°, 50°",
+          "B. Triangle with angles 72°, 72°, 36°",
+          "C. Triangle with angles 90°, 45°, 45°",
+          "D. Triangle with angles 80°, 60°, 40°"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which triangle is isosceles based on its angle measurements?",
+        "options": [
+          "A. Triangle with angles 60°, 70°, 50°",
+          "B. Triangle with angles 72°, 72°, 36°",
+          "C. Triangle with angles 90°, 45°, 45°",
+          "D. Triangle with angles 80°, 60°, 40°"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "An isosceles triangle has exactly two equal angles. Option B has two 72° angles.",
+      "explanation_zh": "An isosceles triangle has exactly two equal angles. Option B has two 72° angles.",
+      "tags": [
+        "geometry_triangles",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "geometry_triangles",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "measurement_estimation",
+      "subtopic": null,
+      "difficulty": 0.27,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which item weighs approximately a gram?",
+        "options": [
+          "A. An apple",
+          "B. A can of cola",
+          "C. A stick of gum",
+          "D. A cellphone"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which item weighs approximately a gram?",
+        "options": [
+          "A. An apple",
+          "B. A can of cola",
+          "C. A stick of gum",
+          "D. A cellphone"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A gram is very light — about the weight of a paper clip. Only a stick of gum approaches this weight.",
+      "explanation_zh": "A gram is very light — about the weight of a paper clip. Only a stick of gum approaches this weight.",
+      "tags": [
+        "measurement_estimation",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-004",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "measurement_estimation",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "multi_digit_multiplication",
+      "subtopic": null,
+      "difficulty": 0.29,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is 43 × 27?",
+        "options": [
+          "A. 1,061",
+          "B. 1,121",
+          "C. 1,161",
+          "D. 1,261"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is 43 × 27?",
+        "options": [
+          "A. 1,061",
+          "B. 1,121",
+          "C. 1,161",
+          "D. 1,261"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "43 × 27 = 43 × 20 + 43 × 7 = 860 + 301 = 1,161.",
+      "explanation_zh": "43 × 27 = 43 × 20 + 43 × 7 = 860 + 301 = 1,161.",
+      "tags": [
+        "multi_digit_multiplication",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "multi_digit_multiplication",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "equivalent_fractions",
+      "subtopic": null,
+      "difficulty": 0.32,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which fraction is equivalent to 3/4?",
+        "options": [
+          "A. 6/8",
+          "B. 4/6",
+          "C. 5/8",
+          "D. 9/16"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which fraction is equivalent to 3/4?",
+        "options": [
+          "A. 6/8",
+          "B. 4/6",
+          "C. 5/8",
+          "D. 9/16"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Multiply both numerator and denominator of 3/4 by 2: (3×2)/(4×2) = 6/8. So 6/8 is equivalent to 3/4.",
+      "explanation_zh": "Multiply both numerator and denominator of 3/4 by 2: (3×2)/(4×2) = 6/8. So 6/8 is equivalent to 3/4.",
+      "tags": [
+        "equivalent_fractions",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "equivalent_fractions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "decimals_intro",
+      "subtopic": null,
+      "difficulty": 0.34,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which decimal represents the fraction 7/10?",
+        "options": [
+          "A. 0.07",
+          "B. 0.17",
+          "C. 0.7",
+          "D. 7.10"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which decimal represents the fraction 7/10?",
+        "options": [
+          "A. 0.07",
+          "B. 0.17",
+          "C. 0.7",
+          "D. 7.10"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "7/10 means 7 out of 10, which in decimal form is 0.7.",
+      "explanation_zh": "7/10 means 7 out of 10, which in decimal form is 0.7.",
+      "tags": [
+        "decimals_intro",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "decimals_intro",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "angles",
+      "subtopic": null,
+      "difficulty": 0.36,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "An angle measures exactly 90 degrees. What type of angle is it?",
+        "options": [
+          "A. Acute angle",
+          "B. Right angle",
+          "C. Obtuse angle",
+          "D. Straight angle"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "An angle measures exactly 90 degrees. What type of angle is it?",
+        "options": [
+          "A. Acute angle",
+          "B. Right angle",
+          "C. Obtuse angle",
+          "D. Straight angle"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A right angle measures exactly 90 degrees.",
+      "explanation_zh": "A right angle measures exactly 90 degrees.",
+      "tags": [
+        "angles",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "angles",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "unit_conversion",
+      "subtopic": null,
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The Artemis spacecraft traveled a distance of 3 kilometers to reach a testing station. How many meters is that?",
+        "options": [
+          "A. 30 meters",
+          "B. 300 meters",
+          "C. 3,000 meters",
+          "D. 30,000 meters"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "The Artemis spacecraft traveled a distance of 3 kilometers to reach a testing station. How many meters is that?",
+        "options": [
+          "A. 30 meters",
+          "B. 300 meters",
+          "C. 3,000 meters",
+          "D. 30,000 meters"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "1 kilometer = 1,000 meters. So 3 kilometers = 3 × 1,000 = 3,000 meters.",
+      "explanation_zh": "1 kilometer = 1,000 meters. So 3 kilometers = 3 × 1,000 = 3,000 meters.",
+      "tags": [
+        "unit_conversion",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G4-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "unit_conversion",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "lines_symmetry",
+      "subtopic": null,
+      "difficulty": 0.41,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "How many lines of symmetry does a regular hexagon have?",
+        "options": [
+          "A. 2",
+          "B. 4",
+          "C. 6",
+          "D. 8"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "How many lines of symmetry does a regular hexagon have?",
+        "options": [
+          "A. 2",
+          "B. 4",
+          "C. 6",
+          "D. 8"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A regular hexagon has 6 lines of symmetry — 3 through opposite vertices and 3 through midpoints of opposite sides.",
+      "explanation_zh": "A regular hexagon has 6 lines of symmetry — 3 through opposite vertices and 3 through midpoints of opposite sides.",
+      "tags": [
+        "lines_symmetry",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "lines_symmetry",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "word_problem_multi_step",
+      "subtopic": null,
+      "difficulty": 0.43,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A school ordered 12 boxes of markers. Each box has 24 markers. If the markers are shared equally among 8 classrooms, how many markers does each classroom get?",
+        "options": [
+          "A. 24",
+          "B. 36",
+          "C. 48",
+          "D. 288"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A school ordered 12 boxes of markers. Each box has 24 markers. If the markers are shared equally among 8 classrooms, how many markers does each classroom get?",
+        "options": [
+          "A. 24",
+          "B. 36",
+          "C. 48",
+          "D. 288"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Total markers = 12 × 24 = 288. Divided among 8 classrooms: 288 ÷ 8 = 36 markers each.",
+      "explanation_zh": "Total markers = 12 × 24 = 288. Divided among 8 classrooms: 288 ÷ 8 = 36 markers each.",
+      "tags": [
+        "word_problem_multi_step",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "word_problem_multi_step",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "long_division",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is 756 ÷ 9?",
+        "options": [
+          "A. 74",
+          "B. 84",
+          "C. 86",
+          "D. 94"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What is 756 ÷ 9?",
+        "options": [
+          "A. 74",
+          "B. 84",
+          "C. 86",
+          "D. 94"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "756 ÷ 9 = 84. Check: 84 × 9 = 756.",
+      "explanation_zh": "756 ÷ 9 = 84. Check: 84 × 9 = 756.",
+      "tags": [
+        "long_division",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "long_division",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "fraction_comparison",
+      "subtopic": null,
+      "difficulty": 0.48,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which fraction is the largest?",
+        "options": [
+          "A. 2/5",
+          "B. 3/8",
+          "C. 1/2",
+          "D. 3/10"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which fraction is the largest?",
+        "options": [
+          "A. 2/5",
+          "B. 3/8",
+          "C. 1/2",
+          "D. 3/10"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Convert to common denominator 40: 2/5 = 16/40, 3/8 = 15/40, 1/2 = 20/40, 3/10 = 12/40. The largest is 20/40 = 1/2.",
+      "explanation_zh": "Convert to common denominator 40: 2/5 = 16/40, 3/8 = 15/40, 1/2 = 20/40, 3/10 = 12/40. The largest is 20/40 = 1/2.",
+      "tags": [
+        "fraction_comparison",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "fraction_comparison",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G4",
+      "topic": "patterns_rules",
+      "subtopic": null,
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "An AI chatbot processes requests using this pattern: 2, 6, 18, 54, ___. What comes next?",
+        "options": [
+          "A. 72",
+          "B. 108",
+          "C. 162",
+          "D. 216"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "An AI chatbot processes requests using this pattern: 2, 6, 18, 54, ___. What comes next?",
+        "options": [
+          "A. 72",
+          "B. 108",
+          "C. 162",
+          "D. 216"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Each number is multiplied by 3: 2 × 3 = 6, 6 × 3 = 18, 18 × 3 = 54, 54 × 3 = 162.",
+      "explanation_zh": "Each number is multiplied by 3: 2 × 3 = 6, 6 × 3 = 18, 18 × 3 = 54, 54 × 3 = 162.",
+      "tags": [
+        "patterns_rules",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G4-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G4-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G4",
+        "original_topic": "patterns_rules",
+        "is_seed": false
+      }
+    }
+  ]
+}

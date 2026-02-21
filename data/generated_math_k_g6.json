@@ -1,0 +1,904 @@
+[
+  {
+    "id": "K1-MATH-101",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "counting_objects",
+    "question": "Count the stars: ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★. How many stars are there?",
+    "options": [
+      {"label": "A", "text": "11"},
+      {"label": "B", "text": "12"},
+      {"label": "C", "text": "13"},
+      {"label": "D", "text": "14"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Counting each star one by one gives us 13 stars."
+  },
+  {
+    "id": "K1-MATH-102",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "subtraction_within_20",
+    "question": "There are 15 birds sitting on a fence. 8 birds fly away. How many birds are still on the fence?",
+    "options": [
+      {"label": "A", "text": "5"},
+      {"label": "B", "text": "6"},
+      {"label": "C", "text": "7"},
+      {"label": "D", "text": "8"},
+      {"label": "E", "text": "9"}
+    ],
+    "correct_answer": "C",
+    "explanation": "15 birds minus 8 that flew away: 15 - 8 = 7 birds are still on the fence."
+  },
+  {
+    "id": "K1-MATH-103",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "comparing_numbers",
+    "question": "Which number is greater: 14 or 9?",
+    "options": [
+      {"label": "A", "text": "14"},
+      {"label": "B", "text": "9"},
+      {"label": "C", "text": "They are equal"},
+      {"label": "D", "text": "Cannot tell"}
+    ],
+    "correct_answer": "A",
+    "explanation": "14 is greater than 9 because 14 comes after 9 when counting."
+  },
+  {
+    "id": "K1-MATH-104",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "2d_shapes",
+    "question": "How many sides does a triangle have?",
+    "options": [
+      {"label": "A", "text": "2"},
+      {"label": "B", "text": "3"},
+      {"label": "C", "text": "4"},
+      {"label": "D", "text": "5"}
+    ],
+    "correct_answer": "B",
+    "explanation": "A triangle has exactly 3 sides. The prefix 'tri' means three."
+  },
+  {
+    "id": "K1-MATH-105",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "addition_within_20",
+    "question": "NASA's Artemis rocket carried 7 experiments on one trip and 6 experiments on the next trip to the Moon. How many experiments were carried in total?",
+    "options": [
+      {"label": "A", "text": "11"},
+      {"label": "B", "text": "12"},
+      {"label": "C", "text": "13"},
+      {"label": "D", "text": "14"},
+      {"label": "E", "text": "15"}
+    ],
+    "correct_answer": "C",
+    "explanation": "7 experiments + 6 experiments = 13 experiments in total."
+  },
+  {
+    "id": "K1-MATH-106",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "simple_patterns",
+    "question": "What comes next in the pattern? Circle, Square, Circle, Square, Circle, ___",
+    "options": [
+      {"label": "A", "text": "Circle"},
+      {"label": "B", "text": "Square"},
+      {"label": "C", "text": "Triangle"},
+      {"label": "D", "text": "Rectangle"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The pattern alternates between Circle and Square. After Circle, the next shape is Square."
+  },
+  {
+    "id": "K1-MATH-107",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "position_words",
+    "question": "The cat is ON the table. The dog is UNDER the table. Where is the cat?",
+    "options": [
+      {"label": "A", "text": "Under the table"},
+      {"label": "B", "text": "On the table"},
+      {"label": "C", "text": "Next to the table"},
+      {"label": "D", "text": "Behind the table"}
+    ],
+    "correct_answer": "B",
+    "explanation": "The sentence says 'The cat is ON the table,' so the cat is on top of the table."
+  },
+  {
+    "id": "K1-MATH-108",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "sorting_classifying",
+    "question": "Which of these does NOT belong in a group of round objects?",
+    "options": [
+      {"label": "A", "text": "Basketball"},
+      {"label": "B", "text": "Orange"},
+      {"label": "C", "text": "Box"},
+      {"label": "D", "text": "Marble"}
+    ],
+    "correct_answer": "C",
+    "explanation": "A basketball, orange, and marble are all round. A box is not round — it has flat sides and corners."
+  },
+  {
+    "id": "K1-MATH-109",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "3d_shapes",
+    "question": "A ball is shaped like which 3D shape?",
+    "options": [
+      {"label": "A", "text": "Cube"},
+      {"label": "B", "text": "Sphere"},
+      {"label": "C", "text": "Cylinder"},
+      {"label": "D", "text": "Cone"}
+    ],
+    "correct_answer": "B",
+    "explanation": "A ball is perfectly round in all directions, which is the shape of a sphere."
+  },
+  {
+    "id": "K1-MATH-110",
+    "grade": "K-1",
+    "subject": "math",
+    "topic": "number_order",
+    "question": "Put these numbers in order from smallest to largest: 18, 4, 11. Which is the correct order?",
+    "options": [
+      {"label": "A", "text": "18, 11, 4"},
+      {"label": "B", "text": "4, 11, 18"},
+      {"label": "C", "text": "11, 4, 18"},
+      {"label": "D", "text": "4, 18, 11"}
+    ],
+    "correct_answer": "B",
+    "explanation": "From smallest to largest: 4 < 11 < 18. The correct order is 4, 11, 18."
+  },
+  {
+    "id": "G2-MATH-101",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "place_value",
+    "question": "In the number 537, what digit is in the hundreds place?",
+    "options": [
+      {"label": "A", "text": "3"},
+      {"label": "B", "text": "5"},
+      {"label": "C", "text": "7"},
+      {"label": "D", "text": "53"}
+    ],
+    "correct_answer": "B",
+    "explanation": "In 537, the digit 5 is in the hundreds place, 3 is in the tens place, and 7 is in the ones place."
+  },
+  {
+    "id": "G2-MATH-102",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "addition_within_100",
+    "question": "47 + 36 = ?",
+    "options": [
+      {"label": "A", "text": "73"},
+      {"label": "B", "text": "83"},
+      {"label": "C", "text": "81"},
+      {"label": "D", "text": "77"}
+    ],
+    "correct_answer": "B",
+    "explanation": "47 + 36: add the ones (7 + 6 = 13, write 3 carry 1), then the tens (4 + 3 + 1 = 8). The answer is 83."
+  },
+  {
+    "id": "G2-MATH-103",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "telling_time",
+    "question": "A clock shows the hour hand on 3 and the minute hand on 6. What time is it?",
+    "options": [
+      {"label": "A", "text": "3:06"},
+      {"label": "B", "text": "3:30"},
+      {"label": "C", "text": "6:03"},
+      {"label": "D", "text": "6:15"}
+    ],
+    "correct_answer": "B",
+    "explanation": "When the minute hand points to 6, it means 30 minutes. The hour hand on 3 means the hour is 3. So the time is 3:30."
+  },
+  {
+    "id": "G2-MATH-104",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "money",
+    "question": "Emma has 3 dimes and 2 nickels. How much money does she have?",
+    "options": [
+      {"label": "A", "text": "25 cents"},
+      {"label": "B", "text": "35 cents"},
+      {"label": "C", "text": "40 cents"},
+      {"label": "D", "text": "50 cents"}
+    ],
+    "correct_answer": "C",
+    "explanation": "3 dimes = 3 × 10 = 30 cents. 2 nickels = 2 × 5 = 10 cents. Total: 30 + 10 = 40 cents."
+  },
+  {
+    "id": "G2-MATH-105",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "intro_multiplication",
+    "question": "There are 5 bags with 3 apples in each bag. How many apples are there in all?",
+    "options": [
+      {"label": "A", "text": "8"},
+      {"label": "B", "text": "12"},
+      {"label": "C", "text": "15"},
+      {"label": "D", "text": "18"}
+    ],
+    "correct_answer": "C",
+    "explanation": "5 bags × 3 apples per bag = 15 apples in all."
+  },
+  {
+    "id": "G2-MATH-106",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "subtraction_within_100",
+    "question": "NASA's Artemis team had 82 mission tasks. They completed 37 tasks in the first week. How many tasks are left?",
+    "options": [
+      {"label": "A", "text": "35"},
+      {"label": "B", "text": "45"},
+      {"label": "C", "text": "55"},
+      {"label": "D", "text": "49"}
+    ],
+    "correct_answer": "B",
+    "explanation": "82 - 37 = 45 tasks remaining."
+  },
+  {
+    "id": "G2-MATH-107",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "measurement_length",
+    "question": "A pencil is 19 centimeters long and a crayon is 12 centimeters long. How much longer is the pencil than the crayon?",
+    "options": [
+      {"label": "A", "text": "5 cm"},
+      {"label": "B", "text": "6 cm"},
+      {"label": "C", "text": "7 cm"},
+      {"label": "D", "text": "8 cm"}
+    ],
+    "correct_answer": "C",
+    "explanation": "19 - 12 = 7. The pencil is 7 centimeters longer than the crayon."
+  },
+  {
+    "id": "G2-MATH-108",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "bar_graphs",
+    "question": "A bar graph shows the number of pets students have: Dogs = 8, Cats = 6, Fish = 3, Birds = 2. How many more students have dogs than fish?",
+    "options": [
+      {"label": "A", "text": "3"},
+      {"label": "B", "text": "4"},
+      {"label": "C", "text": "5"},
+      {"label": "D", "text": "6"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Dogs = 8, Fish = 3. The difference is 8 - 3 = 5 more students have dogs."
+  },
+  {
+    "id": "G2-MATH-109",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "odd_even",
+    "question": "Which of the following numbers is an odd number?",
+    "options": [
+      {"label": "A", "text": "14"},
+      {"label": "B", "text": "28"},
+      {"label": "C", "text": "33"},
+      {"label": "D", "text": "46"}
+    ],
+    "correct_answer": "C",
+    "explanation": "An odd number is not evenly divisible by 2. 33 ends in 3, so it is odd. The other numbers (14, 28, 46) are all even."
+  },
+  {
+    "id": "G2-MATH-110",
+    "grade": "G2",
+    "subject": "math",
+    "topic": "skip_counting",
+    "question": "Count by 5s: 45, 50, 55, 60, ___. What comes next?",
+    "options": [
+      {"label": "A", "text": "62"},
+      {"label": "B", "text": "63"},
+      {"label": "C", "text": "65"},
+      {"label": "D", "text": "70"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Counting by 5s: each number is 5 more than the previous. 60 + 5 = 65."
+  },
+  {
+    "id": "G3-MATH-101",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "multiplication_facts",
+    "question": "What is 7 × 8?",
+    "options": [
+      {"label": "A", "text": "48"},
+      {"label": "B", "text": "54"},
+      {"label": "C", "text": "56"},
+      {"label": "D", "text": "63"}
+    ],
+    "correct_answer": "C",
+    "explanation": "7 × 8 = 56."
+  },
+  {
+    "id": "G3-MATH-102",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "division_facts",
+    "question": "A bakery made 36 cupcakes and packed them equally into 4 boxes. How many cupcakes are in each box?",
+    "options": [
+      {"label": "A", "text": "7"},
+      {"label": "B", "text": "8"},
+      {"label": "C", "text": "9"},
+      {"label": "D", "text": "10"}
+    ],
+    "correct_answer": "C",
+    "explanation": "36 ÷ 4 = 9 cupcakes per box."
+  },
+  {
+    "id": "G3-MATH-103",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "fractions_comparison",
+    "question": "Which fraction is larger: 1/3 or 1/6?",
+    "options": [
+      {"label": "A", "text": "1/3"},
+      {"label": "B", "text": "1/6"},
+      {"label": "C", "text": "They are equal"},
+      {"label": "D", "text": "Cannot be determined"}
+    ],
+    "correct_answer": "A",
+    "explanation": "When the numerators are the same, the fraction with the smaller denominator is larger. Since 3 < 6, we have 1/3 > 1/6."
+  },
+  {
+    "id": "G3-MATH-104",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "rounding",
+    "question": "Round 467 to the nearest hundred.",
+    "options": [
+      {"label": "A", "text": "400"},
+      {"label": "B", "text": "460"},
+      {"label": "C", "text": "470"},
+      {"label": "D", "text": "500"}
+    ],
+    "correct_answer": "D",
+    "explanation": "To round to the nearest hundred, look at the tens digit. The tens digit is 6, which is 5 or more, so round up. 467 rounds to 500."
+  },
+  {
+    "id": "G3-MATH-105",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "elapsed_time",
+    "question": "A movie starts at 2:15 PM and ends at 4:00 PM. How long is the movie?",
+    "options": [
+      {"label": "A", "text": "1 hour 15 minutes"},
+      {"label": "B", "text": "1 hour 30 minutes"},
+      {"label": "C", "text": "1 hour 45 minutes"},
+      {"label": "D", "text": "2 hours 15 minutes"}
+    ],
+    "correct_answer": "C",
+    "explanation": "From 2:15 PM to 4:00 PM: 2:15 to 3:15 is 1 hour, then 3:15 to 4:00 is 45 minutes. Total: 1 hour 45 minutes."
+  },
+  {
+    "id": "G3-MATH-106",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "area",
+    "question": "Scientists studying climate change measured a rectangular field that is 9 meters long and 4 meters wide. What is the area of the field?",
+    "options": [
+      {"label": "A", "text": "13 square meters"},
+      {"label": "B", "text": "26 square meters"},
+      {"label": "C", "text": "36 square meters"},
+      {"label": "D", "text": "40 square meters"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Area of a rectangle = length × width = 9 × 4 = 36 square meters."
+  },
+  {
+    "id": "G3-MATH-107",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "perimeter",
+    "question": "A square garden has sides of 6 feet each. What is the perimeter of the garden?",
+    "options": [
+      {"label": "A", "text": "12 feet"},
+      {"label": "B", "text": "18 feet"},
+      {"label": "C", "text": "24 feet"},
+      {"label": "D", "text": "36 feet"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Perimeter of a square = 4 × side = 4 × 6 = 24 feet."
+  },
+  {
+    "id": "G3-MATH-108",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "line_plots",
+    "question": "A line plot shows how many books students read in a week: 1 book (3 students), 2 books (5 students), 3 books (4 students), 4 books (2 students). How many students read exactly 2 books?",
+    "options": [
+      {"label": "A", "text": "2"},
+      {"label": "B", "text": "3"},
+      {"label": "C", "text": "4"},
+      {"label": "D", "text": "5"}
+    ],
+    "correct_answer": "D",
+    "explanation": "According to the line plot, 5 students read exactly 2 books."
+  },
+  {
+    "id": "G3-MATH-109",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "multiplication_word_problem",
+    "question": "An AI company's server room has 6 rows of computers with 9 computers in each row. How many computers are there in all?",
+    "options": [
+      {"label": "A", "text": "15"},
+      {"label": "B", "text": "45"},
+      {"label": "C", "text": "54"},
+      {"label": "D", "text": "63"}
+    ],
+    "correct_answer": "C",
+    "explanation": "6 rows × 9 computers per row = 54 computers in total."
+  },
+  {
+    "id": "G3-MATH-110",
+    "grade": "G3",
+    "subject": "math",
+    "topic": "fractions_number_line",
+    "question": "Where does the fraction 3/4 fall on a number line between 0 and 1?",
+    "options": [
+      {"label": "A", "text": "Closer to 0"},
+      {"label": "B", "text": "Exactly at the halfway point"},
+      {"label": "C", "text": "Closer to 1"},
+      {"label": "D", "text": "At 1"}
+    ],
+    "correct_answer": "C",
+    "explanation": "3/4 = 0.75, which is past the halfway point (1/2 = 0.50) and closer to 1."
+  },
+  {
+    "id": "G4-MATH-101",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "multi_digit_multiplication",
+    "question": "What is 43 × 27?",
+    "options": [
+      {"label": "A", "text": "1,061"},
+      {"label": "B", "text": "1,121"},
+      {"label": "C", "text": "1,161"},
+      {"label": "D", "text": "1,261"}
+    ],
+    "correct_answer": "C",
+    "explanation": "43 × 27 = 43 × 20 + 43 × 7 = 860 + 301 = 1,161."
+  },
+  {
+    "id": "G4-MATH-102",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "equivalent_fractions",
+    "question": "Which fraction is equivalent to 3/4?",
+    "options": [
+      {"label": "A", "text": "6/8"},
+      {"label": "B", "text": "4/6"},
+      {"label": "C", "text": "5/8"},
+      {"label": "D", "text": "9/16"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Multiply both numerator and denominator of 3/4 by 2: (3×2)/(4×2) = 6/8. So 6/8 is equivalent to 3/4."
+  },
+  {
+    "id": "G4-MATH-103",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "decimals_intro",
+    "question": "Which decimal represents the fraction 7/10?",
+    "options": [
+      {"label": "A", "text": "0.07"},
+      {"label": "B", "text": "0.17"},
+      {"label": "C", "text": "0.7"},
+      {"label": "D", "text": "7.10"}
+    ],
+    "correct_answer": "C",
+    "explanation": "7/10 means 7 out of 10, which in decimal form is 0.7."
+  },
+  {
+    "id": "G4-MATH-104",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "angles",
+    "question": "An angle measures exactly 90 degrees. What type of angle is it?",
+    "options": [
+      {"label": "A", "text": "Acute angle"},
+      {"label": "B", "text": "Right angle"},
+      {"label": "C", "text": "Obtuse angle"},
+      {"label": "D", "text": "Straight angle"}
+    ],
+    "correct_answer": "B",
+    "explanation": "A right angle measures exactly 90 degrees."
+  },
+  {
+    "id": "G4-MATH-105",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "unit_conversion",
+    "question": "The Artemis spacecraft traveled a distance of 3 kilometers to reach a testing station. How many meters is that?",
+    "options": [
+      {"label": "A", "text": "30 meters"},
+      {"label": "B", "text": "300 meters"},
+      {"label": "C", "text": "3,000 meters"},
+      {"label": "D", "text": "30,000 meters"}
+    ],
+    "correct_answer": "C",
+    "explanation": "1 kilometer = 1,000 meters. So 3 kilometers = 3 × 1,000 = 3,000 meters."
+  },
+  {
+    "id": "G4-MATH-106",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "lines_symmetry",
+    "question": "How many lines of symmetry does a regular hexagon have?",
+    "options": [
+      {"label": "A", "text": "2"},
+      {"label": "B", "text": "4"},
+      {"label": "C", "text": "6"},
+      {"label": "D", "text": "8"}
+    ],
+    "correct_answer": "C",
+    "explanation": "A regular hexagon has 6 lines of symmetry — 3 through opposite vertices and 3 through midpoints of opposite sides."
+  },
+  {
+    "id": "G4-MATH-107",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "word_problem_multi_step",
+    "question": "A school ordered 12 boxes of markers. Each box has 24 markers. If the markers are shared equally among 8 classrooms, how many markers does each classroom get?",
+    "options": [
+      {"label": "A", "text": "24"},
+      {"label": "B", "text": "36"},
+      {"label": "C", "text": "48"},
+      {"label": "D", "text": "288"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Total markers = 12 × 24 = 288. Divided among 8 classrooms: 288 ÷ 8 = 36 markers each."
+  },
+  {
+    "id": "G4-MATH-108",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "long_division",
+    "question": "What is 756 ÷ 9?",
+    "options": [
+      {"label": "A", "text": "74"},
+      {"label": "B", "text": "84"},
+      {"label": "C", "text": "86"},
+      {"label": "D", "text": "94"}
+    ],
+    "correct_answer": "B",
+    "explanation": "756 ÷ 9 = 84. Check: 84 × 9 = 756."
+  },
+  {
+    "id": "G4-MATH-109",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "fraction_comparison",
+    "question": "Which fraction is the largest?",
+    "options": [
+      {"label": "A", "text": "2/5"},
+      {"label": "B", "text": "3/8"},
+      {"label": "C", "text": "1/2"},
+      {"label": "D", "text": "3/10"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Convert to common denominator 40: 2/5 = 16/40, 3/8 = 15/40, 1/2 = 20/40, 3/10 = 12/40. The largest is 20/40 = 1/2."
+  },
+  {
+    "id": "G4-MATH-110",
+    "grade": "G4",
+    "subject": "math",
+    "topic": "patterns_rules",
+    "question": "An AI chatbot processes requests using this pattern: 2, 6, 18, 54, ___. What comes next?",
+    "options": [
+      {"label": "A", "text": "72"},
+      {"label": "B", "text": "108"},
+      {"label": "C", "text": "162"},
+      {"label": "D", "text": "216"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Each number is multiplied by 3: 2 × 3 = 6, 6 × 3 = 18, 18 × 3 = 54, 54 × 3 = 162."
+  },
+  {
+    "id": "G5-MATH-101",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "fraction_addition",
+    "question": "What is 2/5 + 1/3?",
+    "options": [
+      {"label": "A", "text": "3/8"},
+      {"label": "B", "text": "3/15"},
+      {"label": "C", "text": "11/15"},
+      {"label": "D", "text": "7/15"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Find a common denominator: 2/5 = 6/15, 1/3 = 5/15. Then 6/15 + 5/15 = 11/15."
+  },
+  {
+    "id": "G5-MATH-102",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "decimal_multiplication",
+    "question": "What is 3.6 × 0.4?",
+    "options": [
+      {"label": "A", "text": "1.24"},
+      {"label": "B", "text": "1.44"},
+      {"label": "C", "text": "14.4"},
+      {"label": "D", "text": "0.144"}
+    ],
+    "correct_answer": "B",
+    "explanation": "36 × 4 = 144. Count decimal places: 3.6 has 1, 0.4 has 1, total 2 decimal places. So 1.44."
+  },
+  {
+    "id": "G5-MATH-103",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "volume",
+    "question": "A rectangular box is 5 cm long, 3 cm wide, and 4 cm tall. What is the volume of the box?",
+    "options": [
+      {"label": "A", "text": "12 cubic cm"},
+      {"label": "B", "text": "24 cubic cm"},
+      {"label": "C", "text": "48 cubic cm"},
+      {"label": "D", "text": "60 cubic cm"}
+    ],
+    "correct_answer": "D",
+    "explanation": "Volume = length × width × height = 5 × 3 × 4 = 60 cubic centimeters."
+  },
+  {
+    "id": "G5-MATH-104",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "coordinate_plane",
+    "question": "Which ordered pair represents a point that is 4 units to the right and 3 units up from the origin?",
+    "options": [
+      {"label": "A", "text": "(3, 4)"},
+      {"label": "B", "text": "(4, 3)"},
+      {"label": "C", "text": "(4, -3)"},
+      {"label": "D", "text": "(-4, 3)"}
+    ],
+    "correct_answer": "B",
+    "explanation": "On a coordinate plane, the first number (x) shows right/left and the second (y) shows up/down. 4 right and 3 up is (4, 3)."
+  },
+  {
+    "id": "G5-MATH-105",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "order_of_operations",
+    "question": "What is the value of 8 + 3 × (10 - 4)?",
+    "options": [
+      {"label": "A", "text": "26"},
+      {"label": "B", "text": "44"},
+      {"label": "C", "text": "66"},
+      {"label": "D", "text": "38"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Using order of operations (PEMDAS): parentheses first: 10 - 4 = 6. Then multiply: 3 × 6 = 18. Then add: 8 + 18 = 26."
+  },
+  {
+    "id": "G5-MATH-106",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "fraction_division",
+    "question": "What is 3/4 ÷ 1/2?",
+    "options": [
+      {"label": "A", "text": "3/8"},
+      {"label": "B", "text": "3/2"},
+      {"label": "C", "text": "1/2"},
+      {"label": "D", "text": "2/3"}
+    ],
+    "correct_answer": "B",
+    "explanation": "To divide fractions, multiply by the reciprocal: 3/4 × 2/1 = 6/4 = 3/2."
+  },
+  {
+    "id": "G5-MATH-107",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "algebraic_thinking",
+    "question": "If 5n + 3 = 28, what is the value of n?",
+    "options": [
+      {"label": "A", "text": "3"},
+      {"label": "B", "text": "5"},
+      {"label": "C", "text": "6"},
+      {"label": "D", "text": "7"}
+    ],
+    "correct_answer": "B",
+    "explanation": "5n + 3 = 28. Subtract 3: 5n = 25. Divide by 5: n = 5."
+  },
+  {
+    "id": "G5-MATH-108",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "decimal_division",
+    "question": "Climate scientists recorded 12.6 inches of rain over 3 days. What was the average daily rainfall?",
+    "options": [
+      {"label": "A", "text": "3.8 inches"},
+      {"label": "B", "text": "4.0 inches"},
+      {"label": "C", "text": "4.2 inches"},
+      {"label": "D", "text": "4.6 inches"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Average = total ÷ number of days = 12.6 ÷ 3 = 4.2 inches per day."
+  },
+  {
+    "id": "G5-MATH-109",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "fraction_multiplication",
+    "question": "A recipe calls for 2/3 cup of sugar. If you want to make half the recipe, how much sugar do you need?",
+    "options": [
+      {"label": "A", "text": "1/6 cup"},
+      {"label": "B", "text": "1/3 cup"},
+      {"label": "C", "text": "2/6 cup"},
+      {"label": "D", "text": "4/3 cups"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Half of 2/3 = 1/2 × 2/3 = 2/6 = 1/3 cup. Note that 2/6 simplifies to 1/3."
+  },
+  {
+    "id": "G5-MATH-110",
+    "grade": "G5",
+    "subject": "math",
+    "topic": "volume_word_problem",
+    "question": "An Artemis supply container for the Moon mission is 8 feet long, 5 feet wide, and 3 feet high. What is its volume?",
+    "options": [
+      {"label": "A", "text": "40 cubic feet"},
+      {"label": "B", "text": "79 cubic feet"},
+      {"label": "C", "text": "120 cubic feet"},
+      {"label": "D", "text": "160 cubic feet"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Volume = length × width × height = 8 × 5 × 3 = 120 cubic feet."
+  },
+  {
+    "id": "G6-MATH-101",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "ratios",
+    "question": "In a class, the ratio of boys to girls is 3:5. If there are 24 students in total, how many are boys?",
+    "options": [
+      {"label": "A", "text": "6"},
+      {"label": "B", "text": "9"},
+      {"label": "C", "text": "12"},
+      {"label": "D", "text": "15"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Total parts = 3 + 5 = 8. Each part = 24 ÷ 8 = 3 students. Boys = 3 × 3 = 9."
+  },
+  {
+    "id": "G6-MATH-102",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "percent",
+    "question": "A store is having a 25% off sale. If a jacket originally costs $80, what is the sale price?",
+    "options": [
+      {"label": "A", "text": "$20"},
+      {"label": "B", "text": "$55"},
+      {"label": "C", "text": "$60"},
+      {"label": "D", "text": "$65"}
+    ],
+    "correct_answer": "C",
+    "explanation": "25% of $80 = 0.25 × 80 = $20 discount. Sale price = $80 - $20 = $60."
+  },
+  {
+    "id": "G6-MATH-103",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "integers",
+    "question": "What is -8 + 5?",
+    "options": [
+      {"label": "A", "text": "-13"},
+      {"label": "B", "text": "-3"},
+      {"label": "C", "text": "3"},
+      {"label": "D", "text": "13"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Starting at -8 on the number line and moving 5 units to the right gives -3."
+  },
+  {
+    "id": "G6-MATH-104",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "expressions_equations",
+    "question": "Solve for x: 3x - 7 = 14",
+    "options": [
+      {"label": "A", "text": "3"},
+      {"label": "B", "text": "5"},
+      {"label": "C", "text": "7"},
+      {"label": "D", "text": "9"}
+    ],
+    "correct_answer": "C",
+    "explanation": "3x - 7 = 14. Add 7 to both sides: 3x = 21. Divide by 3: x = 7."
+  },
+  {
+    "id": "G6-MATH-105",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "area_of_polygons",
+    "question": "What is the area of a triangle with a base of 10 cm and a height of 6 cm?",
+    "options": [
+      {"label": "A", "text": "16 cm²"},
+      {"label": "B", "text": "30 cm²"},
+      {"label": "C", "text": "60 cm²"},
+      {"label": "D", "text": "36 cm²"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Area of a triangle = 1/2 × base × height = 1/2 × 10 × 6 = 30 cm²."
+  },
+  {
+    "id": "G6-MATH-106",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "statistical_measures",
+    "question": "Find the median of this data set: 12, 7, 15, 3, 9, 20, 11",
+    "options": [
+      {"label": "A", "text": "9"},
+      {"label": "B", "text": "11"},
+      {"label": "C", "text": "12"},
+      {"label": "D", "text": "15"}
+    ],
+    "correct_answer": "B",
+    "explanation": "First, order the data: 3, 7, 9, 11, 12, 15, 20. The middle value (4th out of 7) is 11."
+  },
+  {
+    "id": "G6-MATH-107",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "ratio_word_problem",
+    "question": "An AI system processes requests at a rate of 450 per second. At this rate, how many requests does it process in 20 seconds?",
+    "options": [
+      {"label": "A", "text": "4,500"},
+      {"label": "B", "text": "9,000"},
+      {"label": "C", "text": "9,500"},
+      {"label": "D", "text": "45,000"}
+    ],
+    "correct_answer": "B",
+    "explanation": "450 requests per second × 20 seconds = 9,000 requests."
+  },
+  {
+    "id": "G6-MATH-108",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "box_plots",
+    "question": "A box plot shows: minimum = 10, Q1 = 15, median = 22, Q3 = 30, maximum = 40. What is the interquartile range (IQR)?",
+    "options": [
+      {"label": "A", "text": "8"},
+      {"label": "B", "text": "12"},
+      {"label": "C", "text": "15"},
+      {"label": "D", "text": "30"}
+    ],
+    "correct_answer": "C",
+    "explanation": "IQR = Q3 - Q1 = 30 - 15 = 15."
+  },
+  {
+    "id": "G6-MATH-109",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "percent_word_problem",
+    "question": "In 2025, a city's average temperature increased by 2°F. If the original average was 58°F, what is the percent increase, rounded to the nearest whole number?",
+    "options": [
+      {"label": "A", "text": "2%"},
+      {"label": "B", "text": "3%"},
+      {"label": "C", "text": "5%"},
+      {"label": "D", "text": "8%"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Percent increase = (increase ÷ original) × 100 = (2 ÷ 58) × 100 ≈ 3.4%, which rounds to 3%."
+  },
+  {
+    "id": "G6-MATH-110",
+    "grade": "G6",
+    "subject": "math",
+    "topic": "coordinate_plane_distance",
+    "question": "What is the distance between the points (2, 3) and (2, -4) on the coordinate plane?",
+    "options": [
+      {"label": "A", "text": "1"},
+      {"label": "B", "text": "5"},
+      {"label": "C", "text": "7"},
+      {"label": "D", "text": "10"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Both points have the same x-coordinate (2), so the distance is the difference in y-coordinates: |3 - (-4)| = |3 + 4| = 7."
+  }
+]

@@ -1,0 +1,1021 @@
+{
+  "batch_name": "MAP_english_G10_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G10",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "vocabulary",
+      "subtopic": "context_clues",
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Based on context, what does 'unheralded' mean in: 'yet in the 1860s, its configuration was a concept utterly unheralded'?",
+        "options": [
+          "A. A design kept secret until patent lawsuit",
+          "B. Initially unsuccessful with no public acclaim",
+          "C. Entirely new, unprecedented",
+          "D. Patent not yet secured, official existence unrecognized"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Based on context, what does 'unheralded' mean in: 'yet in the 1860s, its configuration was a concept utterly unheralded'?",
+        "options": [
+          "A. A design kept secret until patent lawsuit",
+          "B. Initially unsuccessful with no public acclaim",
+          "C. Entirely new, unprecedented",
+          "D. Patent not yet secured, official existence unrecognized"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Unheralded' means without prior announcement or precedent — the flat-bottomed paper bag design was completely new.",
+      "explanation_zh": "'Unheralded' means without prior announcement or precedent — the flat-bottomed paper bag design was completely new.",
+      "tags": [
+        "vocabulary_in_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "vocabulary_in_context",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "reading_comp",
+      "subtopic": "text_structure",
+      "difficulty": 0.51,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence conveys the causal relationship and chronological sequence about a purloined blueprint?",
+        "options": [
+          "A. Because individual stole blueprint, he was privy to construction...",
+          "B. Individual, who had been privy to construction, purloined blueprint and subsequently secured patent",
+          "C. After fraudulently securing patent, individual who was privy...",
+          "D. Even though individual purloined blueprint, he fraudulently secured patent only after..."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence conveys the causal relationship and chronological sequence about a purloined blueprint?",
+        "options": [
+          "A. Because individual stole blueprint, he was privy to construction...",
+          "B. Individual, who had been privy to construction, purloined blueprint and subsequently secured patent",
+          "C. After fraudulently securing patent, individual who was privy...",
+          "D. Even though individual purloined blueprint, he fraudulently secured patent only after..."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Option B preserves correct sequence: access → theft → fraudulent patenting, with 'subsequently' marking temporal progression.",
+      "explanation_zh": "Option B preserves correct sequence: access → theft → fraudulent patenting, with 'subsequently' marking temporal progression.",
+      "tags": [
+        "causal_relationships",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "causal_relationships",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "reading_comp",
+      "subtopic": "theme",
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which statement synthesizes the most significant thematic conflict and resolution in Margaret Knight's adult life?",
+        "options": [
+          "A. Transitioned from cotton mill worker to entrepreneur founding Eastern Paper Bag Co.",
+          "B. Overcame childhood poverty through prolific inventions and patents",
+          "C. Pioneer woman who remained unmarried, established business, inducted into Hall of Fame",
+          "D. Demonstrated legal resolve and sustained ingenuity by litigating for invention rights and establishing multi-patented career"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Which statement synthesizes the most significant thematic conflict and resolution in Margaret Knight's adult life?",
+        "options": [
+          "A. Transitioned from cotton mill worker to entrepreneur founding Eastern Paper Bag Co.",
+          "B. Overcame childhood poverty through prolific inventions and patents",
+          "C. Pioneer woman who remained unmarried, established business, inducted into Hall of Fame",
+          "D. Demonstrated legal resolve and sustained ingenuity by litigating for invention rights and establishing multi-patented career"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "The passage emphasizes her confrontation with patent theft, successful litigation, and 86 subsequent patents.",
+      "explanation_zh": "The passage emphasizes her confrontation with patent theft, successful litigation, and 86 subsequent patents.",
+      "tags": [
+        "thematic_synthesis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "thematic_synthesis",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "grammar",
+      "subtopic": "pronouns",
+      "difficulty": 0.54,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "'Some members were selected to speak, including __________.' Which option completes this correctly?",
+        "options": [
+          "A. me and my mom",
+          "B. my mom and me",
+          "C. I and my mom",
+          "D. my mom and I"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "'Some members were selected to speak, including __________.' Which option completes this correctly?",
+        "options": [
+          "A. me and my mom",
+          "B. my mom and me",
+          "C. I and my mom",
+          "D. my mom and I"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Including' introduces objects. Use object pronoun 'me'. Etiquette places others before self: 'my mom and me'.",
+      "explanation_zh": "'Including' introduces objects. Use object pronoun 'me'. Etiquette places others before self: 'my mom and me'.",
+      "tags": [
+        "object_pronouns",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "object_pronouns",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "grammar",
+      "subtopic": "punctuation",
+      "difficulty": 0.56,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence demonstrates accurate punctuation?",
+        "options": [
+          "A. Policy which, mandates weekly reports has caused friction...",
+          "B. To prepare for merger, senior team agreed to work weekend, a regrettable necessity.",
+          "C. As accomplished linguist Dr. Mansoori, understood archaic conjugations...",
+          "D. Algorithm, as you know Professor Chen is designed to calculate..."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence demonstrates accurate punctuation?",
+        "options": [
+          "A. Policy which, mandates weekly reports has caused friction...",
+          "B. To prepare for merger, senior team agreed to work weekend, a regrettable necessity.",
+          "C. As accomplished linguist Dr. Mansoori, understood archaic conjugations...",
+          "D. Algorithm, as you know Professor Chen is designed to calculate..."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Option B correctly uses comma after introductory phrase and comma before appositive phrase ('a regrettable necessity').",
+      "explanation_zh": "Option B correctly uses comma after introductory phrase and comma before appositive phrase ('a regrettable necessity').",
+      "tags": [
+        "punctuation_accuracy",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "punctuation_accuracy",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "grammar",
+      "subtopic": "modifiers",
+      "difficulty": 0.57,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Correct this misplaced modifier: 'Known for groundbreaking studies, the committee awarded Dr. Ramos the honor.'",
+        "options": [
+          "A. Committee known for groundbreaking studies awarded Dr. Ramos...",
+          "B. Dr. Ramos, known for groundbreaking studies, was awarded honor by committee",
+          "C. Dr. Ramos, who was known for studies, was awarded honor, it was given by committee",
+          "D. Known for studies, Dr. Ramos was awarded by committee the honor"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Correct this misplaced modifier: 'Known for groundbreaking studies, the committee awarded Dr. Ramos the honor.'",
+        "options": [
+          "A. Committee known for groundbreaking studies awarded Dr. Ramos...",
+          "B. Dr. Ramos, known for groundbreaking studies, was awarded honor by committee",
+          "C. Dr. Ramos, who was known for studies, was awarded honor, it was given by committee",
+          "D. Known for studies, Dr. Ramos was awarded by committee the honor"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The phrase 'known for groundbreaking studies' describes Dr. Ramos, so it must sit adjacent to her name.",
+      "explanation_zh": "The phrase 'known for groundbreaking studies' describes Dr. Ramos, so it must sit adjacent to her name.",
+      "tags": [
+        "misplaced_modifiers",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "misplaced_modifiers",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "rhetorical_analysis",
+      "subtopic": null,
+      "difficulty": 0.59,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In her commencement address, the speaker began: 'Ten years ago, I sat exactly where you sit now — terrified, excited, and completely unsure of what came next. I failed my first job interview. I was rejected from graduate school twice. And I am standing here today as the CEO of a company that did not exist when I graduated.' What rhetorical strategy does the speaker primarily employ?",
+        "options": [
+          "A. Appeal to authority by listing her credentials",
+          "B. Establishing ethos through vulnerability and personal narrative to connect with the audience",
+          "C. Using statistics to prove her point",
+          "D. Attacking opposing viewpoints"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In her commencement address, the speaker began: 'Ten years ago, I sat exactly where you sit now — terrified, excited, and completely unsure of what came next. I failed my first job interview. I was rejected from graduate school twice. And I am standing here today as the CEO of a company that did not exist when I graduated.' What rhetorical strategy does the speaker primarily employ?",
+        "options": [
+          "A. Appeal to authority by listing her credentials",
+          "B. Establishing ethos through vulnerability and personal narrative to connect with the audience",
+          "C. Using statistics to prove her point",
+          "D. Attacking opposing viewpoints"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The speaker builds credibility (ethos) by sharing personal failures and connecting with the audience's current experience. Vulnerability creates trust and relatability.",
+      "explanation_zh": "The speaker builds credibility (ethos) by sharing personal failures and connecting with the audience's current experience. Vulnerability creates trust and relatability.",
+      "tags": [
+        "rhetorical_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "rhetorical_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "dual_passage_comparison",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passages:\nPassage 1 (EU Official, 2025): 'The European Union's AI Act establishes the world's first comprehensive legal framework for artificial intelligence. By classifying AI systems by risk level and banning the most dangerous applications, we are ensuring that innovation serves humanity rather than threatening it. Regulation is not the enemy of progress — it is its guardian.'\nPassage 2 (US Tech Executive, 2025): 'Heavy-handed regulation like the EU AI Act will drive AI innovation to countries with fewer restrictions. The companies building the most advanced AI systems are already reconsidering their European operations. If we want to lead the AI revolution, we need flexible guidelines, not rigid laws that cannot keep pace with technology.'\nWhat is the fundamental disagreement between these two passages?",
+        "options": [
+          "A. Whether AI technology actually exists",
+          "B. Whether strict regulation protects society or stifles innovation and competitiveness",
+          "C. Whether Europe or the US has better technology",
+          "D. Whether AI should be used in healthcare"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passages:\nPassage 1 (EU Official, 2025): 'The European Union's AI Act establishes the world's first comprehensive legal framework for artificial intelligence. By classifying AI systems by risk level and banning the most dangerous applications, we are ensuring that innovation serves humanity rather than threatening it. Regulation is not the enemy of progress — it is its guardian.'\nPassage 2 (US Tech Executive, 2025): 'Heavy-handed regulation like the EU AI Act will drive AI innovation to countries with fewer restrictions. The companies building the most advanced AI systems are already reconsidering their European operations. If we want to lead the AI revolution, we need flexible guidelines, not rigid laws that cannot keep pace with technology.'\nWhat is the fundamental disagreement between these two passages?",
+        "options": [
+          "A. Whether AI technology actually exists",
+          "B. Whether strict regulation protects society or stifles innovation and competitiveness",
+          "C. Whether Europe or the US has better technology",
+          "D. Whether AI should be used in healthcare"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Passage 1 argues regulation guards progress and protects humanity. Passage 2 argues strict regulation drives innovation elsewhere and stifles competitiveness. The core disagreement is regulation's effect.",
+      "explanation_zh": "Passage 1 argues regulation guards progress and protects humanity. Passage 2 argues strict regulation drives innovation elsewhere and stifles competitiveness. The core disagreement is regulation's effect.",
+      "tags": [
+        "dual_passage_comparison",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "dual_passage_comparison",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "authors_craft",
+      "subtopic": null,
+      "difficulty": 0.61,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: George Orwell opens 'Nineteen Eighty-Four' with: 'It was a bright cold day in April, and the clocks were striking thirteen.' The detail of clocks striking thirteen serves to:",
+        "options": [
+          "A. Indicate the story takes place in a different time zone",
+          "B. Immediately signal that this world operates by different rules than the reader's own",
+          "C. Show that the clocks are broken",
+          "D. Describe a military time system"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: George Orwell opens 'Nineteen Eighty-Four' with: 'It was a bright cold day in April, and the clocks were striking thirteen.' The detail of clocks striking thirteen serves to:",
+        "options": [
+          "A. Indicate the story takes place in a different time zone",
+          "B. Immediately signal that this world operates by different rules than the reader's own",
+          "C. Show that the clocks are broken",
+          "D. Describe a military time system"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Clocks do not normally strike thirteen. This single, unsettling detail immediately tells the reader that the story's world is fundamentally different — something is wrong with this society.",
+      "explanation_zh": "Clocks do not normally strike thirteen. This single, unsettling detail immediately tells the reader that the story's world is fundamentally different — something is wrong with this society.",
+      "tags": [
+        "authors_craft",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "authors_craft",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "historical_context",
+      "subtopic": null,
+      "difficulty": 0.63,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: During the Harlem Renaissance (1920s-1930s), African American writers, musicians, and artists created works that celebrated Black identity and culture. Langston Hughes wrote poems in the rhythms of jazz and blues, while Zora Neale Hurston captured the voices of rural Black communities. This cultural movement was not merely artistic — it was a deliberate assertion of dignity and intellectual equality in a society that systematically denied both. How does understanding the historical context enhance the reader's interpretation of Harlem Renaissance literature?",
+        "options": [
+          "A. It explains why the writing style was informal",
+          "B. It reveals that the artistic choices were political acts of resistance and self-definition, not just aesthetic preferences",
+          "C. It proves the literature was of lower quality",
+          "D. It shows the movement had no lasting impact"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: During the Harlem Renaissance (1920s-1930s), African American writers, musicians, and artists created works that celebrated Black identity and culture. Langston Hughes wrote poems in the rhythms of jazz and blues, while Zora Neale Hurston captured the voices of rural Black communities. This cultural movement was not merely artistic — it was a deliberate assertion of dignity and intellectual equality in a society that systematically denied both. How does understanding the historical context enhance the reader's interpretation of Harlem Renaissance literature?",
+        "options": [
+          "A. It explains why the writing style was informal",
+          "B. It reveals that the artistic choices were political acts of resistance and self-definition, not just aesthetic preferences",
+          "C. It proves the literature was of lower quality",
+          "D. It shows the movement had no lasting impact"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Knowing that these artists worked in a society that denied Black intellectual equality reveals that their artistic choices were deliberate assertions of dignity — political acts, not merely aesthetic ones.",
+      "explanation_zh": "Knowing that these artists worked in a society that denied Black intellectual equality reveals that their artistic choices were deliberate assertions of dignity — political acts, not merely aesthetic ones.",
+      "tags": [
+        "historical_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "historical_context",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "critical_evaluation",
+      "subtopic": null,
+      "difficulty": 0.64,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: An online article states: 'A new survey of 500 high school students found that 89 percent prefer learning with AI tutors over traditional classroom instruction. This proves that AI should replace human teachers in all subjects.' A critical reader should identify what flaw in this argument?",
+        "options": [
+          "A. The survey sample is too small to draw any conclusions",
+          "B. Student preference does not equal educational effectiveness, and the conclusion vastly overgeneralizes the finding",
+          "C. The percentage is too low to be meaningful",
+          "D. Online articles are never trustworthy"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: An online article states: 'A new survey of 500 high school students found that 89 percent prefer learning with AI tutors over traditional classroom instruction. This proves that AI should replace human teachers in all subjects.' A critical reader should identify what flaw in this argument?",
+        "options": [
+          "A. The survey sample is too small to draw any conclusions",
+          "B. Student preference does not equal educational effectiveness, and the conclusion vastly overgeneralizes the finding",
+          "C. The percentage is too low to be meaningful",
+          "D. Online articles are never trustworthy"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The argument conflates preference with effectiveness and makes a sweeping conclusion ('replace teachers in all subjects') from a narrow finding about preference. This is a logical overreach.",
+      "explanation_zh": "The argument conflates preference with effectiveness and makes a sweeping conclusion ('replace teachers in all subjects') from a narrow finding about preference. This is a logical overreach.",
+      "tags": [
+        "critical_evaluation",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "critical_evaluation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "complex_vocabulary",
+      "subtopic": null,
+      "difficulty": 0.66,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: 'The author's prose style is characterized by its laconic precision — she conveys in ten words what most writers need fifty to express, yet nothing essential is lost.' What does 'laconic' mean?",
+        "options": [
+          "A. Flowery and elaborate",
+          "B. Using very few words; concise",
+          "C. Emotionally charged",
+          "D. Difficult to understand"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: 'The author's prose style is characterized by its laconic precision — she conveys in ten words what most writers need fifty to express, yet nothing essential is lost.' What does 'laconic' mean?",
+        "options": [
+          "A. Flowery and elaborate",
+          "B. Using very few words; concise",
+          "C. Emotionally charged",
+          "D. Difficult to understand"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Context clues ('ten words what most writers need fifty') clearly indicate that laconic means using very few words while still being effective.",
+      "explanation_zh": "Context clues ('ten words what most writers need fifty') clearly indicate that laconic means using very few words while still being effective.",
+      "tags": [
+        "complex_vocabulary",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "complex_vocabulary",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "synthesis_across_texts",
+      "subtopic": null,
+      "difficulty": 0.67,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passages:\nText 1: 'The James Webb Space Telescope revealed in 2025 that a distant exoplanet's atmosphere contains methane and carbon dioxide — a chemical signature that, on Earth, is produced by living organisms. Scientists caution that non-biological processes could also explain these gases.'\nText 2: 'The discovery of biosignature gases on exoplanets does not prove extraterrestrial life exists. However, it narrows the search in ways that were impossible before Webb. Each detection is like finding footprints — they suggest someone walked here, but you still need to see the walker.'\nHow does Text 2 build upon the information in Text 1?",
+        "options": [
+          "A. It contradicts Text 1 entirely",
+          "B. It provides the same information in different words",
+          "C. It contextualizes the discovery through analogy and explains its significance within the broader search for life",
+          "D. It argues that the James Webb telescope is not useful"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passages:\nText 1: 'The James Webb Space Telescope revealed in 2025 that a distant exoplanet's atmosphere contains methane and carbon dioxide — a chemical signature that, on Earth, is produced by living organisms. Scientists caution that non-biological processes could also explain these gases.'\nText 2: 'The discovery of biosignature gases on exoplanets does not prove extraterrestrial life exists. However, it narrows the search in ways that were impossible before Webb. Each detection is like finding footprints — they suggest someone walked here, but you still need to see the walker.'\nHow does Text 2 build upon the information in Text 1?",
+        "options": [
+          "A. It contradicts Text 1 entirely",
+          "B. It provides the same information in different words",
+          "C. It contextualizes the discovery through analogy and explains its significance within the broader search for life",
+          "D. It argues that the James Webb telescope is not useful"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Text 2 takes the finding from Text 1 and adds interpretive depth through the footprints analogy, explaining what the discovery means for the broader scientific quest.",
+      "explanation_zh": "Text 2 takes the finding from Text 1 and adds interpretive depth through the footprints analogy, explaining what the discovery means for the broader scientific quest.",
+      "tags": [
+        "synthesis_across_texts",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "synthesis_across_texts",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "philosophical_themes",
+      "subtopic": null,
+      "difficulty": 0.69,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In Albert Camus's 'The Myth of Sisyphus,' Camus reimagines the Greek figure condemned to push a boulder up a hill for eternity, only to watch it roll back down each time. Camus concludes: 'One must imagine Sisyphus happy.' He argues that Sisyphus, by accepting his fate and finding meaning in the struggle itself rather than the outcome, achieves a form of freedom. What philosophical concept does Camus explore?",
+        "options": [
+          "A. That physical exercise leads to happiness",
+          "B. That meaning can be created through the acceptance of an absurd existence",
+          "C. That Greek myths are historically accurate",
+          "D. That punishment always leads to wisdom"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In Albert Camus's 'The Myth of Sisyphus,' Camus reimagines the Greek figure condemned to push a boulder up a hill for eternity, only to watch it roll back down each time. Camus concludes: 'One must imagine Sisyphus happy.' He argues that Sisyphus, by accepting his fate and finding meaning in the struggle itself rather than the outcome, achieves a form of freedom. What philosophical concept does Camus explore?",
+        "options": [
+          "A. That physical exercise leads to happiness",
+          "B. That meaning can be created through the acceptance of an absurd existence",
+          "C. That Greek myths are historically accurate",
+          "D. That punishment always leads to wisdom"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Camus explores absurdism — the idea that life may lack inherent meaning, but humans can create their own meaning through conscious engagement with existence, even in futile circumstances.",
+      "explanation_zh": "Camus explores absurdism — the idea that life may lack inherent meaning, but humans can create their own meaning through conscious engagement with existence, even in futile circumstances.",
+      "tags": [
+        "philosophical_themes",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G10",
+        "original_topic": "philosophical_themes",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "semicolons_in_series",
+      "subtopic": null,
+      "difficulty": 0.7,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly uses semicolons in a complex list?",
+        "options": [
+          "A. The conference featured speakers from Tokyo, Japan, Berlin, Germany, and Nairobi, Kenya.",
+          "B. The conference featured speakers from Tokyo, Japan; Berlin, Germany; and Nairobi, Kenya.",
+          "C. The conference featured speakers from Tokyo; Japan, Berlin; Germany, and Nairobi; Kenya.",
+          "D. The conference featured speakers from; Tokyo, Japan; Berlin, Germany; Nairobi, Kenya."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly uses semicolons in a complex list?",
+        "options": [
+          "A. The conference featured speakers from Tokyo, Japan, Berlin, Germany, and Nairobi, Kenya.",
+          "B. The conference featured speakers from Tokyo, Japan; Berlin, Germany; and Nairobi, Kenya.",
+          "C. The conference featured speakers from Tokyo; Japan, Berlin; Germany, and Nairobi; Kenya.",
+          "D. The conference featured speakers from; Tokyo, Japan; Berlin, Germany; Nairobi, Kenya."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "When list items contain internal commas (city, country), semicolons separate the major items to prevent confusion. Each city-country pair is separated by semicolons.",
+      "explanation_zh": "When list items contain internal commas (city, country), semicolons separate the major items to prevent confusion. Each city-country pair is separated by semicolons.",
+      "tags": [
+        "semicolons_in_series",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "semicolons_in_series",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "subjunctive_mood",
+      "subtopic": null,
+      "difficulty": 0.71,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly uses the subjunctive mood?",
+        "options": [
+          "A. The professor recommended that the student studies more before the exam.",
+          "B. The professor recommended that the student study more before the exam.",
+          "C. The professor recommended that the student studied more before the exam.",
+          "D. The professor recommended that the student is studying more before the exam."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly uses the subjunctive mood?",
+        "options": [
+          "A. The professor recommended that the student studies more before the exam.",
+          "B. The professor recommended that the student study more before the exam.",
+          "C. The professor recommended that the student studied more before the exam.",
+          "D. The professor recommended that the student is studying more before the exam."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The subjunctive mood uses the base form of the verb after expressions of recommendation, demand, or suggestion. 'Recommended that the student study' is correct, not 'studies' or 'studied.'",
+      "explanation_zh": "The subjunctive mood uses the base form of the verb after expressions of recommendation, demand, or suggestion. 'Recommended that the student study' is correct, not 'studies' or 'studied.'",
+      "tags": [
+        "subjunctive_mood",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "subjunctive_mood",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "dashes",
+      "subtopic": null,
+      "difficulty": 0.73,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses em dashes correctly?",
+        "options": [
+          "A. The findings—which contradicted earlier studies—prompted a new round of research.",
+          "B. The findings—which contradicted earlier studies prompted—a new round of research.",
+          "C. The findings which—contradicted earlier—studies prompted a new round of research.",
+          "D. —The findings which contradicted earlier studies—prompted a new round of research."
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses em dashes correctly?",
+        "options": [
+          "A. The findings—which contradicted earlier studies—prompted a new round of research.",
+          "B. The findings—which contradicted earlier studies prompted—a new round of research.",
+          "C. The findings which—contradicted earlier—studies prompted a new round of research.",
+          "D. —The findings which contradicted earlier studies—prompted a new round of research."
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Em dashes set off a parenthetical element within a sentence. The dashes must surround the complete interrupting phrase: 'which contradicted earlier studies.'",
+      "explanation_zh": "Em dashes set off a parenthetical element within a sentence. The dashes must surround the complete interrupting phrase: 'which contradicted earlier studies.'",
+      "tags": [
+        "dashes",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "dashes",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "conditional_sentences",
+      "subtopic": null,
+      "difficulty": 0.74,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the correct conditional form?",
+        "options": [
+          "A. If the experiment would have succeeded, the team would publish the results.",
+          "B. If the experiment had succeeded, the team would have published the results.",
+          "C. If the experiment has succeeded, the team would have published the results.",
+          "D. If the experiment succeeded, the team would had published the results."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the correct conditional form?",
+        "options": [
+          "A. If the experiment would have succeeded, the team would publish the results.",
+          "B. If the experiment had succeeded, the team would have published the results.",
+          "C. If the experiment has succeeded, the team would have published the results.",
+          "D. If the experiment succeeded, the team would had published the results."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The third conditional (past unreal) uses 'had + past participle' in the if-clause and 'would have + past participle' in the result clause: 'If...had succeeded...would have published.'",
+      "explanation_zh": "The third conditional (past unreal) uses 'had + past participle' in the if-clause and 'would have + past participle' in the result clause: 'If...had succeeded...would have published.'",
+      "tags": [
+        "conditional_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "conditional_sentences",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "academic_tone_revision",
+      "subtopic": null,
+      "difficulty": 0.76,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which revision best improves this sentence for an academic essay? Original: 'Social media is basically ruining how kids talk to each other in real life.'",
+        "options": [
+          "A. Social media is kind of changing the way children communicate face to face.",
+          "B. Recent studies suggest that extensive social media use may diminish adolescents' face-to-face communication skills.",
+          "C. Social media is ruining kids' ability to talk.",
+          "D. I believe social media ruins real-life communication for children."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which revision best improves this sentence for an academic essay? Original: 'Social media is basically ruining how kids talk to each other in real life.'",
+        "options": [
+          "A. Social media is kind of changing the way children communicate face to face.",
+          "B. Recent studies suggest that extensive social media use may diminish adolescents' face-to-face communication skills.",
+          "C. Social media is ruining kids' ability to talk.",
+          "D. I believe social media ruins real-life communication for children."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Academic tone requires evidence-based language ('recent studies suggest'), precise terminology ('diminish,' 'face-to-face communication skills'), hedging for nuance ('may'), and formal word choices ('adolescents').",
+      "explanation_zh": "Academic tone requires evidence-based language ('recent studies suggest'), precise terminology ('diminish,' 'face-to-face communication skills'), hedging for nuance ('may'), and formal word choices ('adolescents').",
+      "tags": [
+        "academic_tone_revision",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G10-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "academic_tone_revision",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "parenthetical_commas",
+      "subtopic": null,
+      "difficulty": 0.77,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly uses commas to set off a parenthetical expression?",
+        "options": [
+          "A. The new policy, which was approved last month will take effect in January.",
+          "B. The new policy which was approved last month, will take effect in January.",
+          "C. The new policy, which was approved last month, will take effect in January.",
+          "D. The new policy which, was approved last month, will take effect in January."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly uses commas to set off a parenthetical expression?",
+        "options": [
+          "A. The new policy, which was approved last month will take effect in January.",
+          "B. The new policy which was approved last month, will take effect in January.",
+          "C. The new policy, which was approved last month, will take effect in January.",
+          "D. The new policy which, was approved last month, will take effect in January."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A nonessential (parenthetical) clause must be enclosed by commas on both sides. 'Which was approved last month' adds extra information and needs commas before and after.",
+      "explanation_zh": "A nonessential (parenthetical) clause must be enclosed by commas on both sides. 'Which was approved last month' adds extra information and needs commas before and after.",
+      "tags": [
+        "parenthetical_commas",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "parenthetical_commas",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "word_choice_precision",
+      "subtopic": null,
+      "difficulty": 0.79,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which word most precisely replaces the vague word in this sentence? 'The scientist said that the results were good.'",
+        "options": [
+          "A. nice",
+          "B. conclusive",
+          "C. great",
+          "D. fine"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which word most precisely replaces the vague word in this sentence? 'The scientist said that the results were good.'",
+        "options": [
+          "A. nice",
+          "B. conclusive",
+          "C. great",
+          "D. fine"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Conclusive' precisely conveys that the results provided definitive evidence, which is what a scientist would value. 'Good,' 'nice,' 'great,' and 'fine' are vague and informal.",
+      "explanation_zh": "'Conclusive' precisely conveys that the results provided definitive evidence, which is what a scientist would value. 'Good,' 'nice,' 'great,' and 'fine' are vague and informal.",
+      "tags": [
+        "word_choice_precision",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "word_choice_precision",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G10",
+      "topic": "synthesis_writing",
+      "subtopic": null,
+      "difficulty": 0.8,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "When writing a synthesis essay using multiple sources, what is the writer's primary task?",
+        "options": [
+          "A. Summarize each source one at a time in separate paragraphs",
+          "B. Copy the strongest quotes from each source and present them in order",
+          "C. Combine ideas from multiple sources to develop and support an original argument",
+          "D. Choose the best source and use only that one to support the thesis"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "When writing a synthesis essay using multiple sources, what is the writer's primary task?",
+        "options": [
+          "A. Summarize each source one at a time in separate paragraphs",
+          "B. Copy the strongest quotes from each source and present them in order",
+          "C. Combine ideas from multiple sources to develop and support an original argument",
+          "D. Choose the best source and use only that one to support the thesis"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Synthesis writing requires integrating ideas from multiple sources to build an original argument. It goes beyond summarizing individual sources by finding connections and drawing conclusions across them.",
+      "explanation_zh": "Synthesis writing requires integrating ideas from multiple sources to build an original argument. It goes beyond summarizing individual sources by finding connections and drawing conclusions across them.",
+      "tags": [
+        "synthesis_writing",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G10-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G10-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G10",
+        "original_topic": "synthesis_writing",
+        "is_seed": false
+      }
+    }
+  ]
+}

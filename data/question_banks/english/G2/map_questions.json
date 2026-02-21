@@ -1,0 +1,1159 @@
+{
+  "batch_name": "MAP_english_G2_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G2",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "reading_comp",
+      "subtopic": "plot_analysis",
+      "difficulty": 0.1,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "How was Lindsay and Gretchen's problem resolved? (Story about twins wanting different pets)",
+        "options": [
+          "A. One received her preferred pet; the other was disappointed",
+          "B. Pet store employee helped them decide",
+          "C. They decided on a pet together"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "How was Lindsay and Gretchen's problem resolved? (Story about twins wanting different pets)",
+        "options": [
+          "A. One received her preferred pet; the other was disappointed",
+          "B. Pet store employee helped them decide",
+          "C. They decided on a pet together"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The narrative states they worked out their differences and decided together which pet to take, selecting a rabbit they both agreed upon.",
+      "explanation_zh": "The narrative states they worked out their differences and decided together which pet to take, selecting a rabbit they both agreed upon.",
+      "tags": [
+        "conflict_resolution",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "conflict_resolution",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "reading_comp",
+      "subtopic": "genre_identification",
+      "difficulty": 0.11,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What type of text is this? (referring to the twins and pet story)",
+        "options": [
+          "A. A poem",
+          "B. A fairytale",
+          "C. A story with a moral",
+          "D. An essay"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What type of text is this? (referring to the twins and pet story)",
+        "options": [
+          "A. A poem",
+          "B. A fairytale",
+          "C. A story with a moral",
+          "D. An essay"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The narrative teaches the lesson of compromise and cooperation, demonstrating characteristics of literature with a moral message.",
+      "explanation_zh": "The narrative teaches the lesson of compromise and cooperation, demonstrating characteristics of literature with a moral message.",
+      "tags": [
+        "text_type_identification",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "text_type_identification",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "reading_comp",
+      "subtopic": "text_features",
+      "difficulty": 0.12,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Based on the index, in which of the following pages would you find a Roald Dahl story? (Dahl listed as pages 99–124)",
+        "options": [
+          "A. Page 171",
+          "B. Page 102",
+          "C. Page 97",
+          "D. Page 125"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Based on the index, in which of the following pages would you find a Roald Dahl story? (Dahl listed as pages 99–124)",
+        "options": [
+          "A. Page 171",
+          "B. Page 102",
+          "C. Page 97",
+          "D. Page 125"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Only page 102 falls within the 99–124 range designated for Roald Dahl content.",
+      "explanation_zh": "Only page 102 falls within the 99–124 range designated for Roald Dahl content.",
+      "tags": [
+        "index_reference",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "index_reference",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "reading_comp",
+      "subtopic": "text_features",
+      "difficulty": 0.14,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Click on two types of information you are likely to find in a newspaper.",
+        "options": [
+          "A. Daily news",
+          "B. Word definitions",
+          "C. Directions for how to get to places",
+          "D. Advertisements",
+          "E. The time right now"
+        ],
+        "answer": "A,D"
+      },
+      "content_zh": {
+        "stem": "Click on two types of information you are likely to find in a newspaper.",
+        "options": [
+          "A. Daily news",
+          "B. Word definitions",
+          "C. Directions for how to get to places",
+          "D. Advertisements",
+          "E. The time right now"
+        ],
+        "answer": "A,D"
+      },
+      "explanation_en": "Newspapers primarily contain current events reporting and commercial advertisements.",
+      "explanation_zh": "Newspapers primarily contain current events reporting and commercial advertisements.",
+      "tags": [
+        "text_features",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-READ-004",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "text_features",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "vocabulary",
+      "subtopic": "antonyms",
+      "difficulty": 0.15,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The friendly neighbors live two floors above our apartment. Which set of words all mean the opposite of the preposition 'above'?",
+        "options": [
+          "A. Under, beneath, during",
+          "B. Below, across, underneath",
+          "C. Beneath, under, below",
+          "D. Over, below, beneath"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "The friendly neighbors live two floors above our apartment. Which set of words all mean the opposite of the preposition 'above'?",
+        "options": [
+          "A. Under, beneath, during",
+          "B. Below, across, underneath",
+          "C. Beneath, under, below",
+          "D. Over, below, beneath"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "All three words in option C (beneath, under, below) denote position lower than something, making them true opposites of 'above'.",
+      "explanation_zh": "All three words in option C (beneath, under, below) denote position lower than something, making them true opposites of 'above'.",
+      "tags": [
+        "antonyms",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-005 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-READ-005",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "antonyms",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "grammar",
+      "subtopic": "contractions",
+      "difficulty": 0.16,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Click on the contraction in which the apostrophe is in the right place.",
+        "options": [
+          "A. ther'es",
+          "B. couldn't",
+          "C. does'nt",
+          "D. lets'"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Click on the contraction in which the apostrophe is in the right place.",
+        "options": [
+          "A. ther'es",
+          "B. couldn't",
+          "C. does'nt",
+          "D. lets'"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The apostrophe in 'couldn't' correctly replaces the omitted 'o' from 'not', following proper contraction rules.",
+      "explanation_zh": "The apostrophe in 'couldn't' correctly replaces the omitted 'o' from 'not', following proper contraction rules.",
+      "tags": [
+        "contractions",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "contractions",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "grammar",
+      "subtopic": "agreement",
+      "difficulty": 0.17,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Darling, please go to the pantry and grab a few ________ for me. Which words complete the sentence correctly?",
+        "options": [
+          "A. Can of beans",
+          "B. Cans of beans",
+          "C. Cans of bean",
+          "D. Can of bean"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Darling, please go to the pantry and grab a few ________ for me. Which words complete the sentence correctly?",
+        "options": [
+          "A. Can of beans",
+          "B. Cans of beans",
+          "C. Cans of bean",
+          "D. Can of bean"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The phrase 'a few' requires plural forms for both the container and contents: 'cans of beans'.",
+      "explanation_zh": "The phrase 'a few' requires plural forms for both the container and contents: 'cans of beans'.",
+      "tags": [
+        "plural_agreement",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "plural_agreement",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "grammar",
+      "subtopic": "sentence_structure",
+      "difficulty": 0.19,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which version moves the word 'darling' to the most suitable spot in the sentence: 'Darling, please go to the pantry and grab a few ________ for me.'",
+        "options": [
+          "A. Please go to the pantry, darling, and grab a few ________ for me",
+          "B. Please go, darling, to the pantry and grab a few ________ for me",
+          "C. Please go to the pantry and grab, darling, a few ________ for me"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which version moves the word 'darling' to the most suitable spot in the sentence: 'Darling, please go to the pantry and grab a few ________ for me.'",
+        "options": [
+          "A. Please go to the pantry, darling, and grab a few ________ for me",
+          "B. Please go, darling, to the pantry and grab a few ________ for me",
+          "C. Please go to the pantry and grab, darling, a few ________ for me"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Placing 'darling' between two complete clauses maintains natural sentence flow without interrupting individual thoughts.",
+      "explanation_zh": "Placing 'darling' between two complete clauses maintains natural sentence flow without interrupting individual thoughts.",
+      "tags": [
+        "sentence_structure",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "sentence_structure",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "writing",
+      "subtopic": "supporting_details",
+      "difficulty": 0.2,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Suppose you are asked to write a school essay titled 'Why I Like Going to the Museum.' Which details support the topic of the essay? (Select two)",
+        "options": [
+          "A. At the museum, you can learn about interesting things",
+          "B. The museum has a gift shop with cool T-shirts",
+          "C. Walking from hall to hall in the museum can be tiring",
+          "D. You must remember to keep quiet at the museum",
+          "E. Some museum exhibits can be boring"
+        ],
+        "answer": "A,B"
+      },
+      "content_zh": {
+        "stem": "Suppose you are asked to write a school essay titled 'Why I Like Going to the Museum.' Which details support the topic of the essay? (Select two)",
+        "options": [
+          "A. At the museum, you can learn about interesting things",
+          "B. The museum has a gift shop with cool T-shirts",
+          "C. Walking from hall to hall in the museum can be tiring",
+          "D. You must remember to keep quiet at the museum",
+          "E. Some museum exhibits can be boring"
+        ],
+        "answer": "A,B"
+      },
+      "explanation_en": "Only options containing positive language ('interesting', 'cool') support an essay about enjoying museum visits.",
+      "explanation_zh": "Only options containing positive language ('interesting', 'cool') support an essay about enjoying museum visits.",
+      "tags": [
+        "supporting_details",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-LANG-004",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "supporting_details",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "main_idea",
+      "subtopic": null,
+      "difficulty": 0.21,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Bees are very important. They fly from flower to flower. They carry pollen on their legs. This helps flowers grow into fruits and vegetables. Without bees, we would not have many of the foods we eat. What is the main idea of this passage?",
+        "options": [
+          "A. Bees like to fly",
+          "B. Bees are important because they help food grow",
+          "C. Flowers are pretty",
+          "D. Bees have legs"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Bees are very important. They fly from flower to flower. They carry pollen on their legs. This helps flowers grow into fruits and vegetables. Without bees, we would not have many of the foods we eat. What is the main idea of this passage?",
+        "options": [
+          "A. Bees like to fly",
+          "B. Bees are important because they help food grow",
+          "C. Flowers are pretty",
+          "D. Bees have legs"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage explains how bees help food grow by carrying pollen. The main idea is that bees are important for food production.",
+      "explanation_zh": "The passage explains how bees help food grow by carrying pollen. The main idea is that bees are important for food production.",
+      "tags": [
+        "main_idea",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "main_idea",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "sequencing",
+      "subtopic": null,
+      "difficulty": 0.23,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Ben wanted to build a birdhouse. First, he gathered wood and nails. Next, he hammered the pieces together. Then, he painted it blue. Last, he hung it on a tree. What did Ben do right before hanging the birdhouse?",
+        "options": [
+          "A. He gathered wood",
+          "B. He hammered pieces together",
+          "C. He painted it blue",
+          "D. He found a tree"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Ben wanted to build a birdhouse. First, he gathered wood and nails. Next, he hammered the pieces together. Then, he painted it blue. Last, he hung it on a tree. What did Ben do right before hanging the birdhouse?",
+        "options": [
+          "A. He gathered wood",
+          "B. He hammered pieces together",
+          "C. He painted it blue",
+          "D. He found a tree"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The passage lists the steps in order. Right before hanging the birdhouse on a tree, Ben painted it blue.",
+      "explanation_zh": "The passage lists the steps in order. Right before hanging the birdhouse on a tree, Ben painted it blue.",
+      "tags": [
+        "sequencing",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "sequencing",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "character_feelings",
+      "subtopic": null,
+      "difficulty": 0.24,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Kai's family went to the beach. Kai built a big sandcastle. Then a wave washed it away. Kai sat down and put his head in his hands. How did Kai most likely feel when the wave washed away his sandcastle?",
+        "options": [
+          "A. Happy",
+          "B. Excited",
+          "C. Sad",
+          "D. Angry at his family"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Kai's family went to the beach. Kai built a big sandcastle. Then a wave washed it away. Kai sat down and put his head in his hands. How did Kai most likely feel when the wave washed away his sandcastle?",
+        "options": [
+          "A. Happy",
+          "B. Excited",
+          "C. Sad",
+          "D. Angry at his family"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Kai sat down and put his head in his hands after his sandcastle was destroyed. This shows he felt sad.",
+      "explanation_zh": "Kai sat down and put his head in his hands after his sandcastle was destroyed. This shows he felt sad.",
+      "tags": [
+        "character_feelings",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "character_feelings",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "reading_comp",
+      "subtopic": "text_features",
+      "difficulty": 0.25,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A table of contents shows: Chapter 1 — Cats ... page 3, Chapter 2 — Dogs ... page 12, Chapter 3 — Birds ... page 20. On which page should you start reading to learn about dogs?",
+        "options": [
+          "A. Page 3",
+          "B. Page 12",
+          "C. Page 20",
+          "D. Page 1"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A table of contents shows: Chapter 1 — Cats ... page 3, Chapter 2 — Dogs ... page 12, Chapter 3 — Birds ... page 20. On which page should you start reading to learn about dogs?",
+        "options": [
+          "A. Page 3",
+          "B. Page 12",
+          "C. Page 20",
+          "D. Page 1"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The table of contents shows that the chapter about Dogs starts on page 12.",
+      "explanation_zh": "The table of contents shows that the chapter about Dogs starts on page 12.",
+      "tags": [
+        "text_features",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "text_features",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "vocabulary",
+      "subtopic": "general",
+      "difficulty": 0.26,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the sentence: The enormous elephant walked slowly through the forest. What does 'enormous' mean?",
+        "options": [
+          "A. Very small",
+          "B. Very fast",
+          "C. Very big",
+          "D. Very quiet"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Read the sentence: The enormous elephant walked slowly through the forest. What does 'enormous' mean?",
+        "options": [
+          "A. Very small",
+          "B. Very fast",
+          "C. Very big",
+          "D. Very quiet"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Enormous means very large or very big. Elephants are known for being very large animals.",
+      "explanation_zh": "Enormous means very large or very big. Elephants are known for being very large animals.",
+      "tags": [
+        "vocabulary",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "vocabulary",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "cause_and_effect",
+      "subtopic": null,
+      "difficulty": 0.28,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Leo watched a big rocket launch on TV with his dad. The rocket made a loud roar and shot up into the sky with bright flames. Leo jumped up and shouted, 'I want to be an astronaut!' Why did Leo want to be an astronaut?",
+        "options": [
+          "A. His dad told him to be one",
+          "B. He was excited by seeing the rocket launch",
+          "C. He was scared of the loud noise",
+          "D. He wanted to watch more TV"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Leo watched a big rocket launch on TV with his dad. The rocket made a loud roar and shot up into the sky with bright flames. Leo jumped up and shouted, 'I want to be an astronaut!' Why did Leo want to be an astronaut?",
+        "options": [
+          "A. His dad told him to be one",
+          "B. He was excited by seeing the rocket launch",
+          "C. He was scared of the loud noise",
+          "D. He wanted to watch more TV"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Seeing the exciting rocket launch inspired Leo. He jumped up and shouted with excitement, showing the launch caused his dream.",
+      "explanation_zh": "Seeing the exciting rocket launch inspired Leo. He jumped up and shouted with excitement, showing the launch caused his dream.",
+      "tags": [
+        "cause_and_effect",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "cause_and_effect",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "fact_vs_opinion",
+      "subtopic": null,
+      "difficulty": 0.29,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence is an opinion?",
+        "options": [
+          "A. Cats have four legs.",
+          "B. Cats are the best pets ever.",
+          "C. Some cats have stripes.",
+          "D. Cats can see in the dark."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence is an opinion?",
+        "options": [
+          "A. Cats have four legs.",
+          "B. Cats are the best pets ever.",
+          "C. Some cats have stripes.",
+          "D. Cats can see in the dark."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "An opinion is what someone believes or feels. 'Cats are the best pets ever' is a personal feeling, not a fact that can be proven.",
+      "explanation_zh": "An opinion is what someone believes or feels. 'Cats are the best pets ever' is a personal feeling, not a fact that can be proven.",
+      "tags": [
+        "fact_vs_opinion",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "fact_vs_opinion",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "making_predictions",
+      "subtopic": null,
+      "difficulty": 0.3,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Ava looked at the dark clouds in the sky. She grabbed her raincoat and umbrella before leaving the house. What will most likely happen next?",
+        "options": [
+          "A. It will be a sunny day",
+          "B. It will rain",
+          "C. Ava will go swimming",
+          "D. Ava will stay home all day"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Ava looked at the dark clouds in the sky. She grabbed her raincoat and umbrella before leaving the house. What will most likely happen next?",
+        "options": [
+          "A. It will be a sunny day",
+          "B. It will rain",
+          "C. Ava will go swimming",
+          "D. Ava will stay home all day"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Dark clouds and bringing a raincoat and umbrella are clues that rain is coming. Ava prepared for rain.",
+      "explanation_zh": "Dark clouds and bringing a raincoat and umbrella are clues that rain is coming. Ava prepared for rain.",
+      "tags": [
+        "making_predictions",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G2",
+        "original_topic": "making_predictions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "common_proper_nouns",
+      "subtopic": null,
+      "difficulty": 0.31,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which word in the sentence is a proper noun? 'My dog Max loves to play in the park.'",
+        "options": [
+          "A. dog",
+          "B. Max",
+          "C. park",
+          "D. play"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which word in the sentence is a proper noun? 'My dog Max loves to play in the park.'",
+        "options": [
+          "A. dog",
+          "B. Max",
+          "C. park",
+          "D. play"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A proper noun names a specific person, place, or thing and is capitalized. 'Max' is a specific name for the dog.",
+      "explanation_zh": "A proper noun names a specific person, place, or thing and is capitalized. 'Max' is a specific name for the dog.",
+      "tags": [
+        "common_proper_nouns",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "common_proper_nouns",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "grammar",
+      "subtopic": "verb_tense",
+      "difficulty": 0.33,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Choose the correct verb: 'Yesterday, we _______ to the library.'",
+        "options": [
+          "A. walk",
+          "B. walked",
+          "C. will walk",
+          "D. walking"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Choose the correct verb: 'Yesterday, we _______ to the library.'",
+        "options": [
+          "A. walk",
+          "B. walked",
+          "C. will walk",
+          "D. walking"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The word 'yesterday' tells us the action happened in the past, so we use the past tense verb 'walked'.",
+      "explanation_zh": "The word 'yesterday' tells us the action happened in the past, so we use the past tense verb 'walked'.",
+      "tags": [
+        "verb_tense",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "verb_tense",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "adjectives",
+      "subtopic": null,
+      "difficulty": 0.34,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which word is an adjective in this sentence? 'The tiny kitten climbed the tall tree.'",
+        "options": [
+          "A. kitten",
+          "B. climbed",
+          "C. tiny",
+          "D. tree"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which word is an adjective in this sentence? 'The tiny kitten climbed the tall tree.'",
+        "options": [
+          "A. kitten",
+          "B. climbed",
+          "C. tiny",
+          "D. tree"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "An adjective describes a noun. 'Tiny' describes what kind of kitten it is. ('Tall' is also an adjective, but 'tiny' is the listed answer.)",
+      "explanation_zh": "An adjective describes a noun. 'Tiny' describes what kind of kitten it is. ('Tall' is also an adjective, but 'tiny' is the listed answer.)",
+      "tags": [
+        "adjectives",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "adjectives",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "reading_mechanics",
+      "subtopic": "punctuation",
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the correct end punctuation?",
+        "options": [
+          "A. Where is my backpack.",
+          "B. Where is my backpack?",
+          "C. Where is my backpack!",
+          "D. Where is my backpack,"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the correct end punctuation?",
+        "options": [
+          "A. Where is my backpack.",
+          "B. Where is my backpack?",
+          "C. Where is my backpack!",
+          "D. Where is my backpack,"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Questions that ask for information end with a question mark. 'Where is my backpack' is asking a question.",
+      "explanation_zh": "Questions that ask for information end with a question mark. 'Where is my backpack' is asking a question.",
+      "tags": [
+        "punctuation",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "punctuation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "vocabulary",
+      "subtopic": "irregular_forms",
+      "difficulty": 0.36,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the correct plural of 'mouse'?",
+        "options": [
+          "A. mouses",
+          "B. mousies",
+          "C. mice",
+          "D. mices"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is the correct plural of 'mouse'?",
+        "options": [
+          "A. mouses",
+          "B. mousies",
+          "C. mice",
+          "D. mices"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Mouse' has an irregular plural form. Instead of adding -s or -es, it changes to 'mice'.",
+      "explanation_zh": "'Mouse' has an irregular plural form. Instead of adding -s or -es, it changes to 'mice'.",
+      "tags": [
+        "irregular_plurals",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G2-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "irregular_plurals",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "grammar",
+      "subtopic": "capitalization",
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence has correct capitalization?",
+        "options": [
+          "A. we went to the Store on monday.",
+          "B. We went to the store on Monday.",
+          "C. we went to the Store on Monday.",
+          "D. We Went To The Store On Monday."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence has correct capitalization?",
+        "options": [
+          "A. we went to the Store on monday.",
+          "B. We went to the store on Monday.",
+          "C. we went to the Store on Monday.",
+          "D. We Went To The Store On Monday."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Capitalize the first word of a sentence and proper nouns. Days of the week like 'Monday' are always capitalized. 'Store' is not a proper noun here.",
+      "explanation_zh": "Capitalize the first word of a sentence and proper nouns. Days of the week like 'Monday' are always capitalized. 'Store' is not a proper noun here.",
+      "tags": [
+        "capitalization",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "capitalization",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "sentence_vs_fragment",
+      "subtopic": null,
+      "difficulty": 0.39,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which of these is a complete sentence?",
+        "options": [
+          "A. Running in the yard.",
+          "B. The big brown.",
+          "C. She likes to read books.",
+          "D. Because it was raining."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which of these is a complete sentence?",
+        "options": [
+          "A. Running in the yard.",
+          "B. The big brown.",
+          "C. She likes to read books.",
+          "D. Because it was raining."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A complete sentence needs a subject and a verb and expresses a complete thought. 'She likes to read books' has a subject (she), a verb (likes), and tells a complete idea.",
+      "explanation_zh": "A complete sentence needs a subject and a verb and expresses a complete thought. 'She likes to read books' has a subject (she), a verb (likes), and tells a complete idea.",
+      "tags": [
+        "sentence_vs_fragment",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "sentence_vs_fragment",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G2",
+      "topic": "commas_in_lists",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses commas correctly in a list?",
+        "options": [
+          "A. I packed apples oranges and grapes.",
+          "B. I packed apples, oranges, and grapes.",
+          "C. I packed, apples oranges, and grapes.",
+          "D. I packed apples oranges, and, grapes."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses commas correctly in a list?",
+        "options": [
+          "A. I packed apples oranges and grapes.",
+          "B. I packed apples, oranges, and grapes.",
+          "C. I packed, apples oranges, and grapes.",
+          "D. I packed apples oranges, and, grapes."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "When listing three or more items, place a comma after each item except the last. A comma before 'and' (the Oxford comma) keeps the list clear.",
+      "explanation_zh": "When listing three or more items, place a comma after each item except the last. A comma before 'and' (the Oxford comma) keeps the list clear.",
+      "tags": [
+        "commas_in_lists",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G2-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G2-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G2",
+        "original_topic": "commas_in_lists",
+        "is_seed": false
+      }
+    }
+  ]
+}

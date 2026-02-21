@@ -1,0 +1,1113 @@
+{
+  "batch_name": "MAP_english_G7_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G7",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "reading_comp",
+      "subtopic": "poetry",
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Robert Frost's 'The Road Not Taken' is a narrative poem because it _______",
+        "options": [
+          "A. uses the word 'I'",
+          "B. includes vivid imagery",
+          "C. addresses a theme",
+          "D. tells a story"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Robert Frost's 'The Road Not Taken' is a narrative poem because it _______",
+        "options": [
+          "A. uses the word 'I'",
+          "B. includes vivid imagery",
+          "C. addresses a theme",
+          "D. tells a story"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "A narrative poem specifically tells a story with characters, events, setting, and sequence.",
+      "explanation_zh": "A narrative poem specifically tells a story with characters, events, setting, and sequence.",
+      "tags": [
+        "narrative_poetry",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "narrative_poetry",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "reading_comp",
+      "subtopic": "tone_mood",
+      "difficulty": 0.36,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the attitude of the speaker in 'The Road Not Taken'?",
+        "options": [
+          "A. Unhappy",
+          "B. Optimistic",
+          "C. Fearful",
+          "D. Contemplating"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "What is the attitude of the speaker in 'The Road Not Taken'?",
+        "options": [
+          "A. Unhappy",
+          "B. Optimistic",
+          "C. Fearful",
+          "D. Contemplating"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "The speaker demonstrates deep reflection through phrases like 'long I stood' and 'I doubted', showing thoughtful consideration.",
+      "explanation_zh": "The speaker demonstrates deep reflection through phrases like 'long I stood' and 'I doubted', showing thoughtful consideration.",
+      "tags": [
+        "tone_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "tone_analysis",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "reading_comp",
+      "subtopic": "informational",
+      "difficulty": 0.38,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is one logical reason, according to the passage, for the knocker-uppers to knock on the windows instead of the doors of the customers?",
+        "options": [
+          "A. They thought it was an easier way to wake people up",
+          "B. They decided knocking on doors was too old-fashioned",
+          "C. They wanted to wake up only the customers",
+          "D. They thought it made the job seem more desirable"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is one logical reason, according to the passage, for the knocker-uppers to knock on the windows instead of the doors of the customers?",
+        "options": [
+          "A. They thought it was an easier way to wake people up",
+          "B. They decided knocking on doors was too old-fashioned",
+          "C. They wanted to wake up only the customers",
+          "D. They thought it made the job seem more desirable"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The passage states they knocked 'loudly enough to wake up the people inside the house, but softly enough not to wake the neighbors' — selective awakening of paying customers.",
+      "explanation_zh": "The passage states they knocked 'loudly enough to wake up the people inside the house, but softly enough not to wake the neighbors' — selective awakening of paying customers.",
+      "tags": [
+        "informational_text",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "informational_text",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "vocabulary",
+      "subtopic": "word_parts",
+      "difficulty": 0.39,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the meaning of the Greek root 'phil'?",
+        "options": [
+          "A. New",
+          "B. Many",
+          "C. Love",
+          "D. Opinion"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is the meaning of the Greek root 'phil'?",
+        "options": [
+          "A. New",
+          "B. Many",
+          "C. Love",
+          "D. Opinion"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "The root 'phil' means love/affection, as in bibliophile (book lover) and philharmonic (music lover).",
+      "explanation_zh": "The root 'phil' means love/affection, as in bibliophile (book lover) and philharmonic (music lover).",
+      "tags": [
+        "greek_roots",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-READ-004",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "greek_roots",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "grammar",
+      "subtopic": "capitalization",
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "She said, '_____ live in North Carolina now, but we used to live in _____ Europe.' Which words correctly fill the blanks?",
+        "options": [
+          "A. We / Western",
+          "B. we / western",
+          "C. we / Western",
+          "D. We / western"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "She said, '_____ live in North Carolina now, but we used to live in _____ Europe.' Which words correctly fill the blanks?",
+        "options": [
+          "A. We / Western",
+          "B. we / western",
+          "C. we / Western",
+          "D. We / western"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "First word of a quotation requires capital 'W'. 'western' is a descriptive adjective (not part of an official name), so it stays lowercase.",
+      "explanation_zh": "First word of a quotation requires capital 'W'. 'western' is a descriptive adjective (not part of an official name), so it stays lowercase.",
+      "tags": [
+        "capitalization",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "capitalization",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "grammar",
+      "subtopic": "parts_of_speech",
+      "difficulty": 0.42,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A molecule is approximately one million times smaller than a grain of sand. Which word is modified by the adjective 'smaller'?",
+        "options": [
+          "A. molecule",
+          "B. is",
+          "C. times",
+          "D. grain"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "A molecule is approximately one million times smaller than a grain of sand. Which word is modified by the adjective 'smaller'?",
+        "options": [
+          "A. molecule",
+          "B. is",
+          "C. times",
+          "D. grain"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "The adjective 'smaller' describes the subject 'molecule'. Ask: 'What is smaller?' — the molecule.",
+      "explanation_zh": "The adjective 'smaller' describes the subject 'molecule'. Ask: 'What is smaller?' — the molecule.",
+      "tags": [
+        "adjective_modification",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "adjective_modification",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "grammar",
+      "subtopic": "clauses",
+      "difficulty": 0.43,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which underlined section of a passage about Ada Lovelace is an independent clause?",
+        "options": [
+          "A. the daughter of the famous poet Lord Byron",
+          "B. she met Charles Babbage",
+          "C. proposing that computers could perform many tasks besides calculations",
+          "D. Though Lovelace didn't live long enough to see her ideas put into practice"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which underlined section of a passage about Ada Lovelace is an independent clause?",
+        "options": [
+          "A. the daughter of the famous poet Lord Byron",
+          "B. she met Charles Babbage",
+          "C. proposing that computers could perform many tasks besides calculations",
+          "D. Though Lovelace didn't live long enough to see her ideas put into practice"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'She met Charles Babbage' has a subject ('she') and conjugated verb ('met'), expressing a complete thought.",
+      "explanation_zh": "'She met Charles Babbage' has a subject ('she') and conjugated verb ('met'), expressing a complete thought.",
+      "tags": [
+        "independent_dependent_clauses",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "independent_dependent_clauses",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "writing",
+      "subtopic": "thesis",
+      "difficulty": 0.44,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which is the best thesis for a persuasive essay on the first time people landed on the moon?",
+        "options": [
+          "A. The moon landing is an event known by everyone in the US",
+          "B. The moon landing was part of NASA's Apollo program",
+          "C. The moon landing is an achievement that humanity would have certainly reached at some point in one way or another",
+          "D. A famous sentence said by Neil Armstrong during the landing was, 'That's one small step for a man...'"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which is the best thesis for a persuasive essay on the first time people landed on the moon?",
+        "options": [
+          "A. The moon landing is an event known by everyone in the US",
+          "B. The moon landing was part of NASA's Apollo program",
+          "C. The moon landing is an achievement that humanity would have certainly reached at some point in one way or another",
+          "D. A famous sentence said by Neil Armstrong during the landing was, 'That's one small step for a man...'"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "A persuasive thesis presents an arguable claim. Option C presents a debatable assertion suitable for persuasive development.",
+      "explanation_zh": "A persuasive thesis presents an arguable claim. Option C presents a debatable assertion suitable for persuasive development.",
+      "tags": [
+        "thesis_statements",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-LANG-004",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "thesis_statements",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "theme_analysis",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In the novel, the main character, Amir, cheats on his final exam and gets the highest grade. At first, he feels proud. But when his honest friend Hasan receives a lower grade and loses a scholarship opportunity, Amir cannot sleep. He finally confesses to his teacher and accepts a zero on the test. What is the central theme?",
+        "options": [
+          "A. Cheating is the easiest way to succeed",
+          "B. Honesty and integrity matter more than achievement",
+          "C. Scholarships are unfair",
+          "D. Teachers should not trust students"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In the novel, the main character, Amir, cheats on his final exam and gets the highest grade. At first, he feels proud. But when his honest friend Hasan receives a lower grade and loses a scholarship opportunity, Amir cannot sleep. He finally confesses to his teacher and accepts a zero on the test. What is the central theme?",
+        "options": [
+          "A. Cheating is the easiest way to succeed",
+          "B. Honesty and integrity matter more than achievement",
+          "C. Scholarships are unfair",
+          "D. Teachers should not trust students"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Amir's guilt and eventual confession show that personal integrity matters more than the grade he achieved through dishonesty.",
+      "explanation_zh": "Amir's guilt and eventual confession show that personal integrity matters more than the grade he achieved through dishonesty.",
+      "tags": [
+        "theme_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "theme_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "character_development",
+      "subtopic": null,
+      "difficulty": 0.47,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: At the beginning of the story, Nadia refused to eat lunch with anyone new. She carried her tray to the same corner table every day and read alone. When the school started a 'Mix-It-Up' lunch program, she was furious. But after being seated next to Caleb, who shared her love of marine biology, Nadia found herself talking nonstop. By the end of the month, she was the one suggesting new seating combinations. Which word best describes Nadia's character arc?",
+        "options": [
+          "A. Stubborn to defeated",
+          "B. Isolated to socially engaged",
+          "C. Happy to miserable",
+          "D. Confident to insecure"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: At the beginning of the story, Nadia refused to eat lunch with anyone new. She carried her tray to the same corner table every day and read alone. When the school started a 'Mix-It-Up' lunch program, she was furious. But after being seated next to Caleb, who shared her love of marine biology, Nadia found herself talking nonstop. By the end of the month, she was the one suggesting new seating combinations. Which word best describes Nadia's character arc?",
+        "options": [
+          "A. Stubborn to defeated",
+          "B. Isolated to socially engaged",
+          "C. Happy to miserable",
+          "D. Confident to insecure"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Nadia moves from eating alone and refusing to meet people (isolated) to suggesting new seating combinations (socially engaged).",
+      "explanation_zh": "Nadia moves from eating alone and refusing to meet people (isolated) to suggesting new seating combinations (socially engaged).",
+      "tags": [
+        "character_development",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "character_development",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "literary_devices_irony",
+      "subtopic": null,
+      "difficulty": 0.48,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: The fire station burned down last Tuesday. Firefighters from three neighboring towns had to come put out the blaze. The chief said, 'Of all the buildings in town, this was the one we never expected to need help with.' What type of irony is present in this situation?",
+        "options": [
+          "A. Verbal irony",
+          "B. Situational irony",
+          "C. Dramatic irony",
+          "D. No irony is present"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: The fire station burned down last Tuesday. Firefighters from three neighboring towns had to come put out the blaze. The chief said, 'Of all the buildings in town, this was the one we never expected to need help with.' What type of irony is present in this situation?",
+        "options": [
+          "A. Verbal irony",
+          "B. Situational irony",
+          "C. Dramatic irony",
+          "D. No irony is present"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Situational irony occurs when the outcome is the opposite of what is expected. A fire station — the place designed to fight fires — burning down is the opposite of what anyone would expect.",
+      "explanation_zh": "Situational irony occurs when the outcome is the opposite of what is expected. A fire station — the place designed to fight fires — burning down is the opposite of what anyone would expect.",
+      "tags": [
+        "literary_devices_irony",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "literary_devices_irony",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "informational_text_analysis",
+      "subtopic": null,
+      "difficulty": 0.49,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In 2025, ocean temperatures broke records for the third consecutive year. Scientists at NOAA recorded surface temperatures 1.2 degrees Celsius above the 20th-century average. Deep-sea researchers noted that species previously found only near the equator were appearing in waters off the coast of Virginia. Marine ecologist Dr. Rivera warned, 'We are witnessing a fundamental reorganization of ocean ecosystems.' What is the primary purpose of the quotation from Dr. Rivera?",
+        "options": [
+          "A. To add a personal opinion that contradicts the data",
+          "B. To provide expert authority that emphasizes the significance of the data",
+          "C. To entertain the reader with dramatic language",
+          "D. To introduce a new, unrelated topic"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In 2025, ocean temperatures broke records for the third consecutive year. Scientists at NOAA recorded surface temperatures 1.2 degrees Celsius above the 20th-century average. Deep-sea researchers noted that species previously found only near the equator were appearing in waters off the coast of Virginia. Marine ecologist Dr. Rivera warned, 'We are witnessing a fundamental reorganization of ocean ecosystems.' What is the primary purpose of the quotation from Dr. Rivera?",
+        "options": [
+          "A. To add a personal opinion that contradicts the data",
+          "B. To provide expert authority that emphasizes the significance of the data",
+          "C. To entertain the reader with dramatic language",
+          "D. To introduce a new, unrelated topic"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Dr. Rivera's quote, as a marine ecologist, provides expert credibility and underscores the seriousness of the data presented in the passage.",
+      "explanation_zh": "Dr. Rivera's quote, as a marine ecologist, provides expert credibility and underscores the seriousness of the data presented in the passage.",
+      "tags": [
+        "informational_text_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "informational_text_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "symbolism",
+      "subtopic": null,
+      "difficulty": 0.51,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In the story, the old lighthouse had not been lit for twenty years. When the new keeper arrived and finally turned on the light, ships that had been avoiding the harbor began returning. The town, which had been slowly dying, started to come back to life. The lighthouse in this story most likely symbolizes:",
+        "options": [
+          "A. Modern technology",
+          "B. Hope and renewal",
+          "C. Danger and warning",
+          "D. Loneliness"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In the story, the old lighthouse had not been lit for twenty years. When the new keeper arrived and finally turned on the light, ships that had been avoiding the harbor began returning. The town, which had been slowly dying, started to come back to life. The lighthouse in this story most likely symbolizes:",
+        "options": [
+          "A. Modern technology",
+          "B. Hope and renewal",
+          "C. Danger and warning",
+          "D. Loneliness"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The lighthouse's light brings ships back and revives the town. It symbolizes hope and renewal — when the light returns, life returns.",
+      "explanation_zh": "The lighthouse's light brings ships back and revives the town. It symbolizes hope and renewal — when the light returns, life returns.",
+      "tags": [
+        "symbolism",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "symbolism",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "vocabulary_greek_latin_roots",
+      "subtopic": null,
+      "difficulty": 0.52,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The Latin root 'aqua' means water and the Latin root 'duct' means to lead or carry. What does 'aqueduct' most likely mean?",
+        "options": [
+          "A. A device that purifies water",
+          "B. A structure that carries water from one place to another",
+          "C. An underwater tunnel",
+          "D. A type of waterproof fabric"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "The Latin root 'aqua' means water and the Latin root 'duct' means to lead or carry. What does 'aqueduct' most likely mean?",
+        "options": [
+          "A. A device that purifies water",
+          "B. A structure that carries water from one place to another",
+          "C. An underwater tunnel",
+          "D. A type of waterproof fabric"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Combining 'aqua' (water) and 'duct' (to lead/carry), an aqueduct is a structure that leads or carries water from one place to another.",
+      "explanation_zh": "Combining 'aqua' (water) and 'duct' (to lead/carry), an aqueduct is a structure that leads or carries water from one place to another.",
+      "tags": [
+        "vocabulary_greek_latin_roots",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "vocabulary_greek_latin_roots",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "text_evidence",
+      "subtopic": null,
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Deep-sea explorers made a stunning discovery in 2025. Using advanced submersible vehicles, a team descended to 8,200 meters in the Pacific Ocean. They found thriving communities of organisms near hydrothermal vents — tube worms, shrimp, and bacteria that convert chemicals into energy without sunlight. Lead researcher Dr. Park stated, 'These organisms rewrite our understanding of where life can exist.' Which claim is best supported by evidence in the passage?",
+        "options": [
+          "A. Deep-sea exploration is too expensive to continue",
+          "B. Life can thrive in extreme environments without sunlight",
+          "C. The Pacific Ocean is the deepest ocean",
+          "D. Submersible technology has not improved in decades"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Deep-sea explorers made a stunning discovery in 2025. Using advanced submersible vehicles, a team descended to 8,200 meters in the Pacific Ocean. They found thriving communities of organisms near hydrothermal vents — tube worms, shrimp, and bacteria that convert chemicals into energy without sunlight. Lead researcher Dr. Park stated, 'These organisms rewrite our understanding of where life can exist.' Which claim is best supported by evidence in the passage?",
+        "options": [
+          "A. Deep-sea exploration is too expensive to continue",
+          "B. Life can thrive in extreme environments without sunlight",
+          "C. The Pacific Ocean is the deepest ocean",
+          "D. Submersible technology has not improved in decades"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The passage describes organisms that 'convert chemicals into energy without sunlight' at extreme depths, directly supporting the claim that life thrives without sunlight.",
+      "explanation_zh": "The passage describes organisms that 'convert chemicals into energy without sunlight' at extreme depths, directly supporting the claim that life thrives without sunlight.",
+      "tags": [
+        "text_evidence",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "text_evidence",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "poetry_tone",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the poem excerpt:\n'I wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils.'\n— William Wordsworth\nHow does the tone shift between the first two lines and the last two lines?",
+        "options": [
+          "A. From angry to peaceful",
+          "B. From solitary and drifting to surprised and delighted",
+          "C. From joyful to sorrowful",
+          "D. From fearful to relieved"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the poem excerpt:\n'I wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils.'\n— William Wordsworth\nHow does the tone shift between the first two lines and the last two lines?",
+        "options": [
+          "A. From angry to peaceful",
+          "B. From solitary and drifting to surprised and delighted",
+          "C. From joyful to sorrowful",
+          "D. From fearful to relieved"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The first lines describe lonely wandering ('lonely as a cloud'). The tone shifts at 'all at once I saw' — surprise and delight at discovering the golden daffodils.",
+      "explanation_zh": "The first lines describe lonely wandering ('lonely as a cloud'). The tone shifts at 'all at once I saw' — surprise and delight at discovering the golden daffodils.",
+      "tags": [
+        "poetry_tone",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G7",
+        "original_topic": "poetry_tone",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "grammar",
+      "subtopic": "clauses",
+      "difficulty": 0.56,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly combines an independent and dependent clause?",
+        "options": [
+          "A. Because NASA's Artemis mission aims to return astronauts to the Moon. Scientists are excited.",
+          "B. Because NASA's Artemis mission aims to return astronauts to the Moon, scientists are excited about new discoveries.",
+          "C. NASA's Artemis mission aims to return astronauts to the Moon, because. Scientists are excited.",
+          "D. Because, NASA's Artemis mission aims to return astronauts to the Moon scientists are excited."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly combines an independent and dependent clause?",
+        "options": [
+          "A. Because NASA's Artemis mission aims to return astronauts to the Moon. Scientists are excited.",
+          "B. Because NASA's Artemis mission aims to return astronauts to the Moon, scientists are excited about new discoveries.",
+          "C. NASA's Artemis mission aims to return astronauts to the Moon, because. Scientists are excited.",
+          "D. Because, NASA's Artemis mission aims to return astronauts to the Moon scientists are excited."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "When a dependent clause ('Because NASA's Artemis mission...') comes before an independent clause, it is followed by a comma. Together they form a complete complex sentence.",
+      "explanation_zh": "When a dependent clause ('Because NASA's Artemis mission...') comes before an independent clause, it is followed by a comma. Together they form a complete complex sentence.",
+      "tags": [
+        "independent_dependent_clauses",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "independent_dependent_clauses",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "semicolons",
+      "subtopic": null,
+      "difficulty": 0.57,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the semicolon correctly?",
+        "options": [
+          "A. The hurricane was downgraded; to a tropical storm by evening.",
+          "B. The hurricane was downgraded to a tropical storm; nevertheless, many coastal areas still experienced flooding.",
+          "C. The hurricane; was downgraded to a tropical storm, nevertheless many areas experienced flooding.",
+          "D. The hurricane was downgraded to a tropical storm, nevertheless; many coastal areas still experienced flooding."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the semicolon correctly?",
+        "options": [
+          "A. The hurricane was downgraded; to a tropical storm by evening.",
+          "B. The hurricane was downgraded to a tropical storm; nevertheless, many coastal areas still experienced flooding.",
+          "C. The hurricane; was downgraded to a tropical storm, nevertheless many areas experienced flooding.",
+          "D. The hurricane was downgraded to a tropical storm, nevertheless; many coastal areas still experienced flooding."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A semicolon can join two independent clauses when the second begins with a conjunctive adverb like 'nevertheless,' which is followed by a comma.",
+      "explanation_zh": "A semicolon can join two independent clauses when the second begins with a conjunctive adverb like 'nevertheless,' which is followed by a comma.",
+      "tags": [
+        "semicolons",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "semicolons",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "active_passive_voice",
+      "subtopic": null,
+      "difficulty": 0.58,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Rewrite in active voice: 'The new climate report was released by the United Nations in 2025.'",
+        "options": [
+          "A. The United Nations released the new climate report in 2025.",
+          "B. In 2025, the new climate report released the United Nations.",
+          "C. The new climate report in 2025 was released.",
+          "D. Released in 2025 was the new climate report by the United Nations."
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Rewrite in active voice: 'The new climate report was released by the United Nations in 2025.'",
+        "options": [
+          "A. The United Nations released the new climate report in 2025.",
+          "B. In 2025, the new climate report released the United Nations.",
+          "C. The new climate report in 2025 was released.",
+          "D. Released in 2025 was the new climate report by the United Nations."
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Active voice places the doer of the action as the subject. 'The United Nations' performed the action of releasing, so it becomes the subject.",
+      "explanation_zh": "Active voice places the doer of the action as the subject. 'The United Nations' performed the action of releasing, so it becomes the subject.",
+      "tags": [
+        "active_passive_voice",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "active_passive_voice",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "parallel_structure",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence demonstrates correct parallel structure?",
+        "options": [
+          "A. The coach told the team to stretch, run laps, and they should practice free throws.",
+          "B. The coach told the team to stretch, to run laps, and practicing free throws.",
+          "C. The coach told the team to stretch, run laps, and practice free throws.",
+          "D. The coach told the team stretching, to run laps, and practice free throws."
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Which sentence demonstrates correct parallel structure?",
+        "options": [
+          "A. The coach told the team to stretch, run laps, and they should practice free throws.",
+          "B. The coach told the team to stretch, to run laps, and practicing free throws.",
+          "C. The coach told the team to stretch, run laps, and practice free throws.",
+          "D. The coach told the team stretching, to run laps, and practice free throws."
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "After 'to,' each item should use the base form of the verb: stretch, run, practice. This creates parallel structure across the list.",
+      "explanation_zh": "After 'to,' each item should use the base form of the verb: stretch, run, practice. This creates parallel structure across the list.",
+      "tags": [
+        "parallel_structure",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "parallel_structure",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "source_credibility",
+      "subtopic": null,
+      "difficulty": 0.61,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A student is writing a research paper on the effects of screen time on teenagers. Which source is LEAST credible?",
+        "options": [
+          "A. A 2025 study published in the Journal of Adolescent Health",
+          "B. A blog post titled 'Why I Think Phones Are Bad' by an anonymous author",
+          "C. A report from the American Academy of Pediatrics",
+          "D. A peer-reviewed meta-analysis of 50 studies on adolescent screen use"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A student is writing a research paper on the effects of screen time on teenagers. Which source is LEAST credible?",
+        "options": [
+          "A. A 2025 study published in the Journal of Adolescent Health",
+          "B. A blog post titled 'Why I Think Phones Are Bad' by an anonymous author",
+          "C. A report from the American Academy of Pediatrics",
+          "D. A peer-reviewed meta-analysis of 50 studies on adolescent screen use"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "An anonymous blog post lacks author credentials, peer review, and institutional backing. The other sources are from reputable, verifiable organizations or peer-reviewed publications.",
+      "explanation_zh": "An anonymous blog post lacks author credentials, peer review, and institutional backing. The other sources are from reputable, verifiable organizations or peer-reviewed publications.",
+      "tags": [
+        "source_credibility",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "source_credibility",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "transitional_words",
+      "subtopic": null,
+      "difficulty": 0.62,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Choose the best transition: 'The Amazon rainforest absorbs vast amounts of carbon dioxide. _______, deforestation has reduced its capacity to do so over the past decade.'",
+        "options": [
+          "A. In addition",
+          "B. For example",
+          "C. Unfortunately",
+          "D. As a result"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Choose the best transition: 'The Amazon rainforest absorbs vast amounts of carbon dioxide. _______, deforestation has reduced its capacity to do so over the past decade.'",
+        "options": [
+          "A. In addition",
+          "B. For example",
+          "C. Unfortunately",
+          "D. As a result"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Unfortunately' signals that the following information is a negative development related to the first statement. It transitions from a positive fact to a concerning reality.",
+      "explanation_zh": "'Unfortunately' signals that the following information is a negative development related to the first statement. It transitions from a positive fact to a concerning reality.",
+      "tags": [
+        "transitional_words",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "transitional_words",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "colons",
+      "subtopic": null,
+      "difficulty": 0.64,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence uses the colon correctly?",
+        "options": [
+          "A. The three branches of government are: legislative, executive, and judicial.",
+          "B. The U.S. government has three branches: legislative, executive, and judicial.",
+          "C. The three branches: are legislative, executive, and judicial.",
+          "D. Legislative, executive, and judicial: are the three branches."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence uses the colon correctly?",
+        "options": [
+          "A. The three branches of government are: legislative, executive, and judicial.",
+          "B. The U.S. government has three branches: legislative, executive, and judicial.",
+          "C. The three branches: are legislative, executive, and judicial.",
+          "D. Legislative, executive, and judicial: are the three branches."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A colon must follow a complete independent clause. 'The U.S. government has three branches' is complete. Option A incorrectly places a colon after the verb 'are,' interrupting the sentence.",
+      "explanation_zh": "A colon must follow a complete independent clause. 'The U.S. government has three branches' is complete. Option A incorrectly places a colon after the verb 'are,' interrupting the sentence.",
+      "tags": [
+        "colons",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "colons",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G7",
+      "topic": "text_evidence",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence provides the strongest textual evidence for the claim 'Space exploration leads to technological innovation'?",
+        "options": [
+          "A. Space is a fascinating subject for many students.",
+          "B. NASA's development of water purification systems for the International Space Station led to portable filters now used in disaster relief worldwide.",
+          "C. Many countries have space programs.",
+          "D. Astronauts train for years before going to space."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence provides the strongest textual evidence for the claim 'Space exploration leads to technological innovation'?",
+        "options": [
+          "A. Space is a fascinating subject for many students.",
+          "B. NASA's development of water purification systems for the International Space Station led to portable filters now used in disaster relief worldwide.",
+          "C. Many countries have space programs.",
+          "D. Astronauts train for years before going to space."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Option B provides a specific example of space technology (water purification for ISS) directly leading to a real-world innovation (portable filters for disaster relief), strongly supporting the claim.",
+      "explanation_zh": "Option B provides a specific example of space technology (water purification for ISS) directly leading to a real-world innovation (portable filters for disaster relief), strongly supporting the claim.",
+      "tags": [
+        "text_evidence",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G7",
+        "original_topic": "text_evidence",
+        "is_seed": false
+      }
+    }
+  ]
+}

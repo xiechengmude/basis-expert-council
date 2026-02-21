@@ -1,0 +1,596 @@
+{
+  "batch_name": "MAP_math_G9_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G9",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "triangle_congruence",
+      "subtopic": null,
+      "difficulty": 0.45,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Based on the given data, what is the perimeter of Triangle a? (Using AAS congruence with angles 59°, 86°, 35° and sides 8, 12 on Triangle b)",
+        "options": [
+          "A. 32",
+          "B. 34",
+          "C. 35",
+          "D. 36"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Based on the given data, what is the perimeter of Triangle a? (Using AAS congruence with angles 59°, 86°, 35° and sides 8, 12 on Triangle b)",
+        "options": [
+          "A. 32",
+          "B. 34",
+          "C. 35",
+          "D. 36"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Using AAS congruence, corresponding sides are equal. AC = 14. Perimeter = 8 + 12 + 14 = 34.",
+      "explanation_zh": "Using AAS congruence, corresponding sides are equal. AC = 14. Perimeter = 8 + 12 + 14 = 34.",
+      "tags": [
+        "triangle_congruence",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "triangle_congruence",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "algebraic_evaluation",
+      "subtopic": null,
+      "difficulty": 0.47,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Evaluate 3a² − 8b + 2(c − b) with a = 3, b = 4.5, c = 11",
+        "options": [
+          "A. 6",
+          "B. 4",
+          "C. 2",
+          "D. 0",
+          "E. −2"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Evaluate 3a² − 8b + 2(c − b) with a = 3, b = 4.5, c = 11",
+        "options": [
+          "A. 6",
+          "B. 4",
+          "C. 2",
+          "D. 0",
+          "E. −2"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "3(9) − 8(4.5) + 2(11 − 4.5) = 27 − 36 + 2(6.5) = 27 − 36 + 13 = 4.",
+      "explanation_zh": "3(9) − 8(4.5) + 2(11 − 4.5) = 27 − 36 + 2(6.5) = 27 − 36 + 13 = 4.",
+      "tags": [
+        "algebraic_evaluation",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "algebraic_evaluation",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "unit_cost",
+      "subtopic": null,
+      "difficulty": 0.5,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A 4.5-pound container of gourmet coffee costs $58.95 and brews approximately 60 pots. What is the approximate cost per pot?",
+        "options": [
+          "A. $13.10",
+          "B. $1.02",
+          "C. $0.98",
+          "D. $0.08"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A 4.5-pound container of gourmet coffee costs $58.95 and brews approximately 60 pots. What is the approximate cost per pot?",
+        "options": [
+          "A. $13.10",
+          "B. $1.02",
+          "C. $0.98",
+          "D. $0.08"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "$58.95 ÷ 60 = $0.9825 ≈ $0.98 per pot.",
+      "explanation_zh": "$58.95 ÷ 60 = $0.9825 ≈ $0.98 per pot.",
+      "tags": [
+        "unit_cost",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "unit_cost",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "quadratic_expressions",
+      "subtopic": null,
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Factor completely: 3x² − 12x − 36",
+        "options": [
+          "A. 3(x − 6)(x + 2)",
+          "B. 3(x + 6)(x − 2)",
+          "C. (3x − 6)(x + 6)",
+          "D. 3(x − 3)(x + 4)"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Factor completely: 3x² − 12x − 36",
+        "options": [
+          "A. 3(x − 6)(x + 2)",
+          "B. 3(x + 6)(x − 2)",
+          "C. (3x − 6)(x + 6)",
+          "D. 3(x − 3)(x + 4)"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Factor out 3: 3(x² − 4x − 12). Find factors of −12 that add to −4: −6 and 2. So 3(x − 6)(x + 2).",
+      "explanation_zh": "Factor out 3: 3(x² − 4x − 12). Find factors of −12 that add to −4: −6 and 2. So 3(x − 6)(x + 2).",
+      "tags": [
+        "quadratic_expressions",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "quadratic_expressions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "radical_expressions",
+      "subtopic": null,
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Simplify: sqrt(72) + sqrt(18)",
+        "options": [
+          "A. 9sqrt(2)",
+          "B. 6sqrt(2) + 3sqrt(2)",
+          "C. sqrt(90)",
+          "D. 9sqrt(2)"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Simplify: sqrt(72) + sqrt(18)",
+        "options": [
+          "A. 9sqrt(2)",
+          "B. 6sqrt(2) + 3sqrt(2)",
+          "C. sqrt(90)",
+          "D. 9sqrt(2)"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "sqrt(72) = sqrt(36 × 2) = 6sqrt(2). sqrt(18) = sqrt(9 × 2) = 3sqrt(2). Sum: 6sqrt(2) + 3sqrt(2) = 9sqrt(2).",
+      "explanation_zh": "sqrt(72) = sqrt(36 × 2) = 6sqrt(2). sqrt(18) = sqrt(9 × 2) = 3sqrt(2). Sum: 6sqrt(2) + 3sqrt(2) = 9sqrt(2).",
+      "tags": [
+        "radical_expressions",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "radical_expressions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "function_notation",
+      "subtopic": null,
+      "difficulty": 0.57,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Given f(x) = 2x² − 3x + 1, what is f(−2)?",
+        "options": [
+          "A. 3",
+          "B. 11",
+          "C. 15",
+          "D. −1"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Given f(x) = 2x² − 3x + 1, what is f(−2)?",
+        "options": [
+          "A. 3",
+          "B. 11",
+          "C. 15",
+          "D. −1"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "f(−2) = 2(−2)² − 3(−2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15.",
+      "explanation_zh": "f(−2) = 2(−2)² − 3(−2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15.",
+      "tags": [
+        "function_notation",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "function_notation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "arithmetic_sequences",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "An arithmetic sequence starts at 7 and has a common difference of 4. What is the 25th term?",
+        "options": [
+          "A. 100",
+          "B. 103",
+          "C. 107",
+          "D. 111"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "An arithmetic sequence starts at 7 and has a common difference of 4. What is the 25th term?",
+        "options": [
+          "A. 100",
+          "B. 103",
+          "C. 107",
+          "D. 111"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "a_n = a_1 + (n − 1)d. a_25 = 7 + (24)(4) = 7 + 96 = 103.",
+      "explanation_zh": "a_n = a_1 + (n − 1)d. a_25 = 7 + (24)(4) = 7 + 96 = 103.",
+      "tags": [
+        "arithmetic_sequences",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "arithmetic_sequences",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "modeling_equations",
+      "subtopic": null,
+      "difficulty": 0.62,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A phone plan charges a $25 monthly base fee plus $0.10 per text message. If a customer's bill is $43.50, how many text messages were sent?",
+        "options": [
+          "A. 165",
+          "B. 175",
+          "C. 185",
+          "D. 195"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A phone plan charges a $25 monthly base fee plus $0.10 per text message. If a customer's bill is $43.50, how many text messages were sent?",
+        "options": [
+          "A. 165",
+          "B. 175",
+          "C. 185",
+          "D. 195"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "25 + 0.10m = 43.50 → 0.10m = 18.50 → m = 185 messages.",
+      "explanation_zh": "25 + 0.10m = 43.50 → 0.10m = 18.50 → m = 185 messages.",
+      "tags": [
+        "modeling_equations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G9-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "modeling_equations",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "right_triangle_trig",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In a right triangle, the side opposite angle A is 5 and the hypotenuse is 13. What is sin(A)?",
+        "options": [
+          "A. 5/13",
+          "B. 12/13",
+          "C. 5/12",
+          "D. 13/5"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "In a right triangle, the side opposite angle A is 5 and the hypotenuse is 13. What is sin(A)?",
+        "options": [
+          "A. 5/13",
+          "B. 12/13",
+          "C. 5/12",
+          "D. 13/5"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "sin(A) = opposite/hypotenuse = 5/13.",
+      "explanation_zh": "sin(A) = opposite/hypotenuse = 5/13.",
+      "tags": [
+        "right_triangle_trig",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "right_triangle_trig",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "modeling_equations_gdp",
+      "subtopic": null,
+      "difficulty": 0.67,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In 2025, a country's GDP was $2.4 trillion, growing at 3.5% annually. Which equation models the GDP (in trillions) after t years?",
+        "options": [
+          "A. G(t) = 2.4 + 0.035t",
+          "B. G(t) = 2.4(1.035)^t",
+          "C. G(t) = 2.4(0.965)^t",
+          "D. G(t) = 2.4 × 3.5^t"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "In 2025, a country's GDP was $2.4 trillion, growing at 3.5% annually. Which equation models the GDP (in trillions) after t years?",
+        "options": [
+          "A. G(t) = 2.4 + 0.035t",
+          "B. G(t) = 2.4(1.035)^t",
+          "C. G(t) = 2.4(0.965)^t",
+          "D. G(t) = 2.4 × 3.5^t"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Exponential growth model: G(t) = initial × (1 + rate)^t = 2.4(1.035)^t. Option A is linear, not exponential.",
+      "explanation_zh": "Exponential growth model: G(t) = initial × (1 + rate)^t = 2.4(1.035)^t. Option A is linear, not exponential.",
+      "tags": [
+        "modeling_equations_gdp",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "modeling_equations_gdp",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "quadratic_applications_gdp",
+      "subtopic": null,
+      "difficulty": 0.7,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A country's quarterly GDP growth rate (in %) over 8 quarters is modeled by r(q) = −0.5q² + 4q − 2. During which quarter does the growth rate peak?",
+        "options": [
+          "A. Quarter 2",
+          "B. Quarter 3",
+          "C. Quarter 4",
+          "D. Quarter 5"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A country's quarterly GDP growth rate (in %) over 8 quarters is modeled by r(q) = −0.5q² + 4q − 2. During which quarter does the growth rate peak?",
+        "options": [
+          "A. Quarter 2",
+          "B. Quarter 3",
+          "C. Quarter 4",
+          "D. Quarter 5"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Vertex: q = −b/(2a) = −4/(2 × −0.5) = −4/(−1) = 4. The growth rate peaks in Quarter 4.",
+      "explanation_zh": "Vertex: q = −b/(2a) = −4/(2 × −0.5) = −4/(−1) = 4. The growth rate peaks in Quarter 4.",
+      "tags": [
+        "quadratic_applications_gdp",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "quadratic_applications_gdp",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "radical_expressions",
+      "subtopic": null,
+      "difficulty": 0.72,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Rationalize the denominator: 6 / sqrt(3)",
+        "options": [
+          "A. 2sqrt(3)",
+          "B. 6sqrt(3)",
+          "C. 3sqrt(6)",
+          "D. sqrt(12)"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Rationalize the denominator: 6 / sqrt(3)",
+        "options": [
+          "A. 2sqrt(3)",
+          "B. 6sqrt(3)",
+          "C. 3sqrt(6)",
+          "D. sqrt(12)"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Multiply numerator and denominator by sqrt(3): 6/sqrt(3) × sqrt(3)/sqrt(3) = 6sqrt(3)/3 = 2sqrt(3).",
+      "explanation_zh": "Multiply numerator and denominator by sqrt(3): 6/sqrt(3) × sqrt(3)/sqrt(3) = 6sqrt(3)/3 = 2sqrt(3).",
+      "tags": [
+        "radical_expressions",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "radical_expressions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G9",
+      "topic": "function_notation",
+      "subtopic": null,
+      "difficulty": 0.75,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "If g(x) = 3x + 2, find x when g(x) = 20.",
+        "options": [
+          "A. 4",
+          "B. 5",
+          "C. 6",
+          "D. 7"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "If g(x) = 3x + 2, find x when g(x) = 20.",
+        "options": [
+          "A. 4",
+          "B. 5",
+          "C. 6",
+          "D. 7"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Set 3x + 2 = 20. Subtract 2: 3x = 18. Divide by 3: x = 6.",
+      "explanation_zh": "Set 3x + 2 = 20. Subtract 2: 3x = 18. Divide by 3: x = 6.",
+      "tags": [
+        "function_notation",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G9-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G9-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G9",
+        "original_topic": "function_notation",
+        "is_seed": false
+      }
+    }
+  ]
+}

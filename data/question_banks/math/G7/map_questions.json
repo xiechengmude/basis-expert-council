@@ -1,0 +1,641 @@
+{
+  "batch_name": "MAP_math_G7_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "math",
+  "grade_level": "G7",
+  "questions": [
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "ratio_proportion",
+      "subtopic": null,
+      "difficulty": 0.35,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "An ice cream shop uses 4 liters of ice cream to make 16 cones. If the shop plans to sell 80 cones and expects to lose 0.25 liters of ice cream to melting/waste for each batch of 16 cones, how many liters should they buy in total?",
+        "options": [
+          "A. 20 L",
+          "B. 21 L",
+          "C. 21.25 L",
+          "D. 22 L"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "An ice cream shop uses 4 liters of ice cream to make 16 cones. If the shop plans to sell 80 cones and expects to lose 0.25 liters of ice cream to melting/waste for each batch of 16 cones, how many liters should they buy in total?",
+        "options": [
+          "A. 20 L",
+          "B. 21 L",
+          "C. 21.25 L",
+          "D. 22 L"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Batches needed: 80 ÷ 16 = 5. Ice cream: 4 × 5 = 20L. Waste: 0.25 × 5 = 1.25L. Total: 20 + 1.25 = 21.25L.",
+      "explanation_zh": "Batches needed: 80 ÷ 16 = 5. Ice cream: 4 × 5 = 20L. Waste: 0.25 × 5 = 1.25L. Total: 20 + 1.25 = 21.25L.",
+      "tags": [
+        "ratio_proportion",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-001",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "ratio_proportion",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "measurement_ordering",
+      "subtopic": null,
+      "difficulty": 0.37,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What is the correct order for the time measurements from smallest to largest? 1/6 of a day, 3.5 hours, 250 minutes, 6000 seconds",
+        "options": [
+          "A. 1/6 of a day, 3.5 hours, 250 minutes, 6000 seconds",
+          "B. 6000 seconds, 3.5 hours, 250 minutes, 1/6 of a day",
+          "C. 6000 seconds, 3.5 hours, 1/6 of a day, 250 minutes",
+          "D. 250 minutes, 6000 seconds, 3.5 hours, 1/6 of a day"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "What is the correct order for the time measurements from smallest to largest? 1/6 of a day, 3.5 hours, 250 minutes, 6000 seconds",
+        "options": [
+          "A. 1/6 of a day, 3.5 hours, 250 minutes, 6000 seconds",
+          "B. 6000 seconds, 3.5 hours, 250 minutes, 1/6 of a day",
+          "C. 6000 seconds, 3.5 hours, 1/6 of a day, 250 minutes",
+          "D. 250 minutes, 6000 seconds, 3.5 hours, 1/6 of a day"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Convert to minutes: 6000s = 100min, 3.5h = 210min, 1/6 day = 240min, 250min = 250min. Order: 100 < 210 < 240 < 250.",
+      "explanation_zh": "Convert to minutes: 6000s = 100min, 3.5h = 210min, 1/6 day = 240min, 250min = 250min. Order: 100 < 210 < 240 < 250.",
+      "tags": [
+        "measurement_ordering",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-002",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "measurement_ordering",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "similar_triangles",
+      "subtopic": null,
+      "difficulty": 0.4,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which pairs of triangles are similar?",
+        "options": [
+          "A. Pair (a) only",
+          "B. Pair (b) only",
+          "C. Pair (c) only",
+          "D. Pairs (a) and (b)"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Which pairs of triangles are similar?",
+        "options": [
+          "A. Pair (a) only",
+          "B. Pair (b) only",
+          "C. Pair (c) only",
+          "D. Pairs (a) and (b)"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Pair (a) demonstrates SAS similarity; Pair (b) demonstrates SSS similarity; Pair (c) lacks matching angles and side information.",
+      "explanation_zh": "Pair (a) demonstrates SAS similarity; Pair (b) demonstrates SSS similarity; Pair (c) lacks matching angles and side information.",
+      "tags": [
+        "similar_triangles",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-003",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "similar_triangles",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "unit_rate_graph",
+      "subtopic": null,
+      "difficulty": 0.42,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Use the graph to answer: What is the unit rate per crate? (Graph shows time vs. number of crates picked)",
+        "options": [
+          "A. 0.33 minutes per crate",
+          "B. 1 minute per crate",
+          "C. 2.5 minutes per crate",
+          "D. 3 minutes per crate",
+          "E. 3.5 minutes per crate"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "Use the graph to answer: What is the unit rate per crate? (Graph shows time vs. number of crates picked)",
+        "options": [
+          "A. 0.33 minutes per crate",
+          "B. 1 minute per crate",
+          "C. 2.5 minutes per crate",
+          "D. 3 minutes per crate",
+          "E. 3.5 minutes per crate"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Reading the graph at x=1 crate shows y=3 minutes, establishing the unit rate of 3 minutes per crate.",
+      "explanation_zh": "Reading the graph at x=1 crate shows y=3 minutes, establishing the unit rate of 3 minutes per crate.",
+      "tags": [
+        "unit_rate_graph",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-004 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-004",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "unit_rate_graph",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "proportional_relationships",
+      "subtopic": null,
+      "difficulty": 0.44,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A recipe calls for 3 cups of flour to make 24 cookies. If Maria wants to make 60 cookies for a bake sale, how many cups of flour does she need?",
+        "options": [
+          "A. 5 cups",
+          "B. 6.5 cups",
+          "C. 7.5 cups",
+          "D. 8 cups"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A recipe calls for 3 cups of flour to make 24 cookies. If Maria wants to make 60 cookies for a bake sale, how many cups of flour does she need?",
+        "options": [
+          "A. 5 cups",
+          "B. 6.5 cups",
+          "C. 7.5 cups",
+          "D. 8 cups"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Set up the proportion: 3/24 = x/60. Cross multiply: 24x = 180. Divide: x = 7.5 cups.",
+      "explanation_zh": "Set up the proportion: 3/24 = x/60. Cross multiply: 24x = 180. Divide: x = 7.5 cups.",
+      "tags": [
+        "proportional_relationships",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-MATH-101",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "proportional_relationships",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "percent_problems",
+      "subtopic": null,
+      "difficulty": 0.47,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A store marks a $45 jacket down by 20%, then adds 8% sales tax to the sale price. What is the total cost?",
+        "options": [
+          "A. $36.00",
+          "B. $38.88",
+          "C. $38.16",
+          "D. $41.40"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A store marks a $45 jacket down by 20%, then adds 8% sales tax to the sale price. What is the total cost?",
+        "options": [
+          "A. $36.00",
+          "B. $38.88",
+          "C. $38.16",
+          "D. $41.40"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Sale price: $45 × 0.80 = $36.00. Tax: $36.00 × 0.08 = $2.88. Total: $36.00 + $2.88 = $38.88.",
+      "explanation_zh": "Sale price: $45 × 0.80 = $36.00. Tax: $36.00 × 0.08 = $2.88. Total: $36.00 + $2.88 = $38.88.",
+      "tags": [
+        "percent_problems",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-MATH-102",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "percent_problems",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "scale_drawings",
+      "subtopic": null,
+      "difficulty": 0.49,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "On a map, 1 inch represents 15 miles. Two cities are 4.5 inches apart on the map. If a car travels at 45 miles per hour, how long will the trip take?",
+        "options": [
+          "A. 1 hour",
+          "B. 1.5 hours",
+          "C. 2 hours",
+          "D. 2.5 hours"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "On a map, 1 inch represents 15 miles. Two cities are 4.5 inches apart on the map. If a car travels at 45 miles per hour, how long will the trip take?",
+        "options": [
+          "A. 1 hour",
+          "B. 1.5 hours",
+          "C. 2 hours",
+          "D. 2.5 hours"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Actual distance: 4.5 × 15 = 67.5 miles. Time = distance/speed = 67.5/45 = 1.5 hours.",
+      "explanation_zh": "Actual distance: 4.5 × 15 = 67.5 miles. Time = distance/speed = 67.5/45 = 1.5 hours.",
+      "tags": [
+        "scale_drawings",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-MATH-103",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "scale_drawings",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "probability",
+      "subtopic": null,
+      "difficulty": 0.51,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A bag contains 5 red, 3 blue, and 2 green marbles. If one marble is drawn at random, what is the probability that it is NOT red?",
+        "options": [
+          "A. 1/5",
+          "B. 2/5",
+          "C. 1/2",
+          "D. 3/5"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A bag contains 5 red, 3 blue, and 2 green marbles. If one marble is drawn at random, what is the probability that it is NOT red?",
+        "options": [
+          "A. 1/5",
+          "B. 2/5",
+          "C. 1/2",
+          "D. 3/5"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Total marbles: 5 + 3 + 2 = 10. Non-red: 3 + 2 = 5. P(not red) = 5/10 = 1/2.",
+      "explanation_zh": "Total marbles: 5 + 3 + 2 = 10. Non-red: 3 + 2 = 5. P(not red) = 5/10 = 1/2.",
+      "tags": [
+        "probability",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-MATH-104",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "probability",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "integer_operations",
+      "subtopic": null,
+      "difficulty": 0.53,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Evaluate: (−8) × 3 + (−4) × (−5) − 12",
+        "options": [
+          "A. −16",
+          "B. −28",
+          "C. −36",
+          "D. 4"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Evaluate: (−8) × 3 + (−4) × (−5) − 12",
+        "options": [
+          "A. −16",
+          "B. −28",
+          "C. −36",
+          "D. 4"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "(−8) × 3 = −24. (−4) × (−5) = 20. Then −24 + 20 − 12 = −16.",
+      "explanation_zh": "(−8) × 3 = −24. (−4) × (−5) = 20. Then −24 + 20 − 12 = −16.",
+      "tags": [
+        "integer_operations",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G7-MATH-105",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "integer_operations",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "inequalities",
+      "subtopic": null,
+      "difficulty": 0.56,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Solve the inequality: 3x − 7 > 14. Which value is in the solution set?",
+        "options": [
+          "A. 5",
+          "B. 7",
+          "C. 8",
+          "D. 6"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Solve the inequality: 3x − 7 > 14. Which value is in the solution set?",
+        "options": [
+          "A. 5",
+          "B. 7",
+          "C. 8",
+          "D. 6"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "3x − 7 > 14 → 3x > 21 → x > 7. Only x = 8 satisfies x > 7.",
+      "explanation_zh": "3x − 7 > 14 → 3x > 21 → x > 7. Only x = 8 satisfies x > 7.",
+      "tags": [
+        "inequalities",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-106",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "inequalities",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "circumference_area_circles",
+      "subtopic": null,
+      "difficulty": 0.58,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A circular garden has a diameter of 14 meters. What is the area of the garden? (Use pi = 22/7)",
+        "options": [
+          "A. 44 m²",
+          "B. 154 m²",
+          "C. 308 m²",
+          "D. 616 m²"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "A circular garden has a diameter of 14 meters. What is the area of the garden? (Use pi = 22/7)",
+        "options": [
+          "A. 44 m²",
+          "B. 154 m²",
+          "C. 308 m²",
+          "D. 616 m²"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Radius = 14/2 = 7 m. Area = pi × r² = (22/7) × 49 = 154 m².",
+      "explanation_zh": "Radius = 14/2 = 7 m. Area = pi × r² = (22/7) × 49 = 154 m².",
+      "tags": [
+        "circumference_area_circles",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-107",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "circumference_area_circles",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "cross_sections_3d",
+      "subtopic": null,
+      "difficulty": 0.6,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "A right rectangular prism is sliced with a plane that passes through it at an angle, cutting through all four lateral faces. What shape is the cross-section?",
+        "options": [
+          "A. Triangle",
+          "B. Rectangle",
+          "C. Parallelogram",
+          "D. Pentagon"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "A right rectangular prism is sliced with a plane that passes through it at an angle, cutting through all four lateral faces. What shape is the cross-section?",
+        "options": [
+          "A. Triangle",
+          "B. Rectangle",
+          "C. Parallelogram",
+          "D. Pentagon"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "An angled plane cutting through all four lateral faces of a rectangular prism creates a parallelogram cross-section.",
+      "explanation_zh": "An angled plane cutting through all four lateral faces of a rectangular prism creates a parallelogram cross-section.",
+      "tags": [
+        "cross_sections_3d",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-108",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "cross_sections_3d",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "ratio_proportion_starship",
+      "subtopic": null,
+      "difficulty": 0.63,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "SpaceX's Starship booster uses 33 Raptor engines. During a 2025 test flight, 30 of the 33 engines ignited successfully. If this success rate held for a cluster of 99 engines, how many would be expected to ignite?",
+        "options": [
+          "A. 88",
+          "B. 90",
+          "C. 93",
+          "D. 96"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "SpaceX's Starship booster uses 33 Raptor engines. During a 2025 test flight, 30 of the 33 engines ignited successfully. If this success rate held for a cluster of 99 engines, how many would be expected to ignite?",
+        "options": [
+          "A. 88",
+          "B. 90",
+          "C. 93",
+          "D. 96"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Success rate: 30/33 = 10/11. For 99 engines: (10/11) × 99 = 90 engines.",
+      "explanation_zh": "Success rate: 30/33 = 10/11. For 99 engines: (10/11) × 99 = 90 engines.",
+      "tags": [
+        "ratio_proportion_starship",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-109 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-109",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "ratio_proportion_starship",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "math",
+      "grade_level": "G7",
+      "topic": "percent_change_starship",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "The Starship rocket stands 121 meters tall. The previous Falcon 9 rocket stands 70 meters tall. What is the approximate percent increase in height from Falcon 9 to Starship?",
+        "options": [
+          "A. 42%",
+          "B. 57%",
+          "C. 63%",
+          "D. 73%"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "The Starship rocket stands 121 meters tall. The previous Falcon 9 rocket stands 70 meters tall. What is the approximate percent increase in height from Falcon 9 to Starship?",
+        "options": [
+          "A. 42%",
+          "B. 57%",
+          "C. 63%",
+          "D. 73%"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Percent increase = (121 − 70)/70 × 100 = 51/70 × 100 ≈ 72.9% ≈ 73%.",
+      "explanation_zh": "Percent increase = (121 − 70)/70 × 100 = 51/70 × 100 ≈ 72.9% ≈ 73%.",
+      "tags": [
+        "percent_change_starship",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G7-MATH-110 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G7-MATH-110",
+        "original_subject": "math",
+        "original_grade": "G7",
+        "original_topic": "percent_change_starship",
+        "is_seed": false
+      }
+    }
+  ]
+}

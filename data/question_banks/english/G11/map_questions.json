@@ -1,0 +1,1021 @@
+{
+  "batch_name": "MAP_english_G11_2026",
+  "source": "map_testprep",
+  "source_year": 2026,
+  "subject": "english",
+  "grade_level": "G11",
+  "questions": [
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "vocabulary",
+      "subtopic": "word_analysis",
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In Whitman's 'When I Heard the Learn'd Astronomer', what is the effect of the word 'unaccountable' in line 5?",
+        "options": [
+          "A. Shows speaker confused by complex data",
+          "B. Implies speaker feels guilty for leaving",
+          "C. Suggests speaker cannot logically explain emotional reaction",
+          "D. Reveals speaker unable to understand lesson"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "In Whitman's 'When I Heard the Learn'd Astronomer', what is the effect of the word 'unaccountable' in line 5?",
+        "options": [
+          "A. Shows speaker confused by complex data",
+          "B. Implies speaker feels guilty for leaving",
+          "C. Suggests speaker cannot logically explain emotional reaction",
+          "D. Reveals speaker unable to understand lesson"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Unaccountable' means without logical explanation. The speaker experiences an unexplainable emotional response to the analytical lecture.",
+      "explanation_zh": "'Unaccountable' means without logical explanation. The speaker experiences an unexplainable emotional response to the analytical lecture.",
+      "tags": [
+        "word_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-READ-001",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "word_analysis",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "reading_comp",
+      "subtopic": "theme",
+      "difficulty": 0.56,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What central contrast does Whitman explore in 'When I Heard the Learn'd Astronomer'?",
+        "options": [
+          "A. Power of mathematics to explain natural beauty",
+          "B. Tension between intellectual analysis and direct personal experience",
+          "C. Importance of studying science to understand spirituality",
+          "D. Conflict between individual ambition and public recognition"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "What central contrast does Whitman explore in 'When I Heard the Learn'd Astronomer'?",
+        "options": [
+          "A. Power of mathematics to explain natural beauty",
+          "B. Tension between intellectual analysis and direct personal experience",
+          "C. Importance of studying science to understand spirituality",
+          "D. Conflict between individual ambition and public recognition"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The poem contrasts the sterile lecture hall with scientific data against the speaker's peaceful, direct experience of nature under the stars.",
+      "explanation_zh": "The poem contrasts the sterile lecture hall with scientific data against the speaker's peaceful, direct experience of nature under the stars.",
+      "tags": [
+        "central_contrast",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-READ-002",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "central_contrast",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "reading_comp",
+      "subtopic": "figurative_language",
+      "difficulty": 0.58,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "What effect does the imagery of 'the mystical moist night-air' and 'perfect silence' create at the end of the poem?",
+        "options": [
+          "A. Underscores loneliness and alienation",
+          "B. Reflects longing to return to lecture",
+          "C. Emphasizes confusion about natural world",
+          "D. Evokes serene, spiritual awe versus sterile lecture"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "What effect does the imagery of 'the mystical moist night-air' and 'perfect silence' create at the end of the poem?",
+        "options": [
+          "A. Underscores loneliness and alienation",
+          "B. Reflects longing to return to lecture",
+          "C. Emphasizes confusion about natural world",
+          "D. Evokes serene, spiritual awe versus sterile lecture"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Sensory imagery creates a peaceful spiritual connection contrasting with the cold, analytical lecture environment.",
+      "explanation_zh": "Sensory imagery creates a peaceful spiritual connection contrasting with the cold, analytical lecture environment.",
+      "tags": [
+        "imagery_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-READ-003",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "imagery_analysis",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "writing",
+      "subtopic": "paragraph_structure",
+      "difficulty": 0.59,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "After thanking participants for an art workshop, Samir needs a concluding sentence. Which indicates the action he expects students to take?",
+        "options": [
+          "A. Gallery will be shared on website and newsletter",
+          "B. Workshop committed to encouraging creativity",
+          "C. Everyone enjoyed experimenting with materials",
+          "D. Please submit project photos by Monday, April 15"
+        ],
+        "answer": "D"
+      },
+      "content_zh": {
+        "stem": "After thanking participants for an art workshop, Samir needs a concluding sentence. Which indicates the action he expects students to take?",
+        "options": [
+          "A. Gallery will be shared on website and newsletter",
+          "B. Workshop committed to encouraging creativity",
+          "C. Everyone enjoyed experimenting with materials",
+          "D. Please submit project photos by Monday, April 15"
+        ],
+        "answer": "D"
+      },
+      "explanation_en": "Only this option includes a specific action (submit), deadline, and context — functioning as a proper call-to-action.",
+      "explanation_zh": "Only this option includes a specific action (submit), deadline, and context — functioning as a proper call-to-action.",
+      "tags": [
+        "concluding_sentences",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-001 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-LANG-001",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "concluding_sentences",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "grammar",
+      "subtopic": "punctuation",
+      "difficulty": 0.61,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly punctuates a list with internal commas?",
+        "options": [
+          "A. Dr. Green, the chair; Ms. Lopez, the coordinator; and Mr. Patel, the secretary",
+          "B. Dr. Green, the chair; Ms. Lopez, the coordinator, and Mr. Patel, the secretary",
+          "C. Dr. Green; the chair, Ms. Lopez; the coordinator, and Mr. Patel; the secretary",
+          "D. Dr. Green, the chair, Ms. Lopez, the coordinator; and Mr. Patel, the secretary"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly punctuates a list with internal commas?",
+        "options": [
+          "A. Dr. Green, the chair; Ms. Lopez, the coordinator; and Mr. Patel, the secretary",
+          "B. Dr. Green, the chair; Ms. Lopez, the coordinator, and Mr. Patel, the secretary",
+          "C. Dr. Green; the chair, Ms. Lopez; the coordinator, and Mr. Patel; the secretary",
+          "D. Dr. Green, the chair, Ms. Lopez, the coordinator; and Mr. Patel, the secretary"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "When list items contain commas, use semicolons as separators between major items to prevent confusion.",
+      "explanation_zh": "When list items contain commas, use semicolons as separators between major items to prevent confusion.",
+      "tags": [
+        "semicolons_in_lists",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-002 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-LANG-002",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "semicolons_in_lists",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "grammar",
+      "subtopic": "modifiers",
+      "difficulty": 0.62,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Select the sentence that places the modifier 'only' correctly.",
+        "options": [
+          "A. Kate said only she would finish the report Friday",
+          "B. Kate said she would finish only the report Friday",
+          "C. Only Kate said she would finish the report Friday",
+          "D. Kate said she would only finish the report Friday"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "Select the sentence that places the modifier 'only' correctly.",
+        "options": [
+          "A. Kate said only she would finish the report Friday",
+          "B. Kate said she would finish only the report Friday",
+          "C. Only Kate said she would finish the report Friday",
+          "D. Kate said she would only finish the report Friday"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "Placing 'only' before 'Kate' emphasizes that Kate alone made the statement. Modifier placement changes meaning.",
+      "explanation_zh": "Placing 'only' before 'Kate' emphasizes that Kate alone made the statement. Modifier placement changes meaning.",
+      "tags": [
+        "modifier_placement",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-003 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-LANG-003",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "modifier_placement",
+        "is_seed": true
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "rhetorical_analysis",
+      "subtopic": null,
+      "difficulty": 0.64,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In 'A Modest Proposal' (1729), Jonathan Swift suggests that impoverished Irish families sell their children as food to wealthy English landlords. He writes with the calm, rational tone of an economist presenting data: 'A young healthy child well nursed is at a year old a most delicious, nourishing, and wholesome food.' Swift's use of a rational, matter-of-fact tone to present a horrifying suggestion is an example of what rhetorical technique?",
+        "options": [
+          "A. Understatement",
+          "B. Satire through sustained irony — the rational tone exposes the inhumanity of how the poor were actually treated",
+          "C. Direct persuasion to change dietary habits",
+          "D. Emotional appeal through vivid imagery"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In 'A Modest Proposal' (1729), Jonathan Swift suggests that impoverished Irish families sell their children as food to wealthy English landlords. He writes with the calm, rational tone of an economist presenting data: 'A young healthy child well nursed is at a year old a most delicious, nourishing, and wholesome food.' Swift's use of a rational, matter-of-fact tone to present a horrifying suggestion is an example of what rhetorical technique?",
+        "options": [
+          "A. Understatement",
+          "B. Satire through sustained irony — the rational tone exposes the inhumanity of how the poor were actually treated",
+          "C. Direct persuasion to change dietary habits",
+          "D. Emotional appeal through vivid imagery"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Swift uses sustained irony: the calm, economic language treating children as commodities satirizes how English policies already treated the Irish poor as less than human.",
+      "explanation_zh": "Swift uses sustained irony: the calm, economic language treating children as commodities satirizes how English policies already treated the Irish poor as less than human.",
+      "tags": [
+        "rhetorical_analysis",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-READ-101",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "rhetorical_analysis",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "dual_passage_comparison",
+      "subtopic": null,
+      "difficulty": 0.65,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passages:\nPassage 1 (2025 EU AI Act Advocate): 'The AI Act categorizes systems by risk: unacceptable (banned), high-risk (regulated), and minimal-risk (unrestricted). This tiered approach ensures safety without blocking low-risk innovation. Facial recognition in public spaces, social scoring, and manipulative AI are rightly prohibited. Citizens deserve protection from technologies that erode autonomy.'\nPassage 2 (2025 US Policy Analyst): 'America's voluntary AI guidelines trust companies to self-regulate, preserving the competitive agility that made Silicon Valley dominant. Mandatory compliance costs would devastate startups. The EU approach may protect citizens in theory, but in practice it exports AI leadership to less regulated markets.'\nWhat assumption underlies each author's argument?",
+        "options": [
+          "A. Passage 1 assumes regulation effectively prevents harm; Passage 2 assumes market competition naturally produces ethical outcomes",
+          "B. Both assume AI is too dangerous to develop",
+          "C. Passage 1 assumes all AI is high-risk; Passage 2 assumes all AI is safe",
+          "D. Both assume the same solution but disagree on timeline"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Read the passages:\nPassage 1 (2025 EU AI Act Advocate): 'The AI Act categorizes systems by risk: unacceptable (banned), high-risk (regulated), and minimal-risk (unrestricted). This tiered approach ensures safety without blocking low-risk innovation. Facial recognition in public spaces, social scoring, and manipulative AI are rightly prohibited. Citizens deserve protection from technologies that erode autonomy.'\nPassage 2 (2025 US Policy Analyst): 'America's voluntary AI guidelines trust companies to self-regulate, preserving the competitive agility that made Silicon Valley dominant. Mandatory compliance costs would devastate startups. The EU approach may protect citizens in theory, but in practice it exports AI leadership to less regulated markets.'\nWhat assumption underlies each author's argument?",
+        "options": [
+          "A. Passage 1 assumes regulation effectively prevents harm; Passage 2 assumes market competition naturally produces ethical outcomes",
+          "B. Both assume AI is too dangerous to develop",
+          "C. Passage 1 assumes all AI is high-risk; Passage 2 assumes all AI is safe",
+          "D. Both assume the same solution but disagree on timeline"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Passage 1 implicitly assumes that government regulation can effectively prevent AI harms. Passage 2 implicitly assumes that free-market competition, not government mandates, best guides responsible AI development.",
+      "explanation_zh": "Passage 1 implicitly assumes that government regulation can effectively prevent AI harms. Passage 2 implicitly assumes that free-market competition, not government mandates, best guides responsible AI development.",
+      "tags": [
+        "dual_passage_comparison",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-READ-102",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "dual_passage_comparison",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "authors_craft",
+      "subtopic": null,
+      "difficulty": 0.66,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Toni Morrison opens 'Beloved' with: 'l24 was spiteful. Full of a baby's venom.' By giving the house a street number as its name and attributing human malice to it, Morrison achieves several effects in just seven words. What is the primary literary effect of this opening?",
+        "options": [
+          "A. It establishes a lighthearted, comedic tone",
+          "B. It immediately blurs the boundary between the physical and the supernatural, establishing the haunted house as a character",
+          "C. It provides the reader with the exact address for plot clarity",
+          "D. It describes a typical neighborhood setting"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Toni Morrison opens 'Beloved' with: 'l24 was spiteful. Full of a baby's venom.' By giving the house a street number as its name and attributing human malice to it, Morrison achieves several effects in just seven words. What is the primary literary effect of this opening?",
+        "options": [
+          "A. It establishes a lighthearted, comedic tone",
+          "B. It immediately blurs the boundary between the physical and the supernatural, establishing the haunted house as a character",
+          "C. It provides the reader with the exact address for plot clarity",
+          "D. It describes a typical neighborhood setting"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "By giving the house human emotion ('spiteful') and attributing it to a baby's malice, Morrison makes the house itself a character and signals that the supernatural is woven into this narrative's reality.",
+      "explanation_zh": "By giving the house human emotion ('spiteful') and attributing it to a baby's malice, Morrison makes the house itself a character and signals that the supernatural is woven into this narrative's reality.",
+      "tags": [
+        "authors_craft",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-READ-103",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "authors_craft",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "historical_context",
+      "subtopic": null,
+      "difficulty": 0.68,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: Mary Shelley wrote 'Frankenstein' in 1818, during a period when galvanism — the idea that electricity could reanimate dead tissue — was being publicly demonstrated on executed criminals' bodies. Luigi Galvani's experiments had shown that electrical impulses could make dead frogs' legs twitch, and Giovanni Aldini had applied similar techniques to human corpses before audiences. How does this historical context deepen interpretation of 'Frankenstein'?",
+        "options": [
+          "A. It shows Shelley was a trained scientist",
+          "B. It reveals that Shelley's novel engaged with real scientific anxieties of her era, making Victor Frankenstein's ambition frighteningly plausible to contemporary readers",
+          "C. It proves that the novel is nonfiction",
+          "D. It suggests Shelley opposed all scientific progress"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: Mary Shelley wrote 'Frankenstein' in 1818, during a period when galvanism — the idea that electricity could reanimate dead tissue — was being publicly demonstrated on executed criminals' bodies. Luigi Galvani's experiments had shown that electrical impulses could make dead frogs' legs twitch, and Giovanni Aldini had applied similar techniques to human corpses before audiences. How does this historical context deepen interpretation of 'Frankenstein'?",
+        "options": [
+          "A. It shows Shelley was a trained scientist",
+          "B. It reveals that Shelley's novel engaged with real scientific anxieties of her era, making Victor Frankenstein's ambition frighteningly plausible to contemporary readers",
+          "C. It proves that the novel is nonfiction",
+          "D. It suggests Shelley opposed all scientific progress"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Knowing that real scientists were experimenting with electrical reanimation makes Victor's creation not fantasy but an extension of actual scientific ambition, deepening the novel's ethical urgency.",
+      "explanation_zh": "Knowing that real scientists were experimenting with electrical reanimation makes Victor's creation not fantasy but an extension of actual scientific ambition, deepening the novel's ethical urgency.",
+      "tags": [
+        "historical_context",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-READ-104",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "historical_context",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "critical_evaluation",
+      "subtopic": null,
+      "difficulty": 0.69,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: A 2025 report by a major AI company claims: 'Our large language model scored in the 90th percentile on the bar exam, demonstrating human-level legal reasoning. AI can now replace entry-level lawyers for routine legal work.' What critical questions should a reader ask about this claim?",
+        "options": [
+          "A. Whether the AI company is based in the United States",
+          "B. Whether test performance equals real-world legal reasoning, whether the company has a financial incentive to overstate capabilities, and whether 'routine legal work' is adequately defined",
+          "C. Whether the bar exam is difficult enough",
+          "D. Whether other companies have made similar claims"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: A 2025 report by a major AI company claims: 'Our large language model scored in the 90th percentile on the bar exam, demonstrating human-level legal reasoning. AI can now replace entry-level lawyers for routine legal work.' What critical questions should a reader ask about this claim?",
+        "options": [
+          "A. Whether the AI company is based in the United States",
+          "B. Whether test performance equals real-world legal reasoning, whether the company has a financial incentive to overstate capabilities, and whether 'routine legal work' is adequately defined",
+          "C. Whether the bar exam is difficult enough",
+          "D. Whether other companies have made similar claims"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "A critical reader should question whether a standardized test score translates to real-world competence, note the source's financial bias, and challenge vague terms like 'routine legal work.'",
+      "explanation_zh": "A critical reader should question whether a standardized test score translates to real-world competence, note the source's financial bias, and challenge vague terms like 'routine legal work.'",
+      "tags": [
+        "critical_evaluation",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-READ-105",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "critical_evaluation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "complex_vocabulary",
+      "subtopic": null,
+      "difficulty": 0.71,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: 'The politician's speech was an exercise in specious reasoning. Each argument appeared logically sound on the surface but collapsed under scrutiny, built on premises that were either unverifiable or deliberately misleading.' What does 'specious' mean in this context?",
+        "options": [
+          "A. Genuinely brilliant and well-supported",
+          "B. Seemingly plausible but actually false or deceptive",
+          "C. Extremely boring and repetitive",
+          "D. Highly emotional and passionate"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passage: 'The politician's speech was an exercise in specious reasoning. Each argument appeared logically sound on the surface but collapsed under scrutiny, built on premises that were either unverifiable or deliberately misleading.' What does 'specious' mean in this context?",
+        "options": [
+          "A. Genuinely brilliant and well-supported",
+          "B. Seemingly plausible but actually false or deceptive",
+          "C. Extremely boring and repetitive",
+          "D. Highly emotional and passionate"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Context clues ('appeared logically sound on the surface but collapsed under scrutiny') define specious: something that seems correct but is actually false or misleading.",
+      "explanation_zh": "Context clues ('appeared logically sound on the surface but collapsed under scrutiny') define specious: something that seems correct but is actually false or misleading.",
+      "tags": [
+        "complex_vocabulary",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-READ-106",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "complex_vocabulary",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "synthesis_across_texts",
+      "subtopic": null,
+      "difficulty": 0.72,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passages:\nText 1: 'In 2025, the James Webb Space Telescope detected dimethyl sulfide in the atmosphere of exoplanet K2-18b, a gas that on Earth is produced exclusively by living organisms. The finding, published in Nature Astronomy, has reignited debate about biosignatures as evidence for extraterrestrial life.'\nText 2: 'Philosopher of science Karl Popper argued that a scientific claim must be falsifiable — it must be possible to prove it wrong. The challenge with biosignature detections is that we cannot yet travel to these exoplanets to confirm or deny biological origins, making these claims difficult to falsify in Popper's framework.'\nHow does Text 2 complicate the scientific significance described in Text 1?",
+        "options": [
+          "A. It suggests the James Webb Telescope is unreliable",
+          "B. It raises the epistemological problem that biosignature detection, while exciting, cannot currently meet the philosophical standard of falsifiability",
+          "C. It proves that extraterrestrial life does not exist",
+          "D. It argues that philosophy has no role in science"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Read the passages:\nText 1: 'In 2025, the James Webb Space Telescope detected dimethyl sulfide in the atmosphere of exoplanet K2-18b, a gas that on Earth is produced exclusively by living organisms. The finding, published in Nature Astronomy, has reignited debate about biosignatures as evidence for extraterrestrial life.'\nText 2: 'Philosopher of science Karl Popper argued that a scientific claim must be falsifiable — it must be possible to prove it wrong. The challenge with biosignature detections is that we cannot yet travel to these exoplanets to confirm or deny biological origins, making these claims difficult to falsify in Popper's framework.'\nHow does Text 2 complicate the scientific significance described in Text 1?",
+        "options": [
+          "A. It suggests the James Webb Telescope is unreliable",
+          "B. It raises the epistemological problem that biosignature detection, while exciting, cannot currently meet the philosophical standard of falsifiability",
+          "C. It proves that extraterrestrial life does not exist",
+          "D. It argues that philosophy has no role in science"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Text 2 introduces Popper's falsifiability criterion to show that while the detection is significant, the inability to independently verify the biological origin creates a philosophical limitation on the claim.",
+      "explanation_zh": "Text 2 introduces Popper's falsifiability criterion to show that while the detection is significant, the inability to independently verify the biological origin creates a philosophical limitation on the claim.",
+      "tags": [
+        "synthesis_across_texts",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-READ-107",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "synthesis_across_texts",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "philosophical_themes",
+      "subtopic": null,
+      "difficulty": 0.74,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Read the passage: In Fyodor Dostoevsky's 'Crime and Punishment,' the protagonist Raskolnikov develops a theory that extraordinary people are morally exempt from ordinary laws — they may commit crimes if those crimes serve a higher purpose. He murders a pawnbroker to test this theory. Yet afterward, he is consumed by guilt, paranoia, and psychological torment until he confesses. What philosophical tension does Dostoevsky explore through Raskolnikov's experience?",
+        "options": [
+          "A. The conflict between rational self-interest and the psychological reality of conscience and moral law",
+          "B. The economic inequality between rich and poor",
+          "C. The superiority of intellectual thought over action",
+          "D. The argument that crime should never be punished"
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Read the passage: In Fyodor Dostoevsky's 'Crime and Punishment,' the protagonist Raskolnikov develops a theory that extraordinary people are morally exempt from ordinary laws — they may commit crimes if those crimes serve a higher purpose. He murders a pawnbroker to test this theory. Yet afterward, he is consumed by guilt, paranoia, and psychological torment until he confesses. What philosophical tension does Dostoevsky explore through Raskolnikov's experience?",
+        "options": [
+          "A. The conflict between rational self-interest and the psychological reality of conscience and moral law",
+          "B. The economic inequality between rich and poor",
+          "C. The superiority of intellectual thought over action",
+          "D. The argument that crime should never be punished"
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "Raskolnikov's theory claims rational justification for crime, but his psychological collapse reveals that conscience and moral awareness cannot be overridden by intellectual argument.",
+      "explanation_zh": "Raskolnikov's theory claims rational justification for crime, but his psychological collapse reveals that conscience and moral awareness cannot be overridden by intellectual argument.",
+      "tags": [
+        "philosophical_themes",
+        "map_reading",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-READ-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-READ-108",
+        "original_subject": "reading",
+        "original_grade": "G11",
+        "original_topic": "philosophical_themes",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "rhetorical_devices",
+      "subtopic": null,
+      "difficulty": 0.75,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Identify the rhetorical device: 'We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets.'",
+        "options": [
+          "A. Chiasmus",
+          "B. Anaphora",
+          "C. Litotes",
+          "D. Antithesis"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Identify the rhetorical device: 'We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets.'",
+        "options": [
+          "A. Chiasmus",
+          "B. Anaphora",
+          "C. Litotes",
+          "D. Antithesis"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Anaphora is the repetition of a word or phrase at the beginning of successive clauses. 'We shall fight' is repeated at the start of each clause to build emphasis and rhythm.",
+      "explanation_zh": "Anaphora is the repetition of a word or phrase at the beginning of successive clauses. 'We shall fight' is repeated at the start of each clause to build emphasis and rhythm.",
+      "tags": [
+        "rhetorical_devices",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-101 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-LANG-101",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "rhetorical_devices",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "logical_fallacies",
+      "subtopic": null,
+      "difficulty": 0.76,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which statement contains a logical fallacy? The topic is whether AI should be used in hiring decisions.",
+        "options": [
+          "A. Studies from MIT show that AI screening tools can reduce unconscious bias in resume review by 35%.",
+          "B. If we let AI make hiring decisions, next it will control our entire lives and we will have no freedom.",
+          "C. AI hiring tools must be regularly audited for algorithmic bias to ensure fair outcomes.",
+          "D. While AI can process applications faster, human judgment remains essential for evaluating cultural fit."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which statement contains a logical fallacy? The topic is whether AI should be used in hiring decisions.",
+        "options": [
+          "A. Studies from MIT show that AI screening tools can reduce unconscious bias in resume review by 35%.",
+          "B. If we let AI make hiring decisions, next it will control our entire lives and we will have no freedom.",
+          "C. AI hiring tools must be regularly audited for algorithmic bias to ensure fair outcomes.",
+          "D. While AI can process applications faster, human judgment remains essential for evaluating cultural fit."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Option B is a slippery slope fallacy. It assumes that one action (AI in hiring) will inevitably lead to extreme consequences (AI controlling all of life) without logical evidence for each step.",
+      "explanation_zh": "Option B is a slippery slope fallacy. It assumes that one action (AI in hiring) will inevitably lead to extreme consequences (AI controlling all of life) without logical evidence for each step.",
+      "tags": [
+        "logical_fallacies",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-102 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-LANG-102",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "logical_fallacies",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "advanced_transitions",
+      "subtopic": null,
+      "difficulty": 0.78,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which transition best connects these two sentences in an analytical essay? 'The 2025 UN Climate Report documented a 1.5-degree rise in global temperatures. _______, several island nations reported unprecedented coastal flooding that displaced thousands of residents.'",
+        "options": [
+          "A. On the other hand",
+          "B. Concurrently",
+          "C. In spite of this",
+          "D. Regardless"
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which transition best connects these two sentences in an analytical essay? 'The 2025 UN Climate Report documented a 1.5-degree rise in global temperatures. _______, several island nations reported unprecedented coastal flooding that displaced thousands of residents.'",
+        "options": [
+          "A. On the other hand",
+          "B. Concurrently",
+          "C. In spite of this",
+          "D. Regardless"
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "'Concurrently' indicates that two events happened at the same time and are connected. The temperature rise and coastal flooding are simultaneous, related developments that reinforce each other.",
+      "explanation_zh": "'Concurrently' indicates that two events happened at the same time and are connected. The temperature rise and coastal flooding are simultaneous, related developments that reinforce each other.",
+      "tags": [
+        "advanced_transitions",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-103 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-LANG-103",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "advanced_transitions",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "chiasmus",
+      "subtopic": null,
+      "difficulty": 0.79,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence is an example of chiasmus?",
+        "options": [
+          "A. She worked hard and hard she played.",
+          "B. Ask not what your country can do for you; ask what you can do for your country.",
+          "C. The rain fell, the wind blew, and the thunder roared.",
+          "D. He was tired, exhausted, and completely drained."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence is an example of chiasmus?",
+        "options": [
+          "A. She worked hard and hard she played.",
+          "B. Ask not what your country can do for you; ask what you can do for your country.",
+          "C. The rain fell, the wind blew, and the thunder roared.",
+          "D. He was tired, exhausted, and completely drained."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Chiasmus reverses the grammatical structure of a parallel phrase: 'country can do for you' becomes 'you can do for your country.' The AB-BA pattern creates rhetorical balance and memorability.",
+      "explanation_zh": "Chiasmus reverses the grammatical structure of a parallel phrase: 'country can do for you' becomes 'you can do for your country.' The AB-BA pattern creates rhetorical balance and memorability.",
+      "tags": [
+        "chiasmus",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-104 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-LANG-104",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "chiasmus",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "subjunctive_mood",
+      "subtopic": null,
+      "difficulty": 0.81,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence correctly uses the subjunctive mood?",
+        "options": [
+          "A. If I was the president, I would increase funding for public schools.",
+          "B. If I were the president, I would increase funding for public schools.",
+          "C. If I am the president, I would increase funding for public schools.",
+          "D. If I be the president, I would increase funding for public schools."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which sentence correctly uses the subjunctive mood?",
+        "options": [
+          "A. If I was the president, I would increase funding for public schools.",
+          "B. If I were the president, I would increase funding for public schools.",
+          "C. If I am the president, I would increase funding for public schools.",
+          "D. If I be the president, I would increase funding for public schools."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "The subjunctive mood uses 'were' (not 'was') for hypothetical or contrary-to-fact conditions. 'If I were the president' correctly expresses an unreal situation.",
+      "explanation_zh": "The subjunctive mood uses 'were' (not 'was') for hypothetical or contrary-to-fact conditions. 'If I were the president' correctly expresses an unreal situation.",
+      "tags": [
+        "subjunctive_mood",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-105 (TestPrep-Online seed + AI expansion)",
+      "review_status": "draft",
+      "metadata": {
+        "original_id": "G11-LANG-105",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "subjunctive_mood",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "academic_tone_revision",
+      "subtopic": null,
+      "difficulty": 0.82,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which revision demonstrates the most effective academic tone for this sentence? Original: 'Everyone knows that getting enough sleep is really important for doing well in school.'",
+        "options": [
+          "A. It is universally acknowledged that sleep is really important for academic success.",
+          "B. Multiple peer-reviewed studies have established a significant correlation between adequate sleep and improved academic performance.",
+          "C. Everybody agrees that sleeping well helps students do better.",
+          "D. Obviously, sleep matters a lot for school performance."
+        ],
+        "answer": "B"
+      },
+      "content_zh": {
+        "stem": "Which revision demonstrates the most effective academic tone for this sentence? Original: 'Everyone knows that getting enough sleep is really important for doing well in school.'",
+        "options": [
+          "A. It is universally acknowledged that sleep is really important for academic success.",
+          "B. Multiple peer-reviewed studies have established a significant correlation between adequate sleep and improved academic performance.",
+          "C. Everybody agrees that sleeping well helps students do better.",
+          "D. Obviously, sleep matters a lot for school performance."
+        ],
+        "answer": "B"
+      },
+      "explanation_en": "Option B replaces the unsupported generalization ('everyone knows') with evidence-based language ('multiple peer-reviewed studies'), uses precise academic vocabulary ('significant correlation'), and avoids informal phrasing.",
+      "explanation_zh": "Option B replaces the unsupported generalization ('everyone knows') with evidence-based language ('multiple peer-reviewed studies'), uses precise academic vocabulary ('significant correlation'), and avoids informal phrasing.",
+      "tags": [
+        "academic_tone_revision",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-106 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-LANG-106",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "academic_tone_revision",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "complex_punctuation",
+      "subtopic": null,
+      "difficulty": 0.84,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "Which sentence is punctuated correctly?",
+        "options": [
+          "A. The report identified three key challenges: funding shortages, which affected rural districts most; staffing gaps, particularly in STEM subjects; and outdated technology infrastructure.",
+          "B. The report identified three key challenges; funding shortages, which affected rural districts most, staffing gaps, particularly in STEM subjects, and outdated technology infrastructure.",
+          "C. The report identified three key challenges: funding shortages which affected rural districts most; staffing gaps particularly in STEM subjects; and outdated technology infrastructure.",
+          "D. The report identified three key challenges, funding shortages, which affected rural districts most; staffing gaps, particularly in STEM subjects; and outdated technology infrastructure."
+        ],
+        "answer": "A"
+      },
+      "content_zh": {
+        "stem": "Which sentence is punctuated correctly?",
+        "options": [
+          "A. The report identified three key challenges: funding shortages, which affected rural districts most; staffing gaps, particularly in STEM subjects; and outdated technology infrastructure.",
+          "B. The report identified three key challenges; funding shortages, which affected rural districts most, staffing gaps, particularly in STEM subjects, and outdated technology infrastructure.",
+          "C. The report identified three key challenges: funding shortages which affected rural districts most; staffing gaps particularly in STEM subjects; and outdated technology infrastructure.",
+          "D. The report identified three key challenges, funding shortages, which affected rural districts most; staffing gaps, particularly in STEM subjects; and outdated technology infrastructure."
+        ],
+        "answer": "A"
+      },
+      "explanation_en": "A colon introduces the list after a complete clause. Semicolons separate list items that contain internal commas. Each item's nonessential clause is correctly set off with commas.",
+      "explanation_zh": "A colon introduces the list after a complete clause. Semicolons separate list items that contain internal commas. Each item's nonessential clause is correctly set off with commas.",
+      "tags": [
+        "complex_punctuation",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-107 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-LANG-107",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "complex_punctuation",
+        "is_seed": false
+      }
+    },
+    {
+      "subject": "english",
+      "grade_level": "G11",
+      "topic": "word_choice_precision",
+      "subtopic": null,
+      "difficulty": 0.85,
+      "question_type": "mcq",
+      "content_en": {
+        "stem": "In this excerpt from a literary analysis, which word best replaces the underlined word for greater precision? 'The author uses imagery to show the character's inner conflict.'",
+        "options": [
+          "A. tell",
+          "B. display",
+          "C. illuminate",
+          "D. do"
+        ],
+        "answer": "C"
+      },
+      "content_zh": {
+        "stem": "In this excerpt from a literary analysis, which word best replaces the underlined word for greater precision? 'The author uses imagery to show the character's inner conflict.'",
+        "options": [
+          "A. tell",
+          "B. display",
+          "C. illuminate",
+          "D. do"
+        ],
+        "answer": "C"
+      },
+      "explanation_en": "'Illuminate' precisely conveys that the imagery sheds light on and reveals the complexity of the character's inner conflict. It is more analytical and sophisticated than 'show' while fitting the literary analysis context.",
+      "explanation_zh": "'Illuminate' precisely conveys that the imagery sheds light on and reveals the complexity of the character's inner conflict. It is more analytical and sophisticated than 'show' while fitting the literary analysis context.",
+      "tags": [
+        "word_choice_precision",
+        "map_language_usage",
+        "map_style"
+      ],
+      "source": "map_testprep",
+      "source_year": 2026,
+      "source_detail": "MAP-style question G11-LANG-108 (TestPrep-Online seed + AI expansion)",
+      "review_status": "approved",
+      "metadata": {
+        "original_id": "G11-LANG-108",
+        "original_subject": "language_usage",
+        "original_grade": "G11",
+        "original_topic": "word_choice_precision",
+        "is_seed": false
+      }
+    }
+  ]
+}
