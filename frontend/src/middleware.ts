@@ -19,7 +19,9 @@ export function middleware(request: NextRequest) {
     );
 
   if (!hasSession) {
-    const loginUrl = new URL("/login", request.url);
+    // Use nextUrl.clone() to preserve the correct external host (not Docker-internal localhost)
+    const loginUrl = request.nextUrl.clone();
+    loginUrl.pathname = "/login";
     loginUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(loginUrl);
   }

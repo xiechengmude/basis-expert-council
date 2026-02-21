@@ -2,12 +2,21 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const code = searchParams.get("code");
-  const origin = new URL(request.url).origin;
+  const code = request.nextUrl.searchParams.get("code");
+
+  // Helper: build redirect URL using nextUrl to preserve correct external host
+  const buildRedirect = (path: string, params?: Record<string, string>) => {
+    const url = request.nextUrl.clone();
+    url.pathname = path;
+    url.search = "";
+    if (params) {
+      Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
+    }
+    return url;
+  };
 
   if (!code) {
-    return NextResponse.redirect(new URL("/login?error=no_code", origin));
+    return NextResponse.redirect(buildRedirect("/login", { error: "no_code" }));
   }
 
   const supabase = createClient(
@@ -19,10 +28,8 @@ export async function GET(request: NextRequest) {
 
   if (error) {
     console.error("Google OAuth callback error:", error);
-    return NextResponse.redirect(
-      new URL("/login?error=oauth_failed", origin)
-    );
+    return NextResponse.redirect(buildRedirect("/login", { error: "oauth_failed" }));
   }
 
-  return NextResponse.redirect(new URL("/", origin));
+  return NextResponse.redirect(buildRedirect("/"));
 }
