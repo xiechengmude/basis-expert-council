@@ -62,23 +62,13 @@ export default function HeroSection({ t, onLoginClick }: HeroSectionProps) {
 
             {/* CTA buttons */}
             <div className="flex gap-4 mt-10 flex-wrap items-center">
-              {onLoginClick ? (
-                <button
-                  onClick={onLoginClick}
-                  className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-colors"
-                >
-                  {t("hero_btn_assess")}
-                  <ArrowRight size={18} />
-                </button>
-              ) : (
-                <Link
-                  href="/login"
-                  className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-colors"
-                >
-                  {t("hero_btn_assess")}
-                  <ArrowRight size={18} />
-                </Link>
-              )}
+              <Link
+                href="/assessment"
+                className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-colors"
+              >
+                {t("hero_btn_assess")}
+                <ArrowRight size={18} />
+              </Link>
 
               <a
                 href="#features"

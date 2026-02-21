@@ -555,6 +555,11 @@ const assessment: Record<string, Record<Locale, string>> = {
     en: "Log In",
     "zh-TW": "登入",
   },
+  "assessment.nav_back_chat": {
+    "zh-CN": "返回聊天",
+    en: "Back to Chat",
+    "zh-TW": "返回聊天",
+  },
 
   // Footer
   "assessment.footer_powered": {

@@ -596,6 +596,18 @@ const welcome: Record<string, Record<Locale, string>> = {
   "welcome.form.assignmentType.dbq": { "zh-CN": "DBQ", en: "DBQ", "zh-TW": "DBQ" },
   "welcome.form.assignmentType.reading": { "zh-CN": "Reading", en: "Reading", "zh-TW": "Reading" },
 
+  // Assessment banner
+  "welcome.assessment.title": {
+    "zh-CN": "免费学科水平测评",
+    en: "Take a Free Academic Assessment",
+    "zh-TW": "免費學科水平測評",
+  },
+  "welcome.assessment.desc": {
+    "zh-CN": "6 科自适应测评，5 分钟精准定位薄弱环节",
+    en: "5-min adaptive test across 6 subjects — get your personalized report",
+    "zh-TW": "6 科自適應測評，5 分鐘精準定位薄弱環節",
+  },
+
   // Exam month options
   "welcome.form.examMonth.may": { "zh-CN": "五月", en: "May", "zh-TW": "五月" },
   "welcome.form.examMonth.other": { "zh-CN": "其他", en: "Other", "zh-TW": "其他" },

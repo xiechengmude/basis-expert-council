@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Users, GraduationCap, BookOpen, Briefcase } from "lucide-react";
+import Link from "next/link";
+import { Users, GraduationCap, BookOpen, Briefcase, ArrowRight } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useI18n } from "@/i18n";
 import {
@@ -76,6 +77,23 @@ export function WelcomeScreen({ onSendMessage, disabled }: WelcomeScreenProps) {
           {t("welcome.subtitle")}
         </p>
       </div>
+
+      {/* Assessment Banner */}
+      <Link
+        href="/assessment"
+        className="group mb-6 flex w-full max-w-3xl items-center gap-4 rounded-xl border border-brand-600/30 bg-brand-600/5 p-4 transition-all hover:border-brand-600/50 hover:bg-brand-600/10"
+      >
+        <span className="text-xl">📋</span>
+        <div className="min-w-0 flex-1">
+          <h3 className="text-sm font-semibold text-primary group-hover:text-brand-600">
+            {t("welcome.assessment.title")}
+          </h3>
+          <p className="text-xs text-muted-foreground">
+            {t("welcome.assessment.desc")}
+          </p>
+        </div>
+        <ArrowRight size={16} className="shrink-0 text-brand-600 opacity-60 group-hover:opacity-100" />
+      </Link>
 
       {/* Role Tabs + Scenario Cards */}
       <Tabs

@@ -31,23 +31,13 @@ export default function CTASection({ t, onLoginClick }: Props) {
         <p className="mt-6 text-lg text-slate-400">{t("cta_desc")}</p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          {onLoginClick ? (
-            <button
-              onClick={onLoginClick}
-              className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold inline-flex items-center gap-2 transition"
-            >
-              {t("cta_btn_start")}
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          ) : (
-            <Link
-              href="/login"
-              className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold inline-flex items-center gap-2 transition"
-            >
-              {t("cta_btn_start")}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          )}
+          <Link
+            href="/assessment"
+            className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold inline-flex items-center gap-2 transition"
+          >
+            {t("cta_btn_start")}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
           {onLoginClick ? (
             <button
               onClick={onLoginClick}

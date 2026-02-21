@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 import PainPointsSection from "./components/PainPointsSection";
 import FeaturesSection from "./components/FeaturesSection";
 import AgentsSection from "./components/AgentsSection";
+import AssessmentBannerSection from "./components/AssessmentBannerSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import PricingSection from "./components/PricingSection";
 import FAQSection from "./components/FAQSection";
@@ -51,6 +52,7 @@ export default function LandingContent({ onLoginClick }: LandingPageProps) {
       <PainPointsSection t={t} />
       <FeaturesSection t={t} />
       <AgentsSection t={t} />
+      <AssessmentBannerSection t={t} />
       <HowItWorksSection t={t} />
       <PricingSection t={t} onLoginClick={onLoginClick} />
       <FAQSection t={t} />

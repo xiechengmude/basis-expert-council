@@ -126,6 +126,14 @@ export default function LandingNav({ t, locale, setLocale, onLoginClick }: Landi
               )}
             </div>
 
+            {/* Assessment pill link (desktop) */}
+            <Link
+              href="/assessment"
+              className="hidden md:inline-flex items-center rounded-full bg-brand-500/10 border border-brand-500/30 px-4 py-2 text-sm font-medium text-brand-400 hover:bg-brand-500/20 transition-colors"
+            >
+              {t("nav_assessment")}
+            </Link>
+
             {/* Login button (desktop) */}
             {onLoginClick ? (
               <button
@@ -207,11 +215,20 @@ export default function LandingNav({ t, locale, setLocale, onLoginClick }: Landi
             </div>
           </div>
 
+          {/* Assessment pill link (mobile) */}
+          <Link
+            href="/assessment"
+            onClick={() => setMobileOpen(false)}
+            className="mx-4 text-center bg-brand-500/10 border border-brand-500/30 text-brand-400 rounded-full px-5 py-3 text-base font-medium"
+          >
+            {t("nav_assessment")}
+          </Link>
+
           {/* Login button */}
           {onLoginClick ? (
             <button
               onClick={() => { setMobileOpen(false); onLoginClick(); }}
-              className="w-full text-center border border-white/20 text-white hover:bg-white/10 rounded-full px-5 py-3 text-base font-medium transition-colors"
+              className="mt-3 w-full text-center border border-white/20 text-white hover:bg-white/10 rounded-full px-5 py-3 text-base font-medium transition-colors"
             >
               {t("nav_login")}
             </button>
@@ -219,7 +236,7 @@ export default function LandingNav({ t, locale, setLocale, onLoginClick }: Landi
             <Link
               href="/login"
               onClick={() => setMobileOpen(false)}
-              className="w-full text-center border border-white/20 text-white hover:bg-white/10 rounded-full px-5 py-3 text-base font-medium transition-colors"
+              className="mt-3 w-full text-center border border-white/20 text-white hover:bg-white/10 rounded-full px-5 py-3 text-base font-medium transition-colors"
             >
               {t("nav_login")}
             </Link>

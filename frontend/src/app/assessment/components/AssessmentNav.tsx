@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useAuth } from "@/providers/AuthProvider";
 
 interface AssessmentNavProps {
   t: (key: string, params?: Record<string, string | number>) => string;
@@ -9,6 +10,7 @@ interface AssessmentNavProps {
 
 export default function AssessmentNav({ t }: AssessmentNavProps) {
   const [scrolled, setScrolled] = useState(false);
+  const { user } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +30,7 @@ export default function AssessmentNav({ t }: AssessmentNavProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/landing" className="flex items-center gap-2.5 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo-mark.svg"
@@ -43,18 +45,29 @@ export default function AssessmentNav({ t }: AssessmentNavProps) {
           </Link>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/landing"
-              className="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:text-white transition-colors"
-            >
-              {t("assessment.nav_home")}
-            </Link>
-            <Link
-              href="/login"
-              className="inline-flex items-center rounded-full px-5 py-2 text-sm font-medium border border-white/20 text-white hover:bg-white/10 transition-colors"
-            >
-              {t("assessment.nav_login")}
-            </Link>
+            {user ? (
+              <Link
+                href="/"
+                className="inline-flex items-center rounded-full px-5 py-2 text-sm font-medium border border-white/20 text-white hover:bg-white/10 transition-colors"
+              >
+                {t("assessment.nav_back_chat")}
+              </Link>
+            ) : (
+              <>
+                <Link
+                  href="/"
+                  className="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                >
+                  {t("assessment.nav_home")}
+                </Link>
+                <Link
+                  href="/login"
+                  className="inline-flex items-center rounded-full px-5 py-2 text-sm font-medium border border-white/20 text-white hover:bg-white/10 transition-colors"
+                >
+                  {t("assessment.nav_login")}
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
