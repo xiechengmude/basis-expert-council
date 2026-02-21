@@ -88,11 +88,9 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
 
   const handleA2UIAction = useCallback(
     (action: UserAction) => {
-      sendMessage(
-        JSON.stringify({ type: "a2ui_action", ...action })
-      );
+      resumeInterrupt(action);
     },
-    [sendMessage]
+    [resumeInterrupt]
   );
 
   const submitDisabled = isLoading || !assistant;
@@ -252,6 +250,15 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
     );
   }, [interrupt]);
 
+  const a2uiInterruptPayload = useMemo(() => {
+    if (!interrupt?.value) return null;
+    const val = interrupt.value as any;
+    if (val.type === "a2ui_render" && val.payload) {
+      return val.payload as string;
+    }
+    return null;
+  }, [interrupt]);
+
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
       <div
@@ -289,6 +296,9 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                     }
                     reviewConfigsMap={
                       isLastMessage ? reviewConfigsMap : undefined
+                    }
+                    a2uiInterruptPayload={
+                      isLastMessage ? a2uiInterruptPayload : undefined
                     }
                     ui={messageUi}
                     stream={stream}

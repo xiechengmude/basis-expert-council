@@ -40,6 +40,7 @@ interface HiddenToolsAndVisibleToolsProps {
   onResumeInterrupt?: (value: any) => void;
   onA2UIAction?: (action: UserAction) => void;
   isLoading?: boolean;
+  a2uiInterruptPayload?: string | null;
 }
 
 function HiddenToolsAndVisibleTools({
@@ -52,6 +53,7 @@ function HiddenToolsAndVisibleTools({
   onResumeInterrupt,
   onA2UIAction,
   isLoading,
+  a2uiInterruptPayload,
 }: HiddenToolsAndVisibleToolsProps) {
   const { t } = useI18n();
   const [thinkingExpanded, setThinkingExpanded] = useState(false);
@@ -131,14 +133,28 @@ function HiddenToolsAndVisibleTools({
 
         // special 工具：保留原有逻辑
         if (toolCall.name === "task") return null;
-        if (toolCall.name === A2UI_TOOL_NAME && toolCall.result) {
-          return (
-            <A2UISurface
-              key={toolCall.id}
-              jsonl={toolCall.result}
-              onAction={onA2UIAction}
-            />
-          );
+        if (toolCall.name === A2UI_TOOL_NAME) {
+          // Phase 1: interrupt active — render from interrupt payload, interactive
+          if (toolCall.status === "interrupted" && a2uiInterruptPayload) {
+            return (
+              <A2UISurface
+                key={toolCall.id}
+                jsonl={a2uiInterruptPayload}
+                onAction={onA2UIAction}
+              />
+            );
+          }
+          // Phase 2: resumed — render from tool result's ui field, static (no onAction)
+          if (toolCall.result) {
+            try {
+              const parsed = JSON.parse(toolCall.result);
+              const jsonl = parsed.ui || toolCall.result;
+              return <A2UISurface key={toolCall.id} jsonl={jsonl} />;
+            } catch {
+              return null;
+            }
+          }
+          return null; // tool still executing
         }
 
         // hidden 工具：已在上方聚合渲染
@@ -180,6 +196,7 @@ interface ChatMessageProps {
   isLoading?: boolean;
   actionRequestsMap?: Map<string, ActionRequest>;
   reviewConfigsMap?: Map<string, ReviewConfig>;
+  a2uiInterruptPayload?: string | null;
   ui?: any[];
   stream?: any;
   onResumeInterrupt?: (value: any) => void;
@@ -194,6 +211,7 @@ export const ChatMessage = React.memo<ChatMessageProps>(
     isLoading,
     actionRequestsMap,
     reviewConfigsMap,
+    a2uiInterruptPayload,
     ui,
     stream,
     onResumeInterrupt,
@@ -293,6 +311,7 @@ export const ChatMessage = React.memo<ChatMessageProps>(
               onResumeInterrupt={onResumeInterrupt}
               onA2UIAction={onA2UIAction}
               isLoading={isLoading}
+              a2uiInterruptPayload={a2uiInterruptPayload}
             />
           )}
           {!isUser && subAgents.length > 0 && (
