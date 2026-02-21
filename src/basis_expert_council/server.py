@@ -856,14 +856,15 @@ async def get_report_status(report_id: str):
     if not report:
         return JSONResponse(status_code=404, content={"error": "Report not found"})
 
-    # Determine status based on report_data content
+    # Report is "ready" once report_data contains stats (score/accuracy).
+    # agent_analysis is optional (async, may arrive later).
     report_data = report.get("report_data") or {}
     if isinstance(report_data, str):
         import json as _json
         report_data = _json.loads(report_data)
 
-    has_analysis = bool(report_data.get("agent_analysis"))
-    status = "ready" if has_analysis else "generating"
+    has_stats = bool(report_data.get("score") or report_data.get("accuracy"))
+    status = "ready" if has_stats else "generating"
 
     return {
         "report_id": str(report["id"]),

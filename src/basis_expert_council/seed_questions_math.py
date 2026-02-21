@@ -191,6 +191,202 @@ G5_QUESTIONS = [
         },
         "tags": ["ratios", "percents"],
     },
+    # --- G5 新增题 (13 道，扩充至 25 道) ---
+    {
+        "subject": "math", "grade_level": "G5", "topic": "integers",
+        "subtopic": "order_of_operations", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "Evaluate: (-3) × (-4) + 2",
+            "options": ["A. 14", "B. 10", "C. -10", "D. -14"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "计算：(-3) × (-4) + 2",
+            "options": ["A. 14", "B. 10", "C. -10", "D. -14"],
+            "answer": "A",
+        },
+        "tags": ["integers", "multiplication", "order_of_operations"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "fractions",
+        "subtopic": "multiplication", "difficulty": 0.45, "question_type": "mcq",
+        "content_en": {
+            "stem": "What is 3/4 × 2/5?",
+            "options": ["A. 6/20", "B. 3/10", "C. 5/9", "D. 6/9"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "3/4 × 2/5 等于多少？",
+            "options": ["A. 6/20", "B. 3/10", "C. 5/9", "D. 6/9"],
+            "answer": "B",
+        },
+        "tags": ["fractions", "multiplication"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "fractions",
+        "subtopic": "mixed_numbers", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "Convert 2 3/8 to an improper fraction.",
+            "options": ["A. 11/8", "B. 19/8", "C. 16/8", "D. 13/8"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "将 2 又 3/8 转换为假分数。",
+            "options": ["A. 11/8", "B. 19/8", "C. 16/8", "D. 13/8"],
+            "answer": "B",
+        },
+        "tags": ["fractions", "mixed_numbers", "conversion"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "decimals",
+        "subtopic": "division", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "What is 7.5 ÷ 0.25?",
+            "options": ["A. 3", "B. 30", "C. 0.3", "D. 300"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "7.5 ÷ 0.25 等于多少？",
+            "options": ["A. 3", "B. 30", "C. 0.3", "D. 300"],
+            "answer": "B",
+        },
+        "tags": ["decimals", "division"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "decimals",
+        "subtopic": "fraction_conversion", "difficulty": 0.4, "question_type": "mcq",
+        "content_en": {
+            "stem": "Which fraction is equivalent to 0.375?",
+            "options": ["A. 3/8", "B. 3/5", "C. 3/10", "D. 37/100"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "0.375 等于哪个分数？",
+            "options": ["A. 3/8", "B. 3/5", "C. 3/10", "D. 37/100"],
+            "answer": "A",
+        },
+        "tags": ["decimals", "fractions", "conversion"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "ratios",
+        "subtopic": "unit_rate", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "A car travels 240 miles in 4 hours. What is the unit rate in miles per hour?",
+            "options": ["A. 40 mph", "B. 50 mph", "C. 60 mph", "D. 80 mph"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "一辆车 4 小时行驶 240 英里，单位速率是多少？",
+            "options": ["A. 40 英里/时", "B. 50 英里/时", "C. 60 英里/时", "D. 80 英里/时"],
+            "answer": "C",
+        },
+        "tags": ["ratios", "unit_rate", "speed"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "geometry",
+        "subtopic": "perimeter", "difficulty": 0.35, "question_type": "mcq",
+        "content_en": {
+            "stem": "A rectangle has length 12 cm and width 7 cm. What is its perimeter?",
+            "options": ["A. 19 cm", "B. 38 cm", "C. 84 cm", "D. 26 cm"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "长方形长 12 厘米、宽 7 厘米，周长是多少？",
+            "options": ["A. 19 cm", "B. 38 cm", "C. 84 cm", "D. 26 cm"],
+            "answer": "B",
+        },
+        "tags": ["geometry", "perimeter", "rectangle"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "geometry",
+        "subtopic": "volume", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "A rectangular prism has length 5 cm, width 3 cm, and height 4 cm. What is its volume?",
+            "options": ["A. 12 cm³", "B. 60 cm³", "C. 30 cm³", "D. 24 cm³"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "长方体长 5 厘米、宽 3 厘米、高 4 厘米，体积是多少？",
+            "options": ["A. 12 cm³", "B. 60 cm³", "C. 30 cm³", "D. 24 cm³"],
+            "answer": "B",
+        },
+        "tags": ["geometry", "volume", "rectangular_prism"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "expressions",
+        "subtopic": "distributive", "difficulty": 0.6, "question_type": "mcq",
+        "content_en": {
+            "stem": "Use the distributive property to expand: 4(3x + 2)",
+            "options": ["A. 12x + 2", "B. 12x + 8", "C. 7x + 6", "D. 12x + 6"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "用分配律展开：4(3x + 2)",
+            "options": ["A. 12x + 2", "B. 12x + 8", "C. 7x + 6", "D. 12x + 6"],
+            "answer": "B",
+        },
+        "tags": ["expressions", "distributive_property"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "word_problems",
+        "subtopic": "fractions", "difficulty": 0.6, "question_type": "mcq",
+        "content_en": {
+            "stem": "A recipe requires 2/3 cup of sugar. If you want to make 1.5 times the recipe, how much sugar do you need?",
+            "options": ["A. 3/4 cup", "B. 1 cup", "C. 5/6 cup", "D. 2/3 cup"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "一个食谱需要 2/3 杯糖。如果要做 1.5 倍的量，需要多少糖？",
+            "options": ["A. 3/4 杯", "B. 1 杯", "C. 5/6 杯", "D. 2/3 杯"],
+            "answer": "B",
+        },
+        "tags": ["word_problems", "fractions", "multiplication"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "integers",
+        "subtopic": "number_line", "difficulty": 0.3, "question_type": "mcq",
+        "content_en": {
+            "stem": "Which number is farthest from 0 on a number line?",
+            "options": ["A. -7", "B. 4", "C. -3", "D. 6"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "在数轴上，哪个数离 0 最远？",
+            "options": ["A. -7", "B. 4", "C. -3", "D. 6"],
+            "answer": "A",
+        },
+        "tags": ["integers", "number_line", "absolute_value"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "data_analysis",
+        "subtopic": "mean", "difficulty": 0.45, "question_type": "mcq",
+        "content_en": {
+            "stem": "Find the mean of: 12, 15, 18, 21, 24",
+            "options": ["A. 15", "B. 18", "C. 20", "D. 21"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "求以下数据的平均值：12, 15, 18, 21, 24",
+            "options": ["A. 15", "B. 18", "C. 20", "D. 21"],
+            "answer": "B",
+        },
+        "tags": ["data_analysis", "mean", "average"],
+    },
+    {
+        "subject": "math", "grade_level": "G5", "topic": "expressions",
+        "subtopic": "inequalities_basic", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "Which value of n makes 2n + 3 > 11 true?",
+            "options": ["A. n = 3", "B. n = 4", "C. n = 5", "D. n = 2"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "哪个 n 的值使 2n + 3 > 11 成立？",
+            "options": ["A. n = 3", "B. n = 4", "C. n = 5", "D. n = 2"],
+            "answer": "C",
+        },
+        "tags": ["expressions", "inequalities", "substitution"],
+    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -374,6 +570,202 @@ G6_QUESTIONS = [
         },
         "tags": ["quadratics", "difference_of_squares", "factoring"],
     },
+    # --- G6 新增题 (13 道，扩充至 25 道) ---
+    {
+        "subject": "math", "grade_level": "G6", "topic": "linear_equations",
+        "subtopic": "fractions", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "Solve for x: x/3 + 5 = 9",
+            "options": ["A. x = 4", "B. x = 12", "C. x = 15", "D. x = 42"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "解方程：x/3 + 5 = 9",
+            "options": ["A. x = 4", "B. x = 12", "C. x = 15", "D. x = 42"],
+            "answer": "B",
+        },
+        "tags": ["linear_equations", "fractions", "solving"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "linear_equations",
+        "subtopic": "variables_both_sides", "difficulty": 0.6, "question_type": "mcq",
+        "content_en": {
+            "stem": "Solve: 5x - 3 = 2x + 9",
+            "options": ["A. x = 2", "B. x = 3", "C. x = 4", "D. x = 6"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "解方程：5x - 3 = 2x + 9",
+            "options": ["A. x = 2", "B. x = 3", "C. x = 4", "D. x = 6"],
+            "answer": "C",
+        },
+        "tags": ["linear_equations", "variables_both_sides"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "inequalities",
+        "subtopic": "graphing", "difficulty": 0.45, "question_type": "mcq",
+        "content_en": {
+            "stem": "Which inequality represents 'x is at least 7'?",
+            "options": ["A. x > 7", "B. x < 7", "C. x ≥ 7", "D. x ≤ 7"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "哪个不等式表示'x 至少为 7'？",
+            "options": ["A. x > 7", "B. x < 7", "C. x ≥ 7", "D. x ≤ 7"],
+            "answer": "C",
+        },
+        "tags": ["inequalities", "interpretation"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "exponents",
+        "subtopic": "negative_exponents", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "What is 5⁻²?",
+            "options": ["A. -25", "B. -10", "C. 1/25", "D. 1/10"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "5⁻² 等于多少？",
+            "options": ["A. -25", "B. -10", "C. 1/25", "D. 1/10"],
+            "answer": "C",
+        },
+        "tags": ["exponents", "negative_exponents"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "exponents",
+        "subtopic": "scientific_notation", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "Write 0.00045 in scientific notation.",
+            "options": ["A. 4.5 × 10⁻⁴", "B. 45 × 10⁻⁵", "C. 4.5 × 10⁻³", "D. 4.5 × 10⁴"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "将 0.00045 用科学计数法表示。",
+            "options": ["A. 4.5 × 10⁻⁴", "B. 45 × 10⁻⁵", "C. 4.5 × 10⁻³", "D. 4.5 × 10⁴"],
+            "answer": "A",
+        },
+        "tags": ["exponents", "scientific_notation"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "linear_functions",
+        "subtopic": "table_to_equation", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "A table shows: x = 1 → y = 5, x = 2 → y = 8, x = 3 → y = 11. What is the equation?",
+            "options": ["A. y = 3x + 2", "B. y = 2x + 3", "C. y = 5x", "D. y = x + 4"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "表格显示：x = 1 → y = 5，x = 2 → y = 8，x = 3 → y = 11。方程是什么？",
+            "options": ["A. y = 3x + 2", "B. y = 2x + 3", "C. y = 5x", "D. y = x + 4"],
+            "answer": "A",
+        },
+        "tags": ["linear_functions", "patterns", "equations"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "polynomials",
+        "subtopic": "multiplication", "difficulty": 0.6, "question_type": "mcq",
+        "content_en": {
+            "stem": "Expand: (x + 3)(x - 5)",
+            "options": ["A. x² - 2x - 15", "B. x² + 2x - 15", "C. x² - 8x - 15", "D. x² - 2x + 15"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "展开：(x + 3)(x - 5)",
+            "options": ["A. x² - 2x - 15", "B. x² + 2x - 15", "C. x² - 8x - 15", "D. x² - 2x + 15"],
+            "answer": "A",
+        },
+        "tags": ["polynomials", "multiplication", "FOIL"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "radicals",
+        "subtopic": "simplifying", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "Simplify: √50",
+            "options": ["A. 5√2", "B. 2√5", "C. 25", "D. 10√5"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "化简：√50",
+            "options": ["A. 5√2", "B. 2√5", "C. 25", "D. 10√5"],
+            "answer": "A",
+        },
+        "tags": ["radicals", "simplifying"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "systems",
+        "subtopic": "elimination", "difficulty": 0.7, "question_type": "mcq",
+        "content_en": {
+            "stem": "Solve: 2x + y = 10, x - y = 2. What is x?",
+            "options": ["A. 3", "B. 4", "C. 5", "D. 6"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "解方程组：2x + y = 10, x - y = 2，x 等于多少？",
+            "options": ["A. 3", "B. 4", "C. 5", "D. 6"],
+            "answer": "B",
+        },
+        "tags": ["systems", "elimination"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "ratios",
+        "subtopic": "proportional_reasoning", "difficulty": 0.4, "question_type": "mcq",
+        "content_en": {
+            "stem": "If 3 notebooks cost $7.50, how much do 5 notebooks cost?",
+            "options": ["A. $10.00", "B. $12.50", "C. $11.25", "D. $15.00"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "如果 3 本笔记本 $7.50，5 本笔记本多少钱？",
+            "options": ["A. $10.00", "B. $12.50", "C. $11.25", "D. $15.00"],
+            "answer": "B",
+        },
+        "tags": ["ratios", "proportional_reasoning", "unit_rate"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "word_problems",
+        "subtopic": "percent_change", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "A shirt originally costs $40. It is on sale for 25% off. What is the sale price?",
+            "options": ["A. $10", "B. $25", "C. $30", "D. $35"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "一件衬衫原价 $40，打七五折。售价是多少？",
+            "options": ["A. $10", "B. $25", "C. $30", "D. $35"],
+            "answer": "C",
+        },
+        "tags": ["word_problems", "percent", "discount"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "data_analysis",
+        "subtopic": "probability", "difficulty": 0.45, "question_type": "mcq",
+        "content_en": {
+            "stem": "A bag has 3 red, 5 blue, and 2 green marbles. What is the probability of drawing a blue marble?",
+            "options": ["A. 1/2", "B. 3/10", "C. 1/5", "D. 2/5"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "袋子里有 3 个红球、5 个蓝球和 2 个绿球。抽到蓝球的概率是多少？",
+            "options": ["A. 1/2", "B. 3/10", "C. 1/5", "D. 2/5"],
+            "answer": "A",
+        },
+        "tags": ["data_analysis", "probability"],
+    },
+    {
+        "subject": "math", "grade_level": "G6", "topic": "coordinate_geometry",
+        "subtopic": "midpoint", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "What is the midpoint of the segment connecting (2, 8) and (6, 4)?",
+            "options": ["A. (4, 6)", "B. (3, 5)", "C. (8, 12)", "D. (4, 12)"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "连接 (2, 8) 和 (6, 4) 的线段的中点坐标是什么？",
+            "options": ["A. (4, 6)", "B. (3, 5)", "C. (8, 12)", "D. (4, 12)"],
+            "answer": "A",
+        },
+        "tags": ["coordinate_geometry", "midpoint"],
+    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -556,6 +948,202 @@ G7_QUESTIONS = [
             "answer": "C",
         },
         "tags": ["proofs", "reasoning", "properties_of_congruence"],
+    },
+    # --- G7 新增题 (13 道，扩充至 25 道) ---
+    {
+        "subject": "math", "grade_level": "G7", "topic": "angles",
+        "subtopic": "vertical_angles", "difficulty": 0.35, "question_type": "mcq",
+        "content_en": {
+            "stem": "Two lines intersect. One angle measures 130°. What is the measure of the vertical angle?",
+            "options": ["A. 50°", "B. 130°", "C. 180°", "D. 260°"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "两条直线相交，一个角为 130°，对顶角是多少度？",
+            "options": ["A. 50°", "B. 130°", "C. 180°", "D. 260°"],
+            "answer": "B",
+        },
+        "tags": ["angles", "vertical_angles"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "triangles",
+        "subtopic": "exterior_angle", "difficulty": 0.45, "question_type": "mcq",
+        "content_en": {
+            "stem": "In a triangle, two interior angles measure 50° and 60°. What is the exterior angle adjacent to the third interior angle?",
+            "options": ["A. 70°", "B. 110°", "C. 120°", "D. 130°"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "三角形的两个内角分别为 50° 和 60°，第三个内角的邻补角（外角）是多少度？",
+            "options": ["A. 70°", "B. 110°", "C. 120°", "D. 130°"],
+            "answer": "B",
+        },
+        "tags": ["triangles", "exterior_angle_theorem"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "triangles",
+        "subtopic": "pythagorean_theorem", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "A right triangle has a hypotenuse of 13 and one leg of 5. What is the other leg?",
+            "options": ["A. 8", "B. 10", "C. 12", "D. 14"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "直角三角形斜边为 13，一条直角边为 5，另一条直角边是多少？",
+            "options": ["A. 8", "B. 10", "C. 12", "D. 14"],
+            "answer": "C",
+        },
+        "tags": ["triangles", "pythagorean_theorem"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "circles",
+        "subtopic": "area", "difficulty": 0.45, "question_type": "mcq",
+        "content_en": {
+            "stem": "A circle has a diameter of 10 cm. What is its area? (Use π ≈ 3.14)",
+            "options": ["A. 31.4 cm²", "B. 78.5 cm²", "C. 314 cm²", "D. 15.7 cm²"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "一个圆的直径为 10 厘米，面积是多少？(π ≈ 3.14)",
+            "options": ["A. 31.4 cm²", "B. 78.5 cm²", "C. 314 cm²", "D. 15.7 cm²"],
+            "answer": "B",
+        },
+        "tags": ["circles", "area"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "area",
+        "subtopic": "trapezoid", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "A trapezoid has bases of 8 cm and 12 cm, and a height of 5 cm. What is its area?",
+            "options": ["A. 40 cm²", "B. 50 cm²", "C. 60 cm²", "D. 100 cm²"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "梯形的上底 8 厘米、下底 12 厘米、高 5 厘米，面积是多少？",
+            "options": ["A. 40 cm²", "B. 50 cm²", "C. 60 cm²", "D. 100 cm²"],
+            "answer": "B",
+        },
+        "tags": ["area", "trapezoid"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "volume",
+        "subtopic": "cone", "difficulty": 0.6, "question_type": "mcq",
+        "content_en": {
+            "stem": "A cone has radius 4 cm and height 9 cm. What is its volume? (Use π ≈ 3.14)",
+            "options": ["A. 150.72 cm³", "B. 452.16 cm³", "C. 113.04 cm³", "D. 75.36 cm³"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "圆锥底面半径 4 厘米、高 9 厘米，体积是多少？(π ≈ 3.14)",
+            "options": ["A. 150.72 cm³", "B. 452.16 cm³", "C. 113.04 cm³", "D. 75.36 cm³"],
+            "answer": "A",
+        },
+        "tags": ["volume", "cone"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "surface_area",
+        "subtopic": "rectangular_prism", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "A rectangular prism has dimensions 3 × 4 × 5. What is its surface area?",
+            "options": ["A. 60", "B. 94", "C. 120", "D. 47"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "长方体的长宽高为 3 × 4 × 5，表面积是多少？",
+            "options": ["A. 60", "B. 94", "C. 120", "D. 47"],
+            "answer": "B",
+        },
+        "tags": ["surface_area", "rectangular_prism"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "parallel_lines",
+        "subtopic": "corresponding_angles", "difficulty": 0.4, "question_type": "mcq",
+        "content_en": {
+            "stem": "Two parallel lines are cut by a transversal. A pair of corresponding angles are formed. If one is 72°, the other is:",
+            "options": ["A. 18°", "B. 72°", "C. 108°", "D. 288°"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "两条平行线被截线所截，一对同位角中一个为 72°，另一个是：",
+            "options": ["A. 18°", "B. 72°", "C. 108°", "D. 288°"],
+            "answer": "B",
+        },
+        "tags": ["parallel_lines", "corresponding_angles"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "similarity",
+        "subtopic": "area_ratio", "difficulty": 0.7, "question_type": "mcq",
+        "content_en": {
+            "stem": "Two similar figures have a linear scale factor of 2:3. What is the ratio of their areas?",
+            "options": ["A. 2:3", "B. 4:9", "C. 8:27", "D. 4:6"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "两个相似图形的线性比例因子为 2:3，它们面积的比是多少？",
+            "options": ["A. 2:3", "B. 4:9", "C. 8:27", "D. 4:6"],
+            "answer": "B",
+        },
+        "tags": ["similarity", "area_ratio"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "coordinate_geometry",
+        "subtopic": "midpoint", "difficulty": 0.45, "question_type": "mcq",
+        "content_en": {
+            "stem": "What is the midpoint of the segment with endpoints (0, 4) and (6, 10)?",
+            "options": ["A. (3, 7)", "B. (6, 14)", "C. (3, 14)", "D. (6, 7)"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "端点为 (0, 4) 和 (6, 10) 的线段的中点是什么？",
+            "options": ["A. (3, 7)", "B. (6, 14)", "C. (3, 14)", "D. (6, 7)"],
+            "answer": "A",
+        },
+        "tags": ["coordinate_geometry", "midpoint"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "transformations",
+        "subtopic": "rotations", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "Point P(2, 3) is rotated 90° counterclockwise about the origin. What are the new coordinates?",
+            "options": ["A. (-3, 2)", "B. (3, -2)", "C. (-2, -3)", "D. (-2, 3)"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "点 P(2, 3) 绕原点逆时针旋转 90°，新坐标是什么？",
+            "options": ["A. (-3, 2)", "B. (3, -2)", "C. (-2, -3)", "D. (-2, 3)"],
+            "answer": "A",
+        },
+        "tags": ["transformations", "rotations"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "data_analysis",
+        "subtopic": "box_plot", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "In a box plot, the interquartile range (IQR) represents the range of the middle ___% of the data.",
+            "options": ["A. 25%", "B. 50%", "C. 75%", "D. 100%"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "在箱线图中，四分位距（IQR）表示中间 ___% 数据的范围。",
+            "options": ["A. 25%", "B. 50%", "C. 75%", "D. 100%"],
+            "answer": "B",
+        },
+        "tags": ["data_analysis", "box_plot", "IQR"],
+    },
+    {
+        "subject": "math", "grade_level": "G7", "topic": "word_problems",
+        "subtopic": "geometry_application", "difficulty": 0.65, "question_type": "mcq",
+        "content_en": {
+            "stem": "A ladder 10 feet long leans against a wall. The base is 6 feet from the wall. How high up the wall does the ladder reach?",
+            "options": ["A. 4 ft", "B. 6 ft", "C. 8 ft", "D. 10 ft"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "一架 10 英尺长的梯子靠在墙上，底部离墙 6 英尺。梯子能到达多高？",
+            "options": ["A. 4 ft", "B. 6 ft", "C. 8 ft", "D. 10 ft"],
+            "answer": "C",
+        },
+        "tags": ["word_problems", "pythagorean_theorem", "application"],
     },
 ]
 
@@ -741,6 +1329,202 @@ G8_QUESTIONS = [
             "answer": "A",
         },
         "tags": ["functions", "composition"],
+    },
+    # --- G8 新增题 (13 道，扩充至 25 道) ---
+    {
+        "subject": "math", "grade_level": "G8", "topic": "quadratics",
+        "subtopic": "completing_square", "difficulty": 0.65, "question_type": "mcq",
+        "content_en": {
+            "stem": "Complete the square: x² + 6x + __ = (x + __)²",
+            "options": ["A. 9, 3", "B. 36, 6", "C. 12, 6", "D. 3, 9"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "配方：x² + 6x + __ = (x + __)²",
+            "options": ["A. 9, 3", "B. 36, 6", "C. 12, 6", "D. 3, 9"],
+            "answer": "A",
+        },
+        "tags": ["quadratics", "completing_the_square"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "quadratics",
+        "subtopic": "discriminant", "difficulty": 0.7, "question_type": "mcq",
+        "content_en": {
+            "stem": "For the equation 2x² + 3x + 5 = 0, the discriminant is:",
+            "options": ["A. -31", "B. 49", "C. 31", "D. -49"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "方程 2x² + 3x + 5 = 0 的判别式是：",
+            "options": ["A. -31", "B. 49", "C. 31", "D. -49"],
+            "answer": "A",
+        },
+        "tags": ["quadratics", "discriminant"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "functions",
+        "subtopic": "inverse", "difficulty": 0.65, "question_type": "mcq",
+        "content_en": {
+            "stem": "If f(x) = 3x - 6, what is f⁻¹(x)?",
+            "options": ["A. (x + 6)/3", "B. (x - 6)/3", "C. 3x + 6", "D. x/3 + 6"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "如果 f(x) = 3x - 6，那么 f⁻¹(x) 是什么？",
+            "options": ["A. (x + 6)/3", "B. (x - 6)/3", "C. 3x + 6", "D. x/3 + 6"],
+            "answer": "A",
+        },
+        "tags": ["functions", "inverse"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "exponential",
+        "subtopic": "equations", "difficulty": 0.6, "question_type": "mcq",
+        "content_en": {
+            "stem": "Solve: 3ˣ = 81",
+            "options": ["A. x = 3", "B. x = 4", "C. x = 27", "D. x = 9"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "解方程：3ˣ = 81",
+            "options": ["A. x = 3", "B. x = 4", "C. x = 27", "D. x = 9"],
+            "answer": "B",
+        },
+        "tags": ["exponential", "equations"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "logarithms",
+        "subtopic": "properties", "difficulty": 0.65, "question_type": "mcq",
+        "content_en": {
+            "stem": "Simplify: log₃(9) + log₃(3)",
+            "options": ["A. 2", "B. 3", "C. 5", "D. 6"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "化简：log₃(9) + log₃(3)",
+            "options": ["A. 2", "B. 3", "C. 5", "D. 6"],
+            "answer": "B",
+        },
+        "tags": ["logarithms", "properties", "product_rule"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "trigonometry",
+        "subtopic": "sohcahtoa", "difficulty": 0.5, "question_type": "mcq",
+        "content_en": {
+            "stem": "In a right triangle, sin(θ) = opposite/hypotenuse. If the opposite side is 3 and the hypotenuse is 5, what is cos(θ)?",
+            "options": ["A. 3/5", "B. 4/5", "C. 3/4", "D. 5/3"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "在直角三角形中，sin(θ) = 对边/斜边。若对边为 3、斜边为 5，cos(θ) 等于多少？",
+            "options": ["A. 3/5", "B. 4/5", "C. 3/4", "D. 5/3"],
+            "answer": "B",
+        },
+        "tags": ["trigonometry", "sohcahtoa", "cos"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "sequences",
+        "subtopic": "geometric", "difficulty": 0.55, "question_type": "mcq",
+        "content_en": {
+            "stem": "In the geometric sequence 2, 6, 18, 54, ..., what is the common ratio?",
+            "options": ["A. 2", "B. 3", "C. 4", "D. 6"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "等比数列 2, 6, 18, 54, ... 的公比是多少？",
+            "options": ["A. 2", "B. 3", "C. 4", "D. 6"],
+            "answer": "B",
+        },
+        "tags": ["sequences", "geometric", "common_ratio"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "polynomials",
+        "subtopic": "synthetic_division", "difficulty": 0.7, "question_type": "mcq",
+        "content_en": {
+            "stem": "If (x - 2) is a factor of x³ - 6x² + 11x - 6, what are the other factors?",
+            "options": ["A. (x-1)(x-3)", "B. (x+1)(x+3)", "C. (x-2)(x-3)", "D. (x-1)(x+3)"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "如果 (x - 2) 是 x³ - 6x² + 11x - 6 的因式，其他因式是什么？",
+            "options": ["A. (x-1)(x-3)", "B. (x+1)(x+3)", "C. (x-2)(x-3)", "D. (x-1)(x+3)"],
+            "answer": "A",
+        },
+        "tags": ["polynomials", "synthetic_division", "factoring"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "complex_numbers",
+        "subtopic": "multiplication", "difficulty": 0.7, "question_type": "mcq",
+        "content_en": {
+            "stem": "Multiply: (2 + 3i)(1 - i)",
+            "options": ["A. 5 + i", "B. -1 + 5i", "C. 5 - i", "D. -1 - i"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "计算：(2 + 3i)(1 - i)",
+            "options": ["A. 5 + i", "B. -1 + 5i", "C. 5 - i", "D. -1 - i"],
+            "answer": "A",
+        },
+        "tags": ["complex_numbers", "multiplication"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "rational_expressions",
+        "subtopic": "addition", "difficulty": 0.65, "question_type": "mcq",
+        "content_en": {
+            "stem": "Add: 1/(x+1) + 1/(x-1)",
+            "options": ["A. 2x/(x²-1)", "B. 2/(x²-1)", "C. 2/(2x)", "D. 1/(x²-1)"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "计算：1/(x+1) + 1/(x-1)",
+            "options": ["A. 2x/(x²-1)", "B. 2/(x²-1)", "C. 2/(2x)", "D. 1/(x²-1)"],
+            "answer": "A",
+        },
+        "tags": ["rational_expressions", "addition", "common_denominator"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "conic_sections",
+        "subtopic": "circle_equation", "difficulty": 0.6, "question_type": "mcq",
+        "content_en": {
+            "stem": "What is the center and radius of the circle (x-2)² + (y+3)² = 16?",
+            "options": ["A. Center (2,-3), r=4", "B. Center (-2,3), r=4", "C. Center (2,-3), r=16", "D. Center (2,3), r=4"],
+            "answer": "A",
+        },
+        "content_zh": {
+            "stem": "圆 (x-2)² + (y+3)² = 16 的圆心和半径是什么？",
+            "options": ["A. 圆心 (2,-3), r=4", "B. 圆心 (-2,3), r=4", "C. 圆心 (2,-3), r=16", "D. 圆心 (2,3), r=4"],
+            "answer": "A",
+        },
+        "tags": ["conic_sections", "circle", "standard_form"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "systems",
+        "subtopic": "three_variables", "difficulty": 0.8, "question_type": "mcq",
+        "content_en": {
+            "stem": "In a system of equations: x + y + z = 6, x - y = 2, y + z = 3. What is x?",
+            "options": ["A. 1", "B. 2", "C. 3", "D. 4"],
+            "answer": "C",
+        },
+        "content_zh": {
+            "stem": "方程组：x + y + z = 6, x - y = 2, y + z = 3，x 等于多少？",
+            "options": ["A. 1", "B. 2", "C. 3", "D. 4"],
+            "answer": "C",
+        },
+        "tags": ["systems", "three_variables"],
+    },
+    {
+        "subject": "math", "grade_level": "G8", "topic": "word_problems",
+        "subtopic": "exponential_application", "difficulty": 0.6, "question_type": "mcq",
+        "content_en": {
+            "stem": "An investment of $1000 grows at 5% annual compound interest. What is the value after 2 years?",
+            "options": ["A. $1100.00", "B. $1102.50", "C. $1050.00", "D. $1105.00"],
+            "answer": "B",
+        },
+        "content_zh": {
+            "stem": "$1000 的投资以年利率 5% 复利增长，2 年后价值多少？",
+            "options": ["A. $1100.00", "B. $1102.50", "C. $1050.00", "D. $1105.00"],
+            "answer": "B",
+        },
+        "tags": ["word_problems", "compound_interest", "exponential"],
     },
 ]
 

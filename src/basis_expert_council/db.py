@@ -742,24 +742,94 @@ async def find_next_question(
     exclude_ids: list[int],
     tolerance: float = 0.15,
 ) -> dict | None:
-    """为 CAT 算法查找下一道题：在目标难度 +/- tolerance 范围内随机选一道"""
+    """
+    为 CAT 算法查找下一道题，多级 fallback 确保不会因题库不足而中断：
+    1. 目标年级 + 目标难度窗口
+    2. 目标年级 + 扩大难度窗口 (±0.3)
+    3. 目标年级 + 无难度限制
+    4. 相邻年级 (±1) + 目标难度窗口
+    5. 同学科全题库（无年级/难度限制）
+    """
     pool = await get_pool()
-    d_min = max(0.0, target_difficulty - tolerance)
-    d_max = min(1.0, target_difficulty + tolerance)
+    safe_exclude = exclude_ids or []
 
     async with pool.acquire() as conn:
+        # Level 1: 目标年级 + 目标难度窗口
+        d_min = max(0.0, target_difficulty - tolerance)
+        d_max = min(1.0, target_difficulty + tolerance)
         row = await conn.fetchrow(
-            """
-            SELECT * FROM assessment_questions
-            WHERE subject = $1 AND grade_level = $2
-              AND difficulty >= $3 AND difficulty <= $4
-              AND id != ALL($5::int[])
-            ORDER BY random()
-            LIMIT 1
-            """,
-            subject, grade_level, d_min, d_max, exclude_ids or [],
+            """SELECT * FROM assessment_questions
+               WHERE subject = $1 AND grade_level = $2
+                 AND difficulty >= $3 AND difficulty <= $4
+                 AND id != ALL($5::int[])
+               ORDER BY random() LIMIT 1""",
+            subject, grade_level, d_min, d_max, safe_exclude,
+        )
+        if row:
+            return dict(row)
+
+        # Level 2: 目标年级 + 扩大难度窗口
+        d_min2 = max(0.0, target_difficulty - 0.35)
+        d_max2 = min(1.0, target_difficulty + 0.35)
+        row = await conn.fetchrow(
+            """SELECT * FROM assessment_questions
+               WHERE subject = $1 AND grade_level = $2
+                 AND difficulty >= $3 AND difficulty <= $4
+                 AND id != ALL($5::int[])
+               ORDER BY random() LIMIT 1""",
+            subject, grade_level, d_min2, d_max2, safe_exclude,
+        )
+        if row:
+            return dict(row)
+
+        # Level 3: 目标年级 + 无难度限制
+        row = await conn.fetchrow(
+            """SELECT * FROM assessment_questions
+               WHERE subject = $1 AND grade_level = $2
+                 AND id != ALL($3::int[])
+               ORDER BY random() LIMIT 1""",
+            subject, grade_level, safe_exclude,
+        )
+        if row:
+            return dict(row)
+
+        # Level 4: 相邻年级 (±1) + 按难度距离排序
+        adjacent = _adjacent_grades(grade_level)
+        if adjacent:
+            row = await conn.fetchrow(
+                """SELECT * FROM assessment_questions
+                   WHERE subject = $1 AND grade_level = ANY($2::text[])
+                     AND id != ALL($3::int[])
+                   ORDER BY ABS(difficulty - $4) LIMIT 1""",
+                subject, adjacent, safe_exclude, target_difficulty,
+            )
+            if row:
+                return dict(row)
+
+        # Level 5: 同学科全题库
+        row = await conn.fetchrow(
+            """SELECT * FROM assessment_questions
+               WHERE subject = $1
+                 AND id != ALL($2::int[])
+               ORDER BY ABS(difficulty - $3) LIMIT 1""",
+            subject, safe_exclude, target_difficulty,
         )
         return dict(row) if row else None
+
+
+def _adjacent_grades(grade_level: str) -> list[str]:
+    """返回相邻年级列表，如 G6 → ['G5', 'G7']"""
+    import re
+    m = re.match(r"G(\d+)", grade_level)
+    if not m:
+        return []
+    n = int(m.group(1))
+    result = []
+    if n > 1:
+        result.append(f"G{n - 1}")
+    if n < 12:
+        result.append(f"G{n + 1}")
+    return result
 
 
 async def increment_question_usage(question_id: int, is_correct: bool) -> None:

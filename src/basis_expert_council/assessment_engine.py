@@ -374,21 +374,13 @@ async def submit_answer(
     if not is_last:
         effective_correct = is_correct if is_correct is not None else True
         state.current_difficulty = compute_next_difficulty(state, effective_correct)
+        # find_next_question 内建多级 fallback（扩难度→同年级全部→相邻年级→全题库）
         next_q = await db.find_next_question(
             subject=session["subject"],
             grade_level=session["grade_level"],
             target_difficulty=state.current_difficulty,
             exclude_ids=state.answered_question_ids,
         )
-        # Fallback: widen tolerance if no question found
-        if not next_q:
-            next_q = await db.find_next_question(
-                subject=session["subject"],
-                grade_level=session["grade_level"],
-                target_difficulty=state.current_difficulty,
-                exclude_ids=state.answered_question_ids,
-                tolerance=0.3,
-            )
         next_question = _format_question(next_q) if next_q else None
         # If still no question, session is complete
         if not next_question:
