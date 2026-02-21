@@ -1435,6 +1435,62 @@ async def update_memory_endpoint(memory_id: str, request: Request):
         return JSONResponse(status_code=500, content={"error": "更新记忆失败"})
 
 
+@app.delete("/api/memory/all")
+async def delete_all_memories(request: Request):
+    """清空用户全部记忆（固定路径，必须在 {memory_id} 前定义）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    from .memory import get_memory, run_with_timeout, user_id_to_mem0
+
+    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
+    if not user or not user.get("supabase_uid"):
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    mem0_uid = user_id_to_mem0(user["supabase_uid"])
+    mem = get_memory()
+
+    try:
+        run_with_timeout(mem.delete_all, user_id=mem0_uid, timeout_sec=30)
+        return {"success": True}
+    except Exception as e:
+        logger.warning(f"delete_all_memories failed: {e}")
+        return JSONResponse(status_code=500, content={"error": "清空记忆失败"})
+
+
+@app.post("/api/memory/batch-delete")
+async def batch_delete_memories(request: Request):
+    """批量删除记忆"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    body = await request.json()
+    memory_ids = body.get("memory_ids", [])
+    if not memory_ids:
+        return JSONResponse(status_code=400, content={"error": "缺少 memory_ids"})
+
+    from .memory import get_memory, run_with_timeout, user_id_to_mem0
+
+    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
+    if not user or not user.get("supabase_uid"):
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    mem = get_memory()
+    deleted = 0
+    failed = 0
+
+    for mid in memory_ids:
+        try:
+            run_with_timeout(mem.delete, memory_id=mid)
+            deleted += 1
+        except Exception:
+            failed += 1
+
+    return {"deleted": deleted, "failed": failed}
+
+
 @app.delete("/api/memory/{memory_id}")
 async def delete_memory_endpoint(memory_id: str, request: Request):
     """删除单条记忆（含所有权验证）"""
@@ -1470,62 +1526,6 @@ async def delete_memory_endpoint(memory_id: str, request: Request):
     except Exception as e:
         logger.warning(f"delete_memory failed: {e}")
         return JSONResponse(status_code=500, content={"error": "删除记忆失败"})
-
-
-@app.post("/api/memory/batch-delete")
-async def batch_delete_memories(request: Request):
-    """批量删除记忆"""
-    auth_info = await authenticate_request(dict(request.headers))
-    if not auth_info:
-        return JSONResponse(status_code=401, content={"error": "未登录"})
-
-    body = await request.json()
-    memory_ids = body.get("memory_ids", [])
-    if not memory_ids:
-        return JSONResponse(status_code=400, content={"error": "缺少 memory_ids"})
-
-    from .memory import get_memory, run_with_timeout, user_id_to_mem0
-
-    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
-    if not user or not user.get("supabase_uid"):
-        return JSONResponse(status_code=404, content={"error": "用户不存在"})
-
-    mem = get_memory()
-    deleted = 0
-    failed = 0
-
-    for mid in memory_ids:
-        try:
-            run_with_timeout(mem.delete, memory_id=mid)
-            deleted += 1
-        except Exception:
-            failed += 1
-
-    return {"deleted": deleted, "failed": failed}
-
-
-@app.delete("/api/memory/all")
-async def delete_all_memories(request: Request):
-    """清空用户全部记忆"""
-    auth_info = await authenticate_request(dict(request.headers))
-    if not auth_info:
-        return JSONResponse(status_code=401, content={"error": "未登录"})
-
-    from .memory import get_memory, run_with_timeout, user_id_to_mem0
-
-    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
-    if not user or not user.get("supabase_uid"):
-        return JSONResponse(status_code=404, content={"error": "用户不存在"})
-
-    mem0_uid = user_id_to_mem0(user["supabase_uid"])
-    mem = get_memory()
-
-    try:
-        run_with_timeout(mem.delete_all, user_id=mem0_uid)
-        return {"success": True}
-    except Exception as e:
-        logger.warning(f"delete_all_memories failed: {e}")
-        return JSONResponse(status_code=500, content={"error": "清空记忆失败"})
 
 
 # ---------------------------------------------------------------------------
