@@ -1,0 +1,3 @@
+stem_zh,stem_en,option_a,option_b,option_c,option_d,answer,topic,subtopic,difficulty,grade_level,subject,question_type,explanation
+解方程：2(x + 3) = 14,Solve: 2(x + 3) = 14,x = 2,x = 4,x = 5,x = 7,B,linear_equations,two_step,0.55,G7,math,mcq,2(x+3)=14 → x+3=7 → x=4
+一个三角形的底为8cm高为5cm面积是多少,A triangle base=8cm height=5cm area=?,13 cm²,20 cm²,40 cm²,26 cm²,B,geometry_intro,area,0.40,G7,math,mcq,½×8×5=20

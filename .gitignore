@@ -43,5 +43,9 @@ htmlcov/
 # Test outputs
 tests/a2ui_outputs/
 
+# Next.js
+.next/
+node_modules/
+
 # Misc
 *.log

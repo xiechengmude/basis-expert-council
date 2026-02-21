@@ -1,0 +1,49 @@
+{
+  "batch_name": "BASIS 深圳 2024 G7 数学期中考",
+  "source": "basis_exam",
+  "source_year": 2024,
+  "subject": "math",
+  "grade_level": "G7",
+  "questions": [
+    {
+      "topic": "linear_equations",
+      "subtopic": "two_step",
+      "difficulty": 0.55,
+      "question_type": "mcq",
+      "content_zh": {
+        "stem": "解方程：2(x + 3) = 14",
+        "options": ["A. x = 2", "B. x = 4", "C. x = 5", "D. x = 7"],
+        "answer": "B"
+      },
+      "content_en": {
+        "stem": "Solve: 2(x + 3) = 14",
+        "options": ["A. x = 2", "B. x = 4", "C. x = 5", "D. x = 7"],
+        "answer": "B"
+      },
+      "explanation_zh": "2(x+3)=14 → x+3=7 → x=4",
+      "explanation_en": "2(x+3)=14 → x+3=7 → x=4",
+      "curriculum_code": "CCSS.MATH.7.EE.4",
+      "tags": ["linear_equations", "distributive"]
+    },
+    {
+      "topic": "geometry_intro",
+      "subtopic": "area",
+      "difficulty": 0.40,
+      "question_type": "mcq",
+      "content_zh": {
+        "stem": "一个三角形的底为 8cm，高为 5cm，面积是多少？",
+        "options": ["A. 13 cm²", "B. 20 cm²", "C. 40 cm²", "D. 26 cm²"],
+        "answer": "B"
+      },
+      "content_en": {
+        "stem": "A triangle has a base of 8cm and height of 5cm. What is its area?",
+        "options": ["A. 13 cm²", "B. 20 cm²", "C. 40 cm²", "D. 26 cm²"],
+        "answer": "B"
+      },
+      "explanation_zh": "三角形面积 = ½ × 底 × 高 = ½ × 8 × 5 = 20",
+      "explanation_en": "Triangle area = ½ × base × height = ½ × 8 × 5 = 20",
+      "curriculum_code": "CCSS.MATH.7.G.6",
+      "tags": ["geometry", "area", "triangle"]
+    }
+  ]
+}

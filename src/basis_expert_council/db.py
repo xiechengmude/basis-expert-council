@@ -234,6 +234,37 @@ CREATE INDEX IF NOT EXISTS idx_aq_subject_grade ON assessment_questions(subject,
 CREATE INDEX IF NOT EXISTS idx_aq_difficulty ON assessment_questions(difficulty);
 CREATE INDEX IF NOT EXISTS idx_aq_topic ON assessment_questions(topic);
 
+-- 题库增强字段（幂等迁移）
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS source          TEXT;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS source_year     INT;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS source_detail   TEXT;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS curriculum_code TEXT;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS discrimination  REAL;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS review_status   TEXT DEFAULT 'draft';
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS reviewed_by     TEXT;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS version         INT DEFAULT 1;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS explanation_zh  TEXT;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS explanation_en  TEXT;
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS image_urls      TEXT[];
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS metadata        JSONB DEFAULT '{}';
+ALTER TABLE assessment_questions ADD COLUMN IF NOT EXISTS batch_id        INT;
+
+CREATE INDEX IF NOT EXISTS idx_aq_source ON assessment_questions(source);
+CREATE INDEX IF NOT EXISTS idx_aq_review ON assessment_questions(review_status);
+CREATE INDEX IF NOT EXISTS idx_aq_curriculum ON assessment_questions(curriculum_code);
+
+-- 导入批次追踪表
+CREATE TABLE IF NOT EXISTS question_import_batches (
+    id              SERIAL PRIMARY KEY,
+    batch_name      TEXT NOT NULL,
+    source          TEXT NOT NULL,
+    imported_by     TEXT,
+    question_count  INT DEFAULT 0,
+    status          TEXT DEFAULT 'pending',
+    error_log       TEXT,
+    created_at      TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- 测评会话表
 CREATE TABLE IF NOT EXISTS assessment_sessions (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -753,15 +784,19 @@ async def find_next_question(
     pool = await get_pool()
     safe_exclude = exclude_ids or []
 
+    # review_status 过滤: approved 优先，fallback 到全部（兼容种子题无状态）
+    approved_filter = "AND (review_status = 'approved' OR review_status IS NULL OR review_status = 'draft')"
+
     async with pool.acquire() as conn:
         # Level 1: 目标年级 + 目标难度窗口
         d_min = max(0.0, target_difficulty - tolerance)
         d_max = min(1.0, target_difficulty + tolerance)
         row = await conn.fetchrow(
-            """SELECT * FROM assessment_questions
+            f"""SELECT * FROM assessment_questions
                WHERE subject = $1 AND grade_level = $2
                  AND difficulty >= $3 AND difficulty <= $4
                  AND id != ALL($5::int[])
+                 {approved_filter}
                ORDER BY random() LIMIT 1""",
             subject, grade_level, d_min, d_max, safe_exclude,
         )
@@ -772,10 +807,11 @@ async def find_next_question(
         d_min2 = max(0.0, target_difficulty - 0.35)
         d_max2 = min(1.0, target_difficulty + 0.35)
         row = await conn.fetchrow(
-            """SELECT * FROM assessment_questions
+            f"""SELECT * FROM assessment_questions
                WHERE subject = $1 AND grade_level = $2
                  AND difficulty >= $3 AND difficulty <= $4
                  AND id != ALL($5::int[])
+                 {approved_filter}
                ORDER BY random() LIMIT 1""",
             subject, grade_level, d_min2, d_max2, safe_exclude,
         )
@@ -784,9 +820,10 @@ async def find_next_question(
 
         # Level 3: 目标年级 + 无难度限制
         row = await conn.fetchrow(
-            """SELECT * FROM assessment_questions
+            f"""SELECT * FROM assessment_questions
                WHERE subject = $1 AND grade_level = $2
                  AND id != ALL($3::int[])
+                 {approved_filter}
                ORDER BY random() LIMIT 1""",
             subject, grade_level, safe_exclude,
         )
@@ -797,16 +834,17 @@ async def find_next_question(
         adjacent = _adjacent_grades(grade_level)
         if adjacent:
             row = await conn.fetchrow(
-                """SELECT * FROM assessment_questions
+                f"""SELECT * FROM assessment_questions
                    WHERE subject = $1 AND grade_level = ANY($2::text[])
                      AND id != ALL($3::int[])
+                     {approved_filter}
                    ORDER BY ABS(difficulty - $4) LIMIT 1""",
                 subject, adjacent, safe_exclude, target_difficulty,
             )
             if row:
                 return dict(row)
 
-        # Level 5: 同学科全题库
+        # Level 5: 同学科全题库（不限状态，最后兜底）
         row = await conn.fetchrow(
             """SELECT * FROM assessment_questions
                WHERE subject = $1
@@ -851,8 +889,8 @@ async def increment_question_usage(question_id: int, is_correct: bool) -> None:
         )
 
 
-async def bulk_insert_questions(questions: list[dict]) -> int:
-    """批量导入题目，返回插入数量"""
+async def bulk_insert_questions(questions: list[dict], *, batch_id: int | None = None) -> int:
+    """批量导入题目（支持新字段），返回插入数量"""
     pool = await get_pool()
     async with pool.acquire() as conn:
         count = 0
@@ -862,8 +900,12 @@ async def bulk_insert_questions(questions: list[dict]) -> int:
                     """
                     INSERT INTO assessment_questions
                         (subject, grade_level, topic, subtopic, difficulty,
-                         question_type, content_zh, content_en, basis_aligned, tags)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+                         question_type, content_zh, content_en, basis_aligned, tags,
+                         source, source_year, source_detail, curriculum_code,
+                         discrimination, review_status, explanation_zh, explanation_en,
+                         image_urls, metadata, batch_id)
+                    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,
+                            $11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21)
                     """,
                     q["subject"],
                     q["grade_level"],
@@ -872,12 +914,282 @@ async def bulk_insert_questions(questions: list[dict]) -> int:
                     q.get("difficulty", 0.5),
                     q["question_type"],
                     json.dumps(q["content_zh"], ensure_ascii=False),
-                    json.dumps(q["content_en"], ensure_ascii=False),
+                    json.dumps(q.get("content_en") or q["content_zh"], ensure_ascii=False),
                     q.get("basis_aligned", True),
                     q.get("tags"),
+                    q.get("source"),
+                    q.get("source_year"),
+                    q.get("source_detail"),
+                    q.get("curriculum_code"),
+                    q.get("discrimination"),
+                    q.get("review_status", "draft"),
+                    q.get("explanation_zh"),
+                    q.get("explanation_en"),
+                    q.get("image_urls"),
+                    json.dumps(q.get("metadata") or {}, ensure_ascii=False),
+                    batch_id,
                 )
                 count += 1
         return count
+
+
+# ---------------------------------------------------------------------------
+# 题库管理 CRUD (Admin)
+# ---------------------------------------------------------------------------
+
+
+async def create_question(q: dict) -> dict:
+    """创建单个题目，返回完整记录"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO assessment_questions
+                (subject, grade_level, topic, subtopic, difficulty,
+                 question_type, content_zh, content_en, basis_aligned, tags,
+                 source, source_year, source_detail, curriculum_code,
+                 discrimination, review_status, explanation_zh, explanation_en,
+                 image_urls, metadata)
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,
+                    $11,$12,$13,$14,$15,$16,$17,$18,$19,$20)
+            RETURNING *
+            """,
+            q["subject"],
+            q["grade_level"],
+            q["topic"],
+            q.get("subtopic"),
+            q.get("difficulty", 0.5),
+            q["question_type"],
+            json.dumps(q["content_zh"], ensure_ascii=False),
+            json.dumps(q.get("content_en") or q["content_zh"], ensure_ascii=False),
+            q.get("basis_aligned", True),
+            q.get("tags"),
+            q.get("source"),
+            q.get("source_year"),
+            q.get("source_detail"),
+            q.get("curriculum_code"),
+            q.get("discrimination"),
+            q.get("review_status", "draft"),
+            q.get("explanation_zh"),
+            q.get("explanation_en"),
+            q.get("image_urls"),
+            json.dumps(q.get("metadata") or {}, ensure_ascii=False),
+        )
+        return dict(row)
+
+
+async def update_question(question_id: int, **fields) -> dict | None:
+    """更新题目字段"""
+    allowed = {
+        "subject", "grade_level", "topic", "subtopic", "difficulty",
+        "question_type", "content_zh", "content_en", "basis_aligned", "tags",
+        "source", "source_year", "source_detail", "curriculum_code",
+        "discrimination", "review_status", "reviewed_by", "version",
+        "explanation_zh", "explanation_en", "image_urls", "metadata",
+    }
+    jsonb_fields = {"content_zh", "content_en", "metadata"}
+    data = {}
+    for k, v in fields.items():
+        if k not in allowed:
+            continue
+        if k in jsonb_fields and isinstance(v, (dict, list)):
+            data[k] = json.dumps(v, ensure_ascii=False)
+        else:
+            data[k] = v
+    if not data:
+        return await get_question(question_id)
+
+    pool = await get_pool()
+    sets = ", ".join(f"{k} = ${i+2}" for i, k in enumerate(data))
+    vals: list[Any] = [question_id, *data.values()]
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            f"UPDATE assessment_questions SET {sets}, updated_at = NOW() WHERE id = $1 RETURNING *",
+            *vals,
+        )
+        return dict(row) if row else None
+
+
+async def delete_question(question_id: int, hard: bool = False) -> bool:
+    """删除题目（默认归档，hard=True 时物理删除）"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        if hard:
+            result = await conn.execute(
+                "DELETE FROM assessment_questions WHERE id = $1", question_id,
+            )
+        else:
+            result = await conn.execute(
+                "UPDATE assessment_questions SET review_status = 'archived', updated_at = NOW() WHERE id = $1",
+                question_id,
+            )
+        return result.endswith("1")
+
+
+async def review_question(question_id: int, status: str, reviewed_by: str) -> dict | None:
+    """审核题目状态"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """UPDATE assessment_questions
+               SET review_status = $2, reviewed_by = $3, updated_at = NOW()
+               WHERE id = $1 RETURNING *""",
+            question_id, status, reviewed_by,
+        )
+        return dict(row) if row else None
+
+
+async def query_questions_paginated(
+    *,
+    subject: str | None = None,
+    grade_level: str | None = None,
+    topic: str | None = None,
+    review_status: str | None = None,
+    source: str | None = None,
+    question_type: str | None = None,
+    search: str | None = None,
+    page: int = 1,
+    page_size: int = 20,
+) -> dict:
+    """分页查询题目，支持多条件筛选"""
+    pool = await get_pool()
+    conditions: list[str] = []
+    params: list[Any] = []
+    idx = 1
+
+    if subject:
+        conditions.append(f"subject = ${idx}")
+        params.append(subject)
+        idx += 1
+    if grade_level:
+        conditions.append(f"grade_level = ${idx}")
+        params.append(grade_level)
+        idx += 1
+    if topic:
+        conditions.append(f"topic = ${idx}")
+        params.append(topic)
+        idx += 1
+    if review_status:
+        conditions.append(f"review_status = ${idx}")
+        params.append(review_status)
+        idx += 1
+    if source:
+        conditions.append(f"source = ${idx}")
+        params.append(source)
+        idx += 1
+    if question_type:
+        conditions.append(f"question_type = ${idx}")
+        params.append(question_type)
+        idx += 1
+    if search:
+        conditions.append(f"(content_zh::text ILIKE ${idx} OR content_en::text ILIKE ${idx})")
+        params.append(f"%{search}%")
+        idx += 1
+
+    where = " AND ".join(conditions) if conditions else "TRUE"
+    offset = (page - 1) * page_size
+
+    async with pool.acquire() as conn:
+        total = await conn.fetchval(
+            f"SELECT COUNT(*) FROM assessment_questions WHERE {where}", *params,
+        )
+        params.extend([page_size, offset])
+        rows = await conn.fetch(
+            f"""SELECT * FROM assessment_questions
+                WHERE {where}
+                ORDER BY created_at DESC
+                LIMIT ${idx} OFFSET ${idx + 1}""",
+            *params,
+        )
+        return {
+            "items": [dict(r) for r in rows],
+            "total": total,
+            "page": page,
+            "page_size": page_size,
+            "total_pages": (total + page_size - 1) // page_size,
+        }
+
+
+async def get_question_stats() -> dict:
+    """题库统计概览"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        total = await conn.fetchval("SELECT COUNT(*) FROM assessment_questions")
+        by_subject = await conn.fetch(
+            "SELECT subject, COUNT(*) as cnt FROM assessment_questions GROUP BY subject ORDER BY cnt DESC",
+        )
+        by_grade = await conn.fetch(
+            "SELECT grade_level, COUNT(*) as cnt FROM assessment_questions GROUP BY grade_level ORDER BY grade_level",
+        )
+        by_status = await conn.fetch(
+            "SELECT review_status, COUNT(*) as cnt FROM assessment_questions GROUP BY review_status",
+        )
+        by_type = await conn.fetch(
+            "SELECT question_type, COUNT(*) as cnt FROM assessment_questions GROUP BY question_type",
+        )
+        by_source = await conn.fetch(
+            "SELECT COALESCE(source, 'unknown') as source, COUNT(*) as cnt FROM assessment_questions GROUP BY source ORDER BY cnt DESC",
+        )
+        difficulty = await conn.fetchrow(
+            "SELECT AVG(difficulty) as avg, MIN(difficulty) as min, MAX(difficulty) as max FROM assessment_questions",
+        )
+        return {
+            "total": total,
+            "by_subject": {r["subject"]: r["cnt"] for r in by_subject},
+            "by_grade": {r["grade_level"]: r["cnt"] for r in by_grade},
+            "by_review_status": {r["review_status"]: r["cnt"] for r in by_status},
+            "by_question_type": {r["question_type"]: r["cnt"] for r in by_type},
+            "by_source": {r["source"]: r["cnt"] for r in by_source},
+            "difficulty": {
+                "avg": round(float(difficulty["avg"] or 0), 3),
+                "min": round(float(difficulty["min"] or 0), 3),
+                "max": round(float(difficulty["max"] or 0), 3),
+            },
+        }
+
+
+# ---------------------------------------------------------------------------
+# 导入批次 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def create_import_batch(
+    batch_name: str, source: str, imported_by: str | None = None,
+) -> dict:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """INSERT INTO question_import_batches (batch_name, source, imported_by)
+               VALUES ($1, $2, $3) RETURNING *""",
+            batch_name, source, imported_by,
+        )
+        return dict(row)
+
+
+async def update_import_batch(batch_id: int, **fields) -> dict | None:
+    allowed = {"status", "question_count", "error_log"}
+    data = {k: v for k, v in fields.items() if k in allowed}
+    if not data:
+        return None
+    pool = await get_pool()
+    sets = ", ".join(f"{k} = ${i+2}" for i, k in enumerate(data))
+    vals: list[Any] = [batch_id, *data.values()]
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            f"UPDATE question_import_batches SET {sets} WHERE id = $1 RETURNING *",
+            *vals,
+        )
+        return dict(row) if row else None
+
+
+async def list_import_batches(limit: int = 50) -> list[dict]:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            "SELECT * FROM question_import_batches ORDER BY created_at DESC LIMIT $1",
+            limit,
+        )
+        return [dict(r) for r in rows]
 
 
 # ---------------------------------------------------------------------------

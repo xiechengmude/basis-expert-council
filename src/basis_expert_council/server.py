@@ -894,6 +894,177 @@ async def claim_sessions(request: Request):
 
 
 # ---------------------------------------------------------------------------
+# Admin: 题库管理 API
+# ---------------------------------------------------------------------------
+
+ADMIN_SECRET = os.getenv("BASIS_ADMIN_SECRET", "")
+
+
+async def _check_admin(request: Request) -> bool:
+    """简易 admin 鉴权: header 'X-Admin-Secret' 或已登录 teacher 角色"""
+    # 方式 1: admin secret
+    if ADMIN_SECRET and request.headers.get("x-admin-secret") == ADMIN_SECRET:
+        return True
+    # 方式 2: 已登录 teacher
+    auth_info = await authenticate_request(dict(request.headers))
+    if auth_info:
+        user = await db.get_user_by_id(auth_info["user_id"])
+        if user and user.get("role") == "teacher":
+            return True
+    return False
+
+
+@app.post("/api/admin/questions")
+async def admin_create_question(request: Request):
+    """创建单个题目"""
+    if not await _check_admin(request):
+        return JSONResponse(status_code=403, content={"error": "需要管理员权限"})
+    try:
+        body = await request.json()
+        from .question_bank.validator import validate_question
+        vr = validate_question(body)
+        if not vr.valid:
+            return JSONResponse(status_code=400, content={"error": "校验失败", "details": vr.errors})
+        q = await db.create_question(body)
+        return {"question": _serialize_question(q), "warnings": vr.warnings}
+    except Exception as e:
+        logger.error(f"admin/create_question error: {e}")
+        return JSONResponse(status_code=500, content={"error": str(e)})
+
+
+@app.put("/api/admin/questions/{question_id}")
+async def admin_update_question(question_id: int, request: Request):
+    """编辑题目"""
+    if not await _check_admin(request):
+        return JSONResponse(status_code=403, content={"error": "需要管理员权限"})
+    try:
+        body = await request.json()
+        q = await db.update_question(question_id, **body)
+        if not q:
+            return JSONResponse(status_code=404, content={"error": "题目不存在"})
+        return {"question": _serialize_question(q)}
+    except Exception as e:
+        logger.error(f"admin/update_question error: {e}")
+        return JSONResponse(status_code=500, content={"error": str(e)})
+
+
+@app.delete("/api/admin/questions/{question_id}")
+async def admin_delete_question(question_id: int, request: Request):
+    """删除/归档题目"""
+    if not await _check_admin(request):
+        return JSONResponse(status_code=403, content={"error": "需要管理员权限"})
+    hard = request.query_params.get("hard") == "true"
+    ok = await db.delete_question(question_id, hard=hard)
+    if not ok:
+        return JSONResponse(status_code=404, content={"error": "题目不存在"})
+    return {"success": True, "action": "deleted" if hard else "archived"}
+
+
+@app.get("/api/admin/questions")
+async def admin_list_questions(request: Request):
+    """查询题目（分页 + 筛选）"""
+    if not await _check_admin(request):
+        return JSONResponse(status_code=403, content={"error": "需要管理员权限"})
+    params = request.query_params
+    result = await db.query_questions_paginated(
+        subject=params.get("subject"),
+        grade_level=params.get("grade_level"),
+        topic=params.get("topic"),
+        review_status=params.get("review_status"),
+        source=params.get("source"),
+        question_type=params.get("question_type"),
+        search=params.get("search"),
+        page=int(params.get("page", "1")),
+        page_size=int(params.get("page_size", "20")),
+    )
+    result["items"] = [_serialize_question(q) for q in result["items"]]
+    return result
+
+
+@app.get("/api/admin/questions/stats")
+async def admin_question_stats(request: Request):
+    """题库统计概览"""
+    if not await _check_admin(request):
+        return JSONResponse(status_code=403, content={"error": "需要管理员权限"})
+    stats = await db.get_question_stats()
+    return stats
+
+
+@app.post("/api/admin/questions/{question_id}/review")
+async def admin_review_question(question_id: int, request: Request):
+    """审核题目"""
+    if not await _check_admin(request):
+        return JSONResponse(status_code=403, content={"error": "需要管理员权限"})
+    body = await request.json()
+    status = body.get("status")
+    reviewed_by = body.get("reviewed_by", "admin")
+    if status not in ("draft", "reviewed", "approved", "archived"):
+        return JSONResponse(status_code=400, content={"error": "无效的审核状态"})
+    q = await db.review_question(question_id, status, reviewed_by)
+    if not q:
+        return JSONResponse(status_code=404, content={"error": "题目不存在"})
+    return {"question": _serialize_question(q)}
+
+
+@app.post("/api/admin/questions/import")
+async def admin_import_questions(request: Request):
+    """批量导入题目 (JSON body)"""
+    if not await _check_admin(request):
+        return JSONResponse(status_code=403, content={"error": "需要管理员权限"})
+    try:
+        body = await request.json()
+        from .question_bank.importer import import_questions
+
+        batch_meta = {
+            "batch_name": body.get("batch_name", "api_import"),
+            "source": body.get("source", "custom"),
+        }
+        questions = body.get("questions", [])
+        if not questions:
+            return JSONResponse(status_code=400, content={"error": "questions 数组为空"})
+
+        # Inject batch-level defaults
+        subject = body.get("subject")
+        grade_level = body.get("grade_level")
+        for q in questions:
+            if subject and not q.get("subject"):
+                q["subject"] = subject
+            if grade_level and not q.get("grade_level"):
+                q["grade_level"] = grade_level
+            q.setdefault("question_type", "mcq")
+
+        result = await import_questions(
+            questions, batch_meta, imported_by=body.get("imported_by"),
+        )
+        if result["errors"]:
+            return JSONResponse(status_code=400, content=result)
+        return result
+    except Exception as e:
+        logger.error(f"admin/import error: {e}")
+        return JSONResponse(status_code=500, content={"error": str(e)})
+
+
+@app.get("/api/admin/import-batches")
+async def admin_import_batches(request: Request):
+    """导入批次列表"""
+    if not await _check_admin(request):
+        return JSONResponse(status_code=403, content={"error": "需要管理员权限"})
+    batches = await db.list_import_batches()
+    return {"batches": batches}
+
+
+def _serialize_question(q: dict) -> dict:
+    """将 DB row 序列化为 JSON-safe dict"""
+    out = {}
+    for k, v in q.items():
+        if hasattr(v, "isoformat"):
+            out[k] = v.isoformat()
+        else:
+            out[k] = v
+    return out
+
+
+# ---------------------------------------------------------------------------
 # CLI entry
 # ---------------------------------------------------------------------------
 

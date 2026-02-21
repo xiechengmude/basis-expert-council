@@ -1,0 +1,1918 @@
+{
+  "meta": {
+    "source": "TestPrep-Online (MAP-style sample questions)",
+    "source_url": "https://www.testprep-online.com/map-test-practice",
+    "disclaimer": "These are MAP-style practice questions written by test prep experts to match NWEA MAP format, difficulty, and skills. They are NOT official NWEA questions.",
+    "scraped_at": "2026-02-21",
+    "total_questions": 130,
+    "grade_range": "K-12",
+    "subjects": ["math", "reading", "language_usage"]
+  },
+  "questions": [
+    {
+      "id": "K1-MATH-001",
+      "grade": "K-1",
+      "subject": "math",
+      "topic": "addition_word_problem",
+      "question": "Jane has 6 flowers. She planted 3 more flowers. How many flowers does Jane have now?",
+      "options": [
+        {"label": "A", "text": "3"},
+        {"label": "B", "text": "6"},
+        {"label": "C", "text": "7"},
+        {"label": "D", "text": "8"},
+        {"label": "E", "text": "9"}
+      ],
+      "correct_answer": "E",
+      "explanation": "Jane started with 6 flowers and planted 3 more. 6 + 3 = 9 flowers total."
+    },
+    {
+      "id": "K1-MATH-002",
+      "grade": "K-1",
+      "subject": "math",
+      "topic": "geometry_3d_shapes",
+      "question": "Identify the three-dimensional shape shown in the image.",
+      "options": [
+        {"label": "A", "text": "Cube"},
+        {"label": "B", "text": "Pyramid"},
+        {"label": "C", "text": "Cone"},
+        {"label": "D", "text": "Cylinder"}
+      ],
+      "correct_answer": "D",
+      "explanation": "The shape shown is a cylinder — it has two circular bases and a curved surface connecting them."
+    },
+    {
+      "id": "K1-MATH-003",
+      "grade": "K-1",
+      "subject": "math",
+      "topic": "data_interpretation",
+      "question": "According to the bar graph, which food was chosen by the fewest students?",
+      "options": [
+        {"label": "A", "text": "Soup"},
+        {"label": "B", "text": "Salad"},
+        {"label": "C", "text": "Hamburger"},
+        {"label": "D", "text": "Pizza"},
+        {"label": "E", "text": "Ice cream"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Reading the bar graph, hamburger has the shortest bar, meaning the fewest students chose it."
+    },
+    {
+      "id": "K1-MATH-004",
+      "grade": "K-1",
+      "subject": "math",
+      "topic": "missing_number",
+      "question": "5 + ___ = 12. What is the missing number?",
+      "options": [
+        {"label": "A", "text": "4"},
+        {"label": "B", "text": "5"},
+        {"label": "C", "text": "6"},
+        {"label": "D", "text": "7"},
+        {"label": "E", "text": "8"}
+      ],
+      "correct_answer": "D",
+      "explanation": "To find the missing number: 12 - 5 = 7. So 5 + 7 = 12."
+    },
+    {
+      "id": "K1-MATH-005",
+      "grade": "K-1",
+      "subject": "math",
+      "topic": "number_patterns",
+      "question": "10, 12, 14, 16, 18, ___. What is the next number?",
+      "options": [
+        {"label": "A", "text": "19"},
+        {"label": "B", "text": "20"},
+        {"label": "C", "text": "21"},
+        {"label": "D", "text": "22"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The pattern increases by 2 each time: 10, 12, 14, 16, 18, 20."
+    },
+    {
+      "id": "K1-READ-001",
+      "grade": "K-1",
+      "subject": "reading",
+      "topic": "punctuation",
+      "question": "What is the name of your teacher. Which punctuation mark should go at the end of this sentence?",
+      "options": [
+        {"label": "A", "text": "!"},
+        {"label": "B", "text": "."},
+        {"label": "C", "text": ","},
+        {"label": "D", "text": "?"}
+      ],
+      "correct_answer": "D",
+      "explanation": "This is a question (it asks for information), so it needs a question mark (?)."
+    },
+    {
+      "id": "K1-READ-002",
+      "grade": "K-1",
+      "subject": "reading",
+      "topic": "synonyms",
+      "question": "Which pair of words are synonyms (have the same meaning)?",
+      "options": [
+        {"label": "A", "text": "Afraid, Scared"},
+        {"label": "B", "text": "Angry, Sad"},
+        {"label": "C", "text": "Short, Long"},
+        {"label": "D", "text": "Food, Drink"}
+      ],
+      "correct_answer": "A",
+      "explanation": "Afraid and Scared both mean feeling fear. The other pairs have different meanings."
+    },
+    {
+      "id": "K1-READ-003",
+      "grade": "K-1",
+      "subject": "reading",
+      "topic": "irregular_plurals",
+      "question": "What is the plural form of 'mouse'?",
+      "options": [
+        {"label": "A", "text": "Mouses"},
+        {"label": "B", "text": "Mousess"},
+        {"label": "C", "text": "Mice"},
+        {"label": "D", "text": "Mouse"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Mouse is an irregular noun. Its plural form is 'mice', not 'mouses'."
+    },
+    {
+      "id": "K1-READ-004",
+      "grade": "K-1",
+      "subject": "reading",
+      "topic": "superlatives",
+      "question": "What does 'tallest' mean?",
+      "options": [
+        {"label": "A", "text": "The least tall"},
+        {"label": "B", "text": "The most tall"},
+        {"label": "C", "text": "Not tall"},
+        {"label": "D", "text": "As tall as others"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The suffix '-est' means the most. 'Tallest' means the most tall of all."
+    },
+    {
+      "id": "K1-READ-005",
+      "grade": "K-1",
+      "subject": "reading",
+      "topic": "text_types",
+      "question": "What type of text is shown?",
+      "options": [
+        {"label": "A", "text": "A story"},
+        {"label": "B", "text": "A letter"},
+        {"label": "C", "text": "A poem"},
+        {"label": "D", "text": "A list"}
+      ],
+      "correct_answer": "D",
+      "explanation": "The text shows items arranged in a vertical format with bullet points or numbers, which is the format of a list."
+    },
+    {
+      "id": "G2-MATH-001",
+      "grade": "G2",
+      "subject": "math",
+      "topic": "multiplication_visual",
+      "question": "Which of the following represents the multiplication 2 × 4?",
+      "options": [
+        {"label": "A", "text": "Image showing apples in two groups (4 and 2)"},
+        {"label": "B", "text": "Image showing two groups of 3 books each"},
+        {"label": "C", "text": "Image showing two groups of 2 glasses each"},
+        {"label": "D", "text": "Image showing 2 bunches of 4 bananas each"}
+      ],
+      "correct_answer": "D",
+      "explanation": "2 × 4 means 2 groups with 4 items each. Only option D shows this correctly with 2 bunches of 4 bananas."
+    },
+    {
+      "id": "G2-MATH-002",
+      "grade": "G2",
+      "subject": "math",
+      "topic": "place_value_word_problem",
+      "question": "A farm has a total of 23 animals. There are as many cows as the tens digit in the total number of animals on the farm. There are as many pigs as the ones digit in total number of animals on the farm. The rest of the animals are sheep. What is the correct distribution of animals in the farm?",
+      "options": [
+        {"label": "A", "text": "Three cows, two pigs, and 18 sheep"},
+        {"label": "B", "text": "Three cows, two pigs, and 23 sheep"},
+        {"label": "C", "text": "Two cows, three pigs, and 18 sheep"},
+        {"label": "D", "text": "Two cows, three pigs, and 23 sheep"}
+      ],
+      "correct_answer": "C",
+      "explanation": "The number 23 has tens digit 2 and ones digit 3, meaning 2 cows and 3 pigs. 23 - 2 - 3 = 18 sheep."
+    },
+    {
+      "id": "G2-MATH-003",
+      "grade": "G2",
+      "subject": "math",
+      "topic": "equal_parts",
+      "question": "Which of the following shapes has been divided into equal parts?",
+      "options": [
+        {"label": "A", "text": "Triangle divided into three smaller triangles"},
+        {"label": "B", "text": "L-shaped figure with unequal parts"},
+        {"label": "C", "text": "Trapezoid divided into three different-sized triangles"},
+        {"label": "D", "text": "Circle divided into four quarters"}
+      ],
+      "correct_answer": "A,D",
+      "explanation": "Both the triangle (three identical triangular pieces) and the circle (four equal quarter-sections) show shapes divided into congruent sections."
+    },
+    {
+      "id": "G2-MATH-004",
+      "grade": "G2",
+      "subject": "math",
+      "topic": "bar_graph_reading",
+      "question": "How many books were read in the month of August? (Based on bar graph)",
+      "options": [
+        {"label": "A", "text": "200"},
+        {"label": "B", "text": "400"},
+        {"label": "C", "text": "450"},
+        {"label": "D", "text": "600"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Reading the bar graph, the August bar reaches the 400 mark on the vertical axis."
+    },
+    {
+      "id": "G2-READ-001",
+      "grade": "G2",
+      "subject": "reading",
+      "topic": "conflict_resolution",
+      "question": "How was Lindsay and Gretchen's problem resolved? (Story about twins wanting different pets)",
+      "options": [
+        {"label": "A", "text": "One received her preferred pet; the other was disappointed"},
+        {"label": "B", "text": "Pet store employee helped them decide"},
+        {"label": "C", "text": "They decided on a pet together"}
+      ],
+      "correct_answer": "C",
+      "explanation": "The narrative states they worked out their differences and decided together which pet to take, selecting a rabbit they both agreed upon."
+    },
+    {
+      "id": "G2-READ-002",
+      "grade": "G2",
+      "subject": "reading",
+      "topic": "text_type_identification",
+      "question": "What type of text is this? (referring to the twins and pet story)",
+      "options": [
+        {"label": "A", "text": "A poem"},
+        {"label": "B", "text": "A fairytale"},
+        {"label": "C", "text": "A story with a moral"},
+        {"label": "D", "text": "An essay"}
+      ],
+      "correct_answer": "C",
+      "explanation": "The narrative teaches the lesson of compromise and cooperation, demonstrating characteristics of literature with a moral message."
+    },
+    {
+      "id": "G2-READ-003",
+      "grade": "G2",
+      "subject": "reading",
+      "topic": "index_reference",
+      "question": "Based on the index, in which of the following pages would you find a Roald Dahl story? (Dahl listed as pages 99–124)",
+      "options": [
+        {"label": "A", "text": "Page 171"},
+        {"label": "B", "text": "Page 102"},
+        {"label": "C", "text": "Page 97"},
+        {"label": "D", "text": "Page 125"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Only page 102 falls within the 99–124 range designated for Roald Dahl content."
+    },
+    {
+      "id": "G2-READ-004",
+      "grade": "G2",
+      "subject": "reading",
+      "topic": "text_features",
+      "question": "Click on two types of information you are likely to find in a newspaper.",
+      "options": [
+        {"label": "A", "text": "Daily news"},
+        {"label": "B", "text": "Word definitions"},
+        {"label": "C", "text": "Directions for how to get to places"},
+        {"label": "D", "text": "Advertisements"},
+        {"label": "E", "text": "The time right now"}
+      ],
+      "correct_answer": "A,D",
+      "explanation": "Newspapers primarily contain current events reporting and commercial advertisements."
+    },
+    {
+      "id": "G2-READ-005",
+      "grade": "G2",
+      "subject": "reading",
+      "topic": "antonyms",
+      "question": "The friendly neighbors live two floors above our apartment. Which set of words all mean the opposite of the preposition 'above'?",
+      "options": [
+        {"label": "A", "text": "Under, beneath, during"},
+        {"label": "B", "text": "Below, across, underneath"},
+        {"label": "C", "text": "Beneath, under, below"},
+        {"label": "D", "text": "Over, below, beneath"}
+      ],
+      "correct_answer": "C",
+      "explanation": "All three words in option C (beneath, under, below) denote position lower than something, making them true opposites of 'above'."
+    },
+    {
+      "id": "G2-LANG-001",
+      "grade": "G2",
+      "subject": "language_usage",
+      "topic": "contractions",
+      "question": "Click on the contraction in which the apostrophe is in the right place.",
+      "options": [
+        {"label": "A", "text": "ther'es"},
+        {"label": "B", "text": "couldn't"},
+        {"label": "C", "text": "does'nt"},
+        {"label": "D", "text": "lets'"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The apostrophe in 'couldn't' correctly replaces the omitted 'o' from 'not', following proper contraction rules."
+    },
+    {
+      "id": "G2-LANG-002",
+      "grade": "G2",
+      "subject": "language_usage",
+      "topic": "plural_agreement",
+      "question": "Darling, please go to the pantry and grab a few ________ for me. Which words complete the sentence correctly?",
+      "options": [
+        {"label": "A", "text": "Can of beans"},
+        {"label": "B", "text": "Cans of beans"},
+        {"label": "C", "text": "Cans of bean"},
+        {"label": "D", "text": "Can of bean"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The phrase 'a few' requires plural forms for both the container and contents: 'cans of beans'."
+    },
+    {
+      "id": "G2-LANG-003",
+      "grade": "G2",
+      "subject": "language_usage",
+      "topic": "sentence_structure",
+      "question": "Which version moves the word 'darling' to the most suitable spot in the sentence: 'Darling, please go to the pantry and grab a few ________ for me.'",
+      "options": [
+        {"label": "A", "text": "Please go to the pantry, darling, and grab a few ________ for me"},
+        {"label": "B", "text": "Please go, darling, to the pantry and grab a few ________ for me"},
+        {"label": "C", "text": "Please go to the pantry and grab, darling, a few ________ for me"}
+      ],
+      "correct_answer": "A",
+      "explanation": "Placing 'darling' between two complete clauses maintains natural sentence flow without interrupting individual thoughts."
+    },
+    {
+      "id": "G2-LANG-004",
+      "grade": "G2",
+      "subject": "language_usage",
+      "topic": "supporting_details",
+      "question": "Suppose you are asked to write a school essay titled 'Why I Like Going to the Museum.' Which details support the topic of the essay? (Select two)",
+      "options": [
+        {"label": "A", "text": "At the museum, you can learn about interesting things"},
+        {"label": "B", "text": "The museum has a gift shop with cool T-shirts"},
+        {"label": "C", "text": "Walking from hall to hall in the museum can be tiring"},
+        {"label": "D", "text": "You must remember to keep quiet at the museum"},
+        {"label": "E", "text": "Some museum exhibits can be boring"}
+      ],
+      "correct_answer": "A,B",
+      "explanation": "Only options containing positive language ('interesting', 'cool') support an essay about enjoying museum visits."
+    },
+    {
+      "id": "G3-MATH-001",
+      "grade": "G3",
+      "subject": "math",
+      "topic": "number_sequences",
+      "question": "Which number is missing from this sequence? 750, 725, 700, ___, 625",
+      "options": [
+        {"label": "A", "text": "650"},
+        {"label": "B", "text": "660"},
+        {"label": "C", "text": "670"},
+        {"label": "D", "text": "675"}
+      ],
+      "correct_answer": "D",
+      "explanation": "The pattern decreases by 25 each time: 750, 725, 700, 675, 650. The missing number is 675."
+    },
+    {
+      "id": "G3-MATH-002",
+      "grade": "G3",
+      "subject": "math",
+      "topic": "multiplication_word_problem",
+      "question": "Mary needs eggs for cake dough. How many eggs does she need?",
+      "options": [
+        {"label": "A", "text": "12"},
+        {"label": "B", "text": "15"},
+        {"label": "C", "text": "18"},
+        {"label": "D", "text": "24"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Based on the recipe proportions, Mary needs 18 eggs."
+    },
+    {
+      "id": "G3-MATH-003",
+      "grade": "G3",
+      "subject": "math",
+      "topic": "fractions_visual",
+      "question": "Which picture shows 1/3 of a region shaded?",
+      "options": [
+        {"label": "A", "text": "Shape with 1/4 shaded"},
+        {"label": "B", "text": "Shape with 1/3 shaded"},
+        {"label": "C", "text": "Shape with 1/2 shaded"},
+        {"label": "D", "text": "Shape with 2/3 shaded"}
+      ],
+      "correct_answer": "B",
+      "explanation": "1/3 means the shape is divided into 3 equal parts and 1 part is shaded."
+    },
+    {
+      "id": "G3-MATH-004",
+      "grade": "G3",
+      "subject": "math",
+      "topic": "perimeter",
+      "question": "What is the perimeter of a rectangle that is 7 inches long and 3 inches wide?",
+      "options": [
+        {"label": "A", "text": "10 inches"},
+        {"label": "B", "text": "14 inches"},
+        {"label": "C", "text": "20 inches"},
+        {"label": "D", "text": "21 inches"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Perimeter = 2 × (length + width) = 2 × (7 + 3) = 2 × 10 = 20 inches."
+    },
+    {
+      "id": "G3-READ-001",
+      "grade": "G3",
+      "subject": "reading",
+      "topic": "best_title",
+      "question": "Which title best fits a passage about a sailor who endures a storm and completes his journey?",
+      "options": [
+        {"label": "A", "text": "The Terrible Storm"},
+        {"label": "B", "text": "A Successful Journey"},
+        {"label": "C", "text": "Life at Sea"},
+        {"label": "D", "text": "The Brave Sailor"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The passage focuses on the complete journey including overcoming the storm, making 'A Successful Journey' the most comprehensive title."
+    },
+    {
+      "id": "G3-READ-002",
+      "grade": "G3",
+      "subject": "reading",
+      "topic": "common_themes",
+      "question": "A passage describes four animals with camouflage abilities. What common trait do they share?",
+      "options": [
+        {"label": "A", "text": "They all live in forests"},
+        {"label": "B", "text": "They can all mask themselves"},
+        {"label": "C", "text": "They all eat insects"},
+        {"label": "D", "text": "They are all endangered"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The common trait described across all four animals is their ability to camouflage or mask themselves."
+    },
+    {
+      "id": "G3-READ-003",
+      "grade": "G3",
+      "subject": "reading",
+      "topic": "vocabulary_in_context",
+      "question": "In the sentence 'She enjoys the company of her friends', what does 'company' mean?",
+      "options": [
+        {"label": "A", "text": "A business organization"},
+        {"label": "B", "text": "The person or people who are with you"},
+        {"label": "C", "text": "A military unit"},
+        {"label": "D", "text": "Visitors at your home"}
+      ],
+      "correct_answer": "B",
+      "explanation": "In this context, 'company' means the people who are with you — her friends."
+    },
+    {
+      "id": "G3-LANG-001",
+      "grade": "G3",
+      "subject": "language_usage",
+      "topic": "plural_spelling",
+      "question": "Which word is a correctly spelled plural noun?",
+      "options": [
+        {"label": "A", "text": "Childs"},
+        {"label": "B", "text": "Gooses"},
+        {"label": "C", "text": "Teeth"},
+        {"label": "D", "text": "Mouses"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Teeth is the correct irregular plural of tooth. The others should be children, geese, and mice."
+    },
+    {
+      "id": "G3-LANG-002",
+      "grade": "G3",
+      "subject": "language_usage",
+      "topic": "verb_tense",
+      "question": "Complete the sentence: 'The race had already _______ by the time we arrived.'",
+      "options": [
+        {"label": "A", "text": "begin"},
+        {"label": "B", "text": "began"},
+        {"label": "C", "text": "begun"},
+        {"label": "D", "text": "beginning"}
+      ],
+      "correct_answer": "C",
+      "explanation": "After 'had' (past perfect), use the past participle 'begun'."
+    },
+    {
+      "id": "G3-LANG-003",
+      "grade": "G3",
+      "subject": "language_usage",
+      "topic": "word_order",
+      "question": "Which sentence has correct word order?",
+      "options": [
+        {"label": "A", "text": "The quickly dog ran."},
+        {"label": "B", "text": "The dog quickly ran."},
+        {"label": "C", "text": "Quickly the dog ran."},
+        {"label": "D", "text": "The dog ran quickly."}
+      ],
+      "correct_answer": "D",
+      "explanation": "In standard English, adverbs of manner typically come after the verb: 'The dog ran quickly.'"
+    },
+    {
+      "id": "G3-LANG-004",
+      "grade": "G3",
+      "subject": "language_usage",
+      "topic": "concluding_sentence",
+      "question": "Which sentence best concludes a paragraph about endangered Javan rhinoceros?",
+      "options": [
+        {"label": "A", "text": "There are many animals in the zoo."},
+        {"label": "B", "text": "Rhinoceros are very large animals."},
+        {"label": "C", "text": "We must act now to protect the Javan rhinoceros before it is too late."},
+        {"label": "D", "text": "Africa has many different animals."}
+      ],
+      "correct_answer": "C",
+      "explanation": "A concluding sentence should summarize the main idea and provide a call to action related to the topic — protecting the endangered species."
+    },
+    {
+      "id": "G4-MATH-001",
+      "grade": "G4",
+      "subject": "math",
+      "topic": "division_multiplication",
+      "question": "A supermarket packed 60 eggs into four egg boxes, split equally. How many eggs were in three boxes?",
+      "options": [
+        {"label": "A", "text": "15"},
+        {"label": "B", "text": "20"},
+        {"label": "C", "text": "36"},
+        {"label": "D", "text": "45"}
+      ],
+      "correct_answer": "D",
+      "explanation": "60 ÷ 4 = 15 eggs per box. 15 × 3 = 45 eggs in three boxes."
+    },
+    {
+      "id": "G4-MATH-002",
+      "grade": "G4",
+      "subject": "math",
+      "topic": "number_patterns",
+      "question": "A number pattern starts with 12 and ends with 39. Which rule is suitable?",
+      "options": [
+        {"label": "A", "text": "Skip count by 2s"},
+        {"label": "B", "text": "Skip count by 4s"},
+        {"label": "C", "text": "Skip count by 5s"},
+        {"label": "D", "text": "Skip count by 7s"},
+        {"label": "E", "text": "Skip count by 9s"}
+      ],
+      "correct_answer": "E",
+      "explanation": "39 - 12 = 27. 27 ÷ 9 = 3 steps. Pattern: 12, 21, 30, 39. Skip counting by 9s works."
+    },
+    {
+      "id": "G4-MATH-003",
+      "grade": "G4",
+      "subject": "math",
+      "topic": "geometry_triangles",
+      "question": "Which triangle is isosceles based on its angle measurements?",
+      "options": [
+        {"label": "A", "text": "Triangle with angles 60°, 70°, 50°"},
+        {"label": "B", "text": "Triangle with angles 72°, 72°, 36°"},
+        {"label": "C", "text": "Triangle with angles 90°, 45°, 45°"},
+        {"label": "D", "text": "Triangle with angles 80°, 60°, 40°"}
+      ],
+      "correct_answer": "B",
+      "explanation": "An isosceles triangle has exactly two equal angles. Option B has two 72° angles."
+    },
+    {
+      "id": "G4-MATH-004",
+      "grade": "G4",
+      "subject": "math",
+      "topic": "measurement_estimation",
+      "question": "Which item weighs approximately a gram?",
+      "options": [
+        {"label": "A", "text": "An apple"},
+        {"label": "B", "text": "A can of cola"},
+        {"label": "C", "text": "A stick of gum"},
+        {"label": "D", "text": "A cellphone"}
+      ],
+      "correct_answer": "C",
+      "explanation": "A gram is very light — about the weight of a paper clip. Only a stick of gum approaches this weight."
+    },
+    {
+      "id": "G4-READ-001",
+      "grade": "G4",
+      "subject": "reading",
+      "topic": "theme",
+      "question": "What is the theme of Joyce Kilmer's poem 'Trees'?",
+      "options": [
+        {"label": "A", "text": "The sadness of deforestation"},
+        {"label": "B", "text": "Praising nature's beauty"},
+        {"label": "C", "text": "The difficulty of writing poetry"},
+        {"label": "D", "text": "Human superiority over nature"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The poem celebrates and praises the beauty of trees and nature."
+    },
+    {
+      "id": "G4-READ-002",
+      "grade": "G4",
+      "subject": "reading",
+      "topic": "authors_purpose",
+      "question": "A passage about Antarctica mentions its size compared to Europe and Australia. Why does the author mention these continents?",
+      "options": [
+        {"label": "A", "text": "To show how big Antarctica is"},
+        {"label": "B", "text": "To compare their climates"},
+        {"label": "C", "text": "To discuss their wildlife"},
+        {"label": "D", "text": "To explain their history"}
+      ],
+      "correct_answer": "A",
+      "explanation": "The author uses familiar continents as reference points to help readers understand Antarctica's enormous size."
+    },
+    {
+      "id": "G4-READ-003",
+      "grade": "G4",
+      "subject": "reading",
+      "topic": "prefix_meaning",
+      "question": "In the word 'unemployed', what does the prefix 'un-' mean?",
+      "options": [
+        {"label": "A", "text": "Again"},
+        {"label": "B", "text": "Before"},
+        {"label": "C", "text": "Under"},
+        {"label": "D", "text": "Not"}
+      ],
+      "correct_answer": "D",
+      "explanation": "The prefix 'un-' means 'not'. Unemployed = not employed."
+    },
+    {
+      "id": "G4-LANG-001",
+      "grade": "G4",
+      "subject": "language_usage",
+      "topic": "plural_rules",
+      "question": "What is the correct spelling for more than one wolf?",
+      "options": [
+        {"label": "A", "text": "Wolfs"},
+        {"label": "B", "text": "Wolfes"},
+        {"label": "C", "text": "Wolves"},
+        {"label": "D", "text": "Wolvs"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Words ending in 'f' change to 'ves' in plural form: wolf → wolves."
+    },
+    {
+      "id": "G4-LANG-002",
+      "grade": "G4",
+      "subject": "language_usage",
+      "topic": "proper_nouns",
+      "question": "What is the definition of a proper noun?",
+      "options": [
+        {"label": "A", "text": "A word that describes an action"},
+        {"label": "B", "text": "A word that describes another word"},
+        {"label": "C", "text": "A general word for a person, place, or thing"},
+        {"label": "D", "text": "A word that names a particular person, place, or thing"}
+      ],
+      "correct_answer": "D",
+      "explanation": "A proper noun names a specific, particular person, place, or thing and is always capitalized."
+    },
+    {
+      "id": "G4-LANG-003",
+      "grade": "G4",
+      "subject": "language_usage",
+      "topic": "subject_identification",
+      "question": "In the sentence 'Ethan almost left his white socks at the gym', what is the subject?",
+      "options": [
+        {"label": "A", "text": "socks"},
+        {"label": "B", "text": "gym"},
+        {"label": "C", "text": "left"},
+        {"label": "D", "text": "Ethan"}
+      ],
+      "correct_answer": "D",
+      "explanation": "The subject is the person performing the action. Ethan is the one who almost left his socks."
+    },
+    {
+      "id": "G4-LANG-004",
+      "grade": "G4",
+      "subject": "language_usage",
+      "topic": "research_writing",
+      "question": "What is required in research writing?",
+      "options": [
+        {"label": "A", "text": "Personal opinions only"},
+        {"label": "B", "text": "Fictional characters"},
+        {"label": "C", "text": "A list of references"},
+        {"label": "D", "text": "Rhyming words"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Research writing requires citing sources and providing a list of references to support the information presented."
+    },
+    {
+      "id": "G5-MATH-001",
+      "grade": "G5",
+      "subject": "math",
+      "topic": "decimals_visual",
+      "question": "Which decimal is represented by the shaded region of a 10×10 grid?",
+      "options": [
+        {"label": "A", "text": "0.24"},
+        {"label": "B", "text": "0.28"},
+        {"label": "C", "text": "0.47"},
+        {"label": "D", "text": "0.72"},
+        {"label": "E", "text": "2.8"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Count the shaded squares in the 10×10 grid: 28 out of 100 = 0.28."
+    },
+    {
+      "id": "G5-MATH-002",
+      "grade": "G5",
+      "subject": "math",
+      "topic": "fraction_subtraction",
+      "question": "What is 7/8 − 1/6?",
+      "options": [
+        {"label": "A", "text": "6/2"},
+        {"label": "B", "text": "6/8"},
+        {"label": "C", "text": "6/24"},
+        {"label": "D", "text": "17/24"}
+      ],
+      "correct_answer": "D",
+      "explanation": "Find common denominator 24: 7/8 = 21/24, 1/6 = 4/24. 21/24 − 4/24 = 17/24."
+    },
+    {
+      "id": "G5-MATH-003",
+      "grade": "G5",
+      "subject": "math",
+      "topic": "triangle_angles",
+      "question": "Find the missing angle in a triangle with two known angles of 25° and 42°.",
+      "options": [
+        {"label": "A", "text": "67°"},
+        {"label": "B", "text": "93°"},
+        {"label": "C", "text": "103°"},
+        {"label": "D", "text": "113°"}
+      ],
+      "correct_answer": "D",
+      "explanation": "Sum of angles in a triangle = 180°. Missing angle = 180° − 25° − 42° = 113°."
+    },
+    {
+      "id": "G5-MATH-004",
+      "grade": "G5",
+      "subject": "math",
+      "topic": "unit_conversion",
+      "question": "Select all measurements equal to six hours.",
+      "options": [
+        {"label": "A", "text": "3,600 seconds"},
+        {"label": "B", "text": "21,600 seconds"},
+        {"label": "C", "text": "36 minutes"},
+        {"label": "D", "text": "216 minutes"},
+        {"label": "E", "text": "360 minutes"}
+      ],
+      "correct_answer": "B,E",
+      "explanation": "6 hours = 6 × 60 = 360 minutes. 6 hours = 6 × 3600 = 21,600 seconds."
+    },
+    {
+      "id": "G5-READ-001",
+      "grade": "G5",
+      "subject": "reading",
+      "topic": "point_of_view",
+      "question": "What point of view is used in the excerpt from Anne of Green Gables?",
+      "options": [
+        {"label": "A", "text": "First person"},
+        {"label": "B", "text": "Second person"},
+        {"label": "C", "text": "Third person omniscient"},
+        {"label": "D", "text": "Third person limited"}
+      ],
+      "correct_answer": "C",
+      "explanation": "The narrator refers to characters by name (he/she) and has access to multiple characters' thoughts — this is third person omniscient."
+    },
+    {
+      "id": "G5-READ-002",
+      "grade": "G5",
+      "subject": "reading",
+      "topic": "informational_text",
+      "question": "A passage about the Galápagos Islands states several facts. What does the passage NOT state?",
+      "options": [
+        {"label": "A", "text": "The islands are volcanic"},
+        {"label": "B", "text": "Darwin visited the islands"},
+        {"label": "C", "text": "Unique species live there"},
+        {"label": "D", "text": "It is a popular tourist destination"}
+      ],
+      "correct_answer": "D",
+      "explanation": "The passage describes the islands' geology, Darwin's visit, and wildlife, but does not mention tourism."
+    },
+    {
+      "id": "G5-READ-003",
+      "grade": "G5",
+      "subject": "reading",
+      "topic": "vocabulary",
+      "question": "What is the closest meaning to 'fallacy'?",
+      "options": [
+        {"label": "A", "text": "Truth"},
+        {"label": "B", "text": "Prediction"},
+        {"label": "C", "text": "Misconception"},
+        {"label": "D", "text": "Solution"}
+      ],
+      "correct_answer": "C",
+      "explanation": "A fallacy is a mistaken belief or misconception — something that appears true but is actually false."
+    },
+    {
+      "id": "G5-LANG-001",
+      "grade": "G5",
+      "subject": "language_usage",
+      "topic": "direct_address_punctuation",
+      "question": "Which sentence correctly uses commas with direct address?",
+      "options": [
+        {"label": "A", "text": "Thank you Manuel for your help yesterday."},
+        {"label": "B", "text": "Thank you, Manuel for your help yesterday."},
+        {"label": "C", "text": "Thank you Manuel, for your help yesterday."},
+        {"label": "D", "text": "Thank you, Manuel, for your help yesterday."}
+      ],
+      "correct_answer": "D",
+      "explanation": "Names used in direct address must be set off by commas on both sides when they appear in the middle of a sentence."
+    },
+    {
+      "id": "G5-LANG-002",
+      "grade": "G5",
+      "subject": "language_usage",
+      "topic": "active_verbs",
+      "question": "Which word is the active verb in the sentence?",
+      "options": [
+        {"label": "A", "text": "broken"},
+        {"label": "B", "text": "painted"},
+        {"label": "C", "text": "visited"},
+        {"label": "D", "text": "tired"}
+      ],
+      "correct_answer": "C",
+      "explanation": "'Visited' is the active verb — it shows the subject performing an action. The others can function as adjectives or passive participles."
+    },
+    {
+      "id": "G5-LANG-003",
+      "grade": "G5",
+      "subject": "language_usage",
+      "topic": "compound_sentences",
+      "question": "Which of the following is a compound sentence?",
+      "options": [
+        {"label": "A", "text": "The cat sat on the mat and purred."},
+        {"label": "B", "text": "Because it rained, we stayed inside."},
+        {"label": "C", "text": "It was hot yesterday, so I wore short pants and a t-shirt."},
+        {"label": "D", "text": "Running through the park, she tripped."}
+      ],
+      "correct_answer": "C",
+      "explanation": "A compound sentence has two independent clauses joined by a coordinating conjunction. 'It was hot yesterday' and 'I wore short pants and a t-shirt' are both independent clauses joined by 'so'."
+    },
+    {
+      "id": "G5-LANG-004",
+      "grade": "G5",
+      "subject": "language_usage",
+      "topic": "organizational_patterns",
+      "question": "A passage uses signal words like 'start by', 'then', 'once'. What organizational pattern is this?",
+      "options": [
+        {"label": "A", "text": "Compare and contrast"},
+        {"label": "B", "text": "Cause and effect"},
+        {"label": "C", "text": "Problem and solution"},
+        {"label": "D", "text": "Sequence"}
+      ],
+      "correct_answer": "D",
+      "explanation": "Words like 'start by', 'then', and 'once' indicate sequential steps — a sequence organizational pattern."
+    },
+    {
+      "id": "G6-MATH-001",
+      "grade": "G6",
+      "subject": "math",
+      "topic": "decomposition_multiplication",
+      "question": "Which is the best decomposition to simplify the multiplication 382 × 17?",
+      "options": [
+        {"label": "A", "text": "380 × 17 + 2"},
+        {"label": "B", "text": "382 × 10 + 382 × 7"},
+        {"label": "C", "text": "(300 + 80 + 2) × 17"},
+        {"label": "D", "text": "400 × 17 − 18 × 17"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Breaking 382 into 300 + 80 + 2, then multiplying each by 17 uses place value to simplify the calculation."
+    },
+    {
+      "id": "G6-MATH-002",
+      "grade": "G6",
+      "subject": "math",
+      "topic": "data_representation",
+      "question": "Which line plot correctly represents the swimming time data from a given table?",
+      "options": [
+        {"label": "A", "text": "Plot A"},
+        {"label": "B", "text": "Plot B"},
+        {"label": "C", "text": "Plot C"},
+        {"label": "D", "text": "Plot D"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Plot B correctly shows the frequency distribution across fractional values matching the data table."
+    },
+    {
+      "id": "G6-MATH-003",
+      "grade": "G6",
+      "subject": "math",
+      "topic": "perimeter_area",
+      "question": "The perimeter of a rectangle is 32. The width is 7. What is the area?",
+      "options": [
+        {"label": "A", "text": "25"},
+        {"label": "B", "text": "32"},
+        {"label": "C", "text": "49"},
+        {"label": "D", "text": "56"},
+        {"label": "E", "text": "63"}
+      ],
+      "correct_answer": "E",
+      "explanation": "Perimeter = 2(l + w) → 32 = 2(l + 7) → l = 9. Area = l × w = 9 × 7 = 63."
+    },
+    {
+      "id": "G6-READ-001",
+      "grade": "G6",
+      "subject": "reading",
+      "topic": "authors_purpose",
+      "question": "A passage describes sweet potatoes and their characteristics. Why did the author write this passage?",
+      "options": [
+        {"label": "A", "text": "To entertain"},
+        {"label": "B", "text": "To inform"},
+        {"label": "C", "text": "To persuade"},
+        {"label": "D", "text": "To express feelings"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The passage presents factual information about sweet potatoes, indicating the author's purpose is to inform."
+    },
+    {
+      "id": "G6-READ-002",
+      "grade": "G6",
+      "subject": "reading",
+      "topic": "figurative_language",
+      "question": "In a storm scene with children in an attic, what does the phrase 'deafeningly silent' accomplish?",
+      "options": [
+        {"label": "A", "text": "Describes the weather accurately"},
+        {"label": "B", "text": "Creates a dramatic effect"},
+        {"label": "C", "text": "Shows the children are sleeping"},
+        {"label": "D", "text": "Indicates the storm has passed"}
+      ],
+      "correct_answer": "B",
+      "explanation": "'Deafeningly silent' is an oxymoron — combining contradictory words creates a dramatic, tense effect."
+    },
+    {
+      "id": "G6-READ-003",
+      "grade": "G6",
+      "subject": "reading",
+      "topic": "vocabulary_in_context",
+      "question": "Jane moved gingerly through the dangerous forest. What does 'gingerly' mean?",
+      "options": [
+        {"label": "A", "text": "With extreme caution"},
+        {"label": "B", "text": "Very quickly"},
+        {"label": "C", "text": "With great excitement"},
+        {"label": "D", "text": "Carelessly"}
+      ],
+      "correct_answer": "A",
+      "explanation": "Context clues ('dangerous forest') suggest Jane was moving carefully. 'Gingerly' means with extreme caution."
+    },
+    {
+      "id": "G6-LANG-001",
+      "grade": "G6",
+      "subject": "language_usage",
+      "topic": "quotation_punctuation",
+      "question": "Which sentence correctly punctuates a split quotation?",
+      "options": [
+        {"label": "A", "text": "\"Students\" Mr. Hernandez instructed \"please bring your history books tomorrow.\""},
+        {"label": "B", "text": "\"Students,\" Mr. Hernandez instructed, \"Please bring your history books tomorrow.\""},
+        {"label": "C", "text": "\"Students,\" Mr. Hernandez instructed, \"please bring your history books tomorrow.\""},
+        {"label": "D", "text": "\"Students\", Mr. Hernandez instructed, \"please bring your history books tomorrow.\""}
+      ],
+      "correct_answer": "C",
+      "explanation": "In a split quotation, the second part uses lowercase unless it starts a new sentence. Commas go inside quotation marks."
+    },
+    {
+      "id": "G6-LANG-002",
+      "grade": "G6",
+      "subject": "language_usage",
+      "topic": "pronoun_usage",
+      "question": "Which sentence uses pronouns correctly?",
+      "options": [
+        {"label": "A", "text": "My parents ask my sister and I to help with chores."},
+        {"label": "B", "text": "My parents ask I and my sister to help with chores."},
+        {"label": "C", "text": "My parents ask my sister and me to help with chores."},
+        {"label": "D", "text": "My parents ask me and my sister to help with chores."}
+      ],
+      "correct_answer": "C",
+      "explanation": "Object pronouns ('me') follow verbs that direct action toward them. 'My sister and me' is the correct object form."
+    },
+    {
+      "id": "G6-LANG-003",
+      "grade": "G6",
+      "subject": "language_usage",
+      "topic": "independent_clauses",
+      "question": "Which underlined portion is an independent clause?",
+      "options": [
+        {"label": "A", "text": "the ship stayed on course"},
+        {"label": "B", "text": "despite the heavy winds"},
+        {"label": "C", "text": "sailing across the ocean"},
+        {"label": "D", "text": "which was built in 1920"}
+      ],
+      "correct_answer": "A",
+      "explanation": "'The ship stayed on course' has a subject and verb and expresses a complete thought — it's an independent clause."
+    },
+    {
+      "id": "G6-LANG-004",
+      "grade": "G6",
+      "subject": "language_usage",
+      "topic": "topic_sentences",
+      "question": "What is the best topic sentence for a paragraph about dog care?",
+      "options": [
+        {"label": "A", "text": "Dogs are the most popular pets in the world."},
+        {"label": "B", "text": "Dog care requires both a daily routine and checkups with a veterinarian."},
+        {"label": "C", "text": "My dog likes to play fetch in the park."},
+        {"label": "D", "text": "There are many breeds of dogs."}
+      ],
+      "correct_answer": "B",
+      "explanation": "A good topic sentence introduces the main idea broadly enough to support the paragraph's details about dog care."
+    },
+    {
+      "id": "G7-MATH-001",
+      "grade": "G7",
+      "subject": "math",
+      "topic": "ratio_proportion",
+      "question": "An ice cream shop uses 4 liters of ice cream to make 16 cones. If the shop plans to sell 80 cones and expects to lose 0.25 liters of ice cream to melting/waste for each batch of 16 cones, how many liters should they buy in total?",
+      "options": [
+        {"label": "A", "text": "20 L"},
+        {"label": "B", "text": "21 L"},
+        {"label": "C", "text": "21.25 L"},
+        {"label": "D", "text": "22 L"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Batches needed: 80 ÷ 16 = 5. Ice cream: 4 × 5 = 20L. Waste: 0.25 × 5 = 1.25L. Total: 20 + 1.25 = 21.25L."
+    },
+    {
+      "id": "G7-MATH-002",
+      "grade": "G7",
+      "subject": "math",
+      "topic": "measurement_ordering",
+      "question": "What is the correct order for the time measurements from smallest to largest? 1/6 of a day, 3.5 hours, 250 minutes, 6000 seconds",
+      "options": [
+        {"label": "A", "text": "1/6 of a day, 3.5 hours, 250 minutes, 6000 seconds"},
+        {"label": "B", "text": "6000 seconds, 3.5 hours, 250 minutes, 1/6 of a day"},
+        {"label": "C", "text": "6000 seconds, 3.5 hours, 1/6 of a day, 250 minutes"},
+        {"label": "D", "text": "250 minutes, 6000 seconds, 3.5 hours, 1/6 of a day"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Convert to minutes: 6000s = 100min, 3.5h = 210min, 1/6 day = 240min, 250min = 250min. Order: 100 < 210 < 240 < 250."
+    },
+    {
+      "id": "G7-MATH-003",
+      "grade": "G7",
+      "subject": "math",
+      "topic": "similar_triangles",
+      "question": "Which pairs of triangles are similar?",
+      "options": [
+        {"label": "A", "text": "Pair (a) only"},
+        {"label": "B", "text": "Pair (b) only"},
+        {"label": "C", "text": "Pair (c) only"},
+        {"label": "D", "text": "Pairs (a) and (b)"}
+      ],
+      "correct_answer": "D",
+      "explanation": "Pair (a) demonstrates SAS similarity; Pair (b) demonstrates SSS similarity; Pair (c) lacks matching angles and side information."
+    },
+    {
+      "id": "G7-MATH-004",
+      "grade": "G7",
+      "subject": "math",
+      "topic": "unit_rate_graph",
+      "question": "Use the graph to answer: What is the unit rate per crate? (Graph shows time vs. number of crates picked)",
+      "options": [
+        {"label": "A", "text": "0.33 minutes per crate"},
+        {"label": "B", "text": "1 minute per crate"},
+        {"label": "C", "text": "2.5 minutes per crate"},
+        {"label": "D", "text": "3 minutes per crate"},
+        {"label": "E", "text": "3.5 minutes per crate"}
+      ],
+      "correct_answer": "D",
+      "explanation": "Reading the graph at x=1 crate shows y=3 minutes, establishing the unit rate of 3 minutes per crate."
+    },
+    {
+      "id": "G7-READ-001",
+      "grade": "G7",
+      "subject": "reading",
+      "topic": "narrative_poetry",
+      "question": "Robert Frost's 'The Road Not Taken' is a narrative poem because it _______",
+      "options": [
+        {"label": "A", "text": "uses the word 'I'"},
+        {"label": "B", "text": "includes vivid imagery"},
+        {"label": "C", "text": "addresses a theme"},
+        {"label": "D", "text": "tells a story"}
+      ],
+      "correct_answer": "D",
+      "explanation": "A narrative poem specifically tells a story with characters, events, setting, and sequence."
+    },
+    {
+      "id": "G7-READ-002",
+      "grade": "G7",
+      "subject": "reading",
+      "topic": "tone_analysis",
+      "question": "What is the attitude of the speaker in 'The Road Not Taken'?",
+      "options": [
+        {"label": "A", "text": "Unhappy"},
+        {"label": "B", "text": "Optimistic"},
+        {"label": "C", "text": "Fearful"},
+        {"label": "D", "text": "Contemplating"}
+      ],
+      "correct_answer": "D",
+      "explanation": "The speaker demonstrates deep reflection through phrases like 'long I stood' and 'I doubted', showing thoughtful consideration."
+    },
+    {
+      "id": "G7-READ-003",
+      "grade": "G7",
+      "subject": "reading",
+      "topic": "informational_text",
+      "question": "What is one logical reason, according to the passage, for the knocker-uppers to knock on the windows instead of the doors of the customers?",
+      "options": [
+        {"label": "A", "text": "They thought it was an easier way to wake people up"},
+        {"label": "B", "text": "They decided knocking on doors was too old-fashioned"},
+        {"label": "C", "text": "They wanted to wake up only the customers"},
+        {"label": "D", "text": "They thought it made the job seem more desirable"}
+      ],
+      "correct_answer": "C",
+      "explanation": "The passage states they knocked 'loudly enough to wake up the people inside the house, but softly enough not to wake the neighbors' — selective awakening of paying customers."
+    },
+    {
+      "id": "G7-READ-004",
+      "grade": "G7",
+      "subject": "reading",
+      "topic": "greek_roots",
+      "question": "What is the meaning of the Greek root 'phil'?",
+      "options": [
+        {"label": "A", "text": "New"},
+        {"label": "B", "text": "Many"},
+        {"label": "C", "text": "Love"},
+        {"label": "D", "text": "Opinion"}
+      ],
+      "correct_answer": "C",
+      "explanation": "The root 'phil' means love/affection, as in bibliophile (book lover) and philharmonic (music lover)."
+    },
+    {
+      "id": "G7-LANG-001",
+      "grade": "G7",
+      "subject": "language_usage",
+      "topic": "capitalization",
+      "question": "She said, '_____ live in North Carolina now, but we used to live in _____ Europe.' Which words correctly fill the blanks?",
+      "options": [
+        {"label": "A", "text": "We / Western"},
+        {"label": "B", "text": "we / western"},
+        {"label": "C", "text": "we / Western"},
+        {"label": "D", "text": "We / western"}
+      ],
+      "correct_answer": "D",
+      "explanation": "First word of a quotation requires capital 'W'. 'western' is a descriptive adjective (not part of an official name), so it stays lowercase."
+    },
+    {
+      "id": "G7-LANG-002",
+      "grade": "G7",
+      "subject": "language_usage",
+      "topic": "adjective_modification",
+      "question": "A molecule is approximately one million times smaller than a grain of sand. Which word is modified by the adjective 'smaller'?",
+      "options": [
+        {"label": "A", "text": "molecule"},
+        {"label": "B", "text": "is"},
+        {"label": "C", "text": "times"},
+        {"label": "D", "text": "grain"}
+      ],
+      "correct_answer": "A",
+      "explanation": "The adjective 'smaller' describes the subject 'molecule'. Ask: 'What is smaller?' — the molecule."
+    },
+    {
+      "id": "G7-LANG-003",
+      "grade": "G7",
+      "subject": "language_usage",
+      "topic": "independent_dependent_clauses",
+      "question": "Which underlined section of a passage about Ada Lovelace is an independent clause?",
+      "options": [
+        {"label": "A", "text": "the daughter of the famous poet Lord Byron"},
+        {"label": "B", "text": "she met Charles Babbage"},
+        {"label": "C", "text": "proposing that computers could perform many tasks besides calculations"},
+        {"label": "D", "text": "Though Lovelace didn't live long enough to see her ideas put into practice"}
+      ],
+      "correct_answer": "B",
+      "explanation": "'She met Charles Babbage' has a subject ('she') and conjugated verb ('met'), expressing a complete thought."
+    },
+    {
+      "id": "G7-LANG-004",
+      "grade": "G7",
+      "subject": "language_usage",
+      "topic": "thesis_statements",
+      "question": "Which is the best thesis for a persuasive essay on the first time people landed on the moon?",
+      "options": [
+        {"label": "A", "text": "The moon landing is an event known by everyone in the US"},
+        {"label": "B", "text": "The moon landing was part of NASA's Apollo program"},
+        {"label": "C", "text": "The moon landing is an achievement that humanity would have certainly reached at some point in one way or another"},
+        {"label": "D", "text": "A famous sentence said by Neil Armstrong during the landing was, 'That's one small step for a man...'"}
+      ],
+      "correct_answer": "C",
+      "explanation": "A persuasive thesis presents an arguable claim. Option C presents a debatable assertion suitable for persuasive development."
+    },
+    {
+      "id": "G8-MATH-001",
+      "grade": "G8",
+      "subject": "math",
+      "topic": "exterior_angles",
+      "question": "What is the value of angle α in a triangle where one exterior angle measures 145° and an adjacent interior angle is 60°?",
+      "options": [
+        {"label": "A", "text": "65°"},
+        {"label": "B", "text": "70°"},
+        {"label": "C", "text": "75°"},
+        {"label": "D", "text": "85°"}
+      ],
+      "correct_answer": "D",
+      "explanation": "By the Exterior Angle Theorem, the exterior angle equals the sum of the two remote interior angles: 60° + α = 145°, so α = 85°."
+    },
+    {
+      "id": "G8-MATH-002",
+      "grade": "G8",
+      "subject": "math",
+      "topic": "ratio_changes",
+      "question": "A school choir has 84 students. The ratio of boys to girls is 3:4. After auditions, 12 new girls join and 6 boys leave. What is the new ratio of girls to boys?",
+      "options": [
+        {"label": "A", "text": "4:3"},
+        {"label": "B", "text": "5:2"},
+        {"label": "C", "text": "2:1"},
+        {"label": "D", "text": "8:3"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Original: 36 boys, 48 girls. After changes: 30 boys, 60 girls. New ratio: 60:30 = 2:1."
+    },
+    {
+      "id": "G8-MATH-003",
+      "grade": "G8",
+      "subject": "math",
+      "topic": "linear_equations",
+      "question": "Solve for y: 2y/3 + 17 = −51",
+      "options": [
+        {"label": "A", "text": "y = −76"},
+        {"label": "B", "text": "y = −102"},
+        {"label": "C", "text": "y = −136"},
+        {"label": "D", "text": "y = −174"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Subtract 17: 2y/3 = −68. Multiply by 3/2: y = −102."
+    },
+    {
+      "id": "G8-MATH-004",
+      "grade": "G8",
+      "subject": "math",
+      "topic": "probability_without_replacement",
+      "question": "A baseball cap contains 9 baseballs: 4 blue, 3 white, 2 orange. A player selects 3 one at a time without replacement. What is the probability that none are blue?",
+      "options": [
+        {"label": "A", "text": "1/6"},
+        {"label": "B", "text": "10/27"},
+        {"label": "C", "text": "5/42"},
+        {"label": "D", "text": "35/108"}
+      ],
+      "correct_answer": "C",
+      "explanation": "P(no blue) = (5/9) × (4/8) × (3/7) = 60/504 = 5/42."
+    },
+    {
+      "id": "G8-READ-001",
+      "grade": "G8",
+      "subject": "reading",
+      "topic": "figurative_language",
+      "question": "Which sentence uses figurative language to convey an abstract idea? (Passage about 'Powers of Ten' film)",
+      "options": [
+        {"label": "A", "text": "The camera steadily zooms outward, expanding the view by a power of ten each interval."},
+        {"label": "B", "text": "Trying to grasp these extremes feels like trying to hold the ocean in a teacup."},
+        {"label": "C", "text": "The film reverses direction and explores the microscopic world of cells and proteins."},
+        {"label": "D", "text": "The distances in the universe stretch the limits of human imagination."}
+      ],
+      "correct_answer": "B",
+      "explanation": "Option B uses a simile comparing conceptual difficulty to an impossible physical task, expressing an abstract idea through vivid comparison."
+    },
+    {
+      "id": "G8-READ-002",
+      "grade": "G8",
+      "subject": "reading",
+      "topic": "authors_technique",
+      "question": "Which technique does the author use most effectively to help readers understand the extreme nature of fleas' abilities?",
+      "options": [
+        {"label": "A", "text": "Emphasizing scientific terminology to highlight biological precision"},
+        {"label": "B", "text": "Presenting direct factual descriptions of the flea's anatomy and daily behavior"},
+        {"label": "C", "text": "Framing flea abilities through large-scale numerical and conceptual comparisons"},
+        {"label": "D", "text": "Using vivid adjectives to portray fleas as remarkable and unusual creatures"}
+      ],
+      "correct_answer": "C",
+      "explanation": "The author repeatedly translates flea abilities into human-scale comparisons (e.g., 'a jump would launch a person high enough to clear a skyscraper')."
+    },
+    {
+      "id": "G8-READ-003",
+      "grade": "G8",
+      "subject": "reading",
+      "topic": "vocabulary_in_context",
+      "question": "Determine the definition of 'cajole' based on context: (1) politician cajoled voters with tax reduction promises; (2) friend cajoled her into attending event.",
+      "options": [
+        {"label": "A", "text": "To compel someone into action by creating urgency"},
+        {"label": "B", "text": "To persuade someone by sustained coaxing or flattery"},
+        {"label": "C", "text": "To subtly manipulate outcomes without direct interaction"},
+        {"label": "D", "text": "To engage in negotiation involving concessions"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Context shows gentle, personal persuasion through repeated urging and attractive promises — 'cajole' means to persuade by coaxing or flattery."
+    },
+    {
+      "id": "G8-READ-004",
+      "grade": "G8",
+      "subject": "reading",
+      "topic": "poetry_form",
+      "question": "Which statement is true about Emily Dickinson's poem 'I'm nobody! Who are you?'",
+      "options": [
+        {"label": "A", "text": "The poem maintains a consistent rhyme scheme."},
+        {"label": "B", "text": "The poem maintains a consistent pattern of meter."},
+        {"label": "C", "text": "Each line of the poem is in tetrameter form."},
+        {"label": "D", "text": "The poem is a limerick."},
+        {"label": "E", "text": "The poem consists of four stanzas."},
+        {"label": "F", "text": "The poem is written in free verse."}
+      ],
+      "correct_answer": "B",
+      "explanation": "The poem follows alternating long/short line patterns throughout, demonstrating consistent meter despite varying rhyme density."
+    },
+    {
+      "id": "G8-LANG-001",
+      "grade": "G8",
+      "subject": "language_usage",
+      "topic": "sentence_function",
+      "question": "What is the function of the final sentence: 'Even so, interest in the deep ocean continues to grow as researchers learn more about its potential value'?",
+      "options": [
+        {"label": "A", "text": "It reinforces the earlier idea that the deep ocean holds important resources."},
+        {"label": "B", "text": "It provides evidence that challenges the claim made in the first sentence."},
+        {"label": "C", "text": "It explains why deep-sea exploration has become less common in recent years."},
+        {"label": "D", "text": "It contrasts the growing interest with the difficulties mentioned earlier."}
+      ],
+      "correct_answer": "D",
+      "explanation": "'Even so' signals contrast between previously mentioned obstacles and continuing increased interest."
+    },
+    {
+      "id": "G8-LANG-002",
+      "grade": "G8",
+      "subject": "language_usage",
+      "topic": "sentence_clarity",
+      "question": "Which revision best improves clarity and removes ambiguity from: 'Because the committee wanted community members to share their opinions in as many ways as possible, they allowed an online form, individual interviews, and a suggestion box, which made the results more confusing than expected.'",
+      "options": [
+        {"label": "A", "text": "Seeking extensive public input, the committee implemented multiple feedback methods...which ultimately produced data that was difficult to interpret."},
+        {"label": "B", "text": "To gather community opinions through varied channels, the committee offered several participation options; however, these methods collectively generated results that were unexpectedly complex to analyze."},
+        {"label": "C", "text": "Wanting a wide range of perspectives, the committee provided an online form, individual interviews, and a suggestion box, although the combination..."},
+        {"label": "D", "text": "To encourage contributions through multiple avenues, the committee adopted an online form..."}
+      ],
+      "correct_answer": "B",
+      "explanation": "Option B eliminates pronoun ambiguity by naming 'committee' directly and clarifies cause-effect with 'collectively generated results'."
+    },
+    {
+      "id": "G8-LANG-003",
+      "grade": "G8",
+      "subject": "language_usage",
+      "topic": "sentence_combining",
+      "question": "Combine three statements about the Hubble Space Telescope: (1) launched 1990; (2) instrumental in major discoveries; (3) orbits Earth at 340 miles.",
+      "options": [
+        {"label": "A", "text": "Launched in 1990 and instrumental in many major discoveries, the Hubble Space Telescope orbits Earth at approximately 340 miles above the surface."},
+        {"label": "B", "text": "Orbiting Earth at 340 miles above the surface, the Hubble Space Telescope was launched in 1990, and it has been instrumental..."},
+        {"label": "C", "text": "The Hubble Space Telescope, a device instrumental in numerous major astronomical discoveries, was launched in 1990 and orbits Earth at approximately 340 miles above the surface."},
+        {"label": "D", "text": "Instrumental in numerous major astronomical discoveries and orbiting Earth, the Hubble Space Telescope was launched in 1990..."}
+      ],
+      "correct_answer": "C",
+      "explanation": "Option C uses an appositive phrase to integrate the discoveries fact smoothly while presenting launch date and orbital information in balanced parallel structure."
+    },
+    {
+      "id": "G8-LANG-004",
+      "grade": "G8",
+      "subject": "language_usage",
+      "topic": "pronoun_antecedent_agreement",
+      "question": "Select the sentence using correct pronoun-antecedent agreement and maintaining grammatical parallelism.",
+      "options": [
+        {"label": "A", "text": "Every student must submit their project proposal and be sure they proofread carefully."},
+        {"label": "B", "text": "Each student must submit their project proposal and ensure they proofreads carefully."},
+        {"label": "C", "text": "Every student must submit his or her project proposal and ensure that it is proofread carefully."},
+        {"label": "D", "text": "Each student must submit his or her student's project proposal and ensure that it is proofread carefully."}
+      ],
+      "correct_answer": "C",
+      "explanation": "Option C uses singular 'his or her' matching singular antecedent 'Every student' and maintains parallel verb structure."
+    },
+    {
+      "id": "G9-MATH-001",
+      "grade": "G9",
+      "subject": "math",
+      "topic": "triangle_congruence",
+      "question": "Based on the given data, what is the perimeter of Triangle a? (Using AAS congruence with angles 59°, 86°, 35° and sides 8, 12 on Triangle b)",
+      "options": [
+        {"label": "A", "text": "32"},
+        {"label": "B", "text": "34"},
+        {"label": "C", "text": "35"},
+        {"label": "D", "text": "36"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Using AAS congruence, corresponding sides are equal. AC = 14. Perimeter = 8 + 12 + 14 = 34."
+    },
+    {
+      "id": "G9-MATH-002",
+      "grade": "G9",
+      "subject": "math",
+      "topic": "algebraic_evaluation",
+      "question": "Evaluate 3a² − 8b + 2(c − b) with a = 3, b = 4.5, c = 11",
+      "options": [
+        {"label": "A", "text": "6"},
+        {"label": "B", "text": "4"},
+        {"label": "C", "text": "2"},
+        {"label": "D", "text": "0"},
+        {"label": "E", "text": "−2"}
+      ],
+      "correct_answer": "B",
+      "explanation": "3(9) − 8(4.5) + 2(11 − 4.5) = 27 − 36 + 2(6.5) = 27 − 36 + 13 = 4."
+    },
+    {
+      "id": "G9-MATH-003",
+      "grade": "G9",
+      "subject": "math",
+      "topic": "unit_cost",
+      "question": "A 4.5-pound container of gourmet coffee costs $58.95 and brews approximately 60 pots. What is the approximate cost per pot?",
+      "options": [
+        {"label": "A", "text": "$13.10"},
+        {"label": "B", "text": "$1.02"},
+        {"label": "C", "text": "$0.98"},
+        {"label": "D", "text": "$0.08"}
+      ],
+      "correct_answer": "C",
+      "explanation": "$58.95 ÷ 60 = $0.9825 ≈ $0.98 per pot."
+    },
+    {
+      "id": "G9-READ-001",
+      "grade": "G9",
+      "subject": "reading",
+      "topic": "characterization",
+      "question": "What does the author emphasize by describing Katherine Johnson's early education?",
+      "options": [
+        {"label": "A", "text": "Elite private school attendance"},
+        {"label": "B", "text": "Family sacrifice and determination"},
+        {"label": "C", "text": "Teacher discouragement"},
+        {"label": "D", "text": "Self-taught education"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The text explicitly states the family's relocation decision 'underscored both sacrifices and determination to learn.'"
+    },
+    {
+      "id": "G9-READ-002",
+      "grade": "G9",
+      "subject": "reading",
+      "topic": "vocabulary_in_context",
+      "question": "In paragraph three about Katherine Johnson, 'rigor' most nearly means:",
+      "options": [
+        {"label": "A", "text": "Difficulty or strictness"},
+        {"label": "B", "text": "Fear"},
+        {"label": "C", "text": "Opportunity"},
+        {"label": "D", "text": "Discovery"}
+      ],
+      "correct_answer": "A",
+      "explanation": "Context shows mathematical work demanding 'intellectual rigor' — referring to exacting precision standards required for space calculations."
+    },
+    {
+      "id": "G9-READ-003",
+      "grade": "G9",
+      "subject": "reading",
+      "topic": "textual_evidence",
+      "question": "Which sentence best supports the idea that Katherine Johnson helped open doors for others?",
+      "options": [
+        {"label": "A", "text": "Excellence under mentorship"},
+        {"label": "B", "text": "Indispensable to orbital calculations"},
+        {"label": "C", "text": "Her journey reveals how individual brilliance can confront and ultimately reshape systemic injustice"},
+        {"label": "D", "text": "Recognition through awards"}
+      ],
+      "correct_answer": "C",
+      "explanation": "This sentence demonstrates how her work created opportunities for future generations by reshaping systemic injustice."
+    },
+    {
+      "id": "G9-LANG-001",
+      "grade": "G9",
+      "subject": "language_usage",
+      "topic": "spelling",
+      "question": "Choose the correct spelling: 'The movie was [incredable/incredible] and it had a very [sensable/sensible] morale.'",
+      "options": [
+        {"label": "A", "text": "incredable / sensible"},
+        {"label": "B", "text": "incredible / sensible"},
+        {"label": "C", "text": "incredible / sensable"},
+        {"label": "D", "text": "incredable / sensable"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Both words use the '-ible' suffix: incredible and sensible."
+    },
+    {
+      "id": "G9-LANG-002",
+      "grade": "G9",
+      "subject": "language_usage",
+      "topic": "source_evaluation",
+      "question": "For Maria's paper on ocean temperature effects on global ecosystems, which source is most credible and comprehensive?",
+      "options": [
+        {"label": "A", "text": "NOAA Arctic report"},
+        {"label": "B", "text": "Peer-reviewed journal analyzing worldwide marine warming impacts"},
+        {"label": "C", "text": "Scientific American article on economic effects"},
+        {"label": "D", "text": "Climate policy adaptation report"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Peer-reviewed sources provide highest academic credibility and this one directly addresses global ecosystem effects."
+    },
+    {
+      "id": "G9-LANG-003",
+      "grade": "G9",
+      "subject": "language_usage",
+      "topic": "active_voice",
+      "question": "'The research team _______ three hours analyzing data before presenting findings.' Which active voice verb phrase completes it?",
+      "options": [
+        {"label": "A", "text": "will have spent"},
+        {"label": "B", "text": "had been assigned to spend"},
+        {"label": "C", "text": "decided to spend"},
+        {"label": "D", "text": "made the decision of spending"}
+      ],
+      "correct_answer": "C",
+      "explanation": "'Decided to spend' uses active voice (team performs the action) and maintains past tense consistency."
+    },
+    {
+      "id": "G10-MATH-001",
+      "grade": "G10",
+      "subject": "math",
+      "topic": "systems_of_equations",
+      "question": "Which coordinates represent the solution to the system: X + 3Y = 6 and 2X + Y = 7?",
+      "options": [
+        {"label": "A", "text": "(3, 1)"},
+        {"label": "B", "text": "(1, 3)"},
+        {"label": "C", "text": "(2, 3)"},
+        {"label": "D", "text": "(0, 2)"}
+      ],
+      "correct_answer": "A",
+      "explanation": "From equation 1: X = 6 − 3Y. Substitute into equation 2: 2(6 − 3Y) + Y = 7 → 12 − 6Y + Y = 7 → Y = 1, X = 3."
+    },
+    {
+      "id": "G10-MATH-002",
+      "grade": "G10",
+      "subject": "math",
+      "topic": "ordering_fractions_decimals",
+      "question": "Place the following numbers in order from lowest to highest: 5/6, 7/12, 0.8, 11/20, 9/4",
+      "options": [
+        {"label": "A", "text": "11/20, 7/12, 5/6, 0.8, 9/4"},
+        {"label": "B", "text": "7/12, 11/20, 0.8, 5/6, 9/4"},
+        {"label": "C", "text": "11/20, 0.8, 7/12, 5/6, 9/4"},
+        {"label": "D", "text": "7/12, 11/20, 5/6, 0.8, 9/4"}
+      ],
+      "correct_answer": "A",
+      "explanation": "Convert to common denominator 60: 33/60, 35/60, 48/60, 50/60, 135/60. Order: 11/20 < 7/12 < 0.8 < 5/6 < 9/4."
+    },
+    {
+      "id": "G10-MATH-003",
+      "grade": "G10",
+      "subject": "math",
+      "topic": "basic_probability",
+      "question": "A jar contains 15 cookies: 6 oatmeal, 5 chocolate chip, 4 peanut butter. What is the probability of grabbing a chocolate chip cookie?",
+      "options": [
+        {"label": "A", "text": "2/5"},
+        {"label": "B", "text": "1/3"},
+        {"label": "C", "text": "4/15"},
+        {"label": "D", "text": "1/15"}
+      ],
+      "correct_answer": "B",
+      "explanation": "P = favorable/total = 5/15 = 1/3."
+    },
+    {
+      "id": "G10-READ-001",
+      "grade": "G10",
+      "subject": "reading",
+      "topic": "vocabulary_in_context",
+      "question": "Based on context, what does 'unheralded' mean in: 'yet in the 1860s, its configuration was a concept utterly unheralded'?",
+      "options": [
+        {"label": "A", "text": "A design kept secret until patent lawsuit"},
+        {"label": "B", "text": "Initially unsuccessful with no public acclaim"},
+        {"label": "C", "text": "Entirely new, unprecedented"},
+        {"label": "D", "text": "Patent not yet secured, official existence unrecognized"}
+      ],
+      "correct_answer": "C",
+      "explanation": "'Unheralded' means without prior announcement or precedent — the flat-bottomed paper bag design was completely new."
+    },
+    {
+      "id": "G10-READ-002",
+      "grade": "G10",
+      "subject": "reading",
+      "topic": "causal_relationships",
+      "question": "Which sentence conveys the causal relationship and chronological sequence about a purloined blueprint?",
+      "options": [
+        {"label": "A", "text": "Because individual stole blueprint, he was privy to construction..."},
+        {"label": "B", "text": "Individual, who had been privy to construction, purloined blueprint and subsequently secured patent"},
+        {"label": "C", "text": "After fraudulently securing patent, individual who was privy..."},
+        {"label": "D", "text": "Even though individual purloined blueprint, he fraudulently secured patent only after..."}
+      ],
+      "correct_answer": "B",
+      "explanation": "Option B preserves correct sequence: access → theft → fraudulent patenting, with 'subsequently' marking temporal progression."
+    },
+    {
+      "id": "G10-READ-003",
+      "grade": "G10",
+      "subject": "reading",
+      "topic": "thematic_synthesis",
+      "question": "Which statement synthesizes the most significant thematic conflict and resolution in Margaret Knight's adult life?",
+      "options": [
+        {"label": "A", "text": "Transitioned from cotton mill worker to entrepreneur founding Eastern Paper Bag Co."},
+        {"label": "B", "text": "Overcame childhood poverty through prolific inventions and patents"},
+        {"label": "C", "text": "Pioneer woman who remained unmarried, established business, inducted into Hall of Fame"},
+        {"label": "D", "text": "Demonstrated legal resolve and sustained ingenuity by litigating for invention rights and establishing multi-patented career"}
+      ],
+      "correct_answer": "D",
+      "explanation": "The passage emphasizes her confrontation with patent theft, successful litigation, and 86 subsequent patents."
+    },
+    {
+      "id": "G10-LANG-001",
+      "grade": "G10",
+      "subject": "language_usage",
+      "topic": "object_pronouns",
+      "question": "'Some members were selected to speak, including __________.' Which option completes this correctly?",
+      "options": [
+        {"label": "A", "text": "me and my mom"},
+        {"label": "B", "text": "my mom and me"},
+        {"label": "C", "text": "I and my mom"},
+        {"label": "D", "text": "my mom and I"}
+      ],
+      "correct_answer": "B",
+      "explanation": "'Including' introduces objects. Use object pronoun 'me'. Etiquette places others before self: 'my mom and me'."
+    },
+    {
+      "id": "G10-LANG-002",
+      "grade": "G10",
+      "subject": "language_usage",
+      "topic": "punctuation_accuracy",
+      "question": "Which sentence demonstrates accurate punctuation?",
+      "options": [
+        {"label": "A", "text": "Policy which, mandates weekly reports has caused friction..."},
+        {"label": "B", "text": "To prepare for merger, senior team agreed to work weekend, a regrettable necessity."},
+        {"label": "C", "text": "As accomplished linguist Dr. Mansoori, understood archaic conjugations..."},
+        {"label": "D", "text": "Algorithm, as you know Professor Chen is designed to calculate..."}
+      ],
+      "correct_answer": "B",
+      "explanation": "Option B correctly uses comma after introductory phrase and comma before appositive phrase ('a regrettable necessity')."
+    },
+    {
+      "id": "G10-LANG-003",
+      "grade": "G10",
+      "subject": "language_usage",
+      "topic": "misplaced_modifiers",
+      "question": "Correct this misplaced modifier: 'Known for groundbreaking studies, the committee awarded Dr. Ramos the honor.'",
+      "options": [
+        {"label": "A", "text": "Committee known for groundbreaking studies awarded Dr. Ramos..."},
+        {"label": "B", "text": "Dr. Ramos, known for groundbreaking studies, was awarded honor by committee"},
+        {"label": "C", "text": "Dr. Ramos, who was known for studies, was awarded honor, it was given by committee"},
+        {"label": "D", "text": "Known for studies, Dr. Ramos was awarded by committee the honor"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The phrase 'known for groundbreaking studies' describes Dr. Ramos, so it must sit adjacent to her name."
+    },
+    {
+      "id": "G11-MATH-001",
+      "grade": "G11",
+      "subject": "math",
+      "topic": "quadratic_vertex",
+      "question": "A ball's height (in feet) after t seconds is modeled by h(t) = −16t² + 48t + 5. What is the maximum height the ball reaches?",
+      "options": [
+        {"label": "A", "text": "29 ft"},
+        {"label": "B", "text": "41 ft"},
+        {"label": "C", "text": "53 ft"},
+        {"label": "D", "text": "77 ft"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Use vertex formula t = −b/(2a) = −48/(2×−16) = 1.5. h(1.5) = −16(2.25) + 48(1.5) + 5 = −36 + 72 + 5 = 41 ft."
+    },
+    {
+      "id": "G11-MATH-002",
+      "grade": "G11",
+      "subject": "math",
+      "topic": "proportional_triangles",
+      "question": "In a right triangle with sides proportional to 3:4:5, if the hypotenuse is 25 cm, what are the other two sides?",
+      "options": [
+        {"label": "A", "text": "10 cm and 15 cm"},
+        {"label": "B", "text": "12 cm and 16 cm"},
+        {"label": "C", "text": "15 cm and 20 cm"},
+        {"label": "D", "text": "18 cm and 24 cm"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Scale factor k: 5k = 25, k = 5. Sides: 3(5) = 15 cm and 4(5) = 20 cm."
+    },
+    {
+      "id": "G11-MATH-003",
+      "grade": "G11",
+      "subject": "math",
+      "topic": "logarithmic_equations",
+      "question": "If log₂(x − 1) + log₂(x + 1) = 3, what is x? (Domain: x > 1)",
+      "options": [
+        {"label": "A", "text": "−3"},
+        {"label": "B", "text": "−1"},
+        {"label": "C", "text": "1"},
+        {"label": "D", "text": "3"}
+      ],
+      "correct_answer": "D",
+      "explanation": "Combine: log₂((x−1)(x+1)) = 3 → log₂(x²−1) = 3 → x²−1 = 8 → x² = 9 → x = ±3. Domain x > 1, so x = 3."
+    },
+    {
+      "id": "G11-READ-001",
+      "grade": "G11",
+      "subject": "reading",
+      "topic": "word_analysis",
+      "question": "In Whitman's 'When I Heard the Learn'd Astronomer', what is the effect of the word 'unaccountable' in line 5?",
+      "options": [
+        {"label": "A", "text": "Shows speaker confused by complex data"},
+        {"label": "B", "text": "Implies speaker feels guilty for leaving"},
+        {"label": "C", "text": "Suggests speaker cannot logically explain emotional reaction"},
+        {"label": "D", "text": "Reveals speaker unable to understand lesson"}
+      ],
+      "correct_answer": "C",
+      "explanation": "'Unaccountable' means without logical explanation. The speaker experiences an unexplainable emotional response to the analytical lecture."
+    },
+    {
+      "id": "G11-READ-002",
+      "grade": "G11",
+      "subject": "reading",
+      "topic": "central_contrast",
+      "question": "What central contrast does Whitman explore in 'When I Heard the Learn'd Astronomer'?",
+      "options": [
+        {"label": "A", "text": "Power of mathematics to explain natural beauty"},
+        {"label": "B", "text": "Tension between intellectual analysis and direct personal experience"},
+        {"label": "C", "text": "Importance of studying science to understand spirituality"},
+        {"label": "D", "text": "Conflict between individual ambition and public recognition"}
+      ],
+      "correct_answer": "B",
+      "explanation": "The poem contrasts the sterile lecture hall with scientific data against the speaker's peaceful, direct experience of nature under the stars."
+    },
+    {
+      "id": "G11-READ-003",
+      "grade": "G11",
+      "subject": "reading",
+      "topic": "imagery_analysis",
+      "question": "What effect does the imagery of 'the mystical moist night-air' and 'perfect silence' create at the end of the poem?",
+      "options": [
+        {"label": "A", "text": "Underscores loneliness and alienation"},
+        {"label": "B", "text": "Reflects longing to return to lecture"},
+        {"label": "C", "text": "Emphasizes confusion about natural world"},
+        {"label": "D", "text": "Evokes serene, spiritual awe versus sterile lecture"}
+      ],
+      "correct_answer": "D",
+      "explanation": "Sensory imagery creates a peaceful spiritual connection contrasting with the cold, analytical lecture environment."
+    },
+    {
+      "id": "G11-LANG-001",
+      "grade": "G11",
+      "subject": "language_usage",
+      "topic": "concluding_sentences",
+      "question": "After thanking participants for an art workshop, Samir needs a concluding sentence. Which indicates the action he expects students to take?",
+      "options": [
+        {"label": "A", "text": "Gallery will be shared on website and newsletter"},
+        {"label": "B", "text": "Workshop committed to encouraging creativity"},
+        {"label": "C", "text": "Everyone enjoyed experimenting with materials"},
+        {"label": "D", "text": "Please submit project photos by Monday, April 15"}
+      ],
+      "correct_answer": "D",
+      "explanation": "Only this option includes a specific action (submit), deadline, and context — functioning as a proper call-to-action."
+    },
+    {
+      "id": "G11-LANG-002",
+      "grade": "G11",
+      "subject": "language_usage",
+      "topic": "semicolons_in_lists",
+      "question": "Which sentence correctly punctuates a list with internal commas?",
+      "options": [
+        {"label": "A", "text": "Dr. Green, the chair; Ms. Lopez, the coordinator; and Mr. Patel, the secretary"},
+        {"label": "B", "text": "Dr. Green, the chair; Ms. Lopez, the coordinator, and Mr. Patel, the secretary"},
+        {"label": "C", "text": "Dr. Green; the chair, Ms. Lopez; the coordinator, and Mr. Patel; the secretary"},
+        {"label": "D", "text": "Dr. Green, the chair, Ms. Lopez, the coordinator; and Mr. Patel, the secretary"}
+      ],
+      "correct_answer": "A",
+      "explanation": "When list items contain commas, use semicolons as separators between major items to prevent confusion."
+    },
+    {
+      "id": "G11-LANG-003",
+      "grade": "G11",
+      "subject": "language_usage",
+      "topic": "modifier_placement",
+      "question": "Select the sentence that places the modifier 'only' correctly.",
+      "options": [
+        {"label": "A", "text": "Kate said only she would finish the report Friday"},
+        {"label": "B", "text": "Kate said she would finish only the report Friday"},
+        {"label": "C", "text": "Only Kate said she would finish the report Friday"},
+        {"label": "D", "text": "Kate said she would only finish the report Friday"}
+      ],
+      "correct_answer": "C",
+      "explanation": "Placing 'only' before 'Kate' emphasizes that Kate alone made the statement. Modifier placement changes meaning."
+    },
+    {
+      "id": "G12-MATH-001",
+      "grade": "G12",
+      "subject": "math",
+      "topic": "factoring",
+      "question": "Which expression is equivalent to 9x⁴ + 21x² + 3x?",
+      "options": [
+        {"label": "A", "text": "9x⁴ + 3x(7 + 1)"},
+        {"label": "B", "text": "3x(3x³ + 7x + 1)"},
+        {"label": "C", "text": "3x²(3x² + 7x) + 3x"},
+        {"label": "D", "text": "3x(3x³ + 7x² + 3x)"},
+        {"label": "E", "text": "x(9x³ + 21x + 3x)"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Factor out 3x: 9x⁴/3x = 3x³, 21x²/3x = 7x, 3x/3x = 1. So 3x(3x³ + 7x + 1)."
+    },
+    {
+      "id": "G12-MATH-002",
+      "grade": "G12",
+      "subject": "math",
+      "topic": "volume_scaling",
+      "question": "For a cylinder with volume V = πr²h, what is the new volume if the radius r is tripled?",
+      "options": [
+        {"label": "A", "text": "Vnew = 9 × Vold"},
+        {"label": "B", "text": "Vnew = 3 × Vold"},
+        {"label": "C", "text": "Vnew = Vold + 3r"},
+        {"label": "D", "text": "Vnew = Vold + 2r"}
+      ],
+      "correct_answer": "A",
+      "explanation": "V = πr²h. Tripling r: V_new = π(3r)²h = π(9r²)h = 9πr²h = 9 × V_old."
+    },
+    {
+      "id": "G12-MATH-003",
+      "grade": "G12",
+      "subject": "math",
+      "topic": "multi_step_word_problem",
+      "question": "Jake's apple tree produces 50 apples monthly. Family eats 33; remaining sold at $2 each. Family eats 18 bananas monthly at $3 each. How many extra dollars beyond apple profits are needed for bananas?",
+      "options": [
+        {"label": "A", "text": "$0"},
+        {"label": "B", "text": "$1"},
+        {"label": "C", "text": "$2"},
+        {"label": "D", "text": "$17"},
+        {"label": "E", "text": "$20"}
+      ],
+      "correct_answer": "E",
+      "explanation": "Apple profit: (50 − 33) × $2 = 17 × $2 = $34. Banana cost: 18 × $3 = $54. Extra needed: $54 − $34 = $20."
+    },
+    {
+      "id": "G12-READ-001",
+      "grade": "G12",
+      "subject": "reading",
+      "topic": "chart_analysis",
+      "question": "Based on a chart about company performance across Sales, Customer Service, and Productivity, which conclusion is best supported?",
+      "options": [
+        {"label": "A", "text": "Customer service is the strongest area"},
+        {"label": "B", "text": "Reps handle phone calls better than emails"},
+        {"label": "C", "text": "Overall phone performance exceeds email performance"},
+        {"label": "D", "text": "Productivity/Satisfaction needs most improvement"},
+        {"label": "E", "text": "Rudeness/late arrivals/cleaning are most urgent fixes"}
+      ],
+      "correct_answer": "C",
+      "explanation": "The chart data shows both positive and negative ratings for phone calls and emails, with general phone performance metrics being higher overall."
+    },
+    {
+      "id": "G12-READ-002",
+      "grade": "G12",
+      "subject": "reading",
+      "topic": "dual_text_comparison",
+      "question": "Two passages about adolescent mental health: 'Empowering Adolescents' (data-driven) and 'A Call for Change' (advocacy-focused). Which statement best captures their distinct emphasis?",
+      "options": [
+        {"label": "A", "text": "Both focus on societal attitudes"},
+        {"label": "B", "text": "Text 1 emphasizes early intervention effectiveness; Text 2 emphasizes systemic education integration"},
+        {"label": "C", "text": "Both emphasize individual student responsibility"},
+        {"label": "D", "text": "Text 1 highlights peer support; Text 2 focuses on social media"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Text 1 uses empirical data to showcase program success. Text 2 uses emotional testimony to advocate for structural policy reform."
+    },
+    {
+      "id": "G12-READ-003",
+      "grade": "G12",
+      "subject": "reading",
+      "topic": "rhetorical_strategy",
+      "question": "Which statement best reflects the differing rhetorical strategies in two texts about adolescent mental health?",
+      "options": [
+        {"label": "A", "text": "Text 1 uses pathos; Text 2 uses ethos"},
+        {"label": "B", "text": "Text 1 employs logos; Text 2 uses pathos and ethos"},
+        {"label": "C", "text": "Both primarily use pathos"},
+        {"label": "D", "text": "Both utilize logos"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Text 1 relies on research, facts, data (logos). Text 2 combines emotional appeal (pathos) through personal narrative and credibility (ethos) through advocacy authority."
+    },
+    {
+      "id": "G12-LANG-001",
+      "grade": "G12",
+      "subject": "language_usage",
+      "topic": "transitions",
+      "question": "Fill in four transition blanks in Sofia's essay on test-optional university admissions.",
+      "options": [
+        {"label": "A", "text": "(1) Furthermore (2) In contrast (3) For instance (4) Therefore"},
+        {"label": "B", "text": "(1) In contrast (2) Furthermore (3) As a result (4) However"},
+        {"label": "C", "text": "(1) Furthermore (2) However (3) As a result (4) In conclusion"},
+        {"label": "D", "text": "(1) For instance (2) In contrast (3) Therefore (4) Moreover"},
+        {"label": "E", "text": "(1) For instance (2) On the other hand (3) As a result (4) Nevertheless"}
+      ],
+      "correct_answer": "E",
+      "explanation": "(1) introduces example; (2) signals opposing view; (3) shows consequence; (4) concedes limitation while maintaining support."
+    },
+    {
+      "id": "G12-LANG-002",
+      "grade": "G12",
+      "subject": "language_usage",
+      "topic": "word_choice_tone",
+      "question": "Elena preparing for a speech at an auditorium. Choose between [hesitated/composed herself] and [quivered/resonated].",
+      "options": [
+        {"label": "A", "text": "hesitated; quivered"},
+        {"label": "B", "text": "hesitated; resonated"},
+        {"label": "C", "text": "composed herself; quivered"},
+        {"label": "D", "text": "composed herself; resonated"}
+      ],
+      "correct_answer": "D",
+      "explanation": "'Composed herself' reflects prepared confidence. 'Resonated' conveys strong, assured delivery — matching a formal, polished tone."
+    },
+    {
+      "id": "G12-LANG-003",
+      "grade": "G12",
+      "subject": "language_usage",
+      "topic": "descriptive_revision",
+      "question": "Adrian at a station opens a long-held letter. Which sentence best describes his emotional reaction?",
+      "options": [
+        {"label": "A", "text": "He raised the letter slowly, paper bending between careful hands"},
+        {"label": "B", "text": "His breath caught as he unfolds the letter; a tremor through his fingers despite the stillness"},
+        {"label": "C", "text": "He turned the letter in his hands; the air heavy and hushed"},
+        {"label": "D", "text": "His eyes drifted across the page; light glimmering over ink"}
+      ],
+      "correct_answer": "B",
+      "explanation": "Option B shows involuntary physical response ('breath caught', 'tremor') — genuine emotional reaction rather than scenery or controlled actions."
+    }
+  ]
+}
