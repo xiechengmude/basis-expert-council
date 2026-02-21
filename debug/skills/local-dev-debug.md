@@ -1,3 +1,18 @@
+---
+title: BasisPilot 本地开发联调 & 调试技能
+description: 面向全栈工程师的本地开发、联调、调试、测试方法论
+author: Claude Opus 4.6
+version: 1.0.0
+created: 2026-02-21T03:30:00+08:00
+updated: 2026-02-21T03:30:00+08:00
+git_commit: b04d5bb
+git_hash: b04d5bb14278731d90d6d3d22d32be468bb74232
+git_branch: main
+tags: [debugging, testing, devops, local-dev, fullstack]
+project: basis-expert-council
+stack: LangGraph + FastAPI + Next.js + PostgreSQL + Redis + Qdrant
+---
+
 # BasisPilot 本地开发联调 & 调试技能
 
 > 面向全栈工程师的本地开发、联调、调试、测试方法论

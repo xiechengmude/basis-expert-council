@@ -1,3 +1,18 @@
+---
+title: BasisPilot 代码库索引目录
+description: 核心模块 × 架构分层 × 文件路径 — 一图定位所有代码
+author: Claude Opus 4.6
+version: 1.0.0
+created: 2026-02-21T03:45:00+08:00
+updated: 2026-02-21T03:45:00+08:00
+git_commit: b04d5bb
+git_hash: b04d5bb14278731d90d6d3d22d32be468bb74232
+git_branch: main
+tags: [architecture, index, reference, fullstack]
+project: basis-expert-council
+stack: LangGraph + FastAPI + Next.js + PostgreSQL + Redis + Qdrant
+---
+
 # BasisPilot 代码库索引目录
 
 > 核心模块 × 架构分层 × 文件路径 — 一图定位所有代码
