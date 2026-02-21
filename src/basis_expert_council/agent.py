@@ -74,6 +74,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 LEAD_MODEL = os.getenv("BASIS_LEAD_MODEL", "openai:z-ai/glm-5")
 SUBAGENT_MODEL = os.getenv("BASIS_SUBAGENT_MODEL", "openai:minimax/minimax-m2.5")
+VISION_MODEL = os.getenv("BASIS_VISION_MODEL", "openai:moonshotai/kimi-k2.5")
 
 # 各子智能体可单独覆盖，未设置时 fallback 到 SUBAGENT_MODEL
 MATH_MODEL = os.getenv("BASIS_MATH_MODEL", SUBAGENT_MODEL)
@@ -208,6 +209,100 @@ def create_basis_expert_agent(
     )
 
     return agent
+
+
+# ---------------------------------------------------------------------------
+# 视觉预处理 — 检测图片消息，调 Vision 模型识别后转为文字
+# ---------------------------------------------------------------------------
+
+_vision_model = None
+
+
+def _get_vision_model():
+    global _vision_model
+    if _vision_model is None:
+        _vision_model = init_chat_model(VISION_MODEL, use_responses_api=False)
+    return _vision_model
+
+
+def _has_image_blocks(message) -> bool:
+    """检查消息是否包含 image_url blocks"""
+    content = getattr(message, "content", None) or (
+        message.get("content") if isinstance(message, dict) else None
+    )
+    if not isinstance(content, list):
+        return False
+    return any(
+        isinstance(b, dict) and b.get("type") == "image_url"
+        for b in content
+    )
+
+
+async def _vision_preprocess(state: dict, config=None):
+    """如果最新的 human 消息含图片，用 Vision 模型识别后替换为文本描述。"""
+    from langchain_core.messages import HumanMessage
+
+    messages = state.get("messages", [])
+    if not messages:
+        return state
+
+    last_msg = messages[-1]
+    if not _has_image_blocks(last_msg):
+        return state
+
+    # 提取原始内容
+    content = last_msg.content if hasattr(last_msg, "content") else last_msg.get("content", [])
+    if not isinstance(content, list):
+        return state
+
+    text_parts = [b.get("text", "") for b in content if isinstance(b, dict) and b.get("type") == "text"]
+    user_text = " ".join(t for t in text_parts if t).strip() or "请识别并讲解这张图片中的内容"
+
+    # 构建 Vision 模型请求
+    vision_prompt = [
+        HumanMessage(content=[
+            *[b for b in content if isinstance(b, dict) and b.get("type") == "image_url"],
+            {"type": "text", "text": (
+                "请仔细识别图片中的所有文字、公式、图表和题目内容。"
+                "逐字逐句准确还原，保留原始格式和选项。"
+                "不要解题，只做 OCR 识别和内容还原。"
+            )},
+        ])
+    ]
+
+    vm = _get_vision_model()
+    try:
+        response = await vm.ainvoke(vision_prompt)
+        ocr_text = response.content if isinstance(response.content, str) else str(response.content)
+    except Exception as e:
+        ocr_text = f"[图片识别失败: {e}]"
+
+    # 替换最后一条消息为纯文本
+    new_content = f"[学生上传了一张图片，以下是图片内容的识别结果]\n\n{ocr_text}\n\n[学生的问题] {user_text}"
+    new_messages = list(messages[:-1]) + [HumanMessage(content=new_content)]
+    return {**state, "messages": new_messages}
+
+
+def create_basis_expert_agent_with_vision(**kwargs):
+    """带视觉预处理的 BasisPilot Agent"""
+    from langgraph.graph import StateGraph, START
+
+    inner_agent = create_basis_expert_agent(**kwargs)
+
+    # 获取内部 Agent 的 state schema
+    state_schema = inner_agent.builder.schema_ if hasattr(inner_agent, "builder") else None
+
+    if state_schema is None:
+        # Fallback: 直接返回内部 agent，跳过视觉预处理
+        return inner_agent
+
+    builder = StateGraph(state_schema)
+    builder.add_node("vision_preprocess", _vision_preprocess)
+    builder.add_node("agent", inner_agent)
+    builder.add_edge(START, "vision_preprocess")
+    builder.add_edge("vision_preprocess", "agent")
+
+    return builder.compile()
 
 
 # ---------------------------------------------------------------------------

@@ -18,6 +18,7 @@ import {
   Circle,
   FileIcon,
   ImagePlus,
+  Camera,
   X,
   Loader2,
 } from "lucide-react";
@@ -78,6 +79,7 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
   const [attachments, setAttachments] = useState<UploadedFile[]>([]);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const cameraInputRef = useRef<HTMLInputElement | null>(null);
   const { scrollRef, contentRef } = useStickToBottom();
 
   const {
@@ -625,11 +627,20 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
               className="font-inherit field-sizing-content flex-1 resize-none border-0 bg-transparent px-[18px] pb-[13px] pt-[14px] text-sm leading-7 text-primary outline-none placeholder:text-tertiary"
               rows={1}
             />
+            {/* 相册选图（支持多选） */}
             <input
               ref={fileInputRef}
               type="file"
               accept="image/*"
               multiple
+              className="hidden"
+              onChange={handleFileSelect}
+            />
+            {/* 拍照（H5 移动端直接打开相机） */}
+            <input
+              ref={cameraInputRef}
+              type="file"
+              accept="image/*"
               capture="environment"
               className="hidden"
               onChange={handleFileSelect}
@@ -642,13 +653,23 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                   size="icon"
                   disabled={uploading || isLoading}
                   onClick={() => fileInputRef.current?.click()}
-                  title="上传图片"
+                  title="从相册选图"
                 >
                   {uploading ? (
                     <Loader2 size={18} className="animate-spin" />
                   ) : (
                     <ImagePlus size={18} />
                   )}
+                </Button>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  disabled={uploading || isLoading}
+                  onClick={() => cameraInputRef.current?.click()}
+                  title="拍照上传"
+                >
+                  <Camera size={18} />
                 </Button>
               </div>
               <div className="flex justify-end gap-2">
