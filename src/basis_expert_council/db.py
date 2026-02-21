@@ -463,6 +463,14 @@ async def get_user_by_id(user_id: int) -> dict | None:
         return dict(row) if row else None
 
 
+async def get_user_by_supabase_uid_or_biz_id(user_id: int) -> dict | None:
+    """通过 biz_users.id 获取用户，返回包含 supabase_uid 的完整记录。"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow("SELECT * FROM biz_users WHERE id = $1", user_id)
+        return dict(row) if row else None
+
+
 async def create_user(
     *,
     supabase_uid: str | None = None,

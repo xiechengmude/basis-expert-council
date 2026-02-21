@@ -3,164 +3,672 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BasisPilot (贝领) - 架构图</title>
+  <title>BasisPilot (贝领) - 系统架构图</title>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
       margin: 0;
-      padding: 20px;
-      background: #f5f5f5;
-      color: #333;
+      padding: 20px 20px 60px;
+      background: #f0f2f5;
+      color: #1a1a2e;
     }
-    h1, h2 { text-align: center; }
+    h1 { text-align: center; font-size: 2rem; margin: 10px 0 0; }
+    .subtitle { text-align: center; color: #666; margin: 4px 0 24px; font-size: 0.95rem; }
+    h2 { margin: 0 0 6px; font-size: 1.25rem; color: #1a1a2e; }
+    .desc { color: #666; font-size: 0.85rem; margin: 0 0 18px; }
     .diagram-container {
       background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      margin: 20px auto;
-      max-width: 1200px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin: 0 auto 28px;
+      max-width: 1300px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
     }
-    .mermaid { display: flex; justify-content: center; }
+    .mermaid { display: flex; justify-content: center; overflow-x: auto; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 1300px; margin: 0 auto 28px; }
+    .grid-2 .diagram-container { margin: 0; }
+    @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+    .badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 2px 8px;
+      border-radius: 10px; margin-left: 8px; vertical-align: middle;
+    }
+    .badge-new { background: #e8f5e9; color: #2e7d32; }
+    .badge-updated { background: #fff3e0; color: #e65100; }
+    .toc { max-width: 1300px; margin: 0 auto 28px; background: #fff; border-radius: 14px; padding: 20px 32px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+    .toc h3 { margin: 0 0 12px; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 40px; }
+    .toc li { margin-bottom: 4px; font-size: 0.9rem; }
+    .toc a { color: #1565c0; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .timestamp { text-align: center; color: #aaa; font-size: 0.8rem; margin-top: 20px; }
   </style>
 </head>
 <body>
   <h1>BasisPilot</h1>
-  <p style="text-align:center;color:#666;">BasisPilot · 贝领 — 系统架构图</p>
+  <p class="subtitle">贝领 — AI Co-Pilot for BASIS Students &nbsp;|&nbsp; 系统架构全景图</p>
 
-  <!-- 整体架构 -->
-  <div class="diagram-container">
-    <h2>系统整体架构</h2>
+  <!-- TOC -->
+  <div class="toc">
+    <h3>目录</h3>
+    <ol>
+      <li><a href="#overview">系统整体架构</a></li>
+      <li><a href="#deployment">部署架构 (Docker + Nginx + Cloudflare)</a></li>
+      <li><a href="#agents">Agent 多专家架构</a></li>
+      <li><a href="#request-flow">请求处理流程</a></li>
+      <li><a href="#auth">认证鉴权流程</a></li>
+      <li><a href="#database">数据库 Schema</a></li>
+      <li><a href="#assessment">测评系统 (CAT 引擎)</a></li>
+      <li><a href="#frontend">前端路由结构</a></li>
+    </ol>
+  </div>
+
+  <!-- ================================================================== -->
+  <!-- 1. 系统整体架构 -->
+  <!-- ================================================================== -->
+  <div class="diagram-container" id="overview">
+    <h2>1. 系统整体架构</h2>
+    <p class="desc">6 个 Docker 服务 + 外部 LLM 网关 + 可观测性平台</p>
     <pre class="mermaid">
 graph TB
-    subgraph Browser["浏览器 (localhost:8015)"]
-        UI["deep-agents-ui<br/>Next.js 16 + Turbopack"]
+    subgraph Client["用户端"]
+        Browser["浏览器"]
     end
 
-    subgraph Backend["LangGraph Server (127.0.0.1:5095)"]
-        GW["graph.py 入口"]
-        MAIN["主 Agent<br/>openai:z-ai/glm-5"]
-        SUP["Supervisor Router"]
+    subgraph CDN["CDN / 反向代理"]
+        CF["Cloudflare"]
+        NGX["Nginx (SSL + 路由)"]
+    end
 
-        subgraph Subagents["子 Agent (openai:minimax/minimax-m2.5)"]
-            MATH["math-expert<br/>数学学科专家"]
-            SCI["science-expert<br/>科学学科专家"]
-            HUM["humanities-expert<br/>人文学科专家"]
-            CUR["curriculum-advisor<br/>课程规划顾问"]
+    subgraph DockerServices["Docker Compose (basis-dev)"]
+        subgraph FE["basis-frontend :8015"]
+            NEXT["Next.js 16<br/>React 19 + Tailwind"]
+        end
+
+        subgraph API["basis-api :5096"]
+            FAPI["FastAPI<br/>认证 / 配额 / 测评 / 管理"]
+        end
+
+        subgraph Agent["basis-agent :5095"]
+            LGS["LangGraph Server<br/>多 Agent 协作引擎"]
+        end
+
+        subgraph PG["basis-postgres :5432"]
+            PGDB["PostgreSQL 16<br/>业务表 + Checkpoints"]
+        end
+
+        subgraph RD["basis-redis :6395"]
+            RDIS["Redis 7<br/>Streaming / Pub-Sub"]
+        end
+
+        subgraph QD["basis-qdrant :6333"]
+            QDRT["Qdrant v1.13<br/>Mem0 向量存储"]
         end
     end
 
-    subgraph LLM["LLM 网关"]
-        LITE["LiteLLM Proxy<br/>150.109.16.195:8600"]
+    subgraph LLMGateway["LLM 网关"]
+        LITE["OpenAI-Compatible API<br/>(LiteLLM)"]
     end
 
-    subgraph Providers["LLM Providers"]
-        GLM["GLM-5 (z-ai)"]
-        MMX["MiniMax M2.5"]
+    subgraph LLMProviders["LLM Providers"]
+        GLM["GLM-5<br/>(z-ai)"]
+        MMX["MiniMax<br/>M2.5"]
+        DSK["DeepSeek<br/>V3.2"]
+        QWN["Qwen3<br/>Embedding"]
     end
 
     subgraph Observability["可观测性"]
-        LS["LangSmith<br/>basis-expert-council"]
+        LS["LangSmith"]
+        LF["Langfuse"]
+        OT["OpenTelemetry"]
     end
 
-    UI -->|"HTTP/SSE<br/>LangGraph SDK"| GW
-    GW --> MAIN
-    MAIN --> SUP
-    SUP -->|数学问题| MATH
-    SUP -->|科学问题| SCI
-    SUP -->|人文问题| HUM
-    SUP -->|规划问题| CUR
-    MAIN -->|"OpenAI API"| LITE
-    MATH -->|"OpenAI API"| LITE
-    SCI -->|"OpenAI API"| LITE
-    HUM -->|"OpenAI API"| LITE
-    CUR -->|"OpenAI API"| LITE
+    Browser -->|HTTPS| CF
+    CF -->|HTTP| NGX
+    NGX -->|"/ → :8015"| NEXT
+    NGX -->|"/api/* → :5096"| FAPI
+    NGX -->|"/agent/* → :5095"| LGS
+
+    NEXT -.->|API 调用| FAPI
+    FAPI -->|SQL| PGDB
+    FAPI -->|内部调用| LGS
+
+    LGS -->|Checkpoint| PGDB
+    LGS -->|Stream| RDIS
+    LGS -->|Memory| QDRT
+    LGS -->|chat/completions| LITE
+
     LITE --> GLM
     LITE --> MMX
-    Backend -.->|traces| LS
+    LITE --> DSK
+    LITE --> QWN
 
-    style Browser fill:#e3f2fd,stroke:#1565c0
-    style Backend fill:#e8f5e9,stroke:#2e7d32
-    style LLM fill:#fff3e0,stroke:#e65100
-    style Providers fill:#fce4ec,stroke:#c62828
+    LGS -.->|traces| LS
+    LGS -.->|traces| LF
+    LGS -.->|spans| OT
+
+    style Client fill:#e3f2fd,stroke:#1565c0
+    style CDN fill:#e0f7fa,stroke:#00838f
+    style DockerServices fill:#f5f5f5,stroke:#9e9e9e
+    style FE fill:#fce4ec,stroke:#c62828
+    style API fill:#fff3e0,stroke:#e65100
+    style Agent fill:#e8f5e9,stroke:#2e7d32
+    style PG fill:#e3f2fd,stroke:#1565c0
+    style RD fill:#ffebee,stroke:#b71c1c
+    style QD fill:#f3e5f5,stroke:#6a1b9a
+    style LLMGateway fill:#fff8e1,stroke:#f57f17
+    style LLMProviders fill:#fce4ec,stroke:#c62828
     style Observability fill:#f3e5f5,stroke:#6a1b9a
     </pre>
   </div>
 
-  <!-- 请求流程 -->
-  <div class="diagram-container">
-    <h2>请求处理流程</h2>
-    <pre class="mermaid">
-sequenceDiagram
-    participant U as 用户浏览器<br/>(localhost:8015)
-    participant FE as Next.js 前端
-    participant LG as LangGraph Server<br/>(127.0.0.1:5095)
-    participant MA as 主 Agent<br/>(GLM-5)
-    participant SA as 子 Agent<br/>(MiniMax M2.5)
-    participant LP as LiteLLM Proxy
-
-    U->>FE: 输入问题
-    FE->>LG: POST /runs/stream
-    LG->>MA: invoke
-    MA->>LP: chat/completions
-    LP-->>MA: 分析 & 路由决策
-    MA->>SA: delegate (e.g. math-expert)
-    SA->>LP: chat/completions
-    LP-->>SA: 专业领域回答
-    SA-->>MA: 子 Agent 结果
-    MA-->>LG: 最终响应
-    LG-->>FE: SSE 流式输出
-    FE-->>U: 渲染回答
-    </pre>
-  </div>
-
-  <!-- 文件结构 -->
-  <div class="diagram-container">
-    <h2>项目文件结构</h2>
+  <!-- ================================================================== -->
+  <!-- 2. 部署架构 -->
+  <!-- ================================================================== -->
+  <div class="diagram-container" id="deployment">
+    <h2>2. 部署架构 (Docker + Nginx + Cloudflare)</h2>
+    <p class="desc">端口映射 · 健康检查 · 数据卷 · 网络隔离</p>
     <pre class="mermaid">
 graph LR
-    subgraph Root["basis-expert-council/"]
-        GP["graph.py<br/><i>LangGraph 入口</i>"]
-        LJ["langgraph.json<br/><i>服务器配置</i>"]
-        ENV[".env<br/><i>环境变量</i>"]
-        PT["pyproject.toml<br/><i>Python 配置</i>"]
-        AM["AGENTS.md<br/><i>主 Agent 提示词</i>"]
+    subgraph Internet
+        User["用户浏览器"]
+        CF["Cloudflare CDN<br/>(SSL 终止)"]
     end
 
-    subgraph Src["src/basis_expert_council/"]
-        AG["agent.py<br/><i>Agent 工厂</i>"]
+    subgraph Server["Dev 服务器 (43.134.62.139)"]
+        NGX["Nginx :443 / :80<br/>反向代理 + SSL"]
+
+        subgraph Docker["Docker: basis-network"]
+            FE["basis-frontend<br/>:8015 → Next.js"]
+            API["basis-api<br/>:5096 → FastAPI"]
+            AG["basis-agent<br/>:5095 → LangGraph"]
+            PG["basis-postgres<br/>:5436 → :5432"]
+            RD["basis-redis<br/>:6395"]
+            QD["basis-qdrant<br/>:6335 → :6333"]
+        end
     end
 
-    subgraph Agents["agents/"]
-        ME["math-expert/"]
-        SE["science-expert/"]
-        HE["humanities-expert/"]
-        CA["curriculum-advisor/"]
+    subgraph Volumes["持久化卷"]
+        V1["basis-postgres-data"]
+        V2["basis-redis-data"]
+        V3["basis-qdrant-data"]
     end
 
-    subgraph FE["frontend/"]
-        NX["Next.js App"]
-    end
+    User -->|HTTPS| CF
+    CF -->|HTTP :443| NGX
+    NGX -->|"/ *"| FE
+    NGX -->|"/api/*"| API
+    NGX -->|"/agent/*"| AG
 
-    GP --> AG
-    AG --> AM
-    AG --> Agents
-    LJ --> GP
+    AG -->|depends_on| PG
+    AG -->|depends_on| RD
+    AG -->|depends_on| QD
+    API -->|depends_on| PG
+    FE -->|depends_on| AG
 
-    style Root fill:#e8f5e9
-    style Src fill:#e3f2fd
-    style Agents fill:#fff3e0
-    style FE fill:#fce4ec
+    PG --- V1
+    RD --- V2
+    QD --- V3
+
+    style Internet fill:#e3f2fd,stroke:#1565c0
+    style Server fill:#f5f5f5,stroke:#9e9e9e
+    style Docker fill:#e8f5e9,stroke:#2e7d32
+    style Volumes fill:#fff3e0,stroke:#e65100
     </pre>
   </div>
+
+  <!-- ================================================================== -->
+  <!-- 3. Agent 多专家架构 -->
+  <!-- ================================================================== -->
+  <div class="diagram-container" id="agents">
+    <h2>3. Agent 多专家架构</h2>
+    <p class="desc">1 Lead Agent + 6 Subagents + 17 Skills + 4 Memory Tools + A2UI</p>
+    <pre class="mermaid">
+graph TB
+    subgraph Entry["LangGraph Entry"]
+        GW["graph.py:agent"]
+    end
+
+    subgraph Lead["Lead Agent"]
+        MAIN["Supervisor / Router<br/>MODEL: GLM-5"]
+    end
+
+    subgraph Subagents["6 Subject Experts (Subagents)"]
+        MATH["math-expert<br/>数学专家"]
+        SCI["science-expert<br/>科学专家"]
+        HUM["humanities-expert<br/>人文/ELA 专家"]
+        CUR["curriculum-advisor<br/>课程规划顾问"]
+        BIZ["business-advisor<br/>商业/市场专家"]
+        PROB["probation-advisor<br/>学业预警专家"]
+    end
+
+    subgraph Skills["17 Skills"]
+        direction LR
+        S1["math-tutoring"]
+        S2["science-tutoring"]
+        S3["humanities-tutoring"]
+        S4["lesson-planning"]
+        S5["ap-exam-prep"]
+        S6["academic-vocabulary"]
+        S7["student-assessment"]
+        S8["parent-psychology"]
+        S9["school-market-analysis"]
+        S10["sales-negotiation"]
+        S11["probation-rescue"]
+        S12["basis-admission-prep"]
+        S13["new-student-onboarding"]
+        S14["sat-act-prep"]
+        S15["college-essay-coaching"]
+        S16["extracurricular-strategy"]
+        S17["a2ui-render"]
+    end
+
+    subgraph Memory["Mem0 记忆系统"]
+        MT1["remember_fact"]
+        MT2["recall_memories"]
+        MT3["get_user_memory_profile"]
+        MT4["forget_memory"]
+        QDRANT["Qdrant<br/>basispilot_memories"]
+    end
+
+    subgraph A2UI["A2UI 交互渲染"]
+        TOOL["a2ui_tool.py"]
+        COMP["React 组件<br/>Card / Button / MCQ / List"]
+    end
+
+    GW --> MAIN
+    MAIN --> MATH
+    MAIN --> SCI
+    MAIN --> HUM
+    MAIN --> CUR
+    MAIN --> BIZ
+    MAIN --> PROB
+
+    MAIN -.-> Skills
+    MATH -.-> S1
+    SCI -.-> S2
+    HUM -.-> S3
+
+    MAIN --> MT1
+    MAIN --> MT2
+    MAIN --> MT3
+    MAIN --> MT4
+    MT1 & MT2 & MT3 --> QDRANT
+
+    MAIN --> TOOL
+    TOOL --> COMP
+
+    style Entry fill:#e0f7fa,stroke:#00838f
+    style Lead fill:#e8f5e9,stroke:#2e7d32
+    style Subagents fill:#fff3e0,stroke:#e65100
+    style Skills fill:#f3e5f5,stroke:#6a1b9a
+    style Memory fill:#e3f2fd,stroke:#1565c0
+    style A2UI fill:#fce4ec,stroke:#c62828
+    </pre>
+  </div>
+
+  <!-- ================================================================== -->
+  <!-- 4. 请求处理流程 -->
+  <!-- ================================================================== -->
+  <div class="diagram-container" id="request-flow">
+    <h2>4. 请求处理流程</h2>
+    <p class="desc">用户发消息 → 配额检查 → Agent 流式回答 → 记忆存储</p>
+    <pre class="mermaid">
+sequenceDiagram
+    participant U as 用户浏览器
+    participant NGX as Nginx
+    participant FE as Next.js :8015
+    participant API as Business API :5096
+    participant LG as LangGraph :5095
+    participant MA as Lead Agent (GLM-5)
+    participant SA as Subagent (MiniMax)
+    participant MEM as Mem0 + Qdrant
+    participant LLM as LLM Gateway
+
+    U->>NGX: HTTPS 请求
+    NGX->>FE: 加载前端
+    FE-->>U: React SPA
+
+    Note over U,API: 发送消息前
+    U->>NGX: POST /api/quota/check
+    NGX->>API: 配额校验
+    API-->>U: ✅ quota ok
+
+    Note over U,LG: 聊天流
+    U->>NGX: POST /agent/runs/stream
+    NGX->>LG: SSE 流式连接
+    LG->>MA: invoke Lead Agent
+
+    MA->>MEM: recall_memories(user_id)
+    MEM-->>MA: 用户历史记忆
+
+    MA->>LLM: chat/completions (分析+路由)
+    LLM-->>MA: 路由到 math-expert
+
+    MA->>SA: delegate → math-expert
+    SA->>LLM: chat/completions (专业回答)
+    LLM-->>SA: 数学解答
+    SA-->>MA: 子 Agent 结果
+
+    MA->>MEM: remember_fact(新知识点)
+
+    MA-->>LG: 最终响应
+    LG-->>NGX: SSE chunks
+    NGX-->>U: 流式渲染
+    </pre>
+  </div>
+
+  <!-- ================================================================== -->
+  <!-- 5. 认证鉴权流程 -->
+  <!-- ================================================================== -->
+  <div class="diagram-container" id="auth">
+    <h2>5. 认证鉴权流程</h2>
+    <p class="desc">双通道认证: WeChat H5 OAuth + 手机号短信验证 → BASIS JWT</p>
+    <pre class="mermaid">
+sequenceDiagram
+    participant U as 用户
+    participant FE as 前端
+    participant API as Business API
+    participant SB as Supabase
+    participant WX as 微信开放平台
+    participant SMS as 阿里云短信
+    participant DB as PostgreSQL
+
+    Note over U,WX: 路径 A: 微信 H5 登录
+    U->>FE: 点击「微信登录」
+    FE->>API: GET /api/auth/wechat/url
+    API-->>FE: WeChat OAuth URL
+    FE->>WX: 跳转授权
+    WX-->>FE: code 回调
+    FE->>API: GET /api/auth/wechat/callback?code=xxx
+    API->>WX: 换取 access_token + openid
+    API->>DB: upsert biz_users (wechat_openid)
+    API-->>FE: BASIS JWT + user profile
+
+    Note over U,SMS: 路径 B: 手机号登录
+    U->>FE: 输入手机号
+    FE->>API: POST /api/auth/send-code
+    API->>SMS: 发送验证码
+    SMS-->>U: 短信验证码
+    U->>FE: 输入验证码
+    FE->>API: POST /api/auth/phone-login
+    API->>SB: signUp/signIn(phone, code)
+    SB-->>API: Supabase user
+    API->>DB: upsert biz_users (supabase_uid)
+    API-->>FE: Supabase JWT
+
+    FE->>API: POST /api/auth/sync (Supabase JWT)
+    API->>DB: sync user data
+    API-->>FE: BASIS JWT + profile
+
+    Note over FE: 后续请求
+    FE->>API: Authorization: Bearer {BASIS JWT}
+    FE->>API: X-Supabase-Token: {Supabase JWT}
+    </pre>
+  </div>
+
+  <!-- ================================================================== -->
+  <!-- 6. 数据库 Schema -->
+  <!-- ================================================================== -->
+  <div class="diagram-container" id="database">
+    <h2>6. 数据库 Schema</h2>
+    <p class="desc">PostgreSQL 16 — 业务表 + LangGraph Checkpoints 共用实例</p>
+    <pre class="mermaid">
+erDiagram
+    biz_users {
+        int id PK
+        uuid supabase_uid UK
+        text wechat_openid
+        text phone
+        text nickname
+        text avatar_url
+        text role
+        bool kyc_completed
+        timestamp created_at
+    }
+
+    subscriptions {
+        int id PK
+        int user_id FK
+        text plan
+        text status
+        timestamp started_at
+        timestamp expires_at
+    }
+
+    usage_logs {
+        int id PK
+        int user_id FK
+        date usage_date
+        int message_count
+        jsonb agent_calls
+    }
+
+    student_ability_scores {
+        int id PK
+        int user_id FK
+        text subject
+        text topic
+        float ability_score
+        float score_100
+        float confidence
+        int assessment_count
+        jsonb bloom_mastery
+    }
+
+    ability_score_history {
+        int id PK
+        int user_id FK
+        text subject
+        text topic
+        float ability_score
+        text session_id
+        timestamp recorded_at
+    }
+
+    mistake_book_entries {
+        int id PK
+        int user_id FK
+        int question_id FK
+        text subject
+        text topic
+        text mastery_status
+        int wrong_count
+        text misconception_ids
+    }
+
+    assessment_questions {
+        int id PK
+        text subject
+        text grade_level
+        text topic
+        float difficulty
+        text question_type
+        jsonb content_zh
+        text review_status
+    }
+
+    assessment_sessions {
+        text id PK
+        text user_id
+        text assessment_type
+        text subject
+        text status
+        jsonb cat_state
+    }
+
+    assessment_reports {
+        text id PK
+        text session_id FK
+        jsonb scores
+        jsonb recommendations
+        text share_token
+    }
+
+    academic_profile_cache {
+        int user_id PK
+        jsonb profile_data
+        timestamp computed_at
+    }
+
+    goal_snapshots {
+        int id PK
+        int user_id FK
+        text goal_type
+        text goal_text
+        text status
+    }
+
+    biz_users ||--o{ subscriptions : "has"
+    biz_users ||--o{ usage_logs : "tracks"
+    biz_users ||--o{ student_ability_scores : "has"
+    biz_users ||--o{ ability_score_history : "logs"
+    biz_users ||--o{ mistake_book_entries : "records"
+    biz_users ||--o| academic_profile_cache : "cached"
+    biz_users ||--o{ goal_snapshots : "sets"
+    assessment_sessions ||--o| assessment_reports : "generates"
+    assessment_questions ||--o{ mistake_book_entries : "referenced"
+    </pre>
+  </div>
+
+  <!-- ================================================================== -->
+  <!-- 7. 测评系统 (CAT) -->
+  <!-- ================================================================== -->
+  <div class="diagram-container" id="assessment">
+    <h2>7. 测评系统 (CAT 自适应引擎)</h2>
+    <p class="desc">4 种测评类型 · 纯算法选题 · 能力估计 · 报告生成</p>
+    <pre class="mermaid">
+flowchart TB
+    subgraph Types["测评类型"]
+        T1["quick<br/>8 题 · 5 分钟"]
+        T2["subject_diagnostic<br/>15 题 · 20 分钟"]
+        T3["pre_admission<br/>20 题 · 25 分钟"]
+        T4["map_practice<br/>20 题 (MAP Growth)"]
+    end
+
+    START["POST /api/assessment/start<br/>选择科目 + 年级"] --> CAT
+
+    subgraph CAT["CAT 自适应算法"]
+        direction TB
+        INIT["初始难度 0.5"]
+        SELECT["选题: difficulty ± 0.2 窗口<br/>topic 均衡 · 避免重复"]
+        PRESENT["出题 → 用户作答"]
+        JUDGE["判定对错"]
+        ADJUST["难度调整<br/>对: +0.15 · 错: -0.15<br/>连续 2+: ±0.25"]
+        ESTIMATE["能力估计<br/>最近 5 题加权平均"]
+        CONVERGE{"收敛?<br/>std &lt; 0.05<br/>或达上限"}
+
+        INIT --> SELECT --> PRESENT --> JUDGE --> ADJUST --> ESTIMATE --> CONVERGE
+        CONVERGE -->|否| SELECT
+    end
+
+    CONVERGE -->|是| REPORT
+
+    subgraph REPORT["报告生成"]
+        SCORE["能力评分 0-100"]
+        LABEL["能力标签<br/>基础薄弱 → AP Ready"]
+        GAP["差距分析 + 知识热力图"]
+        REC["学习路径推荐"]
+        SHARE["分享链接 (share_token)"]
+    end
+
+    subgraph DataFlow["数据持久化"]
+        DB_S["assessment_sessions"]
+        DB_A["assessment_answers"]
+        DB_R["assessment_reports"]
+        DB_AB["student_ability_scores"]
+        DB_M["mistake_book_entries"]
+    end
+
+    REPORT --> DB_R
+    CAT --> DB_S
+    CAT --> DB_A
+    REPORT --> DB_AB
+    REPORT --> DB_M
+
+    style Types fill:#e3f2fd,stroke:#1565c0
+    style CAT fill:#e8f5e9,stroke:#2e7d32
+    style REPORT fill:#fff3e0,stroke:#e65100
+    style DataFlow fill:#f3e5f5,stroke:#6a1b9a
+    </pre>
+  </div>
+
+  <!-- ================================================================== -->
+  <!-- 8. 前端路由结构 -->
+  <!-- ================================================================== -->
+  <div class="diagram-container" id="frontend">
+    <h2>8. 前端路由结构</h2>
+    <p class="desc">Next.js 16 · App Router · 8 大路由 · A2UI 交互组件</p>
+    <pre class="mermaid">
+graph TB
+    subgraph Layout["RootLayout"]
+        AUTH["AuthProvider (Supabase)"]
+        I18N["I18nProvider (zh/en)"]
+        KYC["KycGuard (白名单放行)"]
+    end
+
+    subgraph PublicRoutes["公开路由"]
+        LANDING["/ landing<br/>Landing Page<br/>Hero · Features · Pricing"]
+        LOGIN["/ login<br/>WeChat + 手机号登录"]
+        WXCB["/ login/wechat-complete<br/>微信回调"]
+        ASS_START["/ assessment/start<br/>匿名测评入口"]
+        ASS_TAKE["/ assessment/[id]/take<br/>答题界面"]
+        ASS_REPORT["/ assessment/[id]/report<br/>测评报告"]
+        ASS_SHARE["/ assessment/shared/[token]<br/>公开分享报告"]
+    end
+
+    subgraph ProtectedRoutes["需登录路由"]
+        ONBOARD["/ onboarding<br/>角色选择 + KYC"]
+        CHAT["/ chat<br/>AI 对话 (主功能)<br/>ThreadList + ChatInterface"]
+        PROFILE["/ profile/academic<br/>学力档案面板"]
+    end
+
+    subgraph ChatComponents["Chat 核心组件"]
+        CI["ChatInterface"]
+        CM["ChatMessage"]
+        WS["WelcomeScreen"]
+        TL["ThreadList"]
+        SA["SubAgentIndicator"]
+        TC["ToolCallBox"]
+        A2["A2UI Renderer<br/>Card · Button · MCQ · List"]
+    end
+
+    subgraph Providers["Provider 层"]
+        CP["ClientProvider<br/>LangGraph SDK Client"]
+        CHP["ChatProvider<br/>useStream + 状态管理"]
+    end
+
+    Layout --> PublicRoutes
+    Layout --> ProtectedRoutes
+
+    CHAT --> CI
+    CI --> CM
+    CI --> WS
+    CI --> SA
+    CI --> TC
+    CM --> A2
+    CHAT --> TL
+    CHAT --> Providers
+    CP --> CHP
+
+    style Layout fill:#e0f7fa,stroke:#00838f
+    style PublicRoutes fill:#e8f5e9,stroke:#2e7d32
+    style ProtectedRoutes fill:#fff3e0,stroke:#e65100
+    style ChatComponents fill:#fce4ec,stroke:#c62828
+    style Providers fill:#f3e5f5,stroke:#6a1b9a
+    </pre>
+  </div>
+
+  <p class="timestamp">最后更新: 2026-02-21 &nbsp;·&nbsp; 自动生成自 basis-expert-council 代码库</p>
 
   <script>
     mermaid.initialize({
       startOnLoad: true,
       theme: 'default',
-      flowchart: { curve: 'basis', useMaxWidth: true },
-      sequence: { useMaxWidth: true }
+      flowchart: { curve: 'basis', useMaxWidth: true, htmlLabels: true },
+      sequence: { useMaxWidth: true, showSequenceNumbers: false },
+      er: { useMaxWidth: true }
     });
   </script>
 </body>

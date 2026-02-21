@@ -50,9 +50,11 @@ class QuestionTagger:
         self.batch_size = batch_size
         self.dry_run = dry_run
 
+        # 独立环境变量: TAXONOMY_API_KEY / TAXONOMY_BASE_URL
+        # 回退到通用 OPENAI_* 配置
         self.client = AsyncOpenAI(
-            api_key=os.getenv("OPENAI_API_KEY", ""),
-            base_url=os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1"),
+            api_key=os.getenv("TAXONOMY_API_KEY", os.getenv("OPENAI_API_KEY", "")),
+            base_url=os.getenv("TAXONOMY_BASE_URL", os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")),
         )
 
         self.bundle: TaxonomyBundle = load_taxonomy()

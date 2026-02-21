@@ -90,6 +90,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_tag.add_argument("--subject", default=None, help="按学科过滤")
     p_tag.add_argument("--grade", default=None, help="按年级过滤")
     p_tag.add_argument("--batch-size", type=int, default=5, help="每批题目数")
+    p_tag.add_argument("--model", default=None, help="指定 LLM 模型 (覆盖 TAXONOMY_LLM_MODEL)")
 
     # tag-stats — 标签分布统计
     sub.add_parser("tag-stats", help="标签分布统计")
@@ -317,6 +318,7 @@ async def cmd_tag(args):
     from ..taxonomy import QuestionTagger
 
     tagger = QuestionTagger(
+        model=args.model,
         batch_size=args.batch_size,
         dry_run=args.dry_run,
     )

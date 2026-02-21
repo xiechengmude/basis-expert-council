@@ -79,10 +79,33 @@ async def _daily_refresh_loop():
             await asyncio.sleep(3600)
 
 
+async def _memory_cleanup_loop():
+    """每天 4:00 AM 清理过期记忆。"""
+    while True:
+        try:
+            now = datetime.now()
+            next_run = (now + timedelta(days=1)).replace(hour=4, minute=0, second=0, microsecond=0)
+            if now.hour < 4:
+                next_run = now.replace(hour=4, minute=0, second=0, microsecond=0)
+            wait_sec = (next_run - now).total_seconds()
+            logger.info(f"Memory cleanup scheduled in {wait_sec:.0f}s")
+            await asyncio.sleep(wait_sec)
+
+            from .memory import cleanup_expired_memories
+            total = await cleanup_expired_memories()
+            logger.info(f"Memory cleanup: {total} expired memories deleted")
+        except asyncio.CancelledError:
+            break
+        except Exception as e:
+            logger.error(f"Memory cleanup loop error: {e}")
+            await asyncio.sleep(3600)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Startup: init DB schema + seed questions + daily refresh. Shutdown: close pool."""
+    """Startup: init DB schema + seed questions + daily refresh + memory cleanup. Shutdown: close pool."""
     refresh_task = None
+    memory_cleanup_task = None
     try:
         await db.init_schema()
         logger.info("Business database schema initialized")
@@ -92,11 +115,15 @@ async def lifespan(app: FastAPI):
         logger.info("Assessment question bank seeded")
         # Start daily profile refresh loop
         refresh_task = asyncio.create_task(_daily_refresh_loop())
+        # Start daily memory cleanup loop
+        memory_cleanup_task = asyncio.create_task(_memory_cleanup_loop())
     except Exception as e:
         logger.warning(f"Schema/seed init: {e}")
     yield
     if refresh_task:
         refresh_task.cancel()
+    if memory_cleanup_task:
+        memory_cleanup_task.cancel()
     await db.close_pool()
 
 
@@ -1245,6 +1272,260 @@ def _serialize_question(q: dict) -> dict:
         else:
             out[k] = v
     return out
+
+
+# ---------------------------------------------------------------------------
+# Memory: 用户记忆管理 API
+# ---------------------------------------------------------------------------
+
+
+@app.get("/api/memory")
+async def list_memories(request: Request):
+    """列出用户所有记忆（支持 ?category= 和 ?subject= 筛选）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    from .memory import get_memory, run_with_timeout, user_id_to_mem0
+
+    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
+    if not user or not user.get("supabase_uid"):
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    mem0_uid = user_id_to_mem0(user["supabase_uid"])
+    mem = get_memory()
+
+    try:
+        results = run_with_timeout(mem.get_all, user_id=mem0_uid)
+        memories = results.get("results", []) if isinstance(results, dict) else results
+    except Exception as e:
+        logger.warning(f"list_memories failed: {e}")
+        return JSONResponse(status_code=503, content={"error": "记忆服务暂不可用"})
+
+    # Filters
+    category_filter = request.query_params.get("category")
+    subject_filter = request.query_params.get("subject")
+
+    items = []
+    by_category: dict[str, int] = {}
+    by_subject: dict[str, int] = {}
+
+    for m in memories:
+        if not isinstance(m, dict):
+            continue
+        meta = m.get("metadata", {}) or {}
+        cat = meta.get("category", "other")
+        subj = meta.get("subject", "general")
+
+        by_category[cat] = by_category.get(cat, 0) + 1
+        by_subject[subj] = by_subject.get(subj, 0) + 1
+
+        if category_filter and cat != category_filter:
+            continue
+        if subject_filter and subj != subject_filter:
+            continue
+
+        items.append({
+            "id": m.get("id", ""),
+            "memory": m.get("memory", ""),
+            "category": cat,
+            "subject": subj,
+            "importance": meta.get("importance", "medium"),
+            "timestamp": meta.get("timestamp", ""),
+            "expires_at": meta.get("expires_at"),
+        })
+
+    return {
+        "memories": items,
+        "stats": {
+            "total": len(memories),
+            "by_category": by_category,
+            "by_subject": by_subject,
+        },
+    }
+
+
+@app.get("/api/memory/search")
+async def search_memories(request: Request):
+    """语义搜索记忆"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    q = request.query_params.get("q", "").strip()
+    if not q:
+        return JSONResponse(status_code=400, content={"error": "缺少搜索关键词 q"})
+
+    from .memory import get_memory, run_with_timeout, user_id_to_mem0
+
+    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
+    if not user or not user.get("supabase_uid"):
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    mem0_uid = user_id_to_mem0(user["supabase_uid"])
+    mem = get_memory()
+
+    try:
+        results = run_with_timeout(mem.search, query=q, user_id=mem0_uid, limit=20)
+        memories = results.get("results", []) if isinstance(results, dict) else results
+    except Exception as e:
+        logger.warning(f"search_memories failed: {e}")
+        return JSONResponse(status_code=503, content={"error": "记忆搜索暂不可用"})
+
+    items = []
+    for m in memories:
+        if not isinstance(m, dict):
+            continue
+        meta = m.get("metadata", {}) or {}
+        items.append({
+            "id": m.get("id", ""),
+            "memory": m.get("memory", ""),
+            "category": meta.get("category", "other"),
+            "subject": meta.get("subject", "general"),
+            "importance": meta.get("importance", "medium"),
+            "timestamp": meta.get("timestamp", ""),
+            "expires_at": meta.get("expires_at"),
+            "score": m.get("score"),
+        })
+
+    return {"memories": items}
+
+
+@app.put("/api/memory/{memory_id}")
+async def update_memory_endpoint(memory_id: str, request: Request):
+    """更新记忆内容（含所有权验证）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    body = await request.json()
+    new_content = body.get("content", "").strip()
+    if not new_content:
+        return JSONResponse(status_code=400, content={"error": "内容不能为空"})
+
+    from .memory import get_memory, run_with_timeout, user_id_to_mem0
+
+    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
+    if not user or not user.get("supabase_uid"):
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    mem0_uid = user_id_to_mem0(user["supabase_uid"])
+    mem = get_memory()
+
+    # Ownership check: verify memory belongs to this user
+    try:
+        existing = run_with_timeout(mem.get, memory_id=memory_id)
+        if not existing:
+            return JSONResponse(status_code=404, content={"error": "记忆不存在"})
+        # Check user_id matches
+        existing_list = existing if isinstance(existing, list) else [existing]
+        for e in existing_list:
+            if isinstance(e, dict):
+                e_uid = e.get("user_id", "")
+                if e_uid and e_uid != mem0_uid:
+                    return JSONResponse(status_code=403, content={"error": "无权操作此记忆"})
+    except Exception:
+        pass  # If get fails, proceed with update (Mem0 will validate)
+
+    try:
+        run_with_timeout(mem.update, memory_id=memory_id, data=new_content)
+        return {"success": True, "memory_id": memory_id}
+    except Exception as e:
+        logger.warning(f"update_memory failed: {e}")
+        return JSONResponse(status_code=500, content={"error": "更新记忆失败"})
+
+
+@app.delete("/api/memory/{memory_id}")
+async def delete_memory_endpoint(memory_id: str, request: Request):
+    """删除单条记忆（含所有权验证）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    from .memory import get_memory, run_with_timeout, user_id_to_mem0
+
+    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
+    if not user or not user.get("supabase_uid"):
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    mem0_uid = user_id_to_mem0(user["supabase_uid"])
+    mem = get_memory()
+
+    # Ownership check
+    try:
+        existing = run_with_timeout(mem.get, memory_id=memory_id)
+        if existing:
+            existing_list = existing if isinstance(existing, list) else [existing]
+            for e in existing_list:
+                if isinstance(e, dict):
+                    e_uid = e.get("user_id", "")
+                    if e_uid and e_uid != mem0_uid:
+                        return JSONResponse(status_code=403, content={"error": "无权操作此记忆"})
+    except Exception:
+        pass
+
+    try:
+        run_with_timeout(mem.delete, memory_id=memory_id)
+        return {"success": True, "memory_id": memory_id}
+    except Exception as e:
+        logger.warning(f"delete_memory failed: {e}")
+        return JSONResponse(status_code=500, content={"error": "删除记忆失败"})
+
+
+@app.post("/api/memory/batch-delete")
+async def batch_delete_memories(request: Request):
+    """批量删除记忆"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    body = await request.json()
+    memory_ids = body.get("memory_ids", [])
+    if not memory_ids:
+        return JSONResponse(status_code=400, content={"error": "缺少 memory_ids"})
+
+    from .memory import get_memory, run_with_timeout, user_id_to_mem0
+
+    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
+    if not user or not user.get("supabase_uid"):
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    mem = get_memory()
+    deleted = 0
+    failed = 0
+
+    for mid in memory_ids:
+        try:
+            run_with_timeout(mem.delete, memory_id=mid)
+            deleted += 1
+        except Exception:
+            failed += 1
+
+    return {"deleted": deleted, "failed": failed}
+
+
+@app.delete("/api/memory/all")
+async def delete_all_memories(request: Request):
+    """清空用户全部记忆"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    from .memory import get_memory, run_with_timeout, user_id_to_mem0
+
+    user = await db.get_user_by_supabase_uid_or_biz_id(auth_info["user_id"])
+    if not user or not user.get("supabase_uid"):
+        return JSONResponse(status_code=404, content={"error": "用户不存在"})
+
+    mem0_uid = user_id_to_mem0(user["supabase_uid"])
+    mem = get_memory()
+
+    try:
+        run_with_timeout(mem.delete_all, user_id=mem0_uid)
+        return {"success": True}
+    except Exception as e:
+        logger.warning(f"delete_all_memories failed: {e}")
+        return JSONResponse(status_code=500, content={"error": "清空记忆失败"})
 
 
 # ---------------------------------------------------------------------------

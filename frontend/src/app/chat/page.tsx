@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Assistant } from "@langchain/langgraph-sdk";
 import Link from "next/link";
 import { ClientProvider, useClient } from "@/providers/ClientProvider";
-import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle, ChevronDown, Globe, Loader2, BarChart3 } from "lucide-react";
+import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle, ChevronDown, Globe, Loader2, BarChart3, Brain } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
 import { useUser } from "@/app/hooks/useUser";
 import { useI18n, LOCALE_LABELS, SUPPORTED_LOCALES } from "@/i18n";
@@ -235,6 +235,14 @@ function ChatPageInner({
                       >
                         <BarChart3 className="h-4 w-4 text-muted-foreground" />
                         {t("menu.academic_profile")}
+                      </Link>
+                      <Link
+                        href="/profile/memory"
+                        onClick={() => setUserMenuOpen(false)}
+                        className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-foreground transition-colors hover:bg-accent"
+                      >
+                        <Brain className="h-4 w-4 text-muted-foreground" />
+                        {t("menu.memory")}
                       </Link>
                       <button
                         type="button"
