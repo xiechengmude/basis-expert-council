@@ -668,6 +668,38 @@ async def seed_question_bank() -> None:
     except Exception as e:
         logger.warning(f"Bilingual English seed unavailable ({e})")
 
+    try:
+        from ..seed_questions_physics import ALL_PHYSICS_QUESTIONS
+        inserted = await db.bulk_insert_questions(ALL_PHYSICS_QUESTIONS)
+        total_inserted += inserted
+        logger.info(f"Seeded {inserted} bilingual physics questions (G5-G8)")
+    except Exception as e:
+        logger.warning(f"Bilingual physics seed unavailable ({e})")
+
+    try:
+        from ..seed_questions_chemistry import ALL_CHEMISTRY_QUESTIONS
+        inserted = await db.bulk_insert_questions(ALL_CHEMISTRY_QUESTIONS)
+        total_inserted += inserted
+        logger.info(f"Seeded {inserted} bilingual chemistry questions (G5-G8)")
+    except Exception as e:
+        logger.warning(f"Bilingual chemistry seed unavailable ({e})")
+
+    try:
+        from ..seed_questions_biology import ALL_BIOLOGY_QUESTIONS
+        inserted = await db.bulk_insert_questions(ALL_BIOLOGY_QUESTIONS)
+        total_inserted += inserted
+        logger.info(f"Seeded {inserted} bilingual biology questions (G5-G8)")
+    except Exception as e:
+        logger.warning(f"Bilingual biology seed unavailable ({e})")
+
+    try:
+        from ..seed_questions_history import ALL_HISTORY_QUESTIONS
+        inserted = await db.bulk_insert_questions(ALL_HISTORY_QUESTIONS)
+        total_inserted += inserted
+        logger.info(f"Seeded {inserted} bilingual history questions (G5-G8)")
+    except Exception as e:
+        logger.warning(f"Bilingual history seed unavailable ({e})")
+
     if total_inserted > 0:
         logger.info(f"Total seeded: {total_inserted} questions")
         return
