@@ -11,6 +11,7 @@ import {
   Loader2,
   ShieldCheck,
 } from "lucide-react";
+import { useI18n } from "@/i18n";
 
 /* ------------------------------------------------------------------ */
 /*  LoginForm (inner component, uses useSearchParams)                  */
@@ -19,6 +20,7 @@ function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirect = searchParams.get("redirect") || "/";
+  const { t } = useI18n();
 
   /* ---- state ---- */
   const [activeTab, setActiveTab] = useState<"phone" | "wechat">("phone");
@@ -84,7 +86,7 @@ function LoginForm() {
   /* ---- send SMS code ---- */
   const handleSendCode = useCallback(async () => {
     if (!/^1\d{10}$/.test(phone)) {
-      setError("请输入有效的 11 位手机号");
+      setError(t("login.error.invalidPhone"));
       return;
     }
 
@@ -99,26 +101,26 @@ function LoginForm() {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || "验证码发送失败，请稍后重试");
+        setError(data.error || t("login.error.sendFailed"));
         return;
       }
 
       setCountdown(60);
     } catch {
-      setError("网络连接失败，请检查网络后重试");
+      setError(t("login.error.network"));
     } finally {
       setSendingCode(false);
     }
-  }, [phone]);
+  }, [phone, t]);
 
   /* ---- phone login ---- */
   const handlePhoneLogin = useCallback(async () => {
     if (!phone || !code) {
-      setError("请输入手机号和验证码");
+      setError(t("login.error.missingFields"));
       return;
     }
     if (code.length < 4) {
-      setError("请输入完整的验证码");
+      setError(t("login.error.incompleteCode"));
       return;
     }
 
@@ -133,7 +135,7 @@ function LoginForm() {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || "登录失败，请重试");
+        setError(data.error || t("login.error.loginFailed"));
         return;
       }
 
@@ -151,11 +153,11 @@ function LoginForm() {
 
       router.push(redirect);
     } catch {
-      setError("网络连接失败，请检查网络后重试");
+      setError(t("login.error.network"));
     } finally {
       setLoggingIn(false);
     }
-  }, [phone, code, redirect, router, syncBasisToken]);
+  }, [phone, code, redirect, router, syncBasisToken, t]);
 
   /* ---- WeChat login ---- */
   const handleWeChatLogin = useCallback(() => {
@@ -193,10 +195,10 @@ function LoginForm() {
             className="mx-auto mb-4 h-16 w-16 drop-shadow-lg"
           />
           <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-            BasisPilot 贝领
+            {t("login.title")}
           </h1>
           <p className="mt-1.5 text-sm text-gray-500">
-            AI 驱动的国际学校学习助手
+            {t("login.subtitle")}
           </p>
         </div>
 
@@ -214,7 +216,7 @@ function LoginForm() {
               }`}
             >
               <Smartphone className="h-4 w-4" />
-              手机登录
+              {t("login.tab.phone")}
             </button>
             <button
               type="button"
@@ -226,7 +228,7 @@ function LoginForm() {
               }`}
             >
               <MessageSquare className="h-4 w-4" />
-              微信登录
+              {t("login.tab.wechat")}
             </button>
           </div>
 
@@ -238,7 +240,7 @@ function LoginForm() {
                 {/* Phone input */}
                 <div>
                   <label className="mb-1.5 block text-xs font-medium text-gray-600">
-                    手机号
+                    {t("login.label.phone")}
                   </label>
                   <div className="flex gap-2">
                     <div className="flex h-11 items-center rounded-lg border border-gray-200 bg-gray-50 px-3 text-sm text-gray-500">
@@ -247,7 +249,7 @@ function LoginForm() {
                     <input
                       type="tel"
                       inputMode="numeric"
-                      placeholder="请输入 11 位手机号"
+                      placeholder={t("login.placeholder.phone")}
                       value={phone}
                       onChange={(e) =>
                         setPhone(e.target.value.replace(/\D/g, "").slice(0, 11))
@@ -260,13 +262,13 @@ function LoginForm() {
                 {/* Verification code */}
                 <div>
                   <label className="mb-1.5 block text-xs font-medium text-gray-600">
-                    验证码
+                    {t("login.label.code")}
                   </label>
                   <div className="flex gap-2">
                     <input
                       type="text"
                       inputMode="numeric"
-                      placeholder="请输入验证码"
+                      placeholder={t("login.placeholder.code")}
                       value={code}
                       onChange={(e) =>
                         setCode(e.target.value.replace(/\D/g, "").slice(0, 6))
@@ -284,16 +286,16 @@ function LoginForm() {
                       className="flex h-11 w-[120px] shrink-0 items-center justify-center gap-1.5 rounded-lg border border-brand-600 text-sm font-medium text-brand-600 transition-colors hover:bg-brand-600/5 disabled:cursor-not-allowed disabled:border-gray-200 disabled:text-gray-400 disabled:hover:bg-transparent"
                     >
                       {countdown > 0 ? (
-                        `${countdown}s 后重发`
+                        t("login.resendCountdown", { seconds: countdown })
                       ) : sendingCode ? (
                         <>
                           <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                          发送中
+                          {t("login.sending")}
                         </>
                       ) : (
                         <>
                           <Send className="h-3.5 w-3.5" />
-                          获取验证码
+                          {t("login.sendCode")}
                         </>
                       )}
                     </button>
@@ -317,12 +319,12 @@ function LoginForm() {
                   {loggingIn ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      登录中...
+                      {t("login.loggingIn")}
                     </>
                   ) : (
                     <>
                       <ShieldCheck className="h-4 w-4" />
-                      登录
+                      {t("login.loginButton")}
                     </>
                   )}
                 </button>
@@ -344,7 +346,7 @@ function LoginForm() {
                     </svg>
                   </div>
                   <p className="text-sm text-gray-500">
-                    使用微信账号快速安全登录
+                    {t("login.wechat.desc")}
                   </p>
                 </div>
 
@@ -368,7 +370,7 @@ function LoginForm() {
                   >
                     <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05a6.329 6.329 0 0 1-.262-1.82c0-3.563 3.328-6.451 7.434-6.451.258 0 .513.013.764.036C16.893 4.523 13.122 2.188 8.691 2.188zm-2.6 4.408c.56 0 1.016.455 1.016 1.016 0 .56-.455 1.016-1.015 1.016-.56 0-1.016-.455-1.016-1.016 0-.56.456-1.016 1.016-1.016zm5.201 0c.56 0 1.016.455 1.016 1.016 0 .56-.455 1.016-1.016 1.016-.56 0-1.015-.455-1.015-1.016 0-.56.455-1.016 1.015-1.016zm4.49 3.87c-3.559 0-6.45 2.488-6.45 5.56 0 3.07 2.891 5.558 6.45 5.558a7.482 7.482 0 0 0 2.145-.314.618.618 0 0 1 .51.07l1.372.8a.238.238 0 0 0 .122.04.213.213 0 0 0 .21-.213c0-.052-.02-.103-.034-.154l-.282-1.067a.425.425 0 0 1 .154-.478C21.165 19.2 22.133 17.47 22.133 15.56v-.434c-.244-2.838-2.924-4.66-5.65-4.66zm-2.143 3.27c.406 0 .735.329.735.735a.735.735 0 0 1-.735.735.735.735 0 0 1-.735-.735c0-.406.329-.735.735-.735zm4.291 0c.406 0 .735.329.735.735a.735.735 0 0 1-.735.735.735.735 0 0 1-.735-.735c0-.406.329-.735.735-.735z" />
                   </svg>
-                  微信一键登录
+                  {t("login.wechat.button")}
                 </button>
               </div>
             )}
@@ -377,7 +379,7 @@ function LoginForm() {
 
         {/* ---- Footer ---- */}
         <p className="mt-6 text-center text-xs leading-5 text-gray-400">
-          登录即表示您同意我们的服务条款和隐私政策
+          {t("login.footer")}
         </p>
       </div>
     </div>
@@ -394,7 +396,7 @@ export default function LoginPage() {
         <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-brand-50 to-white">
           <div className="text-center">
             <Loader2 className="mx-auto h-8 w-8 animate-spin text-brand-600" />
-            <p className="mt-3 text-sm text-gray-400">加载中...</p>
+            <p className="mt-3 text-sm text-gray-400">Loading...</p>
           </div>
         </div>
       }

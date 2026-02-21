@@ -9,6 +9,7 @@ import { RoleSelector } from "@/app/components/onboarding/RoleSelector";
 import { StudentProfileForm } from "@/app/components/onboarding/StudentProfileForm";
 import { ParentLinkForm } from "@/app/components/onboarding/ParentLinkForm";
 import { TeacherCompleteForm } from "@/app/components/onboarding/TeacherCompleteForm";
+import { useI18n } from "@/i18n";
 
 type Step = "role" | "profile";
 type Role = "student" | "parent" | "teacher";
@@ -16,6 +17,7 @@ type Role = "student" | "parent" | "teacher";
 export default function OnboardingPage() {
   const router = useRouter();
   const { kycCompleted, refreshKycStatus } = useKyc();
+  const { t } = useI18n();
   const [step, setStep] = useState<Step>("role");
   const [role, setRole] = useState<Role | null>(null);
 
@@ -54,13 +56,13 @@ export default function OnboardingPage() {
             className="mx-auto mb-4 h-16 w-16 drop-shadow-lg"
           />
           <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-            {isEditMode ? "更新你的资料" : "完善你的资料"}
+            {isEditMode ? t("onboarding.title.edit") : t("onboarding.title.new")}
           </h1>
           <p className="mt-1.5 flex items-center justify-center gap-1.5 text-sm text-gray-500">
             <Sparkles className="h-3.5 w-3.5 text-brand-500" />
             {isEditMode
-              ? "修改你的学习画像，获得更精准的 AI 建议"
-              : "帮助我们为你提供更精准的 AI 学习建议"}
+              ? t("onboarding.subtitle.edit")
+              : t("onboarding.subtitle.new")}
           </p>
         </div>
 
@@ -93,7 +95,7 @@ export default function OnboardingPage() {
         </div>
 
         <p className="mt-6 text-center text-xs leading-5 text-gray-400">
-          这些信息仅用于个性化推荐，你随时可以在设置中修改
+          {t("onboarding.footer")}
         </p>
 
         {/* Edit mode: back to main page link */}
@@ -104,7 +106,7 @@ export default function OnboardingPage() {
               onClick={() => router.push("/")}
               className="text-sm font-medium text-brand-600 transition-colors hover:text-brand-700"
             >
-              返回主页
+              {t("onboarding.backToHome")}
             </button>
           </div>
         )}

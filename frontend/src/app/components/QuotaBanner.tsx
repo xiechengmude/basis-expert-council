@@ -3,7 +3,7 @@
 import React from "react";
 import { Zap, Crown, AlertTriangle } from "lucide-react";
 import type { QuotaInfo } from "@/app/hooks/useUser";
-import { getPlanName } from "@/app/hooks/useUser";
+import { useI18n } from "@/i18n";
 
 interface QuotaBannerProps {
   quota: QuotaInfo | null;
@@ -11,6 +11,8 @@ interface QuotaBannerProps {
 }
 
 export function QuotaBanner({ quota, className = "" }: QuotaBannerProps) {
+  const { t } = useI18n();
+
   if (!quota) return null;
 
   const isUnlimited = quota.daily_limit === -1;
@@ -25,13 +27,13 @@ export function QuotaBanner({ quota, className = "" }: QuotaBannerProps) {
       >
         <AlertTriangle size={14} className="shrink-0 text-red-500" />
         <span className="text-red-700">
-          今日对话次数已用完（{quota.used_today}/{quota.daily_limit}）
+          {t("quota.exhausted", { used: quota.used_today, limit: quota.daily_limit })}
         </span>
         <a
           href="/landing#pricing"
           className="ml-auto shrink-0 rounded-md bg-red-500 px-2 py-0.5 text-xs text-white hover:bg-red-600"
         >
-          升级会员
+          {t("quota.upgrade")}
         </a>
       </div>
     );
@@ -44,13 +46,13 @@ export function QuotaBanner({ quota, className = "" }: QuotaBannerProps) {
       >
         <Zap size={14} className="shrink-0 text-amber-500" />
         <span className="text-amber-700">
-          今日剩余 {quota.remaining} 次对话（{quota.used_today}/{quota.daily_limit}）
+          {t("quota.low", { remaining: quota.remaining, used: quota.used_today, limit: quota.daily_limit })}
         </span>
         <a
           href="/landing#pricing"
           className="ml-auto shrink-0 rounded-md border border-amber-300 px-2 py-0.5 text-xs text-amber-700 hover:bg-amber-100"
         >
-          升级
+          {t("quota.upgradeShort")}
         </a>
       </div>
     );
@@ -63,9 +65,9 @@ export function QuotaBanner({ quota, className = "" }: QuotaBannerProps) {
     >
       {isPriority && <Crown size={12} className="text-amber-500" />}
       <span>
-        {getPlanName(quota.plan)}
-        {!isUnlimited && ` · 今日 ${quota.used_today}/${quota.daily_limit}`}
-        {isUnlimited && " · 无限对话"}
+        {t(`plan.${quota.plan}`)}
+        {!isUnlimited && ` · ${t("quota.normal", { used: quota.used_today, limit: quota.daily_limit })}`}
+        {isUnlimited && ` · ${t("quota.unlimited")}`}
       </span>
     </div>
   );

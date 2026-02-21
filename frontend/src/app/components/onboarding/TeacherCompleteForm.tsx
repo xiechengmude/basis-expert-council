@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Loader2, BookOpen, ChevronLeft, BarChart2, FileText } from "lucide-react";
 import { fetchWithAuth } from "@/app/hooks/useUser";
+import { useI18n } from "@/i18n";
 
 interface TeacherCompleteFormProps {
   onComplete: () => void;
@@ -10,6 +11,7 @@ interface TeacherCompleteFormProps {
 }
 
 export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormProps) {
+  const { t } = useI18n();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -24,10 +26,10 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
         onComplete();
       } else {
         const data = await res.json();
-        setError(data.error || "操作失败");
+        setError(data.error || t("teacher.error.failed"));
       }
     } catch {
-      setError("网络连接失败");
+      setError(t("teacher.error.network"));
     } finally {
       setSubmitting(false);
     }
@@ -39,9 +41,9 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 shadow-sm">
           <BookOpen className="h-8 w-8 text-blue-600" />
         </div>
-        <h2 className="text-lg font-bold text-gray-900">教师身份已设置</h2>
+        <h2 className="text-lg font-bold text-gray-900">{t("teacher.title")}</h2>
         <p className="mt-2 text-sm leading-relaxed text-gray-500">
-          欢迎加入 BasisPilot 教师助手
+          {t("teacher.subtitle")}
         </p>
       </div>
 
@@ -51,8 +53,8 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
             <BarChart2 className="h-3 w-3 text-blue-700" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-800">AI 辅助教学</p>
-            <p className="text-xs text-gray-500">智能分析学情，辅助备课和教学设计</p>
+            <p className="text-sm font-medium text-gray-800">{t("teacher.aiTeaching.title")}</p>
+            <p className="text-xs text-gray-500">{t("teacher.aiTeaching.desc")}</p>
           </div>
         </div>
         <div className="flex items-start gap-3">
@@ -60,8 +62,8 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
             <FileText className="h-3 w-3 text-blue-700" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-800">生成教学报告</p>
-            <p className="text-xs text-gray-500">快速生成学生评估和班级分析报告</p>
+            <p className="text-sm font-medium text-gray-800">{t("teacher.reports.title")}</p>
+            <p className="text-xs text-gray-500">{t("teacher.reports.desc")}</p>
           </div>
         </div>
       </div>
@@ -79,7 +81,7 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
           className="flex h-12 items-center justify-center gap-1.5 rounded-xl border border-gray-200 px-4 text-sm font-medium text-gray-600 transition-all hover:bg-gray-50 hover:shadow-sm"
         >
           <ChevronLeft className="h-4 w-4" />
-          返回
+          {t("teacher.back")}
         </button>
         <button
           type="button"
@@ -90,10 +92,10 @@ export function TeacherCompleteForm({ onComplete, onBack }: TeacherCompleteFormP
           {submitting ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" />
-              处理中...
+              {t("teacher.processing")}
             </>
           ) : (
-            "开始使用"
+            t("teacher.start")
           )}
         </button>
       </div>

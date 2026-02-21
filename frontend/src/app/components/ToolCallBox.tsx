@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ToolCall, ActionRequest, ReviewConfig } from "@/app/types/types";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/i18n";
 import { LoadExternalComponent } from "@langchain/langgraph-sdk/react-ui";
 import { ToolApprovalInterrupt } from "@/app/components/ToolApprovalInterrupt";
 import type { FriendlyToolConfig } from "@/app/config/toolDisplayConfig";
@@ -42,6 +43,7 @@ export const ToolCallBox = React.memo<ToolCallBoxProps>(
     onResume,
     isLoading,
   }) => {
+    const { t } = useI18n();
     const isFriendly = !!displayConfig;
 
     // friendly 工具默认折叠；GenUI / actionRequest 默认展开
@@ -61,11 +63,11 @@ export const ToolCallBox = React.memo<ToolCallBoxProps>(
       };
     }, [toolCall]);
 
-    // 友好展示：使用配置的中文名称和状态文案
+    // 友好展示：使用 i18n 解析配置中的 key
     const displayName = isFriendly
       ? status === "pending"
-        ? displayConfig.pendingText
-        : displayConfig.label
+        ? t(displayConfig.pendingText)
+        : t(displayConfig.label)
       : name;
 
     const statusIcon = useMemo(() => {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Loader2, Users, ChevronLeft, Heart, ArrowRight } from "lucide-react";
 import { fetchWithAuth } from "@/app/hooks/useUser";
+import { useI18n } from "@/i18n";
 
 interface ParentLinkFormProps {
   onComplete: () => void;
@@ -10,6 +11,7 @@ interface ParentLinkFormProps {
 }
 
 export function ParentLinkForm({ onComplete, onBack }: ParentLinkFormProps) {
+  const { t } = useI18n();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -24,10 +26,10 @@ export function ParentLinkForm({ onComplete, onBack }: ParentLinkFormProps) {
         onComplete();
       } else {
         const data = await res.json();
-        setError(data.error || "操作失败");
+        setError(data.error || t("parent.error.failed"));
       }
     } catch {
-      setError("网络连接失败");
+      setError(t("parent.error.network"));
     } finally {
       setSubmitting(false);
     }
@@ -39,9 +41,9 @@ export function ParentLinkForm({ onComplete, onBack }: ParentLinkFormProps) {
         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100 to-amber-200 shadow-sm">
           <Users className="h-8 w-8 text-amber-600" />
         </div>
-        <h2 className="text-lg font-bold text-gray-900">家长身份已设置</h2>
+        <h2 className="text-lg font-bold text-gray-900">{t("parent.title")}</h2>
         <p className="mt-2 text-sm leading-relaxed text-gray-500">
-          欢迎您加入 BasisPilot 家长社区
+          {t("parent.subtitle")}
         </p>
       </div>
 
@@ -51,8 +53,8 @@ export function ParentLinkForm({ onComplete, onBack }: ParentLinkFormProps) {
             <Heart className="h-3 w-3 text-amber-700" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-800">绑定孩子的账号</p>
-            <p className="text-xs text-gray-500">登录后在「个人资料」中绑定，查看学习进度</p>
+            <p className="text-sm font-medium text-gray-800">{t("parent.bindChild.title")}</p>
+            <p className="text-xs text-gray-500">{t("parent.bindChild.desc")}</p>
           </div>
         </div>
         <div className="flex items-start gap-3">
@@ -60,8 +62,8 @@ export function ParentLinkForm({ onComplete, onBack }: ParentLinkFormProps) {
             <ArrowRight className="h-3 w-3 text-amber-700" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-800">获取学习报告</p>
-            <p className="text-xs text-gray-500">定期了解孩子的学业表现和成长建议</p>
+            <p className="text-sm font-medium text-gray-800">{t("parent.reports.title")}</p>
+            <p className="text-xs text-gray-500">{t("parent.reports.desc")}</p>
           </div>
         </div>
       </div>
@@ -79,7 +81,7 @@ export function ParentLinkForm({ onComplete, onBack }: ParentLinkFormProps) {
           className="flex h-12 items-center justify-center gap-1.5 rounded-xl border border-gray-200 px-4 text-sm font-medium text-gray-600 transition-all hover:bg-gray-50 hover:shadow-sm"
         >
           <ChevronLeft className="h-4 w-4" />
-          返回
+          {t("parent.back")}
         </button>
         <button
           type="button"
@@ -90,10 +92,10 @@ export function ParentLinkForm({ onComplete, onBack }: ParentLinkFormProps) {
           {submitting ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" />
-              处理中...
+              {t("parent.processing")}
             </>
           ) : (
-            "开始使用"
+            t("parent.start")
           )}
         </button>
       </div>

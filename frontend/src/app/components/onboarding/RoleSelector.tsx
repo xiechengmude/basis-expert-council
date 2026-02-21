@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { GraduationCap, Users, BookOpen, Loader2, Check } from "lucide-react";
 import { fetchWithAuth } from "@/app/hooks/useUser";
+import { useI18n } from "@/i18n";
 
 type Role = "student" | "parent" | "teacher";
 
@@ -12,8 +13,8 @@ interface RoleSelectorProps {
 
 const ROLES: {
   value: Role;
-  label: string;
-  desc: string;
+  labelKey: string;
+  descKey: string;
   icon: typeof GraduationCap;
   activeClasses: string;
   iconBg: string;
@@ -21,8 +22,8 @@ const ROLES: {
 }[] = [
   {
     value: "student",
-    label: "我是学生",
-    desc: "BASIS 在读学生，获取 AI 学伴辅导",
+    labelKey: "role.student",
+    descKey: "role.student.desc",
     icon: GraduationCap,
     activeClasses: "border-brand-500 bg-brand-50/80 ring-2 ring-brand-500/20",
     iconBg: "bg-brand-100 text-brand-600",
@@ -30,8 +31,8 @@ const ROLES: {
   },
   {
     value: "parent",
-    label: "我是家长",
-    desc: "关注孩子的学业发展与规划",
+    labelKey: "role.parent",
+    descKey: "role.parent.desc",
     icon: Users,
     activeClasses: "border-amber-500 bg-amber-50/80 ring-2 ring-amber-500/20",
     iconBg: "bg-amber-100 text-amber-600",
@@ -39,8 +40,8 @@ const ROLES: {
   },
   {
     value: "teacher",
-    label: "我是老师",
-    desc: "教学辅助、学情分析与报告",
+    labelKey: "role.teacher",
+    descKey: "role.teacher.desc",
     icon: BookOpen,
     activeClasses: "border-blue-500 bg-blue-50/80 ring-2 ring-blue-500/20",
     iconBg: "bg-blue-100 text-blue-600",
@@ -49,6 +50,7 @@ const ROLES: {
 ];
 
 export function RoleSelector({ onSelect }: RoleSelectorProps) {
+  const { t } = useI18n();
   const [selected, setSelected] = useState<Role | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -66,10 +68,10 @@ export function RoleSelector({ onSelect }: RoleSelectorProps) {
         onSelect(selected);
       } else {
         const data = await res.json();
-        setError(data.error || "设置角色失败");
+        setError(data.error || t("role.error.setFailed"));
       }
     } catch {
-      setError("网络连接失败");
+      setError(t("role.error.network"));
     } finally {
       setSubmitting(false);
     }
@@ -78,14 +80,14 @@ export function RoleSelector({ onSelect }: RoleSelectorProps) {
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h2 className="text-xl font-bold text-gray-900">选择你的身份</h2>
+        <h2 className="text-xl font-bold text-gray-900">{t("role.title")}</h2>
         <p className="mt-1.5 text-sm text-gray-500">
-          我们将为你提供个性化的 AI 学习体验
+          {t("role.subtitle")}
         </p>
       </div>
 
       <div className="space-y-3">
-        {ROLES.map(({ value, label, desc, icon: Icon, activeClasses, iconBg, iconActiveClasses }) => {
+        {ROLES.map(({ value, labelKey, descKey, icon: Icon, activeClasses, iconBg, iconActiveClasses }) => {
           const isActive = selected === value;
           return (
             <button
@@ -107,9 +109,9 @@ export function RoleSelector({ onSelect }: RoleSelectorProps) {
               </div>
               <div className="flex-1">
                 <div className="text-base font-semibold text-gray-900">
-                  {label}
+                  {t(labelKey)}
                 </div>
-                <div className="mt-0.5 text-sm text-gray-500">{desc}</div>
+                <div className="mt-0.5 text-sm text-gray-500">{t(descKey)}</div>
               </div>
               {isActive && (
                 <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-600 shadow-sm">
@@ -136,10 +138,10 @@ export function RoleSelector({ onSelect }: RoleSelectorProps) {
         {submitting ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
-            设置中...
+            {t("role.setting")}
           </>
         ) : (
-          "继续"
+          t("role.continue")
         )}
       </button>
     </div>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp, Loader2, CircleCheckBig } from "lucide-react";
 import type { SubAgent } from "@/app/types/types";
 import { getSubAgentDisplayName } from "@/app/config/toolDisplayConfig";
+import { useI18n } from "@/i18n";
 
 interface SubAgentIndicatorProps {
   subAgent: SubAgent;
@@ -14,9 +15,14 @@ interface SubAgentIndicatorProps {
 
 export const SubAgentIndicator = React.memo<SubAgentIndicatorProps>(
   ({ subAgent, onClick, isExpanded = true }) => {
+    const { t } = useI18n();
     const displayName = useMemo(
-      () => getSubAgentDisplayName(subAgent.subAgentName),
-      [subAgent.subAgentName]
+      () => {
+        const key = getSubAgentDisplayName(subAgent.subAgentName);
+        const resolved = t(key);
+        return resolved !== key ? resolved : key;
+      },
+      [subAgent.subAgentName, t]
     );
 
     const isPending = subAgent.status === "pending" || subAgent.status === "active";

@@ -8,9 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Assistant } from "@langchain/langgraph-sdk";
 import Link from "next/link";
 import { ClientProvider, useClient } from "@/providers/ClientProvider";
-import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle, ChevronDown } from "lucide-react";
+import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle, ChevronDown, Globe } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
 import { useUser } from "@/app/hooks/useUser";
+import { useI18n, LOCALE_LABELS, SUPPORTED_LOCALES } from "@/i18n";
 import { QuotaBanner } from "@/app/components/QuotaBanner";
 import {
   ResizableHandle,
@@ -37,6 +38,7 @@ function HomePageInner({
   const client = useClient();
   const { user, signOut } = useAuth();
   const { profile, planName, quota, refreshQuota } = useUser();
+  const { t, locale, setLocale } = useI18n();
   const [threadId, setThreadId] = useQueryState("threadId");
   const [sidebar, setSidebar] = useQueryState("sidebar");
 
@@ -138,7 +140,7 @@ function HomePageInner({
         <header className="flex h-16 items-center justify-between border-b border-border px-4 sm:px-6">
           <div className="flex items-center gap-3">
             <img src="/logo-mark.svg" alt="BasisPilot" className="h-7 w-7" />
-            <h1 className="text-lg font-semibold sm:text-xl">贝领</h1>
+            <h1 className="text-lg font-semibold sm:text-xl">{t("header.brand")}</h1>
             {!sidebar && (
               <Button
                 variant="ghost"
@@ -147,7 +149,7 @@ function HomePageInner({
                 className="rounded-md border border-border bg-card p-3 text-foreground hover:bg-accent"
               >
                 <MessagesSquare className="mr-2 h-4 w-4" />
-                对话
+                {t("header.conversations")}
                 {interruptCount > 0 && (
                   <span className="ml-2 inline-flex min-h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-[10px] text-destructive-foreground">
                     {interruptCount}
@@ -168,7 +170,7 @@ function HomePageInner({
               className="hidden sm:inline-flex"
             >
               <Settings className="mr-2 h-4 w-4" />
-              设置
+              {t("header.settings")}
             </Button>
             <Button
               variant="outline"
@@ -178,7 +180,7 @@ function HomePageInner({
               className="border-brand-600 bg-brand-600 text-white hover:bg-brand-600/80"
             >
               <SquarePen className="mr-1 h-4 w-4" />
-              <span className="hidden sm:inline">新对话</span>
+              <span className="hidden sm:inline">{t("header.newChat")}</span>
             </Button>
             {user && (
               <div className="relative" ref={userMenuRef}>
@@ -191,7 +193,7 @@ function HomePageInner({
                     {(profile?.user.nickname || user.phone || user.email || "U").charAt(0).toUpperCase()}
                   </div>
                   <span className="hidden max-w-[100px] truncate text-sm text-foreground sm:inline">
-                    {profile?.user.nickname || user.phone || user.email || "用户"}
+                    {profile?.user.nickname || user.phone || user.email || t("menu.user_fallback")}
                   </span>
                   <ChevronDown className={`hidden h-3.5 w-3.5 text-muted-foreground transition-transform sm:block ${userMenuOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -201,7 +203,7 @@ function HomePageInner({
                     {/* User info header */}
                     <div className="border-b border-border px-3 py-2.5">
                       <p className="truncate text-sm font-medium text-foreground">
-                        {profile?.user.nickname || "用户"}
+                        {profile?.user.nickname || t("menu.user_fallback")}
                       </p>
                       <p className="truncate text-xs text-muted-foreground">
                         {user.phone || user.email || ""}
@@ -222,7 +224,7 @@ function HomePageInner({
                         className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-foreground transition-colors hover:bg-accent"
                       >
                         <UserCircle className="h-4 w-4 text-muted-foreground" />
-                        个人资料
+                        {t("menu.profile")}
                       </Link>
                       <button
                         type="button"
@@ -233,8 +235,32 @@ function HomePageInner({
                         className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-foreground transition-colors hover:bg-accent sm:hidden"
                       >
                         <Settings className="h-4 w-4 text-muted-foreground" />
-                        连接设置
+                        {t("menu.connectionSettings")}
                       </button>
+                    </div>
+
+                    {/* Language selector */}
+                    <div className="border-t border-border py-1">
+                      <div className="flex items-center gap-2.5 px-3 py-2 text-sm text-muted-foreground">
+                        <Globe className="h-4 w-4" />
+                        {t("lang.label")}
+                      </div>
+                      <div className="px-3 pb-1">
+                        {SUPPORTED_LOCALES.map((loc) => (
+                          <button
+                            key={loc}
+                            type="button"
+                            onClick={() => {
+                              setLocale(loc);
+                              setUserMenuOpen(false);
+                            }}
+                            className={`flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-accent ${locale === loc ? "font-medium text-brand-600" : "text-foreground"}`}
+                          >
+                            <span className={`inline-block h-1.5 w-1.5 rounded-full ${locale === loc ? "bg-brand-600" : "bg-transparent"}`} />
+                            {LOCALE_LABELS[loc]}
+                          </button>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Logout */}
@@ -248,7 +274,7 @@ function HomePageInner({
                         className="flex w-full items-center gap-2.5 px-3 py-2 text-sm text-red-600 transition-colors hover:bg-red-50"
                       >
                         <LogOut className="h-4 w-4" />
-                        退出登录
+                        {t("menu.logout")}
                       </button>
                     </div>
                   </div>
@@ -316,6 +342,7 @@ function HomePageInner({
 }
 
 function HomePageContent() {
+  const { t } = useI18n();
   const [config, setConfig] = useState<StandaloneConfig | null>(null);
   const [configDialogOpen, setConfigDialogOpen] = useState(false);
   const [assistantId, setAssistantId] = useQueryState("assistantId");
@@ -360,15 +387,15 @@ function HomePageContent() {
         <div className="flex h-screen items-center justify-center">
           <div className="text-center">
             <img src="/logo-mark.svg" alt="BasisPilot" className="mx-auto mb-3 h-10 w-10" />
-            <h1 className="text-2xl font-bold">贝领</h1>
+            <h1 className="text-2xl font-bold">{t("header.brand")}</h1>
             <p className="mt-2 text-muted-foreground">
-              请配置后端连接以开始使用
+              {t("config.pleaseSetup")}
             </p>
             <Button
               onClick={() => setConfigDialogOpen(true)}
               className="mt-4"
             >
-              打开配置
+              {t("config.openConfig")}
             </Button>
           </div>
         </div>

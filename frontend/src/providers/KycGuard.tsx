@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { usePathname, useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { getBasisToken, fetchWithAuth } from "@/app/hooks/useUser";
+import { useI18n } from "@/i18n";
 
 interface KycContextType {
   kycCompleted: boolean | null;
@@ -23,6 +24,7 @@ export function useKyc() {
 const KYC_WHITELIST = ["/login", "/landing", "/onboarding"];
 
 export function KycGuard({ children }: { children: React.ReactNode }) {
+  const { t } = useI18n();
   const router = useRouter();
   const pathname = usePathname();
   const [kycCompleted, setKycCompleted] = useState<boolean | null>(null);
@@ -76,7 +78,7 @@ export function KycGuard({ children }: { children: React.ReactNode }) {
       <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-brand-50 to-white">
         <div className="text-center">
           <Loader2 className="mx-auto h-8 w-8 animate-spin text-brand-600" />
-          <p className="mt-3 text-sm text-gray-400">加载中...</p>
+          <p className="mt-3 text-sm text-gray-400">{t("loading")}</p>
         </div>
       </div>
     );

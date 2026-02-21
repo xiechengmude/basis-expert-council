@@ -24,6 +24,7 @@ import {
   type FriendlyToolConfig,
   type HiddenToolConfig,
 } from "@/app/config/toolDisplayConfig";
+import { useI18n } from "@/i18n";
 
 // ---------------------------------------------------------------------------
 // 聚合的 Hidden 工具思考指示器 + 可见工具渲染
@@ -52,6 +53,7 @@ function HiddenToolsAndVisibleTools({
   onA2UIAction,
   isLoading,
 }: HiddenToolsAndVisibleToolsProps) {
+  const { t } = useI18n();
   const [thinkingExpanded, setThinkingExpanded] = useState(false);
 
   // 分离 hidden 工具和可见工具
@@ -64,17 +66,20 @@ function HiddenToolsAndVisibleTools({
   const hasPending = hiddenTools.some(({ tc }) => tc.status === "pending");
   const hasHidden = hiddenTools.length > 0;
 
-  // 去重显示标签（同名工具只显示一次）
+  // 去重显示标签（同名工具只显示一次），resolve i18n keys
   const hiddenLabels = useMemo(() => {
     const seen = new Set<string>();
     return hiddenTools
-      .map(({ tc, cfg }) => (cfg as HiddenToolConfig).label ?? tc.name)
+      .map(({ tc, cfg }) => {
+        const key = (cfg as HiddenToolConfig).label ?? tc.name;
+        return t(key);
+      })
       .filter((label) => {
         if (seen.has(label)) return false;
         seen.add(label);
         return true;
       });
-  }, [hiddenTools]);
+  }, [hiddenTools, t]);
 
   return (
     <div className="mt-4 flex w-full flex-col">
@@ -91,7 +96,7 @@ function HiddenToolsAndVisibleTools({
               <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
             )}
             <span className="text-sm text-muted-foreground">
-              {hasPending ? "正在准备专业内容..." : "已准备专业内容"}
+              {hasPending ? t("chat.preparing") : t("chat.prepared")}
             </span>
             <svg
               className={cn(
@@ -195,6 +200,7 @@ export const ChatMessage = React.memo<ChatMessageProps>(
     onA2UIAction,
     graphId,
   }) => {
+    const { t } = useI18n();
     const isUser = message.type === "human";
     const messageContent = extractStringFromMessageContent(message);
     const hasContent = messageContent && messageContent.trim() !== "";
@@ -309,7 +315,7 @@ export const ChatMessage = React.memo<ChatMessageProps>(
                     <div className="w-full max-w-full">
                       <div className="bg-surface border-border-light rounded-md border p-4">
                         <h4 className="text-primary/70 mb-2 text-xs font-semibold tracking-wider">
-                          任务
+                          {t("chat.task")}
                         </h4>
                         <div className="mb-4 text-sm text-muted-foreground">
                           {extractSubAgentContent(subAgent.input)}
@@ -317,7 +323,7 @@ export const ChatMessage = React.memo<ChatMessageProps>(
                         {subAgent.output && (
                           <>
                             <h4 className="text-primary/70 mb-2 text-xs font-semibold tracking-wider">
-                              结果
+                              {t("chat.result")}
                             </h4>
                             <MarkdownContent
                               content={extractSubAgentContent(subAgent.output)}

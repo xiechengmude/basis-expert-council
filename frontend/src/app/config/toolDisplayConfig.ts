@@ -3,11 +3,13 @@
  *
  * 三类展示策略：
  * - hidden:   完全隐藏，pending 时显示"思考指示器"
- * - friendly: 友好化展示（中文名称 + 执行状态文案）
+ * - friendly: 友好化展示（i18n label + 执行状态文案）
  * - special:  已有特殊渲染逻辑（a2ui_render / task），不做修改
  *
  * 开发者模式：设置 NEXT_PUBLIC_DEV_TOOLS=true 后，所有工具走 special 路径，
  * 恢复原始展示（tool name + 可折叠参数 + result），方便调试。
+ *
+ * NOTE: label / pendingText values are i18n keys. Consumers must call t() to resolve.
  */
 
 const DEV_TOOLS_ENABLED =
@@ -17,19 +19,19 @@ export type ToolDisplayStrategy = "hidden" | "friendly" | "special";
 
 export interface FriendlyToolConfig {
   strategy: "friendly";
-  /** 中文友好名称 */
+  /** i18n key for friendly label */
   label: string;
-  /** 执行中显示的文案 */
+  /** i18n key for pending status text */
   pendingText: string;
-  /** Lucide 图标名（用于未来扩展） */
+  /** Lucide icon name */
   icon: string;
-  /** 是否展示 result（默认 false） */
+  /** Whether to show result (default false) */
   showResult?: boolean;
 }
 
 export interface HiddenToolConfig {
   strategy: "hidden";
-  /** 友好标签，展开时显示（如"查阅资料"） */
+  /** i18n key for friendly label shown when expanded */
   label?: string;
 }
 
@@ -52,37 +54,37 @@ const TOOL_DISPLAY_MAP: Record<string, ToolDisplayConfig> = {
   a2ui_render: { strategy: "special" },
 
   // --- 框架内部工具（聚合为思考指示器） ---
-  read_file: { strategy: "hidden", label: "查阅资料" },
-  list_files: { strategy: "hidden", label: "浏览目录" },
-  search: { strategy: "hidden", label: "搜索内容" },
-  write_file: { strategy: "hidden", label: "整理内容" },
-  execute_command: { strategy: "hidden", label: "处理数据" },
-  file_search: { strategy: "hidden", label: "搜索资料" },
-  code_interpreter: { strategy: "hidden", label: "分析计算" },
+  read_file: { strategy: "hidden", label: "tool.read_file" },
+  list_files: { strategy: "hidden", label: "tool.list_files" },
+  search: { strategy: "hidden", label: "tool.search" },
+  write_file: { strategy: "hidden", label: "tool.write_file" },
+  execute_command: { strategy: "hidden", label: "tool.execute_command" },
+  file_search: { strategy: "hidden", label: "tool.file_search" },
+  code_interpreter: { strategy: "hidden", label: "tool.code_interpreter" },
 
   // --- 记忆工具（友好展示） ---
   remember_fact: {
     strategy: "friendly",
-    label: "记录学习信息",
-    pendingText: "正在记录...",
+    label: "tool.remember_fact.label",
+    pendingText: "tool.remember_fact.pending",
     icon: "BookmarkPlus",
   },
   recall_memories: {
     strategy: "friendly",
-    label: "回忆学习记录",
-    pendingText: "正在回忆学习记录...",
+    label: "tool.recall_memories.label",
+    pendingText: "tool.recall_memories.pending",
     icon: "Search",
   },
   get_user_memory_profile: {
     strategy: "friendly",
-    label: "查看学习档案",
-    pendingText: "正在查看学习档案...",
+    label: "tool.get_user_memory_profile.label",
+    pendingText: "tool.get_user_memory_profile.pending",
     icon: "UserCircle",
   },
   forget_memory: {
     strategy: "friendly",
-    label: "清除记录",
-    pendingText: "正在清除记录...",
+    label: "tool.forget_memory.label",
+    pendingText: "tool.forget_memory.pending",
     icon: "Eraser",
   },
 };
@@ -102,20 +104,20 @@ export function getToolDisplayConfig(toolName: string): ToolDisplayConfig {
 }
 
 // ---------------------------------------------------------------------------
-// 子代理中文名映射
+// 子代理名称映射（i18n keys）
 // ---------------------------------------------------------------------------
 
 const SUBAGENT_NAME_MAP: Record<string, string> = {
-  "math-expert": "数学专家",
-  "science-expert": "科学专家",
-  "humanities-expert": "人文专家",
-  "curriculum-advisor": "课程规划顾问",
-  "business-advisor": "商务顾问",
-  "probation-advisor": "学业保级顾问",
+  "math-expert": "subagent.math-expert",
+  "science-expert": "subagent.science-expert",
+  "humanities-expert": "subagent.humanities-expert",
+  "curriculum-advisor": "subagent.curriculum-advisor",
+  "business-advisor": "subagent.business-advisor",
+  "probation-advisor": "subagent.probation-advisor",
 };
 
 /**
- * 获取子代理的中文友好名称
+ * 获取子代理的 i18n key
  * 开发者模式下返回原始英文名
  */
 export function getSubAgentDisplayName(agentName: string): string {
