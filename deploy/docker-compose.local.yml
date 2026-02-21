@@ -234,6 +234,8 @@ services:
     environment:
       - PORT=8015
       - HOSTNAME=0.0.0.0
+      # ---- LangGraph Agent 反向代理 ----
+      - LANGGRAPH_INTERNAL_URL=http://basis-agent:5095
 
       # ---- Supabase Auth ----
       - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL:-}
