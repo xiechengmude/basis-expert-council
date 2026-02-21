@@ -6,11 +6,13 @@ BasisPilot (贝领) — 业务 API 服务
 启动: uvicorn src.basis_expert_council.server:app --host 0.0.0.0 --port 5096
 """
 
+import asyncio
 import logging
 import os
 import re
 import secrets
 from contextlib import asynccontextmanager
+from datetime import datetime, timedelta
 
 import httpx
 from dotenv import load_dotenv
@@ -49,9 +51,38 @@ LANGGRAPH_URL = os.getenv("LANGGRAPH_URL", "http://localhost:5095")
 # ---------------------------------------------------------------------------
 
 
+async def _daily_refresh_loop():
+    """每天 3:00 AM 自动刷新所有活跃用户的学力档案。"""
+    while True:
+        try:
+            now = datetime.now()
+            next_run = (now + timedelta(days=1)).replace(hour=3, minute=0, second=0, microsecond=0)
+            if now.hour < 3:
+                next_run = now.replace(hour=3, minute=0, second=0, microsecond=0)
+            wait_sec = (next_run - now).total_seconds()
+            logger.info(f"Daily profile refresh scheduled in {wait_sec:.0f}s")
+            await asyncio.sleep(wait_sec)
+
+            from .academic_profile import compute_academic_profile
+            users = await db.get_users_with_completed_sessions()
+            logger.info(f"Daily refresh: {len(users)} users")
+            for uid in users:
+                try:
+                    await compute_academic_profile(uid)
+                except Exception as e:
+                    logger.warning(f"Daily refresh failed for user {uid}: {e}")
+                await asyncio.sleep(0.2)
+        except asyncio.CancelledError:
+            break
+        except Exception as e:
+            logger.error(f"Daily refresh loop error: {e}")
+            await asyncio.sleep(3600)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Startup: init DB schema + seed questions. Shutdown: close pool."""
+    """Startup: init DB schema + seed questions + daily refresh. Shutdown: close pool."""
+    refresh_task = None
     try:
         await db.init_schema()
         logger.info("Business database schema initialized")
@@ -59,9 +90,13 @@ async def lifespan(app: FastAPI):
         from .assessment.seed_questions import seed_question_bank
         await seed_question_bank()
         logger.info("Assessment question bank seeded")
+        # Start daily profile refresh loop
+        refresh_task = asyncio.create_task(_daily_refresh_loop())
     except Exception as e:
         logger.warning(f"Schema/seed init: {e}")
     yield
+    if refresh_task:
+        refresh_task.cancel()
     await db.close_pool()
 
 
@@ -861,7 +896,7 @@ async def get_assessment_history(request: Request):
 
 @app.get("/api/academic/profile")
 async def get_academic_profile(request: Request):
-    """获取学力档案数据（需登录）"""
+    """获取学力档案数据 v2（需登录）— 优先返回缓存，24h 过期"""
     auth_info = await authenticate_request(dict(request.headers))
     if not auth_info:
         return JSONResponse(status_code=401, content={"error": "未登录"})
@@ -878,8 +913,55 @@ async def get_academic_profile(request: Request):
                 return JSONResponse(status_code=403, content={"error": "无权查看"})
             target_user_id = int(student_id)
 
-    data = await db.get_academic_profile_data(target_user_id)
-    return data
+    # Check cache first (24h TTL)
+    from datetime import datetime, timedelta, timezone
+    cached = await db.get_profile_cache(target_user_id)
+    if cached and cached.get("computed_at"):
+        age = datetime.now(timezone.utc) - cached["computed_at"].replace(tzinfo=timezone.utc)
+        if age < timedelta(hours=24):
+            profile_data = cached["profile_data"]
+            if isinstance(profile_data, str):
+                import json as _json
+                profile_data = _json.loads(profile_data)
+            return profile_data
+
+    # Cache miss or expired → compute
+    try:
+        from .academic_profile import compute_academic_profile
+        data = await compute_academic_profile(target_user_id)
+        return data
+    except Exception as e:
+        logger.error(f"academic profile compute error: {e}")
+        # Fallback to old v1 data
+        data = await db.get_academic_profile_data(target_user_id)
+        return data
+
+
+@app.post("/api/academic/profile/refresh")
+async def refresh_academic_profile(request: Request):
+    """手动刷新学力档案（需登录）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    target_user_id = auth_info["user_id"]
+
+    student_id = request.query_params.get("student_id")
+    if student_id:
+        user = await db.get_user_by_id(auth_info["user_id"])
+        if user and user.get("role") == "parent":
+            linked = await db.get_linked_students(auth_info["user_id"])
+            if int(student_id) not in [s["id"] for s in linked]:
+                return JSONResponse(status_code=403, content={"error": "无权查看"})
+            target_user_id = int(student_id)
+
+    try:
+        from .academic_profile import compute_academic_profile
+        profile = await compute_academic_profile(target_user_id)
+        return {"status": "ok", "computed_at": profile.get("meta", {}).get("computed_at"), "profile": profile}
+    except Exception as e:
+        logger.error(f"academic profile refresh error: {e}")
+        return JSONResponse(status_code=500, content={"error": "刷新失败"})
 
 
 async def _do_resume(session_id: str):

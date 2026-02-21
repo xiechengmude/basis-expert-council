@@ -356,6 +356,77 @@ CREATE TABLE IF NOT EXISTS ability_score_history (
 );
 CREATE INDEX IF NOT EXISTS idx_ash_user_subject ON ability_score_history(user_id, subject);
 CREATE INDEX IF NOT EXISTS idx_ash_user_time ON ability_score_history(user_id, recorded_at);
+
+-- =====================================================
+-- 学力档案 v2: 错题本 + 预计算缓存 + 目标追踪
+-- =====================================================
+
+-- 错题本核心表
+CREATE TABLE IF NOT EXISTS mistake_book_entries (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    question_id     INT NOT NULL REFERENCES assessment_questions(id),
+    subject         TEXT NOT NULL,
+    topic           TEXT NOT NULL,
+    subtopic        TEXT,
+    difficulty      REAL NOT NULL,
+    first_wrong_at  TIMESTAMPTZ NOT NULL,
+    last_wrong_at   TIMESTAMPTZ NOT NULL,
+    wrong_count     INT NOT NULL DEFAULT 1,
+    correct_after_wrong INT NOT NULL DEFAULT 0,
+    mastery_status  TEXT NOT NULL DEFAULT 'new',
+    mastered_at     TIMESTAMPTZ,
+    bloom_level     TEXT,
+    misconception_ids TEXT[],
+    skill_tags      TEXT[],
+    last_wrong_answer JSONB,
+    correct_answer    JSONB,
+    explanation_zh    TEXT,
+    explanation_en    TEXT,
+    question_stem_zh  TEXT,
+    question_stem_en  TEXT,
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE(user_id, question_id)
+);
+CREATE INDEX IF NOT EXISTS idx_mbe_user ON mistake_book_entries(user_id);
+CREATE INDEX IF NOT EXISTS idx_mbe_user_subject ON mistake_book_entries(user_id, subject);
+CREATE INDEX IF NOT EXISTS idx_mbe_user_status ON mistake_book_entries(user_id, mastery_status);
+CREATE INDEX IF NOT EXISTS idx_mbe_user_subject_topic ON mistake_book_entries(user_id, subject, topic);
+
+-- 预计算缓存表
+CREATE TABLE IF NOT EXISTS academic_profile_cache (
+    user_id         INT PRIMARY KEY REFERENCES biz_users(id) ON DELETE CASCADE,
+    profile_data    JSONB NOT NULL,
+    computed_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version         INT NOT NULL DEFAULT 1,
+    compute_time_ms INT
+);
+
+-- 目标追踪表
+CREATE TABLE IF NOT EXISTS goal_snapshots (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    goal_type       TEXT NOT NULL,
+    goal_text       TEXT NOT NULL,
+    goal_metadata   JSONB DEFAULT '{}',
+    current_value   REAL,
+    target_value    REAL,
+    gap_pct         REAL,
+    status          TEXT DEFAULT 'active',
+    source          TEXT DEFAULT 'mem0',
+    extracted_at    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE(user_id, goal_type, goal_text)
+);
+CREATE INDEX IF NOT EXISTS idx_gs_user ON goal_snapshots(user_id);
+
+-- student_ability_scores v2 扩展列
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS total_questions   INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS correct_questions INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS wrong_questions   INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS mastered_mistakes INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS active_mistakes   INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS bloom_mastery     JSONB DEFAULT '{}';
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS last_computed_at  TIMESTAMPTZ;
 """
 
 
@@ -1837,6 +1908,293 @@ async def get_academic_profile_data(user_id: int) -> dict:
                 "total_questions": int(kpi_row["total_questions"] or 0) if kpi_row else 0,
             },
         }
+
+
+# ---------------------------------------------------------------------------
+# 学力档案 v2 — 错题本 / 缓存 / 目标 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def upsert_mistake_book_entry(
+    user_id: int, question_id: int, *,
+    subject: str, topic: str, subtopic: str | None,
+    difficulty: float, wrong_at: datetime,
+    bloom_level: str | None = None,
+    misconception_ids: list[str] | None = None,
+    skill_tags: list[str] | None = None,
+    last_wrong_answer: dict | None = None,
+    correct_answer: dict | None = None,
+    explanation_zh: str | None = None,
+    explanation_en: str | None = None,
+    question_stem_zh: str | None = None,
+    question_stem_en: str | None = None,
+) -> dict:
+    """UPSERT a wrong answer into the mistake book."""
+    pool = await get_pool()
+    answer_json = json.dumps(last_wrong_answer, ensure_ascii=False) if last_wrong_answer else None
+    correct_json = json.dumps(correct_answer, ensure_ascii=False) if correct_answer else None
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO mistake_book_entries
+                (user_id, question_id, subject, topic, subtopic, difficulty,
+                 first_wrong_at, last_wrong_at, wrong_count,
+                 bloom_level, misconception_ids, skill_tags,
+                 last_wrong_answer, correct_answer,
+                 explanation_zh, explanation_en,
+                 question_stem_zh, question_stem_en, updated_at)
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$7,1,$8,$9,$10,$11,$12,$13,$14,$15,$16,NOW())
+            ON CONFLICT (user_id, question_id) DO UPDATE SET
+                wrong_count = mistake_book_entries.wrong_count + 1,
+                last_wrong_at = EXCLUDED.last_wrong_at,
+                last_wrong_answer = COALESCE(EXCLUDED.last_wrong_answer, mistake_book_entries.last_wrong_answer),
+                mastery_status = CASE
+                    WHEN mistake_book_entries.mastery_status = 'mastered' THEN 'regressed'
+                    WHEN mistake_book_entries.mastery_status = 'new' THEN 'new'
+                    ELSE 'reviewing'
+                END,
+                mastered_at = CASE
+                    WHEN mistake_book_entries.mastery_status = 'mastered' THEN NULL
+                    ELSE mistake_book_entries.mastered_at
+                END,
+                bloom_level = COALESCE(EXCLUDED.bloom_level, mistake_book_entries.bloom_level),
+                misconception_ids = COALESCE(EXCLUDED.misconception_ids, mistake_book_entries.misconception_ids),
+                skill_tags = COALESCE(EXCLUDED.skill_tags, mistake_book_entries.skill_tags),
+                updated_at = NOW()
+            RETURNING *
+            """,
+            user_id, question_id, subject, topic, subtopic, difficulty,
+            wrong_at, bloom_level, misconception_ids, skill_tags,
+            answer_json, correct_json,
+            explanation_zh, explanation_en, question_stem_zh, question_stem_en,
+        )
+        return dict(row)
+
+
+async def record_correct_after_wrong(user_id: int, question_id: int) -> dict | None:
+    """Record a correct answer on a previously wrong question. Returns updated entry or None."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            UPDATE mistake_book_entries
+            SET correct_after_wrong = correct_after_wrong + 1,
+                mastery_status = CASE
+                    WHEN correct_after_wrong + 1 >= 2 THEN 'mastered'
+                    ELSE 'reviewing'
+                END,
+                mastered_at = CASE
+                    WHEN correct_after_wrong + 1 >= 2 THEN NOW()
+                    ELSE mastered_at
+                END,
+                updated_at = NOW()
+            WHERE user_id = $1 AND question_id = $2
+            RETURNING *
+            """,
+            user_id, question_id,
+        )
+        return dict(row) if row else None
+
+
+async def get_mistake_book_entries(
+    user_id: int, *, subject: str | None = None, status: str | None = None,
+    limit: int = 200,
+) -> list[dict]:
+    """Get mistake book entries for a user."""
+    pool = await get_pool()
+    conditions = ["user_id = $1"]
+    params: list[Any] = [user_id]
+    idx = 2
+    if subject:
+        conditions.append(f"subject = ${idx}")
+        params.append(subject)
+        idx += 1
+    if status:
+        conditions.append(f"mastery_status = ${idx}")
+        params.append(status)
+        idx += 1
+    where = " AND ".join(conditions)
+    params.append(limit)
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            f"""SELECT * FROM mistake_book_entries
+                WHERE {where}
+                ORDER BY last_wrong_at DESC LIMIT ${idx}""",
+            *params,
+        )
+        return [dict(r) for r in rows]
+
+
+async def get_mistake_book_question_ids(user_id: int) -> set[int]:
+    """Get all question_ids in the user's mistake book."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            "SELECT question_id FROM mistake_book_entries WHERE user_id = $1",
+            user_id,
+        )
+        return {r["question_id"] for r in rows}
+
+
+async def get_mistake_book_summary(user_id: int) -> dict:
+    """Get summary stats of the mistake book."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        total = await conn.fetchval(
+            "SELECT COUNT(*) FROM mistake_book_entries WHERE user_id = $1", user_id,
+        )
+        by_status = await conn.fetch(
+            """SELECT mastery_status, COUNT(*) as cnt
+               FROM mistake_book_entries WHERE user_id = $1
+               GROUP BY mastery_status""",
+            user_id,
+        )
+        by_subject = await conn.fetch(
+            """SELECT subject, COUNT(*) as cnt
+               FROM mistake_book_entries WHERE user_id = $1
+               GROUP BY subject ORDER BY cnt DESC""",
+            user_id,
+        )
+        top_mc = await conn.fetch(
+            """SELECT mc, COUNT(*) as cnt
+               FROM mistake_book_entries, unnest(misconception_ids) as mc
+               WHERE user_id = $1
+               GROUP BY mc ORDER BY cnt DESC LIMIT 10""",
+            user_id,
+        )
+        return {
+            "total": total,
+            "by_status": {r["mastery_status"]: r["cnt"] for r in by_status},
+            "by_subject": {r["subject"]: r["cnt"] for r in by_subject},
+            "top_misconceptions": [{"id": r["mc"], "count": r["cnt"]} for r in top_mc],
+        }
+
+
+async def get_profile_cache(user_id: int) -> dict | None:
+    """Get cached academic profile."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM academic_profile_cache WHERE user_id = $1", user_id,
+        )
+        return dict(row) if row else None
+
+
+async def upsert_profile_cache(
+    user_id: int, profile_data: dict, compute_time_ms: int | None = None,
+) -> None:
+    """Cache the computed academic profile."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        await conn.execute(
+            """
+            INSERT INTO academic_profile_cache (user_id, profile_data, computed_at, compute_time_ms)
+            VALUES ($1, $2, NOW(), $3)
+            ON CONFLICT (user_id) DO UPDATE SET
+                profile_data = EXCLUDED.profile_data,
+                computed_at = NOW(),
+                version = academic_profile_cache.version + 1,
+                compute_time_ms = EXCLUDED.compute_time_ms
+            """,
+            user_id, json.dumps(profile_data, ensure_ascii=False, default=str),
+            compute_time_ms,
+        )
+
+
+async def upsert_goal_snapshot(
+    user_id: int, goal_type: str, goal_text: str, *,
+    goal_metadata: dict | None = None,
+    current_value: float | None = None,
+    target_value: float | None = None,
+    gap_pct: float | None = None,
+    status: str = "active",
+    source: str = "mem0",
+) -> dict:
+    """UPSERT a goal snapshot."""
+    pool = await get_pool()
+    meta_json = json.dumps(goal_metadata or {}, ensure_ascii=False)
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO goal_snapshots
+                (user_id, goal_type, goal_text, goal_metadata,
+                 current_value, target_value, gap_pct, status, source, extracted_at)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, NOW())
+            ON CONFLICT (user_id, goal_type, goal_text) DO UPDATE SET
+                goal_metadata = EXCLUDED.goal_metadata,
+                current_value = EXCLUDED.current_value,
+                target_value = EXCLUDED.target_value,
+                gap_pct = EXCLUDED.gap_pct,
+                status = EXCLUDED.status,
+                extracted_at = NOW()
+            RETURNING *
+            """,
+            user_id, goal_type, goal_text, meta_json,
+            current_value, target_value, gap_pct, status, source,
+        )
+        return dict(row)
+
+
+async def get_goal_snapshots(user_id: int, status: str = "active") -> list[dict]:
+    """Get active goal snapshots for a user."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            "SELECT * FROM goal_snapshots WHERE user_id = $1 AND status = $2 ORDER BY extracted_at DESC",
+            user_id, status,
+        )
+        return [dict(r) for r in rows]
+
+
+async def get_users_with_completed_sessions() -> list[int]:
+    """Get all user_ids that have at least one completed assessment session."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            "SELECT DISTINCT user_id FROM assessment_sessions WHERE user_id IS NOT NULL AND status = 'completed'"
+        )
+        return [r["user_id"] for r in rows]
+
+
+async def get_activity_heatmap(user_id: int, days: int = 90) -> dict:
+    """Get per-day activity data: questions answered + messages sent."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        # Questions per day from assessment_answers
+        q_rows = await conn.fetch(
+            """
+            SELECT DATE(a.created_at) as day,
+                   COUNT(*) as questions,
+                   SUM(CASE WHEN a.is_correct THEN 1 ELSE 0 END) as correct
+            FROM assessment_answers a
+            JOIN assessment_sessions s ON s.id = a.session_id
+            WHERE s.user_id = $1 AND a.created_at >= NOW() - ($2 || ' days')::interval
+            GROUP BY DATE(a.created_at)
+            ORDER BY day
+            """,
+            user_id, str(days),
+        )
+        # Messages per day from usage_logs
+        m_rows = await conn.fetch(
+            """
+            SELECT usage_date as day, message_count as messages
+            FROM usage_logs
+            WHERE user_id = $1 AND usage_date >= CURRENT_DATE - $2
+            ORDER BY day
+            """,
+            user_id, days,
+        )
+        result: dict[str, dict] = {}
+        for r in q_rows:
+            key = r["day"].isoformat()
+            result[key] = {"questions": r["questions"], "correct": r["correct"], "messages": 0}
+        for r in m_rows:
+            key = r["day"].isoformat()
+            if key in result:
+                result[key]["messages"] = r["messages"]
+            else:
+                result[key] = {"questions": 0, "correct": 0, "messages": r["messages"]}
+        return result
 
 
 async def backfill_ability_scores_for_user(user_id: int) -> int:

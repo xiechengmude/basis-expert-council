@@ -88,3 +88,74 @@ CREATE TABLE IF NOT EXISTS ability_score_history (
 );
 CREATE INDEX IF NOT EXISTS idx_ash_user_subject ON ability_score_history(user_id, subject);
 CREATE INDEX IF NOT EXISTS idx_ash_user_time ON ability_score_history(user_id, recorded_at);
+
+-- =====================================================
+-- 学力档案 v2: 错题本 + 预计算缓存 + 目标追踪
+-- =====================================================
+
+-- 错题本核心表
+CREATE TABLE IF NOT EXISTS mistake_book_entries (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    question_id     INT NOT NULL REFERENCES assessment_questions(id),
+    subject         TEXT NOT NULL,
+    topic           TEXT NOT NULL,
+    subtopic        TEXT,
+    difficulty      REAL NOT NULL,
+    first_wrong_at  TIMESTAMPTZ NOT NULL,
+    last_wrong_at   TIMESTAMPTZ NOT NULL,
+    wrong_count     INT NOT NULL DEFAULT 1,
+    correct_after_wrong INT NOT NULL DEFAULT 0,
+    mastery_status  TEXT NOT NULL DEFAULT 'new',
+    mastered_at     TIMESTAMPTZ,
+    bloom_level     TEXT,
+    misconception_ids TEXT[],
+    skill_tags      TEXT[],
+    last_wrong_answer JSONB,
+    correct_answer    JSONB,
+    explanation_zh    TEXT,
+    explanation_en    TEXT,
+    question_stem_zh  TEXT,
+    question_stem_en  TEXT,
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE(user_id, question_id)
+);
+CREATE INDEX IF NOT EXISTS idx_mbe_user ON mistake_book_entries(user_id);
+CREATE INDEX IF NOT EXISTS idx_mbe_user_subject ON mistake_book_entries(user_id, subject);
+CREATE INDEX IF NOT EXISTS idx_mbe_user_status ON mistake_book_entries(user_id, mastery_status);
+CREATE INDEX IF NOT EXISTS idx_mbe_user_subject_topic ON mistake_book_entries(user_id, subject, topic);
+
+-- 预计算缓存表
+CREATE TABLE IF NOT EXISTS academic_profile_cache (
+    user_id         INT PRIMARY KEY REFERENCES biz_users(id) ON DELETE CASCADE,
+    profile_data    JSONB NOT NULL,
+    computed_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version         INT NOT NULL DEFAULT 1,
+    compute_time_ms INT
+);
+
+-- 目标追踪表
+CREATE TABLE IF NOT EXISTS goal_snapshots (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    goal_type       TEXT NOT NULL,
+    goal_text       TEXT NOT NULL,
+    goal_metadata   JSONB DEFAULT '{}',
+    current_value   REAL,
+    target_value    REAL,
+    gap_pct         REAL,
+    status          TEXT DEFAULT 'active',
+    source          TEXT DEFAULT 'mem0',
+    extracted_at    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE(user_id, goal_type, goal_text)
+);
+CREATE INDEX IF NOT EXISTS idx_gs_user ON goal_snapshots(user_id);
+
+-- student_ability_scores v2 扩展列
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS total_questions   INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS correct_questions INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS wrong_questions   INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS mastered_mistakes INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS active_mistakes   INT DEFAULT 0;
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS bloom_mastery     JSONB DEFAULT '{}';
+ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS last_computed_at  TIMESTAMPTZ;

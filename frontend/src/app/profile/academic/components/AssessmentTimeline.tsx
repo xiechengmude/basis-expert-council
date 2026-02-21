@@ -17,9 +17,9 @@ interface SessionItem {
   id: string;
   subject: string;
   final_score: number | null;
-  ability_level: number | null;
   assessment_type: string;
   completed_at: string | null;
+  new_mistakes?: number;
 }
 
 interface AssessmentTimelineProps {
@@ -91,6 +91,11 @@ export default function AssessmentTimeline({ sessions, t }: AssessmentTimelinePr
                       <span className="text-xs text-slate-500">
                         {formatDate(session.completed_at)}
                       </span>
+                      {(session.new_mistakes ?? 0) > 0 && (
+                        <span className="text-xs text-red-400 bg-red-500/10 rounded-full px-2 py-0.5">
+                          +{session.new_mistakes} {t("academic.timeline.new_mistakes")}
+                        </span>
+                      )}
                     </div>
                   </div>
 

@@ -1,12 +1,14 @@
 "use client";
 
-import { BarChart3, CheckCircle, TrendingUp, Target } from "lucide-react";
+import { BarChart3, CheckCircle, TrendingUp, Target, BookX, Sparkles } from "lucide-react";
 
 interface KpiData {
   total_assessments: number;
   overall_accuracy: number;
   improvement_pct: number;
   total_questions: number;
+  total_mistakes?: number;
+  mastery_rate?: number;
 }
 
 interface KpiCardsProps {
@@ -25,7 +27,7 @@ export default function KpiCards({ kpi, t }: KpiCardsProps) {
     },
     {
       label: t("academic.kpi.overall_accuracy"),
-      value: `${Math.round(kpi.overall_accuracy)}`,
+      value: `${Math.round(kpi.overall_accuracy)}%`,
       icon: CheckCircle,
       color: "text-green-400",
       bgColor: "bg-green-400/10",
@@ -44,10 +46,24 @@ export default function KpiCards({ kpi, t }: KpiCardsProps) {
       color: "text-purple-400",
       bgColor: "bg-purple-400/10",
     },
+    {
+      label: t("academic.kpi.total_mistakes"),
+      value: kpi.total_mistakes ?? 0,
+      icon: BookX,
+      color: "text-red-400",
+      bgColor: "bg-red-400/10",
+    },
+    {
+      label: t("academic.kpi.mastery_rate"),
+      value: `${Math.round(kpi.mastery_rate ?? 0)}%`,
+      icon: Sparkles,
+      color: "text-emerald-400",
+      bgColor: "bg-emerald-400/10",
+    },
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
       {cards.map((card, i) => (
         <div
           key={i}

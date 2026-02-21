@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ClipboardList, ArrowRight } from "lucide-react";
+import { ClipboardList, ArrowRight, BarChart3 } from "lucide-react";
 
 interface EmptyStateProps {
   t: (key: string) => string;
@@ -10,8 +10,11 @@ interface EmptyStateProps {
 export default function EmptyState({ t }: EmptyStateProps) {
   return (
     <div className="flex flex-col items-center justify-center py-20 text-center">
-      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white/[0.04] border border-white/[0.06]">
-        <ClipboardList size={32} className="text-slate-500" />
+      <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-teal-500/10 to-purple-500/10 border border-white/[0.06]">
+        <div className="relative">
+          <ClipboardList size={32} className="text-slate-500" />
+          <BarChart3 size={16} className="text-teal-500 absolute -bottom-1 -right-2" />
+        </div>
       </div>
       <h2 className="text-xl font-bold text-white mb-2">
         {t("academic.empty.title")}
