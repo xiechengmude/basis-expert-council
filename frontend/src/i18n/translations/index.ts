@@ -7,6 +7,7 @@ import login from "./login";
 import onboarding from "./onboarding";
 import tools from "./tools";
 import assessment from "./assessment";
+import academic from "./academic";
 
 export const translations: Record<string, Record<Locale, string>> = {
   ...common,
@@ -17,4 +18,5 @@ export const translations: Record<string, Record<Locale, string>> = {
   ...onboarding,
   ...tools,
   ...assessment,
+  ...academic,
 };

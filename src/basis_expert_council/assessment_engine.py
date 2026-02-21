@@ -484,6 +484,25 @@ async def complete_session(session_id: str) -> dict:
         recommendations=stats.get("recommendations"),
     )
 
+    # --- 学力档案: Record ability scores ---
+    if session.get("user_id"):
+        user_id = session["user_id"]
+        subject = session.get("subject", "unknown")
+        session_id_str = str(session_id)
+        # Subject-level score
+        ability = stats.get("ability_level", stats["score"] / 100.0)
+        if isinstance(ability, str):
+            ability = stats["score"] / 100.0
+        await db.upsert_ability_score(user_id, subject, None, ability, session_id_str)
+        await db.insert_ability_history(user_id, subject, None, ability, session_id_str)
+        # Topic-level scores
+        for topic_name, topic_data in stats.get("topic_scores", {}).items():
+            if isinstance(topic_data, dict):
+                acc = topic_data.get("accuracy", 0)
+                topic_ability = acc / 100.0 if acc > 1 else acc
+                await db.upsert_ability_score(user_id, subject, topic_name, topic_ability, session_id_str)
+                await db.insert_ability_history(user_id, subject, topic_name, topic_ability, session_id_str)
+
     return {
         "session": updated_session,
         "report": report,

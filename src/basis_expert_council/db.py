@@ -325,6 +325,37 @@ CREATE TABLE IF NOT EXISTS assessment_reports (
 CREATE INDEX IF NOT EXISTS idx_ar_session ON assessment_reports(session_id);
 CREATE INDEX IF NOT EXISTS idx_ar_user ON assessment_reports(user_id);
 CREATE INDEX IF NOT EXISTS idx_ar_share ON assessment_reports(share_token);
+
+-- 学力档案: 能力快照表 (per user × subject × topic)
+CREATE TABLE IF NOT EXISTS student_ability_scores (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    subject         TEXT NOT NULL,
+    topic           TEXT,
+    ability_score   REAL NOT NULL,
+    score_100       REAL NOT NULL,
+    confidence      REAL DEFAULT 0.5,
+    assessment_count INT DEFAULT 1,
+    last_session_id UUID,
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE(user_id, subject, topic)
+);
+CREATE INDEX IF NOT EXISTS idx_sas_user ON student_ability_scores(user_id);
+CREATE INDEX IF NOT EXISTS idx_sas_user_subject ON student_ability_scores(user_id, subject);
+
+-- 学力档案: 能力时间序列表 (append-only)
+CREATE TABLE IF NOT EXISTS ability_score_history (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    subject         TEXT NOT NULL,
+    topic           TEXT,
+    ability_score   REAL NOT NULL,
+    score_100       REAL NOT NULL,
+    session_id      UUID REFERENCES assessment_sessions(id),
+    recorded_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_ash_user_subject ON ability_score_history(user_id, subject);
+CREATE INDEX IF NOT EXISTS idx_ash_user_time ON ability_score_history(user_id, recorded_at);
 """
 
 
@@ -1593,3 +1624,261 @@ async def claim_anonymous_sessions(user_id: int, anonymous_id: str) -> int:
             )
 
             return count
+
+
+# ---------------------------------------------------------------------------
+# 学力档案 — 能力分数 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def upsert_ability_score(
+    user_id: int, subject: str, topic: str | None,
+    ability_score: float, session_id: str | None = None,
+) -> dict:
+    """Upsert ability score with rolling weighted average."""
+    pool = await get_pool()
+    score_100 = round(ability_score * 100, 1)
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO student_ability_scores
+                (user_id, subject, topic, ability_score, score_100, assessment_count, last_session_id, updated_at)
+            VALUES ($1, $2, $3, $4, $5, 1, $6, NOW())
+            ON CONFLICT (user_id, subject, topic) DO UPDATE SET
+                ability_score = (student_ability_scores.ability_score * student_ability_scores.assessment_count + EXCLUDED.ability_score)
+                                / (student_ability_scores.assessment_count + 1),
+                score_100 = ROUND(((student_ability_scores.ability_score * student_ability_scores.assessment_count + EXCLUDED.ability_score)
+                                / (student_ability_scores.assessment_count + 1) * 100)::numeric, 1),
+                assessment_count = student_ability_scores.assessment_count + 1,
+                confidence = LEAST(1.0, 0.5 + student_ability_scores.assessment_count * 0.1),
+                last_session_id = EXCLUDED.last_session_id,
+                updated_at = NOW()
+            RETURNING *
+            """,
+            user_id, subject, topic, ability_score, score_100,
+            session_id,
+        )
+        return dict(row) if row else {}
+
+
+async def get_ability_scores(user_id: int, subject: str | None = None) -> list[dict]:
+    """Get ability score snapshots for a user, optionally filtered by subject."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        if subject:
+            rows = await conn.fetch(
+                "SELECT * FROM student_ability_scores WHERE user_id = $1 AND subject = $2 ORDER BY topic NULLS FIRST",
+                user_id, subject,
+            )
+        else:
+            rows = await conn.fetch(
+                "SELECT * FROM student_ability_scores WHERE user_id = $1 ORDER BY subject, topic NULLS FIRST",
+                user_id,
+            )
+        return [dict(r) for r in rows]
+
+
+async def insert_ability_history(
+    user_id: int, subject: str, topic: str | None,
+    ability_score: float, session_id: str | None = None,
+) -> dict:
+    """Append a point to the ability score time series."""
+    pool = await get_pool()
+    score_100 = round(ability_score * 100, 1)
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO ability_score_history (user_id, subject, topic, ability_score, score_100, session_id)
+            VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING *
+            """,
+            user_id, subject, topic, ability_score, score_100,
+            session_id,
+        )
+        return dict(row) if row else {}
+
+
+async def get_ability_history(
+    user_id: int, subject: str | None = None, limit: int = 50,
+) -> list[dict]:
+    """Get ability score time series for a user, ordered by time ASC."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        if subject:
+            rows = await conn.fetch(
+                """SELECT * FROM ability_score_history
+                   WHERE user_id = $1 AND subject = $2
+                   ORDER BY recorded_at ASC LIMIT $3""",
+                user_id, subject, limit,
+            )
+        else:
+            rows = await conn.fetch(
+                """SELECT * FROM ability_score_history
+                   WHERE user_id = $1
+                   ORDER BY recorded_at ASC LIMIT $2""",
+                user_id, limit,
+            )
+        return [dict(r) for r in rows]
+
+
+async def get_academic_profile_data(user_id: int) -> dict:
+    """Aggregate all data needed for the academic profile page in one connection."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        # Student info
+        student = await conn.fetchrow("SELECT * FROM biz_users WHERE id = $1", user_id)
+        if not student:
+            return {"error": "User not found"}
+        student = dict(student)
+
+        # Ability scores grouped by subject
+        scores = await conn.fetch(
+            "SELECT * FROM student_ability_scores WHERE user_id = $1 ORDER BY subject, topic NULLS FIRST",
+            user_id,
+        )
+        subjects_map: dict[str, dict] = {}
+        for row in scores:
+            s = row["subject"]
+            if s not in subjects_map:
+                subjects_map[s] = {
+                    "subject": s,
+                    "ability_score": 0,
+                    "score_100": 0,
+                    "confidence": 0,
+                    "assessment_count": 0,
+                    "topics": [],
+                }
+            if row["topic"] is None:
+                # Subject-level score
+                subjects_map[s]["ability_score"] = float(row["ability_score"])
+                subjects_map[s]["score_100"] = float(row["score_100"])
+                subjects_map[s]["confidence"] = float(row["confidence"])
+                subjects_map[s]["assessment_count"] = row["assessment_count"]
+            else:
+                subjects_map[s]["topics"].append({
+                    "topic": row["topic"],
+                    "ability_score": float(row["ability_score"]),
+                    "score_100": float(row["score_100"]),
+                })
+
+        # History
+        history_rows = await conn.fetch(
+            """SELECT subject, topic, score_100, recorded_at
+               FROM ability_score_history
+               WHERE user_id = $1
+               ORDER BY recorded_at ASC LIMIT 200""",
+            user_id,
+        )
+        history = [
+            {
+                "subject": r["subject"],
+                "topic": r["topic"],
+                "score_100": float(r["score_100"]),
+                "recorded_at": r["recorded_at"].isoformat() if r["recorded_at"] else None,
+            }
+            for r in history_rows
+        ]
+
+        # Recent sessions
+        sessions = await conn.fetch(
+            """SELECT id, subject, final_score, ability_level, assessment_type, completed_at
+               FROM assessment_sessions
+               WHERE user_id = $1 AND status = 'completed'
+               ORDER BY completed_at DESC LIMIT 20""",
+            user_id,
+        )
+        recent_sessions = [
+            {
+                "id": str(s["id"]),
+                "subject": s["subject"],
+                "final_score": float(s["final_score"]) if s["final_score"] else None,
+                "ability_level": float(s["ability_level"]) if s["ability_level"] else None,
+                "assessment_type": s["assessment_type"],
+                "completed_at": s["completed_at"].isoformat() if s["completed_at"] else None,
+            }
+            for s in sessions
+        ]
+
+        # KPI
+        kpi_row = await conn.fetchrow(
+            """SELECT
+                COUNT(*) as total_assessments,
+                COALESCE(AVG(final_score), 0) as overall_accuracy,
+                SUM(total_questions) as total_questions
+               FROM assessment_sessions
+               WHERE user_id = $1 AND status = 'completed'""",
+            user_id,
+        )
+
+        # Improvement: compare first vs last scores
+        improvement_pct = 0.0
+        if len(recent_sessions) >= 2:
+            first_score = recent_sessions[-1].get("final_score") or 0
+            last_score = recent_sessions[0].get("final_score") or 0
+            if first_score > 0:
+                improvement_pct = round(((last_score - first_score) / first_score) * 100, 1)
+
+        return {
+            "student": {
+                "id": student["id"],
+                "nickname": student.get("nickname"),
+                "grade": student.get("grade"),
+                "school_name": student.get("school_name"),
+                "campus": student.get("campus"),
+                "ap_courses": student.get("ap_courses"),
+            },
+            "subjects": list(subjects_map.values()),
+            "history": history,
+            "recent_sessions": recent_sessions,
+            "kpi": {
+                "total_assessments": int(kpi_row["total_assessments"]) if kpi_row else 0,
+                "overall_accuracy": round(float(kpi_row["overall_accuracy"]), 1) if kpi_row else 0,
+                "improvement_pct": improvement_pct,
+                "total_questions": int(kpi_row["total_questions"] or 0) if kpi_row else 0,
+            },
+        }
+
+
+async def backfill_ability_scores_for_user(user_id: int) -> int:
+    """Backfill ability scores from existing completed assessment sessions."""
+    pool = await get_pool()
+    count = 0
+    async with pool.acquire() as conn:
+        sessions = await conn.fetch(
+            """SELECT s.id, s.subject, s.final_score, s.ability_level,
+                      r.report_data
+               FROM assessment_sessions s
+               LEFT JOIN assessment_reports r ON r.session_id = s.id
+               WHERE s.user_id = $1 AND s.status = 'completed'
+               ORDER BY s.completed_at ASC""",
+            user_id,
+        )
+        for sess in sessions:
+            if sess["final_score"] is None:
+                continue
+            ability = float(sess["ability_level"]) if sess["ability_level"] else float(sess["final_score"]) / 100.0
+            session_id_str = str(sess["id"])
+
+            # Subject-level score
+            await upsert_ability_score(user_id, sess["subject"], None, ability, session_id_str)
+            await insert_ability_history(user_id, sess["subject"], None, ability, session_id_str)
+            count += 1
+
+            # Topic-level from report_data
+            report_data = sess["report_data"] if sess["report_data"] else {}
+            if isinstance(report_data, str):
+                import json as _json
+                try:
+                    report_data = _json.loads(report_data)
+                except Exception:
+                    report_data = {}
+            topic_scores = report_data.get("topic_scores", {})
+            for topic_name, topic_data in topic_scores.items():
+                if isinstance(topic_data, dict):
+                    acc = topic_data.get("accuracy", 0)
+                    if isinstance(acc, (int, float)):
+                        topic_ability = acc / 100.0 if acc > 1 else acc
+                        await upsert_ability_score(user_id, sess["subject"], topic_name, topic_ability, session_id_str)
+                        await insert_ability_history(user_id, sess["subject"], topic_name, topic_ability, session_id_str)
+                        count += 1
+    return count

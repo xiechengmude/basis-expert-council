@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useI18n } from "@/i18n";
 import { getApiBaseUrl } from "@/lib/config";
+import ScoreRing from "@/app/components/ScoreRing";
 import RadarChart from "../../components/RadarChart";
 import AssessmentNav from "../../components/AssessmentNav";
 import GapAnalysis from "./components/GapAnalysis";
@@ -80,7 +81,6 @@ export default function ReportPage() {
   const [report, setReport] = useState<ReportData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [animatedScore, setAnimatedScore] = useState(0);
   const [copied, setCopied] = useState(false);
 
   const fetchReport = useCallback(async () => {
@@ -109,25 +109,6 @@ export default function ReportPage() {
   useEffect(() => {
     fetchReport();
   }, [fetchReport]);
-
-  // Animated score count-up
-  useEffect(() => {
-    if (!report || report.status === "generating") return;
-    const target = report.overall_score;
-    const duration = 1500;
-    const startTime = Date.now();
-
-    function animate() {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease-out
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setAnimatedScore(Math.round(target * eased));
-      if (progress < 1) requestAnimationFrame(animate);
-    }
-
-    requestAnimationFrame(animate);
-  }, [report]);
 
   const handleShare = useCallback(async () => {
     if (!report) return;
@@ -228,35 +209,8 @@ export default function ReportPage() {
             </p>
 
             {/* Animated score ring */}
-            <div className="relative w-40 h-40 mx-auto mb-4">
-              <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
-                <circle
-                  cx="60"
-                  cy="60"
-                  r="52"
-                  fill="none"
-                  stroke="rgba(255,255,255,0.06)"
-                  strokeWidth="8"
-                />
-                <circle
-                  cx="60"
-                  cy="60"
-                  r="52"
-                  fill="none"
-                  stroke="#14b8a6"
-                  strokeWidth="8"
-                  strokeLinecap="round"
-                  strokeDasharray={`${2 * Math.PI * 52}`}
-                  strokeDashoffset={`${2 * Math.PI * 52 * (1 - report.overall_score / 100)}`}
-                  className="transition-all duration-1000 ease-out"
-                />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-4xl font-bold text-white">
-                  {animatedScore}
-                </span>
-                <span className="text-xs text-slate-500">/100</span>
-              </div>
+            <div className="mb-4">
+              <ScoreRing score={report.overall_score} />
             </div>
 
             <div
@@ -484,6 +438,24 @@ export default function ReportPage() {
           <div className="mb-8">
             <ServiceRecommendations t={t} />
           </div>
+
+          {/* Academic Profile CTA */}
+          <Link
+            href="/profile/academic"
+            className="group mb-8 flex w-full items-center gap-4 rounded-2xl border border-purple-500/20 bg-purple-500/5 p-6 transition-all hover:border-purple-500/40 hover:bg-purple-500/10"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10">
+              <BarChart3 size={24} className="text-purple-400" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <h3 className="text-sm font-semibold text-white group-hover:text-purple-300">
+                {t("academic.report_cta.title")} →
+              </h3>
+              <p className="text-xs text-slate-400">
+                {t("academic.report_cta.desc")}
+              </p>
+            </div>
+          </Link>
 
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

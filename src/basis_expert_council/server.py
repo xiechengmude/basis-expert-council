@@ -859,6 +859,29 @@ async def get_assessment_history(request: Request):
     }
 
 
+@app.get("/api/academic/profile")
+async def get_academic_profile(request: Request):
+    """获取学力档案数据（需登录）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    target_user_id = auth_info["user_id"]
+
+    # Parent view: verify access to child's data
+    student_id = request.query_params.get("student_id")
+    if student_id:
+        user = await db.get_user_by_id(auth_info["user_id"])
+        if user and user.get("role") == "parent":
+            linked = await db.get_linked_students(auth_info["user_id"])
+            if int(student_id) not in [s["id"] for s in linked]:
+                return JSONResponse(status_code=403, content={"error": "无权查看"})
+            target_user_id = int(student_id)
+
+    data = await db.get_academic_profile_data(target_user_id)
+    return data
+
+
 async def _do_resume(session_id: str):
     """Shared logic for resume/status endpoints."""
     session = await db.get_assessment_session(session_id)

@@ -95,6 +95,23 @@ export function WelcomeScreen({ onSendMessage, disabled }: WelcomeScreenProps) {
         <ArrowRight size={16} className="shrink-0 text-brand-600 opacity-60 group-hover:opacity-100" />
       </Link>
 
+      {/* Academic Profile Banner */}
+      <Link
+        href="/profile/academic"
+        className="group mb-6 flex w-full max-w-3xl items-center gap-4 rounded-xl border border-purple-600/30 bg-purple-600/5 p-4 transition-all hover:border-purple-600/50 hover:bg-purple-600/10"
+      >
+        <span className="text-xl">📊</span>
+        <div className="min-w-0 flex-1">
+          <h3 className="text-sm font-semibold text-primary group-hover:text-purple-400">
+            {t("welcome.academic.title")}
+          </h3>
+          <p className="text-xs text-muted-foreground">
+            {t("welcome.academic.desc")}
+          </p>
+        </div>
+        <ArrowRight size={16} className="shrink-0 text-purple-400 opacity-60 group-hover:opacity-100" />
+      </Link>
+
       {/* Role Tabs + Scenario Cards */}
       <Tabs
         value={activeTab}

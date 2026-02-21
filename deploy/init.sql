@@ -57,3 +57,34 @@ CREATE TABLE IF NOT EXISTS purchases (
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS idx_purchases_user ON purchases(user_id);
+
+-- 学力档案: 能力快照表 (per user × subject × topic)
+CREATE TABLE IF NOT EXISTS student_ability_scores (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    subject         TEXT NOT NULL,
+    topic           TEXT,
+    ability_score   REAL NOT NULL,
+    score_100       REAL NOT NULL,
+    confidence      REAL DEFAULT 0.5,
+    assessment_count INT DEFAULT 1,
+    last_session_id UUID,
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE(user_id, subject, topic)
+);
+CREATE INDEX IF NOT EXISTS idx_sas_user ON student_ability_scores(user_id);
+CREATE INDEX IF NOT EXISTS idx_sas_user_subject ON student_ability_scores(user_id, subject);
+
+-- 学力档案: 能力时间序列表 (append-only)
+CREATE TABLE IF NOT EXISTS ability_score_history (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    subject         TEXT NOT NULL,
+    topic           TEXT,
+    ability_score   REAL NOT NULL,
+    score_100       REAL NOT NULL,
+    session_id      UUID REFERENCES assessment_sessions(id),
+    recorded_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_ash_user_subject ON ability_score_history(user_id, subject);
+CREATE INDEX IF NOT EXISTS idx_ash_user_time ON ability_score_history(user_id, recorded_at);
