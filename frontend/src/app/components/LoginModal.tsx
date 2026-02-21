@@ -51,7 +51,7 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
   /* ---- helper: get business API base URL ---- */
   const getApiBaseUrl = useCallback(() => {
     const envUrl = process.env.NEXT_PUBLIC_BASIS_API_URL;
-    // Docker-internal hostnames are unreachable from browser — use relative path (nginx proxy)
+    // Docker-internal hostnames are unreachable from browser
     if (envUrl && !envUrl.includes("basis-api") && !envUrl.includes("basis-agent")) return envUrl;
     try {
       const config = localStorage.getItem("deep-agent-config");
@@ -61,6 +61,13 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
         return lgUrl.replace(":5095", ":5096");
       }
     } catch {}
+    // Derive from current browser location (Docker deployments without reverse proxy)
+    if (envUrl) {
+      try {
+        const parsed = new URL(envUrl);
+        return `${window.location.protocol}//${window.location.hostname}:${parsed.port}`;
+      } catch {}
+    }
     return "";
   }, []);
 

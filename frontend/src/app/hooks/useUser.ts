@@ -60,7 +60,11 @@ export function getBasisToken(): string | null {
 export function getApiBaseUrl(): string {
   if (typeof window === "undefined") return "";
   const envUrl = process.env.NEXT_PUBLIC_BASIS_API_URL;
-  if (envUrl) return envUrl;
+  // Docker-internal hostnames (basis-api, basis-agent) are unreachable from browser
+  if (envUrl && !envUrl.includes("basis-api") && !envUrl.includes("basis-agent")) {
+    return envUrl;
+  }
+  // Try localStorage config (Settings dialog)
   try {
     const config = localStorage.getItem("deep-agent-config");
     if (config) {
@@ -69,6 +73,13 @@ export function getApiBaseUrl(): string {
       return lgUrl.replace(":5095", ":5096");
     }
   } catch {}
+  // Derive from current browser location (Docker deployments without reverse proxy)
+  if (envUrl) {
+    try {
+      const parsed = new URL(envUrl);
+      return `${window.location.protocol}//${window.location.hostname}:${parsed.port}`;
+    } catch {}
+  }
   return "http://127.0.0.1:5096";
 }
 
