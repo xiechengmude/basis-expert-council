@@ -15,8 +15,18 @@ function isDeployed(): boolean {
 }
 
 /**
+ * Ensure URL is absolute — the LangGraph SDK Client uses `new URL()` which
+ * requires a fully-qualified URL (relative paths like "/agent" throw TypeError).
+ */
+function ensureAbsoluteUrl(url: string): string {
+  if (typeof window === "undefined") return url;
+  if (url.startsWith("/")) return `${window.location.origin}${url}`;
+  return url;
+}
+
+/**
  * Resolve LangGraph API URL:
- * - Deployed: "/agent" (nginx proxies /agent/* → LangGraph :5095)
+ * - Deployed: "{origin}/agent" (nginx proxies /agent/* → LangGraph :5095)
  * - Local dev: "http://127.0.0.1:5095" (direct)
  * - NEXT_PUBLIC_LANGGRAPH_URL override if set to a real external URL
  */
@@ -24,10 +34,10 @@ function resolveDefaultDeploymentUrl(): string {
   const envUrl = process.env.NEXT_PUBLIC_LANGGRAPH_URL || "";
   // Valid external URL (not Docker-internal) → use as-is
   if (envUrl && !envUrl.includes("basis-agent") && !envUrl.includes("basis-api")) {
-    return envUrl;
+    return ensureAbsoluteUrl(envUrl);
   }
   // Deployed environment → nginx proxy at /agent
-  if (isDeployed()) return "/agent";
+  if (isDeployed()) return `${window.location.origin}/agent`;
   return "http://127.0.0.1:5095";
 }
 
@@ -43,9 +53,9 @@ const DEFAULT_CONFIG: StandaloneConfig = {
  */
 function sanitizeDeploymentUrl(url: string): string {
   if (url.includes("basis-agent") || url.includes("basis-api")) {
-    return isDeployed() ? "/agent" : "http://127.0.0.1:5095";
+    return isDeployed() ? `${window.location.origin}/agent` : "http://127.0.0.1:5095";
   }
-  return url;
+  return ensureAbsoluteUrl(url);
 }
 
 export function getConfig(): StandaloneConfig | null {
@@ -60,10 +70,11 @@ export function getConfig(): StandaloneConfig | null {
 
   try {
     const parsed: StandaloneConfig = JSON.parse(stored);
-    // Fix stale Docker-internal URLs saved in localStorage
-    const sanitized = sanitizeDeploymentUrl(parsed.deploymentUrl);
-    if (sanitized !== parsed.deploymentUrl) {
-      parsed.deploymentUrl = sanitized;
+    // Fix stale Docker-internal URLs or relative paths saved in localStorage
+    let fixed = sanitizeDeploymentUrl(parsed.deploymentUrl);
+    fixed = ensureAbsoluteUrl(fixed);
+    if (fixed !== parsed.deploymentUrl) {
+      parsed.deploymentUrl = fixed;
       saveConfig(parsed);
     }
     return parsed;

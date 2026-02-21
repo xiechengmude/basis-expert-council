@@ -265,7 +265,7 @@ services:
       - ALIBABA_CLOUD_ACCESS_KEY_SECRET=${ALIYUN_ACCESS_KEY_SECRET:-}
 
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8015"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:8015"]
       interval: 30s
       timeout: 10s
       start_period: 30s
