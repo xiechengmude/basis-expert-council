@@ -199,6 +199,8 @@ services:
     depends_on:
       basis-postgres:
         condition: service_healthy
+      basis-qdrant:
+        condition: service_healthy
     environment:
       - BASIS_API_PORT=5096
       - BASIS_DATABASE_URL=postgresql://postgres:postgres@basis-postgres:5432/langgraph?sslmode=disable
@@ -217,6 +219,17 @@ services:
       - SUPABASE_URL=${STORE_SUPABASE_URL:-}
       - SUPABASE_SERVICE_ROLE_KEY=${STORE_SUPABASE_SERVICE_KEY:-}
       - SUPABASE_ANON_KEY=${STORE_SUPABASE_ANON_KEY:-}
+      # ---- Mem0 记忆系统 ----
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+      - MEM0_QDRANT_HOST=basis-qdrant
+      - MEM0_QDRANT_PORT=6333
+      - MEM0_QDRANT_COLLECTION=basispilot_memories
+      - MEM0_LLM_MODEL=${MEM0_LLM_MODEL:-deepseek/deepseek-chat}
+      - MEM0_EMBEDDING_MODEL=${MEM0_EMBEDDING_MODEL:-Qwen/Qwen3-Embedding-4B}
+      - MEM0_EMBEDDING_DIMS=${MEM0_EMBEDDING_DIMS:-2560}
+      - EMBEDDING_API_KEY=${EMBEDDING_API_KEY:-${OPENAI_API_KEY}}
+      - EMBEDDING_BASE_URL=${EMBEDDING_BASE_URL:-${OPENAI_BASE_URL}}
 
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5096/ok"]
