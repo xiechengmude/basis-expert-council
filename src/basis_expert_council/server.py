@@ -21,6 +21,13 @@ from fastapi.responses import JSONResponse
 load_dotenv()
 
 from . import db
+from .assessment_engine import (
+    ASSESSMENT_TYPES,
+    QUESTION_COUNT,
+    complete_session,
+    start_session,
+    submit_answer,
+)
 from .auth import (
     WECHAT_APP_ID,
     authenticate_request,
@@ -44,12 +51,16 @@ LANGGRAPH_URL = os.getenv("LANGGRAPH_URL", "http://localhost:5095")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Startup: init DB schema. Shutdown: close pool."""
+    """Startup: init DB schema + seed questions. Shutdown: close pool."""
     try:
         await db.init_schema()
         logger.info("Business database schema initialized")
+        # Seed assessment questions
+        from .assessment.seed_questions import seed_question_bank
+        await seed_question_bank()
+        logger.info("Assessment question bank seeded")
     except Exception as e:
-        logger.warning(f"Schema init: {e}")
+        logger.warning(f"Schema/seed init: {e}")
     yield
     await db.close_pool()
 
@@ -546,6 +557,339 @@ async def get_pricing():
             {"type": "planning", "name": "升学规划报告", "price": 299900},
         ],
     }
+
+
+# ---------------------------------------------------------------------------
+# Assessment: 免费学科测评 (public, no auth required for taking assessments)
+# ---------------------------------------------------------------------------
+
+
+@app.get("/api/assessment/types")
+async def get_assessment_types():
+    """获取可用测评类型列表（公开）"""
+    return {"types": ASSESSMENT_TYPES}
+
+
+@app.post("/api/assessment/start")
+async def assessment_start(request: Request):
+    """创建测评会话并返回第一道题（无需登录）"""
+    try:
+        body = await request.json()
+        assessment_type = body.get("type", "")
+        subject = body.get("subject", "")
+        grade_level = body.get("grade_level", "")
+
+        if assessment_type not in ASSESSMENT_TYPES:
+            return JSONResponse(
+                status_code=400,
+                content={"error": f"无效的测评类型，可选: {', '.join(ASSESSMENT_TYPES)}"},
+            )
+        if not subject:
+            return JSONResponse(status_code=400, content={"error": "请选择测评学科"})
+        if not grade_level:
+            return JSONResponse(status_code=400, content={"error": "请选择目标年级"})
+
+        # Check subject is valid for this assessment type
+        valid_subjects = ASSESSMENT_TYPES[assessment_type]["subjects"]
+        if subject not in valid_subjects:
+            return JSONResponse(
+                status_code=400,
+                content={"error": f"该测评类型不支持 {subject}，可选: {', '.join(valid_subjects)}"},
+            )
+
+        result = await start_session(
+            assessment_type=assessment_type,
+            subject=subject,
+            grade_level=grade_level,
+            campus=body.get("campus"),
+            anonymous_id=body.get("anonymous_id"),
+            referral_code=body.get("referral_code"),
+            utm_source=body.get("utm_source"),
+            utm_campaign=body.get("utm_campaign"),
+        )
+
+        if not result["first_question"]:
+            return JSONResponse(
+                status_code=503,
+                content={"error": "题库暂无该学科/年级的题目，请稍后再试"},
+            )
+
+        return {
+            "session_id": str(result["session"]["id"]),
+            "first_question": result["first_question"],
+            "total_questions": result["total_questions"],
+            "total_estimated": result["total_questions"],  # frontend compat alias
+        }
+
+    except Exception as e:
+        logger.error(f"assessment/start error: {e}")
+        return JSONResponse(status_code=500, content={"error": "创建测评失败"})
+
+
+@app.post("/api/assessment/{session_id}/answer")
+async def assessment_answer(session_id: str, request: Request):
+    """提交答案并获取下一题（无需登录）"""
+    try:
+        body = await request.json()
+        question_id = body.get("question_id")
+        answer = body.get("answer")
+        time_spent_sec = body.get("time_spent_sec")
+
+        if not question_id:
+            return JSONResponse(status_code=400, content={"error": "缺少 question_id"})
+
+        result = await submit_answer(
+            session_id=session_id,
+            question_id=question_id,
+            user_answer=answer,
+            time_spent_sec=time_spent_sec,
+        )
+        return result
+
+    except ValueError as e:
+        return JSONResponse(status_code=400, content={"error": str(e)})
+    except Exception as e:
+        logger.error(f"assessment/answer error: {e}")
+        return JSONResponse(status_code=500, content={"error": "提交答案失败"})
+
+
+@app.post("/api/assessment/{session_id}/complete")
+async def assessment_complete(session_id: str):
+    """完成测评并生成报告（无需登录）"""
+    try:
+        result = await complete_session(session_id)
+        return {
+            "report_id": str(result["report"]["id"]),
+            "session_id": session_id,
+            "score": result["session"]["final_score"],
+            "ability_level": result["session"]["ability_level"],
+            "grade_equivalent": result["session"]["grade_equivalent"],
+            "status": "completed",
+        }
+    except ValueError as e:
+        return JSONResponse(status_code=400, content={"error": str(e)})
+    except Exception as e:
+        logger.error(f"assessment/complete error: {e}")
+        return JSONResponse(status_code=500, content={"error": "完成测评失败"})
+
+
+@app.get("/api/assessment/report/{report_id}")
+async def get_assessment_report(report_id: str, request: Request):
+    """获取测评报告（需登录查看完整报告）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "请登录后查看完整报告"})
+
+    report = await db.get_assessment_report(report_id)
+    if not report:
+        return JSONResponse(status_code=404, content={"error": "报告不存在"})
+
+    # Get session info
+    session = await db.get_assessment_session(str(report["session_id"]))
+
+    return {
+        "report": {
+            "id": str(report["id"]),
+            "session_id": str(report["session_id"]),
+            "report_data": report["report_data"],
+            "summary_zh": report["summary_zh"],
+            "summary_en": report["summary_en"],
+            "recommendations": report["recommendations"],
+            "created_at": report["created_at"].isoformat() if report.get("created_at") else None,
+        },
+        "session": {
+            "subject": session["subject"] if session else None,
+            "grade_level": session["grade_level"] if session else None,
+            "assessment_type": session["assessment_type"] if session else None,
+            "final_score": session["final_score"] if session else None,
+            "ability_level": session["ability_level"] if session else None,
+            "grade_equivalent": session["grade_equivalent"] if session else None,
+            "total_questions": session["total_questions"] if session else None,
+            "correct_count": session["correct_count"] if session else None,
+            "time_spent_sec": session["time_spent_sec"] if session else None,
+        } if session else None,
+    }
+
+
+@app.post("/api/assessment/report/{report_id}/share")
+async def share_assessment_report(report_id: str, request: Request):
+    """生成报告分享链接（需登录）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "请登录后分享报告"})
+
+    report = await db.get_assessment_report(report_id)
+    if not report:
+        return JSONResponse(status_code=404, content={"error": "报告不存在"})
+
+    if report.get("share_token"):
+        token = report["share_token"]
+    else:
+        token = await db.generate_share_token(report_id)
+
+    return {"share_token": token}
+
+
+@app.get("/api/assessment/shared/{share_token}")
+async def get_shared_report(share_token: str):
+    """公开查看分享的测评报告（脱敏，无需登录）"""
+    report = await db.get_report_by_share_token(share_token)
+    if not report:
+        return JSONResponse(status_code=404, content={"error": "报告不存在或链接已失效"})
+
+    session = await db.get_assessment_session(str(report["session_id"]))
+
+    # Return desensitized report (no user info)
+    return {
+        "report": {
+            "report_data": report["report_data"],
+            "summary_zh": report["summary_zh"],
+            "summary_en": report["summary_en"],
+            "recommendations": report["recommendations"],
+        },
+        "session": {
+            "subject": session["subject"] if session else None,
+            "grade_level": session["grade_level"] if session else None,
+            "assessment_type": session["assessment_type"] if session else None,
+            "final_score": session["final_score"] if session else None,
+            "ability_level": session["ability_level"] if session else None,
+            "grade_equivalent": session["grade_equivalent"] if session else None,
+        } if session else None,
+    }
+
+
+@app.get("/api/assessment/history")
+async def get_assessment_history(request: Request):
+    """获取当前用户的历史测评列表（需登录）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    sessions = await db.get_user_assessment_sessions(auth_info["user_id"])
+    return {
+        "sessions": [
+            {
+                "id": str(s["id"]),
+                "assessment_type": s["assessment_type"],
+                "subject": s["subject"],
+                "grade_level": s["grade_level"],
+                "status": s["status"],
+                "final_score": s["final_score"],
+                "ability_level": s["ability_level"],
+                "grade_equivalent": s["grade_equivalent"],
+                "total_questions": s["total_questions"],
+                "created_at": s["created_at"].isoformat() if s.get("created_at") else None,
+            }
+            for s in sessions
+        ]
+    }
+
+
+async def _do_resume(session_id: str):
+    """Shared logic for resume/status endpoints."""
+    session = await db.get_assessment_session(session_id)
+    if not session:
+        return JSONResponse(status_code=404, content={"error": "Session not found"})
+    if session["status"] != "in_progress":
+        return JSONResponse(status_code=400, content={"error": "Session is not in progress"})
+
+    answers = await db.get_session_answers(session_id)
+    max_q = QUESTION_COUNT.get(session["assessment_type"], 15)
+
+    # Rebuild CAT state
+    from .assessment_engine import _rebuild_cat_state, _format_question
+    state = _rebuild_cat_state(session, answers, max_q)
+
+    # Select next question
+    next_q = await db.find_next_question(
+        subject=session["subject"],
+        grade_level=session["grade_level"],
+        target_difficulty=state.current_difficulty,
+        exclude_ids=state.answered_question_ids,
+    )
+    if not next_q:
+        next_q = await db.find_next_question(
+            subject=session["subject"],
+            grade_level=session["grade_level"],
+            target_difficulty=state.current_difficulty,
+            exclude_ids=state.answered_question_ids,
+            tolerance=0.3,
+        )
+
+    return {
+        "session_id": str(session["id"]),
+        "status": session["status"],
+        "subject": session["subject"],
+        "grade_level": session["grade_level"],
+        "questions_answered": state.question_count,
+        "total_questions": max_q,
+        "current_question": _format_question(next_q) if next_q else None,
+        "next_question": _format_question(next_q) if next_q else None,
+        "progress": {"current": state.question_count + 1, "total": max_q},
+    }
+
+
+@app.get("/api/assessment/{session_id}/resume")
+async def assessment_resume(session_id: str):
+    """Resume an interrupted session. No auth required."""
+    try:
+        return await _do_resume(session_id)
+    except Exception as e:
+        logger.error(f"assessment/resume error: {e}")
+        return JSONResponse(status_code=500, content={"error": "Resume failed"})
+
+
+@app.get("/api/assessment/{session_id}/status")
+async def assessment_status(session_id: str):
+    """Get session status (alias for resume). No auth required."""
+    try:
+        return await _do_resume(session_id)
+    except Exception as e:
+        logger.error(f"assessment/status error: {e}")
+        return JSONResponse(status_code=500, content={"error": "Status check failed"})
+
+
+@app.get("/api/assessment/report/{report_id}/status")
+async def get_report_status(report_id: str):
+    """Poll report generation status. No auth required."""
+    report = await db.get_assessment_report(report_id)
+    if not report:
+        return JSONResponse(status_code=404, content={"error": "Report not found"})
+
+    # Determine status based on report_data content
+    report_data = report.get("report_data") or {}
+    if isinstance(report_data, str):
+        import json as _json
+        report_data = _json.loads(report_data)
+
+    has_analysis = bool(report_data.get("agent_analysis"))
+    status = "ready" if has_analysis else "generating"
+
+    return {
+        "report_id": str(report["id"]),
+        "status": status,
+    }
+
+
+@app.post("/api/assessment/claim")
+async def claim_sessions(request: Request):
+    """Claim anonymous sessions after registration. Requires auth."""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    try:
+        body = await request.json()
+        anonymous_id = body.get("anonymous_id")
+        if not anonymous_id:
+            return JSONResponse(status_code=400, content={"error": "Missing anonymous_id"})
+
+        count = await db.claim_anonymous_sessions(auth_info["user_id"], anonymous_id)
+        return {"claimed": count}
+
+    except Exception as e:
+        logger.error(f"assessment/claim error: {e}")
+        return JSONResponse(status_code=500, content={"error": "Claim failed"})
 
 
 # ---------------------------------------------------------------------------

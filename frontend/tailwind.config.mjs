@@ -304,6 +304,22 @@ export default {
           "0%, 100%": { opacity: "0.03" },
           "50%": { opacity: "0.06" },
         },
+        slideInRight: {
+          from: { transform: "translateX(100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        ringPulseGreen: {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(34, 197, 94, 0.4)" },
+          "50%": { boxShadow: "0 0 0 8px rgba(34, 197, 94, 0)" },
+        },
+        ringPulseRed: {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(239, 68, 68, 0.4)" },
+          "50%": { boxShadow: "0 0 0 8px rgba(239, 68, 68, 0)" },
+        },
+        glowPulse: {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
       },
       animation: {
         hide: "hide 100ms ease-in",
@@ -311,6 +327,10 @@ export default {
         swipeOut: "swipeOut 100ms ease-out",
         "fade-up": "fadeUp 0.6s ease-out forwards",
         "grid-pulse": "gridPulse 4s ease-in-out infinite",
+        "slide-in-right": "slideInRight 0.3s ease-out",
+        "ring-pulse-green": "ringPulseGreen 1.5s ease-in-out",
+        "ring-pulse-red": "ringPulseRed 1.5s ease-in-out",
+        "glow-pulse": "glowPulse 2s ease-in-out infinite",
       },
     },
     typography: {

@@ -206,6 +206,94 @@ CREATE TABLE IF NOT EXISTS purchases (
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS idx_purchases_user ON purchases(user_id);
+
+-- =====================================================
+-- 测评体系表
+-- =====================================================
+
+-- 题库表
+CREATE TABLE IF NOT EXISTS assessment_questions (
+    id              SERIAL PRIMARY KEY,
+    subject         TEXT NOT NULL,              -- math/english/physics/chemistry/biology/history
+    grade_level     TEXT NOT NULL,              -- G5, G6, ..., G12
+    topic           TEXT NOT NULL,              -- e.g. "algebra", "quadratics", "reading_comp"
+    subtopic        TEXT,                       -- e.g. "factoring", "completing_the_square"
+    difficulty      REAL NOT NULL DEFAULT 0.5,  -- 0.0 ~ 1.0
+    question_type   TEXT NOT NULL,              -- mcq/fill_in/short_answer/essay/experiment
+    content_zh      JSONB NOT NULL,             -- { stem, options?, answer?, rubric?, images? }
+    content_en      JSONB NOT NULL,             -- 英文版本
+    basis_aligned   BOOLEAN DEFAULT TRUE,       -- 是否对齐 BASIS 课程进度
+    usage_count     INT DEFAULT 0,              -- 使用次数
+    correct_rate    REAL,                       -- 历史正确率
+    avg_time_sec    INT,                        -- 平均答题时间(秒)
+    tags            TEXT[],                     -- 标签数组
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_aq_subject_grade ON assessment_questions(subject, grade_level);
+CREATE INDEX IF NOT EXISTS idx_aq_difficulty ON assessment_questions(difficulty);
+CREATE INDEX IF NOT EXISTS idx_aq_topic ON assessment_questions(topic);
+
+-- 测评会话表
+CREATE TABLE IF NOT EXISTS assessment_sessions (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id         INT REFERENCES biz_users(id) ON DELETE SET NULL,
+    anonymous_id    TEXT,                       -- 未注册用户的临时 ID
+    assessment_type TEXT NOT NULL,              -- pre_admission / subject_diagnostic / quick
+    subject         TEXT NOT NULL,              -- math/english/physics/...
+    grade_level     TEXT NOT NULL,              -- 目标年级
+    campus          TEXT,                       -- 目标校区
+    status          TEXT NOT NULL DEFAULT 'in_progress', -- in_progress/completed/abandoned
+    started_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    completed_at    TIMESTAMPTZ,
+    total_questions INT DEFAULT 0,
+    correct_count   INT DEFAULT 0,
+    final_score     REAL,                       -- 0-100
+    ability_level   REAL,                       -- CAT 能力估值 0.0-1.0
+    grade_equivalent TEXT,                      -- "At G7 level", "Above G8"
+    time_spent_sec  INT DEFAULT 0,
+    referral_code   TEXT,                       -- 推荐来源
+    utm_source      TEXT,                       -- 营销追踪
+    utm_campaign    TEXT,
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_as_user ON assessment_sessions(user_id);
+CREATE INDEX IF NOT EXISTS idx_as_anonymous ON assessment_sessions(anonymous_id);
+CREATE INDEX IF NOT EXISTS idx_as_status ON assessment_sessions(status);
+
+-- 答题记录表
+CREATE TABLE IF NOT EXISTS assessment_answers (
+    id              SERIAL PRIMARY KEY,
+    session_id      UUID NOT NULL REFERENCES assessment_sessions(id) ON DELETE CASCADE,
+    question_id     INT NOT NULL REFERENCES assessment_questions(id),
+    question_order  INT NOT NULL,               -- 第几题
+    user_answer     JSONB,                      -- 用户答案 (选项/文本/图片)
+    is_correct      BOOLEAN,                    -- 规则评分结果 (Agent 评分的为 NULL 直到评完)
+    score           REAL,                       -- 该题得分 (0-1)
+    difficulty_at   REAL,                       -- 答题时的难度级别
+    time_spent_sec  INT,                        -- 该题花费时间
+    agent_feedback  TEXT,                       -- Agent 对开放题的评语
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_aa_session ON assessment_answers(session_id);
+
+-- 测评报告表
+CREATE TABLE IF NOT EXISTS assessment_reports (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    session_id      UUID NOT NULL REFERENCES assessment_sessions(id) ON DELETE CASCADE,
+    user_id         INT REFERENCES biz_users(id),
+    report_data     JSONB NOT NULL,             -- 完整报告数据 (雷达图数据、分析文本等)
+    summary_zh      TEXT,                       -- 中文摘要
+    summary_en      TEXT,                       -- 英文摘要
+    recommendations JSONB,                      -- 个性化建议列表
+    share_token     TEXT UNIQUE,                -- 分享链接的 token
+    view_count      INT DEFAULT 0,
+    is_premium      BOOLEAN DEFAULT FALSE,      -- 是否是付费完整版报告
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_ar_session ON assessment_reports(session_id);
+CREATE INDEX IF NOT EXISTS idx_ar_user ON assessment_reports(user_id);
+CREATE INDEX IF NOT EXISTS idx_ar_share ON assessment_reports(share_token);
 """
 
 
@@ -581,3 +669,401 @@ async def unlink_parent_student(parent_id: int, student_id: int) -> None:
             "UPDATE parent_student_links SET status = 'revoked' WHERE parent_id = $1 AND student_id = $2",
             parent_id, student_id,
         )
+
+
+# ---------------------------------------------------------------------------
+# 测评题库 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def get_question(question_id: int) -> dict | None:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM assessment_questions WHERE id = $1", question_id,
+        )
+        return dict(row) if row else None
+
+
+async def query_questions(
+    subject: str,
+    grade_level: str,
+    *,
+    topic: str | None = None,
+    difficulty_min: float = 0.0,
+    difficulty_max: float = 1.0,
+    question_type: str | None = None,
+    exclude_ids: list[int] | None = None,
+    limit: int = 20,
+) -> list[dict]:
+    """按条件查询题目，用于自适应出题"""
+    pool = await get_pool()
+    conditions = [
+        "subject = $1",
+        "grade_level = $2",
+        "difficulty >= $3",
+        "difficulty <= $4",
+    ]
+    params: list[Any] = [subject, grade_level, difficulty_min, difficulty_max]
+    idx = 5
+
+    if topic:
+        conditions.append(f"topic = ${idx}")
+        params.append(topic)
+        idx += 1
+
+    if question_type:
+        conditions.append(f"question_type = ${idx}")
+        params.append(question_type)
+        idx += 1
+
+    if exclude_ids:
+        conditions.append(f"id != ALL(${idx}::int[])")
+        params.append(exclude_ids)
+        idx += 1
+
+    where = " AND ".join(conditions)
+    params.append(limit)
+    sql = f"""
+        SELECT * FROM assessment_questions
+        WHERE {where}
+        ORDER BY random()
+        LIMIT ${idx}
+    """
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(sql, *params)
+        return [dict(r) for r in rows]
+
+
+async def find_next_question(
+    subject: str,
+    grade_level: str,
+    target_difficulty: float,
+    exclude_ids: list[int],
+    tolerance: float = 0.15,
+) -> dict | None:
+    """为 CAT 算法查找下一道题：在目标难度 +/- tolerance 范围内随机选一道"""
+    pool = await get_pool()
+    d_min = max(0.0, target_difficulty - tolerance)
+    d_max = min(1.0, target_difficulty + tolerance)
+
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            SELECT * FROM assessment_questions
+            WHERE subject = $1 AND grade_level = $2
+              AND difficulty >= $3 AND difficulty <= $4
+              AND id != ALL($5::int[])
+            ORDER BY random()
+            LIMIT 1
+            """,
+            subject, grade_level, d_min, d_max, exclude_ids or [],
+        )
+        return dict(row) if row else None
+
+
+async def increment_question_usage(question_id: int, is_correct: bool) -> None:
+    """更新题目的使用次数和正确率"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        await conn.execute(
+            """
+            UPDATE assessment_questions
+            SET usage_count = usage_count + 1,
+                correct_rate = CASE
+                    WHEN usage_count = 0 THEN $2::real
+                    ELSE (correct_rate * usage_count + $2::real) / (usage_count + 1)
+                END,
+                updated_at = NOW()
+            WHERE id = $1
+            """,
+            question_id, 1.0 if is_correct else 0.0,
+        )
+
+
+async def bulk_insert_questions(questions: list[dict]) -> int:
+    """批量导入题目，返回插入数量"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        count = 0
+        async with conn.transaction():
+            for q in questions:
+                await conn.execute(
+                    """
+                    INSERT INTO assessment_questions
+                        (subject, grade_level, topic, subtopic, difficulty,
+                         question_type, content_zh, content_en, basis_aligned, tags)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+                    """,
+                    q["subject"],
+                    q["grade_level"],
+                    q["topic"],
+                    q.get("subtopic"),
+                    q.get("difficulty", 0.5),
+                    q["question_type"],
+                    json.dumps(q["content_zh"], ensure_ascii=False),
+                    json.dumps(q["content_en"], ensure_ascii=False),
+                    q.get("basis_aligned", True),
+                    q.get("tags"),
+                )
+                count += 1
+        return count
+
+
+# ---------------------------------------------------------------------------
+# 测评会话 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def create_assessment_session(
+    *,
+    assessment_type: str,
+    subject: str,
+    grade_level: str,
+    campus: str | None = None,
+    user_id: int | None = None,
+    anonymous_id: str | None = None,
+    referral_code: str | None = None,
+    utm_source: str | None = None,
+    utm_campaign: str | None = None,
+) -> dict:
+    """创建测评会话（支持匿名用户）"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO assessment_sessions
+                (assessment_type, subject, grade_level, campus,
+                 user_id, anonymous_id, referral_code, utm_source, utm_campaign)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+            RETURNING *
+            """,
+            assessment_type, subject, grade_level, campus,
+            user_id, anonymous_id, referral_code, utm_source, utm_campaign,
+        )
+        return dict(row)
+
+
+async def get_assessment_session(session_id: str) -> dict | None:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM assessment_sessions WHERE id = $1",
+            session_id,
+        )
+        return dict(row) if row else None
+
+
+async def update_assessment_session(session_id: str, **fields) -> dict | None:
+    """更新测评会话字段"""
+    allowed = {
+        "status", "completed_at", "total_questions", "correct_count",
+        "final_score", "ability_level", "grade_equivalent", "time_spent_sec",
+        "user_id",
+    }
+    data = {k: v for k, v in fields.items() if k in allowed and v is not None}
+    if not data:
+        return await get_assessment_session(session_id)
+
+    pool = await get_pool()
+    sets = ", ".join(f"{k} = ${i+2}" for i, k in enumerate(data))
+    vals = [session_id, *data.values()]
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            f"UPDATE assessment_sessions SET {sets} WHERE id = $1 RETURNING *",
+            *vals,
+        )
+        return dict(row) if row else None
+
+
+async def get_user_assessment_sessions(
+    user_id: int, *, limit: int = 20
+) -> list[dict]:
+    """获取用户历史测评列表"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            """
+            SELECT * FROM assessment_sessions
+            WHERE user_id = $1
+            ORDER BY created_at DESC
+            LIMIT $2
+            """,
+            user_id, limit,
+        )
+        return [dict(r) for r in rows]
+
+
+# ---------------------------------------------------------------------------
+# 答题记录 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def save_answer(
+    *,
+    session_id: str,
+    question_id: int,
+    question_order: int,
+    user_answer: dict | str | None = None,
+    is_correct: bool | None = None,
+    score: float | None = None,
+    difficulty_at: float | None = None,
+    time_spent_sec: int | None = None,
+    agent_feedback: str | None = None,
+) -> dict:
+    """保存一条答题记录"""
+    pool = await get_pool()
+    answer_json = None
+    if user_answer is not None:
+        answer_json = json.dumps(user_answer, ensure_ascii=False) if isinstance(user_answer, (dict, list)) else json.dumps(user_answer)
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO assessment_answers
+                (session_id, question_id, question_order, user_answer,
+                 is_correct, score, difficulty_at, time_spent_sec, agent_feedback)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+            RETURNING *
+            """,
+            session_id, question_id, question_order, answer_json,
+            is_correct, score, difficulty_at, time_spent_sec, agent_feedback,
+        )
+        return dict(row)
+
+
+async def get_session_answers(session_id: str) -> list[dict]:
+    """获取某次测评的所有答题记录"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            """
+            SELECT a.*, q.subject, q.topic, q.subtopic, q.difficulty, q.question_type
+            FROM assessment_answers a
+            JOIN assessment_questions q ON q.id = a.question_id
+            WHERE a.session_id = $1
+            ORDER BY a.question_order
+            """,
+            session_id,
+        )
+        return [dict(r) for r in rows]
+
+
+# ---------------------------------------------------------------------------
+# 测评报告 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def create_assessment_report(
+    *,
+    session_id: str,
+    user_id: int | None = None,
+    report_data: dict,
+    summary_zh: str | None = None,
+    summary_en: str | None = None,
+    recommendations: list | None = None,
+    share_token: str | None = None,
+    is_premium: bool = False,
+) -> dict:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO assessment_reports
+                (session_id, user_id, report_data, summary_zh, summary_en,
+                 recommendations, share_token, is_premium)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+            RETURNING *
+            """,
+            session_id,
+            user_id,
+            json.dumps(report_data, ensure_ascii=False),
+            summary_zh,
+            summary_en,
+            json.dumps(recommendations, ensure_ascii=False) if recommendations else None,
+            share_token,
+            is_premium,
+        )
+        return dict(row)
+
+
+async def get_assessment_report(report_id: str) -> dict | None:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM assessment_reports WHERE id = $1", report_id,
+        )
+        return dict(row) if row else None
+
+
+async def get_report_by_session(session_id: str) -> dict | None:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM assessment_reports WHERE session_id = $1", session_id,
+        )
+        return dict(row) if row else None
+
+
+async def get_report_by_share_token(share_token: str) -> dict | None:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM assessment_reports WHERE share_token = $1", share_token,
+        )
+        if row:
+            # 增加查看次数
+            await conn.execute(
+                "UPDATE assessment_reports SET view_count = view_count + 1 WHERE id = $1",
+                row["id"],
+            )
+        return dict(row) if row else None
+
+
+async def generate_share_token(report_id: str) -> str:
+    """为报告生成唯一分享 token"""
+    import secrets
+    token = secrets.token_urlsafe(16)
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        await conn.execute(
+            "UPDATE assessment_reports SET share_token = $1 WHERE id = $2",
+            token, report_id,
+        )
+    return token
+
+
+# ---------------------------------------------------------------------------
+# 匿名会话认领
+# ---------------------------------------------------------------------------
+
+
+async def claim_anonymous_sessions(user_id: int, anonymous_id: str) -> int:
+    """将匿名会话 + 报告关联到已注册用户，返回认领数量"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        async with conn.transaction():
+            # Update sessions
+            result = await conn.execute(
+                """
+                UPDATE assessment_sessions
+                SET user_id = $1
+                WHERE anonymous_id = $2 AND user_id IS NULL
+                """,
+                user_id, anonymous_id,
+            )
+            count = int(result.split()[-1])  # "UPDATE N"
+
+            # Update reports linked to those sessions
+            await conn.execute(
+                """
+                UPDATE assessment_reports r
+                SET user_id = $1
+                FROM assessment_sessions s
+                WHERE r.session_id = s.id
+                  AND s.anonymous_id = $2
+                  AND r.user_id IS NULL
+                """,
+                user_id, anonymous_id,
+            )
+
+            return count
