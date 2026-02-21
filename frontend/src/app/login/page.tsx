@@ -93,7 +93,8 @@ function LoginForm() {
     setError("");
     setSendingCode(true);
     try {
-      const res = await fetch("/api/auth/send-code", {
+      const baseUrl = getApiBaseUrl();
+      const res = await fetch(`${baseUrl}/api/auth/send-code`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone }),
@@ -111,7 +112,7 @@ function LoginForm() {
     } finally {
       setSendingCode(false);
     }
-  }, [phone, t]);
+  }, [phone, t, getApiBaseUrl]);
 
   /* ---- phone login ---- */
   const handlePhoneLogin = useCallback(async () => {
@@ -127,7 +128,8 @@ function LoginForm() {
     setError("");
     setLoggingIn(true);
     try {
-      const res = await fetch("/api/auth/phone-login", {
+      const baseUrl = getApiBaseUrl();
+      const res = await fetch(`${baseUrl}/api/auth/phone-login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone, code }),
@@ -157,7 +159,7 @@ function LoginForm() {
     } finally {
       setLoggingIn(false);
     }
-  }, [phone, code, redirect, router, syncBasisToken, t]);
+  }, [phone, code, redirect, router, syncBasisToken, t, getApiBaseUrl]);
 
   /* ---- WeChat login ---- */
   const handleWeChatLogin = useCallback(() => {

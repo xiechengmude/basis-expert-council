@@ -8,6 +8,8 @@ BasisPilot (贝领) — 业务 API 服务
 
 import logging
 import os
+import re
+import secrets
 from contextlib import asynccontextmanager
 
 import httpx
@@ -27,6 +29,7 @@ from .auth import (
     sync_supabase_user,
     wechat_login,
 )
+from .sms import RateLimitError, SmsError, send_code, verify_code
 
 logger = logging.getLogger("basis.server")
 
@@ -111,6 +114,135 @@ async def wechat_callback(code: str):
     except Exception as e:
         logger.error(f"WeChat login failed: {e}")
         return JSONResponse(status_code=400, content={"error": "微信登录失败"})
+
+
+# ---------------------------------------------------------------------------
+# Auth: SMS 验证码
+# ---------------------------------------------------------------------------
+
+SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "")
+SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY", "")
+
+
+@app.post("/api/auth/send-code")
+async def send_sms_code(request: Request):
+    """发送短信验证码"""
+    try:
+        body = await request.json()
+        phone = body.get("phone", "")
+        if not phone or not re.match(r"^1\d{10}$", phone):
+            return JSONResponse(status_code=400, content={"error": "请输入有效的 11 位手机号"})
+
+        await send_code(phone)
+        return {"success": True, "expiresIn": 300}
+
+    except RateLimitError as e:
+        return JSONResponse(status_code=429, content={"error": str(e)})
+    except SmsError as e:
+        return JSONResponse(status_code=500, content={"error": str(e)})
+    except Exception as e:
+        logger.error(f"send-code error: {e}")
+        return JSONResponse(status_code=500, content={"error": "发送验证码失败"})
+
+
+@app.post("/api/auth/phone-login")
+async def phone_login(request: Request):
+    """短信验证码登录：验证码 → Supabase 用户 → session tokens"""
+    try:
+        body = await request.json()
+        phone = body.get("phone", "")
+        code = body.get("code", "")
+
+        if not phone or not code:
+            return JSONResponse(status_code=400, content={"error": "手机号和验证码不能为空"})
+
+        if not verify_code(phone, code):
+            return JSONResponse(status_code=400, content={"error": "验证码无效或已过期"})
+
+        if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
+            return JSONResponse(status_code=500, content={"error": "Supabase 未配置"})
+
+        email = f"{phone}@sms.basis.edu"
+        password = secrets.token_urlsafe(24) + "Aa1!"
+        headers = {
+            "apikey": SUPABASE_SERVICE_ROLE_KEY,
+            "Authorization": f"Bearer {SUPABASE_SERVICE_ROLE_KEY}",
+            "Content-Type": "application/json",
+        }
+
+        async with httpx.AsyncClient(timeout=15) as client:
+            # 1. Try to create user
+            create_resp = await client.post(
+                f"{SUPABASE_URL}/auth/v1/admin/users",
+                headers=headers,
+                json={
+                    "email": email,
+                    "password": password,
+                    "phone": phone,
+                    "phone_confirm": True,
+                    "email_confirm": True,
+                    "user_metadata": {"phone": phone, "phone_verified_by": "backend_sms"},
+                },
+            )
+
+            user_id: str | None = None
+            is_new_user = True
+
+            if create_resp.status_code in (200, 201):
+                user_id = create_resp.json().get("id")
+            else:
+                # User already exists — find by listing
+                is_new_user = False
+                list_resp = await client.get(
+                    f"{SUPABASE_URL}/auth/v1/admin/users",
+                    headers=headers,
+                    params={"per_page": "50"},
+                )
+                if list_resp.status_code == 200:
+                    users = list_resp.json().get("users", [])
+                    for u in users:
+                        if u.get("phone") == phone or u.get("email") == email:
+                            user_id = u["id"]
+                            break
+
+                if not user_id:
+                    return JSONResponse(status_code=500, content={"error": "用户创建失败，请重试"})
+
+                # Update password
+                await client.put(
+                    f"{SUPABASE_URL}/auth/v1/admin/users/{user_id}",
+                    headers=headers,
+                    json={"password": password},
+                )
+
+            # 2. Sign in to get session
+            anon_key = SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY
+            sign_in_resp = await client.post(
+                f"{SUPABASE_URL}/auth/v1/token?grant_type=password",
+                headers={
+                    "apikey": anon_key,
+                    "Content-Type": "application/json",
+                },
+                json={"email": email, "password": password},
+            )
+
+            if sign_in_resp.status_code != 200:
+                logger.error(f"Supabase sign-in failed: {sign_in_resp.text}")
+                return JSONResponse(status_code=500, content={"error": "登录失败，请重试"})
+
+            session = sign_in_resp.json()
+            return {
+                "success": True,
+                "accessToken": session.get("access_token"),
+                "refreshToken": session.get("refresh_token"),
+                "userId": user_id,
+                "isNewUser": is_new_user,
+            }
+
+    except Exception as e:
+        logger.error(f"phone-login error: {e}")
+        return JSONResponse(status_code=500, content={"error": "登录失败"})
 
 
 # ---------------------------------------------------------------------------

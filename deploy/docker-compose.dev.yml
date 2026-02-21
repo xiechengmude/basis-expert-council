@@ -208,6 +208,15 @@ services:
       - SUPABASE_JWT_SECRET=${SUPABASE_JWT_SECRET:-}
       - LANGGRAPH_URL=http://basis-agent:5095
       - FRONTEND_URL=${FRONTEND_URL:-http://localhost:8015}
+      # ---- SMS (阿里云) ----
+      - ALIYUN_ACCESS_KEY_ID=${ALIYUN_ACCESS_KEY_ID:-}
+      - ALIYUN_ACCESS_KEY_SECRET=${ALIYUN_ACCESS_KEY_SECRET:-}
+      - ALIYUN_SMS_SIGN_NAME=${ALIYUN_SMS_SIGN_NAME:-}
+      - ALIYUN_SMS_TEMPLATE_CODE=${ALIYUN_SMS_TEMPLATE_CODE:-}
+      # ---- Supabase (phone-login) ----
+      - SUPABASE_URL=${STORE_SUPABASE_URL:-}
+      - SUPABASE_SERVICE_ROLE_KEY=${STORE_SUPABASE_SERVICE_KEY:-}
+      - SUPABASE_ANON_KEY=${STORE_SUPABASE_ANON_KEY:-}
 
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5096/ok"]
