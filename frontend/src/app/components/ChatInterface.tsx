@@ -252,9 +252,15 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
   }, [interrupt]);
 
   const a2uiInterruptPayload = useMemo(() => {
-    if (!interrupt?.value) return null;
-    const val = interrupt.value as any;
+    if (!interrupt) return null;
+    // SDK may return single Interrupt or Interrupt[] when multiple
+    const interruptObj = Array.isArray(interrupt) ? interrupt[0] : interrupt;
+    if (!interruptObj?.value) return null;
+    const val = interruptObj.value as any;
     if (val.type === "a2ui_render" && val.payload) {
+      if (process.env.NODE_ENV === "development") {
+        console.debug("[A2UI] interrupt payload extracted", val.payload.slice(0, 120));
+      }
       return val.payload as string;
     }
     return null;

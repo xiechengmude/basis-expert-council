@@ -144,6 +144,20 @@ function HiddenToolsAndVisibleTools({
               />
             );
           }
+          // Fallback: no interrupt payload but tool args have JSONL — render from args
+          // This handles cases where the interrupt mechanism doesn't propagate correctly
+          if (!toolCall.result && !a2uiInterruptPayload && toolCall.args?.jsonl) {
+            if (process.env.NODE_ENV === "development") {
+              console.debug("[A2UI] fallback: rendering from tool call args");
+            }
+            return (
+              <A2UISurface
+                key={toolCall.id}
+                jsonl={toolCall.args.jsonl as string}
+                onAction={onA2UIAction}
+              />
+            );
+          }
           // Phase 2: resumed — render from tool result's ui field, static (no onAction)
           if (toolCall.result) {
             try {

@@ -238,6 +238,7 @@ BASIS 起源于美国亚利桑那州（1998 年），由 Michael 和 Olga Block 
 | 学习清单 / 待办事项 | ✅ **必须** | Card + CheckBox + Divider |
 | 成绩展示 / 进度仪表盘 | ✅ **必须** | Card + Row + Text |
 | 课程对比 / 选课建议 | ✅ **必须** | Card + Column/List + Text |
+| 推荐下一步操作 | ✅ **必须** | SuggestedActions + Button |
 | 纯概念讲解 / 问答 | ❌ 用 Markdown | — |
 
 **判断标准：** 如果回答中包含"选项 A/B/C/D"、"打勾"、"分数展示"、"对比表"等结构化交互内容，就应该使用 A2UI 而非 Markdown。

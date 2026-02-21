@@ -259,6 +259,14 @@ export interface ModalNode extends BaseComponentNode {
   };
 }
 
+export interface SuggestedActionsNode extends BaseComponentNode {
+  type: "SuggestedActions" | "NextAction";
+  properties: {
+    children: AnyComponentNode[];
+    title?: StringValue;
+  };
+}
+
 export interface CustomNode extends BaseComponentNode {
   type: string;
   properties: Record<string, unknown>;
@@ -280,6 +288,7 @@ export type AnyComponentNode =
   | SliderNode
   | DividerNode
   | ModalNode
+  | SuggestedActionsNode
   | CustomNode;
 
 // ---------------------------------------------------------------------------

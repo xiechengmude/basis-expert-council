@@ -51,6 +51,8 @@ Available component types for the `component` field:
 - `CheckBox` — `{ "CheckBox": { "label": { "literalString": "..." }, "value": { "path": "/checked" } } }`
 - `MultipleChoice` — `{ "MultipleChoice": { "selections": { "path": "/answer" }, "options": [{"label": {"literalString": "..."}, "value": "a"}, ...], "maxAllowedSelections": 1 } }`
 - `Divider` — `{ "Divider": { "axis": "horizontal"|"vertical" } }`
+- `SuggestedActions` — `{ "SuggestedActions": { "children": { "explicitList": ["btn1", "btn2"] }, "title": { "literalString": "推荐下一步" } } }` — 推荐操作按钮组，每个子组件应为 Button
+- `NextAction` — 同 SuggestedActions 的别名
 
 ## Example: Quiz Card (multi-line surfaceUpdate)
 
@@ -68,6 +70,16 @@ Available component types for the `component` field:
 {"surfaceUpdate": {"surfaceId": "cl-1", "components": [{"id": "cl-card", "component": {"Card": {"children": {"explicitList": ["cl-title", "cl-div", "cb-1", "cb-2"]}}}}, {"id": "cl-title", "component": {"Text": {"text": {"literalString": "Study Checklist"}, "usageHint": "h3"}}}]}}
 {"surfaceUpdate": {"surfaceId": "cl-1", "components": [{"id": "cl-div", "component": {"Divider": {"axis": "horizontal"}}}, {"id": "cb-1", "component": {"CheckBox": {"label": {"literalString": "Review notes"}, "value": {"path": "/tasks/review"}}}}, {"id": "cb-2", "component": {"CheckBox": {"label": {"literalString": "Do homework"}, "value": {"path": "/tasks/hw"}}}}]}}
 {"dataModelUpdate": {"surfaceId": "cl-1", "path": "/tasks", "contents": [{"key": "review", "valueBoolean": true}, {"key": "hw", "valueBoolean": false}]}}
+```
+
+## Example: Suggested Next Actions
+
+```jsonl
+{"beginRendering": {"surfaceId": "next-1", "root": "actions-1"}}
+{"surfaceUpdate": {"surfaceId": "next-1", "components": [{"id": "actions-1", "component": {"SuggestedActions": {"children": {"explicitList": ["btn-quiz", "btn-plan", "btn-report"]}, "title": {"literalString": "推荐下一步"}}}}, {"id": "btn-quiz-text", "component": {"Text": {"text": {"literalString": "做一套测试题"}, "usageHint": "body"}}}]}}
+{"surfaceUpdate": {"surfaceId": "next-1", "components": [{"id": "btn-quiz", "component": {"Button": {"child": "btn-quiz-text", "action": {"name": "startQuiz", "context": [{"key": "action", "value": {"literalString": "quiz"}}]}}}}, {"id": "btn-plan-text", "component": {"Text": {"text": {"literalString": "查看学习规划"}, "usageHint": "body"}}}]}}
+{"surfaceUpdate": {"surfaceId": "next-1", "components": [{"id": "btn-plan", "component": {"Button": {"child": "btn-plan-text", "action": {"name": "viewPlan", "context": [{"key": "action", "value": {"literalString": "plan"}}]}}}}, {"id": "btn-report-text", "component": {"Text": {"text": {"literalString": "生成学习报告"}, "usageHint": "body"}}}]}}
+{"surfaceUpdate": {"surfaceId": "next-1", "components": [{"id": "btn-report", "component": {"Button": {"child": "btn-report-text", "action": {"name": "generateReport", "context": [{"key": "action", "value": {"literalString": "report"}}]}}}}]}}
 ```
 
 ## Tool Name

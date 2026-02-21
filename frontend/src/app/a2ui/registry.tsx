@@ -12,6 +12,7 @@ import { A2UIList } from "./components/A2UIList";
 import { A2UICheckbox } from "./components/A2UICheckbox";
 import { A2UIMultipleChoice } from "./components/A2UIMultipleChoice";
 import { A2UIDivider } from "./components/A2UIDivider";
+import { A2UISuggestedActions } from "./components/A2UISuggestedActions";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const A2UI_COMPONENTS: Record<string, React.FC<{ node: any }>> = {
@@ -26,6 +27,8 @@ const A2UI_COMPONENTS: Record<string, React.FC<{ node: any }>> = {
   Checkbox: A2UICheckbox,
   MultipleChoice: A2UIMultipleChoice,
   Divider: A2UIDivider,
+  SuggestedActions: A2UISuggestedActions,
+  NextAction: A2UISuggestedActions,
 };
 
 /**
