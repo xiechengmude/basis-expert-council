@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { createClient } from "@/lib/supabase/client";
 
 export interface UserInfo {
   id: number;
@@ -81,8 +82,50 @@ export function useUser() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const syncAttempted = useRef(false);
+
+  /**
+   * 当有 Supabase session 但无 basis-token 时，自动调 /api/auth/sync 补上。
+   * 这解决了 Supabase cookie 自动续期但 basis-token 过期/丢失的问题。
+   */
+  const ensureBasisToken = useCallback(async (): Promise<string | null> => {
+    const existing = getBasisToken();
+    if (existing) return existing;
+    if (syncAttempted.current) return null;
+    syncAttempted.current = true;
+
+    try {
+      const supabase = createClient();
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.user) return null;
+
+      const baseUrl = getApiBaseUrl();
+      const res = await fetch(`${baseUrl}/api/auth/sync`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          supabase_uid: session.user.id,
+          phone: session.user.phone || "",
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.token) {
+          localStorage.setItem("basis-token", data.token);
+          return data.token;
+        }
+      }
+    } catch {
+      // silent — sync is best-effort
+    }
+    return null;
+  }, []);
+
   const fetchProfile = useCallback(async () => {
-    const token = getBasisToken();
+    let token = getBasisToken();
+    if (!token) {
+      token = await ensureBasisToken();
+    }
     if (!token) {
       setLoading(false);
       return;
@@ -96,6 +139,17 @@ export function useUser() {
         setError(null);
       } else if (res.status === 401) {
         localStorage.removeItem("basis-token");
+        // Try once more with fresh sync
+        const freshToken = await ensureBasisToken();
+        if (freshToken) {
+          const retry = await fetchWithAuth("/api/user/me");
+          if (retry.ok) {
+            const data = await retry.json();
+            setProfile(data);
+            setError(null);
+            return;
+          }
+        }
         setProfile(null);
       } else {
         setError("获取用户信息失败");
@@ -105,7 +159,7 @@ export function useUser() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [ensureBasisToken]);
 
   const refreshQuota = useCallback(async () => {
     const token = getBasisToken();
