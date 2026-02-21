@@ -122,6 +122,10 @@ def _parse_misconceptions_file(path: Path) -> dict[str, Misconception]:
     if isinstance(items, list):
         for item in items:
             try:
+                # grades 在 YAML 中可能是纯数字 [4,5,6]，需转换为 "G4","G5","G6"
+                raw_grades = item.get("grades", [])
+                if raw_grades and not isinstance(raw_grades[0], str):
+                    item["grades"] = [f"G{g}" for g in raw_grades]
                 mc = Misconception(**item)
                 misconceptions[mc.id] = mc
             except Exception as e:
@@ -129,6 +133,9 @@ def _parse_misconceptions_file(path: Path) -> dict[str, Misconception]:
     else:
         for mc_id, fields in items.items() if isinstance(items, dict) else []:
             try:
+                raw_grades = fields.get("grades", [])
+                if raw_grades and not isinstance(raw_grades[0], str):
+                    fields["grades"] = [f"G{g}" for g in raw_grades]
                 mc = Misconception(id=mc_id, **fields)
                 misconceptions[mc_id] = mc
             except Exception as e:
