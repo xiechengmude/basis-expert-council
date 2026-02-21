@@ -532,6 +532,37 @@ const welcome: Record<string, Record<Locale, string>> = {
   "welcome.form.gradeLevel": { "zh-CN": "年级", en: "Grade Level", "zh-TW": "年級" },
   "welcome.form.challenge": { "zh-CN": "教学挑战", en: "Teaching Challenge", "zh-TW": "教學挑戰" },
 
+  // New form labels — Parent
+  "welcome.form.personality": { "zh-CN": "性格特点", en: "Personality Traits", "zh-TW": "性格特點" },
+  "welcome.form.academicStrengths": { "zh-CN": "学术强项", en: "Academic Strengths", "zh-TW": "學術強項" },
+  "welcome.form.familyGoals": { "zh-CN": "家庭目标", en: "Family Goals", "zh-TW": "家庭目標" },
+  "welcome.form.breakType": { "zh-CN": "假期类型", en: "Break Type", "zh-TW": "假期類型" },
+  "welcome.form.academicStatus": { "zh-CN": "学术情况", en: "Academic Status", "zh-TW": "學術情況" },
+  // New form labels — Student
+  "welcome.form.essay": { "zh-CN": "Essay 内容", en: "Essay Content", "zh-TW": "Essay 內容" },
+  "welcome.form.courses": { "zh-CN": "当前课程", en: "Current Courses", "zh-TW": "當前課程" },
+  "welcome.form.weakestSubject": { "zh-CN": "最薄弱学科", en: "Weakest Subject", "zh-TW": "最薄弱學科" },
+  "welcome.form.dailyHours": { "zh-CN": "每日可用学习时间", en: "Daily Study Hours", "zh-TW": "每日可用學習時間" },
+  // New form labels — Teacher
+  "welcome.form.parentType": { "zh-CN": "家长类型", en: "Parent Type", "zh-TW": "家長類型" },
+  "welcome.form.currentSituation": { "zh-CN": "当前情况", en: "Current Situation", "zh-TW": "當前情況" },
+  "welcome.form.tutoringDuration": { "zh-CN": "辅导时长", en: "Tutoring Duration", "zh-TW": "輔導時長" },
+  "welcome.form.studentInfo": { "zh-CN": "学生情况", en: "Student Info", "zh-TW": "學生情況" },
+  "welcome.form.meetingPurpose": { "zh-CN": "会议目的", en: "Meeting Purpose", "zh-TW": "會議目的" },
+  "welcome.form.gradeChange": { "zh-CN": "成绩变化", en: "Grade Change", "zh-TW": "成績變化" },
+  "welcome.form.declineAnalysis": { "zh-CN": "下滑原因分析", en: "Decline Analysis", "zh-TW": "下滑原因分析" },
+  // New form labels — Consultant
+  "welcome.form.leadSource": { "zh-CN": "来源渠道", en: "Lead Source", "zh-TW": "來源渠道" },
+  "welcome.form.notes": { "zh-CN": "备注", en: "Notes", "zh-TW": "備註" },
+  "welcome.form.parentBackground": { "zh-CN": "家长背景", en: "Parent Background", "zh-TW": "家長背景" },
+  "welcome.form.mainChallenges": { "zh-CN": "主要困难", en: "Main Challenges", "zh-TW": "主要困難" },
+  "welcome.form.topConcern": { "zh-CN": "最关心的问题", en: "Top Concern", "zh-TW": "最關心的問題" },
+  "welcome.form.objection": { "zh-CN": "异议内容", en: "Objection", "zh-TW": "異議內容" },
+  "welcome.form.closingStage": { "zh-CN": "当前阶段", en: "Current Stage", "zh-TW": "當前階段" },
+  "welcome.form.parentInfo": { "zh-CN": "家长情况", en: "Parent Info", "zh-TW": "家長情況" },
+  "welcome.form.situationType": { "zh-CN": "情况类型", en: "Situation Type", "zh-TW": "情況類型" },
+  "welcome.form.details": { "zh-CN": "具体情况", en: "Details", "zh-TW": "具體情況" },
+
   // Form placeholders
   "welcome.form.selectPlaceholder": { "zh-CN": "请选择...", en: "Select...", "zh-TW": "請選擇..." },
   "welcome.form.gpa.placeholder": { "zh-CN": "例如 3.5", en: "e.g. 3.5", "zh-TW": "例如 3.5" },
@@ -542,6 +573,25 @@ const welcome: Record<string, Record<Locale, string>> = {
   "welcome.form.question.placeholder": { "zh-CN": "描述你遇到的问题...", en: "Describe the problem you're facing...", "zh-TW": "描述你遇到的問題..." },
   "welcome.form.apSubject.placeholder": { "zh-CN": "例如 AP Calculus BC", en: "e.g. AP Calculus BC", "zh-TW": "例如 AP Calculus BC" },
   "welcome.form.challenge.placeholder": { "zh-CN": "描述您在 EMI 教学中遇到的挑战...", en: "Describe challenges you face in EMI teaching...", "zh-TW": "描述您在 EMI 教學中遇到的挑戰..." },
+  // New placeholders
+  "welcome.form.personality.placeholder": { "zh-CN": "例如：内向、自律、好奇心强", en: "e.g. introverted, self-disciplined, curious", "zh-TW": "例如：內向、自律、好奇心強" },
+  "welcome.form.academicStrengths.placeholder": { "zh-CN": "例如：数学突出、理科较强", en: "e.g. strong in math, good at science", "zh-TW": "例如：數學突出、理科較強" },
+  "welcome.form.familyGoals.placeholder": { "zh-CN": "例如：希望冲刺美国 Top 30 大学", en: "e.g. aiming for US Top 30 universities", "zh-TW": "例如：希望衝刺美國 Top 30 大學" },
+  "welcome.form.academicStatus.placeholder": { "zh-CN": "例如：数学薄弱，英语中等，物理还可以", en: "e.g. weak in math, average English, decent physics", "zh-TW": "例如：數學薄弱，英語中等，物理還可以" },
+  "welcome.form.essay.placeholder": { "zh-CN": "粘贴你的 essay 内容...", en: "Paste your essay here...", "zh-TW": "粘貼你的 essay 內容..." },
+  "welcome.form.dailyHours.placeholder": { "zh-CN": "例如 2-3 小时", en: "e.g. 2-3 hours", "zh-TW": "例如 2-3 小時" },
+  "welcome.form.currentSituation.placeholder": { "zh-CN": "描述学生当前的具体情况...", en: "Describe the student's current situation...", "zh-TW": "描述學生當前的具體情況..." },
+  "welcome.form.tutoringDuration.placeholder": { "zh-CN": "例如 3 个月", en: "e.g. 3 months", "zh-TW": "例如 3 個月" },
+  "welcome.form.studentInfo.placeholder": { "zh-CN": "描述学生年级、科目、学情概况...", en: "Describe grade, subjects, academic overview...", "zh-TW": "描述學生年級、科目、學情概況..." },
+  "welcome.form.gradeChange.placeholder": { "zh-CN": "例如：GPA 从 3.8 降到 3.2", en: "e.g. GPA dropped from 3.8 to 3.2", "zh-TW": "例如：GPA 從 3.8 降到 3.2" },
+  "welcome.form.declineAnalysis.placeholder": { "zh-CN": "您对成绩下滑原因的初步判断...", en: "Your preliminary analysis of the decline...", "zh-TW": "您對成績下滑原因的初步判斷..." },
+  "welcome.form.notes.placeholder": { "zh-CN": "任何已知的备注信息...", en: "Any known notes...", "zh-TW": "任何已知的備註信息..." },
+  "welcome.form.parentBackground.placeholder": { "zh-CN": "例如：G9 家长，孩子刚转入 BASIS，听说 GPA 下滑很普遍...", en: "e.g. G9 parent, child just transferred to BASIS, heard GPA decline is common...", "zh-TW": "例如：G9 家長，孩子剛轉入 BASIS，聽說 GPA 下滑很普遍..." },
+  "welcome.form.mainChallenges.placeholder": { "zh-CN": "例如：数学跟不上 + 英语写作困难", en: "e.g. can't keep up with math + struggling with English writing", "zh-TW": "例如：數學跟不上 + 英語寫作困難" },
+  "welcome.form.topConcern.placeholder": { "zh-CN": "例如：GPA 太低会不会影响大学申请", en: "e.g. will low GPA affect college applications", "zh-TW": "例如：GPA 太低會不會影響大學申請" },
+  "welcome.form.objection.placeholder": { "zh-CN": "例如：太贵了 / AI 不靠谱 / 已经有家教了...", en: "e.g. too expensive / AI is unreliable / already have a tutor...", "zh-TW": "例如：太貴了 / AI 不靠譜 / 已經有家教了..." },
+  "welcome.form.parentInfo.placeholder": { "zh-CN": "补充家长的背景和关注点...", en: "Add parent's background and concerns...", "zh-TW": "補充家長的背景和關注點..." },
+  "welcome.form.details.placeholder": { "zh-CN": "具体描述家长的情况和需求...", en: "Describe the parent's situation and needs...", "zh-TW": "具體描述家長的情況和需求..." },
 
   // Form buttons
   "welcome.form.start": { "zh-CN": "开始对话", en: "Start Chat", "zh-TW": "開始對話" },
@@ -611,6 +661,43 @@ const welcome: Record<string, Record<Locale, string>> = {
   // Exam month options
   "welcome.form.examMonth.may": { "zh-CN": "五月", en: "May", "zh-TW": "五月" },
   "welcome.form.examMonth.other": { "zh-CN": "其他", en: "Other", "zh-TW": "其他" },
+
+  // Break type options
+  "welcome.form.breakType.summer": { "zh-CN": "暑假", en: "Summer Break", "zh-TW": "暑假" },
+  "welcome.form.breakType.winter": { "zh-CN": "寒假", en: "Winter Break", "zh-TW": "寒假" },
+
+  // Meeting purpose options
+  "welcome.form.meetingPurpose.regular": { "zh-CN": "定期反馈", en: "Regular Feedback", "zh-TW": "定期反饋" },
+  "welcome.form.meetingPurpose.gradeIssues": { "zh-CN": "成绩问题", en: "Grade Issues", "zh-TW": "成績問題" },
+  "welcome.form.meetingPurpose.renewal": { "zh-CN": "续费沟通", en: "Renewal Discussion", "zh-TW": "續費溝通" },
+  "welcome.form.meetingPurpose.other": { "zh-CN": "其他", en: "Other", "zh-TW": "其他" },
+
+  // Parent type options
+  "welcome.form.parentType.anxious": { "zh-CN": "焦虑型", en: "Anxious", "zh-TW": "焦慮型" },
+  "welcome.form.parentType.analytical": { "zh-CN": "理性型", en: "Analytical", "zh-TW": "理性型" },
+  "welcome.form.parentType.cold": { "zh-CN": "冷淡型", en: "Cold/Distant", "zh-TW": "冷淡型" },
+  "welcome.form.parentType.skeptical": { "zh-CN": "质疑型", en: "Skeptical", "zh-TW": "質疑型" },
+
+  // Closing stage options
+  "welcome.form.closingStage.preTrial": { "zh-CN": "试听前", en: "Pre-Trial", "zh-TW": "試聽前" },
+  "welcome.form.closingStage.postTrial": { "zh-CN": "试听后", en: "Post-Trial", "zh-TW": "試聽後" },
+  "welcome.form.closingStage.secondFollow": { "zh-CN": "二次跟进", en: "Second Follow-up", "zh-TW": "二次跟進" },
+  "welcome.form.closingStage.decision": { "zh-CN": "犹豫期", en: "Decision Period", "zh-TW": "猶豫期" },
+
+  // Situation type options
+  "welcome.form.situationType.usage": { "zh-CN": "使用疑问", en: "Usage Question", "zh-TW": "使用疑問" },
+  "welcome.form.situationType.questioning": { "zh-CN": "效果质疑", en: "Questioning Results", "zh-TW": "效果質疑" },
+  "welcome.form.situationType.renewal": { "zh-CN": "续费到期", en: "Renewal Due", "zh-TW": "續費到期" },
+  "welcome.form.situationType.referral": { "zh-CN": "转介绍意向", en: "Referral Interest", "zh-TW": "轉介紹意向" },
+  "welcome.form.situationType.complaint": { "zh-CN": "投诉", en: "Complaint", "zh-TW": "投訴" },
+  "welcome.form.situationType.other": { "zh-CN": "其他", en: "Other", "zh-TW": "其他" },
+
+  // Lead source options
+  "welcome.form.leadSource.wechat": { "zh-CN": "微信群", en: "WeChat Group", "zh-TW": "微信群" },
+  "welcome.form.leadSource.referral": { "zh-CN": "转介绍", en: "Referral", "zh-TW": "轉介紹" },
+  "welcome.form.leadSource.ad": { "zh-CN": "广告投放", en: "Advertising", "zh-TW": "廣告投放" },
+  "welcome.form.leadSource.event": { "zh-CN": "线下活动", en: "Offline Event", "zh-TW": "線下活動" },
+  "welcome.form.leadSource.other": { "zh-CN": "其他", en: "Other", "zh-TW": "其他" },
 };
 
 export default welcome;
