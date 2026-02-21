@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect, useCallback, useRef, Suspense } from "react";
 import { useQueryState } from "nuqs";
+import dynamic from "next/dynamic";
 import { getConfig, saveConfig, StandaloneConfig } from "@/lib/config";
 import { ConfigDialog } from "@/app/components/ConfigDialog";
 import { Button } from "@/components/ui/button";
 import { Assistant } from "@langchain/langgraph-sdk";
 import Link from "next/link";
 import { ClientProvider, useClient } from "@/providers/ClientProvider";
-import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle, ChevronDown, Globe } from "lucide-react";
+import { Settings, MessagesSquare, SquarePen, LogOut, Crown, UserCircle, ChevronDown, Globe, Loader2 } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
 import { useUser } from "@/app/hooks/useUser";
 import { useI18n, LOCALE_LABELS, SUPPORTED_LOCALES } from "@/i18n";
@@ -21,6 +22,15 @@ import {
 import { ThreadList } from "@/app/components/ThreadList";
 import { ChatProvider } from "@/providers/ChatProvider";
 import { ChatInterface } from "@/app/components/ChatInterface";
+import { LoginModal } from "@/app/components/LoginModal";
+
+const LandingPage = dynamic(() => import("@/app/landing/page"), {
+  loading: () => (
+    <div className="flex min-h-screen items-center justify-center bg-slate-950">
+      <Loader2 className="h-8 w-8 animate-spin text-brand-400" />
+    </div>
+  ),
+});
 
 interface HomePageInnerProps {
   config: StandaloneConfig;
@@ -418,7 +428,32 @@ function HomePageContent() {
   );
 }
 
+function LandingWithLogin() {
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  return (
+    <>
+      <LandingPage onLoginClick={() => setLoginOpen(true)} />
+      <LoginModal open={loginOpen} onOpenChange={setLoginOpen} />
+    </>
+  );
+}
+
 export default function HomePage() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-brand-600" />
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <LandingWithLogin />;
+  }
+
   return (
     <Suspense
       fallback={

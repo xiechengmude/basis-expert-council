@@ -36,21 +36,25 @@ function useScrollReveal() {
   }, []);
 }
 
-export default function LandingPage() {
+interface LandingPageProps {
+  onLoginClick?: () => void;
+}
+
+export default function LandingPage({ onLoginClick }: LandingPageProps = {}) {
   const { locale, setLocale, t } = useLandingI18n();
   useScrollReveal();
 
   return (
     <div className="min-h-screen bg-slate-950 text-gray-900 scroll-smooth">
-      <LandingNav t={t} locale={locale} setLocale={setLocale} />
-      <HeroSection t={t} />
+      <LandingNav t={t} locale={locale} setLocale={setLocale} onLoginClick={onLoginClick} />
+      <HeroSection t={t} onLoginClick={onLoginClick} />
       <PainPointsSection t={t} />
       <FeaturesSection t={t} />
       <AgentsSection t={t} />
       <HowItWorksSection t={t} />
-      <PricingSection t={t} />
+      <PricingSection t={t} onLoginClick={onLoginClick} />
       <FAQSection t={t} />
-      <CTASection t={t} />
+      <CTASection t={t} onLoginClick={onLoginClick} />
       <LandingFooter t={t} />
     </div>
   );

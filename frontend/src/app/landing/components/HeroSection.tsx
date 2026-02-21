@@ -5,9 +5,10 @@ import { ArrowRight, ChevronDown, Clock, Globe, ShieldCheck } from "lucide-react
 
 interface HeroSectionProps {
   t: (key: string) => string;
+  onLoginClick?: () => void;
 }
 
-export default function HeroSection({ t }: HeroSectionProps) {
+export default function HeroSection({ t, onLoginClick }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Grid overlay */}
@@ -61,13 +62,23 @@ export default function HeroSection({ t }: HeroSectionProps) {
 
             {/* CTA buttons */}
             <div className="flex gap-4 mt-10 flex-wrap items-center">
-              <Link
-                href="/login"
-                className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-colors"
-              >
-                {t("hero_btn_assess")}
-                <ArrowRight size={18} />
-              </Link>
+              {onLoginClick ? (
+                <button
+                  onClick={onLoginClick}
+                  className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-colors"
+                >
+                  {t("hero_btn_assess")}
+                  <ArrowRight size={18} />
+                </button>
+              ) : (
+                <Link
+                  href="/login"
+                  className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-colors"
+                >
+                  {t("hero_btn_assess")}
+                  <ArrowRight size={18} />
+                </Link>
+              )}
 
               <a
                 href="#features"

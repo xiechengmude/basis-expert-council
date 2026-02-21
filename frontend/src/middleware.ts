@@ -4,6 +4,11 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Root path is handled by page.tsx conditional rendering (Landing vs Chat)
+  if (pathname === "/") {
+    return NextResponse.next();
+  }
+
   // Check for Supabase auth tokens in cookies
   // Supabase SSR stores session in cookies with pattern: sb-<ref>-auth-token
   const hasSession = request.cookies

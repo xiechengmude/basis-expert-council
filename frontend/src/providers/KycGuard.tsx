@@ -30,7 +30,7 @@ export function KycGuard({ children }: { children: React.ReactNode }) {
   const [kycCompleted, setKycCompleted] = useState<boolean | null>(null);
   const [checking, setChecking] = useState(true);
 
-  const isWhitelisted = KYC_WHITELIST.some((p) => pathname.startsWith(p));
+  const isWhitelisted = pathname === "/" || KYC_WHITELIST.some((p) => pathname.startsWith(p));
 
   const fetchKycStatus = useCallback(async () => {
     const token = getBasisToken();

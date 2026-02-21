@@ -5,6 +5,7 @@ import Link from "next/link";
 
 interface Props {
   t: (key: string) => string;
+  onLoginClick?: () => void;
 }
 
 const tiers = [
@@ -27,7 +28,7 @@ const tiers = [
 
 const features = ["f1", "f2", "f3", "f4", "f5", "f6"];
 
-export default function PricingSection({ t }: Props) {
+export default function PricingSection({ t, onLoginClick }: Props) {
   return (
     <section id="pricing" className="bg-slate-900 py-24 px-4">
       <div className="max-w-7xl mx-auto">
@@ -90,17 +91,31 @@ export default function PricingSection({ t }: Props) {
                 })}
               </ul>
 
-              <Link
-                href="/login"
-                className={[
-                  "mt-8 block text-center rounded-full py-3 font-semibold transition",
-                  tier.featured
-                    ? "bg-brand-500 text-white hover:bg-brand-400"
-                    : "border border-white/20 text-white hover:bg-white/10",
-                ].join(" ")}
-              >
-                {t(`price_${tier.key}_btn`)}
-              </Link>
+              {onLoginClick ? (
+                <button
+                  onClick={onLoginClick}
+                  className={[
+                    "mt-8 block w-full text-center rounded-full py-3 font-semibold transition",
+                    tier.featured
+                      ? "bg-brand-500 text-white hover:bg-brand-400"
+                      : "border border-white/20 text-white hover:bg-white/10",
+                  ].join(" ")}
+                >
+                  {t(`price_${tier.key}_btn`)}
+                </button>
+              ) : (
+                <Link
+                  href="/login"
+                  className={[
+                    "mt-8 block text-center rounded-full py-3 font-semibold transition",
+                    tier.featured
+                      ? "bg-brand-500 text-white hover:bg-brand-400"
+                      : "border border-white/20 text-white hover:bg-white/10",
+                  ].join(" ")}
+                >
+                  {t(`price_${tier.key}_btn`)}
+                </Link>
+              )}
             </div>
           ))}
         </div>

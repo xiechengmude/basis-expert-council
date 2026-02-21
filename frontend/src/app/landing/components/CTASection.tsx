@@ -5,9 +5,10 @@ import { ArrowRight } from "lucide-react";
 
 interface Props {
   t: (key: string) => string;
+  onLoginClick?: () => void;
 }
 
-export default function CTASection({ t }: Props) {
+export default function CTASection({ t, onLoginClick }: Props) {
   return (
     <section className="py-24 px-4 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
       {/* Grid overlay */}
@@ -30,19 +31,38 @@ export default function CTASection({ t }: Props) {
         <p className="mt-6 text-lg text-slate-400">{t("cta_desc")}</p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <Link
-            href="/login"
-            className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold inline-flex items-center gap-2 transition"
-          >
-            {t("cta_btn_start")}
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/login"
-            className="border border-white/20 text-white/80 hover:text-white hover:bg-white/10 rounded-full px-8 py-3.5 font-semibold transition"
-          >
-            {t("cta_btn_demo")}
-          </Link>
+          {onLoginClick ? (
+            <button
+              onClick={onLoginClick}
+              className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold inline-flex items-center gap-2 transition"
+            >
+              {t("cta_btn_start")}
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="bg-brand-500 hover:bg-brand-400 text-white rounded-full px-8 py-3.5 font-semibold inline-flex items-center gap-2 transition"
+            >
+              {t("cta_btn_start")}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          )}
+          {onLoginClick ? (
+            <button
+              onClick={onLoginClick}
+              className="border border-white/20 text-white/80 hover:text-white hover:bg-white/10 rounded-full px-8 py-3.5 font-semibold transition"
+            >
+              {t("cta_btn_demo")}
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="border border-white/20 text-white/80 hover:text-white hover:bg-white/10 rounded-full px-8 py-3.5 font-semibold transition"
+            >
+              {t("cta_btn_demo")}
+            </Link>
+          )}
         </div>
       </div>
     </section>

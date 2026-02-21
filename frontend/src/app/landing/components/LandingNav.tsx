@@ -9,6 +9,7 @@ interface LandingNavProps {
   t: (key: string) => string;
   locale: string;
   setLocale: (l: any) => void;
+  onLoginClick?: () => void;
 }
 
 const NAV_LINKS = [
@@ -18,7 +19,7 @@ const NAV_LINKS = [
   { key: "nav_faq", href: "#faq", id: "faq" },
 ];
 
-export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
+export default function LandingNav({ t, locale, setLocale, onLoginClick }: LandingNavProps) {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -126,12 +127,21 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
             </div>
 
             {/* Login button (desktop) */}
-            <Link
-              href="/login"
-              className="hidden md:inline-flex items-center rounded-full px-5 py-2 text-sm font-medium border border-white/20 text-white hover:bg-white/10 transition-colors"
-            >
-              {t("nav_login")}
-            </Link>
+            {onLoginClick ? (
+              <button
+                onClick={onLoginClick}
+                className="hidden md:inline-flex items-center rounded-full px-5 py-2 text-sm font-medium border border-white/20 text-white hover:bg-white/10 transition-colors"
+              >
+                {t("nav_login")}
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="hidden md:inline-flex items-center rounded-full px-5 py-2 text-sm font-medium border border-white/20 text-white hover:bg-white/10 transition-colors"
+              >
+                {t("nav_login")}
+              </Link>
+            )}
 
             {/* Mobile hamburger */}
             <button
@@ -198,13 +208,22 @@ export default function LandingNav({ t, locale, setLocale }: LandingNavProps) {
           </div>
 
           {/* Login button */}
-          <Link
-            href="/login"
-            onClick={() => setMobileOpen(false)}
-            className="w-full text-center border border-white/20 text-white hover:bg-white/10 rounded-full px-5 py-3 text-base font-medium transition-colors"
-          >
-            {t("nav_login")}
-          </Link>
+          {onLoginClick ? (
+            <button
+              onClick={() => { setMobileOpen(false); onLoginClick(); }}
+              className="w-full text-center border border-white/20 text-white hover:bg-white/10 rounded-full px-5 py-3 text-base font-medium transition-colors"
+            >
+              {t("nav_login")}
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              onClick={() => setMobileOpen(false)}
+              className="w-full text-center border border-white/20 text-white hover:bg-white/10 rounded-full px-5 py-3 text-base font-medium transition-colors"
+            >
+              {t("nav_login")}
+            </Link>
+          )}
         </div>
       )}
     </nav>
