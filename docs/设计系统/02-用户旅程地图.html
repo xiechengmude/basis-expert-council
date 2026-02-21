@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BasisPilot User Journey Map</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0a0a0f; color: #e2e8f0; line-height: 1.6; padding: 48px 32px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 32px; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .subtitle { color: #64748b; font-size: 14px; margin-bottom: 40px; }
+  h2 { font-size: 20px; font-weight: 600; color: #f1f5f9; margin: 48px 0 8px; letter-spacing: -0.01em; }
+  .desc { color: #64748b; font-size: 13px; margin-bottom: 20px; }
+
+  .diagram-container {
+    background: #111118; border: 1px solid #1e1e2e; border-radius: 16px;
+    padding: 32px; overflow-x: auto; margin-bottom: 32px;
+  }
+  .mermaid { display: flex; justify-content: center; }
+  .mermaid svg { max-width: 100%; height: auto; }
+
+  /* Journey table */
+  .journey-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 40px; }
+  .journey-table th {
+    text-align: left; padding: 12px 16px; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.05em; color: #64748b; border-bottom: 2px solid #1e1e2e;
+  }
+  .journey-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a24; vertical-align: top; }
+  .journey-table tr:hover { background: rgba(74, 148, 148, 0.03); }
+  .stage-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 9999px;
+    font-size: 11px; font-weight: 600; white-space: nowrap;
+  }
+  .stage-discover { background: rgba(29, 78, 216, 0.15); color: #60a5fa; border: 1px solid rgba(29, 78, 216, 0.3); }
+  .stage-onboard { background: rgba(74, 148, 148, 0.15); color: #4A9494; border: 1px solid rgba(74, 148, 148, 0.3); }
+  .stage-engage { background: rgba(5, 150, 105, 0.15); color: #34d399; border: 1px solid rgba(5, 150, 105, 0.3); }
+  .stage-assess { background: rgba(190, 18, 60, 0.15); color: #fb7185; border: 1px solid rgba(190, 18, 60, 0.3); }
+  .stage-retain { background: rgba(180, 83, 9, 0.15); color: #fbbf24; border: 1px solid rgba(180, 83, 9, 0.3); }
+
+  .emotion { font-size: 18px; }
+  .touchpoint { font-family: monospace; font-size: 11px; color: #4A9494; background: rgba(74,148,148,0.1); padding: 2px 6px; border-radius: 4px; }
+
+  /* Persona cards */
+  .persona-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 40px; }
+  .persona-card {
+    background: #16161e; border: 1px solid #1e1e2e; border-radius: 14px; padding: 24px;
+  }
+  .persona-card h3 { font-size: 15px; font-weight: 600; color: #e2e8f0; margin-bottom: 4px; }
+  .persona-card .role { font-size: 12px; color: #4A9494; margin-bottom: 12px; }
+  .persona-card p { font-size: 12px; color: #94a3b8; margin-bottom: 8px; }
+  .persona-card .goals { list-style: none; padding: 0; }
+  .persona-card .goals li { font-size: 12px; color: #cbd5e1; padding: 4px 0; }
+  .persona-card .goals li::before { content: "→ "; color: #4A9494; }
+
+  footer { padding: 48px 0 24px; border-top: 1px solid #1e1e2e; color: #475569; font-size: 12px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>User Journey Map</h1>
+  <p class="subtitle">BasisPilot 用户从首次接触到长期留存的完整旅程。覆盖 3 种角色：学生、家长、教师。</p>
+
+  <!-- === Personas === -->
+  <h2>Target Personas</h2>
+  <p class="desc">三类核心用户画像及其目标和痛点。</p>
+  <div class="persona-grid">
+    <div class="persona-card">
+      <h3>Student (学生)</h3>
+      <div class="role">BASIS 在校生 G5-G12</div>
+      <p>需要课后答疑、AP 备考、学力提升方案。习惯移动端，偏好即时反馈。</p>
+      <ul class="goals">
+        <li>快速解答作业中的具体问题</li>
+        <li>了解自己的学科强弱项</li>
+        <li>AP 考试拿 4-5 分</li>
+      </ul>
+    </div>
+    <div class="persona-card">
+      <h3>Parent (家长)</h3>
+      <div class="role">BASIS 学生家长</div>
+      <p>关注孩子学业进展，需要升学规划建议。信任专业权威，偏好中文界面。</p>
+      <ul class="goals">
+        <li>监控孩子学习情况和薄弱环节</li>
+        <li>获取升学规划专业建议</li>
+        <li>判断是否需要额外辅导</li>
+      </ul>
+    </div>
+    <div class="persona-card">
+      <h3>Teacher (教师)</h3>
+      <div class="role">BASIS 教师 / 辅导顾问</div>
+      <p>希望利用 AI 辅助教学，了解学生整体情况，提高教学效率。</p>
+      <ul class="goals">
+        <li>批量了解学生知识掌握水平</li>
+        <li>发现需要特别关注的学生</li>
+        <li>获取教学内容建议</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- === Main Journey Flow === -->
+  <h2>Core User Flow</h2>
+  <p class="desc">从发现到留存的 5 个阶段，标注关键决策点和情绪变化。</p>
+
+  <div class="diagram-container">
+    <pre class="mermaid">
+flowchart LR
+    subgraph DISCOVER["🔍 发现阶段"]
+        A1["Landing Page<br/>首页"]
+        A2["免费测评入口<br/>/assessment"]
+        A3["功能介绍<br/>Features / Agents"]
+    end
+
+    subgraph AUTH["🔐 认证阶段"]
+        B1["登录<br/>手机 + SMS OTP"]
+        B2["微信 OAuth<br/>H5 扫码"]
+        B3["KYC Guard<br/>检查 profile"]
+    end
+
+    subgraph ONBOARD["📋 Onboarding"]
+        C1["角色选择<br/>学生/家长/教师"]
+        C2["Profile 填写<br/>年级/学校/目标"]
+        C3["Onboarding 完成<br/>kyc_completed=true"]
+    end
+
+    subgraph ENGAGE["💬 核心使用"]
+        D1["AI 对话<br/>/chat"]
+        D2["学力测评<br/>/assessment/start"]
+        D3["学力档案<br/>/profile/academic"]
+        D4["记忆管理<br/>/profile/memory"]
+    end
+
+    subgraph RETAIN["🔄 留存转化"]
+        E1["配额检查<br/>Free 额度用完"]
+        E2["付费升级<br/>Basic/Premium/VIP"]
+        E3["持续使用<br/>习惯养成"]
+    end
+
+    A1 --> A2
+    A1 --> A3
+    A2 --> B1
+    A3 --> B1
+    A1 -->|"已登录"| D1
+
+    B1 --> B3
+    B2 --> B3
+    B3 -->|"未完成 KYC"| C1
+    B3 -->|"已完成 KYC"| D1
+
+    C1 --> C2
+    C2 --> C3
+    C3 --> D1
+
+    D1 <--> D2
+    D1 <--> D3
+    D1 <--> D4
+    D2 --> D3
+
+    D1 --> E1
+    E1 -->|"额度不足"| E2
+    E2 --> E3
+    E3 --> D1
+
+    style DISCOVER fill:#1a2744,stroke:#1D4ED8,color:#fff
+    style AUTH fill:#1a2733,stroke:#2F6868,color:#fff
+    style ONBOARD fill:#1a3333,stroke:#4A9494,color:#fff
+    style ENGAGE fill:#1a3327,stroke:#059669,color:#fff
+    style RETAIN fill:#332a1a,stroke:#B45309,color:#fff
+    </pre>
+  </div>
+
+  <!-- === Assessment Sub-Journey === -->
+  <h2>Assessment Sub-Journey</h2>
+  <p class="desc">学力测评的完整用户流程——从选择科目到查看报告。</p>
+
+  <div class="diagram-container">
+    <pre class="mermaid">
+flowchart TD
+    S1["Assessment Landing<br/>/assessment"] --> S2["选择科目<br/>/assessment/start"]
+    S2 --> S3["生成题目<br/>CAT Engine"]
+    S3 --> S4["答题中<br/>/assessment/:id/take"]
+    S4 -->|"每题提交"| S5{"判断正误<br/>+ 调整难度"}
+    S5 -->|"继续"| S4
+    S5 -->|"完成"| S6["生成报告<br/>/assessment/:id/report"]
+    S6 --> S7["分享报告<br/>/assessment/shared/:token"]
+    S6 --> S8["查看学力档案<br/>/profile/academic"]
+    S6 --> S9["返回对话<br/>获取辅导建议"]
+
+    style S1 fill:#16161e,stroke:#BE123C,color:#fff
+    style S4 fill:#16161e,stroke:#4A9494,color:#fff
+    style S6 fill:#16161e,stroke:#059669,color:#fff
+    </pre>
+  </div>
+
+  <!-- === Journey Detail Table === -->
+  <h2>Journey Phase Details</h2>
+  <p class="desc">每个阶段的用户行为、触点、情绪和优化机会。</p>
+
+  <table class="journey-table">
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>用户行为</th>
+        <th>触点</th>
+        <th>情绪</th>
+        <th>痛点 & 机会</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="stage-badge stage-discover">发现</span></td>
+        <td>浏览 Landing Page，了解产品功能，查看定价</td>
+        <td>
+          <span class="touchpoint">/</span>
+          <span class="touchpoint">/landing</span>
+          <span class="touchpoint">/assessment</span>
+        </td>
+        <td><span class="emotion">🤔</span> 好奇但犹豫</td>
+        <td>
+          <strong>痛点：</strong>不确定 AI 辅导是否靠谱<br>
+          <strong>机会：</strong>免费测评作为低门槛钩子，展示 AI 学科能力
+        </td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-onboard">认证</span></td>
+        <td>选择登录方式（手机 SMS / 微信），完成验证</td>
+        <td>
+          <span class="touchpoint">/login</span>
+          <span class="touchpoint">LoginModal</span>
+        </td>
+        <td><span class="emotion">😐</span> 希望快速完成</td>
+        <td>
+          <strong>痛点：</strong>OTP 等待时间、微信授权流程<br>
+          <strong>机会：</strong>支持免登录测评，减少首次摩擦
+        </td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-onboard">Onboarding</span></td>
+        <td>选择角色，填写年级/学校/目标信息</td>
+        <td>
+          <span class="touchpoint">/onboarding</span>
+        </td>
+        <td><span class="emotion">📝</span> 有一定耐心</td>
+        <td>
+          <strong>痛点：</strong>表单填写步骤多、不清楚用途<br>
+          <strong>机会：</strong>分步引导 + 解释数据用途，增加完成率
+        </td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-engage">AI 对话</span></td>
+        <td>提问作业问题、讨论学习方法、使用 A2UI 交互卡片</td>
+        <td>
+          <span class="touchpoint">/chat</span>
+          <span class="touchpoint">ThreadList</span>
+          <span class="touchpoint">A2UI Cards</span>
+        </td>
+        <td><span class="emotion">😊</span> 满意 → <span class="emotion">🤩</span> 惊喜</td>
+        <td>
+          <strong>痛点：</strong>AI 回答不够精确时的挫败感<br>
+          <strong>机会：</strong>Mem0 跨会话记忆提升个性化体验
+        </td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-assess">学力测评</span></td>
+        <td>选科目 → 答题 → 查看报告 → 分享</td>
+        <td>
+          <span class="touchpoint">/assessment/*</span>
+          <span class="touchpoint">CAT Engine</span>
+          <span class="touchpoint">Report</span>
+        </td>
+        <td><span class="emotion">🎯</span> 专注 → <span class="emotion">📊</span> 有收获</td>
+        <td>
+          <strong>痛点：</strong>题目太难或太简单都会降低体验<br>
+          <strong>机会：</strong>自适应难度 + 即时解析建立信任
+        </td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-retain">留存转化</span></td>
+        <td>免费额度用完 → 评估价值 → 决定是否付费</td>
+        <td>
+          <span class="touchpoint">QuotaBanner</span>
+          <span class="touchpoint">Pricing</span>
+        </td>
+        <td><span class="emotion">💰</span> 权衡性价比</td>
+        <td>
+          <strong>痛点：</strong>付费意愿取决于前期体验质量<br>
+          <strong>机会：</strong>学力档案 + 进步追踪 展示持续价值
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- === Key Decision Points === -->
+  <h2>Key Decision Points</h2>
+  <p class="desc">用户旅程中的关键决策节点及其转化策略。</p>
+
+  <div class="diagram-container">
+    <pre class="mermaid">
+flowchart TD
+    DP1{"首页：要不要试试？"}
+    DP1 -->|"Yes"| DP1A["→ 免费测评 (低门槛)"]
+    DP1 -->|"No"| DP1B["→ 离开 (需优化首页价值传达)"]
+
+    DP2{"登录：值得注册吗？"}
+    DP2 -->|"Yes"| DP2A["→ SMS/微信登录"]
+    DP2 -->|"No"| DP2B["→ 流失 (需减少注册摩擦)"]
+
+    DP3{"Onboarding：要填完吗？"}
+    DP3 -->|"Yes"| DP3A["→ 完成 Profile"]
+    DP3 -->|"No"| DP3B["→ 中断 (需简化步骤)"]
+
+    DP4{"免费额度用完：要付费吗？"}
+    DP4 -->|"Yes"| DP4A["→ 升级 (留存成功)"]
+    DP4 -->|"No"| DP4B["→ 流失 (需展示更多价值)"]
+
+    style DP1 fill:#1a2744,stroke:#1D4ED8,color:#fff
+    style DP2 fill:#1a3333,stroke:#2F6868,color:#fff
+    style DP3 fill:#1a3333,stroke:#4A9494,color:#fff
+    style DP4 fill:#332a1a,stroke:#B45309,color:#fff
+    </pre>
+  </div>
+
+  <!-- === Metrics === -->
+  <h2>Success Metrics by Phase</h2>
+  <p class="desc">每个阶段的关键衡量指标。</p>
+
+  <table class="journey-table">
+    <thead>
+      <tr><th>Phase</th><th>North Star Metric</th><th>Secondary Metrics</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="stage-badge stage-discover">发现</span></td>
+        <td>Landing → Assessment Click Rate</td>
+        <td>Bounce rate, Scroll depth, Time on page</td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-onboard">认证</span></td>
+        <td>Registration Completion Rate</td>
+        <td>OTP success rate, WeChat auth rate, Time to login</td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-onboard">Onboarding</span></td>
+        <td>KYC Completion Rate</td>
+        <td>Drop-off per step, Time to complete, Profile completeness</td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-engage">核心使用</span></td>
+        <td>DAU / WAU (Daily / Weekly Active Users)</td>
+        <td>Messages per session, Session duration, Thread count</td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-assess">测评</span></td>
+        <td>Assessment Completion Rate</td>
+        <td>Avg questions answered, Report view rate, Share rate</td>
+      </tr>
+      <tr>
+        <td><span class="stage-badge stage-retain">留存转化</span></td>
+        <td>Free → Paid Conversion Rate</td>
+        <td>D7/D30 retention, ARPU, Churn rate</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    BasisPilot User Journey Map &mdash; v1.0
+  </footer>
+</div>
+
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'dark',
+  themeVariables: {
+    primaryColor: '#2F6868',
+    primaryTextColor: '#e2e8f0',
+    primaryBorderColor: '#4A9494',
+    lineColor: '#4A9494',
+    secondaryColor: '#1a3333',
+    tertiaryColor: '#16161e',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontSize: '13px',
+  },
+  flowchart: {
+    useMaxWidth: true,
+    htmlLabels: true,
+    curve: 'basis',
+    padding: 16,
+  }
+});
+</script>
+</body>
+</html>

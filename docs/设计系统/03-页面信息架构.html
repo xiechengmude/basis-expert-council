@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BasisPilot Site Map & Information Architecture</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0a0a0f; color: #e2e8f0; line-height: 1.6; padding: 48px 32px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 32px; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .subtitle { color: #64748b; font-size: 14px; margin-bottom: 40px; }
+  h2 { font-size: 20px; font-weight: 600; color: #f1f5f9; margin: 48px 0 8px; letter-spacing: -0.01em; }
+  .desc { color: #64748b; font-size: 13px; margin-bottom: 20px; }
+
+  .diagram-container {
+    background: #111118; border: 1px solid #1e1e2e; border-radius: 16px;
+    padding: 32px; overflow-x: auto; margin-bottom: 32px;
+  }
+  .mermaid { display: flex; justify-content: center; }
+  .mermaid svg { max-width: 100%; height: auto; }
+
+  /* Page inventory table */
+  .page-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 40px; }
+  .page-table th {
+    text-align: left; padding: 12px 16px; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.05em; color: #64748b; border-bottom: 2px solid #1e1e2e;
+  }
+  .page-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a24; vertical-align: top; }
+  .page-table tr:hover { background: rgba(74, 148, 148, 0.03); }
+
+  .route { font-family: "SF Mono", Monaco, monospace; font-size: 12px; color: #4A9494; background: rgba(74,148,148,0.1); padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+  .auth-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 9999px;
+    font-size: 10px; font-weight: 600; white-space: nowrap;
+  }
+  .auth-public { background: rgba(5,150,105,0.15); color: #34d399; border: 1px solid rgba(5,150,105,0.3); }
+  .auth-login { background: rgba(74,148,148,0.15); color: #4A9494; border: 1px solid rgba(74,148,148,0.3); }
+  .auth-kyc { background: rgba(190,18,60,0.15); color: #fb7185; border: 1px solid rgba(190,18,60,0.3); }
+
+  /* Component hierarchy */
+  .comp-tree { list-style: none; padding: 0; }
+  .comp-tree li { position: relative; padding: 6px 0 6px 24px; font-size: 13px; }
+  .comp-tree li::before {
+    content: ""; position: absolute; left: 8px; top: 0; bottom: 0;
+    border-left: 1px solid #1e1e2e;
+  }
+  .comp-tree li::after {
+    content: ""; position: absolute; left: 8px; top: 16px;
+    width: 12px; border-top: 1px solid #1e1e2e;
+  }
+  .comp-tree > li::before { top: 16px; }
+  .comp-name { font-family: monospace; color: #4A9494; font-size: 12px; }
+  .comp-desc { color: #64748b; font-size: 11px; margin-left: 8px; }
+
+  /* Nav structure cards */
+  .nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .nav-card { background: #16161e; border: 1px solid #1e1e2e; border-radius: 14px; padding: 24px; }
+  .nav-card h3 { font-size: 15px; font-weight: 600; color: #e2e8f0; margin-bottom: 4px; }
+  .nav-card .context { font-size: 12px; color: #4A9494; margin-bottom: 12px; }
+  .nav-card ul { list-style: none; padding: 0; }
+  .nav-card ul li { font-size: 12px; color: #cbd5e1; padding: 5px 0; border-bottom: 1px solid #1a1a24; display: flex; align-items: center; gap: 8px; }
+  .nav-card ul li:last-child { border-bottom: none; }
+  .nav-icon { width: 20px; text-align: center; font-size: 14px; }
+
+  footer { padding: 48px 0 24px; border-top: 1px solid #1e1e2e; color: #475569; font-size: 12px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Site Map & Information Architecture</h1>
+  <p class="subtitle">BasisPilot 页面层级、路由结构、权限矩阵和导航逻辑的完整可视化。</p>
+
+  <!-- === Full Site Map === -->
+  <h2>Page Hierarchy</h2>
+  <p class="desc">所有前端页面的层级关系和访问权限。</p>
+
+  <div class="diagram-container">
+    <pre class="mermaid">
+graph TD
+    ROOT["🏠 / (Root)<br/>HomePage"]
+
+    subgraph PUBLIC["🌐 Public Pages (无需登录)"]
+        LANDING["📢 /landing<br/>Landing Page<br/>Hero + Features + Pricing"]
+        ASSESS_HOME["📋 /assessment<br/>Assessment Landing<br/>科目选择 + 介绍"]
+        ASSESS_SHARED["🔗 /assessment/shared/:token<br/>Shared Report<br/>分享链接查看"]
+        LOGIN["🔐 /login<br/>Login Page<br/>SMS OTP + WeChat"]
+        WECHAT["📱 /login/wechat-complete<br/>WeChat Callback<br/>OAuth 回调"]
+        A2UI_DEMO["🧪 /a2ui-demo<br/>A2UI Demo<br/>开发测试"]
+    end
+
+    subgraph AUTH_ONLY["🔑 需要登录 (Auth Required)"]
+        ONBOARD["📝 /onboarding<br/>Onboarding<br/>角色 + Profile"]
+    end
+
+    subgraph PROTECTED["🛡️ 需要登录 + KYC"]
+        CHAT["💬 /chat<br/>AI Chat<br/>核心对话界面"]
+        ASSESS_START["🎯 /assessment/start<br/>Start Assessment<br/>选科目开始测评"]
+        ASSESS_TAKE["✏️ /assessment/:id/take<br/>Take Assessment<br/>答题界面 (CAT)"]
+        ASSESS_REPORT["📊 /assessment/:id/report<br/>Assessment Report<br/>成绩报告"]
+        PROFILE_ACAD["📈 /profile/academic<br/>Academic Profile<br/>学力档案仪表盘"]
+        PROFILE_MEM["🧠 /profile/memory<br/>Memory Manager<br/>AI 记忆管理"]
+    end
+
+    ROOT --> LANDING
+    ROOT -->|"已登录"| CHAT
+
+    LANDING --> LOGIN
+    LANDING --> ASSESS_HOME
+
+    LOGIN --> WECHAT
+    LOGIN -->|"登录成功"| ONBOARD
+    LOGIN -->|"已有 KYC"| CHAT
+
+    ONBOARD -->|"完成"| CHAT
+
+    CHAT --> PROFILE_ACAD
+    CHAT --> PROFILE_MEM
+    CHAT --> ASSESS_START
+    CHAT --> ONBOARD
+
+    ASSESS_HOME --> ASSESS_START
+    ASSESS_START --> ASSESS_TAKE
+    ASSESS_TAKE --> ASSESS_REPORT
+    ASSESS_REPORT --> ASSESS_SHARED
+    ASSESS_REPORT --> PROFILE_ACAD
+
+    style PUBLIC fill:#0d1a2d,stroke:#1D4ED8,color:#fff
+    style AUTH_ONLY fill:#1a2d2d,stroke:#4A9494,color:#fff
+    style PROTECTED fill:#1a2d1a,stroke:#059669,color:#fff
+    style ROOT fill:#2F6868,stroke:#4A9494,color:#fff
+    </pre>
+  </div>
+
+  <!-- === Page Inventory === -->
+  <h2>Page Inventory</h2>
+  <p class="desc">所有页面的路由、权限和功能描述。</p>
+
+  <table class="page-table">
+    <thead>
+      <tr>
+        <th>Route</th>
+        <th>Auth</th>
+        <th>Page Name</th>
+        <th>Core Function</th>
+        <th>Key Components</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="route">/</span></td>
+        <td><span class="auth-badge auth-public">Public</span></td>
+        <td>Home</td>
+        <td>Entry point: landing (guest) or redirect to /chat (logged in)</td>
+        <td>LandingContent, LoginModal</td>
+      </tr>
+      <tr>
+        <td><span class="route">/landing</span></td>
+        <td><span class="auth-badge auth-public">Public</span></td>
+        <td>Landing Page</td>
+        <td>Marketing page: Hero, Features, Agents, Pricing, FAQ, CTA</td>
+        <td>LandingNav, HeroSection, PricingSection, FAQ</td>
+      </tr>
+      <tr>
+        <td><span class="route">/login</span></td>
+        <td><span class="auth-badge auth-public">Public</span></td>
+        <td>Login</td>
+        <td>Phone SMS OTP + WeChat H5 OAuth authentication</td>
+        <td>PhoneInput, OTPInput, WeChatButton</td>
+      </tr>
+      <tr>
+        <td><span class="route">/login/wechat-complete</span></td>
+        <td><span class="auth-badge auth-public">Public</span></td>
+        <td>WeChat Callback</td>
+        <td>WeChat OAuth redirect handler, issues BASIS JWT</td>
+        <td>(redirect page)</td>
+      </tr>
+      <tr>
+        <td><span class="route">/onboarding</span></td>
+        <td><span class="auth-badge auth-login">Auth</span></td>
+        <td>Onboarding</td>
+        <td>Role selection (student/parent/teacher) + profile form</td>
+        <td>RoleSelector, StudentProfileForm, ParentLinkForm, TeacherCompleteForm</td>
+      </tr>
+      <tr>
+        <td><span class="route">/chat</span></td>
+        <td><span class="auth-badge auth-kyc">Auth + KYC</span></td>
+        <td>AI Chat</td>
+        <td>Core AI conversation interface with 5 expert agents</td>
+        <td>ChatInterface, ThreadList, QuotaBanner, UserMenu, A2UISurface</td>
+      </tr>
+      <tr>
+        <td><span class="route">/assessment</span></td>
+        <td><span class="auth-badge auth-public">Public</span></td>
+        <td>Assessment Landing</td>
+        <td>Assessment marketing: types, trust section, hero</td>
+        <td>AssessmentNav, AssessmentHero, AssessmentTypes, TrustSection</td>
+      </tr>
+      <tr>
+        <td><span class="route">/assessment/start</span></td>
+        <td><span class="auth-badge auth-kyc">Auth + KYC</span></td>
+        <td>Start Assessment</td>
+        <td>Subject selection to begin a new assessment</td>
+        <td>SubjectSelector, DifficultyInfo</td>
+      </tr>
+      <tr>
+        <td><span class="route">/assessment/:id/take</span></td>
+        <td><span class="auth-badge auth-kyc">Auth + KYC</span></td>
+        <td>Take Assessment</td>
+        <td>CAT quiz: question stem + MCQ options + feedback</td>
+        <td>QuestionCard, MCQOptions, ProgressBar, FeedbackPanel</td>
+      </tr>
+      <tr>
+        <td><span class="route">/assessment/:id/report</span></td>
+        <td><span class="auth-badge auth-kyc">Auth + KYC</span></td>
+        <td>Assessment Report</td>
+        <td>Score, topic breakdown, ability analysis, share</td>
+        <td>ScoreCard, TopicBreakdown, ShareButton</td>
+      </tr>
+      <tr>
+        <td><span class="route">/assessment/shared/:token</span></td>
+        <td><span class="auth-badge auth-public">Public</span></td>
+        <td>Shared Report</td>
+        <td>Public view of shared assessment report</td>
+        <td>(read-only report)</td>
+      </tr>
+      <tr>
+        <td><span class="route">/profile/academic</span></td>
+        <td><span class="auth-badge auth-kyc">Auth + KYC</span></td>
+        <td>Academic Profile</td>
+        <td>Analytics dashboard: KPI, radar, heatmap, Bloom mastery</td>
+        <td>KPICards, SubjectRadar, ActivityHeatmap, BloomChart, GoalTimeline</td>
+      </tr>
+      <tr>
+        <td><span class="route">/profile/memory</span></td>
+        <td><span class="auth-badge auth-kyc">Auth + KYC</span></td>
+        <td>Memory Manager</td>
+        <td>View/search/delete Mem0 cross-session memories</td>
+        <td>MemoryCard, SearchBar, MemoryStats</td>
+      </tr>
+      <tr>
+        <td><span class="route">/a2ui-demo</span></td>
+        <td><span class="auth-badge auth-public">Public</span></td>
+        <td>A2UI Demo</td>
+        <td>Developer testing page for A2UI interactive components</td>
+        <td>A2UISurface (demo mode)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- === Navigation Structures === -->
+  <h2>Navigation Structures</h2>
+  <p class="desc">应用中的 3 种导航模式和各自的菜单项。</p>
+
+  <div class="nav-grid">
+    <div class="nav-card">
+      <h3>Landing Nav</h3>
+      <div class="context">显示于: /landing, / (guest)</div>
+      <ul>
+        <li><span class="nav-icon">🏠</span> Logo → /landing</li>
+        <li><span class="nav-icon">⭐</span> Features → #features (anchor)</li>
+        <li><span class="nav-icon">🤖</span> Agents → #agents (anchor)</li>
+        <li><span class="nav-icon">💰</span> Pricing → #pricing (anchor)</li>
+        <li><span class="nav-icon">❓</span> FAQ → #faq (anchor)</li>
+        <li><span class="nav-icon">🌐</span> Language Switcher (dropdown)</li>
+        <li><span class="nav-icon">📋</span> Assessment → /assessment (pill badge)</li>
+        <li><span class="nav-icon">🔐</span> Login → /login (button)</li>
+      </ul>
+    </div>
+
+    <div class="nav-card">
+      <h3>Chat Header</h3>
+      <div class="context">显示于: /chat (logged in)</div>
+      <ul>
+        <li><span class="nav-icon">🏠</span> Logo → / (home)</li>
+        <li><span class="nav-icon">💬</span> Conversations → toggle sidebar</li>
+        <li><span class="nav-icon">📊</span> Quota Banner (desktop)</li>
+        <li><span class="nav-icon">⚙️</span> Settings (desktop only)</li>
+        <li><span class="nav-icon">✏️</span> New Chat → clear thread</li>
+        <li><span class="nav-icon">👤</span> User Avatar → dropdown menu</li>
+      </ul>
+    </div>
+
+    <div class="nav-card">
+      <h3>User Menu Dropdown</h3>
+      <div class="context">显示于: /chat, 点击头像展开</div>
+      <ul>
+        <li><span class="nav-icon">👤</span> User Info (nickname, phone, plan badge)</li>
+        <li><span class="nav-icon">📝</span> Profile → /onboarding (edit mode)</li>
+        <li><span class="nav-icon">📈</span> Academic Profile → /profile/academic</li>
+        <li><span class="nav-icon">🧠</span> Memory → /profile/memory</li>
+        <li><span class="nav-icon">⚙️</span> Settings (mobile only)</li>
+        <li><span class="nav-icon">🌐</span> Language Selector</li>
+        <li><span class="nav-icon">🚪</span> Logout (red)</li>
+      </ul>
+    </div>
+
+    <div class="nav-card">
+      <h3>Assessment Nav</h3>
+      <div class="context">显示于: /assessment/*</div>
+      <ul>
+        <li><span class="nav-icon">🏠</span> Logo → / (home)</li>
+        <li><span class="nav-icon">💬</span> Back to Chat → / (if logged in)</li>
+        <li><span class="nav-icon">🏠</span> Home → / (if guest)</li>
+        <li><span class="nav-icon">🔐</span> Login → /login (if guest)</li>
+      </ul>
+    </div>
+
+    <div class="nav-card">
+      <h3>Chat Left Sidebar</h3>
+      <div class="context">显示于: /chat, 可折叠</div>
+      <ul>
+        <li><span class="nav-icon">💬</span> Thread List (conversation history)</li>
+        <li><span class="nav-icon">📋</span> Agent Tasks (pending / in_progress / completed)</li>
+        <li><span class="nav-icon">📁</span> File System (agent-created files)</li>
+      </ul>
+    </div>
+
+    <div class="nav-card">
+      <h3>Profile Pages</h3>
+      <div class="context">显示于: /profile/*</div>
+      <ul>
+        <li><span class="nav-icon">←</span> Back (ArrowLeft → previous page)</li>
+        <li><span class="nav-icon">📊</span> Tab Navigation (within page)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- === Auth & Guard Flow === -->
+  <h2>Auth & Guard Architecture</h2>
+  <p class="desc">三层权限守卫的工作流程。</p>
+
+  <div class="diagram-container">
+    <pre class="mermaid">
+flowchart TD
+    REQ["🌐 HTTP Request"]
+    MW["⚙️ Middleware<br/>(middleware.ts)"]
+    WL{"Route in<br/>whitelist?"}
+    COOKIE{"Has Supabase<br/>auth cookie?"}
+    KYCC["🔍 KycGuard<br/>Check /api/user/me"]
+    KYCD{"kyc_completed<br/>== true?"}
+    KWWL{"Route in<br/>KYC whitelist?"}
+    PAGE["✅ Render Page"]
+    REDIR_HOME["↩️ Redirect to /<br/>?redirect={path}"]
+    REDIR_ONBOARD["↩️ Redirect to<br/>/onboarding"]
+
+    REQ --> MW
+    MW --> WL
+    WL -->|"Yes<br/>(/, /login, /assessment,<br/>/landing, /a2ui-demo)"| PAGE
+    WL -->|"No"| COOKIE
+    COOKIE -->|"No"| REDIR_HOME
+    COOKIE -->|"Yes"| KYCC
+    KYCC --> KYCD
+    KYCD -->|"Yes"| PAGE
+    KYCD -->|"No"| KWWL
+    KWWL -->|"Yes<br/>(/onboarding, /login)"| PAGE
+    KWWL -->|"No"| REDIR_ONBOARD
+
+    style MW fill:#16161e,stroke:#4A9494,color:#fff
+    style KYCC fill:#16161e,stroke:#B45309,color:#fff
+    style PAGE fill:#16161e,stroke:#059669,color:#fff
+    style REDIR_HOME fill:#16161e,stroke:#DC2626,color:#fff
+    style REDIR_ONBOARD fill:#16161e,stroke:#DC2626,color:#fff
+    </pre>
+  </div>
+
+  <!-- === Component Hierarchy (Chat Page) === -->
+  <h2>Component Hierarchy: Chat Page</h2>
+  <p class="desc">/chat 页面的组件嵌套结构——应用最复杂的页面。</p>
+
+  <div class="diagram-container" style="font-family:monospace;font-size:13px;color:#cbd5e1;line-height:1.8">
+<pre style="color:#cbd5e1">
+RootLayout
+├── AuthProvider               <span style="color:#64748b">// Supabase auth context</span>
+│   ├── I18nProvider            <span style="color:#64748b">// i18n translations</span>
+│   │   ├── KycGuard            <span style="color:#64748b">// KYC completion check</span>
+│   │   │   └── NuqsAdapter    <span style="color:#64748b">// URL query state</span>
+│   │   │       └── <span style="color:#4A9494">ChatPage</span>
+│   │   │           ├── <span style="color:#4A9494">Header</span> (h-16)
+│   │   │           │   ├── Logo → /
+│   │   │           │   ├── ConversationsButton (toggle sidebar)
+│   │   │           │   ├── QuotaBanner (usage display)
+│   │   │           │   ├── SettingsButton
+│   │   │           │   ├── NewChatButton
+│   │   │           │   └── <span style="color:#4A9494">UserMenuDropdown</span>
+│   │   │           │       ├── UserInfo (nickname, plan)
+│   │   │           │       ├── ProfileLink → /onboarding
+│   │   │           │       ├── AcademicLink → /profile/academic
+│   │   │           │       ├── MemoryLink → /profile/memory
+│   │   │           │       ├── LanguageSelector
+│   │   │           │       └── LogoutButton
+│   │   │           │
+│   │   │           └── <span style="color:#4A9494">ResizablePanelGroup</span>
+│   │   │               ├── <span style="color:#4A9494">LeftPanel</span> (25%, collapsible)
+│   │   │               │   ├── ThreadList
+│   │   │               │   └── TasksFilesSidebar
+│   │   │               │       ├── AgentTasks
+│   │   │               │       └── FileSystem
+│   │   │               │
+│   │   │               └── <span style="color:#4A9494">MainPanel</span>
+│   │   │                   └── ChatProvider
+│   │   │                       └── ChatInterface
+│   │   │                           ├── MessageList
+│   │   │                           │   ├── AIMessage
+│   │   │                           │   │   ├── MarkdownContent
+│   │   │                           │   │   └── A2UISurface
+│   │   │                           │   └── UserMessage
+│   │   │                           └── InputArea
+│   │   │
+│   │   └── Toaster             <span style="color:#64748b">// sonner toast notifications</span>
+</pre>
+  </div>
+
+  <!-- === Data Flow === -->
+  <h2>Key Data Flows</h2>
+  <p class="desc">页面间的关键数据传递路径。</p>
+
+  <div class="diagram-container">
+    <pre class="mermaid">
+flowchart LR
+    subgraph CLIENT["Frontend (Next.js)"]
+        LP["Landing Page"]
+        LG["Login"]
+        OB["Onboarding"]
+        CH["Chat"]
+        AS["Assessment"]
+        AP["Academic Profile"]
+        MM["Memory Manager"]
+    end
+
+    subgraph APIS["Backend APIs"]
+        SA["Supabase Auth"]
+        BA["Business API<br/>:5096"]
+        LA["LangGraph Agent<br/>:5095"]
+        M0["Mem0 / Qdrant"]
+    end
+
+    subgraph DATA["Data Stores"]
+        PG["PostgreSQL"]
+        RD["Redis"]
+        QD["Qdrant"]
+    end
+
+    LG -->|"SMS OTP"| SA
+    LG -->|"sync token"| BA
+    OB -->|"save profile"| BA
+    CH -->|"stream"| LA
+    CH -->|"quota check"| BA
+    AS -->|"questions"| BA
+    AS -->|"answers"| BA
+    AP -->|"analytics"| BA
+    MM -->|"CRUD"| BA
+
+    BA --> PG
+    BA --> RD
+    LA --> M0
+    M0 --> QD
+
+    style CLIENT fill:#0d1a2d,stroke:#1D4ED8,color:#fff
+    style APIS fill:#1a2d2d,stroke:#4A9494,color:#fff
+    style DATA fill:#1a2d1a,stroke:#059669,color:#fff
+    </pre>
+  </div>
+
+  <!-- === URL Query State === -->
+  <h2>URL Query State Management</h2>
+  <p class="desc">通过 nuqs 管理的 URL query parameters。</p>
+
+  <table class="page-table">
+    <thead>
+      <tr><th>Page</th><th>Query Param</th><th>Type</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="route">/chat</span></td>
+        <td><code>threadId</code></td>
+        <td>string</td>
+        <td>Active conversation thread ID</td>
+      </tr>
+      <tr>
+        <td><span class="route">/chat</span></td>
+        <td><code>sidebar</code></td>
+        <td>boolean</td>
+        <td>Thread list sidebar visibility</td>
+      </tr>
+      <tr>
+        <td><span class="route">/chat</span></td>
+        <td><code>assistantId</code></td>
+        <td>string</td>
+        <td>Active assistant/agent (e.g., "basis-expert")</td>
+      </tr>
+      <tr>
+        <td><span class="route">/login</span></td>
+        <td><code>redirect</code></td>
+        <td>string</td>
+        <td>Post-login redirect target (set by middleware)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    BasisPilot Site Map & Information Architecture &mdash; v1.0
+  </footer>
+</div>
+
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'dark',
+  themeVariables: {
+    primaryColor: '#2F6868',
+    primaryTextColor: '#e2e8f0',
+    primaryBorderColor: '#4A9494',
+    lineColor: '#4A9494',
+    secondaryColor: '#1a3333',
+    tertiaryColor: '#16161e',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontSize: '12px',
+  },
+  flowchart: {
+    useMaxWidth: true,
+    htmlLabels: true,
+    curve: 'basis',
+    padding: 16,
+  }
+});
+</script>
+</body>
+</html>

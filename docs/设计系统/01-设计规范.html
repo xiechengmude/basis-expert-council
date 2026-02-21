@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BasisPilot Design System</title>
+<style>
+  /* === Reset & Base === */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #0a0a0f; color: #e2e8f0; line-height: 1.6;
+  }
+
+  /* === Layout === */
+  .page { display: flex; min-height: 100vh; }
+  .sidebar {
+    position: fixed; top: 0; left: 0; width: 240px; height: 100vh;
+    background: #111118; border-right: 1px solid #1e1e2e; overflow-y: auto;
+    padding: 24px 0; z-index: 10;
+  }
+  .sidebar h2 { padding: 0 20px; font-size: 14px; color: #4A9494; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+  .sidebar a {
+    display: block; padding: 8px 20px; color: #94a3b8; text-decoration: none;
+    font-size: 13px; transition: all 0.15s;
+  }
+  .sidebar a:hover { color: #e2e8f0; background: rgba(74, 148, 148, 0.1); }
+  .sidebar a.active { color: #4A9494; border-right: 2px solid #4A9494; background: rgba(74, 148, 148, 0.05); }
+  .sidebar .logo { padding: 0 20px 24px; border-bottom: 1px solid #1e1e2e; margin-bottom: 16px; }
+  .sidebar .logo span { font-size: 18px; font-weight: 700; color: #4A9494; }
+  .sidebar .logo small { display: block; font-size: 11px; color: #64748b; margin-top: 2px; }
+  .sidebar .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #475569; padding: 16px 20px 4px; }
+
+  .main { margin-left: 240px; flex: 1; padding: 48px 64px; max-width: 1100px; }
+  .main h1 { font-size: 32px; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .main .subtitle { color: #64748b; font-size: 14px; margin-bottom: 48px; }
+
+  section { margin-bottom: 64px; }
+  section h2 { font-size: 22px; font-weight: 600; color: #f1f5f9; margin-bottom: 8px; letter-spacing: -0.01em; }
+  section .desc { color: #64748b; font-size: 13px; margin-bottom: 24px; }
+  section h3 { font-size: 15px; font-weight: 600; color: #cbd5e1; margin: 24px 0 12px; }
+
+  /* === Color Swatches === */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
+  .swatch {
+    border-radius: 10px; overflow: hidden; background: #16161e;
+    border: 1px solid #1e1e2e; transition: transform 0.15s;
+  }
+  .swatch:hover { transform: translateY(-2px); }
+  .swatch-color { height: 56px; position: relative; }
+  .swatch-color::after {
+    content: attr(data-hex); position: absolute; bottom: 4px; right: 6px;
+    font-size: 9px; color: rgba(255,255,255,0.6); font-family: monospace;
+  }
+  .swatch-info { padding: 6px 8px; }
+  .swatch-info .name { font-size: 11px; font-weight: 600; color: #cbd5e1; }
+  .swatch-info .var { font-size: 9px; color: #475569; font-family: monospace; }
+
+  /* === Token Table === */
+  .token-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .token-table th { text-align: left; padding: 10px 12px; color: #64748b; font-weight: 500; border-bottom: 1px solid #1e1e2e; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .token-table td { padding: 10px 12px; border-bottom: 1px solid #1a1a24; vertical-align: middle; }
+  .token-table tr:hover { background: rgba(74, 148, 148, 0.03); }
+  .token-var { font-family: "SF Mono", Monaco, monospace; font-size: 12px; color: #4A9494; background: rgba(74, 148, 148, 0.1); padding: 2px 6px; border-radius: 4px; }
+  .token-val { font-family: "SF Mono", Monaco, monospace; font-size: 12px; color: #94a3b8; }
+
+  /* === Typography Samples === */
+  .type-sample { background: #16161e; border: 1px solid #1e1e2e; border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; display: flex; align-items: baseline; gap: 20px; }
+  .type-sample .label { font-size: 11px; color: #475569; font-family: monospace; width: 120px; flex-shrink: 0; }
+  .type-sample .preview { color: #e2e8f0; }
+
+  /* === Component Cards === */
+  .component-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .component-card {
+    background: #16161e; border: 1px solid #1e1e2e; border-radius: 14px;
+    padding: 24px; transition: border-color 0.15s;
+  }
+  .component-card:hover { border-color: #2F6868; }
+  .component-card h4 { font-size: 14px; font-weight: 600; color: #e2e8f0; margin-bottom: 4px; }
+  .component-card p { font-size: 12px; color: #64748b; margin-bottom: 16px; }
+
+  /* === Buttons === */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 600; border-radius: 9999px; padding: 10px 24px; font-size: 14px; cursor: pointer; border: none; transition: all 0.15s; }
+  .btn-primary { background: #357878; color: #fff; }
+  .btn-primary:hover { background: #4A9494; }
+  .btn-secondary { background: rgba(255,255,255,0.06); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.1); }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+  .btn-destructive { background: #dc2626; color: #fff; }
+  .btn-destructive:hover { background: #ef4444; }
+  .btn-ghost { background: transparent; color: #94a3b8; }
+  .btn-ghost:hover { color: #e2e8f0; background: rgba(255,255,255,0.05); }
+  .btn-sm { padding: 6px 16px; font-size: 12px; }
+  .btn-lg { padding: 14px 32px; font-size: 16px; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* === Badges === */
+  .badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 9999px; font-size: 11px; font-weight: 500; }
+  .badge-brand { background: rgba(74, 148, 148, 0.15); color: #4A9494; border: 1px solid rgba(74, 148, 148, 0.3); }
+  .badge-success { background: rgba(5, 150, 105, 0.15); color: #34d399; border: 1px solid rgba(5, 150, 105, 0.3); }
+  .badge-warning { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+  .badge-error { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+  /* === Input === */
+  .input-demo { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 10px 14px; color: #e2e8f0; font-size: 14px; width: 100%; max-width: 320px; outline: none; transition: border-color 0.15s; }
+  .input-demo:focus { border-color: #4A9494; }
+  .input-demo::placeholder { color: #475569; }
+
+  /* === Spacing Demo === */
+  .spacing-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .spacing-bar { height: 24px; background: rgba(74, 148, 148, 0.3); border-radius: 4px; border: 1px solid rgba(74, 148, 148, 0.5); }
+  .spacing-label { font-size: 11px; color: #64748b; font-family: monospace; width: 100px; flex-shrink: 0; }
+  .spacing-val { font-size: 11px; color: #475569; font-family: monospace; }
+
+  /* === Shadow Demo === */
+  .shadow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .shadow-box { background: #16161e; border: 1px solid #1e1e2e; border-radius: 12px; padding: 24px; text-align: center; }
+  .shadow-box .label { font-size: 11px; color: #64748b; margin-top: 8px; }
+
+  /* === Animation Demo === */
+  .anim-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .anim-card { background: #16161e; border: 1px solid #1e1e2e; border-radius: 12px; padding: 20px; text-align: center; }
+  .anim-card .demo-box { width: 40px; height: 40px; background: #357878; border-radius: 8px; margin: 0 auto 12px; }
+  .anim-card .name { font-size: 12px; color: #cbd5e1; font-weight: 500; }
+  .anim-card .timing { font-size: 10px; color: #475569; font-family: monospace; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes gridPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+  @keyframes glowPulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+  @keyframes ringPulseGreen { 0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); } 50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); } }
+  @keyframes ringPulseRed { 0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); } 50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); } }
+  .demo-fadeUp { animation: fadeUp 0.6s ease-out forwards; }
+  .demo-gridPulse { animation: gridPulse 4s ease-in-out infinite; }
+  .demo-glowPulse { animation: glowPulse 2s ease-in-out infinite; }
+  .demo-ringGreen { animation: ringPulseGreen 1.5s ease-in-out infinite; }
+  .demo-ringRed { animation: ringPulseRed 1.5s ease-in-out infinite; }
+
+  /* === Dark/Light Mode Toggle Demo === */
+  .mode-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .mode-box { border-radius: 14px; padding: 24px; }
+  .mode-light { background: #f9f9f9; color: #111827; border: 1px solid #e5e7eb; }
+  .mode-dark { background: #202020; color: #f3f4f6; border: 1px solid #404040; }
+  .mode-box h4 { font-size: 14px; margin-bottom: 8px; }
+  .mode-box p { font-size: 12px; opacity: 0.7; margin-bottom: 12px; }
+  .mode-swatch-row { display: flex; gap: 6px; }
+  .mode-swatch { width: 32px; height: 32px; border-radius: 6px; }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 24px; }
+    .swatch-grid { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); }
+    .shadow-grid { grid-template-columns: 1fr; }
+    .mode-demo { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <div class="logo">
+      <span>BasisPilot</span>
+      <small>Design System v1.0</small>
+    </div>
+    <div class="section-label">Foundation</div>
+    <a href="#colors">Brand Colors</a>
+    <a href="#accents">Subject Accents</a>
+    <a href="#semantic">Semantic Colors</a>
+    <a href="#typography">Typography</a>
+    <a href="#spacing">Spacing</a>
+    <a href="#radius">Border Radius</a>
+    <a href="#shadows">Shadows</a>
+    <div class="section-label">Components</div>
+    <a href="#buttons">Buttons</a>
+    <a href="#badges">Badges</a>
+    <a href="#inputs">Inputs</a>
+    <a href="#cards">Cards</a>
+    <div class="section-label">Motion</div>
+    <a href="#animations">Animations</a>
+    <div class="section-label">Themes</div>
+    <a href="#modes">Light / Dark Mode</a>
+    <a href="#layout">Layout Tokens</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>BasisPilot Design System</h1>
+    <p class="subtitle">Visual language for the BASIS Expert Council AI platform. All tokens extracted from tailwind.config.mjs + globals.css.</p>
+
+    <!-- ===== Brand Colors ===== -->
+    <section id="colors">
+      <h2>Brand Color Scale</h2>
+      <p class="desc">Primary brand: Teal (#2F6868). 11-step scale from 50 to 950. Dark mode inverts the scale for contrast.</p>
+
+      <h3>Light Mode</h3>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#EDF7F7" data-hex="#EDF7F7"></div><div class="swatch-info"><div class="name">50</div><div class="var">--brand-50</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#D1ECEC" data-hex="#D1ECEC"></div><div class="swatch-info"><div class="name">100</div><div class="var">--brand-100</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#A3D4D4" data-hex="#A3D4D4"></div><div class="swatch-info"><div class="name">200</div><div class="var">--brand-200</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#6BB5B5" data-hex="#6BB5B5"></div><div class="swatch-info"><div class="name">300</div><div class="var">--brand-300</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#4A9494" data-hex="#4A9494"></div><div class="swatch-info"><div class="name">400</div><div class="var">--brand-400</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#357878" data-hex="#357878"></div><div class="swatch-info"><div class="name">500</div><div class="var">--brand-500</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2F6868" data-hex="#2F6868"></div><div class="swatch-info"><div class="name">600</div><div class="var">--brand-600</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#245454" data-hex="#245454"></div><div class="swatch-info"><div class="name">700</div><div class="var">--brand-700</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1E4E4E" data-hex="#1E4E4E"></div><div class="swatch-info"><div class="name">800</div><div class="var">--brand-800</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1A4040" data-hex="#1A4040"></div><div class="swatch-info"><div class="name">900</div><div class="var">--brand-900</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#0F2B2B" data-hex="#0F2B2B"></div><div class="swatch-info"><div class="name">950</div><div class="var">--brand-950</div></div></div>
+      </div>
+
+      <h3>Dark Mode (Inverted)</h3>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#0F2B2B" data-hex="#0F2B2B"></div><div class="swatch-info"><div class="name">50</div><div class="var">--brand-50</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1A4040" data-hex="#1A4040"></div><div class="swatch-info"><div class="name">100</div><div class="var">--brand-100</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1E4E4E" data-hex="#1E4E4E"></div><div class="swatch-info"><div class="name">200</div><div class="var">--brand-200</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#245454" data-hex="#245454"></div><div class="swatch-info"><div class="name">300</div><div class="var">--brand-300</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2F6868" data-hex="#2F6868"></div><div class="swatch-info"><div class="name">400</div><div class="var">--brand-400</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#4A9494" data-hex="#4A9494"></div><div class="swatch-info"><div class="name">500</div><div class="var">--brand-500</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#5CB8B8" data-hex="#5CB8B8"></div><div class="swatch-info"><div class="name">600</div><div class="var">--brand-600</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#7DD1D1" data-hex="#7DD1D1"></div><div class="swatch-info"><div class="name">700</div><div class="var">--brand-700</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#A3E4E4" data-hex="#A3E4E4"></div><div class="swatch-info"><div class="name">800</div><div class="var">--brand-800</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#D1F2F2" data-hex="#D1F2F2"></div><div class="swatch-info"><div class="name">900</div><div class="var">--brand-900</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#EDF7F7" data-hex="#EDF7F7"></div><div class="swatch-info"><div class="name">950</div><div class="var">--brand-950</div></div></div>
+      </div>
+    </section>
+
+    <!-- ===== Subject Accents ===== -->
+    <section id="accents">
+      <h2>Subject Accent Colors</h2>
+      <p class="desc">Each academic subject/feature has a distinct accent color for visual differentiation.</p>
+      <div class="swatch-grid" style="grid-template-columns: repeat(6, 1fr);">
+        <div class="swatch"><div class="swatch-color" style="background:#2F6868" data-hex="#2F6868"></div><div class="swatch-info"><div class="name">Math</div><div class="var">--accent-math</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#B45309" data-hex="#B45309"></div><div class="swatch-info"><div class="name">Planning</div><div class="var">--accent-planning</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1D4ED8" data-hex="#1D4ED8"></div><div class="swatch-info"><div class="name">Onboard</div><div class="var">--accent-onboard</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#BE123C" data-hex="#BE123C"></div><div class="swatch-info"><div class="name">AP</div><div class="var">--accent-ap</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#DC2626" data-hex="#DC2626"></div><div class="swatch-info"><div class="name">Probation</div><div class="var">--accent-probation</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#059669" data-hex="#059669"></div><div class="swatch-info"><div class="name">Success</div><div class="var">--accent-success</div></div></div>
+      </div>
+    </section>
+
+    <!-- ===== Semantic Colors ===== -->
+    <section id="semantic">
+      <h2>Semantic Colors</h2>
+      <p class="desc">Feedback and state colors used across the UI.</p>
+      <table class="token-table">
+        <thead>
+          <tr><th>Token</th><th>Light</th><th>Dark</th><th>Usage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="token-var">--color-success</span></td><td><span style="color:#10b981">#10b981</span></td><td><span style="color:#34d399">#34d399</span></td><td>Correct answers, positive states</td></tr>
+          <tr><td><span class="token-var">--color-warning</span></td><td><span style="color:#f59e0b">#f59e0b</span></td><td><span style="color:#fbbf24">#fbbf24</span></td><td>Caution, medium difficulty</td></tr>
+          <tr><td><span class="token-var">--color-error</span></td><td><span style="color:#ef4444">#ef4444</span></td><td><span style="color:#f87171">#f87171</span></td><td>Wrong answers, destructive actions</td></tr>
+          <tr><td><span class="token-var">--color-primary</span></td><td><span style="color:#1c3c3c">#1c3c3c</span></td><td><span style="color:#2dd4bf">#2dd4bf</span></td><td>Primary interactive, links</td></tr>
+          <tr><td><span class="token-var">--color-user-message</span></td><td><span style="color:#076699">#076699</span></td><td><span style="color:#065a8a">#065a8a</span></td><td>User chat bubble accents</td></tr>
+          <tr><td><span class="token-var">--color-background</span></td><td><span class="token-val">#f9f9f9</span></td><td><span class="token-val">#202020</span></td><td>Page background</td></tr>
+          <tr><td><span class="token-var">--color-surface</span></td><td><span class="token-val">#f9fafb</span></td><td><span class="token-val">#2a2a2a</span></td><td>Card / elevated surfaces</td></tr>
+          <tr><td><span class="token-var">--color-border</span></td><td><span class="token-val">#e5e7eb</span></td><td><span class="token-val">#404040</span></td><td>Dividers, card borders</td></tr>
+          <tr><td><span class="token-var">--color-text-primary</span></td><td><span class="token-val">#111827</span></td><td><span class="token-val">#f3f4f6</span></td><td>Headings, body text</td></tr>
+          <tr><td><span class="token-var">--color-text-secondary</span></td><td><span class="token-val">#6b7280</span></td><td><span class="token-val">#9ca3af</span></td><td>Captions, labels</td></tr>
+          <tr><td><span class="token-var">--color-text-tertiary</span></td><td><span class="token-val">#9ca3af</span></td><td><span class="token-val">#6b7280</span></td><td>Muted helpers, timestamps</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== Typography ===== -->
+    <section id="typography">
+      <h2>Typography Scale</h2>
+      <p class="desc">System font stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto. Mono: Fira Code, SF Mono.</p>
+
+      <h3>Display Sizes (Tailwind Utilities)</h3>
+      <div class="type-sample"><span class="label">display-2xl</span><span class="preview" style="font-size:48px;line-height:60px;letter-spacing:-0.01em">BasisPilot</span></div>
+      <div class="type-sample"><span class="label">display-xl</span><span class="preview" style="font-size:36px;line-height:44px;letter-spacing:-0.01em">AI Co-Pilot</span></div>
+      <div class="type-sample"><span class="label">display-lg</span><span class="preview" style="font-size:30px;line-height:38px;letter-spacing:-0.01em">Expert Council</span></div>
+      <div class="type-sample"><span class="label">display-base</span><span class="preview" style="font-size:24px;line-height:32px;letter-spacing:-0.01em">Assessment System</span></div>
+      <div class="type-sample"><span class="label">display-sm</span><span class="preview" style="font-size:16px;line-height:24px;font-weight:600">Section Title</span></div>
+
+      <h3>Body Sizes</h3>
+      <div class="type-sample"><span class="label">xl / 20px</span><span class="preview" style="font-size:20px;line-height:30px;letter-spacing:-0.01em">Large body text for emphasis</span></div>
+      <div class="type-sample"><span class="label">lg / 18px</span><span class="preview" style="font-size:18px;line-height:28px;letter-spacing:-0.01em">Question stems, card titles</span></div>
+      <div class="type-sample"><span class="label">base / 16px</span><span class="preview" style="font-size:16px;line-height:24px">Default body text and paragraphs</span></div>
+      <div class="type-sample"><span class="label">sm / 14px</span><span class="preview" style="font-size:14px;line-height:20px">Chat messages, form labels</span></div>
+      <div class="type-sample"><span class="label">xs / 13px</span><span class="preview" style="font-size:13px;line-height:18px">Small labels, badge text</span></div>
+      <div class="type-sample"><span class="label">xxs / 12px</span><span class="preview" style="font-size:12px;line-height:18px">Timestamps, micro copy</span></div>
+
+      <h3>Caps Labels</h3>
+      <div class="type-sample"><span class="label">caps-label-sm</span><span class="preview" style="font-size:14px;line-height:20px;letter-spacing:0.42px;text-transform:uppercase">Section Header</span></div>
+      <div class="type-sample"><span class="label">caps-label-xs</span><span class="preview" style="font-size:12px;line-height:18px;letter-spacing:0.36px;text-transform:uppercase">Subsection</span></div>
+
+      <h3>Font Weights</h3>
+      <table class="token-table">
+        <thead><tr><th>Weight</th><th>Value</th><th>Usage</th></tr></thead>
+        <tbody>
+          <tr><td>Regular</td><td><span class="token-val">400</span></td><td>Body text, paragraphs</td></tr>
+          <tr><td>Medium</td><td><span class="token-val">500</span></td><td>Labels, form fields</td></tr>
+          <tr><td>Semibold</td><td><span class="token-val">600</span></td><td>Headings, buttons, emphasis</td></tr>
+          <tr><td>Bold</td><td><span class="token-val">700</span></td><td>Display headings, hero text</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== Spacing ===== -->
+    <section id="spacing">
+      <h2>Spacing Scale</h2>
+      <p class="desc">CSS custom property spacing tokens used throughout the system.</p>
+      <div>
+        <div class="spacing-row"><span class="spacing-label">--spacing-xs</span><div class="spacing-bar" style="width:16px"></div><span class="spacing-val">4px / 0.25rem</span></div>
+        <div class="spacing-row"><span class="spacing-label">--spacing-sm</span><div class="spacing-bar" style="width:32px"></div><span class="spacing-val">8px / 0.5rem</span></div>
+        <div class="spacing-row"><span class="spacing-label">--spacing-md</span><div class="spacing-bar" style="width:64px"></div><span class="spacing-val">16px / 1rem</span></div>
+        <div class="spacing-row"><span class="spacing-label">--spacing-lg</span><div class="spacing-bar" style="width:96px"></div><span class="spacing-val">24px / 1.5rem</span></div>
+        <div class="spacing-row"><span class="spacing-label">--spacing-xl</span><div class="spacing-bar" style="width:128px"></div><span class="spacing-val">32px / 2rem</span></div>
+        <div class="spacing-row"><span class="spacing-label">--spacing-2xl</span><div class="spacing-bar" style="width:192px"></div><span class="spacing-val">48px / 3rem</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Border Radius ===== -->
+    <section id="radius">
+      <h2>Border Radius</h2>
+      <p class="desc">Base radius: --radius = 0.5rem (8px). All radius tokens derive from this base.</p>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <div style="text-align:center">
+          <div style="width:64px;height:64px;background:#357878;border-radius:3px;margin:0 auto 8px"></div>
+          <div style="font-size:11px;color:#64748b">xs / 3px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:64px;height:64px;background:#357878;border-radius:4px;margin:0 auto 8px"></div>
+          <div style="font-size:11px;color:#64748b">sm / 4px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:64px;height:64px;background:#357878;border-radius:6px;margin:0 auto 8px"></div>
+          <div style="font-size:11px;color:#64748b">md / 6px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:64px;height:64px;background:#357878;border-radius:8px;margin:0 auto 8px"></div>
+          <div style="font-size:11px;color:#64748b">lg / 8px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:64px;height:64px;background:#357878;border-radius:12px;margin:0 auto 8px"></div>
+          <div style="font-size:11px;color:#64748b">xl / 12px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:64px;height:64px;background:#357878;border-radius:9999px;margin:0 auto 8px"></div>
+          <div style="font-size:11px;color:#64748b">full / pill</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Shadows ===== -->
+    <section id="shadows">
+      <h2>Box Shadows</h2>
+      <p class="desc">Shadow tokens for elevation hierarchy.</p>
+      <div class="shadow-grid">
+        <div class="shadow-box" style="box-shadow:0 1px 2px 0 rgba(0,0,0,0.05)">
+          <div style="font-size:14px;color:#e2e8f0">xs</div>
+          <div class="label">Subtle lift</div>
+        </div>
+        <div class="shadow-box" style="box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)">
+          <div style="font-size:14px;color:#e2e8f0">lg</div>
+          <div class="label">Cards, dropdowns</div>
+        </div>
+        <div class="shadow-box" style="box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)">
+          <div style="font-size:14px;color:#e2e8f0">xl</div>
+          <div class="label">Modals, popovers</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Buttons ===== -->
+    <section id="buttons">
+      <h2>Buttons</h2>
+      <p class="desc">Pill-shaped (border-radius: 9999px) by default. Full-width variant used for form submissions.</p>
+
+      <h3>Variants</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:24px">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-destructive">Destructive</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-primary" disabled>Disabled</button>
+      </div>
+
+      <h3>Sizes</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:24px">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+
+      <h3>Full Width (Assessment Submit)</h3>
+      <div style="max-width:400px">
+        <button class="btn btn-primary" style="width:100%;padding:14px 32px;font-size:15px;box-shadow:0 8px 24px rgba(53,120,120,0.25)">Submit Answer</button>
+      </div>
+
+      <h3>Token Reference</h3>
+      <table class="token-table">
+        <thead><tr><th>Variant</th><th>Background</th><th>Text</th><th>Hover</th></tr></thead>
+        <tbody>
+          <tr><td>Primary</td><td><span class="token-var">brand-500</span> #357878</td><td>White</td><td><span class="token-var">brand-400</span> #4A9494</td></tr>
+          <tr><td>Secondary</td><td>white/6%</td><td>slate-200</td><td>white/10%</td></tr>
+          <tr><td>Destructive</td><td>#dc2626</td><td>White</td><td>#ef4444</td></tr>
+          <tr><td>Ghost</td><td>Transparent</td><td>slate-400</td><td>white/5%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== Badges ===== -->
+    <section id="badges">
+      <h2>Badges & Pills</h2>
+      <p class="desc">Used for difficulty labels, topic tags, plan tiers, and status indicators.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px">
+        <span class="badge badge-brand">Brand</span>
+        <span class="badge badge-success">Easy</span>
+        <span class="badge badge-warning">Medium</span>
+        <span class="badge badge-error">Hard</span>
+      </div>
+
+      <h3>Assessment Difficulty</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px">
+        <span class="badge" style="background:rgba(34,197,94,0.1);color:#4ade80;border:1px solid rgba(34,197,94,0.2)">Easy</span>
+        <span class="badge" style="background:rgba(245,158,11,0.1);color:#fbbf24;border:1px solid rgba(245,158,11,0.2)">Medium</span>
+        <span class="badge" style="background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2)">Hard</span>
+      </div>
+
+      <h3>Topic Tags</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="badge" style="background:rgba(255,255,255,0.06);color:#94a3b8;border:1px solid rgba(255,255,255,0.1)">Calculus</span>
+        <span class="badge" style="background:rgba(255,255,255,0.06);color:#94a3b8;border:1px solid rgba(255,255,255,0.1)">AP Physics</span>
+        <span class="badge" style="background:rgba(255,255,255,0.06);color:#94a3b8;border:1px solid rgba(255,255,255,0.1)">College Planning</span>
+      </div>
+    </section>
+
+    <!-- ===== Inputs ===== -->
+    <section id="inputs">
+      <h2>Input Fields</h2>
+      <p class="desc">Glass-morphism style with semi-transparent backgrounds and brand focus ring.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:400px">
+        <input class="input-demo" placeholder="Phone number..." />
+        <input class="input-demo" placeholder="Search memories..." />
+        <input class="input-demo" placeholder="Ask a question..." style="border-radius:9999px;padding:12px 20px" />
+      </div>
+
+      <h3>Token Reference</h3>
+      <table class="token-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Background</td><td><span class="token-val">white/3% (dark) | white (light)</span></td></tr>
+          <tr><td>Border</td><td><span class="token-val">white/10% (dark) | --color-border (light)</span></td></tr>
+          <tr><td>Focus Border</td><td><span class="token-var">brand-400</span> #4A9494</td></tr>
+          <tr><td>Placeholder</td><td><span class="token-val">slate-600 / #475569</span></td></tr>
+          <tr><td>Border Radius</td><td><span class="token-val">10px (default) | 9999px (search/chat)</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== Cards ===== -->
+    <section id="cards">
+      <h2>Card Patterns</h2>
+      <p class="desc">Consistent card styles used across pages. Glass-morphism with subtle borders.</p>
+      <div class="component-grid">
+        <div class="component-card">
+          <h4>Assessment Option Card</h4>
+          <p>MCQ option with selection states</p>
+          <div style="border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;background:rgba(255,255,255,0.03);display:flex;align-items:center;gap:12px">
+            <span style="width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:13px;color:#94a3b8;font-weight:600">A</span>
+            <span style="font-size:14px;color:#e2e8f0">Option text here</span>
+          </div>
+        </div>
+        <div class="component-card">
+          <h4>Chat Message Bubble</h4>
+          <p>AI and user message containers</p>
+          <div style="background:rgba(255,255,255,0.03);border-radius:16px;padding:16px;margin-bottom:8px">
+            <span style="font-size:13px;color:#94a3b8">AI response with markdown support...</span>
+          </div>
+          <div style="background:#076699;border-radius:16px;padding:12px 16px;margin-left:auto;max-width:80%;text-align:right">
+            <span style="font-size:13px;color:#fff">User message</span>
+          </div>
+        </div>
+        <div class="component-card">
+          <h4>Feature Card (Landing)</h4>
+          <p>Glass card with gradient border</p>
+          <div style="background:linear-gradient(135deg,rgba(47,104,104,0.1),rgba(74,148,148,0.05));border:1px solid rgba(74,148,148,0.2);border-radius:16px;padding:20px">
+            <div style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:4px">24/7 AI Tutoring</div>
+            <div style="font-size:12px;color:#64748b">Always available learning assistant</div>
+          </div>
+        </div>
+        <div class="component-card">
+          <h4>Memory Card</h4>
+          <p>Mem0 memory entry display</p>
+          <div style="border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px;background:rgba(255,255,255,0.03)">
+            <div style="display:flex;gap:6px;margin-bottom:8px">
+              <span class="badge badge-brand" style="font-size:10px;padding:2px 8px">tutoring</span>
+              <span class="badge" style="font-size:10px;padding:2px 8px;background:rgba(255,255,255,0.06);color:#94a3b8;border:1px solid rgba(255,255,255,0.1)">math</span>
+            </div>
+            <div style="font-size:12px;color:#cbd5e1">Student prefers step-by-step solutions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Animations ===== -->
+    <section id="animations">
+      <h2>Animations</h2>
+      <p class="desc">Motion tokens defined in tailwind.config.mjs keyframes.</p>
+      <div class="anim-grid">
+        <div class="anim-card">
+          <div class="demo-box demo-fadeUp"></div>
+          <div class="name">fade-up</div>
+          <div class="timing">0.6s ease-out</div>
+        </div>
+        <div class="anim-card">
+          <div class="demo-box demo-gridPulse"></div>
+          <div class="name">grid-pulse</div>
+          <div class="timing">4s ease-in-out infinite</div>
+        </div>
+        <div class="anim-card">
+          <div class="demo-box demo-glowPulse"></div>
+          <div class="name">glow-pulse</div>
+          <div class="timing">2s ease-in-out infinite</div>
+        </div>
+        <div class="anim-card">
+          <div class="demo-box demo-ringGreen" style="border-radius:12px"></div>
+          <div class="name">ring-pulse-green</div>
+          <div class="timing">1.5s (correct answer)</div>
+        </div>
+        <div class="anim-card">
+          <div class="demo-box demo-ringRed" style="border-radius:12px"></div>
+          <div class="name">ring-pulse-red</div>
+          <div class="timing">1.5s (wrong answer)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Dark/Light Mode ===== -->
+    <section id="modes">
+      <h2>Light / Dark Mode</h2>
+      <p class="desc">Mode detection via prefers-color-scheme. Brand scale inverts automatically. App defaults to system preference.</p>
+      <div class="mode-demo">
+        <div class="mode-box mode-light">
+          <h4 style="color:#111827">Light Mode</h4>
+          <p style="color:#6b7280">prefers-color-scheme: light</p>
+          <div class="mode-swatch-row">
+            <div class="mode-swatch" style="background:#f9f9f9;border:1px solid #e5e7eb" title="bg"></div>
+            <div class="mode-swatch" style="background:#f9fafb;border:1px solid #e5e7eb" title="surface"></div>
+            <div class="mode-swatch" style="background:#111827" title="text"></div>
+            <div class="mode-swatch" style="background:#2F6868" title="primary"></div>
+            <div class="mode-swatch" style="background:#e5e7eb" title="border"></div>
+          </div>
+          <div style="margin-top:8px;font-size:10px;color:#9ca3af">bg | surface | text | primary | border</div>
+        </div>
+        <div class="mode-box mode-dark">
+          <h4 style="color:#f3f4f6">Dark Mode</h4>
+          <p style="color:#9ca3af">prefers-color-scheme: dark</p>
+          <div class="mode-swatch-row">
+            <div class="mode-swatch" style="background:#202020;border:1px solid #404040" title="bg"></div>
+            <div class="mode-swatch" style="background:#2a2a2a;border:1px solid #404040" title="surface"></div>
+            <div class="mode-swatch" style="background:#f3f4f6" title="text"></div>
+            <div class="mode-swatch" style="background:#2dd4bf" title="primary"></div>
+            <div class="mode-swatch" style="background:#404040" title="border"></div>
+          </div>
+          <div style="margin-top:8px;font-size:10px;color:#6b7280">bg | surface | text | primary | border</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Layout Tokens ===== -->
+    <section id="layout">
+      <h2>Layout Tokens</h2>
+      <p class="desc">Structural dimensions used across the application.</p>
+      <table class="token-table">
+        <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
+        <tbody>
+          <tr><td><span class="token-var">--sidebar-width</span></td><td><span class="token-val">320px</span></td><td>Thread list sidebar (desktop)</td></tr>
+          <tr><td><span class="token-var">--sidebar-collapsed-width</span></td><td><span class="token-val">60px</span></td><td>Collapsed sidebar</td></tr>
+          <tr><td><span class="token-var">--header-height</span></td><td><span class="token-val">64px</span></td><td>Top navigation bar</td></tr>
+          <tr><td><span class="token-var">--panel-width</span></td><td><span class="token-val">40vw</span></td><td>Side panel (tasks, files)</td></tr>
+          <tr><td><span class="token-var">--chat-max-width</span></td><td><span class="token-val">900px</span></td><td>Chat content area max width</td></tr>
+          <tr><td><span class="token-var">--radius</span></td><td><span class="token-val">0.5rem (8px)</span></td><td>Base radius for all components</td></tr>
+          <tr><td><span class="token-var">--transition-base</span></td><td><span class="token-val">200ms ease</span></td><td>Default transition timing</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Scrollbar Customization</h3>
+      <table class="token-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>scrollbar-width</td><td><span class="token-val">thin (global)</span></td></tr>
+          <tr><td>scrollbar-thumb</td><td><span class="token-var">var(--scrollbar-thumb)</span></td></tr>
+          <tr><td>webkit width</td><td><span class="token-val">8px (global), 6px (.scrollbar-pretty)</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="padding:48px 0 24px;border-top:1px solid #1e1e2e;color:#475569;font-size:12px;text-align:center">
+      BasisPilot Design System &mdash; Generated from tailwind.config.mjs + globals.css &mdash; v1.0
+    </footer>
+  </div>
+</div>
+
+<script>
+// Sidebar active link tracking
+const links = document.querySelectorAll('.sidebar a');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  links.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>
