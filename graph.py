@@ -7,18 +7,20 @@ from src.basis_expert_council.agent import create_basis_expert_agent, _vision_pr
 
 _log = logging.getLogger(__name__)
 
-_inner = create_basis_expert_agent()
-
 # ---------------------------------------------------------------------------
-# Vision 预处理 — monkey-patch agent 的入口方法
+# Vision 预处理 — 在 Pregel 类级别注入
+#
+# 为什么不能用实例级 patch？
+#   LangGraph Server 的 get_graph() 对每次 run 调用 graph.copy(update)
+#   创建新实例并注入 checkpointer/store，实例级 monkey-patch 会丢失。
 #
 # 为什么不用子图包装？
 #   LangGraph 的 messages 字段使用 add_messages reducer（追加语义），
-#   如果在 graph node 中返回修改后的 messages，旧消息不会被替换，
-#   image_url blocks 仍会到达不支持视觉的主模型。
+#   如果在 graph node 中返回修改后的 messages，旧消息不会被替换。
 #
-# 方案：在 input 进入 CompiledGraph 之前拦截，将图片消息替换为 OCR 文本。
-#   保持 agent 仍是原始 CompiledGraph 实例（LangGraph Server 类型检查通过）。
+# 方案：在 Pregel 类级别 patch astream / astream_events，
+#   对所有实例（包括 copy 出来的新实例）生效。
+#   预处理仅在检测到 image_url blocks 时触发，对普通文本消息无影响。
 # ---------------------------------------------------------------------------
 
 
@@ -32,32 +34,27 @@ async def _safe_vision_preprocess(input_dict, config=None):
     return input_dict
 
 
-# 保存原始方法引用
-_orig_ainvoke = _inner.ainvoke
-_orig_astream = _inner.astream
-_orig_astream_events = _inner.astream_events
+# Patch Pregel 类方法（非实例方法），确保 copy() 后的新实例也生效
+from langgraph.pregel import Pregel
+
+_orig_pregel_astream = Pregel.astream
+_orig_pregel_astream_events = Pregel.astream_events
 
 
-async def _patched_ainvoke(input_dict, config=None, **kwargs):
+async def _patched_astream(self, input_dict=None, config=None, **kwargs):
     input_dict = await _safe_vision_preprocess(input_dict, config)
-    return await _orig_ainvoke(input_dict, config=config, **kwargs)
-
-
-async def _patched_astream(input_dict, config=None, **kwargs):
-    input_dict = await _safe_vision_preprocess(input_dict, config)
-    async for chunk in _orig_astream(input_dict, config=config, **kwargs):
+    async for chunk in _orig_pregel_astream(self, input_dict, config=config, **kwargs):
         yield chunk
 
 
-async def _patched_astream_events(input_dict, config=None, **kwargs):
+async def _patched_astream_events(self, input_dict=None, config=None, **kwargs):
     input_dict = await _safe_vision_preprocess(input_dict, config)
-    async for event in _orig_astream_events(input_dict, config=config, **kwargs):
+    async for event in _orig_pregel_astream_events(self, input_dict, config=config, **kwargs):
         yield event
 
 
-# 注入补丁
-_inner.ainvoke = _patched_ainvoke
-_inner.astream = _patched_astream
-_inner.astream_events = _patched_astream_events
+Pregel.astream = _patched_astream
+Pregel.astream_events = _patched_astream_events
 
-agent = _inner
+# 创建 agent（此时 Pregel 类已被 patch，agent 实例自动继承）
+agent = create_basis_expert_agent()
