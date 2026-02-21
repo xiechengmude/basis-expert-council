@@ -59,10 +59,20 @@ ASSESSMENT_TYPES = {
         "estimated_minutes": 5,
         "subjects": ["math", "english"],
     },
+    "map_practice": {
+        "name_zh": "MAP 模拟测评",
+        "name_en": "MAP Practice Test",
+        "description_zh": "模拟 NWEA MAP Growth 自适应考试，覆盖 Math / Reading / Language Usage 三科",
+        "description_en": "Simulates NWEA MAP Growth adaptive test covering Math, Reading, and Language Usage",
+        "question_count": 20,
+        "estimated_minutes": 25,
+        "subjects": ["math", "english"],
+    },
 }
 # Frontend uses "diagnostic" as alias for "subject_diagnostic"
 ASSESSMENT_TYPES["diagnostic"] = ASSESSMENT_TYPES["subject_diagnostic"]
 QUESTION_COUNT["diagnostic"] = QUESTION_COUNT["subject_diagnostic"]
+QUESTION_COUNT["map_practice"] = 20
 
 
 # ---------------------------------------------------------------------------
@@ -235,10 +245,10 @@ def score_fill_in(question: dict, user_answer: str | dict) -> tuple[bool, float]
 
 def score_question(question: dict, user_answer: str | dict | None) -> tuple[bool | None, float | None]:
     """
-    Score a question based on its type.
+    Score a question based on its type (rule-based only).
     Returns (is_correct, score).
     For open-ended types (essay/experiment/short_answer), returns (None, None)
-    since those require Agent scoring.
+    since those require Agent scoring via score_question_async().
     """
     if user_answer is None:
         return False, 0.0
@@ -254,6 +264,33 @@ def score_question(question: dict, user_answer: str | dict | None) -> tuple[bool
         return None, None
     else:
         return None, None
+
+
+async def score_question_async(
+    question: dict, user_answer: str | dict | None,
+) -> tuple[bool | None, float | None, str | None]:
+    """
+    Score a question, using Agent LLM for subjective types.
+    Returns (is_correct, score, agent_feedback).
+    For rule-scored types, agent_feedback is None.
+    """
+    if user_answer is None:
+        return False, 0.0, None
+
+    q_type = question.get("question_type", "")
+
+    if q_type == "mcq":
+        is_correct, score = score_mcq(question, user_answer)
+        return is_correct, score, None
+    elif q_type == "fill_in":
+        is_correct, score = score_fill_in(question, user_answer)
+        return is_correct, score, None
+    elif q_type in ("short_answer", "essay", "experiment"):
+        from .assessment.agent_scoring import score_subjective_question
+        is_correct, score, feedback = await score_subjective_question(question, user_answer)
+        return is_correct, score, feedback
+    else:
+        return None, None, None
 
 
 # ---------------------------------------------------------------------------
@@ -335,8 +372,8 @@ async def submit_answer(
     question_order = len(existing_answers) + 1
     max_q = QUESTION_COUNT.get(session["assessment_type"], 15)
 
-    # Score the answer
-    is_correct, score = score_question(question, user_answer)
+    # Score the answer (Agent LLM for subjective types)
+    is_correct, score, agent_feedback = await score_question_async(question, user_answer)
 
     # Save the answer record
     answer_record = await db.save_answer(
@@ -348,9 +385,10 @@ async def submit_answer(
         score=score,
         difficulty_at=question["difficulty"],
         time_spent_sec=time_spent_sec,
+        agent_feedback=agent_feedback,
     )
 
-    # Update question usage stats (only for rule-scored questions)
+    # Update question usage stats (only for scored questions)
     if is_correct is not None:
         await db.increment_question_usage(question_id, is_correct)
 
@@ -386,7 +424,7 @@ async def submit_answer(
         if not next_question:
             is_last = True
 
-    return {
+    result = {
         "answer_id": answer_record["id"],
         "is_correct": is_correct,
         "score": score,
@@ -399,6 +437,9 @@ async def submit_answer(
         "total_questions": max_q,
         "is_last": is_last,
     }
+    if agent_feedback:
+        result["agent_feedback"] = agent_feedback
+    return result
 
 
 async def complete_session(session_id: str) -> dict:
@@ -496,7 +537,11 @@ def compute_session_stats(session: dict, answers: list[dict]) -> dict:
     strong_topics = []
     for topic, ts in topic_stats.items():
         topic_acc = ts["correct"] / ts["total"] if ts["total"] > 0 else 0
-        topic_scores[topic] = round(topic_acc * 100, 1)
+        topic_scores[topic] = {
+            "correct": ts["correct"],
+            "total": ts["total"],
+            "accuracy": round(topic_acc * 100, 1),
+        }
         if topic_acc < 0.5:
             weak_topics.append(topic)
         elif topic_acc >= 0.75:

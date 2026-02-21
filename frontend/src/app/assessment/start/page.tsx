@@ -96,6 +96,7 @@ export default function AssessmentStartPage() {
         JSON.stringify({
           first_question: data.first_question,
           total_estimated: data.total_estimated,
+          time_limit_sec: data.time_limit_sec,
         }),
       );
       router.push(`/assessment/${data.session_id}/take`);

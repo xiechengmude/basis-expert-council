@@ -61,6 +61,21 @@ def build_parser() -> argparse.ArgumentParser:
     p_exportc.add_argument("--status", default=None)
     p_exportc.add_argument("-o", "--output", default=None, help="输出文件路径")
 
+    # map-transform — 将 MAP 题库转换为导入格式（不入库）
+    p_map_t = sub.add_parser("map-transform", help="转换 MAP 题库为导入格式 (不入库)")
+    p_map_t.add_argument("path", nargs="?", default="data/map_questions_bank_expanded.json",
+                         help="MAP 题库文件路径")
+    p_map_t.add_argument("-o", "--output", default="data/question_banks/map_import_all.json",
+                         help="输出文件路径")
+    p_map_t.add_argument("--split", action="store_true",
+                         help="按 subject/grade 拆分输出到 data/question_banks/")
+
+    # map-import — 转换并导入 MAP 题库到数据库
+    p_map_i = sub.add_parser("map-import", help="转换 MAP 题库并导入数据库")
+    p_map_i.add_argument("path", nargs="?", default="data/map_questions_bank_expanded.json",
+                         help="MAP 题库文件路径")
+    p_map_i.add_argument("--by", default="MAP-transformer", help="导入人")
+
     return parser
 
 
@@ -181,9 +196,86 @@ async def cmd_export_csv(args):
         print(csv_str)
 
 
+async def cmd_map_transform(args):
+    from .map_transformer import transform_batch, transform_by_subject_grade
+    from .validator import validate_batch
+
+    with open(args.path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    questions = data.get("questions", data if isinstance(data, list) else [])
+    print(f"读取 {len(questions)} 道 MAP 题目")
+
+    if args.split:
+        batches = transform_by_subject_grade(questions)
+        from pathlib import Path
+        for key, batch in sorted(batches.items()):
+            out_path = Path("data/question_banks") / key / "map_questions.json"
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(batch, f, indent=2, ensure_ascii=False)
+            print(f"  {key}: {len(batch['questions'])} 题 → {out_path}")
+        print(f"\n拆分输出 {len(batches)} 个批次")
+    else:
+        batch = transform_batch(questions)
+        from pathlib import Path
+        out = Path(args.output)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        with open(out, "w", encoding="utf-8") as f:
+            json.dump(batch, f, indent=2, ensure_ascii=False)
+        print(f"输出 {len(batch['questions'])} 题 → {out}")
+
+    # 校验
+    batch = transform_batch(questions)
+    result = validate_batch(batch["questions"])
+    if result.valid:
+        print(f"校验通过! {len(batch['questions'])} 题全部合格")
+    else:
+        print(f"校验有 {len(result.errors)} 个错误:")
+        for e in result.errors[:10]:
+            print(f"  - {e}")
+    if result.warnings:
+        print(f"警告 ({len(result.warnings)}):")
+        for w in result.warnings[:5]:
+            print(f"  - {w}")
+
+
+async def cmd_map_import(args):
+    from .map_transformer import transform_batch
+    from .importer import import_questions
+
+    with open(args.path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    questions = data.get("questions", data if isinstance(data, list) else [])
+    print(f"读取 {len(questions)} 道 MAP 题目")
+
+    batch = transform_batch(questions)
+    print(f"转换完成: {len(batch['questions'])} 题")
+
+    result = await import_questions(
+        batch["questions"], batch,
+        imported_by=args.by,
+        validate=True,
+    )
+    if result["errors"]:
+        print(f"导入失败! {len(result['errors'])} 个错误:")
+        for e in result["errors"][:20]:
+            print(f"  - {e}")
+        sys.exit(1)
+    print(f"成功导入 {result['imported']} 道 MAP 题目 (batch_id={result['batch_id']})")
+    if result["warnings"]:
+        print(f"  警告 ({len(result['warnings'])}):")
+        for w in result["warnings"][:10]:
+            print(f"  - {w}")
+
+
 async def main_async():
     parser = build_parser()
     args = parser.parse_args()
+
+    # map-transform doesn't need DB
+    if args.command == "map-transform":
+        await cmd_map_transform(args)
+        return
 
     # Ensure DB pool is ready
     from .. import db
@@ -197,6 +289,7 @@ async def main_async():
         "stats": cmd_stats,
         "export": cmd_export,
         "export-csv": cmd_export_csv,
+        "map-import": cmd_map_import,
     }
     handler = handlers.get(args.command)
     if handler:

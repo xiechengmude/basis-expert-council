@@ -2,7 +2,13 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { Loader2, Clock, CheckCircle, XCircle } from "lucide-react";
+import {
+  Loader2,
+  Clock,
+  CheckCircle,
+  XCircle,
+  AlertTriangle,
+} from "lucide-react";
 import { useI18n } from "@/i18n";
 import { getApiBaseUrl } from "@/lib/config";
 
@@ -10,19 +16,20 @@ interface Question {
   id: string;
   stem: string;
   options?: { key: string; text: string }[];
-  type: "mcq" | "fill_in";
+  type: "mcq" | "fill_in" | "short_answer" | "essay" | "experiment";
   image_url?: string;
 }
 
 interface AnswerResponse {
   is_correct: boolean | null;
-  score: number;
+  score: number | null;
   next_question: Question | null;
   progress: { current: number; total: number };
   is_last: boolean;
+  agent_feedback?: string;
 }
 
-type FeedbackState = "correct" | "incorrect" | null;
+type FeedbackState = "correct" | "incorrect" | "scored" | null;
 
 export default function QuizTakePage() {
   const params = useParams();
@@ -34,29 +41,75 @@ export default function QuizTakePage() {
   const [progress, setProgress] = useState({ current: 1, total: 15 });
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [feedback, setFeedback] = useState<FeedbackState>(null);
+  const [agentFeedback, setAgentFeedback] = useState<string | null>(null);
+  const [agentScore, setAgentScore] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [completing, setCompleting] = useState(false);
   const [error, setError] = useState("");
-  const [elapsedSec, setElapsedSec] = useState(0);
+  const [remainingSec, setRemainingSec] = useState<number | null>(null);
+  const [timeLimitSec, setTimeLimitSec] = useState<number | null>(null);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
   const [transitioning, setTransitioning] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
+  const [timeExpired, setTimeExpired] = useState(false);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const autoCompleteRef = useRef(false);
 
-  // Timer
+  // Countdown timer
   useEffect(() => {
+    if (remainingSec === null) return;
+
     timerRef.current = setInterval(() => {
-      setElapsedSec((prev) => prev + 1);
+      setRemainingSec((prev) => {
+        if (prev === null) return null;
+        const next = prev - 1;
+        if (next <= 0) {
+          setTimeExpired(true);
+          return 0;
+        }
+        return next;
+      });
     }, 1000);
+
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, []);
+  }, [remainingSec !== null]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Auto-complete when time expires
+  useEffect(() => {
+    if (!timeExpired || autoCompleteRef.current || completing) return;
+    autoCompleteRef.current = true;
+    handleTimeExpired();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [timeExpired]);
+
+  async function handleTimeExpired() {
+    setCompleting(true);
+    try {
+      const apiBase = getApiBaseUrl();
+      const completeRes = await fetch(
+        `${apiBase}/api/assessment/${sessionId}/complete`,
+        { method: "POST" },
+      );
+      if (!completeRes.ok) throw new Error(`HTTP ${completeRes.status}`);
+      const completeData = await completeRes.json();
+      router.push(
+        `/assessment/${sessionId}/report${completeData.report_id ? `?report_id=${completeData.report_id}` : ""}`,
+      );
+    } catch {
+      setError(t("assessment.quiz.error"));
+      setCompleting(false);
+      autoCompleteRef.current = false;
+    }
+  }
 
   // Load first question from session storage or fetch via a status endpoint
   useEffect(() => {
-    const stored = sessionStorage.getItem(`assessment_${sessionId}_first_question`);
+    const stored = sessionStorage.getItem(
+      `assessment_${sessionId}_first_question`,
+    );
     if (stored) {
       try {
         const data = JSON.parse(stored);
@@ -64,9 +117,12 @@ export default function QuizTakePage() {
         if (data.total_estimated) {
           setProgress({ current: 1, total: data.total_estimated });
         }
+        if (data.time_limit_sec) {
+          setTimeLimitSec(data.time_limit_sec);
+          setRemainingSec(data.time_limit_sec);
+        }
         sessionStorage.removeItem(`assessment_${sessionId}_first_question`);
       } catch {
-        // fallback: fetch from API
         fetchFirstQuestion();
         return;
       }
@@ -75,17 +131,23 @@ export default function QuizTakePage() {
       return;
     }
     setInitialLoading(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
 
   async function fetchFirstQuestion() {
     try {
       const apiBase = getApiBaseUrl();
-      const res = await fetch(`${apiBase}/api/assessment/${sessionId}/status`);
+      const res = await fetch(
+        `${apiBase}/api/assessment/${sessionId}/status`,
+      );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       setQuestion(data.current_question);
       if (data.progress) setProgress(data.progress);
+      if (data.time_limit_sec) {
+        setTimeLimitSec(data.time_limit_sec);
+        setRemainingSec(data.time_limit_sec);
+      }
     } catch {
       setError(t("assessment.quiz.error"));
     } finally {
@@ -99,6 +161,17 @@ export default function QuizTakePage() {
     return `${m}:${s.toString().padStart(2, "0")}`;
   }, []);
 
+  // Timer color: green > 50%, yellow 20-50%, red < 20%
+  const timerColor = useCallback(() => {
+    if (remainingSec === null || timeLimitSec === null)
+      return "text-slate-500";
+    const ratio = remainingSec / timeLimitSec;
+    if (ratio <= 0.1) return "text-red-400 animate-pulse";
+    if (ratio <= 0.2) return "text-red-400";
+    if (ratio <= 0.5) return "text-amber-400";
+    return "text-emerald-400";
+  }, [remainingSec, timeLimitSec]);
+
   const remainingQuestions = progress.total - progress.current;
   const showEncouragement = remainingQuestions <= 2 && remainingQuestions >= 0;
   const progressPercent = Math.min(
@@ -106,93 +179,18 @@ export default function QuizTakePage() {
     100,
   );
 
-  async function handleSubmitAnswer() {
-    if (!selectedAnswer || submitting || !question) return;
-    setSubmitting(true);
-    setError("");
+  // Check if question type is subjective (needs textarea)
+  const isSubjective =
+    question?.type === "short_answer" ||
+    question?.type === "essay" ||
+    question?.type === "experiment";
 
-    const timeSpent = Math.round((Date.now() - questionStartTime) / 1000);
-
-    try {
-      const apiBase = getApiBaseUrl();
-      const res = await fetch(
-        `${apiBase}/api/assessment/${sessionId}/answer`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            question_id: question.id,
-            answer: selectedAnswer,
-            time_spent_sec: timeSpent,
-          }),
-        },
-      );
-
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      const data: AnswerResponse = await res.json();
-
-      // Show feedback
-      if (data.is_correct !== null) {
-        setFeedback(data.is_correct ? "correct" : "incorrect");
-      }
-
-      // Wait for feedback animation, then advance
-      setTimeout(async () => {
-        setFeedback(null);
-
-        if (data.is_last || !data.next_question) {
-          // Complete the assessment
-          setCompleting(true);
-          try {
-            const completeRes = await fetch(
-              `${apiBase}/api/assessment/${sessionId}/complete`,
-              { method: "POST" },
-            );
-            if (!completeRes.ok) throw new Error(`HTTP ${completeRes.status}`);
-            const completeData = await completeRes.json();
-            router.push(
-              `/assessment/${sessionId}/report${completeData.report_id ? `?report_id=${completeData.report_id}` : ""}`,
-            );
-          } catch {
-            setError(t("assessment.quiz.error"));
-            setCompleting(false);
-          }
-        } else {
-          // Transition to next question
-          setTransitioning(true);
-          setTimeout(() => {
-            setQuestion(data.next_question);
-            setProgress(data.progress);
-            setSelectedAnswer("");
-            setQuestionStartTime(Date.now());
-            setTransitioning(false);
-          }, 300);
-        }
-      }, 500);
-    } catch {
-      setError(t("assessment.quiz.error"));
-    } finally {
-      setSubmitting(false);
-    }
-  }
-
-  // MCQ: auto-submit after selection with delay
-  function handleOptionSelect(key: string) {
-    if (submitting || feedback) return;
-    setSelectedAnswer(key);
-    // Auto-submit after a brief delay
-    setTimeout(() => {
-      setSelectedAnswer(key);
-      // Trigger submit
-      submitWithAnswer(key);
-    }, 200);
-  }
-
-  async function submitWithAnswer(answer: string) {
+  async function doSubmitAnswer(answer: string) {
     if (submitting || !question) return;
     setSubmitting(true);
     setError("");
+    setAgentFeedback(null);
+    setAgentScore(null);
 
     const timeSpent = Math.round((Date.now() - questionStartTime) / 1000);
 
@@ -215,12 +213,22 @@ export default function QuizTakePage() {
 
       const data: AnswerResponse = await res.json();
 
-      if (data.is_correct !== null) {
+      // Show feedback
+      if (data.agent_feedback) {
+        // Subjective question with agent scoring
+        setAgentFeedback(data.agent_feedback);
+        setAgentScore(data.score);
+        setFeedback("scored");
+      } else if (data.is_correct !== null) {
         setFeedback(data.is_correct ? "correct" : "incorrect");
       }
 
+      // Wait for feedback animation, then advance
+      const feedbackDelay = data.agent_feedback ? 3000 : 500;
       setTimeout(async () => {
         setFeedback(null);
+        setAgentFeedback(null);
+        setAgentScore(null);
 
         if (data.is_last || !data.next_question) {
           setCompleting(true);
@@ -229,7 +237,8 @@ export default function QuizTakePage() {
               `${apiBase}/api/assessment/${sessionId}/complete`,
               { method: "POST" },
             );
-            if (!completeRes.ok) throw new Error(`HTTP ${completeRes.status}`);
+            if (!completeRes.ok)
+              throw new Error(`HTTP ${completeRes.status}`);
             const completeData = await completeRes.json();
             router.push(
               `/assessment/${sessionId}/report${completeData.report_id ? `?report_id=${completeData.report_id}` : ""}`,
@@ -248,12 +257,26 @@ export default function QuizTakePage() {
             setTransitioning(false);
           }, 300);
         }
-      }, 500);
+      }, feedbackDelay);
     } catch {
       setError(t("assessment.quiz.error"));
     } finally {
       setSubmitting(false);
     }
+  }
+
+  async function handleSubmitAnswer() {
+    if (!selectedAnswer || submitting || !question) return;
+    await doSubmitAnswer(selectedAnswer);
+  }
+
+  // MCQ: auto-submit after selection with delay
+  function handleOptionSelect(key: string) {
+    if (submitting || feedback) return;
+    setSelectedAnswer(key);
+    setTimeout(() => {
+      doSubmitAnswer(key);
+    }, 200);
   }
 
   // Loading / completing overlay
@@ -264,7 +287,9 @@ export default function QuizTakePage() {
           <Loader2 className="w-12 h-12 text-brand-400 animate-spin mx-auto mb-4" />
           <p className="text-lg text-slate-300">
             {completing
-              ? t("assessment.quiz.completing")
+              ? timeExpired
+                ? t("assessment.quiz.time_up")
+                : t("assessment.quiz.completing")
               : t("assessment.start_loading")}
           </p>
         </div>
@@ -276,7 +301,9 @@ export default function QuizTakePage() {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-lg text-red-400">{error || t("assessment.quiz.error")}</p>
+          <p className="text-lg text-red-400">
+            {error || t("assessment.quiz.error")}
+          </p>
         </div>
       </div>
     );
@@ -310,9 +337,15 @@ export default function QuizTakePage() {
               </span>
             )}
 
-            <span className="text-slate-500 flex items-center gap-1.5">
+            {/* Countdown timer */}
+            <span className={`flex items-center gap-1.5 font-mono ${timerColor()}`}>
               <Clock size={14} />
-              {formatTime(elapsedSec)}
+              {remainingSec !== null ? formatTime(remainingSec) : "--:--"}
+              {remainingSec !== null &&
+                timeLimitSec !== null &&
+                remainingSec / timeLimitSec <= 0.2 && (
+                  <AlertTriangle size={14} className="ml-0.5" />
+                )}
             </span>
           </div>
         </div>
@@ -391,8 +424,41 @@ export default function QuizTakePage() {
                 );
               })}
             </div>
+          ) : isSubjective ? (
+            /* Short answer / essay / experiment — textarea */
+            <div>
+              <textarea
+                value={selectedAnswer}
+                onChange={(e) => setSelectedAnswer(e.target.value)}
+                placeholder={
+                  question.type === "essay"
+                    ? t("assessment.quiz.essay_placeholder")
+                    : t("assessment.quiz.short_answer_placeholder")
+                }
+                disabled={submitting || feedback !== null}
+                rows={question.type === "essay" ? 8 : 4}
+                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white text-base leading-relaxed focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500/50 transition-colors placeholder:text-slate-600 resize-y"
+              />
+              <div className="flex items-center justify-between mt-2 text-xs text-slate-500">
+                <span>{selectedAnswer.length} {t("assessment.quiz.chars")}</span>
+              </div>
+              <button
+                onClick={handleSubmitAnswer}
+                disabled={!selectedAnswer.trim() || submitting}
+                className="mt-3 w-full bg-brand-500 hover:bg-brand-400 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-full px-8 py-3.5 font-semibold shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2 transition-colors"
+              >
+                {submitting ? (
+                  <>
+                    <Loader2 size={18} className="animate-spin" />
+                    {t("assessment.quiz.scoring")}
+                  </>
+                ) : (
+                  t("assessment.quiz.submit_answer")
+                )}
+              </button>
+            </div>
           ) : (
-            // Fill-in answer
+            /* Fill-in answer */
             <div>
               <input
                 type="text"
@@ -421,6 +487,26 @@ export default function QuizTakePage() {
                   t("assessment.quiz.submit_answer")
                 )}
               </button>
+            </div>
+          )}
+
+          {/* Agent scoring feedback card */}
+          {feedback === "scored" && agentFeedback && (
+            <div className="mt-6 rounded-xl bg-brand-500/10 border border-brand-500/20 px-5 py-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
+              <div className="flex items-center gap-2 mb-2">
+                <CheckCircle size={16} className="text-brand-400" />
+                <span className="text-sm font-semibold text-brand-300">
+                  AI {t("assessment.quiz.scoring_result")}
+                </span>
+                {agentScore !== null && (
+                  <span className="ml-auto text-sm font-mono text-brand-400">
+                    {Math.round(agentScore * 100)}%
+                  </span>
+                )}
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-line">
+                {agentFeedback}
+              </p>
             </div>
           )}
 

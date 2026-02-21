@@ -614,11 +614,14 @@ async def assessment_start(request: Request):
                 content={"error": "题库暂无该学科/年级的题目，请稍后再试"},
             )
 
+        time_limit_sec = ASSESSMENT_TYPES[assessment_type]["estimated_minutes"] * 60
+
         return {
             "session_id": str(result["session"]["id"]),
             "first_question": result["first_question"],
             "total_questions": result["total_questions"],
             "total_estimated": result["total_questions"],  # frontend compat alias
+            "time_limit_sec": time_limit_sec,
         }
 
     except Exception as e:
@@ -673,51 +676,139 @@ async def assessment_complete(session_id: str):
         return JSONResponse(status_code=500, content={"error": "完成测评失败"})
 
 
-@app.get("/api/assessment/report/{report_id}")
-async def get_assessment_report(report_id: str, request: Request):
-    """获取测评报告（需登录查看完整报告）"""
-    auth_info = await authenticate_request(dict(request.headers))
-    if not auth_info:
-        return JSONResponse(status_code=401, content={"error": "请登录后查看完整报告"})
+def _ability_to_level_key(ability: float) -> str:
+    """Map 0-1 ability to frontend level_key."""
+    if ability >= 0.8:
+        return "advanced"
+    elif ability >= 0.6:
+        return "above"
+    elif ability >= 0.4:
+        return "at"
+    elif ability >= 0.2:
+        return "approaching"
+    return "below"
 
+
+def _format_report_for_frontend(report: dict, session: dict | None) -> dict:
+    """
+    Transform DB report + session into the flat ReportData format
+    that the frontend expects.
+    """
+    import json as _json
+
+    report_data = report.get("report_data") or {}
+    if isinstance(report_data, str):
+        report_data = _json.loads(report_data)
+
+    recommendations_raw = report.get("recommendations") or report_data.get("recommendations") or []
+    if isinstance(recommendations_raw, str):
+        recommendations_raw = _json.loads(recommendations_raw)
+
+    # Convert recommendations: list[dict] → list[str]
+    recommendations_str = []
+    for rec in recommendations_raw:
+        if isinstance(rec, dict):
+            text = rec.get("title_zh", "")
+            desc = rec.get("description_zh", "")
+            if desc:
+                text = f"{text}：{desc}" if text else desc
+            recommendations_str.append(text)
+        elif isinstance(rec, str):
+            recommendations_str.append(rec)
+
+    # Extract ability level
+    ability = report_data.get("ability_level") or (session.get("ability_level") if session else None) or 0.5
+    score = report_data.get("score") or (session.get("final_score") if session else None) or round(ability * 100, 1)
+
+    level_key = _ability_to_level_key(ability)
+    level = report_data.get("ability_label_zh") or ""
+
+    grade_eq = report_data.get("grade_equivalent") or (session.get("grade_equivalent") if session else "") or ""
+
+    # Build topic_scores (frontend wants {correct, total, accuracy})
+    raw_topic_scores = report_data.get("topic_scores") or {}
+    topic_scores = {}
+    for topic, val in raw_topic_scores.items():
+        if isinstance(val, dict):
+            topic_scores[topic] = val
+        else:
+            # Legacy format: just a number (percentage)
+            topic_scores[topic] = {"correct": 0, "total": 0, "accuracy": float(val)}
+
+    # Build dimensions for radar chart (from topic_scores)
+    dimensions = [
+        {"name": topic, "score": ts.get("accuracy", ts) if isinstance(ts, dict) else float(ts)}
+        for topic, ts in raw_topic_scores.items()
+    ]
+
+    # Build topics for heatmap
+    topics = [
+        {"topic": topic, "mastery": round(ts.get("accuracy", ts) if isinstance(ts, dict) else float(ts), 1)}
+        for topic, ts in raw_topic_scores.items()
+    ]
+
+    # Build stats
+    total_q = report_data.get("total") or (session.get("total_questions") if session else 0) or 0
+    correct_c = report_data.get("correct") or (session.get("correct_count") if session else 0) or 0
+    accuracy_pct = report_data.get("accuracy", 0)
+    if isinstance(accuracy_pct, (int, float)) and accuracy_pct <= 1.0:
+        accuracy_pct = round(accuracy_pct * 100, 1)
+    total_time = report_data.get("total_time_sec") or (session.get("time_spent_sec") if session else 0) or 0
+    avg_time = round(total_time / total_q, 1) if total_q > 0 else 0
+
+    summary_zh = report.get("summary_zh") or report_data.get("summary_zh") or ""
+
+    return {
+        "session_id": str(report.get("session_id", "")),
+        "report_id": str(report.get("id", "")),
+        "overall_score": score,
+        "level": level,
+        "level_key": level_key,
+        "grade_alignment": grade_eq,
+        "dimensions": dimensions,
+        "topics": topics,
+        "recommendations": recommendations_str,
+        "summary_zh": summary_zh,
+        "strong_topics": report_data.get("strong_topics") or [],
+        "weak_topics": report_data.get("weak_topics") or [],
+        "stats": {
+            "total_questions": total_q,
+            "correct_count": correct_c,
+            "accuracy": accuracy_pct,
+            "total_time_sec": total_time,
+            "avg_time_sec": avg_time,
+        },
+        "topic_scores": topic_scores,
+        "share_token": report.get("share_token"),
+        "status": "ready",
+    }
+
+
+@app.get("/api/assessment/report/{report_id}")
+async def get_assessment_report(report_id: str):
+    """获取测评报告（公开，无需登录 — 测评本身不需要登录）"""
     report = await db.get_assessment_report(report_id)
     if not report:
         return JSONResponse(status_code=404, content={"error": "报告不存在"})
 
-    # Get session info
     session = await db.get_assessment_session(str(report["session_id"]))
+    return _format_report_for_frontend(report, session)
 
-    return {
-        "report": {
-            "id": str(report["id"]),
-            "session_id": str(report["session_id"]),
-            "report_data": report["report_data"],
-            "summary_zh": report["summary_zh"],
-            "summary_en": report["summary_en"],
-            "recommendations": report["recommendations"],
-            "created_at": report["created_at"].isoformat() if report.get("created_at") else None,
-        },
-        "session": {
-            "subject": session["subject"] if session else None,
-            "grade_level": session["grade_level"] if session else None,
-            "assessment_type": session["assessment_type"] if session else None,
-            "final_score": session["final_score"] if session else None,
-            "ability_level": session["ability_level"] if session else None,
-            "grade_equivalent": session["grade_equivalent"] if session else None,
-            "total_questions": session["total_questions"] if session else None,
-            "correct_count": session["correct_count"] if session else None,
-            "time_spent_sec": session["time_spent_sec"] if session else None,
-        } if session else None,
-    }
+
+@app.get("/api/assessment/{session_id}/report")
+async def get_assessment_report_by_session(session_id: str):
+    """通过 session_id 获取报告（公开，前端 fallback 路径）"""
+    report = await db.get_report_by_session(session_id)
+    if not report:
+        return JSONResponse(status_code=404, content={"error": "报告不存在"})
+
+    session = await db.get_assessment_session(session_id)
+    return _format_report_for_frontend(report, session)
 
 
 @app.post("/api/assessment/report/{report_id}/share")
-async def share_assessment_report(report_id: str, request: Request):
-    """生成报告分享链接（需登录）"""
-    auth_info = await authenticate_request(dict(request.headers))
-    if not auth_info:
-        return JSONResponse(status_code=401, content={"error": "请登录后分享报告"})
-
+async def share_assessment_report(report_id: str):
+    """生成报告分享链接（公开 — 报告已创建即可分享）"""
     report = await db.get_assessment_report(report_id)
     if not report:
         return JSONResponse(status_code=404, content={"error": "报告不存在"})
@@ -738,24 +829,7 @@ async def get_shared_report(share_token: str):
         return JSONResponse(status_code=404, content={"error": "报告不存在或链接已失效"})
 
     session = await db.get_assessment_session(str(report["session_id"]))
-
-    # Return desensitized report (no user info)
-    return {
-        "report": {
-            "report_data": report["report_data"],
-            "summary_zh": report["summary_zh"],
-            "summary_en": report["summary_en"],
-            "recommendations": report["recommendations"],
-        },
-        "session": {
-            "subject": session["subject"] if session else None,
-            "grade_level": session["grade_level"] if session else None,
-            "assessment_type": session["assessment_type"] if session else None,
-            "final_score": session["final_score"] if session else None,
-            "ability_level": session["ability_level"] if session else None,
-            "grade_equivalent": session["grade_equivalent"] if session else None,
-        } if session else None,
-    }
+    return _format_report_for_frontend(report, session)
 
 
 @app.get("/api/assessment/history")
@@ -816,6 +890,9 @@ async def _do_resume(session_id: str):
             tolerance=0.3,
         )
 
+    a_type = session.get("assessment_type", "quick")
+    time_limit_sec = ASSESSMENT_TYPES.get(a_type, {}).get("estimated_minutes", 15) * 60
+
     return {
         "session_id": str(session["id"]),
         "status": session["status"],
@@ -826,6 +903,7 @@ async def _do_resume(session_id: str):
         "current_question": _format_question(next_q) if next_q else None,
         "next_question": _format_question(next_q) if next_q else None,
         "progress": {"current": state.question_count + 1, "total": max_q},
+        "time_limit_sec": time_limit_sec,
     }
 
 

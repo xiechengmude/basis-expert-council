@@ -409,6 +409,36 @@ const assessment: Record<string, Record<Locale, string>> = {
     en: "Incorrect",
     "zh-TW": "不正確",
   },
+  "assessment.quiz.time_up": {
+    "zh-CN": "时间到，正在生成报告...",
+    en: "Time's up! Generating report...",
+    "zh-TW": "時間到，正在生成報告...",
+  },
+  "assessment.quiz.essay_placeholder": {
+    "zh-CN": "请在此输入你的论述...",
+    en: "Type your essay here...",
+    "zh-TW": "請在此輸入你的論述...",
+  },
+  "assessment.quiz.short_answer_placeholder": {
+    "zh-CN": "请输入你的答案...",
+    en: "Type your answer here...",
+    "zh-TW": "請輸入你的答案...",
+  },
+  "assessment.quiz.chars": {
+    "zh-CN": "字",
+    en: "chars",
+    "zh-TW": "字",
+  },
+  "assessment.quiz.scoring": {
+    "zh-CN": "AI 评分中...",
+    en: "AI scoring...",
+    "zh-TW": "AI 評分中...",
+  },
+  "assessment.quiz.scoring_result": {
+    "zh-CN": "评分",
+    en: "Score",
+    "zh-TW": "評分",
+  },
 
   // Report page
   "assessment.report.title": {

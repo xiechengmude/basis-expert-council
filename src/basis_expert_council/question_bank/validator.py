@@ -4,11 +4,11 @@
 
 from dataclasses import dataclass, field
 
-VALID_SUBJECTS = {"math", "english", "science", "chinese", "physics", "chemistry", "biology", "history"}
+VALID_SUBJECTS = {"math", "english", "science", "chinese", "physics", "chemistry", "biology", "history", "reading", "language_usage"}
 VALID_GRADE_LEVELS = {f"G{i}" for i in range(1, 13)}
 VALID_QUESTION_TYPES = {"mcq", "fill_in", "short_answer", "essay", "experiment"}
 VALID_REVIEW_STATUSES = {"draft", "reviewed", "approved", "archived"}
-VALID_SOURCES = {"basis_exam", "ap_exam", "sat", "custom", "seed"}
+VALID_SOURCES = {"basis_exam", "ap_exam", "sat", "custom", "seed", "map_testprep"}
 DIFFICULTY_RANGE = (0.05, 0.95)
 STEM_MIN_LENGTH = 5
 
