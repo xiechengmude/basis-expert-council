@@ -156,8 +156,8 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
     const callbackUri = encodeURIComponent(
       `${window.location.origin}/api/auth/wechat/callback`
     );
-    // After OAuth callback, user returns to / which will show chat (authenticated)
-    window.location.href = `${baseUrl}/api/auth/wechat/url?redirect_uri=${callbackUri}&state=${encodeURIComponent("/")}`;
+    // After OAuth callback, redirect to /chat
+    window.location.href = `${baseUrl}/api/auth/wechat/url?redirect_uri=${callbackUri}&state=${encodeURIComponent("/chat?assistantId=basis-expert")}`;
   }, []);
 
   /* ---- keyboard: Enter to submit ---- */

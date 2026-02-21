@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Root path is handled by page.tsx conditional rendering (Landing vs Chat)
+  // Root path always shows landing page — no auth required
   if (pathname === "/") {
     return NextResponse.next();
   }
@@ -19,9 +19,9 @@ export function middleware(request: NextRequest) {
     );
 
   if (!hasSession) {
-    // Use nextUrl.clone() to preserve the correct external host (not Docker-internal localhost)
+    // Unauthenticated → redirect to landing page (/) with login modal hint
     const loginUrl = request.nextUrl.clone();
-    loginUrl.pathname = "/login";
+    loginUrl.pathname = "/";
     loginUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(loginUrl);
   }
