@@ -55,33 +55,10 @@ export function getBasisToken(): string | null {
 }
 
 /**
- * Fetch with BASIS auth token
+ * Fetch with BASIS auth token.
  */
-export function getApiBaseUrl(): string {
-  if (typeof window === "undefined") return "";
-  const envUrl = process.env.NEXT_PUBLIC_BASIS_API_URL;
-  // Docker-internal hostnames (basis-api, basis-agent) are unreachable from browser
-  if (envUrl && !envUrl.includes("basis-api") && !envUrl.includes("basis-agent")) {
-    return envUrl;
-  }
-  // Try localStorage config (Settings dialog)
-  try {
-    const config = localStorage.getItem("deep-agent-config");
-    if (config) {
-      const parsed = JSON.parse(config);
-      const lgUrl = parsed.deploymentUrl || "http://127.0.0.1:5095";
-      return lgUrl.replace(":5095", ":5096");
-    }
-  } catch {}
-  // Derive from current browser location (Docker deployments without reverse proxy)
-  if (envUrl) {
-    try {
-      const parsed = new URL(envUrl);
-      return `${window.location.protocol}//${window.location.hostname}:${parsed.port}`;
-    } catch {}
-  }
-  return "http://127.0.0.1:5096";
-}
+import { getApiBaseUrl } from "@/lib/config";
+export { getApiBaseUrl };
 
 export async function fetchWithAuth(path: string, options: RequestInit = {}): Promise<Response> {
   const baseUrl = getApiBaseUrl();

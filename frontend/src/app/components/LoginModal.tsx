@@ -10,6 +10,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { useI18n } from "@/i18n";
+import { getApiBaseUrl } from "@/lib/config";
 import {
   Dialog,
   DialogContent,
@@ -48,25 +49,6 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
     setError("");
   }, [activeTab]);
 
-  /* ---- helper: get business API base URL ---- */
-  const getApiBaseUrl = useCallback(() => {
-    const envUrl = process.env.NEXT_PUBLIC_BASIS_API_URL;
-    // Valid external URL → use as-is
-    if (envUrl && !envUrl.includes("basis-api") && !envUrl.includes("basis-agent")) return envUrl;
-    // Deployed: nginx proxies /api/* → FastAPI, so use empty base (relative)
-    if (!["localhost", "127.0.0.1"].includes(window.location.hostname)) return "";
-    // Local dev: derive from LangGraph URL or fallback
-    try {
-      const config = localStorage.getItem("deep-agent-config");
-      if (config) {
-        const parsed = JSON.parse(config);
-        const lgUrl = parsed.deploymentUrl || "http://127.0.0.1:5095";
-        return lgUrl.replace(":5095", ":5096");
-      }
-    } catch {}
-    return "http://127.0.0.1:5096";
-  }, []);
-
   /* ---- helper: sync with BASIS backend ---- */
   const syncBasisToken = useCallback(
     async (supabaseUid: string, userPhone: string) => {
@@ -88,7 +70,7 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
         console.warn("BASIS token sync failed");
       }
     },
-    [getApiBaseUrl]
+    []
   );
 
   /* ---- send SMS code ---- */
@@ -120,7 +102,7 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
     } finally {
       setSendingCode(false);
     }
-  }, [phone, t, getApiBaseUrl]);
+  }, [phone, t]);
 
   /* ---- phone login ---- */
   const handlePhoneLogin = useCallback(async () => {
@@ -166,7 +148,7 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
     } finally {
       setLoggingIn(false);
     }
-  }, [phone, code, syncBasisToken, t, onOpenChange, getApiBaseUrl]);
+  }, [phone, code, syncBasisToken, t, onOpenChange]);
 
   /* ---- WeChat login ---- */
   const handleWeChatLogin = useCallback(() => {
@@ -176,7 +158,7 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
     );
     // After OAuth callback, user returns to / which will show chat (authenticated)
     window.location.href = `${baseUrl}/api/auth/wechat/url?redirect_uri=${callbackUri}&state=${encodeURIComponent("/")}`;
-  }, [getApiBaseUrl]);
+  }, []);
 
   /* ---- keyboard: Enter to submit ---- */
   const handleKeyDown = useCallback(

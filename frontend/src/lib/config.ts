@@ -76,3 +76,22 @@ export function saveConfig(config: StandaloneConfig): void {
   if (typeof window === "undefined") return;
   localStorage.setItem(CONFIG_KEY, JSON.stringify(config));
 }
+
+/**
+ * Resolve Business API base URL (FastAPI :5096):
+ * - Deployed: "" (nginx proxies /api/* → FastAPI :5096)
+ * - Local dev: "http://127.0.0.1:5096" (direct)
+ * - NEXT_PUBLIC_BASIS_API_URL override if set to a real external URL
+ */
+export function getApiBaseUrl(): string {
+  if (typeof window === "undefined") return "";
+  const envUrl = process.env.NEXT_PUBLIC_BASIS_API_URL;
+  // Valid external URL (not Docker-internal) → use as-is
+  if (envUrl && !envUrl.includes("basis-api") && !envUrl.includes("basis-agent")) {
+    return envUrl;
+  }
+  // Deployed: nginx proxies /api/* → FastAPI, so use empty base (relative)
+  if (isDeployed()) return "";
+  // Local dev: direct connection
+  return "http://127.0.0.1:5096";
+}
