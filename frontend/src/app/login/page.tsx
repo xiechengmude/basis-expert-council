@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useCallback, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import Image from "next/image";
 import {
   Smartphone,
   MessageSquare,
@@ -30,6 +29,7 @@ function LoginForm() {
   const [sendingCode, setSendingCode] = useState(false);
   const [loggingIn, setLoggingIn] = useState(false);
   const [error, setError] = useState("");
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   /* ---- countdown timer ---- */
   useEffect(() => {
@@ -187,7 +187,7 @@ function LoginForm() {
       <div className="w-full max-w-[400px]">
         {/* ---- Brand header ---- */}
         <div className="mb-8 text-center">
-          <Image
+          <img
             src="/logo-mark.svg"
             alt="BasisPilot"
             width={64}
@@ -309,11 +309,27 @@ function LoginForm() {
                   </div>
                 )}
 
+                {/* Terms of Service checkbox */}
+                <label className="flex items-start gap-2.5 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={agreedToTerms}
+                    onChange={(e) => setAgreedToTerms(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-brand-600 focus:ring-brand-600/20"
+                  />
+                  <span className="text-xs leading-5 text-gray-500">
+                    {t("login.terms.agree")}{" "}
+                    <a href="/terms" className="text-brand-600 hover:underline">{t("login.terms.tos")}</a>
+                    {" "}{t("login.terms.and")}{" "}
+                    <a href="/privacy" className="text-brand-600 hover:underline">{t("login.terms.privacy")}</a>
+                  </span>
+                </label>
+
                 {/* Login button */}
                 <button
                   type="button"
                   onClick={handlePhoneLogin}
-                  disabled={loggingIn || !phone || code.length < 4}
+                  disabled={loggingIn || !phone || code.length < 4 || !agreedToTerms}
                   className="flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-brand-600 text-sm font-medium text-white shadow-sm transition-all hover:bg-brand-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100"
                 >
                   {loggingIn ? (
@@ -357,11 +373,28 @@ function LoginForm() {
                   </div>
                 )}
 
+                {/* Terms of Service checkbox */}
+                <label className="flex items-start gap-2.5 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={agreedToTerms}
+                    onChange={(e) => setAgreedToTerms(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-brand-600 focus:ring-brand-600/20"
+                  />
+                  <span className="text-xs leading-5 text-gray-500">
+                    {t("login.terms.agree")}{" "}
+                    <a href="/terms" className="text-brand-600 hover:underline">{t("login.terms.tos")}</a>
+                    {" "}{t("login.terms.and")}{" "}
+                    <a href="/privacy" className="text-brand-600 hover:underline">{t("login.terms.privacy")}</a>
+                  </span>
+                </label>
+
                 {/* WeChat login button */}
                 <button
                   type="button"
                   onClick={handleWeChatLogin}
-                  className="flex h-12 w-full items-center justify-center gap-2.5 rounded-lg bg-[#07C160] text-sm font-medium text-white shadow-sm transition-all hover:bg-[#06AD56] active:scale-[0.98]"
+                  disabled={!agreedToTerms}
+                  className="flex h-12 w-full items-center justify-center gap-2.5 rounded-lg bg-[#07C160] text-sm font-medium text-white shadow-sm transition-all hover:bg-[#06AD56] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100"
                 >
                   <svg
                     className="h-5 w-5"
@@ -379,7 +412,7 @@ function LoginForm() {
 
         {/* ---- Footer ---- */}
         <p className="mt-6 text-center text-xs leading-5 text-gray-400">
-          {t("login.footer")}
+          Powered by xDAN AI
         </p>
       </div>
     </div>

@@ -111,6 +111,26 @@ const login: Record<string, Record<Locale, string>> = {
     en: "Login failed, please try again",
     "zh-TW": "登入失敗，請重試",
   },
+  "login.terms.agree": {
+    "zh-CN": "我已阅读并同意",
+    en: "I have read and agree to the",
+    "zh-TW": "我已閱讀並同意",
+  },
+  "login.terms.tos": {
+    "zh-CN": "服务条款",
+    en: "Terms of Service",
+    "zh-TW": "服務條款",
+  },
+  "login.terms.and": {
+    "zh-CN": "和",
+    en: "and",
+    "zh-TW": "和",
+  },
+  "login.terms.privacy": {
+    "zh-CN": "隐私政策",
+    en: "Privacy Policy",
+    "zh-TW": "隱私政策",
+  },
 };
 
 export default login;
