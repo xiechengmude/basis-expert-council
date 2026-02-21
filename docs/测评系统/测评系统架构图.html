@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BasisPilot 测评系统 - 架构图</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    h1, h2 { text-align: center; }
+    h1 { margin-bottom: 5px; }
+    .subtitle { text-align: center; color: #666; margin-bottom: 30px; }
+    .diagram-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 1400px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .mermaid { display: flex; justify-content: center; }
+    .note {
+      background: #f0f9ff;
+      border-left: 4px solid #3b82f6;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      color: #1e40af;
+    }
+  </style>
+</head>
+<body>
+  <h1>BasisPilot 测评系统</h1>
+  <p class="subtitle">免费测评 → 报告 → 转化 | 完整架构图</p>
+
+  <!-- 1. 系统整体架构 -->
+  <div class="diagram-container">
+    <h2>1. 系统整体架构</h2>
+    <pre class="mermaid">
+graph TB
+    subgraph Browser["前端 Next.js :8015"]
+        LAND["/assessment<br/>营销落地页"]
+        WIZARD["/assessment/start<br/>3步向导"]
+        QUIZ["/assessment/[id]/take<br/>答题页"]
+        REPORT["/assessment/[id]/report<br/>报告页"]
+        SHARE["/assessment/shared/[token]<br/>分享页"]
+    end
+
+    subgraph API["Business API FastAPI :5096"]
+        ROUTES["12 个测评 API 端点"]
+        CAT["CAT 自适应引擎<br/>assessment_engine.py"]
+        REPORTER["报告生成器<br/>assessment/report.py"]
+        SEED["种子题库<br/>seed_questions_math.py"]
+    end
+
+    subgraph DB["PostgreSQL 16 :5433"]
+        TBL_Q["assessment_questions<br/>题库 100 道"]
+        TBL_S["assessment_sessions<br/>测评会话"]
+        TBL_A["assessment_answers<br/>作答记录"]
+        TBL_R["assessment_reports<br/>报告数据"]
+    end
+
+    subgraph Agent["LangGraph Agent :5095"]
+        AI["AI 分析引擎<br/>报告 Phase 2"]
+        MEM0["Mem0 记忆系统"]
+    end
+
+    LAND --> WIZARD
+    WIZARD --> QUIZ
+    QUIZ --> REPORT
+    REPORT --> SHARE
+
+    Browser -->|HTTP API| ROUTES
+    ROUTES --> CAT
+    ROUTES --> REPORTER
+    CAT --> TBL_Q
+    CAT --> TBL_S
+    CAT --> TBL_A
+    REPORTER --> TBL_R
+    REPORTER -.->|异步| AI
+    AI --> MEM0
+
+    style Browser fill:#e0f2fe,stroke:#0284c7
+    style API fill:#fef3c7,stroke:#d97706
+    style DB fill:#dcfce7,stroke:#16a34a
+    style Agent fill:#fce7f3,stroke:#db2777
+    </pre>
+  </div>
+
+  <!-- 2. 用户流程 -->
+  <div class="diagram-container">
+    <h2>2. 用户测评全流程</h2>
+    <pre class="mermaid">
+flowchart LR
+    A["访问落地页<br/>/assessment"] --> B["3步向导<br/>年级→学科→目标"]
+    B --> C["开始测评<br/>POST /start"]
+    C --> D["答题循环<br/>POST /answer"]
+    D --> E{"达到题数<br/>上限?"}
+    E -->|否| D
+    E -->|是| F["完成测评<br/>POST /complete"]
+    F --> G{"已登录?"}
+    G -->|是| H["查看报告<br/>GET /report"]
+    G -->|否| I["弹出登录框"]
+    I --> J["注册/登录"]
+    J --> K["认领 session<br/>POST /claim"]
+    K --> H
+    H --> L["分享/PDF/重测"]
+
+    style A fill:#dbeafe,stroke:#2563eb
+    style D fill:#fef9c3,stroke:#ca8a04
+    style F fill:#d1fae5,stroke:#059669
+    style H fill:#fce7f3,stroke:#db2777
+    style I fill:#fee2e2,stroke:#dc2626
+    </pre>
+  </div>
+
+  <!-- 3. CAT 自适应引擎 -->
+  <div class="diagram-container">
+    <h2>3. CAT 自适应出题引擎</h2>
+    <pre class="mermaid">
+flowchart TD
+    START["开始<br/>初始难度 = 0.5"] --> Q["出题<br/>find_next_question"]
+    Q --> ANS{"学生作答"}
+    ANS -->|答对| UP["难度 += 0.15<br/>(连续≥2: += 0.25)"]
+    ANS -->|答错| DOWN["难度 -= 0.15<br/>(连续≥2: -= 0.25)"]
+    UP --> CHECK{"终止条件?"}
+    DOWN --> CHECK
+    CHECK -->|未达题数上限| Q
+    CHECK -->|达到上限 / 题库耗尽| DONE["计算能力值<br/>生成报告"]
+
+    subgraph Fallback["5 级出题 Fallback"]
+        L1["Level 1: 目标年级 + 难度 ±0.15"]
+        L2["Level 2: 目标年级 + 难度 ±0.35"]
+        L3["Level 3: 目标年级 + 无难度限制"]
+        L4["Level 4: 相邻年级 (±1级)"]
+        L5["Level 5: 同学科全题库"]
+        L1 -->|找不到| L2
+        L2 -->|找不到| L3
+        L3 -->|找不到| L4
+        L4 -->|找不到| L5
+    end
+
+    Q -.-> Fallback
+
+    style START fill:#dbeafe,stroke:#2563eb
+    style DONE fill:#d1fae5,stroke:#059669
+    style Fallback fill:#fef3c7,stroke:#d97706
+    </pre>
+    <div class="note">
+      题数上限: quick = 8 题 | diagnostic = 15 题 | pre_admission = 20 题<br/>
+      能力估算: 最后 5 次答题难度的加权平均 (近期权重更高)
+    </div>
+  </div>
+
+  <!-- 4. 报告生成 -->
+  <div class="diagram-container">
+    <h2>4. 报告生成流程</h2>
+    <pre class="mermaid">
+flowchart TB
+    COMPLETE["POST /complete<br/>结束测评"] --> PHASE1
+
+    subgraph PHASE1["Phase 1 — 即时规则计算"]
+        S1["计算总正确率"]
+        S2["各知识点得分"]
+        S3["能力值估算"]
+        S4["年级等效判定"]
+        S5["薄弱/强项识别"]
+        S6["学习建议生成"]
+        S1 --> S2 --> S3 --> S4 --> S5 --> S6
+    end
+
+    PHASE1 --> SAVE["写入 report_data<br/>状态: ready"]
+    PHASE1 -.->|异步启动| PHASE2
+
+    subgraph PHASE2["Phase 2 — AI Agent 分析 (可选)"]
+        A1["构建分析 Prompt"]
+        A2["调用 LangGraph Agent"]
+        A3{"Agent 成功?"}
+        A4["写入 agent_analysis"]
+        A5["模板 Fallback 文本"]
+        A1 --> A2 --> A3
+        A3 -->|是| A4
+        A3 -->|否| A5
+    end
+
+    SAVE --> POLL["前端轮询 /status<br/>每 2s 一次"]
+    POLL --> READY["报告页渲染<br/>6 大可视化模块"]
+
+    style PHASE1 fill:#d1fae5,stroke:#059669
+    style PHASE2 fill:#fce7f3,stroke:#db2777
+    style SAVE fill:#dbeafe,stroke:#2563eb
+    </pre>
+  </div>
+
+  <!-- 5. 数据库 ER 图 -->
+  <div class="diagram-container">
+    <h2>5. 数据库 ER 图</h2>
+    <pre class="mermaid">
+erDiagram
+    assessment_questions {
+        int id PK
+        text subject
+        text grade_level
+        text topic
+        text subtopic
+        real difficulty
+        text question_type
+        jsonb content_zh
+        jsonb content_en
+        int usage_count
+        real correct_rate
+    }
+
+    assessment_sessions {
+        uuid id PK
+        int user_id FK
+        text anonymous_id
+        text subject
+        text grade_level
+        text assessment_type
+        text status
+        real current_difficulty
+        int total_questions
+        int correct_count
+        real final_score
+        real ability_level
+    }
+
+    assessment_answers {
+        int id PK
+        uuid session_id FK
+        int question_id FK
+        int question_order
+        text user_answer
+        boolean is_correct
+        real difficulty_at
+        int time_spent_sec
+    }
+
+    assessment_reports {
+        uuid id PK
+        uuid session_id FK
+        int user_id FK
+        jsonb report_data
+        text share_token
+    }
+
+    biz_users {
+        int id PK
+        text phone
+        text display_name
+    }
+
+    assessment_sessions ||--o{ assessment_answers : "has many"
+    assessment_questions ||--o{ assessment_answers : "answered in"
+    assessment_sessions ||--o| assessment_reports : "generates"
+    biz_users ||--o{ assessment_sessions : "takes"
+    biz_users ||--o{ assessment_reports : "owns"
+    </pre>
+  </div>
+
+  <!-- 6. 题库分布 -->
+  <div class="diagram-container">
+    <h2>6. 题库分布 (100 道)</h2>
+    <pre class="mermaid">
+pie title 年级分布
+    "G5 Pre-Algebra" : 25
+    "G6 Algebra I" : 25
+    "G7 Geometry" : 25
+    "G8 Algebra II" : 25
+    </pre>
+    <pre class="mermaid">
+graph LR
+    subgraph G5["G5 — Pre-Algebra (25题)"]
+        G5A["integers"]
+        G5B["fractions"]
+        G5C["decimals"]
+        G5D["ratios"]
+        G5E["expressions"]
+        G5F["geometry"]
+        G5G["word_problems"]
+        G5H["data_analysis"]
+    end
+
+    subgraph G6["G6 — Algebra I (25题)"]
+        G6A["linear_equations"]
+        G6B["inequalities"]
+        G6C["linear_functions"]
+        G6D["systems"]
+        G6E["exponents"]
+        G6F["polynomials"]
+        G6G["radicals"]
+        G6H["quadratics"]
+    end
+
+    subgraph G7["G7 — Geometry (25题)"]
+        G7A["angles"]
+        G7B["triangles"]
+        G7C["circles"]
+        G7D["area/volume"]
+        G7E["similarity"]
+        G7F["transformations"]
+        G7G["coordinate_geo"]
+        G7H["proofs"]
+    end
+
+    subgraph G8["G8 — Algebra II (25题)"]
+        G8A["quadratics"]
+        G8B["functions"]
+        G8C["exponential"]
+        G8D["logarithms"]
+        G8E["trigonometry"]
+        G8F["sequences"]
+        G8G["complex_numbers"]
+        G8H["conic_sections"]
+    end
+
+    style G5 fill:#dbeafe,stroke:#2563eb
+    style G6 fill:#fef3c7,stroke:#d97706
+    style G7 fill:#d1fae5,stroke:#059669
+    style G8 fill:#fce7f3,stroke:#db2777
+    </pre>
+  </div>
+
+  <!-- 7. 前端页面结构 -->
+  <div class="diagram-container">
+    <h2>7. 前端页面与组件结构</h2>
+    <pre class="mermaid">
+graph TD
+    subgraph Pages["页面路由"]
+        P1["/assessment<br/>落地页"]
+        P2["/assessment/start<br/>向导页"]
+        P3["/assessment/[id]/take<br/>答题页"]
+        P4["/assessment/[id]/report<br/>报告页"]
+        P5["/assessment/shared/[token]<br/>分享页"]
+    end
+
+    subgraph Landing["落地页组件"]
+        C1["AssessmentHero"]
+        C2["AssessmentTypes"]
+        C3["TrustSection"]
+        C4["AssessmentFooter"]
+    end
+
+    subgraph Wizard["向导组件"]
+        W1["GradeSelector"]
+        W2["SubjectSelector"]
+        W3["GoalSelector"]
+    end
+
+    subgraph Quiz["答题组件"]
+        Q1["QuizHeader<br/>进度+计时"]
+        Q2["QuestionCard<br/>KaTeX 公式"]
+        Q3["MCQOptions<br/>选项动画"]
+        Q4["QuizFeedback"]
+        Q5["AbilityCurve<br/>recharts"]
+        Q6["QuizComplete<br/>SVG 动画"]
+    end
+
+    subgraph Report["报告组件"]
+        R1["ScoreOverview<br/>环形分数"]
+        R2["GapAnalysis<br/>柱状图"]
+        R3["KnowledgeHeatmap<br/>热力图"]
+        R4["TimelineProjection<br/>趋势图"]
+        R5["LearningPath<br/>学习路径"]
+        R6["ServiceRecommendations<br/>CTA 转化"]
+        R7["PdfExportButton<br/>PDF 导出"]
+    end
+
+    subgraph Hooks["React Hooks"]
+        H1["useAnonymousId"]
+        H2["useQuiz"]
+        H3["useReport"]
+    end
+
+    P1 --> Landing
+    P2 --> Wizard
+    P3 --> Quiz
+    P4 --> Report
+    Quiz --> Hooks
+    Report --> Hooks
+
+    style Pages fill:#e0f2fe,stroke:#0284c7
+    style Landing fill:#fef3c7,stroke:#d97706
+    style Quiz fill:#d1fae5,stroke:#059669
+    style Report fill:#fce7f3,stroke:#db2777
+    style Hooks fill:#f3e8ff,stroke:#9333ea
+    </pre>
+  </div>
+
+  <!-- 8. 匿名转化流程 -->
+  <div class="diagram-container">
+    <h2>8. 匿名 → 注册转化流程</h2>
+    <pre class="mermaid">
+sequenceDiagram
+    participant U as 用户 (浏览器)
+    participant F as 前端 (Next.js)
+    participant A as API (FastAPI)
+    participant D as PostgreSQL
+
+    Note over U,F: 无需登录即可测评
+    U->>F: 访问 /assessment
+    F->>F: 生成 anonymous_id (localStorage)
+    U->>F: 选择年级/学科/目标
+    F->>A: POST /api/assessment/start<br/>{anonymous_id, subject, grade_level}
+    A->>D: INSERT assessment_sessions<br/>(anonymous_id, no user_id)
+    D-->>A: session_id + first_question
+    A-->>F: {session_id, first_question}
+
+    loop 每道题
+        U->>F: 选择答案
+        F->>A: POST /api/assessment/{id}/answer
+        A->>D: INSERT assessment_answers
+        A->>A: CAT 调整难度
+        A->>D: find_next_question (5级fallback)
+        A-->>F: {is_correct, next_question}
+    end
+
+    F->>A: POST /api/assessment/{id}/complete
+    A->>D: UPDATE session + INSERT report
+    A-->>F: {report_id, score, ability}
+
+    Note over U,F: 弹出登录框
+    U->>F: 注册/登录
+    F->>A: POST /api/assessment/claim<br/>{anonymous_id}
+    A->>D: UPDATE sessions SET user_id<br/>WHERE anonymous_id = ?
+    A-->>F: {claimed_count}
+
+    U->>F: 查看报告
+    F->>A: GET /api/assessment/report/{id}<br/>(Authorization: Bearer token)
+    A->>D: SELECT report_data
+    A-->>F: 完整报告数据
+    F->>U: 渲染 6 大可视化模块
+    </pre>
+  </div>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: { useMaxWidth: true, htmlLabels: true },
+      sequence: { useMaxWidth: true },
+      er: { useMaxWidth: true },
+    });
+  </script>
+</body>
+</html>
