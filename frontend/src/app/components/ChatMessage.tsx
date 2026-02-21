@@ -135,7 +135,7 @@ function HiddenToolsAndVisibleTools({
         if (toolCall.name === "task") return null;
         if (toolCall.name === A2UI_TOOL_NAME) {
           // Phase 1: interrupt active — render from interrupt payload, interactive
-          if (toolCall.status === "interrupted" && a2uiInterruptPayload) {
+          if (!toolCall.result && a2uiInterruptPayload) {
             return (
               <A2UISurface
                 key={toolCall.id}

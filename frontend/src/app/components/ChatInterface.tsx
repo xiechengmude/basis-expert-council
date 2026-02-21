@@ -4,6 +4,7 @@ import React, {
   useState,
   useRef,
   useCallback,
+  useEffect,
   useMemo,
   FormEvent,
   Fragment,
@@ -258,6 +259,15 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
     }
     return null;
   }, [interrupt]);
+
+  // A2UI interrupt 10 分钟超时：自动 resume 避免 graph 永久挂起
+  useEffect(() => {
+    if (!a2uiInterruptPayload) return;
+    const timer = setTimeout(() => {
+      resumeInterrupt({ actionName: "__timeout__", surfaceId: "", context: {} });
+    }, 10 * 60 * 1000);
+    return () => clearTimeout(timer);
+  }, [a2uiInterruptPayload, resumeInterrupt]);
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
