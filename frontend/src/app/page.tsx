@@ -149,8 +149,10 @@ function HomePageInner({
       <div className="flex h-screen flex-col">
         <header className="flex h-16 items-center justify-between border-b border-border px-4 sm:px-6">
           <div className="flex items-center gap-3">
-            <img src="/logo-mark.svg" alt="BasisPilot" className="h-7 w-7" />
-            <h1 className="text-lg font-semibold sm:text-xl">{t("header.brand")}</h1>
+            <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
+              <img src="/logo-mark.svg" alt="BasisPilot" className="h-7 w-7" />
+              <h1 className="text-lg font-semibold sm:text-xl">{t("header.brand")}</h1>
+            </Link>
             {!sidebar && (
               <Button
                 variant="ghost"
