@@ -133,7 +133,7 @@ services:
       - MEM0_QDRANT_HOST=basis-qdrant
       - MEM0_QDRANT_PORT=6333
       - MEM0_QDRANT_COLLECTION=basispilot_memories
-      - MEM0_LLM_MODEL=${MEM0_LLM_MODEL:-Pro/deepseek-ai/DeepSeek-V3.2}
+      - MEM0_LLM_MODEL=${MEM0_LLM_MODEL:-deepseek/deepseek-chat}
       - MEM0_EMBEDDING_MODEL=${MEM0_EMBEDDING_MODEL:-Qwen/Qwen3-Embedding-4B}
       - MEM0_EMBEDDING_DIMS=${MEM0_EMBEDDING_DIMS:-2560}
       - EMBEDDING_API_KEY=${EMBEDDING_API_KEY:-${OPENAI_API_KEY}}

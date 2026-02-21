@@ -181,7 +181,7 @@ docker exec basis-postgres psql -U postgres -d langgraph -c "SELECT COUNT(*) FRO
 | `LANGCHAIN_TRACING_V2` | 启用追踪 | `true` |
 | `LANGFUSE_SECRET_KEY` | Langfuse Secret | `sk-lf-xxx` |
 | `LANGFUSE_PUBLIC_KEY` | Langfuse Public | `pk-lf-xxx` |
-| `MEM0_LLM_MODEL` | Mem0 记忆提取模型 | `Pro/deepseek-ai/DeepSeek-V3.2` |
+| `MEM0_LLM_MODEL` | Mem0 记忆提取模型 | `deepseek/deepseek-chat` |
 | `MEM0_EMBEDDING_MODEL` | Mem0 向量化模型 | `Qwen/Qwen3-Embedding-4B` |
 | `EMBEDDING_API_KEY` | Embedding API Key（默认同 OPENAI_API_KEY） | `sk-xxx` |
 | `BASIS_JWT_SECRET` | Business API JWT 签名密钥 | `basis-local-dev-secret` |

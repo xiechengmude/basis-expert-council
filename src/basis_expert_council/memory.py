@@ -25,7 +25,7 @@ def _build_config() -> dict[str, Any]:
         "llm": {
             "provider": "openai",
             "config": {
-                "model": os.getenv("MEM0_LLM_MODEL", "Pro/deepseek-ai/DeepSeek-V3.2"),
+                "model": os.getenv("MEM0_LLM_MODEL", "deepseek/deepseek-chat"),
                 "api_key": os.getenv("OPENAI_API_KEY", ""),
                 "openai_base_url": os.getenv("OPENAI_BASE_URL", ""),
             },

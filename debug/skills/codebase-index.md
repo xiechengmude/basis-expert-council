@@ -345,7 +345,7 @@ src/app/landing/
 | `WECHAT_APP_ID` | 微信 H5 OAuth | — |
 | `WECHAT_APP_SECRET` | 微信 H5 OAuth | — |
 | `ALIYUN_ACCESS_KEY_ID` | 阿里云 SMS | — |
-| `MEM0_LLM_MODEL` | 记忆抽取模型 | `Pro/deepseek-ai/DeepSeek-V3.2` |
+| `MEM0_LLM_MODEL` | 记忆抽取模型 | `deepseek/deepseek-chat` |
 | `MEM0_EMBEDDING_MODEL` | 向量化模型 | `Qwen/Qwen3-Embedding-4B` |
 
 ---
