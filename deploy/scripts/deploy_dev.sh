@@ -53,7 +53,7 @@ log "  Version: $(git log -1 --format='%h %s')"
 
 # 2. 构建镜像
 log "Step 2/4: Building Docker images..."
-docker compose -f $COMPOSE_FILE --env-file $ENV_FILE build --no-cache basis-agent basis-frontend
+docker compose -f $COMPOSE_FILE --env-file $ENV_FILE build --no-cache basis-agent basis-api basis-frontend
 
 # 3. 重启服务
 log "Step 3/4: Restarting services..."
