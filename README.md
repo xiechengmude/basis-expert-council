@@ -12,24 +12,38 @@ BasisPilot 通过 AI 将 BASIS 教学经验"封装"成可复用的智能体，�
 
 ```
 basis-expert-council/
-├── AGENTS.md                          # 主智能体身份和核心知识
-├── agents/                            # 子智能体（学科专家）
-│   ├── math-expert/AGENTS.md          #   数学专家
-│   ├── science-expert/AGENTS.md       #   科学专家（物理/化学/生物）
-│   ├── humanities-expert/AGENTS.md    #   人文专家（ELA/History）
-│   └── curriculum-advisor/AGENTS.md   #   课程规划与升学顾问
-├── skills/                            # Skills（教学能力模块）
-│   ├── math-tutoring/SKILL.md         #   数学辅导
-│   ├── science-tutoring/SKILL.md      #   科学辅导
-│   ├── humanities-tutoring/SKILL.md   #   人文辅导
-│   ├── lesson-planning/SKILL.md       #   教案生成
-│   ├── ap-exam-prep/SKILL.md          #   AP 考试备考
-│   ├── academic-vocabulary/SKILL.md   #   学术英语词汇
-│   ├── student-assessment/SKILL.md    #   学生水平评估
-│   └── new-student-onboarding/SKILL.md #  新生衔接
+├── AGENTS.md                              # 主智能体身份和核心知识
+├── agents/                                # 子智能体（6 个专家）
+│   ├── math-expert/AGENTS.md              #   数学专家
+│   ├── science-expert/AGENTS.md           #   科学专家（物理/化学/生物）
+│   ├── humanities-expert/AGENTS.md        #   人文专家（ELA/History）
+│   ├── curriculum-advisor/AGENTS.md       #   课程规划与升学顾问
+│   ├── business-advisor/AGENTS.md         #   商业顾问
+│   └── probation-advisor/AGENTS.md        #   保级顾问
+├── skills/                                # Skills（17 个能力模块）
+│   ├── math-tutoring/SKILL.md             #   数学辅导
+│   ├── science-tutoring/SKILL.md          #   科学辅导
+│   ├── humanities-tutoring/SKILL.md       #   人文辅导
+│   ├── lesson-planning/SKILL.md           #   教案生成
+│   ├── ap-exam-prep/SKILL.md              #   AP 考试备考
+│   ├── sat-act-prep/SKILL.md              #   SAT/ACT 标化备考
+│   ├── basis-admission-prep/SKILL.md      #   BASIS 入学考试备考
+│   ├── academic-vocabulary/SKILL.md       #   学术英语词汇
+│   ├── student-assessment/SKILL.md        #   学生水平评估
+│   ├── new-student-onboarding/SKILL.md    #   新生衔接与适应
+│   ├── probation-rescue/SKILL.md          #   Academic Probation 保级
+│   ├── college-essay-coaching/SKILL.md    #   大学申请文书教练
+│   ├── extracurricular-strategy/SKILL.md  #   课外活动策略
+│   ├── parent-psychology/SKILL.md         #   家长心理与沟通
+│   ├── sales-negotiation/SKILL.md         #   商务谈判与销售
+│   ├── school-market-analysis/SKILL.md    #   国际学校市场分析
+│   └── a2ui-render/SKILL.md               #   A2UI 交互组件渲染
 ├── src/basis_expert_council/
-│   ├── __init__.py
-│   └── agent.py                       # 主程序入口
+│   ├── agent.py                           # 主程序入口
+│   ├── server.py                          # Business API (FastAPI)
+│   ├── memory.py                          # Mem0 记忆系统
+│   ├── auth.py                            # WeChat OAuth + JWT
+│   └── db.py                              # PostgreSQL 数据层
 └── pyproject.toml
 ```
 
@@ -42,16 +56,18 @@ basis-expert-council/
                     │   AGENTS.md          │
                     └──────┬───────────────┘
                            │
-              ┌────────────┼────────────┬──────────────┐
-              ▼            ▼            ▼              ▼
-        ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────┐
-        │ 数学专家  │ │ 科学专家  │ │ 人文专家  │ │ 课程规划顾问  │
-        │ Math     │ │ Science  │ │ Humanities│ │ Curriculum   │
-        └──────────┘ └──────────┘ └──────────┘ └──────────────┘
+       ┌───────────┬───────┼───────┬──────────────┬──────────────┐
+       ▼           ▼       ▼       ▼              ▼              ▼
+  ┌─────────┐ ┌────────┐ ┌────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐
+  │数学专家  │ │科学专家 │ │人文专家 │ │课程规划   │ │商业顾问   │ │保级顾问   │
+  │Math     │ │Science │ │Humanit.│ │Curriculum│ │Business  │ │Probation │
+  └─────────┘ └────────┘ └────────┘ └──────────┘ └──────────┘ └──────────┘
 
-Skills 层（按需加载）:
-  [数学辅导] [科学辅导] [人文辅导] [教案生成]
-  [AP备考] [学术词汇] [学生评估] [新生衔接]
+Skills 层（17 个，按需加载）:
+  学科辅导:   [数学辅导] [科学辅导] [人文辅导] [教案生成] [学术词汇]
+  考试备考:   [AP备考] [SAT/ACT备考] [入学考试备考] [学生评估]
+  升学规划:   [新生衔接] [保级恢复] [文书教练] [课外活动策略]
+  商业支撑:   [家长心理] [销售谈判] [市场分析] [A2UI渲染]
 ```
 
 ## 功能覆盖
@@ -60,12 +76,18 @@ Skills 层（按需加载）:
 |------|------|
 | **学科辅导** | 数学/科学/人文全科，中英双语讲解 |
 | **教案生成** | 符合 BASIS 标准的全英文教案 |
+| **入学备考** | BASIS 入学考试全科备考：MAP 阅读、数学自命题、写作、面试（G2-G9） |
 | **AP 备考** | 全科 AP 考试策略、FRQ 写作训练 |
+| **SAT/ACT 备考** | 标化考试策略、分数规划、各科技巧 |
 | **学术词汇** | 按学科/年级生成词汇表 |
 | **学生评估** | 水平诊断 + 个性化学习计划 |
-| **新生衔接** | 入学准备、转学适应方案 |
-| **EMI 教学法** | 指导中文母语教师英语学科教学 |
+| **新生衔接** | 录取后适应、转学衔接方案 |
+| **保级恢复** | Academic Probation 紧急学术恢复 |
+| **文书教练** | Common App 文书、补充文书写作指导 |
+| **课外活动** | 竞赛规划、夏校申请、活动列表构建 |
 | **升学规划** | AP 选课、GPA 管理、大学申请策略 |
+| **家长沟通** | 家长心理分析、咨询转化策略 |
+| **EMI 教学法** | 指导中文母语教师英语学科教学 |
 
 ## 快速开始
 
