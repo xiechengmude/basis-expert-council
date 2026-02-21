@@ -24,7 +24,7 @@ import { ChatProvider } from "@/providers/ChatProvider";
 import { ChatInterface } from "@/app/components/ChatInterface";
 import { LoginModal } from "@/app/components/LoginModal";
 
-const LandingPage = dynamic(() => import("@/app/landing/page"), {
+const LandingPage = dynamic(() => import("@/app/landing/LandingContent"), {
   loading: () => (
     <div className="flex min-h-screen items-center justify-center bg-slate-950">
       <Loader2 className="h-8 w-8 animate-spin text-brand-400" />
