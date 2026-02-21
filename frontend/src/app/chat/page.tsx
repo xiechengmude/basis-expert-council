@@ -349,8 +349,23 @@ function ChatPageContent() {
   const [configDialogOpen, setConfigDialogOpen] = useState(false);
   const [assistantId, setAssistantId] = useQueryState("assistantId");
 
-  // On mount, check for saved config, otherwise show config dialog
+  // On mount, check for saved config, otherwise show config dialog.
+  // Also clear stale useStream sessionStorage to prevent reconnecting
+  // to threads that no longer exist on the server.
   useEffect(() => {
+    // Clear stale LangGraph stream metadata from sessionStorage
+    // The SDK stores run metadata under keys containing "langgraph" or thread UUIDs
+    try {
+      const keysToRemove: string[] = [];
+      for (let i = 0; i < sessionStorage.length; i++) {
+        const key = sessionStorage.key(i);
+        if (key && (key.includes("langgraph") || key.includes("useStream"))) {
+          keysToRemove.push(key);
+        }
+      }
+      keysToRemove.forEach((k) => sessionStorage.removeItem(k));
+    } catch { /* sessionStorage unavailable */ }
+
     const savedConfig = getConfig();
     if (savedConfig) {
       setConfig(savedConfig);
