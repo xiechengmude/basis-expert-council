@@ -15,20 +15,20 @@ def _build_config() -> dict[str, Any]:
     """从环境变量构建 Mem0 配置"""
     return {
         "llm": {
-            "provider": "litellm",
+            "provider": "openai",
             "config": {
                 "model": os.getenv("MEM0_LLM_MODEL", "Pro/deepseek-ai/DeepSeek-V3.2"),
                 "api_key": os.getenv("OPENAI_API_KEY", ""),
-                "api_base": os.getenv("OPENAI_BASE_URL", ""),
+                "openai_base_url": os.getenv("OPENAI_BASE_URL", ""),
             },
         },
         "embedder": {
-            "provider": "litellm",
+            "provider": "openai",
             "config": {
                 "model": os.getenv("MEM0_EMBEDDING_MODEL", "Qwen/Qwen3-Embedding-4B"),
                 "embedding_dims": int(os.getenv("MEM0_EMBEDDING_DIMS", "2560")),
                 "api_key": os.getenv("EMBEDDING_API_KEY", os.getenv("OPENAI_API_KEY", "")),
-                "api_base": os.getenv(
+                "openai_base_url": os.getenv(
                     "EMBEDDING_BASE_URL", os.getenv("OPENAI_BASE_URL", "")
                 ),
             },
@@ -40,6 +40,9 @@ def _build_config() -> dict[str, Any]:
                 "port": int(os.getenv("MEM0_QDRANT_PORT", "6333")),
                 "collection_name": os.getenv(
                     "MEM0_QDRANT_COLLECTION", "basispilot_memories"
+                ),
+                "embedding_model_dims": int(
+                    os.getenv("MEM0_EMBEDDING_DIMS", "2560")
                 ),
             },
         },
