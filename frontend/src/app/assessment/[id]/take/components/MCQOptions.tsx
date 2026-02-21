@@ -1,7 +1,27 @@
 "use client";
 
+import katex from "katex";
+import "katex/dist/katex.min.css";
 import { CheckCircle, XCircle, Loader2 } from "lucide-react";
 import type { AnswerResult } from "../../../types/assessment";
+
+function renderLatex(text: string): string {
+  let result = text.replace(/\$\$([^$]+)\$\$/g, (_match, expr) => {
+    try {
+      return katex.renderToString(expr, { displayMode: true, throwOnError: false });
+    } catch {
+      return `<code>${expr}</code>`;
+    }
+  });
+  result = result.replace(/\$([^$]+)\$/g, (_match, expr) => {
+    try {
+      return katex.renderToString(expr, { displayMode: false, throwOnError: false });
+    } catch {
+      return `<code>${expr}</code>`;
+    }
+  });
+  return result;
+}
 
 interface MCQOptionsProps {
   t: (key: string, params?: Record<string, string | number>) => string;
@@ -72,10 +92,7 @@ export default function MCQOptions({
               <span
                 className="text-slate-200 text-base flex-1"
                 dangerouslySetInnerHTML={{
-                  __html: option.replace(
-                    /\$([^$]+)\$/g,
-                    '<code class="text-brand-400 font-mono">$1</code>',
-                  ),
+                  __html: renderLatex(option),
                 }}
               />
               {isCorrect && (

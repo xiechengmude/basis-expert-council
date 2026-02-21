@@ -1,5 +1,7 @@
 "use client";
 
+import katex from "katex";
+import "katex/dist/katex.min.css";
 import type { AssessmentQuestion } from "../../../types/assessment";
 
 interface QuestionCardProps {
@@ -40,12 +42,25 @@ export default function QuestionCard({ t, question }: QuestionCardProps) {
 }
 
 /**
- * Simple LaTeX renderer: wraps $...$ in KaTeX-compatible spans.
- * For MVP, just display the LaTeX notation plainly if KaTeX isn't loaded.
+ * Render LaTeX expressions in text using KaTeX.
+ * Supports both inline $...$ and display $$...$$ delimiters.
  */
 function renderLatex(text: string): string {
-  return text.replace(
-    /\$([^$]+)\$/g,
-    '<code class="text-brand-400 font-mono">$1</code>',
-  );
+  // First pass: display math $$...$$
+  let result = text.replace(/\$\$([^$]+)\$\$/g, (_match, expr) => {
+    try {
+      return katex.renderToString(expr, { displayMode: true, throwOnError: false });
+    } catch {
+      return `<code>${expr}</code>`;
+    }
+  });
+  // Second pass: inline math $...$
+  result = result.replace(/\$([^$]+)\$/g, (_match, expr) => {
+    try {
+      return katex.renderToString(expr, { displayMode: false, throwOnError: false });
+    } catch {
+      return `<code>${expr}</code>`;
+    }
+  });
+  return result;
 }

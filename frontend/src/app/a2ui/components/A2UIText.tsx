@@ -29,7 +29,7 @@ export const A2UIText: React.FC<{ node: TextNode }> = ({ node }) => {
       return <p className="text-xs text-muted-foreground">{text}</p>;
     case "body":
     default:
-      if (text.includes("**") || text.includes("*") || text.includes("`") || text.includes("[")) {
+      if (text.includes("**") || text.includes("*") || text.includes("`") || text.includes("[") || text.includes("$")) {
         return <MarkdownContent content={text} />;
       }
       return <p className="text-sm leading-relaxed text-primary">{text}</p>;
