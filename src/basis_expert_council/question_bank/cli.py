@@ -9,6 +9,9 @@
   python -m src.basis_expert_council.question_bank stats
   python -m src.basis_expert_council.question_bank export --subject math --grade G7 -o output.json
   python -m src.basis_expert_council.question_bank export-csv --subject math --grade G7 -o output.csv
+  python -m src.basis_expert_council.question_bank taxonomy [--validate]
+  python -m src.basis_expert_council.question_bank tag [--dry-run] [--limit N] [--subject S] [--grade G]
+  python -m src.basis_expert_council.question_bank tag-stats
 """
 
 import argparse
@@ -75,6 +78,21 @@ def build_parser() -> argparse.ArgumentParser:
     p_map_i.add_argument("path", nargs="?", default="data/map_questions_bank_expanded.json",
                          help="MAP 题库文件路径")
     p_map_i.add_argument("--by", default="MAP-transformer", help="导入人")
+
+    # taxonomy — 查看/校验标签体系定义
+    p_tax = sub.add_parser("taxonomy", help="查看/校验标签体系定义")
+    p_tax.add_argument("--validate", action="store_true", help="校验 YAML 加载无错")
+
+    # tag — AI 批量打标
+    p_tag = sub.add_parser("tag", help="AI 批量打标 (LLM)")
+    p_tag.add_argument("--dry-run", action="store_true", help="试运行（不写入数据库）")
+    p_tag.add_argument("--limit", type=int, default=None, help="限制打标数量")
+    p_tag.add_argument("--subject", default=None, help="按学科过滤")
+    p_tag.add_argument("--grade", default=None, help="按年级过滤")
+    p_tag.add_argument("--batch-size", type=int, default=5, help="每批题目数")
+
+    # tag-stats — 标签分布统计
+    sub.add_parser("tag-stats", help="标签分布统计")
 
     return parser
 
@@ -268,13 +286,78 @@ async def cmd_map_import(args):
             print(f"  - {w}")
 
 
+async def cmd_taxonomy(args):
+    from ..taxonomy import load_taxonomy, validate_taxonomy
+
+    if args.validate:
+        errors = validate_taxonomy()
+        if errors:
+            print(f"标签体系校验失败! {len(errors)} 个错误:")
+            for e in errors:
+                print(f"  - {e}")
+            sys.exit(1)
+        print("标签体系校验通过! taxonomy_v1.yaml + ccss_math.yaml + ccss_ela.yaml + misconceptions.yaml")
+    else:
+        bundle = load_taxonomy()
+        defn = bundle.definition
+        print(f"标签体系 v{defn.version}")
+        print(f"  Bloom's 层级: {len(defn.blooms_taxonomy)} 级")
+        print(f"  DOK 层级: {len(defn.dok)} 级")
+        print(f"  难度分段: {len(defn.difficulty_bands)} 段")
+        skills_count = sum(len(v) for v in defn.cognitive_skills.values())
+        print(f"  认知技能: {len(defn.cognitive_skills)} 大类, {skills_count} 子项")
+        print(f"  情境类型: {', '.join(defn.context_types)}")
+        print(f"  标签前缀: {', '.join(defn.tag_prefixes.keys())}")
+        print(f"  CCSS 数学标准: {len(bundle.ccss_math)} 条")
+        print(f"  CCSS 英语标准: {len(bundle.ccss_ela)} 条")
+        print(f"  易错点目录: {len(bundle.misconceptions)} 条")
+
+
+async def cmd_tag(args):
+    from ..taxonomy import QuestionTagger
+
+    tagger = QuestionTagger(
+        batch_size=args.batch_size,
+        dry_run=args.dry_run,
+    )
+
+    def on_progress(completed, total):
+        print(f"  进度: {completed}/{total} 题 ({completed * 100 // total}%)")
+
+    if args.dry_run:
+        print("=== 试运行模式 (不写入数据库) ===")
+
+    result = await tagger.tag_and_save(
+        limit=args.limit,
+        subject=args.subject,
+        grade_level=args.grade,
+        on_progress=on_progress,
+    )
+    print(f"\n打标完成:")
+    print(f"  总计: {result['total']} 题")
+    print(f"  已标注: {result['tagged']} 题")
+    print(f"  跳过 (已有标注): {result['skipped']} 题")
+    if result.get("errors"):
+        print(f"  错误: {result['errors']} 题")
+
+
+async def cmd_tag_stats(_args):
+    from ..taxonomy import get_tag_stats_report
+
+    report = await get_tag_stats_report()
+    print(report)
+
+
 async def main_async():
     parser = build_parser()
     args = parser.parse_args()
 
-    # map-transform doesn't need DB
+    # Commands that don't need DB
     if args.command == "map-transform":
         await cmd_map_transform(args)
+        return
+    if args.command == "taxonomy":
+        await cmd_taxonomy(args)
         return
 
     # Ensure DB pool is ready
@@ -290,6 +373,8 @@ async def main_async():
         "export": cmd_export,
         "export-csv": cmd_export_csv,
         "map-import": cmd_map_import,
+        "tag": cmd_tag,
+        "tag-stats": cmd_tag_stats,
     }
     handler = handlers.get(args.command)
     if handler:

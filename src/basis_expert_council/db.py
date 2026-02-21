@@ -1149,6 +1149,150 @@ async def get_question_stats() -> dict:
 
 
 # ---------------------------------------------------------------------------
+# 标签 (Taxonomy) 查询/更新
+# ---------------------------------------------------------------------------
+
+
+async def get_questions_for_tagging(
+    *,
+    subject: str | None = None,
+    grade_level: str | None = None,
+    skip_tagged: bool = True,
+    limit: int | None = None,
+) -> list[dict]:
+    """获取待打标的题目列表（默认跳过已标注 taxonomy v1 的题目）"""
+    pool = await get_pool()
+    conditions: list[str] = []
+    params: list[Any] = []
+    idx = 1
+
+    if subject:
+        conditions.append(f"subject = ${idx}")
+        params.append(subject)
+        idx += 1
+    if grade_level:
+        conditions.append(f"grade_level = ${idx}")
+        params.append(grade_level)
+        idx += 1
+    if skip_tagged:
+        conditions.append("(metadata->>'taxonomy' IS NULL OR (metadata->'taxonomy'->>'version') != '1.0')")
+
+    where = " AND ".join(conditions) if conditions else "TRUE"
+    limit_clause = f"LIMIT ${idx}" if limit else ""
+    if limit:
+        params.append(limit)
+
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            f"""SELECT * FROM assessment_questions
+                WHERE {where}
+                ORDER BY id
+                {limit_clause}""",
+            *params,
+        )
+        return [dict(r) for r in rows]
+
+
+async def update_question_tags(
+    question_id: int,
+    tags: list[str],
+    taxonomy_metadata: dict,
+) -> dict | None:
+    """更新题目的 tags 数组和 metadata.taxonomy 字段"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """UPDATE assessment_questions
+               SET tags = $2,
+                   metadata = jsonb_set(
+                       COALESCE(metadata, '{}'),
+                       '{taxonomy}',
+                       $3::jsonb
+                   ),
+                   updated_at = NOW()
+               WHERE id = $1
+               RETURNING *""",
+            question_id,
+            tags,
+            json.dumps(taxonomy_metadata, ensure_ascii=False),
+        )
+        return dict(row) if row else None
+
+
+async def get_tag_stats() -> dict:
+    """标签分布统计"""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        total = await conn.fetchval("SELECT COUNT(*) FROM assessment_questions")
+
+        # Tagged count (has taxonomy metadata)
+        tagged = await conn.fetchval(
+            "SELECT COUNT(*) FROM assessment_questions WHERE metadata->'taxonomy' IS NOT NULL AND (metadata->'taxonomy'->>'version') = '1.0'"
+        )
+
+        # Bloom's distribution
+        blooms = await conn.fetch(
+            """SELECT metadata->'taxonomy'->'blooms'->>'level' AS level, COUNT(*) AS cnt
+               FROM assessment_questions
+               WHERE metadata->'taxonomy'->'blooms'->>'level' IS NOT NULL
+               GROUP BY level ORDER BY cnt DESC"""
+        )
+
+        # DOK distribution
+        dok = await conn.fetch(
+            """SELECT metadata->'taxonomy'->'dok'->>'level' AS level, COUNT(*) AS cnt
+               FROM assessment_questions
+               WHERE metadata->'taxonomy'->'dok'->>'level' IS NOT NULL
+               GROUP BY level ORDER BY cnt DESC"""
+        )
+
+        # Band distribution (from tags)
+        bands = await conn.fetch(
+            """SELECT t AS band, COUNT(*) AS cnt
+               FROM assessment_questions, unnest(tags) AS t
+               WHERE t LIKE 'band:%'
+               GROUP BY t ORDER BY cnt DESC"""
+        )
+
+        # Top CCSS codes
+        ccss = await conn.fetch(
+            """SELECT t AS code, COUNT(*) AS cnt
+               FROM assessment_questions, unnest(tags) AS t
+               WHERE t LIKE 'ccss:%'
+               GROUP BY t ORDER BY cnt DESC LIMIT 20"""
+        )
+
+        # Top cognitive skills
+        skills = await conn.fetch(
+            """SELECT t AS skill, COUNT(*) AS cnt
+               FROM assessment_questions, unnest(tags) AS t
+               WHERE t LIKE 'skill:%'
+               GROUP BY t ORDER BY cnt DESC LIMIT 15"""
+        )
+
+        # Misconception coverage
+        misconceptions = await conn.fetch(
+            """SELECT t AS mc, COUNT(*) AS cnt
+               FROM assessment_questions, unnest(tags) AS t
+               WHERE t LIKE 'mc:%'
+               GROUP BY t ORDER BY cnt DESC LIMIT 15"""
+        )
+
+        return {
+            "total": total,
+            "tagged": tagged,
+            "untagged": total - tagged,
+            "coverage_pct": round(tagged / total * 100, 1) if total > 0 else 0,
+            "blooms": {r["level"]: r["cnt"] for r in blooms},
+            "dok": {r["level"]: r["cnt"] for r in dok},
+            "bands": {r["band"].replace("band:", ""): r["cnt"] for r in bands},
+            "ccss_codes": {r["code"].replace("ccss:", ""): r["cnt"] for r in ccss},
+            "cognitive_skills": {r["skill"].replace("skill:", ""): r["cnt"] for r in skills},
+            "misconceptions": {r["mc"].replace("mc:", ""): r["cnt"] for r in misconceptions},
+        }
+
+
+# ---------------------------------------------------------------------------
 # 导入批次 CRUD
 # ---------------------------------------------------------------------------
 
@@ -1319,7 +1463,7 @@ async def get_session_answers(session_id: str) -> list[dict]:
     async with pool.acquire() as conn:
         rows = await conn.fetch(
             """
-            SELECT a.*, q.subject, q.topic, q.subtopic, q.difficulty, q.question_type
+            SELECT a.*, q.subject, q.topic, q.subtopic, q.difficulty, q.question_type, q.tags
             FROM assessment_answers a
             JOIN assessment_questions q ON q.id = a.question_id
             WHERE a.session_id = $1

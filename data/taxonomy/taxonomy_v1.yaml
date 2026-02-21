@@ -1,0 +1,230 @@
+# ============================================================
+# BASIS Expert Council — Question Taxonomy Definition v1.0
+# Multi-dimensional tagging system for K-12 assessment items
+# ============================================================
+
+version: "1.0"
+
+# ----------------------------------------------------------
+# Bloom's Revised Taxonomy (Anderson & Krathwohl, 2001)
+# ----------------------------------------------------------
+blooms_taxonomy:
+  remember:
+    level: 1
+    description: "Retrieve relevant knowledge from long-term memory (recognize, recall, list, define)"
+  understand:
+    level: 2
+    description: "Construct meaning from instructional messages (interpret, classify, summarize, compare, explain)"
+  apply:
+    level: 3
+    description: "Carry out or use a procedure in a given situation (execute, implement, solve, demonstrate)"
+  analyze:
+    level: 4
+    description: "Break material into constituent parts and determine how parts relate (differentiate, organize, attribute)"
+  evaluate:
+    level: 5
+    description: "Make judgments based on criteria and standards (check, critique, justify, assess)"
+  create:
+    level: 6
+    description: "Put elements together to form a coherent whole or produce an original product (generate, plan, produce, design)"
+
+# ----------------------------------------------------------
+# Webb's Depth of Knowledge (DOK)
+# ----------------------------------------------------------
+dok:
+  recall:
+    level: 1
+    description: "Recall of a fact, term, definition, or simple procedure; one correct answer"
+  skill_concept:
+    level: 2
+    description: "Use of information or conceptual knowledge; requires two or more mental steps"
+  strategic_thinking:
+    level: 3
+    description: "Requires reasoning, planning, or using evidence; more than one valid approach"
+  extended_thinking:
+    level: 4
+    description: "Complex reasoning over extended time; synthesize across multiple sources or domains"
+
+# ----------------------------------------------------------
+# Difficulty Bands — maps continuous difficulty to labels & RIT
+# ----------------------------------------------------------
+difficulty_bands:
+  foundational:
+    range: [0.0, 0.25]
+    rit_range: [160, 190]
+    description: "Below grade-level expectations; basic recall and recognition"
+  basic:
+    range: [0.25, 0.45]
+    rit_range: [190, 210]
+    description: "Approaching grade-level; routine procedures and straightforward comprehension"
+  proficient:
+    range: [0.45, 0.65]
+    rit_range: [210, 230]
+    description: "Meeting grade-level expectations; multi-step reasoning and inference"
+  advanced:
+    range: [0.65, 0.85]
+    rit_range: [230, 250]
+    description: "Exceeding grade-level; non-routine problem solving and critical analysis"
+  elite:
+    range: [0.85, 1.0]
+    rit_range: [250, 270]
+    description: "Competition / gifted level; novel synthesis, proof, and cross-domain transfer"
+
+# ----------------------------------------------------------
+# Cognitive Skills — Hierarchical skill tree
+# ----------------------------------------------------------
+cognitive_skills:
+  quantitative_reasoning:
+    description: "Mathematical thinking and numerical fluency"
+    skills:
+      number_sense:
+        description: "Understanding of number magnitude, place value, and number relationships"
+      proportional_thinking:
+        description: "Reasoning about ratios, rates, fractions, and proportional relationships"
+      algebraic_thinking:
+        description: "Recognizing patterns, using variables, forming and solving equations"
+      data_analysis:
+        description: "Reading, interpreting, and drawing conclusions from data displays"
+      spatial_reasoning:
+        description: "Visualizing shapes, transformations, and geometric relationships in 2D/3D"
+      statistical_reasoning:
+        description: "Understanding distributions, variability, sampling, and probability"
+
+  reading_comprehension:
+    description: "Ability to extract and construct meaning from written text"
+    skills:
+      literal_comprehension:
+        description: "Identifying explicitly stated information in a text"
+      inferential_comprehension:
+        description: "Drawing conclusions and making predictions based on textual evidence"
+      evaluative_comprehension:
+        description: "Judging the quality, accuracy, and purpose of a text or argument"
+      vocabulary_knowledge:
+        description: "Understanding word meaning from context, morphology, and usage"
+      text_structure_analysis:
+        description: "Recognizing how a text is organized and how structure supports meaning"
+
+  language_mechanics:
+    description: "Command of English grammar, usage, and writing conventions"
+    skills:
+      grammar_usage:
+        description: "Correct use of parts of speech, agreement, tense, and modifiers"
+      sentence_construction:
+        description: "Building varied, effective sentences; combining and restructuring clauses"
+      punctuation_mechanics:
+        description: "Correct use of commas, semicolons, colons, apostrophes, and other marks"
+      writing_conventions:
+        description: "Spelling, capitalization, formatting, and standard written English norms"
+
+  scientific_reasoning:
+    description: "Thinking skills central to scientific inquiry and NGSS practices"
+    skills:
+      observation:
+        description: "Identifying relevant phenomena, patterns, and qualitative/quantitative data"
+      hypothesis_formation:
+        description: "Generating testable explanations based on prior knowledge and observations"
+      experimental_design:
+        description: "Planning investigations with controls, variables, and reproducibility"
+      data_interpretation:
+        description: "Analyzing experimental results, graphs, and tables to draw conclusions"
+      model_building:
+        description: "Constructing, using, and revising models to explain and predict phenomena"
+
+  historical_thinking:
+    description: "Disciplinary skills for reasoning about the past"
+    skills:
+      chronological_reasoning:
+        description: "Sequencing events, understanding periodization, and recognizing continuity/change"
+      causation_analysis:
+        description: "Identifying causes and effects; distinguishing correlation from causation"
+      sourcing:
+        description: "Evaluating the origin, purpose, audience, and reliability of historical sources"
+      contextualization:
+        description: "Placing events, people, and ideas within broader historical, social, and cultural contexts"
+      argumentation:
+        description: "Constructing and defending claims using historical evidence and reasoning"
+
+# ----------------------------------------------------------
+# Context Types
+# ----------------------------------------------------------
+context_types:
+  - abstract          # Pure symbolic / decontextualized
+  - contextual        # Embedded in a familiar scenario
+  - real_world        # Authentic data or situation
+  - cross_disciplinary # Integrates knowledge from multiple subject areas
+
+# ----------------------------------------------------------
+# Test Alignment — standardized assessments the item maps to
+# ----------------------------------------------------------
+test_alignment:
+  - map_growth         # NWEA MAP Growth adaptive assessment
+  - sat                # SAT Suite (PSAT 8/9, PSAT 10, PSAT/NMSQT, SAT)
+  - act                # ACT college readiness assessment
+  - ap                 # Advanced Placement exams
+  - basis_internal     # BASIS school-specific benchmarks and finals
+  - common_core        # CCSS-aligned state assessments (SBAC, PARCC)
+
+# ----------------------------------------------------------
+# Time Complexity — expected solve time
+# ----------------------------------------------------------
+time_complexity:
+  quick:
+    seconds: [0, 30]
+    description: "Under 30 seconds; single-step recall or recognition"
+  standard:
+    seconds: [30, 90]
+    description: "30-90 seconds; routine multi-step or short reading"
+  extended:
+    seconds: [90, 180]
+    description: "90-180 seconds; multi-step reasoning, longer passage, or constructed response"
+  complex:
+    seconds: [180, null]
+    description: "Over 180 seconds; extended analysis, multi-part, or performance task"
+
+# ----------------------------------------------------------
+# Language Complexity — for ELA / reading items
+# ----------------------------------------------------------
+language_complexity:
+  basic:
+    description: "Simple sentences, high-frequency vocabulary, concrete topics"
+  intermediate:
+    description: "Compound/complex sentences, some academic vocabulary, familiar topics"
+  advanced:
+    description: "Dense syntax, tier-2 academic vocabulary, abstract or nuanced topics"
+  academic:
+    description: "Discipline-specific terminology, sophisticated rhetorical structures, scholarly register"
+
+# ----------------------------------------------------------
+# Tag Prefix Registry — canonical namespace prefixes
+# ----------------------------------------------------------
+tag_prefixes:
+  bloom:
+    description: "Bloom's Taxonomy level (e.g., bloom:analyze)"
+    example: "bloom:apply"
+  dok:
+    description: "Depth of Knowledge level (e.g., dok:3)"
+    example: "dok:2"
+  band:
+    description: "Difficulty band (e.g., band:proficient)"
+    example: "band:advanced"
+  ccss:
+    description: "Common Core State Standard (e.g., ccss:6.RP.A.1)"
+    example: "ccss:8.EE.C.7"
+  skill:
+    description: "Cognitive skill from the skill tree (e.g., skill:algebraic_thinking)"
+    example: "skill:proportional_thinking"
+  context:
+    description: "Context type of the item (e.g., context:real_world)"
+    example: "context:contextual"
+  test:
+    description: "Target test alignment (e.g., test:map_growth)"
+    example: "test:sat"
+  time:
+    description: "Expected time complexity (e.g., time:standard)"
+    example: "time:quick"
+  lang:
+    description: "Language complexity level (e.g., lang:intermediate)"
+    example: "lang:academic"
+  mc:
+    description: "Misconception ID (e.g., mc:MC-MATH-FRAC-001)"
+    example: "mc:MC-MATH-FRAC-001"

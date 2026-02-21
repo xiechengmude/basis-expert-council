@@ -1,0 +1,895 @@
+# ============================================================
+# Common Core State Standards — Mathematics (Grades K-12)
+# Focused on the BASIS assessment range (Grades 5-12)
+# ============================================================
+
+version: "1.0"
+subject: "mathematics"
+source: "Common Core State Standards Initiative (corestandards.org)"
+
+standards:
+
+  # ========================================================
+  # GRADE 5
+  # ========================================================
+
+  # --- Operations & Algebraic Thinking (OA) ---
+  "5.OA.A.1":
+    domain: "Operations & Algebraic Thinking"
+    cluster: "Write and interpret numerical expressions"
+    standard: "Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols"
+    grade: 5
+
+  "5.OA.A.2":
+    domain: "Operations & Algebraic Thinking"
+    cluster: "Write and interpret numerical expressions"
+    standard: "Write simple expressions that record calculations with numbers, and interpret numerical expressions without evaluating them"
+    grade: 5
+
+  "5.OA.B.3":
+    domain: "Operations & Algebraic Thinking"
+    cluster: "Analyze patterns and relationships"
+    standard: "Generate two numerical patterns using two given rules. Identify apparent relationships between corresponding terms"
+    grade: 5
+
+  # --- Number & Operations in Base Ten (NBT) ---
+  "5.NBT.A.1":
+    domain: "Number & Operations in Base Ten"
+    cluster: "Understand the place value system"
+    standard: "Recognize that in a multi-digit number, a digit in one place represents 10 times as much as it represents in the place to its right and 1/10 of what it represents in the place to its left"
+    grade: 5
+
+  "5.NBT.A.2":
+    domain: "Number & Operations in Base Ten"
+    cluster: "Understand the place value system"
+    standard: "Explain patterns in the number of zeros of the product when multiplying a number by powers of 10, and explain patterns in the placement of the decimal point"
+    grade: 5
+
+  "5.NBT.A.3":
+    domain: "Number & Operations in Base Ten"
+    cluster: "Understand the place value system"
+    standard: "Read, write, and compare decimals to thousandths"
+    grade: 5
+
+  "5.NBT.B.5":
+    domain: "Number & Operations in Base Ten"
+    cluster: "Perform operations with multi-digit whole numbers and with decimals to hundredths"
+    standard: "Fluently multiply multi-digit whole numbers using the standard algorithm"
+    grade: 5
+
+  "5.NBT.B.6":
+    domain: "Number & Operations in Base Ten"
+    cluster: "Perform operations with multi-digit whole numbers and with decimals to hundredths"
+    standard: "Find whole-number quotients of whole numbers with up to four-digit dividends and two-digit divisors"
+    grade: 5
+
+  "5.NBT.B.7":
+    domain: "Number & Operations in Base Ten"
+    cluster: "Perform operations with multi-digit whole numbers and with decimals to hundredths"
+    standard: "Add, subtract, multiply, and divide decimals to hundredths, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction"
+    grade: 5
+
+  # --- Number & Operations—Fractions (NF) ---
+  "5.NF.A.1":
+    domain: "Number & Operations—Fractions"
+    cluster: "Use equivalent fractions as a strategy to add and subtract fractions"
+    standard: "Add and subtract fractions with unlike denominators (including mixed numbers) by replacing given fractions with equivalent fractions"
+    grade: 5
+
+  "5.NF.A.2":
+    domain: "Number & Operations—Fractions"
+    cluster: "Use equivalent fractions as a strategy to add and subtract fractions"
+    standard: "Solve word problems involving addition and subtraction of fractions referring to the same whole, including cases of unlike denominators"
+    grade: 5
+
+  "5.NF.B.3":
+    domain: "Number & Operations—Fractions"
+    cluster: "Apply and extend previous understandings of multiplication and division"
+    standard: "Interpret a fraction as division of the numerator by the denominator (a/b = a divided by b)"
+    grade: 5
+
+  "5.NF.B.4":
+    domain: "Number & Operations—Fractions"
+    cluster: "Apply and extend previous understandings of multiplication and division"
+    standard: "Apply and extend previous understandings of multiplication to multiply a fraction or whole number by a fraction"
+    grade: 5
+
+  "5.NF.B.5":
+    domain: "Number & Operations—Fractions"
+    cluster: "Apply and extend previous understandings of multiplication and division"
+    standard: "Interpret multiplication as scaling (resizing) by comparing the size of a product to the size of one factor on the basis of the size of the other factor"
+    grade: 5
+
+  "5.NF.B.7":
+    domain: "Number & Operations—Fractions"
+    cluster: "Apply and extend previous understandings of multiplication and division"
+    standard: "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions"
+    grade: 5
+
+  # --- Measurement & Data (MD) ---
+  "5.MD.A.1":
+    domain: "Measurement & Data"
+    cluster: "Convert like measurement units within a given measurement system"
+    standard: "Convert among different-sized standard measurement units within a given measurement system and use these conversions in solving multi-step, real-world problems"
+    grade: 5
+
+  "5.MD.C.3":
+    domain: "Measurement & Data"
+    cluster: "Geometric measurement: understand concepts of volume"
+    standard: "Recognize volume as an attribute of solid figures and understand concepts of volume measurement"
+    grade: 5
+
+  "5.MD.C.5":
+    domain: "Measurement & Data"
+    cluster: "Geometric measurement: understand concepts of volume"
+    standard: "Relate volume to the operations of multiplication and addition and solve real-world and mathematical problems involving volume"
+    grade: 5
+
+  # --- Geometry (G) ---
+  "5.G.A.1":
+    domain: "Geometry"
+    cluster: "Graph points on the coordinate plane to solve real-world and mathematical problems"
+    standard: "Use a pair of perpendicular number lines (axes) to define a coordinate system; graph points in the first quadrant of the coordinate plane"
+    grade: 5
+
+  "5.G.A.2":
+    domain: "Geometry"
+    cluster: "Graph points on the coordinate plane to solve real-world and mathematical problems"
+    standard: "Represent real-world and mathematical problems by graphing points in the first quadrant of the coordinate plane, and interpret coordinate values of points in the context of the situation"
+    grade: 5
+
+  "5.G.B.3":
+    domain: "Geometry"
+    cluster: "Classify two-dimensional figures into categories based on their properties"
+    standard: "Understand that attributes belonging to a category of two-dimensional figures also belong to all subcategories of that category"
+    grade: 5
+
+  # ========================================================
+  # GRADE 6
+  # ========================================================
+
+  # --- Ratios & Proportional Relationships (RP) ---
+  "6.RP.A.1":
+    domain: "Ratios & Proportional Relationships"
+    cluster: "Understand ratio concepts and use ratio reasoning to solve problems"
+    standard: "Understand the concept of a ratio and use ratio language to describe a ratio relationship between two quantities"
+    grade: 6
+
+  "6.RP.A.2":
+    domain: "Ratios & Proportional Relationships"
+    cluster: "Understand ratio concepts and use ratio reasoning to solve problems"
+    standard: "Understand the concept of a unit rate a/b associated with a ratio a:b with b not equal to 0, and use rate language in the context of a ratio relationship"
+    grade: 6
+
+  "6.RP.A.3":
+    domain: "Ratios & Proportional Relationships"
+    cluster: "Understand ratio concepts and use ratio reasoning to solve problems"
+    standard: "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations"
+    grade: 6
+
+  # --- The Number System (NS) ---
+  "6.NS.A.1":
+    domain: "The Number System"
+    cluster: "Apply and extend previous understandings of multiplication and division to divide fractions by fractions"
+    standard: "Interpret and compute quotients of fractions, and solve word problems involving division of fractions by fractions"
+    grade: 6
+
+  "6.NS.B.2":
+    domain: "The Number System"
+    cluster: "Compute fluently with multi-digit numbers and find common factors and multiples"
+    standard: "Fluently divide multi-digit numbers using the standard algorithm"
+    grade: 6
+
+  "6.NS.B.3":
+    domain: "The Number System"
+    cluster: "Compute fluently with multi-digit numbers and find common factors and multiples"
+    standard: "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation"
+    grade: 6
+
+  "6.NS.B.4":
+    domain: "The Number System"
+    cluster: "Compute fluently with multi-digit numbers and find common factors and multiples"
+    standard: "Find the greatest common factor of two whole numbers less than or equal to 100 and the least common multiple of two whole numbers less than or equal to 12"
+    grade: 6
+
+  "6.NS.C.5":
+    domain: "The Number System"
+    cluster: "Apply and extend previous understandings of numbers to the system of rational numbers"
+    standard: "Understand that positive and negative numbers are used together to describe quantities having opposite directions or values; use positive and negative numbers to represent quantities in real-world contexts"
+    grade: 6
+
+  "6.NS.C.6":
+    domain: "The Number System"
+    cluster: "Apply and extend previous understandings of numbers to the system of rational numbers"
+    standard: "Understand a rational number as a point on the number line; extend number line diagrams and coordinate axes"
+    grade: 6
+
+  "6.NS.C.7":
+    domain: "The Number System"
+    cluster: "Apply and extend previous understandings of numbers to the system of rational numbers"
+    standard: "Understand ordering and absolute value of rational numbers"
+    grade: 6
+
+  # --- Expressions & Equations (EE) ---
+  "6.EE.A.1":
+    domain: "Expressions & Equations"
+    cluster: "Apply and extend previous understandings of arithmetic to algebraic expressions"
+    standard: "Write and evaluate numerical expressions involving whole-number exponents"
+    grade: 6
+
+  "6.EE.A.2":
+    domain: "Expressions & Equations"
+    cluster: "Apply and extend previous understandings of arithmetic to algebraic expressions"
+    standard: "Write, read, and evaluate expressions in which letters stand for numbers"
+    grade: 6
+
+  "6.EE.A.3":
+    domain: "Expressions & Equations"
+    cluster: "Apply and extend previous understandings of arithmetic to algebraic expressions"
+    standard: "Apply the properties of operations to generate equivalent expressions"
+    grade: 6
+
+  "6.EE.A.4":
+    domain: "Expressions & Equations"
+    cluster: "Apply and extend previous understandings of arithmetic to algebraic expressions"
+    standard: "Identify when two expressions are equivalent"
+    grade: 6
+
+  "6.EE.B.5":
+    domain: "Expressions & Equations"
+    cluster: "Reason about and solve one-variable equations and inequalities"
+    standard: "Understand solving an equation or inequality as a process of answering a question: which values from a specified set, if any, make the equation or inequality true?"
+    grade: 6
+
+  "6.EE.B.6":
+    domain: "Expressions & Equations"
+    cluster: "Reason about and solve one-variable equations and inequalities"
+    standard: "Use variables to represent numbers and write expressions when solving a real-world or mathematical problem"
+    grade: 6
+
+  "6.EE.B.7":
+    domain: "Expressions & Equations"
+    cluster: "Reason about and solve one-variable equations and inequalities"
+    standard: "Solve real-world and mathematical problems by writing and solving equations of the form x + p = q and px = q for cases in which p, q, and x are all nonnegative rational numbers"
+    grade: 6
+
+  "6.EE.C.9":
+    domain: "Expressions & Equations"
+    cluster: "Represent and analyze quantitative relationships between dependent and independent variables"
+    standard: "Use variables to represent two quantities in a real-world problem that change in relationship to one another; write an equation to express one quantity in terms of the other"
+    grade: 6
+
+  # --- Geometry (G) ---
+  "6.G.A.1":
+    domain: "Geometry"
+    cluster: "Solve real-world and mathematical problems involving area, surface area, and volume"
+    standard: "Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes"
+    grade: 6
+
+  "6.G.A.2":
+    domain: "Geometry"
+    cluster: "Solve real-world and mathematical problems involving area, surface area, and volume"
+    standard: "Find the volume of a right rectangular prism with fractional edge lengths by packing it with unit cubes"
+    grade: 6
+
+  "6.G.A.4":
+    domain: "Geometry"
+    cluster: "Solve real-world and mathematical problems involving area, surface area, and volume"
+    standard: "Represent three-dimensional figures using nets made up of rectangles and triangles, and use the nets to find the surface area of these figures"
+    grade: 6
+
+  # --- Statistics & Probability (SP) ---
+  "6.SP.A.1":
+    domain: "Statistics & Probability"
+    cluster: "Develop understanding of statistical variability"
+    standard: "Recognize a statistical question as one that anticipates variability in the data related to the question and accounts for it in the answers"
+    grade: 6
+
+  "6.SP.A.2":
+    domain: "Statistics & Probability"
+    cluster: "Develop understanding of statistical variability"
+    standard: "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape"
+    grade: 6
+
+  "6.SP.B.5":
+    domain: "Statistics & Probability"
+    cluster: "Summarize and describe distributions"
+    standard: "Summarize numerical data sets in relation to their context"
+    grade: 6
+
+  # ========================================================
+  # GRADE 7
+  # ========================================================
+
+  # --- Ratios & Proportional Relationships (RP) ---
+  "7.RP.A.1":
+    domain: "Ratios & Proportional Relationships"
+    cluster: "Analyze proportional relationships and use them to solve real-world and mathematical problems"
+    standard: "Compute unit rates associated with ratios of fractions, including ratios of lengths, areas, and other quantities measured in like or different units"
+    grade: 7
+
+  "7.RP.A.2":
+    domain: "Ratios & Proportional Relationships"
+    cluster: "Analyze proportional relationships and use them to solve real-world and mathematical problems"
+    standard: "Recognize and represent proportional relationships between quantities"
+    grade: 7
+
+  "7.RP.A.3":
+    domain: "Ratios & Proportional Relationships"
+    cluster: "Analyze proportional relationships and use them to solve real-world and mathematical problems"
+    standard: "Use proportional relationships to solve multistep ratio and percent problems"
+    grade: 7
+
+  # --- The Number System (NS) ---
+  "7.NS.A.1":
+    domain: "The Number System"
+    cluster: "Apply and extend previous understandings of operations with fractions"
+    standard: "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram"
+    grade: 7
+
+  "7.NS.A.2":
+    domain: "The Number System"
+    cluster: "Apply and extend previous understandings of operations with fractions"
+    standard: "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers"
+    grade: 7
+
+  "7.NS.A.3":
+    domain: "The Number System"
+    cluster: "Apply and extend previous understandings of operations with fractions"
+    standard: "Solve real-world and mathematical problems involving the four operations with rational numbers"
+    grade: 7
+
+  # --- Expressions & Equations (EE) ---
+  "7.EE.A.1":
+    domain: "Expressions & Equations"
+    cluster: "Use properties of operations to generate equivalent expressions"
+    standard: "Apply properties of operations as strategies to add, subtract, factor, and expand linear expressions with rational coefficients"
+    grade: 7
+
+  "7.EE.A.2":
+    domain: "Expressions & Equations"
+    cluster: "Use properties of operations to generate equivalent expressions"
+    standard: "Understand that rewriting an expression in different forms in a problem context can shed light on the problem and how the quantities in it are related"
+    grade: 7
+
+  "7.EE.B.3":
+    domain: "Expressions & Equations"
+    cluster: "Solve real-life and mathematical problems using numerical and algebraic expressions and equations"
+    standard: "Solve multi-step real-life and mathematical problems posed with positive and negative rational numbers in any form, using tools strategically"
+    grade: 7
+
+  "7.EE.B.4":
+    domain: "Expressions & Equations"
+    cluster: "Solve real-life and mathematical problems using numerical and algebraic expressions and equations"
+    standard: "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems"
+    grade: 7
+
+  # --- Geometry (G) ---
+  "7.G.A.1":
+    domain: "Geometry"
+    cluster: "Draw, construct, and describe geometrical figures and describe the relationships between them"
+    standard: "Solve problems involving scale drawings of geometric figures, including computing actual lengths and areas from a scale drawing and reproducing a scale drawing at a different scale"
+    grade: 7
+
+  "7.G.A.2":
+    domain: "Geometry"
+    cluster: "Draw, construct, and describe geometrical figures and describe the relationships between them"
+    standard: "Draw (freehand, with ruler and protractor, and with technology) geometric shapes with given conditions. Focus on constructing triangles from three measures of angles or sides"
+    grade: 7
+
+  "7.G.B.4":
+    domain: "Geometry"
+    cluster: "Solve real-life and mathematical problems involving angle measure, area, surface area, and volume"
+    standard: "Know the formulas for the area and circumference of a circle and use them to solve problems"
+    grade: 7
+
+  "7.G.B.5":
+    domain: "Geometry"
+    cluster: "Solve real-life and mathematical problems involving angle measure, area, surface area, and volume"
+    standard: "Use facts about supplementary, complementary, vertical, and adjacent angles in a multi-step problem to write and solve simple equations for an unknown angle in a figure"
+    grade: 7
+
+  "7.G.B.6":
+    domain: "Geometry"
+    cluster: "Solve real-life and mathematical problems involving angle measure, area, surface area, and volume"
+    standard: "Solve real-world and mathematical problems involving area, volume, and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms"
+    grade: 7
+
+  # --- Statistics & Probability (SP) ---
+  "7.SP.A.1":
+    domain: "Statistics & Probability"
+    cluster: "Use random sampling to draw inferences about a population"
+    standard: "Understand that statistics can be used to gain information about a population by examining a sample of the population; generalizations about a population from a sample are valid only if the sample is representative of that population"
+    grade: 7
+
+  "7.SP.A.2":
+    domain: "Statistics & Probability"
+    cluster: "Use random sampling to draw inferences about a population"
+    standard: "Use data from a random sample to draw inferences about a population with an unknown characteristic of interest"
+    grade: 7
+
+  "7.SP.C.5":
+    domain: "Statistics & Probability"
+    cluster: "Investigate chance processes and develop, use, and evaluate probability models"
+    standard: "Understand that the probability of a chance event is a number between 0 and 1 that expresses the likelihood of the event occurring"
+    grade: 7
+
+  "7.SP.C.7":
+    domain: "Statistics & Probability"
+    cluster: "Investigate chance processes and develop, use, and evaluate probability models"
+    standard: "Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies"
+    grade: 7
+
+  # ========================================================
+  # GRADE 8
+  # ========================================================
+
+  # --- The Number System (NS) ---
+  "8.NS.A.1":
+    domain: "The Number System"
+    cluster: "Know that there are numbers that are not rational, and approximate them by rational numbers"
+    standard: "Know that numbers that are not rational are called irrational. Understand informally that every number has a decimal expansion"
+    grade: 8
+
+  "8.NS.A.2":
+    domain: "The Number System"
+    cluster: "Know that there are numbers that are not rational, and approximate them by rational numbers"
+    standard: "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions"
+    grade: 8
+
+  # --- Expressions & Equations (EE) ---
+  "8.EE.A.1":
+    domain: "Expressions & Equations"
+    cluster: "Work with radicals and integer exponents"
+    standard: "Know and apply the properties of integer exponents to generate equivalent numerical expressions"
+    grade: 8
+
+  "8.EE.A.2":
+    domain: "Expressions & Equations"
+    cluster: "Work with radicals and integer exponents"
+    standard: "Use square root and cube root symbols to represent solutions to equations of the form x^2 = p and x^3 = p, where p is a positive rational number"
+    grade: 8
+
+  "8.EE.A.3":
+    domain: "Expressions & Equations"
+    cluster: "Work with radicals and integer exponents"
+    standard: "Use numbers expressed in the form of a single digit times an integer power of 10 to estimate very large or very small quantities, and to express how many times as much one is than the other"
+    grade: 8
+
+  "8.EE.A.4":
+    domain: "Expressions & Equations"
+    cluster: "Work with radicals and integer exponents"
+    standard: "Perform operations with numbers expressed in scientific notation, including problems where both decimal and scientific notation are used"
+    grade: 8
+
+  "8.EE.B.5":
+    domain: "Expressions & Equations"
+    cluster: "Understand the connections between proportional relationships, lines, and linear equations"
+    standard: "Graph proportional relationships, interpreting the unit rate as the slope of the graph. Compare two different proportional relationships represented in different ways"
+    grade: 8
+
+  "8.EE.B.6":
+    domain: "Expressions & Equations"
+    cluster: "Understand the connections between proportional relationships, lines, and linear equations"
+    standard: "Use similar triangles to explain why the slope m is the same between any two distinct points on a non-vertical line in the coordinate plane; derive the equation y = mx for a line through the origin and the equation y = mx + b for a line intercepting the vertical axis at b"
+    grade: 8
+
+  "8.EE.C.7":
+    domain: "Expressions & Equations"
+    cluster: "Analyze and solve linear equations and pairs of simultaneous linear equations"
+    standard: "Solve linear equations in one variable"
+    grade: 8
+
+  "8.EE.C.8":
+    domain: "Expressions & Equations"
+    cluster: "Analyze and solve linear equations and pairs of simultaneous linear equations"
+    standard: "Analyze and solve pairs of simultaneous linear equations"
+    grade: 8
+
+  # --- Functions (F) ---
+  "8.F.A.1":
+    domain: "Functions"
+    cluster: "Define, evaluate, and compare functions"
+    standard: "Understand that a function is a rule that assigns to each input exactly one output. The graph of a function is the set of ordered pairs consisting of an input and the corresponding output"
+    grade: 8
+
+  "8.F.A.2":
+    domain: "Functions"
+    cluster: "Define, evaluate, and compare functions"
+    standard: "Compare properties of two functions each represented in a different way (algebraically, graphically, numerically in tables, or by verbal descriptions)"
+    grade: 8
+
+  "8.F.A.3":
+    domain: "Functions"
+    cluster: "Define, evaluate, and compare functions"
+    standard: "Interpret the equation y = mx + b as defining a linear function, whose graph is a straight line; give examples of functions that are not linear"
+    grade: 8
+
+  "8.F.B.4":
+    domain: "Functions"
+    cluster: "Use functions to model relationships between quantities"
+    standard: "Construct a function to model a linear relationship between two quantities. Determine the rate of change and initial value of the function from a description of a relationship or from two (x, y) values, including reading these from a table or from a graph"
+    grade: 8
+
+  "8.F.B.5":
+    domain: "Functions"
+    cluster: "Use functions to model relationships between quantities"
+    standard: "Describe qualitatively the functional relationship between two quantities by analyzing a graph (e.g., where the function is increasing or decreasing, linear or nonlinear)"
+    grade: 8
+
+  # --- Geometry (G) ---
+  "8.G.A.1":
+    domain: "Geometry"
+    cluster: "Understand congruence and similarity using physical models, transparencies, or geometry software"
+    standard: "Verify experimentally the properties of rotations, reflections, and translations"
+    grade: 8
+
+  "8.G.A.2":
+    domain: "Geometry"
+    cluster: "Understand congruence and similarity using physical models, transparencies, or geometry software"
+    standard: "Understand that a two-dimensional figure is congruent to another if the second can be obtained from the first by a sequence of rotations, reflections, and translations"
+    grade: 8
+
+  "8.G.A.5":
+    domain: "Geometry"
+    cluster: "Understand congruence and similarity using physical models, transparencies, or geometry software"
+    standard: "Use informal arguments to establish facts about the angle sum and exterior angle of triangles, about the angles created when parallel lines are cut by a transversal, and the angle-angle criterion for similarity of triangles"
+    grade: 8
+
+  "8.G.B.6":
+    domain: "Geometry"
+    cluster: "Understand and apply the Pythagorean Theorem"
+    standard: "Explain a proof of the Pythagorean Theorem and its converse"
+    grade: 8
+
+  "8.G.B.7":
+    domain: "Geometry"
+    cluster: "Understand and apply the Pythagorean Theorem"
+    standard: "Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions"
+    grade: 8
+
+  "8.G.B.8":
+    domain: "Geometry"
+    cluster: "Understand and apply the Pythagorean Theorem"
+    standard: "Apply the Pythagorean Theorem to find the distance between two points in a coordinate system"
+    grade: 8
+
+  "8.G.C.9":
+    domain: "Geometry"
+    cluster: "Solve real-world and mathematical problems involving volume of cylinders, cones, and spheres"
+    standard: "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems"
+    grade: 8
+
+  # --- Statistics & Probability (SP) ---
+  "8.SP.A.1":
+    domain: "Statistics & Probability"
+    cluster: "Investigate patterns of association in bivariate data"
+    standard: "Construct and interpret scatter plots for bivariate measurement data to investigate patterns of association between two quantities"
+    grade: 8
+
+  "8.SP.A.2":
+    domain: "Statistics & Probability"
+    cluster: "Investigate patterns of association in bivariate data"
+    standard: "Know that straight lines are widely used to model relationships between two quantitative variables. For scatter plots that suggest a linear association, informally fit a straight line"
+    grade: 8
+
+  "8.SP.A.3":
+    domain: "Statistics & Probability"
+    cluster: "Investigate patterns of association in bivariate data"
+    standard: "Use the equation of a linear model to solve problems in the context of bivariate measurement data, interpreting the slope and intercept"
+    grade: 8
+
+  # ========================================================
+  # HIGH SCHOOL — Number & Quantity (N)
+  # ========================================================
+  "HSN.RN.A.1":
+    domain: "Number & Quantity"
+    cluster: "Extend the properties of exponents to rational exponents"
+    standard: "Explain how the definition of the meaning of rational exponents follows from extending the properties of integer exponents to those values"
+    grade: 9
+
+  "HSN.RN.A.2":
+    domain: "Number & Quantity"
+    cluster: "Extend the properties of exponents to rational exponents"
+    standard: "Rewrite expressions involving radicals and rational exponents using the properties of exponents"
+    grade: 9
+
+  "HSN.RN.B.3":
+    domain: "Number & Quantity"
+    cluster: "Use properties of rational and irrational numbers"
+    standard: "Explain why the sum or product of two rational numbers is rational; that the sum of a rational number and an irrational number is irrational; and that the product of a nonzero rational number and an irrational number is irrational"
+    grade: 9
+
+  "HSN.Q.A.1":
+    domain: "Number & Quantity"
+    cluster: "Reason quantitatively and use units to solve problems"
+    standard: "Use units as a way to understand problems and to guide the solution of multi-step problems; choose and interpret units consistently in formulas"
+    grade: 9
+
+  "HSN.Q.A.2":
+    domain: "Number & Quantity"
+    cluster: "Reason quantitatively and use units to solve problems"
+    standard: "Define appropriate quantities for the purpose of descriptive modeling"
+    grade: 9
+
+  "HSN.CN.A.1":
+    domain: "Number & Quantity"
+    cluster: "Perform arithmetic operations with complex numbers"
+    standard: "Know there is a complex number i such that i^2 = -1, and every complex number has the form a + bi with a and b real"
+    grade: 10
+
+  # ========================================================
+  # HIGH SCHOOL — Algebra (A)
+  # ========================================================
+  "HSA.SSE.A.1":
+    domain: "Algebra"
+    cluster: "Interpret the structure of expressions"
+    standard: "Interpret expressions that represent a quantity in terms of its context"
+    grade: 9
+
+  "HSA.SSE.A.2":
+    domain: "Algebra"
+    cluster: "Interpret the structure of expressions"
+    standard: "Use the structure of an expression to identify ways to rewrite it"
+    grade: 9
+
+  "HSA.SSE.B.3":
+    domain: "Algebra"
+    cluster: "Write expressions in equivalent forms to solve problems"
+    standard: "Choose and produce an equivalent form of an expression to reveal and explain properties of the quantity represented by the expression (factor, complete the square, properties of exponents)"
+    grade: 9
+
+  "HSA.APR.A.1":
+    domain: "Algebra"
+    cluster: "Perform arithmetic operations on polynomials"
+    standard: "Understand that polynomials form a system analogous to the integers, namely, they are closed under the operations of addition, subtraction, and multiplication; add, subtract, and multiply polynomials"
+    grade: 9
+
+  "HSA.APR.B.3":
+    domain: "Algebra"
+    cluster: "Understand the relationship between zeros and factors of polynomials"
+    standard: "Identify zeros of polynomials when suitable factorizations are available, and use the zeros to construct a rough graph of the function defined by the polynomial"
+    grade: 10
+
+  "HSA.CED.A.1":
+    domain: "Algebra"
+    cluster: "Create equations that describe numbers or relationships"
+    standard: "Create equations and inequalities in one variable and use them to solve problems"
+    grade: 9
+
+  "HSA.CED.A.2":
+    domain: "Algebra"
+    cluster: "Create equations that describe numbers or relationships"
+    standard: "Create equations in two or more variables to represent relationships between quantities; graph equations on coordinate axes with labels and scales"
+    grade: 9
+
+  "HSA.CED.A.3":
+    domain: "Algebra"
+    cluster: "Create equations that describe numbers or relationships"
+    standard: "Represent constraints by equations or inequalities, and by systems of equations and/or inequalities, and interpret solutions as viable or nonviable options in a modeling context"
+    grade: 9
+
+  "HSA.CED.A.4":
+    domain: "Algebra"
+    cluster: "Create equations that describe numbers or relationships"
+    standard: "Rearrange formulas to highlight a quantity of interest, using the same reasoning as in solving equations"
+    grade: 9
+
+  "HSA.REI.A.1":
+    domain: "Algebra"
+    cluster: "Understand solving equations as a process of reasoning and explain the reasoning"
+    standard: "Explain each step in solving a simple equation as following from the equality of numbers asserted at the previous step, starting from the assumption that the original equation has a solution"
+    grade: 9
+
+  "HSA.REI.B.3":
+    domain: "Algebra"
+    cluster: "Solve equations and inequalities in one variable"
+    standard: "Solve linear equations and inequalities in one variable, including equations with coefficients represented by letters"
+    grade: 9
+
+  "HSA.REI.B.4":
+    domain: "Algebra"
+    cluster: "Solve equations and inequalities in one variable"
+    standard: "Solve quadratic equations in one variable"
+    grade: 10
+
+  "HSA.REI.C.6":
+    domain: "Algebra"
+    cluster: "Solve systems of equations"
+    standard: "Solve systems of linear equations exactly and approximately (e.g., with graphs), focusing on pairs of linear equations in two variables"
+    grade: 9
+
+  "HSA.REI.D.10":
+    domain: "Algebra"
+    cluster: "Represent and solve equations and inequalities graphically"
+    standard: "Understand that the graph of an equation in two variables is the set of all its solutions plotted in the coordinate plane, often forming a curve"
+    grade: 9
+
+  # ========================================================
+  # HIGH SCHOOL — Functions (F)
+  # ========================================================
+  "HSF.IF.A.1":
+    domain: "Functions"
+    cluster: "Understand the concept of a function and use function notation"
+    standard: "Understand that a function from one set (called the domain) to another set (called the range) assigns to each element of the domain exactly one element of the range"
+    grade: 9
+
+  "HSF.IF.A.2":
+    domain: "Functions"
+    cluster: "Understand the concept of a function and use function notation"
+    standard: "Use function notation, evaluate functions for inputs in their domains, and interpret statements that use function notation in terms of a context"
+    grade: 9
+
+  "HSF.IF.B.4":
+    domain: "Functions"
+    cluster: "Interpret functions that arise in applications in terms of the context"
+    standard: "For a function that models a relationship between two quantities, interpret key features of graphs and tables in terms of the quantities, and sketch graphs showing key features given a verbal description of the relationship"
+    grade: 9
+
+  "HSF.IF.C.7":
+    domain: "Functions"
+    cluster: "Analyze functions using different representations"
+    standard: "Graph functions expressed symbolically and show key features of the graph, by hand in simple cases and using technology for more complicated cases"
+    grade: 9
+
+  "HSF.BF.A.1":
+    domain: "Functions"
+    cluster: "Build a function that models a relationship between two quantities"
+    standard: "Write a function that describes a relationship between two quantities"
+    grade: 9
+
+  "HSF.BF.B.3":
+    domain: "Functions"
+    cluster: "Build new functions from existing functions"
+    standard: "Identify the effect on the graph of replacing f(x) by f(x) + k, k f(x), f(kx), and f(x + k) for specific values of k (both positive and negative); find the value of k given the graphs"
+    grade: 10
+
+  "HSF.LE.A.1":
+    domain: "Functions"
+    cluster: "Construct and compare linear, quadratic, and exponential models and solve problems"
+    standard: "Distinguish between situations that can be modeled with linear functions and with exponential functions"
+    grade: 9
+
+  "HSF.LE.A.2":
+    domain: "Functions"
+    cluster: "Construct and compare linear, quadratic, and exponential models and solve problems"
+    standard: "Construct linear and exponential functions, including arithmetic and geometric sequences, given a graph, a description of a relationship, or two input-output pairs"
+    grade: 9
+
+  "HSF.TF.A.1":
+    domain: "Functions"
+    cluster: "Extend the domain of trigonometric functions using the unit circle"
+    standard: "Understand radian measure of an angle as the length of the arc on the unit circle subtended by the angle"
+    grade: 10
+
+  "HSF.TF.A.2":
+    domain: "Functions"
+    cluster: "Extend the domain of trigonometric functions using the unit circle"
+    standard: "Explain how the unit circle in the coordinate plane enables the extension of trigonometric functions to all real numbers, interpreted as radian measures of angles traversed counterclockwise around the unit circle"
+    grade: 10
+
+  # ========================================================
+  # HIGH SCHOOL — Geometry (G)
+  # ========================================================
+  "HSG.CO.A.1":
+    domain: "Geometry"
+    cluster: "Experiment with transformations in the plane"
+    standard: "Know precise definitions of angle, circle, perpendicular line, parallel line, and line segment, based on the undefined notions of point, line, distance along a line, and distance around a circular arc"
+    grade: 10
+
+  "HSG.CO.B.6":
+    domain: "Geometry"
+    cluster: "Understand congruence in terms of rigid motions"
+    standard: "Use geometric descriptions of rigid motions to transform figures and to predict the effect of a given rigid motion on a given figure"
+    grade: 10
+
+  "HSG.CO.C.9":
+    domain: "Geometry"
+    cluster: "Prove geometric theorems"
+    standard: "Prove theorems about lines and angles"
+    grade: 10
+
+  "HSG.CO.C.10":
+    domain: "Geometry"
+    cluster: "Prove geometric theorems"
+    standard: "Prove theorems about triangles"
+    grade: 10
+
+  "HSG.SRT.A.2":
+    domain: "Geometry"
+    cluster: "Understand similarity in terms of similarity transformations"
+    standard: "Given two figures, use the definition of similarity in terms of similarity transformations to decide if they are similar; explain using similarity transformations the meaning of similarity for triangles"
+    grade: 10
+
+  "HSG.SRT.B.5":
+    domain: "Geometry"
+    cluster: "Prove theorems involving similarity"
+    standard: "Use congruence and similarity criteria for triangles to solve problems and to prove relationships in geometric figures"
+    grade: 10
+
+  "HSG.SRT.C.6":
+    domain: "Geometry"
+    cluster: "Define trigonometric ratios and solve problems involving right triangles"
+    standard: "Understand that by similarity, side ratios in right triangles are properties of the angles in the triangle, leading to definitions of trigonometric ratios for acute angles"
+    grade: 10
+
+  "HSG.SRT.C.8":
+    domain: "Geometry"
+    cluster: "Define trigonometric ratios and solve problems involving right triangles"
+    standard: "Use trigonometric ratios and the Pythagorean Theorem to solve right triangles in applied problems"
+    grade: 10
+
+  "HSG.GPE.B.4":
+    domain: "Geometry"
+    cluster: "Use coordinates to prove simple geometric theorems algebraically"
+    standard: "Use coordinates to prove simple geometric theorems algebraically"
+    grade: 10
+
+  "HSG.GMD.A.3":
+    domain: "Geometry"
+    cluster: "Explain volume formulas and use them to solve problems"
+    standard: "Use volume formulas for cylinders, pyramids, cones, and spheres to solve problems"
+    grade: 10
+
+  # ========================================================
+  # HIGH SCHOOL — Statistics & Probability (S)
+  # ========================================================
+  "HSS.ID.A.1":
+    domain: "Statistics & Probability"
+    cluster: "Summarize, represent, and interpret data on a single count or measurement variable"
+    standard: "Represent data with plots on the real number line (dot plots, histograms, and box plots)"
+    grade: 9
+
+  "HSS.ID.A.2":
+    domain: "Statistics & Probability"
+    cluster: "Summarize, represent, and interpret data on a single count or measurement variable"
+    standard: "Use statistics appropriate to the shape of the data distribution to compare center (median, mean) and spread (interquartile range, standard deviation) of two or more different data sets"
+    grade: 9
+
+  "HSS.ID.B.5":
+    domain: "Statistics & Probability"
+    cluster: "Summarize, represent, and interpret data on two categorical and quantitative variables"
+    standard: "Summarize categorical data for two categories in two-way frequency tables. Interpret relative frequencies in the context of the data"
+    grade: 9
+
+  "HSS.ID.B.6":
+    domain: "Statistics & Probability"
+    cluster: "Summarize, represent, and interpret data on two categorical and quantitative variables"
+    standard: "Represent data on two quantitative variables on a scatter plot, and describe how the variables are related"
+    grade: 9
+
+  "HSS.ID.C.7":
+    domain: "Statistics & Probability"
+    cluster: "Interpret linear models"
+    standard: "Interpret the slope (rate of change) and the intercept (constant term) of a linear model in the context of the data"
+    grade: 9
+
+  "HSS.IC.A.1":
+    domain: "Statistics & Probability"
+    cluster: "Understand and evaluate random processes underlying statistical experiments"
+    standard: "Understand statistics as a process for making inferences about population parameters based on a random sample from that population"
+    grade: 11
+
+  "HSS.IC.B.3":
+    domain: "Statistics & Probability"
+    cluster: "Make inferences and justify conclusions from sample surveys, experiments, and observational studies"
+    standard: "Recognize the purposes of and differences among sample surveys, experiments, and observational studies; explain how randomization relates to each"
+    grade: 11
+
+  "HSS.CP.A.1":
+    domain: "Statistics & Probability"
+    cluster: "Understand independence and conditional probability and use them to interpret data"
+    standard: "Describe events as subsets of a sample space (the set of outcomes) using characteristics (or categories) of the outcomes, or as unions, intersections, or complements of other events"
+    grade: 11
+
+  "HSS.CP.A.3":
+    domain: "Statistics & Probability"
+    cluster: "Understand independence and conditional probability and use them to interpret data"
+    standard: "Understand the conditional probability of A given B as P(A and B)/P(B), and interpret independence of A and B as saying that the conditional probability of A given B is the same as the probability of A"
+    grade: 11
+
+  "HSS.CP.B.6":
+    domain: "Statistics & Probability"
+    cluster: "Use the rules of probability to compute probabilities of compound events"
+    standard: "Find the conditional probability of A given B as the fraction of B's outcomes that also belong to A, and interpret the answer in terms of the model"
+    grade: 11

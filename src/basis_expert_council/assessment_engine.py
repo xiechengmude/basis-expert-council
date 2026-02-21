@@ -547,6 +547,58 @@ def compute_session_stats(session: dict, answers: list[dict]) -> dict:
         elif topic_acc >= 0.75:
             strong_topics.append(topic)
 
+    # --- Taxonomy-enhanced diagnostics ---
+    blooms_dist: dict[str, dict] = {}   # bloom_level -> {total, correct}
+    skill_mastery: dict[str, dict] = {}  # skill -> {total, correct}
+    detected_misconceptions: list[str] = []
+
+    for a in answers:
+        q_tags = a.get("tags") or []
+        if isinstance(q_tags, str):
+            q_tags = [q_tags]
+
+        # Bloom's distribution
+        for t in q_tags:
+            if t.startswith("bloom:"):
+                level = t.split(":", 1)[1]
+                if level not in blooms_dist:
+                    blooms_dist[level] = {"total": 0, "correct": 0}
+                blooms_dist[level]["total"] += 1
+                if a.get("is_correct"):
+                    blooms_dist[level]["correct"] += 1
+
+            # Skill mastery
+            if t.startswith("skill:"):
+                skill = t.split(":", 1)[1]
+                if skill not in skill_mastery:
+                    skill_mastery[skill] = {"total": 0, "correct": 0}
+                skill_mastery[skill]["total"] += 1
+                if a.get("is_correct"):
+                    skill_mastery[skill]["correct"] += 1
+
+        # Misconception detection (wrong answer on question with mc: tags)
+        if not a.get("is_correct") and a.get("is_correct") is not None:
+            for t in q_tags:
+                if t.startswith("mc:") and t not in detected_misconceptions:
+                    detected_misconceptions.append(t.split(":", 1)[1])
+
+    # Compute mastery rates
+    blooms_report = {}
+    for level, data in blooms_dist.items():
+        blooms_report[level] = {
+            "total": data["total"],
+            "correct": data["correct"],
+            "mastery": round(data["correct"] / data["total"], 2) if data["total"] > 0 else 0,
+        }
+
+    skill_report = {}
+    for skill, data in skill_mastery.items():
+        skill_report[skill] = {
+            "total": data["total"],
+            "correct": data["correct"],
+            "mastery": round(data["correct"] / data["total"], 2) if data["total"] > 0 else 0,
+        }
+
     total_time = sum(a.get("time_spent_sec", 0) or 0 for a in answers)
 
     # Build summaries
@@ -582,6 +634,9 @@ def compute_session_stats(session: dict, answers: list[dict]) -> dict:
         "summary_zh": summary_zh,
         "summary_en": summary_en,
         "recommendations": recommendations,
+        "blooms_distribution": blooms_report,
+        "skill_mastery": skill_report,
+        "detected_misconceptions": detected_misconceptions,
     }
 
 

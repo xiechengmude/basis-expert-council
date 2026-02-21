@@ -138,11 +138,61 @@ def transform_options(options: list[dict]) -> list[str]:
 
 
 def get_tags(q: dict) -> list[str]:
-    """从 MAP 题目生成标签"""
-    tags = [q.get("topic", "general")]
-    if q.get("subject") in ("reading", "language_usage"):
-        tags.append(f"map_{q['subject']}")
+    """从 MAP 题目生成带前缀的标签 (保留遗留标签以保持向后兼容)"""
+    topic = q.get("topic", "general")
+    subject = q.get("subject", "math")
+    grade = GRADE_MAP.get(q.get("grade", ""), "G7")
+
+    tags = []
+    # Legacy tags (backward compatibility)
+    tags.append(topic)
+    if subject in ("reading", "language_usage"):
+        tags.append(f"map_{subject}")
     tags.append("map_style")
+
+    # Prefixed tags
+    tags.append("test:map_growth")
+
+    # Subject-based cognitive skill prefix
+    if subject == "math":
+        skill_map = {
+            "addition_word_problem": "skill:quantitative_reasoning.number_sense",
+            "subtraction": "skill:quantitative_reasoning.number_sense",
+            "multiplication": "skill:quantitative_reasoning.number_sense",
+            "division": "skill:quantitative_reasoning.number_sense",
+            "fractions": "skill:quantitative_reasoning.number_sense",
+            "decimals": "skill:quantitative_reasoning.number_sense",
+            "ratio_proportion": "skill:quantitative_reasoning.proportional_thinking",
+            "percentages": "skill:quantitative_reasoning.proportional_thinking",
+            "algebra": "skill:quantitative_reasoning.algebraic_thinking",
+            "linear_equations": "skill:quantitative_reasoning.algebraic_thinking",
+            "quadratics": "skill:quantitative_reasoning.algebraic_thinking",
+            "geometry": "skill:quantitative_reasoning.spatial_reasoning",
+            "data_analysis": "skill:quantitative_reasoning.data_analysis",
+            "statistics": "skill:quantitative_reasoning.statistical_reasoning",
+            "probability": "skill:quantitative_reasoning.statistical_reasoning",
+        }
+        if topic in skill_map:
+            tags.append(skill_map[topic])
+    elif subject in ("reading", "language_usage"):
+        mapped = TOPIC_SUBTOPIC_MAP.get(topic)
+        if mapped:
+            parent_topic = mapped[0]
+            if parent_topic == "reading_comp":
+                tags.append("skill:reading_comprehension.inferential_comprehension")
+            elif parent_topic == "vocabulary":
+                tags.append("skill:reading_comprehension.vocabulary_knowledge")
+            elif parent_topic == "grammar":
+                tags.append("skill:language_mechanics.grammar_usage")
+            elif parent_topic == "writing":
+                tags.append("skill:language_mechanics.sentence_construction")
+
+    # Context type guess
+    if "word_problem" in topic or "real" in topic:
+        tags.append("context:contextual")
+    else:
+        tags.append("context:abstract")
+
     return tags
 
 

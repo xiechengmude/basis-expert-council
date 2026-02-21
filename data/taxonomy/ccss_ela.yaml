@@ -1,0 +1,568 @@
+# ============================================================
+# Common Core State Standards — English Language Arts (Grades 5-12)
+# Reading Literature (RL), Reading Informational Text (RI), Language (L)
+# ============================================================
+
+version: "1.0"
+subject: "english_language_arts"
+source: "Common Core State Standards Initiative (corestandards.org)"
+
+standards:
+
+  # ========================================================
+  # GRADE 5 — Reading Literature (RL)
+  # ========================================================
+  "RL.5.1":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Quote accurately from a text and draw inferences from the text when explaining what the text says explicitly and when drawing inferences from the text"
+    grade: 5
+
+  "RL.5.2":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Determine a theme of a story, drama, or poem from details in the text, including how characters in a story or drama respond to challenges or how the speaker in a poem reflects upon a topic; summarize the text"
+    grade: 5
+
+  "RL.5.3":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Compare and contrast two or more characters, settings, or events in a story or drama, drawing on specific details in the text"
+    grade: 5
+
+  "RL.5.4":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Determine the meaning of words and phrases as they are used in a text, including figurative language such as metaphors and similes"
+    grade: 5
+
+  "RL.5.5":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular story, drama, or poem"
+    grade: 5
+
+  "RL.5.6":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Describe how a narrator's or speaker's point of view influences how events are described"
+    grade: 5
+
+  # ========================================================
+  # GRADE 5 — Reading Informational Text (RI)
+  # ========================================================
+  "RI.5.1":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Quote accurately from a text when explaining what the text says explicitly and when drawing inferences from the text"
+    grade: 5
+
+  "RI.5.2":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Determine two or more main ideas of a text and explain how they are supported by key details; summarize the text"
+    grade: 5
+
+  "RI.5.5":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Compare and contrast the overall structure of events, ideas, concepts, or information in two or more texts"
+    grade: 5
+
+  "RI.5.8":
+    strand: "Reading Informational Text"
+    cluster: "Integration of Knowledge and Ideas"
+    standard: "Explain how an author uses reasons and evidence to support particular points in a text, identifying which reasons and evidence support which point(s)"
+    grade: 5
+
+  # ========================================================
+  # GRADE 5 — Language (L)
+  # ========================================================
+  "L.5.1":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking"
+    grade: 5
+
+  "L.5.2":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing"
+    grade: 5
+
+  "L.5.4":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 5 reading and content, choosing flexibly from a range of strategies"
+    grade: 5
+
+  # ========================================================
+  # GRADE 6 — Reading Literature (RL)
+  # ========================================================
+  "RL.6.1":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text"
+    grade: 6
+
+  "RL.6.2":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Determine a theme or central idea of a text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments"
+    grade: 6
+
+  "RL.6.3":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Describe how a particular story's or drama's plot unfolds in a series of episodes as well as how the characters respond or change as the plot moves toward a resolution"
+    grade: 6
+
+  "RL.6.4":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Determine the meaning of words and phrases as they are used in a text, including figurative and connotative meanings; analyze the impact of a specific word choice on meaning and tone"
+    grade: 6
+
+  "RL.6.5":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure of a text and contributes to the development of the theme, setting, or plot"
+    grade: 6
+
+  "RL.6.6":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Explain how an author develops the point of view of the narrator or speaker in a text"
+    grade: 6
+
+  # ========================================================
+  # GRADE 6 — Reading Informational Text (RI)
+  # ========================================================
+  "RI.6.1":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text"
+    grade: 6
+
+  "RI.6.2":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Determine a central idea of a text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments"
+    grade: 6
+
+  "RI.6.5":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas"
+    grade: 6
+
+  "RI.6.6":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Determine an author's point of view or purpose in a text and explain how it is conveyed in the text"
+    grade: 6
+
+  "RI.6.8":
+    strand: "Reading Informational Text"
+    cluster: "Integration of Knowledge and Ideas"
+    standard: "Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not"
+    grade: 6
+
+  # ========================================================
+  # GRADE 6 — Language (L)
+  # ========================================================
+  "L.6.1":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking"
+    grade: 6
+
+  "L.6.3":
+    strand: "Language"
+    cluster: "Knowledge of Language"
+    standard: "Use knowledge of language and its conventions when writing, speaking, reading, or listening; vary sentence patterns for meaning, reader/listener interest, and style"
+    grade: 6
+
+  "L.6.4":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, choosing flexibly from a range of strategies"
+    grade: 6
+
+  "L.6.5":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings"
+    grade: 6
+
+  # ========================================================
+  # GRADE 7 — Reading Literature (RL)
+  # ========================================================
+  "RL.7.1":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Cite several pieces of textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text"
+    grade: 7
+
+  "RL.7.2":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Determine a theme or central idea of a text and analyze its development over the course of the text; provide an objective summary of the text"
+    grade: 7
+
+  "RL.7.3":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Analyze how particular elements of a story or drama interact (e.g., how setting shapes the characters or plot)"
+    grade: 7
+
+  "RL.7.4":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Determine the meaning of words and phrases as they are used in a text, including figurative and connotative meanings; analyze the impact of rhymes and other repetitions of sounds on a specific verse or stanza of a poem or section of a story or drama"
+    grade: 7
+
+  "RL.7.6":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Analyze how an author develops and contrasts the points of view of different characters or narrators in a text"
+    grade: 7
+
+  # ========================================================
+  # GRADE 7 — Reading Informational Text (RI)
+  # ========================================================
+  "RI.7.1":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Cite several pieces of textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text"
+    grade: 7
+
+  "RI.7.2":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Determine two or more central ideas in a text and analyze their development over the course of the text; provide an objective summary of the text"
+    grade: 7
+
+  "RI.7.5":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Analyze the structure an author uses to organize a text, including how the major sections contribute to the whole and to the development of the ideas"
+    grade: 7
+
+  "RI.7.6":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Determine an author's point of view or purpose in a text and analyze how the author distinguishes his or her position from that of others"
+    grade: 7
+
+  "RI.7.8":
+    strand: "Reading Informational Text"
+    cluster: "Integration of Knowledge and Ideas"
+    standard: "Trace and evaluate the argument and specific claims in a text, assessing whether the reasoning is sound and the evidence is relevant and sufficient to support the claims"
+    grade: 7
+
+  # ========================================================
+  # GRADE 7 — Language (L)
+  # ========================================================
+  "L.7.1":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking"
+    grade: 7
+
+  "L.7.3":
+    strand: "Language"
+    cluster: "Knowledge of Language"
+    standard: "Use knowledge of language and its conventions when writing, speaking, reading, or listening; choose language that expresses ideas precisely and concisely, recognizing and eliminating wordiness and redundancy"
+    grade: 7
+
+  "L.7.4":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, choosing flexibly from a range of strategies"
+    grade: 7
+
+  # ========================================================
+  # GRADE 8 — Reading Literature (RL)
+  # ========================================================
+  "RL.8.1":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Cite the textual evidence that most strongly supports an analysis of what the text says explicitly as well as inferences drawn from the text"
+    grade: 8
+
+  "RL.8.2":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Determine a theme or central idea of a text and analyze its development over the course of the text, including its relationship to the characters, setting, and plot; provide an objective summary of the text"
+    grade: 8
+
+  "RL.8.4":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Determine the meaning of words and phrases as they are used in a text, including figurative and connotative meanings; analyze the impact of specific word choices on meaning and tone, including analogies or allusions to other texts"
+    grade: 8
+
+  "RL.8.6":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Analyze how differences in the points of view of the characters and the audience or reader (e.g., created through the use of dramatic irony) create such effects as suspense or humor"
+    grade: 8
+
+  # ========================================================
+  # GRADE 8 — Reading Informational Text (RI)
+  # ========================================================
+  "RI.8.1":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Cite the textual evidence that most strongly supports an analysis of what the text says explicitly as well as inferences drawn from the text"
+    grade: 8
+
+  "RI.8.2":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Determine a central idea of a text and analyze its development over the course of the text, including its relationship to supporting ideas; provide an objective summary of the text"
+    grade: 8
+
+  "RI.8.5":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Analyze in detail the structure of a specific paragraph in a text, including the role of particular sentences in developing and refining a key concept"
+    grade: 8
+
+  "RI.8.6":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Determine an author's point of view or purpose in a text and analyze how the author acknowledges and responds to conflicting evidence or viewpoints"
+    grade: 8
+
+  "RI.8.8":
+    strand: "Reading Informational Text"
+    cluster: "Integration of Knowledge and Ideas"
+    standard: "Delineate and evaluate the argument and specific claims in a text, assessing whether the reasoning is sound and the evidence is relevant and sufficient; recognize when irrelevant evidence is introduced"
+    grade: 8
+
+  # ========================================================
+  # GRADE 8 — Language (L)
+  # ========================================================
+  "L.8.1":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking"
+    grade: 8
+
+  "L.8.2":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing"
+    grade: 8
+
+  "L.8.4":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Determine or clarify the meaning of unknown and multiple-meaning words or phrases based on grade 8 reading and content, choosing flexibly from a range of strategies"
+    grade: 8
+
+  # ========================================================
+  # GRADES 9-10 — Reading Literature (RL)
+  # ========================================================
+  "RL.9-10.1":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text"
+    grade: 9
+
+  "RL.9-10.2":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Determine a theme or central idea of a text and analyze in detail its development over the course of the text, including how it emerges and is shaped and refined by specific details; provide an objective summary of the text"
+    grade: 9
+
+  "RL.9-10.3":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Analyze how complex characters (e.g., those with multiple or conflicting motivations) develop over the course of a text, interact with other characters, and advance the plot or develop the theme"
+    grade: 9
+
+  "RL.9-10.4":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Determine the meaning of words and phrases as they are used in the text, including figurative and connotative meanings; analyze the cumulative impact of specific word choices on meaning and tone"
+    grade: 9
+
+  "RL.9-10.5":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Analyze how an author's choices concerning how to structure a text, order events within it (e.g., parallel plots), and manipulate time (e.g., pacing, flashbacks) create such effects as mystery, tension, or surprise"
+    grade: 9
+
+  "RL.9-10.6":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Analyze a particular point of view or cultural experience reflected in a work of literature from outside the United States, drawing on a wide reading of world literature"
+    grade: 9
+
+  # ========================================================
+  # GRADES 9-10 — Reading Informational Text (RI)
+  # ========================================================
+  "RI.9-10.1":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text"
+    grade: 9
+
+  "RI.9-10.2":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Determine a central idea of a text and analyze its development over the course of the text, including how it emerges and is shaped and refined by specific details; provide an objective summary of the text"
+    grade: 9
+
+  "RI.9-10.5":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Analyze in detail how an author's ideas or claims are developed and refined by particular sentences, paragraphs, or larger portions of a text"
+    grade: 9
+
+  "RI.9-10.6":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Determine an author's point of view or purpose in a text and analyze how an author uses rhetoric to advance that point of view or purpose"
+    grade: 9
+
+  "RI.9-10.8":
+    strand: "Reading Informational Text"
+    cluster: "Integration of Knowledge and Ideas"
+    standard: "Delineate and evaluate the argument and specific claims in a text, assessing whether the reasoning is valid and the evidence is relevant and sufficient; identify false statements and fallacious reasoning"
+    grade: 9
+
+  # ========================================================
+  # GRADES 9-10 — Language (L)
+  # ========================================================
+  "L.9-10.1":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking"
+    grade: 9
+
+  "L.9-10.2":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing; use a semicolon (and perhaps a conjunctive adverb) to link two or more closely related independent clauses; use a colon to introduce a list or quotation"
+    grade: 9
+
+  "L.9-10.3":
+    strand: "Language"
+    cluster: "Knowledge of Language"
+    standard: "Apply knowledge of language to understand how language functions in different contexts, to make effective choices for meaning or style, and to comprehend more fully when reading or listening"
+    grade: 9
+
+  "L.9-10.4":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grades 9-10 reading and content, choosing flexibly from a range of strategies"
+    grade: 9
+
+  "L.9-10.5":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings"
+    grade: 9
+
+  # ========================================================
+  # GRADES 11-12 — Reading Literature (RL)
+  # ========================================================
+  "RL.11-12.1":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain"
+    grade: 11
+
+  "RL.11-12.2":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Determine two or more themes or central ideas of a text and analyze their development over the course of the text, including how they interact and build on one another to produce a complex account; provide an objective summary of the text"
+    grade: 11
+
+  "RL.11-12.3":
+    strand: "Reading Literature"
+    cluster: "Key Ideas and Details"
+    standard: "Analyze the impact of the author's choices regarding how to develop and relate elements of a story or drama (e.g., where a story is set, how the action is ordered, how the characters are introduced and developed)"
+    grade: 11
+
+  "RL.11-12.4":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Determine the meaning of words and phrases as they are used in the text, including figurative and connotative meanings; analyze the impact of specific word choices on meaning and tone, including words with multiple meanings or language that is particularly fresh, engaging, or beautiful"
+    grade: 11
+
+  "RL.11-12.5":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Analyze how an author's choices concerning how to structure specific parts of a text (e.g., the choice of where to begin or end a story, the choice to provide a comedic or tragic resolution) contribute to its overall structure and meaning as well as its aesthetic impact"
+    grade: 11
+
+  "RL.11-12.6":
+    strand: "Reading Literature"
+    cluster: "Craft and Structure"
+    standard: "Analyze a case in which grasping a point of view requires distinguishing what is directly stated in a text from what is really meant (e.g., satire, sarcasm, irony, or understatement)"
+    grade: 11
+
+  # ========================================================
+  # GRADES 11-12 — Reading Informational Text (RI)
+  # ========================================================
+  "RI.11-12.1":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain"
+    grade: 11
+
+  "RI.11-12.2":
+    strand: "Reading Informational Text"
+    cluster: "Key Ideas and Details"
+    standard: "Determine two or more central ideas of a text and analyze their development over the course of the text, including how they interact and build on one another to provide a complex analysis; provide an objective summary of the text"
+    grade: 11
+
+  "RI.11-12.5":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Analyze and evaluate the effectiveness of the structure an author uses in his or her exposition or argument, including whether the structure makes points clear, convincing, and engaging"
+    grade: 11
+
+  "RI.11-12.6":
+    strand: "Reading Informational Text"
+    cluster: "Craft and Structure"
+    standard: "Determine an author's point of view or purpose in a text in which the rhetoric is particularly effective, analyzing how style and content contribute to the power, persuasiveness, or beauty of the text"
+    grade: 11
+
+  # ========================================================
+  # GRADES 11-12 — Language (L)
+  # ========================================================
+  "L.11-12.1":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking"
+    grade: 11
+
+  "L.11-12.2":
+    strand: "Language"
+    cluster: "Conventions of Standard English"
+    standard: "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing; observe hyphenation conventions; spell correctly"
+    grade: 11
+
+  "L.11-12.3":
+    strand: "Language"
+    cluster: "Knowledge of Language"
+    standard: "Apply knowledge of language to understand how language functions in different contexts, to make effective choices for meaning or style, and to comprehend more fully when reading or listening; vary syntax for effect"
+    grade: 11
+
+  "L.11-12.4":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grades 11-12 reading and content, choosing flexibly from a range of strategies"
+    grade: 11
+
+  "L.11-12.5":
+    strand: "Language"
+    cluster: "Vocabulary Acquisition and Use"
+    standard: "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings"
+    grade: 11

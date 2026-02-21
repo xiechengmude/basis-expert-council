@@ -1,0 +1,516 @@
+# ============================================================
+# BASIS Expert Council — Common Misconception Catalog
+# Used for diagnostic tagging of assessment items
+# ============================================================
+
+version: "1.0"
+
+misconceptions:
+
+  # ========================================================
+  # MATH — Fractions
+  # ========================================================
+  - id: "MC-MATH-FRAC-001"
+    subject: math
+    topic: fractions
+    description_en: "Adding fractions by adding numerators and denominators separately"
+    description_zh: "分数加法时分别将分子和分母相加"
+    example: "1/2 + 1/3 = 2/5 (incorrect; correct answer is 5/6)"
+    correction_en: "Find a common denominator before adding. Convert fractions so they share the same denominator, then add only the numerators."
+    correction_zh: "加法前需先通分。将分数转换为同分母分数后，只将分子相加。"
+    grades: [4, 5, 6, 7]
+    severity: critical
+
+  - id: "MC-MATH-FRAC-002"
+    subject: math
+    topic: fractions
+    description_en: "Believing a larger denominator means a larger fraction"
+    description_zh: "认为分母越大分数越大"
+    example: "Thinking 1/8 > 1/4 because 8 > 4"
+    correction_en: "The denominator tells how many equal parts the whole is divided into. More parts means each part is smaller, so 1/8 < 1/4."
+    correction_zh: "分母表示整体被等分的份数。份数越多每份越小，因此 1/8 < 1/4。"
+    grades: [3, 4, 5]
+    severity: critical
+
+  - id: "MC-MATH-FRAC-003"
+    subject: math
+    topic: fractions
+    description_en: "When multiplying fractions, cross-multiplying instead of multiplying straight across"
+    description_zh: "分数乘法时交叉相乘而非直接相乘"
+    example: "2/3 x 4/5 calculated as (2x5)/(3x4) = 10/12 instead of (2x4)/(3x5) = 8/15"
+    correction_en: "Multiply numerator by numerator and denominator by denominator. Cross-multiplication is used for solving proportions, not for fraction multiplication."
+    correction_zh: "分子乘分子，分母乘分母。交叉相乘用于解比例式，不用于分数乘法。"
+    grades: [5, 6, 7]
+    severity: moderate
+
+  # ========================================================
+  # MATH — Decimals
+  # ========================================================
+  - id: "MC-MATH-DEC-001"
+    subject: math
+    topic: decimals
+    description_en: "Treating decimal digits like whole numbers when comparing (longer decimal = larger number)"
+    description_zh: "比较小数时将小数位视为整数（小数位数多则更大）"
+    example: "Thinking 0.125 > 0.3 because 125 > 3"
+    correction_en: "Compare decimals by aligning place values. 0.3 = 0.300, which is greater than 0.125. Annexing zeros helps show the correct comparison."
+    correction_zh: "比较小数时应按位对齐。0.3 = 0.300，大于 0.125。补零后更容易正确比较。"
+    grades: [4, 5, 6]
+    severity: critical
+
+  - id: "MC-MATH-DEC-002"
+    subject: math
+    topic: decimals
+    description_en: "Misplacing the decimal point when multiplying decimals"
+    description_zh: "小数乘法时小数点位置错误"
+    example: "0.3 x 0.2 = 0.6 instead of 0.06"
+    correction_en: "Count the total number of decimal places in both factors. The product must have that many decimal places. 0.3 (1 place) x 0.2 (1 place) = 0.06 (2 places)."
+    correction_zh: "计算两个因数的小数位数之和。积的小数位数应等于该总和。0.3（1位）x 0.2（1位）= 0.06（2位）。"
+    grades: [5, 6, 7]
+    severity: moderate
+
+  # ========================================================
+  # MATH — Percentages
+  # ========================================================
+  - id: "MC-MATH-PCT-001"
+    subject: math
+    topic: percentages
+    description_en: "Adding percentages of different bases as if they share the same base"
+    description_zh: "将不同基数的百分比直接相加"
+    example: "A price increases 10% then decreases 10% and the student claims the price is unchanged. Actually: 100 -> 110 -> 99."
+    correction_en: "Percentages must always be calculated on their respective bases. A 10% increase followed by a 10% decrease yields a net 1% decrease."
+    correction_zh: "百分比必须基于各自的基数计算。先涨10%再降10%，实际净减1%。"
+    grades: [6, 7, 8]
+    severity: moderate
+
+  - id: "MC-MATH-PCT-002"
+    subject: math
+    topic: percentages
+    description_en: "Confusing percentage of with percentage increase/decrease"
+    description_zh: "混淆「百分之几」与「增加/减少百分之几」"
+    example: "If 40 is 80% of 50, student says 40 is '80% more than 50' or '80% increase from 50'"
+    correction_en: "Distinguish 'A is X% of B' (A = X/100 * B) from 'A is X% more than B' (A = B + X/100 * B). The phrasing determines the calculation."
+    correction_zh: "区分'A是B的X%'（A = X/100 * B）和'A比B多X%'（A = B + X/100 * B）。措辞决定计算方式。"
+    grades: [6, 7, 8]
+    severity: moderate
+
+  # ========================================================
+  # MATH — Ratios & Proportions
+  # ========================================================
+  - id: "MC-MATH-RATIO-001"
+    subject: math
+    topic: ratios
+    description_en: "Using additive reasoning instead of multiplicative reasoning for proportions"
+    description_zh: "比例问题中使用加法推理代替乘法推理"
+    example: "If 2 pencils cost $3, then 4 pencils cost $5 (adding 2 to both) instead of $6 (doubling)"
+    correction_en: "Proportional relationships are multiplicative, not additive. If the quantity doubles, the cost doubles. Use cross-multiplication or unit rate to solve."
+    correction_zh: "比例关系是乘法关系而非加法关系。如果数量翻倍，费用也翻倍。使用交叉相乘或单位率求解。"
+    grades: [5, 6, 7]
+    severity: critical
+
+  - id: "MC-MATH-RATIO-002"
+    subject: math
+    topic: ratios
+    description_en: "Confusing part-to-part ratio with part-to-whole ratio"
+    description_zh: "混淆部分与部分之比和部分与整体之比"
+    example: "If boys to girls is 3:2, student says 3/5 are boys but writes the ratio of boys to total as 3:2 instead of 3:5"
+    correction_en: "A part-to-part ratio (3:2) compares two groups. To find part-to-whole, add the parts: boys are 3 out of (3+2) = 3/5 or 3:5."
+    correction_zh: "部分与部分之比（3:2）比较两组。求部分与整体之比需将各部分相加：男生占 3/(3+2) = 3/5 即 3:5。"
+    grades: [6, 7, 8]
+    severity: moderate
+
+  # ========================================================
+  # MATH — Negative Numbers
+  # ========================================================
+  - id: "MC-MATH-NEG-001"
+    subject: math
+    topic: negative_numbers
+    description_en: "Subtracting a negative number by subtracting its absolute value instead of adding"
+    description_zh: "减去负数时减去其绝对值而非加上"
+    example: "5 - (-3) = 2 instead of 8"
+    correction_en: "Subtracting a negative is the same as adding the positive: 5 - (-3) = 5 + 3 = 8. Think of removing a debt as gaining money."
+    correction_zh: "减去负数等于加上正数：5 - (-3) = 5 + 3 = 8。可以理解为消除一笔债务等于增加收入。"
+    grades: [6, 7, 8]
+    severity: critical
+
+  - id: "MC-MATH-NEG-002"
+    subject: math
+    topic: negative_numbers
+    description_en: "Believing that multiplying two negative numbers gives a negative result"
+    description_zh: "认为两个负数相乘结果为负"
+    example: "(-3) x (-4) = -12 instead of 12"
+    correction_en: "The product of two negative numbers is positive. Think of 'negative times negative' as reversing a reversal, returning to the positive direction."
+    correction_zh: "两个负数相乘结果为正。可以理解为「负负得正」，两次取反回到正方向。"
+    grades: [6, 7, 8]
+    severity: critical
+
+  # ========================================================
+  # MATH — Order of Operations
+  # ========================================================
+  - id: "MC-MATH-OOO-001"
+    subject: math
+    topic: order_of_operations
+    description_en: "Performing addition before multiplication (left-to-right without respecting operation precedence)"
+    description_zh: "先做加法再做乘法（从左到右但不遵守运算优先级）"
+    example: "3 + 4 x 2 = 14 instead of 11"
+    correction_en: "Follow PEMDAS/BODMAS: Parentheses, Exponents, Multiplication/Division (left to right), Addition/Subtraction (left to right). Multiply before adding."
+    correction_zh: "遵循运算顺序：括号、指数、乘除（从左到右）、加减（从左到右）。先乘后加。"
+    grades: [4, 5, 6, 7]
+    severity: critical
+
+  - id: "MC-MATH-OOO-002"
+    subject: math
+    topic: order_of_operations
+    description_en: "Always performing multiplication before division regardless of left-to-right order"
+    description_zh: "无论从左到右的顺序如何，总是先做乘法再做除法"
+    example: "8 / 2 x 4 = 1 (doing 2x4 first = 8, then 8/8 = 1) instead of 16 (8/2 = 4, 4x4 = 16)"
+    correction_en: "Multiplication and division have equal precedence and should be performed left to right. 8 / 2 x 4 = 4 x 4 = 16."
+    correction_zh: "乘法和除法优先级相同，应从左到右计算。8 / 2 x 4 = 4 x 4 = 16。"
+    grades: [5, 6, 7]
+    severity: moderate
+
+  # ========================================================
+  # MATH — Algebraic Expressions & Equations
+  # ========================================================
+  - id: "MC-MATH-ALG-001"
+    subject: math
+    topic: algebraic_expressions
+    description_en: "Distributing only to the first term inside parentheses"
+    description_zh: "分配律只分配到括号内的第一项"
+    example: "3(x + 4) = 3x + 4 instead of 3x + 12"
+    correction_en: "The distributive property requires multiplying the factor by every term inside the parentheses: 3(x + 4) = 3x + 12."
+    correction_zh: "分配律要求将因数乘以括号内的每一项：3(x + 4) = 3x + 12。"
+    grades: [6, 7, 8, 9]
+    severity: critical
+
+  - id: "MC-MATH-ALG-002"
+    subject: math
+    topic: algebraic_expressions
+    description_en: "Combining unlike terms as if they were like terms"
+    description_zh: "将不同类项当作同类项合并"
+    example: "3x + 5y = 8xy or 3x + 5 = 8x"
+    correction_en: "Only terms with the same variable(s) raised to the same power can be combined. 3x and 5y are unlike terms and cannot be combined."
+    correction_zh: "只有含相同变量且指数相同的项才能合并。3x 和 5y 是不同类项，不能合并。"
+    grades: [6, 7, 8, 9]
+    severity: critical
+
+  - id: "MC-MATH-ALG-003"
+    subject: math
+    topic: equations
+    description_en: "Moving a term to the other side of an equation without changing its sign"
+    description_zh: "移项时不变号"
+    example: "x + 5 = 12 becomes x = 12 + 5 = 17 instead of x = 12 - 5 = 7"
+    correction_en: "When a term moves to the other side of an equation, its operation reverses: addition becomes subtraction, multiplication becomes division."
+    correction_zh: "移项时运算符号取反：加变减，乘变除。x + 5 = 12 → x = 12 - 5 = 7。"
+    grades: [6, 7, 8]
+    severity: critical
+
+  - id: "MC-MATH-ALG-004"
+    subject: math
+    topic: equations
+    description_en: "Squaring a binomial by squaring each term individually"
+    description_zh: "将二项式的平方等于各项平方之和"
+    example: "(x + 3)^2 = x^2 + 9 instead of x^2 + 6x + 9"
+    correction_en: "Use the formula (a + b)^2 = a^2 + 2ab + b^2. The middle term 2ab must not be omitted."
+    correction_zh: "使用公式 (a + b)^2 = a^2 + 2ab + b^2。中间项 2ab 不可省略。"
+    grades: [8, 9, 10]
+    severity: critical
+
+  # ========================================================
+  # MATH — Geometry
+  # ========================================================
+  - id: "MC-MATH-GEO-001"
+    subject: math
+    topic: geometry
+    description_en: "Confusing area and perimeter formulas or concepts"
+    description_zh: "混淆面积和周长的公式或概念"
+    example: "Calculating the perimeter of a rectangle as length x width instead of 2(length + width)"
+    correction_en: "Perimeter is the total distance around a shape (sum of all sides). Area is the space inside a shape (for rectangles: length x width). Use units to check: perimeter is in linear units, area is in square units."
+    correction_zh: "周长是图形所有边长之和。面积是图形内部的空间大小（矩形面积 = 长 x 宽）。通过单位检验：周长是线性单位，面积是平方单位。"
+    grades: [4, 5, 6, 7]
+    severity: moderate
+
+  - id: "MC-MATH-GEO-002"
+    subject: math
+    topic: geometry
+    description_en: "Assuming all angles in a triangle can be any value without the 180-degree constraint"
+    description_zh: "认为三角形的角度可以是任意值，不受180度约束"
+    example: "Drawing a triangle with angles 90, 60, and 50 degrees (sum = 200)"
+    correction_en: "The interior angles of any triangle always sum to exactly 180 degrees. If two angles are known, the third can be found by subtraction."
+    correction_zh: "任何三角形的内角和恒为180度。已知两个角即可通过减法求第三个角。"
+    grades: [5, 6, 7, 8]
+    severity: moderate
+
+  - id: "MC-MATH-GEO-003"
+    subject: math
+    topic: geometry
+    description_en: "Applying the Pythagorean Theorem to non-right triangles"
+    description_zh: "将勾股定理应用于非直角三角形"
+    example: "In a triangle with sides 5, 7, and 9, claiming 5^2 + 7^2 = 9^2"
+    correction_en: "The Pythagorean Theorem (a^2 + b^2 = c^2) applies only to right triangles. For non-right triangles, use the Law of Cosines."
+    correction_zh: "勾股定理（a^2 + b^2 = c^2）仅适用于直角三角形。非直角三角形需使用余弦定理。"
+    grades: [7, 8, 9, 10]
+    severity: moderate
+
+  # ========================================================
+  # MATH — Statistics & Probability
+  # ========================================================
+  - id: "MC-MATH-STAT-001"
+    subject: math
+    topic: statistics
+    description_en: "Confusing mean, median, and mode"
+    description_zh: "混淆平均数、中位数和众数"
+    example: "For {2, 3, 3, 5, 7}, calculating the median as (2+3+3+5+7)/5 = 4 instead of 3"
+    correction_en: "Mean = sum of values / count. Median = middle value when data is ordered. Mode = most frequent value. Each measures center differently."
+    correction_zh: "平均数 = 总和/个数。中位数 = 数据排序后的中间值。众数 = 出现次数最多的值。三者衡量集中趋势的方式不同。"
+    grades: [5, 6, 7, 8]
+    severity: moderate
+
+  - id: "MC-MATH-STAT-002"
+    subject: math
+    topic: statistics
+    description_en: "Believing that probability of independent events is affected by previous outcomes (gambler's fallacy)"
+    description_zh: "认为独立事件的概率受先前结果影响（赌徒谬误）"
+    example: "After flipping heads 5 times, claiming tails is 'due' and more likely on the next flip"
+    correction_en: "Each flip of a fair coin is independent. The probability of heads or tails remains 1/2 regardless of previous outcomes."
+    correction_zh: "公平硬币的每次抛掷都是独立的。无论之前的结果如何，正面或反面的概率始终为1/2。"
+    grades: [7, 8, 9, 10]
+    severity: moderate
+
+  # ========================================================
+  # ENGLISH — Main Idea vs. Detail
+  # ========================================================
+  - id: "MC-ENG-MAIN-001"
+    subject: english
+    topic: main_idea
+    description_en: "Selecting an interesting detail or supporting fact as the main idea instead of the central argument or theme"
+    description_zh: "将有趣的细节或支持性事实选为主旨，而非中心论点或主题"
+    example: "In an article about ocean pollution, choosing 'Sea turtles eat plastic bags' as the main idea instead of 'Ocean pollution threatens marine ecosystems'"
+    correction_en: "The main idea is the overarching message that all details support. Ask: What is the author's primary point that all other sentences revolve around?"
+    correction_zh: "主旨是所有细节共同支持的核心信息。思考：作者所有其他句子围绕的核心观点是什么？"
+    grades: [5, 6, 7, 8]
+    severity: critical
+
+  - id: "MC-ENG-MAIN-002"
+    subject: english
+    topic: main_idea
+    description_en: "Confusing the topic of a passage with its main idea"
+    description_zh: "混淆文章的话题与主旨"
+    example: "Saying the main idea of an article is 'renewable energy' (topic) instead of 'Renewable energy sources are essential for reducing carbon emissions' (main idea)"
+    correction_en: "The topic is what the passage is about (one or two words). The main idea is the specific claim or message the author makes about the topic (a complete sentence)."
+    correction_zh: "话题是文章讨论的对象（一两个词）。主旨是作者关于该话题提出的具体观点或信息（完整的句子）。"
+    grades: [5, 6, 7]
+    severity: moderate
+
+  # ========================================================
+  # ENGLISH — Inference vs. Explicit Information
+  # ========================================================
+  - id: "MC-ENG-INF-001"
+    subject: english
+    topic: inference
+    description_en: "Treating personal opinions or outside knowledge as valid inferences from the text"
+    description_zh: "将个人观点或外部知识视为基于文本的有效推断"
+    example: "After reading about a character who is quiet, inferring 'she is shy' without textual support, when the text provides no evidence for shyness"
+    correction_en: "Valid inferences must be supported by evidence in the text. Ask: What clues in the passage lead me to this conclusion? Can I point to specific words or sentences?"
+    correction_zh: "有效推断必须有文本证据支持。思考：文章中哪些线索支持我的结论？能否指出具体的词句？"
+    grades: [5, 6, 7, 8]
+    severity: critical
+
+  - id: "MC-ENG-INF-002"
+    subject: english
+    topic: inference
+    description_en: "Confusing explicit information with inference — selecting a directly stated fact when asked for an inference"
+    description_zh: "混淆明确信息与推断——当被要求推断时选择了直接陈述的事实"
+    example: "When asked 'What can you infer about the character?', choosing an answer that is directly stated in the text rather than something implied"
+    correction_en: "An inference is something not directly stated but implied by the evidence. Explicit information is stated word-for-word in the text. An inference requires 'reading between the lines.'"
+    correction_zh: "推断是未直接陈述但由证据暗示的内容。明确信息是文本中逐字陈述的内容。推断需要「读出言外之意」。"
+    grades: [5, 6, 7, 8]
+    severity: moderate
+
+  # ========================================================
+  # ENGLISH — Author's Purpose
+  # ========================================================
+  - id: "MC-ENG-PURP-001"
+    subject: english
+    topic: authors_purpose
+    description_en: "Defaulting to 'to inform' for every nonfiction text without considering persuasion or entertainment"
+    description_zh: "对所有非虚构文本都默认为「提供信息」，未考虑说服或娱乐目的"
+    example: "Labeling an editorial arguing for climate action as 'to inform' instead of 'to persuade'"
+    correction_en: "Consider the author's use of language: loaded words and calls to action suggest persuasion; facts and explanations suggest informing; humor and engaging narratives suggest entertaining."
+    correction_zh: "注意作者的用语：带感情色彩的词汇和行动号召暗示说服目的；事实和解释暗示提供信息；幽默和引人入胜的叙事暗示娱乐目的。"
+    grades: [5, 6, 7, 8]
+    severity: moderate
+
+  # ========================================================
+  # ENGLISH — Vocabulary in Context
+  # ========================================================
+  - id: "MC-ENG-VOCAB-001"
+    subject: english
+    topic: vocabulary_in_context
+    description_en: "Selecting the most common dictionary definition of a word rather than the meaning used in context"
+    description_zh: "选择词语最常见的词典释义而非上下文中的实际含义"
+    example: "In 'The company decided to table the discussion,' choosing 'a piece of furniture' instead of 'to postpone'"
+    correction_en: "Many words have multiple meanings. Substitute each answer choice into the sentence to see which makes the most sense in context."
+    correction_zh: "许多词有多个含义。将每个选项代入句中，看哪个在上下文中最合理。"
+    grades: [5, 6, 7, 8, 9]
+    severity: moderate
+
+  - id: "MC-ENG-VOCAB-002"
+    subject: english
+    topic: vocabulary_in_context
+    description_en: "Ignoring context clues and guessing word meaning from word parts alone, leading to incorrect interpretation"
+    description_zh: "忽略上下文线索，仅凭词根词缀猜测词义导致理解错误"
+    example: "Interpreting 'invaluable' as 'not valuable' based on the prefix 'in-' meaning 'not'"
+    correction_en: "While word parts (prefixes, roots, suffixes) provide clues, always verify the meaning against the surrounding context. 'Invaluable' means 'extremely valuable,' not 'not valuable.'"
+    correction_zh: "虽然词根词缀提供线索，但必须结合上下文验证。'Invaluable' 意为「极有价值」，而非「无价值」。"
+    grades: [6, 7, 8, 9]
+    severity: minor
+
+  # ========================================================
+  # ENGLISH — Text Structure
+  # ========================================================
+  - id: "MC-ENG-STRUCT-001"
+    subject: english
+    topic: text_structure
+    description_en: "Identifying text structure based on a single sentence rather than the overall organization of the passage"
+    description_zh: "根据单个句子而非整篇文章的组织结构来判断文本结构"
+    example: "Seeing one comparison sentence and labeling the whole passage as 'compare and contrast' when it is actually 'cause and effect'"
+    correction_en: "Look at the dominant organizational pattern across the entire passage, not just one sentence. Signal words help: 'because/therefore' = cause-effect, 'similarly/however' = compare-contrast, '1st/next/finally' = sequence."
+    correction_zh: "观察整篇文章的主导组织模式，而非仅看一个句子。关注信号词：'因为/因此' = 因果关系，'同样/然而' = 比较对比，'首先/接下来/最后' = 顺序。"
+    grades: [5, 6, 7, 8]
+    severity: moderate
+
+  # ========================================================
+  # ENGLISH — Grammar (Subject-Verb Agreement)
+  # ========================================================
+  - id: "MC-ENG-GRAM-001"
+    subject: english
+    topic: grammar
+    description_en: "Making the verb agree with the nearest noun rather than the actual subject"
+    description_zh: "动词与最近的名词而非真正的主语保持一致"
+    example: "'The box of chocolates are on the table' instead of 'The box of chocolates is on the table'"
+    correction_en: "Identify the true subject of the sentence. In 'The box of chocolates,' the subject is 'box' (singular), not 'chocolates.' Ignore prepositional phrases between the subject and verb."
+    correction_zh: "找出句子的真正主语。在'The box of chocolates'中，主语是'box'（单数），不是'chocolates'。忽略主语和动词之间的介词短语。"
+    grades: [5, 6, 7, 8, 9]
+    severity: critical
+
+  - id: "MC-ENG-GRAM-002"
+    subject: english
+    topic: grammar
+    description_en: "Using 'they/their' with singular indefinite pronouns"
+    description_zh: "将'they/their'与单数不定代词搭配使用"
+    example: "'Everyone should bring their book' — traditionally, indefinite pronouns like 'everyone' take singular verbs/pronouns"
+    correction_en: "In formal/standard English tested on assessments, indefinite pronouns (everyone, someone, each, nobody) are grammatically singular and take singular verbs and pronouns: 'Everyone should bring his or her book.'"
+    correction_zh: "在考试考查的正式标准英语中，不定代词（everyone, someone, each, nobody）语法上是单数，搭配单数动词和代词。"
+    grades: [6, 7, 8, 9, 10]
+    severity: minor
+
+  # ========================================================
+  # ENGLISH — Grammar (Tense)
+  # ========================================================
+  - id: "MC-ENG-TENSE-001"
+    subject: english
+    topic: grammar
+    description_en: "Shifting verb tenses inconsistently within a paragraph or passage"
+    description_zh: "在段落中不一致地切换动词时态"
+    example: "'She walked to the store and buys some milk' — shifting from past to present tense mid-sentence"
+    correction_en: "Maintain consistent tense throughout a passage unless there is a clear reason to shift (e.g., moving from narrating past events to stating a general truth). Match new verbs to the established tense."
+    correction_zh: "在整个段落中保持时态一致，除非有明确的理由需要切换（如从叙述过去事件转为陈述普遍事实）。新动词应与已确立的时态匹配。"
+    grades: [5, 6, 7, 8]
+    severity: moderate
+
+  - id: "MC-ENG-TENSE-002"
+    subject: english
+    topic: grammar
+    description_en: "Confusing past tense with past participle forms for irregular verbs"
+    description_zh: "混淆不规则动词的过去式与过去分词"
+    example: "'I have went to the store' instead of 'I have gone to the store'; 'She had ran the race' instead of 'She had run the race'"
+    correction_en: "Irregular verbs have distinct past tense and past participle forms. Past participles are used with helping verbs (have, has, had). Memorize common irregular verb forms: go/went/gone, run/ran/run, see/saw/seen."
+    correction_zh: "不规则动词的过去式和过去分词形式不同。过去分词与助动词（have, has, had）搭配使用。记住常见不规则动词：go/went/gone, run/ran/run, see/saw/seen。"
+    grades: [5, 6, 7, 8]
+    severity: moderate
+
+  # ========================================================
+  # ENGLISH — Punctuation
+  # ========================================================
+  - id: "MC-ENG-PUNCT-001"
+    subject: english
+    topic: punctuation
+    description_en: "Using a comma to join two independent clauses without a conjunction (comma splice)"
+    description_zh: "用逗号连接两个独立分句而不用连词（逗号拼接）"
+    example: "'I went to the park, it was a beautiful day' instead of 'I went to the park, and it was a beautiful day' or 'I went to the park; it was a beautiful day'"
+    correction_en: "Two independent clauses need either (1) a comma + coordinating conjunction (FANBOYS), (2) a semicolon, or (3) a period. A comma alone creates a comma splice."
+    correction_zh: "两个独立分句需要：(1) 逗号 + 并列连词（for/and/nor/but/or/yet/so），(2) 分号，或 (3) 句号。仅用逗号会造成逗号拼接错误。"
+    grades: [6, 7, 8, 9, 10]
+    severity: critical
+
+  - id: "MC-ENG-PUNCT-002"
+    subject: english
+    topic: punctuation
+    description_en: "Misusing apostrophes — confusing possessives with plurals"
+    description_zh: "撇号使用错误——混淆所有格与复数"
+    example: "'The dog's are playing' (incorrect plural) instead of 'The dogs are playing'; or 'The dogs bone' (missing possessive) instead of 'The dog's bone'"
+    correction_en: "Apostrophes show possession (the dog's bone) or contractions (it's = it is). Never use apostrophes to form regular plurals (dogs, cats, books)."
+    correction_zh: "撇号表示所有格（the dog's bone）或缩写（it's = it is）。不要用撇号构成常规复数（dogs, cats, books）。"
+    grades: [5, 6, 7, 8]
+    severity: moderate
+
+  - id: "MC-ENG-PUNCT-003"
+    subject: english
+    topic: punctuation
+    description_en: "Confusing its (possessive) with it's (contraction)"
+    description_zh: "混淆 its（所有格）与 it's（缩写）"
+    example: "'The cat licked it's paw' instead of 'The cat licked its paw'; 'Its a sunny day' instead of 'It's a sunny day'"
+    correction_en: "'It's' always means 'it is' or 'it has.' 'Its' (no apostrophe) is the possessive form. Test by expanding: 'The cat licked it is paw' makes no sense, so use 'its.'"
+    correction_zh: "'It's' 总是表示 'it is' 或 'it has'。'Its'（无撇号）是所有格形式。通过展开测试：'The cat licked it is paw' 不通顺，所以用 'its'。"
+    grades: [5, 6, 7, 8, 9]
+    severity: moderate
+
+  # ========================================================
+  # MATH — Exponents & Roots (additional)
+  # ========================================================
+  - id: "MC-MATH-EXP-001"
+    subject: math
+    topic: exponents
+    description_en: "Multiplying the base by the exponent instead of using repeated multiplication"
+    description_zh: "将底数乘以指数而非使用重复乘法"
+    example: "2^5 = 10 instead of 32"
+    correction_en: "An exponent indicates how many times the base is multiplied by itself. 2^5 = 2 x 2 x 2 x 2 x 2 = 32, not 2 x 5 = 10."
+    correction_zh: "指数表示底数自乘的次数。2^5 = 2 x 2 x 2 x 2 x 2 = 32，而非 2 x 5 = 10。"
+    grades: [5, 6, 7]
+    severity: critical
+
+  - id: "MC-MATH-EXP-002"
+    subject: math
+    topic: exponents
+    description_en: "Adding exponents when multiplying bases that are different"
+    description_zh: "不同底数相乘时将指数相加"
+    example: "2^3 x 3^2 = 6^5 instead of 8 x 9 = 72"
+    correction_en: "The rule a^m x a^n = a^(m+n) only applies when the bases are the same. For different bases, evaluate each power separately and then multiply: 2^3 = 8, 3^2 = 9, 8 x 9 = 72."
+    correction_zh: "规则 a^m x a^n = a^(m+n) 仅在底数相同时适用。底数不同时，需分别计算各幂然后相乘：2^3 = 8, 3^2 = 9, 8 x 9 = 72。"
+    grades: [7, 8, 9]
+    severity: moderate
+
+  # ========================================================
+  # MATH — Functions (additional)
+  # ========================================================
+  - id: "MC-MATH-FUNC-001"
+    subject: math
+    topic: functions
+    description_en: "Treating f(x+a) as f(x) + f(a) — incorrectly distributing the function"
+    description_zh: "将 f(x+a) 当作 f(x) + f(a)——错误地将函数分配"
+    example: "If f(x) = x^2, claiming f(3+2) = f(3) + f(2) = 9 + 4 = 13 instead of f(5) = 25"
+    correction_en: "Functions are not generally linear. f(x + a) does NOT equal f(x) + f(a) unless the function has that specific property. Always substitute the entire input into the function rule."
+    correction_zh: "函数一般不是线性的。f(x + a) 不等于 f(x) + f(a)，除非函数具有该特殊性质。应将完整输入代入函数表达式。"
+    grades: [8, 9, 10]
+    severity: critical
+
+  - id: "MC-MATH-FUNC-002"
+    subject: math
+    topic: functions
+    description_en: "Confusing slope with y-intercept when reading the equation y = mx + b"
+    description_zh: "在方程 y = mx + b 中混淆斜率与 y 截距"
+    example: "In y = 3x + 7, saying the slope is 7 and the y-intercept is 3"
+    correction_en: "In the slope-intercept form y = mx + b, m is the slope (rate of change) and b is the y-intercept (starting value when x = 0). In y = 3x + 7, slope = 3, y-intercept = 7."
+    correction_zh: "在斜截式 y = mx + b 中，m 是斜率（变化率），b 是 y 截距（x = 0 时的值）。在 y = 3x + 7 中，斜率 = 3，y 截距 = 7。"
+    grades: [7, 8, 9]
+    severity: moderate
