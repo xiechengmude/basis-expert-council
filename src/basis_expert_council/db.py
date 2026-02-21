@@ -66,7 +66,7 @@ class SubscriptionStatus(str, Enum):
 
 PLAN_LIMITS: dict[str, dict[str, Any]] = {
     PlanTier.FREE: {
-        "daily_messages": 5,
+        "daily_messages": 30,
         "allowed_agents": ["math-expert", "science-expert"],
         "reports_per_month": 0,
         "priority": False,
