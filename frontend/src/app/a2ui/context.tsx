@@ -8,6 +8,8 @@ export interface A2UIContextValue {
   processor: A2UIProcessor;
   surfaceId: string;
   dispatch: (action: UserAction) => void;
+  /** 数据模型变更后调用，触发 Surface 级重渲染 */
+  forceUpdate: () => void;
 }
 
 export const A2UIContext = createContext<A2UIContextValue | null>(null);

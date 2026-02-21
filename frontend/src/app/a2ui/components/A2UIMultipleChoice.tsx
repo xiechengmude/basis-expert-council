@@ -1,50 +1,56 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import type { MultipleChoiceNode } from "../types";
 import { useA2UI } from "../context";
 
 export const A2UIMultipleChoice: React.FC<{ node: MultipleChoiceNode }> = ({
   node,
 }) => {
-  const { processor, surfaceId } = useA2UI();
+  const { processor, surfaceId, forceUpdate } = useA2UI();
   const { selections, options, maxAllowedSelections } = node.properties;
   const isSingle = (maxAllowedSelections ?? 1) === 1;
 
-  // Resolve current selections
-  let selected: string[] = [];
-  if (selections?.literalArray) {
-    selected = selections.literalArray;
-  } else if (selections?.path) {
-    const resolved = processor.getData(
-      surfaceId,
-      processor.resolvePath(selections.path, node.dataContextPath)
-    );
-    if (Array.isArray(resolved)) {
-      selected = resolved.filter((v): v is string => typeof v === "string");
-    } else if (typeof resolved === "string") {
-      selected = resolved ? [resolved] : [];
+  // Local state as primary source of truth for selections
+  const [localSelected, setLocalSelected] = useState<string[]>(() => {
+    if (selections?.literalArray) return selections.literalArray;
+    if (selections?.path) {
+      const resolved = processor.getData(
+        surfaceId,
+        processor.resolvePath(selections.path, node.dataContextPath)
+      );
+      if (Array.isArray(resolved))
+        return resolved.filter((v): v is string => typeof v === "string");
+      if (typeof resolved === "string") return resolved ? [resolved] : [];
     }
-  }
+    return [];
+  });
+
+  const selected = localSelected;
 
   const handleSelect = useCallback(
     (value: string) => {
-      if (!selections?.path) return;
-      const fullPath = processor.resolvePath(
-        selections.path,
-        node.dataContextPath
-      );
-
+      let newSelected: string[];
       if (isSingle) {
-        processor.setData(surfaceId, fullPath, value);
+        newSelected = [value];
       } else {
-        const newSelections = selected.includes(value)
+        newSelected = selected.includes(value)
           ? selected.filter((v) => v !== value)
           : [...selected, value];
-        processor.setData(surfaceId, fullPath, newSelections);
       }
+      setLocalSelected(newSelected);
+
+      // Sync to processor data model
+      if (selections?.path) {
+        const fullPath = processor.resolvePath(
+          selections.path,
+          node.dataContextPath
+        );
+        processor.setData(surfaceId, fullPath, isSingle ? value : newSelected);
+      }
+      forceUpdate();
     },
-    [processor, surfaceId, selections, node.dataContextPath, isSingle, selected]
+    [processor, surfaceId, selections, node.dataContextPath, isSingle, selected, forceUpdate]
   );
 
   if (!options || options.length === 0) return null;

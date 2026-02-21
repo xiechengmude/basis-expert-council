@@ -58,7 +58,7 @@ export const A2UISurface: React.FC<A2UISurfaceProps> = ({ jsonl, onAction }) => 
         return (
           <A2UIContext.Provider
             key={surface.id}
-            value={{ processor, surfaceId: surface.id, dispatch }}
+            value={{ processor, surfaceId: surface.id, dispatch, forceUpdate }}
           >
             <div className="my-2 w-full">
               <A2UIRoot node={surface.componentTree} />
