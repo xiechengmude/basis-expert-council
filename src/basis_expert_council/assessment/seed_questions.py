@@ -650,14 +650,29 @@ async def seed_question_bank() -> None:
             logger.info(f"Question bank already has {count} questions, skipping seed")
             return
 
-    # Prefer the bilingual seed source (48 questions, G5-G8)
+    # Prefer the bilingual seed sources (G5-G8)
+    total_inserted = 0
     try:
         from ..seed_questions_math import ALL_MATH_QUESTIONS
         inserted = await db.bulk_insert_questions(ALL_MATH_QUESTIONS)
+        total_inserted += inserted
         logger.info(f"Seeded {inserted} bilingual math questions (G5-G8)")
-        return
     except Exception as e:
-        logger.warning(f"Bilingual seed unavailable ({e}), using local G6-G7 seed")
+        logger.warning(f"Bilingual math seed unavailable ({e})")
+
+    try:
+        from ..seed_questions_english import ALL_ENGLISH_QUESTIONS
+        inserted = await db.bulk_insert_questions(ALL_ENGLISH_QUESTIONS)
+        total_inserted += inserted
+        logger.info(f"Seeded {inserted} bilingual English questions (G5-G8)")
+    except Exception as e:
+        logger.warning(f"Bilingual English seed unavailable ({e})")
+
+    if total_inserted > 0:
+        logger.info(f"Total seeded: {total_inserted} questions")
+        return
+
+    logger.warning("No bilingual seeds available, using local G6-G7 fallback")
 
     # Fallback: use local SEED_QUESTIONS (English only)
     rows = []
