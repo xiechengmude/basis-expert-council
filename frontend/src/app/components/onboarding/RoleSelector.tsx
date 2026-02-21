@@ -9,6 +9,7 @@ type Role = "student" | "parent" | "teacher";
 
 interface RoleSelectorProps {
   onSelect: (role: Role) => void;
+  defaultRole?: Role;
 }
 
 const ROLES: {
@@ -49,9 +50,9 @@ const ROLES: {
   },
 ];
 
-export function RoleSelector({ onSelect }: RoleSelectorProps) {
+export function RoleSelector({ onSelect, defaultRole }: RoleSelectorProps) {
   const { t } = useI18n();
-  const [selected, setSelected] = useState<Role | null>(null);
+  const [selected, setSelected] = useState<Role | null>(defaultRole ?? null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 

@@ -14,9 +14,20 @@ import { fetchWithAuth } from "@/app/hooks/useUser";
 import { StepIndicator } from "./StepIndicator";
 import { useI18n } from "@/i18n";
 
+export interface StudentProfileData {
+  school_name?: string;
+  grade?: string;
+  enrollment_year?: number;
+  ap_courses?: string[];
+  current_gpa?: number;
+  weak_subjects?: string[];
+  strong_subjects?: string[];
+}
+
 interface StudentProfileFormProps {
   onComplete: () => void;
   onBack: () => void;
+  initialData?: StudentProfileData | null;
 }
 
 const BASIS_SCHOOLS = [
@@ -78,7 +89,7 @@ const SUBJECT_KEYS = [
   "subject.chinese", "subject.spanish", "subject.french", "subject.music", "subject.art",
 ];
 
-export function StudentProfileForm({ onComplete, onBack }: StudentProfileFormProps) {
+export function StudentProfileForm({ onComplete, onBack, initialData }: StudentProfileFormProps) {
   const { t } = useI18n();
   const [subStep, setSubStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
@@ -87,17 +98,17 @@ export function StudentProfileForm({ onComplete, onBack }: StudentProfileFormPro
   const SUB_STEPS = [t("student.step.school"), t("student.step.courses"), t("student.step.preferences")];
 
   // Step 1: School info
-  const [schoolName, setSchoolName] = useState("");
-  const [grade, setGrade] = useState("");
-  const [enrollmentYear, setEnrollmentYear] = useState<number | "">("");
+  const [schoolName, setSchoolName] = useState(initialData?.school_name ?? "");
+  const [grade, setGrade] = useState(initialData?.grade ?? "");
+  const [enrollmentYear, setEnrollmentYear] = useState<number | "">(initialData?.enrollment_year ?? "");
 
   // Step 2: Course info
-  const [apCourses, setApCourses] = useState<string[]>([]);
-  const [currentGpa, setCurrentGpa] = useState("");
+  const [apCourses, setApCourses] = useState<string[]>(initialData?.ap_courses ?? []);
+  const [currentGpa, setCurrentGpa] = useState(initialData?.current_gpa != null ? String(initialData.current_gpa) : "");
 
   // Step 3: Learning prefs — store translated labels for display, but send translated values
-  const [weakSubjects, setWeakSubjects] = useState<string[]>([]);
-  const [strongSubjects, setStrongSubjects] = useState<string[]>([]);
+  const [weakSubjects, setWeakSubjects] = useState<string[]>(initialData?.weak_subjects ?? []);
+  const [strongSubjects, setStrongSubjects] = useState<string[]>(initialData?.strong_subjects ?? []);
 
   const toggleTag = (list: string[], setList: (v: string[]) => void, item: string) => {
     setList(list.includes(item) ? list.filter((x) => x !== item) : [...list, item]);
