@@ -46,7 +46,8 @@ function LoginForm() {
   /* ---- helper: get business API base URL ---- */
   const getApiBaseUrl = useCallback(() => {
     const envUrl = process.env.NEXT_PUBLIC_BASIS_API_URL;
-    if (envUrl) return envUrl;
+    // Docker-internal hostnames are unreachable from browser — use relative path (nginx proxy)
+    if (envUrl && !envUrl.includes("basis-api") && !envUrl.includes("basis-agent")) return envUrl;
     try {
       const config = localStorage.getItem("deep-agent-config");
       if (config) {
@@ -55,7 +56,7 @@ function LoginForm() {
         return lgUrl.replace(":5095", ":5096");
       }
     } catch {}
-    return "http://127.0.0.1:5096";
+    return "";
   }, []);
 
   /* ---- helper: sync with BASIS backend ---- */
