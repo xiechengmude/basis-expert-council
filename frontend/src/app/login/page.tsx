@@ -46,8 +46,11 @@ function LoginForm() {
   /* ---- helper: get business API base URL ---- */
   const getApiBaseUrl = useCallback(() => {
     const envUrl = process.env.NEXT_PUBLIC_BASIS_API_URL;
-    // Docker-internal hostnames are unreachable from browser
+    // Valid external URL → use as-is
     if (envUrl && !envUrl.includes("basis-api") && !envUrl.includes("basis-agent")) return envUrl;
+    // Deployed: nginx proxies /api/* → FastAPI, so use empty base (relative)
+    if (!["localhost", "127.0.0.1"].includes(window.location.hostname)) return "";
+    // Local dev: derive from LangGraph URL or fallback
     try {
       const config = localStorage.getItem("deep-agent-config");
       if (config) {
@@ -56,14 +59,7 @@ function LoginForm() {
         return lgUrl.replace(":5095", ":5096");
       }
     } catch {}
-    // Derive from current browser location (Docker deployments without reverse proxy)
-    if (envUrl) {
-      try {
-        const parsed = new URL(envUrl);
-        return `${window.location.protocol}//${window.location.hostname}:${parsed.port}`;
-      } catch {}
-    }
-    return "";
+    return "http://127.0.0.1:5096";
   }, []);
 
   /* ---- helper: sync with BASIS backend ---- */

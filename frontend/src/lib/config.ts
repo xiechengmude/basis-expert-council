@@ -39,16 +39,11 @@ const DEFAULT_CONFIG: StandaloneConfig = {
 
 /**
  * Sanitize deploymentUrl: Docker-internal hostnames are unreachable from browser.
- * In deployed (non-localhost) environments, replace with empty string for nginx proxy.
+ * Replace with /agent (nginx proxy) in deployed environments.
  */
 function sanitizeDeploymentUrl(url: string): string {
   if (url.includes("basis-agent") || url.includes("basis-api")) {
-    // Derive from current browser location (Docker deployments without reverse proxy)
-    try {
-      const parsed = new URL(url);
-      return `${window.location.protocol}//${window.location.hostname}:${parsed.port}`;
-    } catch {}
-    return url;
+    return isDeployed() ? "/agent" : "http://127.0.0.1:5095";
   }
   return url;
 }
