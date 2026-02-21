@@ -17,6 +17,7 @@ import { Message } from "@langchain/langgraph-sdk";
 import {
   extractSubAgentContent,
   extractStringFromMessageContent,
+  extractImagesFromMessageContent,
 } from "@/app/utils/utils";
 import { cn } from "@/lib/utils";
 import {
@@ -235,7 +236,8 @@ export const ChatMessage = React.memo<ChatMessageProps>(
     const { t } = useI18n();
     const isUser = message.type === "human";
     const messageContent = extractStringFromMessageContent(message);
-    const hasContent = messageContent && messageContent.trim() !== "";
+    const imageUrls = useMemo(() => extractImagesFromMessageContent(message), [message]);
+    const hasContent = (messageContent && messageContent.trim() !== "") || imageUrls.length > 0;
     const hasToolCalls = toolCalls.length > 0;
     const subAgents = useMemo(() => {
       return toolCalls
@@ -305,9 +307,25 @@ export const ChatMessage = React.memo<ChatMessageProps>(
                 }
               >
                 {isUser ? (
-                  <p className="m-0 whitespace-pre-wrap break-words text-sm leading-relaxed">
-                    {messageContent}
-                  </p>
+                  <>
+                    {imageUrls.length > 0 && (
+                      <div className="mb-2 flex flex-wrap gap-2">
+                        {imageUrls.map((url, i) => (
+                          <img
+                            key={i}
+                            src={url}
+                            alt={`uploaded ${i + 1}`}
+                            className="max-w-xs rounded-lg border border-border"
+                          />
+                        ))}
+                      </div>
+                    )}
+                    {messageContent && messageContent.trim() !== "" && (
+                      <p className="m-0 whitespace-pre-wrap break-words text-sm leading-relaxed">
+                        {messageContent}
+                      </p>
+                    )}
+                  </>
                 ) : hasContent ? (
                   <MarkdownContent content={messageContent} />
                 ) : null}

@@ -9,7 +9,7 @@ import {
 } from "@langchain/langgraph-sdk";
 import { v4 as uuidv4 } from "uuid";
 import type { UseStreamThread } from "@langchain/langgraph-sdk/react";
-import type { TodoItem } from "@/app/types/types";
+import type { TodoItem, UploadedFile } from "@/app/types/types";
 import { useClient } from "@/providers/ClientProvider";
 import { useQueryState } from "nuqs";
 
@@ -56,8 +56,20 @@ export function useChat({
   });
 
   const sendMessage = useCallback(
-    (content: string) => {
-      const newMessage: Message = { id: uuidv4(), type: "human", content };
+    (content: string, attachments?: UploadedFile[]) => {
+      // Build multimodal content if attachments are present
+      let messageContent: string | Array<Record<string, unknown>> = content;
+      if (attachments && attachments.length > 0) {
+        const blocks: Array<Record<string, unknown>> = attachments.map((a) => ({
+          type: "image_url",
+          image_url: { url: a.url },
+        }));
+        if (content.trim()) {
+          blocks.push({ type: "text", text: content });
+        }
+        messageContent = blocks;
+      }
+      const newMessage: Message = { id: uuidv4(), type: "human", content: messageContent as any };
       stream.submit(
         { messages: [newMessage] },
         {

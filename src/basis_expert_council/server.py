@@ -1529,6 +1529,54 @@ async def delete_memory_endpoint(memory_id: str, request: Request):
 
 
 # ---------------------------------------------------------------------------
+# File upload
+# ---------------------------------------------------------------------------
+
+ALLOWED_IMAGE_TYPES = {"image/jpeg", "image/png", "image/webp", "image/heic", "image/heif"}
+MAX_UPLOAD_SIZE = 10 * 1024 * 1024  # 10 MB
+
+
+@app.post("/api/files/upload")
+async def upload_file(request: Request):
+    """上传图片文件（multipart/form-data）"""
+    auth_info = await authenticate_request(dict(request.headers))
+    if not auth_info:
+        return JSONResponse(status_code=401, content={"error": "未登录"})
+
+    form = await request.form()
+    file = form.get("file")
+    if file is None:
+        return JSONResponse(status_code=400, content={"error": "缺少文件"})
+
+    content_type = file.content_type or ""
+    if content_type not in ALLOWED_IMAGE_TYPES:
+        return JSONResponse(
+            status_code=400,
+            content={"error": f"不支持的文件类型: {content_type}，仅支持 JPEG/PNG/WebP/HEIC"},
+        )
+
+    data = await file.read()
+    if len(data) > MAX_UPLOAD_SIZE:
+        return JSONResponse(status_code=400, content={"error": "文件大小超过 10MB 限制"})
+
+    filename = file.filename or "upload"
+
+    from .storage import get_storage
+    storage = get_storage()
+    url = await storage.upload(data, filename, content_type)
+
+    record = await db.insert_file_upload(
+        user_id=auth_info["user_id"],
+        filename=filename,
+        content_type=content_type,
+        size_bytes=len(data),
+        storage_url=url,
+    )
+
+    return {"file_id": record["id"], "url": url, "filename": filename}
+
+
+# ---------------------------------------------------------------------------
 # CLI entry
 # ---------------------------------------------------------------------------
 

@@ -30,6 +30,23 @@ export function extractStringFromMessageContent(message: Message): string {
     : "";
 }
 
+export function extractImagesFromMessageContent(message: Message): string[] {
+  if (!Array.isArray(message.content)) return [];
+  return message.content
+    .filter(
+      (c: unknown) =>
+        typeof c === "object" &&
+        c !== null &&
+        "type" in c &&
+        (c as { type: string }).type === "image_url"
+    )
+    .map((c: unknown) => {
+      const block = c as { image_url?: { url?: string } };
+      return block.image_url?.url || "";
+    })
+    .filter(Boolean);
+}
+
 export function extractSubAgentContent(data: unknown): string {
   if (typeof data === "string") {
     return data;

@@ -427,6 +427,20 @@ ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS mastered_mistakes IN
 ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS active_mistakes   INT DEFAULT 0;
 ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS bloom_mastery     JSONB DEFAULT '{}';
 ALTER TABLE student_ability_scores ADD COLUMN IF NOT EXISTS last_computed_at  TIMESTAMPTZ;
+
+-- 文件上传记录
+CREATE TABLE IF NOT EXISTS file_uploads (
+    id              SERIAL PRIMARY KEY,
+    user_id         INT NOT NULL REFERENCES biz_users(id) ON DELETE CASCADE,
+    filename        TEXT,
+    content_type    TEXT NOT NULL,
+    size_bytes      INT NOT NULL,
+    storage_url     TEXT NOT NULL,
+    storage_backend TEXT DEFAULT 'supabase',
+    purpose         TEXT DEFAULT 'chat',
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_file_uploads_user ON file_uploads(user_id);
 """
 
 
@@ -2248,3 +2262,37 @@ async def backfill_ability_scores_for_user(user_id: int) -> int:
                         await insert_ability_history(user_id, sess["subject"], topic_name, topic_ability, session_id_str)
                         count += 1
     return count
+
+
+# ---------------------------------------------------------------------------
+# 文件上传 CRUD
+# ---------------------------------------------------------------------------
+
+
+async def insert_file_upload(
+    user_id: int,
+    filename: str,
+    content_type: str,
+    size_bytes: int,
+    storage_url: str,
+    storage_backend: str = "supabase",
+    purpose: str = "chat",
+) -> dict:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            INSERT INTO file_uploads (user_id, filename, content_type, size_bytes, storage_url, storage_backend, purpose)
+            VALUES ($1, $2, $3, $4, $5, $6, $7)
+            RETURNING *
+            """,
+            user_id, filename, content_type, size_bytes, storage_url, storage_backend, purpose,
+        )
+        return dict(row)
+
+
+async def get_file_upload(file_id: int) -> dict | None:
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow("SELECT * FROM file_uploads WHERE id = $1", file_id)
+        return dict(row) if row else None

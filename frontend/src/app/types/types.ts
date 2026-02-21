@@ -56,4 +56,12 @@ export interface ToolApprovalInterruptData {
   review_configs?: ReviewConfig[];
 }
 
+export interface UploadedFile {
+  file_id: string;
+  url: string;
+  filename: string;
+  content_type: string;
+  preview_url: string; // local blob URL
+}
+
 export const A2UI_TOOL_NAME = "a2ui_render";

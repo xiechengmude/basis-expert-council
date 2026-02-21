@@ -17,6 +17,9 @@ import {
   Clock,
   Circle,
   FileIcon,
+  ImagePlus,
+  X,
+  Loader2,
 } from "lucide-react";
 import { ChatMessage } from "@/app/components/ChatMessage";
 import { WelcomeScreen } from "./WelcomeScreen";
@@ -25,10 +28,12 @@ import type {
   ToolCall,
   ActionRequest,
   ReviewConfig,
+  UploadedFile,
 } from "@/app/types/types";
 import type { UserAction } from "@/app/a2ui";
 import { Assistant, Message } from "@langchain/langgraph-sdk";
 import { extractStringFromMessageContent } from "@/app/utils/utils";
+import { uploadFile } from "@/app/utils/upload";
 import { useChatContext } from "@/providers/ChatProvider";
 import { cn } from "@/lib/utils";
 import { useStickToBottom } from "use-stick-to-bottom";
@@ -70,6 +75,9 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const [input, setInput] = useState("");
+  const [attachments, setAttachments] = useState<UploadedFile[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const { scrollRef, contentRef } = useStickToBottom();
 
   const {
@@ -96,17 +104,52 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
 
   const submitDisabled = isLoading || !assistant;
 
+  const handleFileSelect = useCallback(
+    async (e: React.ChangeEvent<HTMLInputElement>) => {
+      const files = e.target.files;
+      if (!files || files.length === 0) return;
+      setUploading(true);
+      try {
+        const uploads = await Promise.all(
+          Array.from(files).map((f) => uploadFile(f))
+        );
+        setAttachments((prev) => [...prev, ...uploads]);
+      } catch (err: any) {
+        console.error("Upload failed:", err.message);
+      } finally {
+        setUploading(false);
+        // Reset input so the same file can be selected again
+        e.target.value = "";
+      }
+    },
+    []
+  );
+
+  const removeAttachment = useCallback((index: number) => {
+    setAttachments((prev) => {
+      const removed = prev[index];
+      if (removed?.preview_url) URL.revokeObjectURL(removed.preview_url);
+      return prev.filter((_, i) => i !== index);
+    });
+  }, []);
+
   const handleSubmit = useCallback(
     (e?: FormEvent) => {
       if (e) {
         e.preventDefault();
       }
       const messageText = input.trim();
-      if (!messageText || isLoading || submitDisabled) return;
-      sendMessage(messageText);
+      const hasAttachments = attachments.length > 0;
+      if ((!messageText && !hasAttachments) || isLoading || submitDisabled) return;
+      sendMessage(messageText, hasAttachments ? attachments : undefined);
       setInput("");
+      // Clean up blob URLs
+      attachments.forEach((a) => {
+        if (a.preview_url) URL.revokeObjectURL(a.preview_url);
+      });
+      setAttachments([]);
     },
-    [input, isLoading, sendMessage, setInput, submitDisabled]
+    [input, attachments, isLoading, sendMessage, setInput, submitDisabled]
   );
 
   const handleKeyDown = useCallback(
@@ -547,6 +590,32 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
             onSubmit={handleSubmit}
             className="flex flex-col"
           >
+            {/* Attachment preview bar */}
+            {attachments.length > 0 && (
+              <div className="flex flex-wrap gap-2 px-[18px] pt-3">
+                {attachments.map((att, idx) => (
+                  <div key={att.file_id} className="group relative">
+                    <img
+                      src={att.preview_url}
+                      alt={att.filename}
+                      className="h-16 w-16 rounded-lg border border-border object-cover"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removeAttachment(idx)}
+                      className="absolute -right-1.5 -top-1.5 hidden rounded-full bg-destructive p-0.5 text-white group-hover:block"
+                    >
+                      <X size={12} />
+                    </button>
+                  </div>
+                ))}
+                {uploading && (
+                  <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-dashed border-border">
+                    <Loader2 size={20} className="animate-spin text-muted-foreground" />
+                  </div>
+                )}
+              </div>
+            )}
             <textarea
               ref={textareaRef}
               value={input}
@@ -556,13 +625,38 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
               className="font-inherit field-sizing-content flex-1 resize-none border-0 bg-transparent px-[18px] pb-[13px] pt-[14px] text-sm leading-7 text-primary outline-none placeholder:text-tertiary"
               rows={1}
             />
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              multiple
+              capture="environment"
+              className="hidden"
+              onChange={handleFileSelect}
+            />
             <div className="flex justify-between gap-2 p-3">
+              <div className="flex items-center gap-2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  disabled={uploading || isLoading}
+                  onClick={() => fileInputRef.current?.click()}
+                  title="上传图片"
+                >
+                  {uploading ? (
+                    <Loader2 size={18} className="animate-spin" />
+                  ) : (
+                    <ImagePlus size={18} />
+                  )}
+                </Button>
+              </div>
               <div className="flex justify-end gap-2">
                 <Button
                   type={isLoading ? "button" : "submit"}
                   variant={isLoading ? "destructive" : "default"}
                   onClick={isLoading ? stopStream : handleSubmit}
-                  disabled={!isLoading && (submitDisabled || !input.trim())}
+                  disabled={!isLoading && (submitDisabled || (!input.trim() && attachments.length === 0))}
                 >
                   {isLoading ? (
                     <>
