@@ -1,6 +1,6 @@
 ---
 name: new-student-onboarding
-description: "新生衔接和入学准备。当用户询问入学准备、新生衔接、转学适应、BASIS 入学考试、家长择校规划时使用此 skill。"
+description: "新生衔接和入学适应。当用户询问入学后适应、新生衔接、转学适应、家长择校规划、第一学期生存指南时使用此 skill。入学考试备考请转交 basis-admission-prep skill。"
 license: MIT
 compatibility: "Deep Agents CLI"
 metadata:
@@ -35,23 +35,9 @@ allowed-tools: "Read Write"
 
 ### 2. 入学测试内容
 
-**英语测试（MAP / WIDA / 校内测试）：**
-- Reading Comprehension（阅读理解）
-- Vocabulary（词汇量）
-- Grammar & Usage（语法）
-- Writing Sample（写作样本）
+入学考试包含四科：MAP 阅读（自适应机考，40 题）、数学自命题（英文卷，~30 题）、英文写作（30 分钟，1 篇）、口语面试（外教一对一，~15 分钟）。
 
-**数学测试：**
-- 对标申请年级的数学能力
-- 注意：BASIS 数学是加速的，G6 入学需要 Pre-Algebra 水平
-- 题目通常是英文出题
-
-**面试（通常英文）：**
-- 自我介绍
-- 为什么想来 BASIS？
-- 你最喜欢的学科是什么？为什么？
-- 你课外有什么兴趣爱好？
-- 你如何应对学业挑战？
+> **详细的入学考试备考策略、各年级考点清单、真题库、英文数学术语表、写作模板、面试题库，请参考 `basis-admission-prep` skill。** 本 skill 侧重录取后的衔接与适应。
 
 ## 入学前准备方案（按时间段）
 
